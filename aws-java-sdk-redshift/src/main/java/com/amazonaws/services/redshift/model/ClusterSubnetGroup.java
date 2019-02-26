@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a subnet group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterSubnetGroup" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterSubnetGroup implements Serializable, Cloneable {
 
     /**
@@ -45,8 +46,8 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The status of the cluster subnet group. Possible values are
-     * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.
+     * The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and
+     * <code>Invalid</code>.
      * </p>
      */
     private String subnetGroupStatus;
@@ -95,12 +96,10 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * 
      * @param clusterSubnetGroupName
      *        The name of the cluster subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClusterSubnetGroup withClusterSubnetGroupName(
-            String clusterSubnetGroupName) {
+    public ClusterSubnetGroup withClusterSubnetGroupName(String clusterSubnetGroupName) {
         setClusterSubnetGroupName(clusterSubnetGroupName);
         return this;
     }
@@ -137,8 +136,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the cluster subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withDescription(String description) {
@@ -178,8 +176,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * 
      * @param vpcId
      *        The VPC ID of the cluster subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withVpcId(String vpcId) {
@@ -189,14 +186,13 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the cluster subnet group. Possible values are
-     * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.
+     * The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and
+     * <code>Invalid</code>.
      * </p>
      * 
      * @param subnetGroupStatus
-     *        The status of the cluster subnet group. Possible values are
-     *        <code>Complete</code>, <code>Incomplete</code> and
-     *        <code>Invalid</code>.
+     *        The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code>
+     *        and <code>Invalid</code>.
      */
 
     public void setSubnetGroupStatus(String subnetGroupStatus) {
@@ -205,13 +201,12 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the cluster subnet group. Possible values are
-     * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.
+     * The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and
+     * <code>Invalid</code>.
      * </p>
      * 
-     * @return The status of the cluster subnet group. Possible values are
-     *         <code>Complete</code>, <code>Incomplete</code> and
-     *         <code>Invalid</code>.
+     * @return The status of the cluster subnet group. Possible values are <code>Complete</code>,
+     *         <code>Incomplete</code> and <code>Invalid</code>.
      */
 
     public String getSubnetGroupStatus() {
@@ -220,16 +215,14 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the cluster subnet group. Possible values are
-     * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>.
+     * The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and
+     * <code>Invalid</code>.
      * </p>
      * 
      * @param subnetGroupStatus
-     *        The status of the cluster subnet group. Possible values are
-     *        <code>Complete</code>, <code>Incomplete</code> and
-     *        <code>Invalid</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code>
+     *        and <code>Invalid</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withSubnetGroupStatus(String subnetGroupStatus) {
@@ -267,8 +260,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
             return;
         }
 
-        this.subnets = new com.amazonaws.internal.SdkInternalList<Subnet>(
-                subnets);
+        this.subnets = new com.amazonaws.internal.SdkInternalList<Subnet>(subnets);
     }
 
     /**
@@ -276,22 +268,19 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * A list of the VPC <a>Subnet</a> elements.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or
-     * {@link #withSubnets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param subnets
      *        A list of the VPC <a>Subnet</a> elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withSubnets(Subnet... subnets) {
         if (this.subnets == null) {
-            setSubnets(new com.amazonaws.internal.SdkInternalList<Subnet>(
-                    subnets.length));
+            setSubnets(new com.amazonaws.internal.SdkInternalList<Subnet>(subnets.length));
         }
         for (Subnet ele : subnets) {
             this.subnets.add(ele);
@@ -306,8 +295,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * 
      * @param subnets
      *        A list of the VPC <a>Subnet</a> elements.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withSubnets(java.util.Collection<Subnet> subnets) {
@@ -353,16 +341,14 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * The list of tags for the cluster subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The list of tags for the cluster subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withTags(Tag... tags) {
@@ -382,8 +368,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * 
      * @param tags
      *        The list of tags for the cluster subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClusterSubnetGroup withTags(java.util.Collection<Tag> tags) {
@@ -392,8 +377,8 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -404,18 +389,17 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName()
-                    + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetGroupStatus() != null)
-            sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
+            sb.append("SubnetGroupStatus: ").append(getSubnetGroupStatus()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -430,39 +414,29 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         if (obj instanceof ClusterSubnetGroup == false)
             return false;
         ClusterSubnetGroup other = (ClusterSubnetGroup) obj;
-        if (other.getClusterSubnetGroupName() == null
-                ^ this.getClusterSubnetGroupName() == null)
+        if (other.getClusterSubnetGroupName() == null ^ this.getClusterSubnetGroupName() == null)
             return false;
-        if (other.getClusterSubnetGroupName() != null
-                && other.getClusterSubnetGroupName().equals(
-                        this.getClusterSubnetGroupName()) == false)
+        if (other.getClusterSubnetGroupName() != null && other.getClusterSubnetGroupName().equals(this.getClusterSubnetGroupName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getVpcId() != null
-                && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getSubnetGroupStatus() == null
-                ^ this.getSubnetGroupStatus() == null)
+        if (other.getSubnetGroupStatus() == null ^ this.getSubnetGroupStatus() == null)
             return false;
-        if (other.getSubnetGroupStatus() != null
-                && other.getSubnetGroupStatus().equals(
-                        this.getSubnetGroupStatus()) == false)
+        if (other.getSubnetGroupStatus() != null && other.getSubnetGroupStatus().equals(this.getSubnetGroupStatus()) == false)
             return false;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
-        if (other.getSubnets() != null
-                && other.getSubnets().equals(this.getSubnets()) == false)
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -472,23 +446,12 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterSubnetGroupName() == null) ? 0
-                        : getClusterSubnetGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubnetGroupStatus() == null) ? 0
-                        : getSubnetGroupStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClusterSubnetGroupName() == null) ? 0 : getClusterSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetGroupStatus() == null) ? 0 : getSubnetGroupStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -497,9 +460,8 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         try {
             return (ClusterSubnetGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

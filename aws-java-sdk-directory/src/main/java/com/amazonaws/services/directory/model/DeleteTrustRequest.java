@@ -1,38 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Deletes the local side of an existing trust relationship between the
- * Microsoft AD in the AWS cloud and the external domain.
+ * <p>
+ * Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the
+ * external domain.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteTrustRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteTrustRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The Trust ID of the trust relationship to be deleted. */
+    /**
+     * <p>
+     * The Trust ID of the trust relationship to be deleted.
+     * </p>
+     */
     private String trustId;
-
+    /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     */
     private Boolean deleteAssociatedConditionalForwarder;
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship to be deleted.
@@ -43,7 +56,9 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @return The Trust ID of the trust relationship to be deleted.
      */
@@ -53,12 +68,13 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship to be deleted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteTrustRequest withTrustId(String trustId) {
@@ -67,16 +83,24 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
      * @param deleteAssociatedConditionalForwarder
+     *        Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
-    public void setDeleteAssociatedConditionalForwarder(
-            Boolean deleteAssociatedConditionalForwarder) {
+    public void setDeleteAssociatedConditionalForwarder(Boolean deleteAssociatedConditionalForwarder) {
         this.deleteAssociatedConditionalForwarder = deleteAssociatedConditionalForwarder;
     }
 
     /**
-     * @return
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
+     * @return Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
     public Boolean getDeleteAssociatedConditionalForwarder() {
@@ -84,19 +108,26 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
      * @param deleteAssociatedConditionalForwarder
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteTrustRequest withDeleteAssociatedConditionalForwarder(
-            Boolean deleteAssociatedConditionalForwarder) {
+    public DeleteTrustRequest withDeleteAssociatedConditionalForwarder(Boolean deleteAssociatedConditionalForwarder) {
         setDeleteAssociatedConditionalForwarder(deleteAssociatedConditionalForwarder);
         return this;
     }
 
     /**
-     * @return
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
+     * @return Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
     public Boolean isDeleteAssociatedConditionalForwarder() {
@@ -104,8 +135,8 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -116,10 +147,9 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId() + ",");
+            sb.append("TrustId: ").append(getTrustId()).append(",");
         if (getDeleteAssociatedConditionalForwarder() != null)
-            sb.append("DeleteAssociatedConditionalForwarder: "
-                    + getDeleteAssociatedConditionalForwarder());
+            sb.append("DeleteAssociatedConditionalForwarder: ").append(getDeleteAssociatedConditionalForwarder());
         sb.append("}");
         return sb.toString();
     }
@@ -136,15 +166,12 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         DeleteTrustRequest other = (DeleteTrustRequest) obj;
         if (other.getTrustId() == null ^ this.getTrustId() == null)
             return false;
-        if (other.getTrustId() != null
-                && other.getTrustId().equals(this.getTrustId()) == false)
+        if (other.getTrustId() != null && other.getTrustId().equals(this.getTrustId()) == false)
             return false;
-        if (other.getDeleteAssociatedConditionalForwarder() == null
-                ^ this.getDeleteAssociatedConditionalForwarder() == null)
+        if (other.getDeleteAssociatedConditionalForwarder() == null ^ this.getDeleteAssociatedConditionalForwarder() == null)
             return false;
         if (other.getDeleteAssociatedConditionalForwarder() != null
-                && other.getDeleteAssociatedConditionalForwarder().equals(
-                        this.getDeleteAssociatedConditionalForwarder()) == false)
+                && other.getDeleteAssociatedConditionalForwarder().equals(this.getDeleteAssociatedConditionalForwarder()) == false)
             return false;
         return true;
     }
@@ -154,12 +181,8 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTrustId() == null) ? 0 : getTrustId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeleteAssociatedConditionalForwarder() == null) ? 0
-                        : getDeleteAssociatedConditionalForwarder().hashCode());
+        hashCode = prime * hashCode + ((getTrustId() == null) ? 0 : getTrustId().hashCode());
+        hashCode = prime * hashCode + ((getDeleteAssociatedConditionalForwarder() == null) ? 0 : getDeleteAssociatedConditionalForwarder().hashCode());
         return hashCode;
     }
 
@@ -167,4 +190,5 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     public DeleteTrustRequest clone() {
         return (DeleteTrustRequest) super.clone();
     }
+
 }

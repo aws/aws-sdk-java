@@ -1,57 +1,73 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Result message containing a list of configuration descriptions.
+ * Request to describe application versions.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions
-     * to only include ones that are associated with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones
-     * that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> versionLabels;
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
+     * </p>
+     */
+    private Integer maxRecords;
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions
-     * to only include ones that are associated with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
      * @param applicationName
-     *        If specified, AWS Elastic Beanstalk restricts the returned
-     *        descriptions to only include ones that are associated with the
-     *        specified application.
+     *        Specify an application name to show only application versions for that application.
      */
 
     public void setApplicationName(String applicationName) {
@@ -60,13 +76,10 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions
-     * to only include ones that are associated with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
-     * @return If specified, AWS Elastic Beanstalk restricts the returned
-     *         descriptions to only include ones that are associated with the
-     *         specified application.
+     * @return Specify an application name to show only application versions for that application.
      */
 
     public String getApplicationName() {
@@ -75,32 +88,25 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions
-     * to only include ones that are associated with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
      * @param applicationName
-     *        If specified, AWS Elastic Beanstalk restricts the returned
-     *        descriptions to only include ones that are associated with the
-     *        specified application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify an application name to show only application versions for that application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationVersionsRequest withApplicationName(
-            String applicationName) {
+    public DescribeApplicationVersionsRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones
-     * that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
-     * @return If specified, restricts the returned descriptions to only include
-     *         ones that have the specified version labels.
+     * @return Specify a version label to show a specific application version.
      */
 
     public java.util.List<String> getVersionLabels() {
@@ -112,13 +118,11 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones
-     * that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include
-     *        ones that have the specified version labels.
+     *        Specify a version label to show a specific application version.
      */
 
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
@@ -127,34 +131,27 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.versionLabels = new com.amazonaws.internal.SdkInternalList<String>(
-                versionLabels);
+        this.versionLabels = new com.amazonaws.internal.SdkInternalList<String>(versionLabels);
     }
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones
-     * that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVersionLabels(java.util.Collection)} or
-     * {@link #withVersionLabels(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVersionLabels(java.util.Collection)} or {@link #withVersionLabels(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include
-     *        ones that have the specified version labels.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify a version label to show a specific application version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationVersionsRequest withVersionLabels(
-            String... versionLabels) {
+    public DescribeApplicationVersionsRequest withVersionLabels(String... versionLabels) {
         if (this.versionLabels == null) {
-            setVersionLabels(new com.amazonaws.internal.SdkInternalList<String>(
-                    versionLabels.length));
+            setVersionLabels(new com.amazonaws.internal.SdkInternalList<String>(versionLabels.length));
         }
         for (String ele : versionLabels) {
             this.versionLabels.add(ele);
@@ -164,26 +161,145 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones
-     * that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include
-     *        ones that have the specified version labels.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify a version label to show a specific application version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeApplicationVersionsRequest withVersionLabels(
-            java.util.Collection<String> versionLabels) {
+    public DescribeApplicationVersionsRequest withVersionLabels(java.util.Collection<String> versionLabels) {
         setVersionLabels(versionLabels);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
+     * </p>
+     * 
+     * @param maxRecords
+     *        For a paginated request. Specify a maximum number of application versions to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *        response.
+     */
+
+    public void setMaxRecords(Integer maxRecords) {
+        this.maxRecords = maxRecords;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
+     * </p>
+     * 
+     * @return For a paginated request. Specify a maximum number of application versions to include in each
+     *         response.</p>
+     *         <p>
+     *         If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *         response.
+     */
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
+     * </p>
+     * 
+     * @param maxRecords
+     *        For a paginated request. Specify a maximum number of application versions to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *        response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationVersionsRequest withMaxRecords(Integer maxRecords) {
+        setMaxRecords(maxRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @return For a paginated request. Specify a token from a previous response page to retrieve the next response
+     *         page. All other parameter values must be identical to the ones specified in the initial request.</p>
+     *         <p>
+     *         If no <code>NextToken</code> is specified, the first page is retrieved.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationVersionsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -194,9 +310,13 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabels() != null)
-            sb.append("VersionLabels: " + getVersionLabels());
+            sb.append("VersionLabels: ").append(getVersionLabels()).append(",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -211,16 +331,21 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeApplicationVersionsRequest == false)
             return false;
         DescribeApplicationVersionsRequest other = (DescribeApplicationVersionsRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getVersionLabels() == null ^ this.getVersionLabels() == null)
             return false;
-        if (other.getVersionLabels() != null
-                && other.getVersionLabels().equals(this.getVersionLabels()) == false)
+        if (other.getVersionLabels() != null && other.getVersionLabels().equals(this.getVersionLabels()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -230,14 +355,10 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVersionLabels() == null) ? 0 : getVersionLabels()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabels() == null) ? 0 : getVersionLabels().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -245,4 +366,5 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
     public DescribeApplicationVersionsRequest clone() {
         return (DescribeApplicationVersionsRequest) super.clone();
     }
+
 }

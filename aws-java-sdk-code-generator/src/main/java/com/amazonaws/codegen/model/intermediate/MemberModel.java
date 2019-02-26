@@ -15,11 +15,20 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import com.amazonaws.codegen.internal.TypeUtils;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
-import static com.amazonaws.codegen.internal.DocumentationUtils.*;
+import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_FLUENT_RETURN;
+import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_GETTER;
+import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_GETTER_PARAM;
+import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER;
+import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER_PARAM;
+import static com.amazonaws.codegen.internal.DocumentationUtils.LIST_VARARG_ADDITIONAL_DOC;
+import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
+
+import com.amazonaws.codegen.internal.TypeUtils;
+import com.amazonaws.protocol.MarshallingInfo;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.PathMarshallers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class MemberModel extends DocumentationModel {
 
@@ -33,11 +42,19 @@ public class MemberModel extends DocumentationModel {
 
     private VariableModel setterModel;
 
+    private String getterMethodName;
+
+    private String setterMethodName;
+
+    private String fluentSetterMethodName;
+
     private ReturnTypeModel getterModel;
 
     private ParameterHttpMapping http;
 
     private boolean deprecated;
+
+    private boolean sensitive;
 
     private ListModel listModel;
 
@@ -50,6 +67,10 @@ public class MemberModel extends DocumentationModel {
     private boolean idempotencyToken;
 
     private ShapeModel shape;
+
+    private boolean isJsonValue;
+
+    private boolean shouldEmitLegacyEnumSetter;
 
     public String getName() {
         return name;
@@ -116,6 +137,45 @@ public class MemberModel extends DocumentationModel {
         return this;
     }
 
+    public String getGetterMethodName() {
+        return getterMethodName;
+    }
+
+    public void setGetterMethodName(String getterMethodName) {
+        this.getterMethodName = getterMethodName;
+    }
+
+    public MemberModel withGetterMethodName(String getterMethodName) {
+        setGetterMethodName(getterMethodName);
+        return this;
+    }
+
+    public String getSetterMethodName() {
+        return setterMethodName;
+    }
+
+    public void setSetterMethodName(String setterMethodName) {
+        this.setterMethodName = setterMethodName;
+    }
+
+    public MemberModel withSetterMethodName(String setterMethodName) {
+        setSetterMethodName(setterMethodName);
+        return this;
+    }
+
+    public String getFluentSetterMethodName() {
+        return fluentSetterMethodName;
+    }
+
+    public void setFluentSetterMethodName(String fluentSetterMethodName) {
+        this.fluentSetterMethodName = fluentSetterMethodName;
+    }
+
+    public MemberModel withFluentSetterMethodName(String fluentMethodName) {
+        setFluentSetterMethodName(fluentMethodName);
+        return this;
+    }
+
     public ReturnTypeModel getGetterModel() {
         return getterModel;
     }
@@ -155,6 +215,14 @@ public class MemberModel extends DocumentationModel {
 
     public void setDeprecated(boolean deprecated) {
         this.deprecated = deprecated;
+    }
+
+    public boolean isSensitive() {
+        return sensitive;
+    }
+
+    public void setSensitive(boolean sensitive) {
+        this.sensitive = sensitive;
     }
 
     public ListModel getListModel() {
@@ -212,36 +280,9 @@ public class MemberModel extends DocumentationModel {
     public String getSetterDocumentation() {
         StringBuilder docBuilder = new StringBuilder("/**");
 
-        docBuilder.append(getSetterDoc());
-
-        if ("java.nio.ByteBuffer".equals(
-                this.getGetterModel().getReturnType())) {
-
-            docBuilder.append("<p>")
-                    .append(LINE_SEPARATOR)
-                    .append("AWS SDK for Java performs a Base64 " +
-                            "encoding on this field before sending this request to AWS " +
-                            "service by default. " +
-                            "Users of the SDK should not perform Base64 " +
-                            "encoding on this field.")
-                    .append(LINE_SEPARATOR)
-                    .append("</p>")
-                    .append(LINE_SEPARATOR);
-
-            docBuilder.append("<p>")
-                    .append(LINE_SEPARATOR)
-                    .append("Warning: ByteBuffers returned by the SDK are mutable. " +
-                            "Changes to the content or position of the byte buffer will be " +
-                            "seen by all objects that have a reference to this object. " +
-                            "It is recommended to call ByteBuffer.duplicate() or " +
-                            "ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. " +
-                            "This behavior will be changed in a future major version of the SDK.")
-                    .append(LINE_SEPARATOR)
-                    .append("</p>")
-                    .append(LINE_SEPARATOR);
-        }
-
-        docBuilder.append(getParamDoc())
+        docBuilder.append(getSetterDoc())
+                  .append(getSetterGuidanceDoc())
+                  .append(getParamDoc())
                   .append(getEnumDoc())
                   .append("*/");
 
@@ -253,6 +294,16 @@ public class MemberModel extends DocumentationModel {
 
         docBuilder.append(documentation != null ? documentation : DEFAULT_GETTER.replace("%s", name))
                   .append(LINE_SEPARATOR);
+
+        if (isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("This field's value will be valid JSON according to RFC 7159, including the opening and closing ")
+                      .append("braces. For example: '{\"key\": \"value\"}'.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
 
         if ("java.nio.ByteBuffer".equals(
                 this.getGetterModel().getReturnType())) {
@@ -288,6 +339,7 @@ public class MemberModel extends DocumentationModel {
         StringBuilder docBuilder = new StringBuilder("/**");
 
         docBuilder.append(getSetterDoc())
+                  .append(getSetterGuidanceDoc())
                   .append(getParamDoc())
                   .append(LINE_SEPARATOR)
                   .append("@return " + stripHTMLTags(DEFAULT_FLUENT_RETURN))
@@ -324,6 +376,53 @@ public class MemberModel extends DocumentationModel {
                 : DEFAULT_SETTER.replace("%s", name);
     }
 
+    /**
+     * Get the documentation that should be shared between the "with" and "set"-style methods that pertains to the type of data in
+     * the message. This usually instructs customers on how to properly format the data that they write to the message based on
+     * its type.
+     */
+    private String getSetterGuidanceDoc() {
+        StringBuilder docBuilder = new StringBuilder();
+
+        if (isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("This field's value must be valid JSON according to RFC 7159, including the opening and closing ")
+                      .append("braces. For example: '{\"key\": \"value\"}'.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
+
+        boolean isByteBuffer = "java.nio.ByteBuffer".equals(this.getGetterModel().getReturnType());
+
+        if (isByteBuffer || isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the ")
+                      .append("AWS service. Users of the SDK should not perform Base64 encoding on this field.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
+
+        if (isByteBuffer) {
+            docBuilder.append("<p>")
+                    .append(LINE_SEPARATOR)
+                    .append("Warning: ByteBuffers returned by the SDK are mutable. " +
+                            "Changes to the content or position of the byte buffer will be " +
+                            "seen by all objects that have a reference to this object. " +
+                            "It is recommended to call ByteBuffer.duplicate() or " +
+                            "ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. " +
+                            "This behavior will be changed in a future major version of the SDK.")
+                    .append(LINE_SEPARATOR)
+                    .append("</p>")
+                    .append(LINE_SEPARATOR);
+        }
+
+        return docBuilder.toString();
+    }
+
     private String getParamDoc() {
         StringBuilder docBuilder = new StringBuilder();
 
@@ -355,6 +454,100 @@ public class MemberModel extends DocumentationModel {
         this.idempotencyToken = idempotencyToken;
     }
 
+    public boolean isJsonValue() {
+        return isJsonValue;
+    }
+
+    public void setJsonValue(boolean isJsonValue) {
+        this.isJsonValue = isJsonValue;
+    }
+
+    public boolean getIsBinary() {
+        return http.getIsStreaming() || (http.getIsPayload() && "java.nio.ByteBuffer".equals(variable.getVariableType()));
+    }
+
+    /**
+     * @return Implementation of {@link com.amazonaws.transform.PathMarshallers.PathMarshaller} to use if this
+     * member is bound the the URI.
+     * @throws IllegalStateException If this member is not bound to the URI. Templates should first check {@link
+     *                               ParameterHttpMapping#isUri()} first.
+     */
+    @JsonIgnore
+    public String getPathMarshaller() {
+        if (!http.isUri()) {
+            throw new IllegalStateException("Only members bound to the URI have a path marshaller");
+        }
+        final String prefix = PathMarshallers.class.getName();
+        if (http.isGreedy()) {
+            return prefix + ".GREEDY";
+        } else if (isIdempotencyToken()) {
+            return prefix + ".IDEMPOTENCY";
+        } else {
+            return prefix + ".NON_GREEDY";
+        }
+    }
+
+    /**
+     * Used for JSON services. Name of the field containing the {@link MarshallingInfo} for
+     * this member.
+     */
+    @JsonIgnore
+    public String getMarshallerBindingFieldName() {
+        return this.name.toUpperCase() + "_BINDING";
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return Marshalling type to use when creating a {@link MarshallingInfo}. Must be a field of {@link
+     * com.amazonaws.protocol.MarshallingType}.
+     */
+    public String getMarshallingType() {
+        if (isList()) {
+            return "LIST";
+        } else if (isMap()) {
+            return "MAP";
+        } else if (isJsonValue()) {
+            return "JSON_VALUE";
+        } else if (!isSimple()) {
+            return "STRUCTURED";
+        } else {
+            return TypeUtils.getMarshallingType(variable.getSimpleType());
+        }
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return The Marshalling type to use when loading the unmarshaller from the {@link JsonUnmarshallerContext}. Must be
+     * a field of {@link JsonUnmarshallerContext.UnmarshallerType}. This will be null if the default simple-type
+     * marshaller should be used.
+     */
+    public String getUnmarshallingType() {
+        if(isJsonValue()) {
+            return "JSON_VALUE";
+        }
+
+        return null;
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return The target class a marshalling type is bound to.
+     */
+    public String getMarshallingTargetClass() {
+        if (isList()) {
+            return "List";
+        } else if (isMap()) {
+            return "Map";
+        } else if (!isSimple()) {
+            return "StructuredPojo";
+        } else {
+            return variable.getVariableType();
+        }
+    }
+
     @JsonIgnore
     public ShapeModel getShape() {
         return shape;
@@ -364,9 +557,16 @@ public class MemberModel extends DocumentationModel {
         this.shape = shape;
     }
 
+    public boolean getShouldEmitLegacyEnumSetter() {
+        return shouldEmitLegacyEnumSetter;
+    }
+
+    public void setShouldEmitLegacyEnumSetter(boolean shouldEmitLegacyEnumSetter) {
+        this.shouldEmitLegacyEnumSetter = shouldEmitLegacyEnumSetter;
+    }
+
     @Override
     public String toString() {
         return c2jName;
     }
-
 }

@@ -1,27 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeRecoveryPointInfo"
+ *      target="_top">AWS API Documentation</a>
  */
-public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class VolumeRecoveryPointInfo implements Serializable, Cloneable, StructuredPojo {
 
     private String volumeARN;
 
@@ -49,8 +51,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 
     /**
      * @param volumeARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeRecoveryPointInfo withVolumeARN(String volumeARN) {
@@ -76,8 +77,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 
     /**
      * @param volumeSizeInBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeRecoveryPointInfo withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -103,12 +103,10 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 
     /**
      * @param volumeUsageInBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeRecoveryPointInfo withVolumeUsageInBytes(
-            Long volumeUsageInBytes) {
+    public VolumeRecoveryPointInfo withVolumeUsageInBytes(Long volumeUsageInBytes) {
         setVolumeUsageInBytes(volumeUsageInBytes);
         return this;
     }
@@ -131,19 +129,17 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
 
     /**
      * @param volumeRecoveryPointTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeRecoveryPointInfo withVolumeRecoveryPointTime(
-            String volumeRecoveryPointTime) {
+    public VolumeRecoveryPointInfo withVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         setVolumeRecoveryPointTime(volumeRecoveryPointTime);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -154,14 +150,13 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getVolumeUsageInBytes() != null)
-            sb.append("VolumeUsageInBytes: " + getVolumeUsageInBytes() + ",");
+            sb.append("VolumeUsageInBytes: ").append(getVolumeUsageInBytes()).append(",");
         if (getVolumeRecoveryPointTime() != null)
-            sb.append("VolumeRecoveryPointTime: "
-                    + getVolumeRecoveryPointTime());
+            sb.append("VolumeRecoveryPointTime: ").append(getVolumeRecoveryPointTime());
         sb.append("}");
         return sb.toString();
     }
@@ -178,29 +173,19 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
         VolumeRecoveryPointInfo other = (VolumeRecoveryPointInfo) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
-        if (other.getVolumeSizeInBytes() == null
-                ^ this.getVolumeSizeInBytes() == null)
+        if (other.getVolumeSizeInBytes() == null ^ this.getVolumeSizeInBytes() == null)
             return false;
-        if (other.getVolumeSizeInBytes() != null
-                && other.getVolumeSizeInBytes().equals(
-                        this.getVolumeSizeInBytes()) == false)
+        if (other.getVolumeSizeInBytes() != null && other.getVolumeSizeInBytes().equals(this.getVolumeSizeInBytes()) == false)
             return false;
-        if (other.getVolumeUsageInBytes() == null
-                ^ this.getVolumeUsageInBytes() == null)
+        if (other.getVolumeUsageInBytes() == null ^ this.getVolumeUsageInBytes() == null)
             return false;
-        if (other.getVolumeUsageInBytes() != null
-                && other.getVolumeUsageInBytes().equals(
-                        this.getVolumeUsageInBytes()) == false)
+        if (other.getVolumeUsageInBytes() != null && other.getVolumeUsageInBytes().equals(this.getVolumeUsageInBytes()) == false)
             return false;
-        if (other.getVolumeRecoveryPointTime() == null
-                ^ this.getVolumeRecoveryPointTime() == null)
+        if (other.getVolumeRecoveryPointTime() == null ^ this.getVolumeRecoveryPointTime() == null)
             return false;
-        if (other.getVolumeRecoveryPointTime() != null
-                && other.getVolumeRecoveryPointTime().equals(
-                        this.getVolumeRecoveryPointTime()) == false)
+        if (other.getVolumeRecoveryPointTime() != null && other.getVolumeRecoveryPointTime().equals(this.getVolumeRecoveryPointTime()) == false)
             return false;
         return true;
     }
@@ -210,20 +195,10 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeSizeInBytes() == null) ? 0
-                        : getVolumeSizeInBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeUsageInBytes() == null) ? 0
-                        : getVolumeUsageInBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeRecoveryPointTime() == null) ? 0
-                        : getVolumeRecoveryPointTime().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInBytes() == null) ? 0 : getVolumeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsageInBytes() == null) ? 0 : getVolumeUsageInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeRecoveryPointTime() == null) ? 0 : getVolumeRecoveryPointTime().hashCode());
         return hashCode;
     }
 
@@ -232,9 +207,13 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
         try {
             return (VolumeRecoveryPointInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VolumeRecoveryPointInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

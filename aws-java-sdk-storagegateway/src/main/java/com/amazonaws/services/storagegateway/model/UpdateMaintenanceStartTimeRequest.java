@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -40,30 +38,32 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime"
+ *      target="_top">AWS API Documentation</a>
  */
-public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      */
     private Integer hourOfDay;
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      */
     private Integer minuteOfHour;
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      */
     private Integer dayOfWeek;
@@ -86,8 +86,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withGatewayARN(String gatewayARN) {
@@ -97,15 +96,13 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param hourOfDay
-     *        The hour component of the maintenance start time represented as
-     *        <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the
-     *        day is in the time zone of the gateway.
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00
+     *        to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setHourOfDay(Integer hourOfDay) {
@@ -114,14 +111,12 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
-     * @return The hour component of the maintenance start time represented as
-     *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of
-     *         the day is in the time zone of the gateway.
+     * @return The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour
+     *         (00 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getHourOfDay() {
@@ -130,17 +125,14 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is
-     * in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to
+     * 23). The hour of the day is in the time zone of the gateway.
      * </p>
      * 
      * @param hourOfDay
-     *        The hour component of the maintenance start time represented as
-     *        <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the
-     *        day is in the time zone of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00
+     *        to 23). The hour of the day is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withHourOfDay(Integer hourOfDay) {
@@ -150,15 +142,13 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
      * @param minuteOfHour
-     *        The minute component of the maintenance start time represented as
-     *        <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of
-     *        the hour is in the time zone of the gateway.
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (00 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public void setMinuteOfHour(Integer minuteOfHour) {
@@ -167,14 +157,12 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
-     * @return The minute component of the maintenance start time represented as
-     *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute
-     *         of the hour is in the time zone of the gateway.
+     * @return The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the
+     *         minute (00 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public Integer getMinuteOfHour() {
@@ -183,32 +171,30 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to
+     * 59). The minute of the hour is in the time zone of the gateway.
      * </p>
      * 
      * @param minuteOfHour
-     *        The minute component of the maintenance start time represented as
-     *        <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of
-     *        the hour is in the time zone of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (00 to 59). The minute of the hour is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateMaintenanceStartTimeRequest withMinuteOfHour(
-            Integer minuteOfHour) {
+    public UpdateMaintenanceStartTimeRequest withMinuteOfHour(Integer minuteOfHour) {
         setMinuteOfHour(minuteOfHour);
         return this;
     }
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week.
+     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *        represents Sunday and 6 Saturday.
      */
 
     public void setDayOfWeek(Integer dayOfWeek) {
@@ -217,10 +203,12 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
-     * @return The maintenance start time day of the week.
+     * @return The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *         represents Sunday and 6 Saturday.
      */
 
     public Integer getDayOfWeek() {
@@ -229,13 +217,14 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *        represents Sunday and 6 Saturday.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withDayOfWeek(Integer dayOfWeek) {
@@ -244,8 +233,8 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -256,13 +245,13 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getHourOfDay() != null)
-            sb.append("HourOfDay: " + getHourOfDay() + ",");
+            sb.append("HourOfDay: ").append(getHourOfDay()).append(",");
         if (getMinuteOfHour() != null)
-            sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");
+            sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
-            sb.append("DayOfWeek: " + getDayOfWeek());
+            sb.append("DayOfWeek: ").append(getDayOfWeek());
         sb.append("}");
         return sb.toString();
     }
@@ -279,23 +268,19 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
         UpdateMaintenanceStartTimeRequest other = (UpdateMaintenanceStartTimeRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getHourOfDay() == null ^ this.getHourOfDay() == null)
             return false;
-        if (other.getHourOfDay() != null
-                && other.getHourOfDay().equals(this.getHourOfDay()) == false)
+        if (other.getHourOfDay() != null && other.getHourOfDay().equals(this.getHourOfDay()) == false)
             return false;
         if (other.getMinuteOfHour() == null ^ this.getMinuteOfHour() == null)
             return false;
-        if (other.getMinuteOfHour() != null
-                && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
+        if (other.getMinuteOfHour() != null && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
             return false;
         if (other.getDayOfWeek() == null ^ this.getDayOfWeek() == null)
             return false;
-        if (other.getDayOfWeek() != null
-                && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
+        if (other.getDayOfWeek() != null && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
             return false;
         return true;
     }
@@ -305,16 +290,10 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
+        hashCode = prime * hashCode + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour().hashCode());
+        hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
         return hashCode;
     }
 
@@ -322,4 +301,5 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
     public UpdateMaintenanceStartTimeRequest clone() {
         return (UpdateMaintenanceStartTimeRequest) super.clone();
     }
+
 }

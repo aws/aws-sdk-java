@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * StepSummary JSON Unmarshaller
  */
-public class StepSummaryJsonUnmarshaller implements
-        Unmarshaller<StepSummary, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StepSummaryJsonUnmarshaller implements Unmarshaller<StepSummary, JsonUnmarshallerContext> {
 
-    public StepSummary unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public StepSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepSummary stepSummary = new StepSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class StepSummaryJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,33 +50,26 @@ public class StepSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    stepSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setName(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    stepSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Config", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setConfig(HadoopStepConfigJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepSummary.setConfig(HadoopStepConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ActionOnFailure", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setActionOnFailure(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    stepSummary.setActionOnFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    stepSummary.setStatus(StepStatusJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepSummary.setStatus(StepStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

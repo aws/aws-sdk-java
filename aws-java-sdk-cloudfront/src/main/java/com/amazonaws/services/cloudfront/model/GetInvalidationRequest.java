@@ -1,52 +1,61 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to get an invalidation's information.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetInvalidationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's ID.
+     * </p>
+     */
     private String distributionId;
-    /** The invalidation's id. */
+    /**
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
 
     /**
-     * Default constructor for GetInvalidationRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for GetInvalidationRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public GetInvalidationRequest() {
     }
 
     /**
-     * Constructs a new GetInvalidationRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new GetInvalidationRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      * @param id
-     *        The invalidation's id.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
     public GetInvalidationRequest(String distributionId, String id) {
         setDistributionId(distributionId);
@@ -54,10 +63,12 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      */
 
     public void setDistributionId(String distributionId) {
@@ -65,9 +76,11 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
-     * @return The distribution's id.
+     * @return The distribution's ID.
      */
 
     public String getDistributionId() {
@@ -75,12 +88,13 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The distribution's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetInvalidationRequest withDistributionId(String distributionId) {
@@ -89,10 +103,12 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The invalidation's id.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -100,9 +116,11 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The invalidation's id.
+     * @return The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -110,12 +128,13 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The invalidation's id.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetInvalidationRequest withId(String id) {
@@ -124,8 +143,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -136,9 +155,9 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionId() != null)
-            sb.append("DistributionId: " + getDistributionId() + ",");
+            sb.append("DistributionId: ").append(getDistributionId()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }
@@ -153,16 +172,13 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
         if (obj instanceof GetInvalidationRequest == false)
             return false;
         GetInvalidationRequest other = (GetInvalidationRequest) obj;
-        if (other.getDistributionId() == null
-                ^ this.getDistributionId() == null)
+        if (other.getDistributionId() == null ^ this.getDistributionId() == null)
             return false;
-        if (other.getDistributionId() != null
-                && other.getDistributionId().equals(this.getDistributionId()) == false)
+        if (other.getDistributionId() != null && other.getDistributionId().equals(this.getDistributionId()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -172,12 +188,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDistributionId() == null) ? 0 : getDistributionId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDistributionId() == null) ? 0 : getDistributionId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 
@@ -185,4 +197,5 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
     public GetInvalidationRequest clone() {
         return (GetInvalidationRequest) super.clone();
     }
+
 }

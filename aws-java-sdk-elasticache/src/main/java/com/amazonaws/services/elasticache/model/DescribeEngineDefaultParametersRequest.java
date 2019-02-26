@@ -1,44 +1,48 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeEngineDefaultParameters</i> action.
+ * Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeEngineDefaultParametersRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeEngineDefaultParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      */
     private String cacheParameterGroupFamily;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -50,47 +54,48 @@ public class DescribeEngineDefaultParametersRequest extends
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
 
     /**
-     * Default constructor for DescribeEngineDefaultParametersRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for DescribeEngineDefaultParametersRequest object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize the object after creating it.
      */
     public DescribeEngineDefaultParametersRequest() {
     }
 
     /**
-     * Constructs a new DescribeEngineDefaultParametersRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new DescribeEngineDefaultParametersRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are:
-     *        <code>memcached1.4</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code>
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code> | <code>redis4.0</code>
      */
-    public DescribeEngineDefaultParametersRequest(
-            String cacheParameterGroupFamily) {
+    public DescribeEngineDefaultParametersRequest(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
     }
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are:
-     *        <code>memcached1.4</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code>
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code> | <code>redis4.0</code>
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -99,13 +104,17 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * 
-     * @return The name of the cache parameter group family. Valid values are:
-     *         <code>memcached1.4</code> | <code>redis2.6</code> |
-     *         <code>redis2.8</code>
+     * @return The name of the cache parameter group family.</p>
+     *         <p>
+     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *         <code>redis3.2</code> | <code>redis4.0</code>
      */
 
     public String getCacheParameterGroupFamily() {
@@ -114,29 +123,31 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are:
-     *        <code>memcached1.4</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code> | <code>redis4.0</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEngineDefaultParametersRequest withCacheParameterGroupFamily(
-            String cacheParameterGroupFamily) {
+    public DescribeEngineDefaultParametersRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -146,10 +157,9 @@ public class DescribeEngineDefaultParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -163,9 +173,9 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -174,10 +184,9 @@ public class DescribeEngineDefaultParametersRequest extends
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results
-     *         can be retrieved.</p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *         retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -191,9 +200,9 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -203,38 +212,33 @@ public class DescribeEngineDefaultParametersRequest extends
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        marker is included in the response so that the remaining results
-     *        can be retrieved.</p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
+     *        retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: minimum 20; maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeEngineDefaultParametersRequest withMaxRecords(
-            Integer maxRecords) {
+    public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;
     }
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -243,16 +247,14 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional marker returned from a prior request. Use this marker
-     *         for pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -261,19 +263,16 @@ public class DescribeEngineDefaultParametersRequest extends
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified,
-     * the response includes only records beyond the marker, up to the value
-     * specified by <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional marker returned from a prior request. Use this marker
-     *        for pagination of results from this action. If this parameter is
-     *        specified, the response includes only records beyond the marker,
-     *        up to the value specified by <i>MaxRecords</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional marker returned from a prior request. Use this marker for pagination of results from this
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {
@@ -282,8 +281,8 @@ public class DescribeEngineDefaultParametersRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -294,12 +293,11 @@ public class DescribeEngineDefaultParametersRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupFamily() != null)
-            sb.append("CacheParameterGroupFamily: "
-                    + getCacheParameterGroupFamily() + ",");
+            sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -314,22 +312,17 @@ public class DescribeEngineDefaultParametersRequest extends
         if (obj instanceof DescribeEngineDefaultParametersRequest == false)
             return false;
         DescribeEngineDefaultParametersRequest other = (DescribeEngineDefaultParametersRequest) obj;
-        if (other.getCacheParameterGroupFamily() == null
-                ^ this.getCacheParameterGroupFamily() == null)
+        if (other.getCacheParameterGroupFamily() == null ^ this.getCacheParameterGroupFamily() == null)
             return false;
-        if (other.getCacheParameterGroupFamily() != null
-                && other.getCacheParameterGroupFamily().equals(
-                        this.getCacheParameterGroupFamily()) == false)
+        if (other.getCacheParameterGroupFamily() != null && other.getCacheParameterGroupFamily().equals(this.getCacheParameterGroupFamily()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -339,14 +332,9 @@ public class DescribeEngineDefaultParametersRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroupFamily() == null) ? 0
-                        : getCacheParameterGroupFamily().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -354,4 +342,5 @@ public class DescribeEngineDefaultParametersRequest extends
     public DescribeEngineDefaultParametersRequest clone() {
         return (DescribeEngineDefaultParametersRequest) super.clone();
     }
+
 }

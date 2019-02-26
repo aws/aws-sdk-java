@@ -1,65 +1,60 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Initiates the creation of a conditional forwarder for your AWS Directory
- * Service for Microsoft Active Directory. Conditional forwarders are required
- * in order to set up a trust relationship with another domain.
+ * Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory.
+ * Conditional forwarders are required in order to set up a trust relationship with another domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateConditionalForwarderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The directory ID of the AWS directory for which you are creating the
-     * conditional forwarder.
+     * The directory ID of the AWS directory for which you are creating the conditional forwarder.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The fully qualified domain name (FQDN) of the remote domain with which
-     * you will set up a trust relationship.
+     * The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
      * </p>
      */
     private String remoteDomainName;
     /**
      * <p>
-     * The IP addresses of the remote DNS server associated with
-     * RemoteDomainName.
+     * The IP addresses of the remote DNS server associated with RemoteDomainName.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dnsIpAddrs;
 
     /**
      * <p>
-     * The directory ID of the AWS directory for which you are creating the
-     * conditional forwarder.
+     * The directory ID of the AWS directory for which you are creating the conditional forwarder.
      * </p>
      * 
      * @param directoryId
-     *        The directory ID of the AWS directory for which you are creating
-     *        the conditional forwarder.
+     *        The directory ID of the AWS directory for which you are creating the conditional forwarder.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -68,12 +63,10 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The directory ID of the AWS directory for which you are creating the
-     * conditional forwarder.
+     * The directory ID of the AWS directory for which you are creating the conditional forwarder.
      * </p>
      * 
-     * @return The directory ID of the AWS directory for which you are creating
-     *         the conditional forwarder.
+     * @return The directory ID of the AWS directory for which you are creating the conditional forwarder.
      */
 
     public String getDirectoryId() {
@@ -82,15 +75,12 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The directory ID of the AWS directory for which you are creating the
-     * conditional forwarder.
+     * The directory ID of the AWS directory for which you are creating the conditional forwarder.
      * </p>
      * 
      * @param directoryId
-     *        The directory ID of the AWS directory for which you are creating
-     *        the conditional forwarder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The directory ID of the AWS directory for which you are creating the conditional forwarder.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateConditionalForwarderRequest withDirectoryId(String directoryId) {
@@ -100,13 +90,12 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) of the remote domain with which
-     * you will set up a trust relationship.
+     * The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
      * </p>
      * 
      * @param remoteDomainName
-     *        The fully qualified domain name (FQDN) of the remote domain with
-     *        which you will set up a trust relationship.
+     *        The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust
+     *        relationship.
      */
 
     public void setRemoteDomainName(String remoteDomainName) {
@@ -115,12 +104,11 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) of the remote domain with which
-     * you will set up a trust relationship.
+     * The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
      * </p>
      * 
-     * @return The fully qualified domain name (FQDN) of the remote domain with
-     *         which you will set up a trust relationship.
+     * @return The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust
+     *         relationship.
      */
 
     public String getRemoteDomainName() {
@@ -129,31 +117,26 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) of the remote domain with which
-     * you will set up a trust relationship.
+     * The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
      * </p>
      * 
      * @param remoteDomainName
-     *        The fully qualified domain name (FQDN) of the remote domain with
-     *        which you will set up a trust relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust
+     *        relationship.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateConditionalForwarderRequest withRemoteDomainName(
-            String remoteDomainName) {
+    public CreateConditionalForwarderRequest withRemoteDomainName(String remoteDomainName) {
         setRemoteDomainName(remoteDomainName);
         return this;
     }
 
     /**
      * <p>
-     * The IP addresses of the remote DNS server associated with
-     * RemoteDomainName.
+     * The IP addresses of the remote DNS server associated with RemoteDomainName.
      * </p>
      * 
-     * @return The IP addresses of the remote DNS server associated with
-     *         RemoteDomainName.
+     * @return The IP addresses of the remote DNS server associated with RemoteDomainName.
      */
 
     public java.util.List<String> getDnsIpAddrs() {
@@ -165,13 +148,11 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IP addresses of the remote DNS server associated with
-     * RemoteDomainName.
+     * The IP addresses of the remote DNS server associated with RemoteDomainName.
      * </p>
      * 
      * @param dnsIpAddrs
-     *        The IP addresses of the remote DNS server associated with
-     *        RemoteDomainName.
+     *        The IP addresses of the remote DNS server associated with RemoteDomainName.
      */
 
     public void setDnsIpAddrs(java.util.Collection<String> dnsIpAddrs) {
@@ -180,34 +161,27 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.dnsIpAddrs = new com.amazonaws.internal.SdkInternalList<String>(
-                dnsIpAddrs);
+        this.dnsIpAddrs = new com.amazonaws.internal.SdkInternalList<String>(dnsIpAddrs);
     }
 
     /**
      * <p>
-     * The IP addresses of the remote DNS server associated with
-     * RemoteDomainName.
+     * The IP addresses of the remote DNS server associated with RemoteDomainName.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDnsIpAddrs(java.util.Collection)} or
-     * {@link #withDnsIpAddrs(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnsIpAddrs(java.util.Collection)} or {@link #withDnsIpAddrs(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param dnsIpAddrs
-     *        The IP addresses of the remote DNS server associated with
-     *        RemoteDomainName.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP addresses of the remote DNS server associated with RemoteDomainName.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateConditionalForwarderRequest withDnsIpAddrs(
-            String... dnsIpAddrs) {
+    public CreateConditionalForwarderRequest withDnsIpAddrs(String... dnsIpAddrs) {
         if (this.dnsIpAddrs == null) {
-            setDnsIpAddrs(new com.amazonaws.internal.SdkInternalList<String>(
-                    dnsIpAddrs.length));
+            setDnsIpAddrs(new com.amazonaws.internal.SdkInternalList<String>(dnsIpAddrs.length));
         }
         for (String ele : dnsIpAddrs) {
             this.dnsIpAddrs.add(ele);
@@ -217,26 +191,22 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IP addresses of the remote DNS server associated with
-     * RemoteDomainName.
+     * The IP addresses of the remote DNS server associated with RemoteDomainName.
      * </p>
      * 
      * @param dnsIpAddrs
-     *        The IP addresses of the remote DNS server associated with
-     *        RemoteDomainName.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP addresses of the remote DNS server associated with RemoteDomainName.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateConditionalForwarderRequest withDnsIpAddrs(
-            java.util.Collection<String> dnsIpAddrs) {
+    public CreateConditionalForwarderRequest withDnsIpAddrs(java.util.Collection<String> dnsIpAddrs) {
         setDnsIpAddrs(dnsIpAddrs);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -247,11 +217,11 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName() + ",");
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getDnsIpAddrs() != null)
-            sb.append("DnsIpAddrs: " + getDnsIpAddrs());
+            sb.append("DnsIpAddrs: ").append(getDnsIpAddrs());
         sb.append("}");
         return sb.toString();
     }
@@ -268,20 +238,15 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
         CreateConditionalForwarderRequest other = (CreateConditionalForwarderRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
-        if (other.getRemoteDomainName() == null
-                ^ this.getRemoteDomainName() == null)
+        if (other.getRemoteDomainName() == null ^ this.getRemoteDomainName() == null)
             return false;
-        if (other.getRemoteDomainName() != null
-                && other.getRemoteDomainName().equals(
-                        this.getRemoteDomainName()) == false)
+        if (other.getRemoteDomainName() != null && other.getRemoteDomainName().equals(this.getRemoteDomainName()) == false)
             return false;
         if (other.getDnsIpAddrs() == null ^ this.getDnsIpAddrs() == null)
             return false;
-        if (other.getDnsIpAddrs() != null
-                && other.getDnsIpAddrs().equals(this.getDnsIpAddrs()) == false)
+        if (other.getDnsIpAddrs() != null && other.getDnsIpAddrs().equals(this.getDnsIpAddrs()) == false)
             return false;
         return true;
     }
@@ -291,15 +256,9 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRemoteDomainName() == null) ? 0 : getRemoteDomainName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDnsIpAddrs() == null) ? 0 : getDnsIpAddrs().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDomainName() == null) ? 0 : getRemoteDomainName().hashCode());
+        hashCode = prime * hashCode + ((getDnsIpAddrs() == null) ? 0 : getDnsIpAddrs().hashCode());
         return hashCode;
     }
 
@@ -307,4 +266,5 @@ public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
     public CreateConditionalForwarderRequest clone() {
         return (CreateConditionalForwarderRequest) super.clone();
     }
+
 }

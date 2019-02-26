@@ -1,35 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the results of a successful invocation of the
- * <a>DescribeEventSubscriptions</a> action.
+ * Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventSubscription" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the RDS event notification
-     * subscription.
+     * The AWS customer account associated with the RDS event notification subscription.
      * </p>
      */
     private String customerAwsId;
@@ -53,13 +52,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <p>
-     * Can be one of the following: creating | modifying | deleting | active |
-     * no-permission | topic-not-exist
+     * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that RDS no longer has permission to
-     * post to the SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.
+     * The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      */
     private String status;
@@ -89,21 +86,24 @@ public class EventSubscription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> eventCategoriesList;
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates
-     * the subscription is enabled.
+     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     */
+    private String eventSubscriptionArn;
 
     /**
      * <p>
-     * The AWS customer account associated with the RDS event notification
-     * subscription.
+     * The AWS customer account associated with the RDS event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the RDS event
-     *        notification subscription.
+     *        The AWS customer account associated with the RDS event notification subscription.
      */
 
     public void setCustomerAwsId(String customerAwsId) {
@@ -112,12 +112,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the RDS event notification
-     * subscription.
+     * The AWS customer account associated with the RDS event notification subscription.
      * </p>
      * 
-     * @return The AWS customer account associated with the RDS event
-     *         notification subscription.
+     * @return The AWS customer account associated with the RDS event notification subscription.
      */
 
     public String getCustomerAwsId() {
@@ -126,15 +124,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the RDS event notification
-     * subscription.
+     * The AWS customer account associated with the RDS event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the RDS event
-     *        notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS customer account associated with the RDS event notification subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withCustomerAwsId(String customerAwsId) {
@@ -174,8 +169,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @param custSubscriptionId
      *        The RDS event notification subscription Id.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withCustSubscriptionId(String custSubscriptionId) {
@@ -215,8 +209,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @param snsTopicArn
      *        The topic ARN of the RDS event notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withSnsTopicArn(String snsTopicArn) {
@@ -232,13 +225,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <p>
-     * Can be one of the following: creating | modifying | deleting | active |
-     * no-permission | topic-not-exist
+     * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that RDS no longer has permission to
-     * post to the SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.
+     * The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
      * @param status
@@ -247,14 +238,11 @@ public class EventSubscription implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <p>
-     *        Can be one of the following: creating | modifying | deleting |
-     *        active | no-permission | topic-not-exist
+     *        Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *        </p>
      *        <p>
-     *        The status "no-permission" indicates that RDS no longer has
-     *        permission to post to the SNS topic. The status "topic-not-exist"
-     *        indicates that the topic was deleted after the subscription was
-     *        created.
+     *        The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The
+     *        status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      */
 
     public void setStatus(String status) {
@@ -269,13 +257,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <p>
-     * Can be one of the following: creating | modifying | deleting | active |
-     * no-permission | topic-not-exist
+     * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that RDS no longer has permission to
-     * post to the SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.
+     * The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
      * @return The status of the RDS event notification subscription.</p>
@@ -283,14 +269,11 @@ public class EventSubscription implements Serializable, Cloneable {
      *         Constraints:
      *         </p>
      *         <p>
-     *         Can be one of the following: creating | modifying | deleting |
-     *         active | no-permission | topic-not-exist
+     *         Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *         </p>
      *         <p>
-     *         The status "no-permission" indicates that RDS no longer has
-     *         permission to post to the SNS topic. The status "topic-not-exist"
-     *         indicates that the topic was deleted after the subscription was
-     *         created.
+     *         The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The
+     *         status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      */
 
     public String getStatus() {
@@ -305,13 +288,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <p>
-     * Can be one of the following: creating | modifying | deleting | active |
-     * no-permission | topic-not-exist
+     * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that RDS no longer has permission to
-     * post to the SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.
+     * The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
      * @param status
@@ -320,16 +301,12 @@ public class EventSubscription implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <p>
-     *        Can be one of the following: creating | modifying | deleting |
-     *        active | no-permission | topic-not-exist
+     *        Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *        </p>
      *        <p>
-     *        The status "no-permission" indicates that RDS no longer has
-     *        permission to post to the SNS topic. The status "topic-not-exist"
-     *        indicates that the topic was deleted after the subscription was
-     *        created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The
+     *        status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withStatus(String status) {
@@ -369,12 +346,10 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @param subscriptionCreationTime
      *        The time the RDS event notification subscription was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventSubscription withSubscriptionCreationTime(
-            String subscriptionCreationTime) {
+    public EventSubscription withSubscriptionCreationTime(String subscriptionCreationTime) {
         setSubscriptionCreationTime(subscriptionCreationTime);
         return this;
     }
@@ -411,8 +386,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @param sourceType
      *        The source type for the RDS event notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withSourceType(String sourceType) {
@@ -450,8 +424,7 @@ public class EventSubscription implements Serializable, Cloneable {
             return;
         }
 
-        this.sourceIdsList = new com.amazonaws.internal.SdkInternalList<String>(
-                sourceIdsList);
+        this.sourceIdsList = new com.amazonaws.internal.SdkInternalList<String>(sourceIdsList);
     }
 
     /**
@@ -459,22 +432,19 @@ public class EventSubscription implements Serializable, Cloneable {
      * A list of source IDs for the RDS event notification subscription.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSourceIdsList(java.util.Collection)} or
-     * {@link #withSourceIdsList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceIdsList(java.util.Collection)} or {@link #withSourceIdsList(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param sourceIdsList
      *        A list of source IDs for the RDS event notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withSourceIdsList(String... sourceIdsList) {
         if (this.sourceIdsList == null) {
-            setSourceIdsList(new com.amazonaws.internal.SdkInternalList<String>(
-                    sourceIdsList.length));
+            setSourceIdsList(new com.amazonaws.internal.SdkInternalList<String>(sourceIdsList.length));
         }
         for (String ele : sourceIdsList) {
             this.sourceIdsList.add(ele);
@@ -489,12 +459,10 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @param sourceIdsList
      *        A list of source IDs for the RDS event notification subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventSubscription withSourceIdsList(
-            java.util.Collection<String> sourceIdsList) {
+    public EventSubscription withSourceIdsList(java.util.Collection<String> sourceIdsList) {
         setSourceIdsList(sourceIdsList);
         return this;
     }
@@ -504,8 +472,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * A list of event categories for the RDS event notification subscription.
      * </p>
      * 
-     * @return A list of event categories for the RDS event notification
-     *         subscription.
+     * @return A list of event categories for the RDS event notification subscription.
      */
 
     public java.util.List<String> getEventCategoriesList() {
@@ -521,19 +488,16 @@ public class EventSubscription implements Serializable, Cloneable {
      * </p>
      * 
      * @param eventCategoriesList
-     *        A list of event categories for the RDS event notification
-     *        subscription.
+     *        A list of event categories for the RDS event notification subscription.
      */
 
-    public void setEventCategoriesList(
-            java.util.Collection<String> eventCategoriesList) {
+    public void setEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
         if (eventCategoriesList == null) {
             this.eventCategoriesList = null;
             return;
         }
 
-        this.eventCategoriesList = new com.amazonaws.internal.SdkInternalList<String>(
-                eventCategoriesList);
+        this.eventCategoriesList = new com.amazonaws.internal.SdkInternalList<String>(eventCategoriesList);
     }
 
     /**
@@ -541,24 +505,19 @@ public class EventSubscription implements Serializable, Cloneable {
      * A list of event categories for the RDS event notification subscription.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventCategoriesList(java.util.Collection)} or
-     * {@link #withEventCategoriesList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventCategoriesList(java.util.Collection)} or {@link #withEventCategoriesList(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param eventCategoriesList
-     *        A list of event categories for the RDS event notification
-     *        subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of event categories for the RDS event notification subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventSubscription withEventCategoriesList(
-            String... eventCategoriesList) {
+    public EventSubscription withEventCategoriesList(String... eventCategoriesList) {
         if (this.eventCategoriesList == null) {
-            setEventCategoriesList(new com.amazonaws.internal.SdkInternalList<String>(
-                    eventCategoriesList.length));
+            setEventCategoriesList(new com.amazonaws.internal.SdkInternalList<String>(eventCategoriesList.length));
         }
         for (String ele : eventCategoriesList) {
             this.eventCategoriesList.add(ele);
@@ -572,27 +531,22 @@ public class EventSubscription implements Serializable, Cloneable {
      * </p>
      * 
      * @param eventCategoriesList
-     *        A list of event categories for the RDS event notification
-     *        subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of event categories for the RDS event notification subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventSubscription withEventCategoriesList(
-            java.util.Collection<String> eventCategoriesList) {
+    public EventSubscription withEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
         setEventCategoriesList(eventCategoriesList);
         return this;
     }
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates
-     * the subscription is enabled.
+     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating if the subscription is enabled. True
-     *        indicates the subscription is enabled.
+     *        A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -601,12 +555,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates
-     * the subscription is enabled.
+     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating if the subscription is enabled. True
-     *         indicates the subscription is enabled.
+     * @return A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public Boolean getEnabled() {
@@ -615,15 +567,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates
-     * the subscription is enabled.
+     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating if the subscription is enabled. True
-     *        indicates the subscription is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSubscription withEnabled(Boolean enabled) {
@@ -633,12 +582,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates
-     * the subscription is enabled.
+     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating if the subscription is enabled. True
-     *         indicates the subscription is enabled.
+     * @return A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public Boolean isEnabled() {
@@ -646,8 +593,48 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
+     * @param eventSubscriptionArn
+     *        The Amazon Resource Name (ARN) for the event subscription.
+     */
+
+    public void setEventSubscriptionArn(String eventSubscriptionArn) {
+        this.eventSubscriptionArn = eventSubscriptionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the event subscription.
+     */
+
+    public String getEventSubscriptionArn() {
+        return this.eventSubscriptionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
+     * @param eventSubscriptionArn
+     *        The Amazon Resource Name (ARN) for the event subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSubscription withEventSubscriptionArn(String eventSubscriptionArn) {
+        setEventSubscriptionArn(eventSubscriptionArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -658,24 +645,25 @@ public class EventSubscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerAwsId() != null)
-            sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");
+            sb.append("CustomerAwsId: ").append(getCustomerAwsId()).append(",");
         if (getCustSubscriptionId() != null)
-            sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");
+            sb.append("CustSubscriptionId: ").append(getCustSubscriptionId()).append(",");
         if (getSnsTopicArn() != null)
-            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSubscriptionCreationTime() != null)
-            sb.append("SubscriptionCreationTime: "
-                    + getSubscriptionCreationTime() + ",");
+            sb.append("SubscriptionCreationTime: ").append(getSubscriptionCreationTime()).append(",");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getSourceIdsList() != null)
-            sb.append("SourceIdsList: " + getSourceIdsList() + ",");
+            sb.append("SourceIdsList: ").append(getSourceIdsList()).append(",");
         if (getEventCategoriesList() != null)
-            sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
+            sb.append("EventCategoriesList: ").append(getEventCategoriesList()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getEventSubscriptionArn() != null)
+            sb.append("EventSubscriptionArn: ").append(getEventSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -692,54 +680,43 @@ public class EventSubscription implements Serializable, Cloneable {
         EventSubscription other = (EventSubscription) obj;
         if (other.getCustomerAwsId() == null ^ this.getCustomerAwsId() == null)
             return false;
-        if (other.getCustomerAwsId() != null
-                && other.getCustomerAwsId().equals(this.getCustomerAwsId()) == false)
+        if (other.getCustomerAwsId() != null && other.getCustomerAwsId().equals(this.getCustomerAwsId()) == false)
             return false;
-        if (other.getCustSubscriptionId() == null
-                ^ this.getCustSubscriptionId() == null)
+        if (other.getCustSubscriptionId() == null ^ this.getCustSubscriptionId() == null)
             return false;
-        if (other.getCustSubscriptionId() != null
-                && other.getCustSubscriptionId().equals(
-                        this.getCustSubscriptionId()) == false)
+        if (other.getCustSubscriptionId() != null && other.getCustSubscriptionId().equals(this.getCustSubscriptionId()) == false)
             return false;
         if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
             return false;
-        if (other.getSnsTopicArn() != null
-                && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getSubscriptionCreationTime() == null
-                ^ this.getSubscriptionCreationTime() == null)
+        if (other.getSubscriptionCreationTime() == null ^ this.getSubscriptionCreationTime() == null)
             return false;
-        if (other.getSubscriptionCreationTime() != null
-                && other.getSubscriptionCreationTime().equals(
-                        this.getSubscriptionCreationTime()) == false)
+        if (other.getSubscriptionCreationTime() != null && other.getSubscriptionCreationTime().equals(this.getSubscriptionCreationTime()) == false)
             return false;
         if (other.getSourceType() == null ^ this.getSourceType() == null)
             return false;
-        if (other.getSourceType() != null
-                && other.getSourceType().equals(this.getSourceType()) == false)
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
             return false;
         if (other.getSourceIdsList() == null ^ this.getSourceIdsList() == null)
             return false;
-        if (other.getSourceIdsList() != null
-                && other.getSourceIdsList().equals(this.getSourceIdsList()) == false)
+        if (other.getSourceIdsList() != null && other.getSourceIdsList().equals(this.getSourceIdsList()) == false)
             return false;
-        if (other.getEventCategoriesList() == null
-                ^ this.getEventCategoriesList() == null)
+        if (other.getEventCategoriesList() == null ^ this.getEventCategoriesList() == null)
             return false;
-        if (other.getEventCategoriesList() != null
-                && other.getEventCategoriesList().equals(
-                        this.getEventCategoriesList()) == false)
+        if (other.getEventCategoriesList() != null && other.getEventCategoriesList().equals(this.getEventCategoriesList()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
-        if (other.getEnabled() != null
-                && other.getEnabled().equals(this.getEnabled()) == false)
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getEventSubscriptionArn() == null ^ this.getEventSubscriptionArn() == null)
+            return false;
+        if (other.getEventSubscriptionArn() != null && other.getEventSubscriptionArn().equals(this.getEventSubscriptionArn()) == false)
             return false;
         return true;
     }
@@ -749,35 +726,16 @@ public class EventSubscription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCustomerAwsId() == null) ? 0 : getCustomerAwsId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustSubscriptionId() == null) ? 0
-                        : getCustSubscriptionId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubscriptionCreationTime() == null) ? 0
-                        : getSubscriptionCreationTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceIdsList() == null) ? 0 : getSourceIdsList()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventCategoriesList() == null) ? 0
-                        : getEventCategoriesList().hashCode());
-        hashCode = prime * hashCode
-                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCustomerAwsId() == null) ? 0 : getCustomerAwsId().hashCode());
+        hashCode = prime * hashCode + ((getCustSubscriptionId() == null) ? 0 : getCustSubscriptionId().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionCreationTime() == null) ? 0 : getSubscriptionCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdsList() == null) ? 0 : getSourceIdsList().hashCode());
+        hashCode = prime * hashCode + ((getEventCategoriesList() == null) ? 0 : getEventCategoriesList().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getEventSubscriptionArn() == null) ? 0 : getEventSubscriptionArn().hashCode());
         return hashCode;
     }
 
@@ -786,9 +744,8 @@ public class EventSubscription implements Serializable, Cloneable {
         try {
             return (EventSubscription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,7 +1,7 @@
 <#macro content shape getterFunctionPrefix>
 <#if shape.members?has_content>
     <#list shape.members as member>
-    <#local getMember = getterFunctionPrefix + ".get" + member.name />
+    <#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
     <#local variable = member.variable />
 
     <#if member.http.isQueryString() >

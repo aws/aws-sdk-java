@@ -1,33 +1,35 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A snapshot of an Amazon Inspector assessment run that contains the findings
- * of the assessment run .
+ * A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .
  * </p>
  * <p>
  * Used as the response element in the <a>DescribeAssessmentRuns</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRun" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AssessmentRun implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,8 +45,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The ARN of the assessment template that is associated with the assessment
-     * run.
+     * The ARN of the assessment template that is associated with the assessment run.
      * </p>
      */
     private String assessmentTemplateArn;
@@ -86,8 +87,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     private java.util.Date startedAt;
     /**
      * <p>
-     * The assessment run completion time that corresponds to the rules packages
-     * evaluation completion time or failure.
+     * The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.
      * </p>
      */
     private java.util.Date completedAt;
@@ -99,8 +99,8 @@ public class AssessmentRun implements Serializable, Cloneable {
     private java.util.Date stateChangedAt;
     /**
      * <p>
-     * A Boolean value (true or false) that specifies whether the process of
-     * collecting data from the agents is completed.
+     * A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     * completed.
      * </p>
      */
     private Boolean dataCollected;
@@ -112,11 +112,17 @@ public class AssessmentRun implements Serializable, Cloneable {
     private java.util.List<AssessmentRunStateChange> stateChanges;
     /**
      * <p>
-     * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is added to this list only once.
+     * A list of notifications for the event subscriptions. A notification about a particular generated finding is added
+     * to this list only once.
      * </p>
      */
     private java.util.List<AssessmentRunNotification> notifications;
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     */
+    private java.util.Map<String, Integer> findingCounts;
 
     /**
      * <p>
@@ -150,8 +156,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param arn
      *        The ARN of the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withArn(String arn) {
@@ -191,8 +196,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param name
      *        The auto-generated name for the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withName(String name) {
@@ -202,13 +206,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment template that is associated with the assessment
-     * run.
+     * The ARN of the assessment template that is associated with the assessment run.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN of the assessment template that is associated with the
-     *        assessment run.
+     *        The ARN of the assessment template that is associated with the assessment run.
      */
 
     public void setAssessmentTemplateArn(String assessmentTemplateArn) {
@@ -217,12 +219,10 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment template that is associated with the assessment
-     * run.
+     * The ARN of the assessment template that is associated with the assessment run.
      * </p>
      * 
-     * @return The ARN of the assessment template that is associated with the
-     *         assessment run.
+     * @return The ARN of the assessment template that is associated with the assessment run.
      */
 
     public String getAssessmentTemplateArn() {
@@ -231,15 +231,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment template that is associated with the assessment
-     * run.
+     * The ARN of the assessment template that is associated with the assessment run.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN of the assessment template that is associated with the
-     *        assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the assessment template that is associated with the assessment run.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withAssessmentTemplateArn(String assessmentTemplateArn) {
@@ -281,8 +278,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentRunState
      */
 
@@ -302,7 +298,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      */
 
     public void setState(AssessmentRunState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -312,13 +308,12 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentRunState
      */
 
     public AssessmentRun withState(AssessmentRunState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -354,8 +349,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param durationInSeconds
      *        The duration of the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withDurationInSeconds(Integer durationInSeconds) {
@@ -384,15 +378,13 @@ public class AssessmentRun implements Serializable, Cloneable {
      *        The rules packages selected for the assessment run.
      */
 
-    public void setRulesPackageArns(
-            java.util.Collection<String> rulesPackageArns) {
+    public void setRulesPackageArns(java.util.Collection<String> rulesPackageArns) {
         if (rulesPackageArns == null) {
             this.rulesPackageArns = null;
             return;
         }
 
-        this.rulesPackageArns = new java.util.ArrayList<String>(
-                rulesPackageArns);
+        this.rulesPackageArns = new java.util.ArrayList<String>(rulesPackageArns);
     }
 
     /**
@@ -400,22 +392,19 @@ public class AssessmentRun implements Serializable, Cloneable {
      * The rules packages selected for the assessment run.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRulesPackageArns(java.util.Collection)} or
-     * {@link #withRulesPackageArns(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRulesPackageArns(java.util.Collection)} or {@link #withRulesPackageArns(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param rulesPackageArns
      *        The rules packages selected for the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withRulesPackageArns(String... rulesPackageArns) {
         if (this.rulesPackageArns == null) {
-            setRulesPackageArns(new java.util.ArrayList<String>(
-                    rulesPackageArns.length));
+            setRulesPackageArns(new java.util.ArrayList<String>(rulesPackageArns.length));
         }
         for (String ele : rulesPackageArns) {
             this.rulesPackageArns.add(ele);
@@ -430,12 +419,10 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param rulesPackageArns
      *        The rules packages selected for the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withRulesPackageArns(
-            java.util.Collection<String> rulesPackageArns) {
+    public AssessmentRun withRulesPackageArns(java.util.Collection<String> rulesPackageArns) {
         setRulesPackageArns(rulesPackageArns);
         return this;
     }
@@ -445,8 +432,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * The user-defined attributes that are assigned to every generated finding.
      * </p>
      * 
-     * @return The user-defined attributes that are assigned to every generated
-     *         finding.
+     * @return The user-defined attributes that are assigned to every generated finding.
      */
 
     public java.util.List<Attribute> getUserAttributesForFindings() {
@@ -459,19 +445,16 @@ public class AssessmentRun implements Serializable, Cloneable {
      * </p>
      * 
      * @param userAttributesForFindings
-     *        The user-defined attributes that are assigned to every generated
-     *        finding.
+     *        The user-defined attributes that are assigned to every generated finding.
      */
 
-    public void setUserAttributesForFindings(
-            java.util.Collection<Attribute> userAttributesForFindings) {
+    public void setUserAttributesForFindings(java.util.Collection<Attribute> userAttributesForFindings) {
         if (userAttributesForFindings == null) {
             this.userAttributesForFindings = null;
             return;
         }
 
-        this.userAttributesForFindings = new java.util.ArrayList<Attribute>(
-                userAttributesForFindings);
+        this.userAttributesForFindings = new java.util.ArrayList<Attribute>(userAttributesForFindings);
     }
 
     /**
@@ -479,24 +462,19 @@ public class AssessmentRun implements Serializable, Cloneable {
      * The user-defined attributes that are assigned to every generated finding.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributesForFindings(java.util.Collection)} or
-     * {@link #withUserAttributesForFindings(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributesForFindings(java.util.Collection)} or
+     * {@link #withUserAttributesForFindings(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param userAttributesForFindings
-     *        The user-defined attributes that are assigned to every generated
-     *        finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user-defined attributes that are assigned to every generated finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withUserAttributesForFindings(
-            Attribute... userAttributesForFindings) {
+    public AssessmentRun withUserAttributesForFindings(Attribute... userAttributesForFindings) {
         if (this.userAttributesForFindings == null) {
-            setUserAttributesForFindings(new java.util.ArrayList<Attribute>(
-                    userAttributesForFindings.length));
+            setUserAttributesForFindings(new java.util.ArrayList<Attribute>(userAttributesForFindings.length));
         }
         for (Attribute ele : userAttributesForFindings) {
             this.userAttributesForFindings.add(ele);
@@ -510,14 +488,11 @@ public class AssessmentRun implements Serializable, Cloneable {
      * </p>
      * 
      * @param userAttributesForFindings
-     *        The user-defined attributes that are assigned to every generated
-     *        finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user-defined attributes that are assigned to every generated finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withUserAttributesForFindings(
-            java.util.Collection<Attribute> userAttributesForFindings) {
+    public AssessmentRun withUserAttributesForFindings(java.util.Collection<Attribute> userAttributesForFindings) {
         setUserAttributesForFindings(userAttributesForFindings);
         return this;
     }
@@ -554,8 +529,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The time when <a>StartAssessmentRun</a> was called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withCreatedAt(java.util.Date createdAt) {
@@ -595,8 +569,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param startedAt
      *        The time when <a>StartAssessmentRun</a> was called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withStartedAt(java.util.Date startedAt) {
@@ -606,13 +579,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The assessment run completion time that corresponds to the rules packages
-     * evaluation completion time or failure.
+     * The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.
      * </p>
      * 
      * @param completedAt
-     *        The assessment run completion time that corresponds to the rules
-     *        packages evaluation completion time or failure.
+     *        The assessment run completion time that corresponds to the rules packages evaluation completion time or
+     *        failure.
      */
 
     public void setCompletedAt(java.util.Date completedAt) {
@@ -621,12 +593,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The assessment run completion time that corresponds to the rules packages
-     * evaluation completion time or failure.
+     * The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.
      * </p>
      * 
-     * @return The assessment run completion time that corresponds to the rules
-     *         packages evaluation completion time or failure.
+     * @return The assessment run completion time that corresponds to the rules packages evaluation completion time or
+     *         failure.
      */
 
     public java.util.Date getCompletedAt() {
@@ -635,15 +606,13 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The assessment run completion time that corresponds to the rules packages
-     * evaluation completion time or failure.
+     * The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.
      * </p>
      * 
      * @param completedAt
-     *        The assessment run completion time that corresponds to the rules
-     *        packages evaluation completion time or failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The assessment run completion time that corresponds to the rules packages evaluation completion time or
+     *        failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withCompletedAt(java.util.Date completedAt) {
@@ -683,8 +652,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param stateChangedAt
      *        The last time when the assessment run's state changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withStateChangedAt(java.util.Date stateChangedAt) {
@@ -694,13 +662,13 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value (true or false) that specifies whether the process of
-     * collecting data from the agents is completed.
+     * A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     * completed.
      * </p>
      * 
      * @param dataCollected
-     *        A Boolean value (true or false) that specifies whether the process
-     *        of collecting data from the agents is completed.
+     *        A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     *        completed.
      */
 
     public void setDataCollected(Boolean dataCollected) {
@@ -709,12 +677,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value (true or false) that specifies whether the process of
-     * collecting data from the agents is completed.
+     * A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     * completed.
      * </p>
      * 
-     * @return A Boolean value (true or false) that specifies whether the
-     *         process of collecting data from the agents is completed.
+     * @return A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     *         completed.
      */
 
     public Boolean getDataCollected() {
@@ -723,15 +691,14 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value (true or false) that specifies whether the process of
-     * collecting data from the agents is completed.
+     * A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     * completed.
      * </p>
      * 
      * @param dataCollected
-     *        A Boolean value (true or false) that specifies whether the process
-     *        of collecting data from the agents is completed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     *        completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentRun withDataCollected(Boolean dataCollected) {
@@ -741,12 +708,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value (true or false) that specifies whether the process of
-     * collecting data from the agents is completed.
+     * A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     * completed.
      * </p>
      * 
-     * @return A Boolean value (true or false) that specifies whether the
-     *         process of collecting data from the agents is completed.
+     * @return A Boolean value (true or false) that specifies whether the process of collecting data from the agents is
+     *         completed.
      */
 
     public Boolean isDataCollected() {
@@ -774,15 +741,13 @@ public class AssessmentRun implements Serializable, Cloneable {
      *        A list of the assessment run state changes.
      */
 
-    public void setStateChanges(
-            java.util.Collection<AssessmentRunStateChange> stateChanges) {
+    public void setStateChanges(java.util.Collection<AssessmentRunStateChange> stateChanges) {
         if (stateChanges == null) {
             this.stateChanges = null;
             return;
         }
 
-        this.stateChanges = new java.util.ArrayList<AssessmentRunStateChange>(
-                stateChanges);
+        this.stateChanges = new java.util.ArrayList<AssessmentRunStateChange>(stateChanges);
     }
 
     /**
@@ -790,23 +755,19 @@ public class AssessmentRun implements Serializable, Cloneable {
      * A list of the assessment run state changes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStateChanges(java.util.Collection)} or
-     * {@link #withStateChanges(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStateChanges(java.util.Collection)} or {@link #withStateChanges(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param stateChanges
      *        A list of the assessment run state changes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withStateChanges(
-            AssessmentRunStateChange... stateChanges) {
+    public AssessmentRun withStateChanges(AssessmentRunStateChange... stateChanges) {
         if (this.stateChanges == null) {
-            setStateChanges(new java.util.ArrayList<AssessmentRunStateChange>(
-                    stateChanges.length));
+            setStateChanges(new java.util.ArrayList<AssessmentRunStateChange>(stateChanges.length));
         }
         for (AssessmentRunStateChange ele : stateChanges) {
             this.stateChanges.add(ele);
@@ -821,25 +782,22 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param stateChanges
      *        A list of the assessment run state changes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withStateChanges(
-            java.util.Collection<AssessmentRunStateChange> stateChanges) {
+    public AssessmentRun withStateChanges(java.util.Collection<AssessmentRunStateChange> stateChanges) {
         setStateChanges(stateChanges);
         return this;
     }
 
     /**
      * <p>
-     * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is added to this list only once.
+     * A list of notifications for the event subscriptions. A notification about a particular generated finding is added
+     * to this list only once.
      * </p>
      * 
-     * @return A list of notifications for the event subscriptions. A
-     *         notification about a particular generated finding is added to
-     *         this list only once.
+     * @return A list of notifications for the event subscriptions. A notification about a particular generated finding
+     *         is added to this list only once.
      */
 
     public java.util.List<AssessmentRunNotification> getNotifications() {
@@ -848,52 +806,44 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is added to this list only once.
+     * A list of notifications for the event subscriptions. A notification about a particular generated finding is added
+     * to this list only once.
      * </p>
      * 
      * @param notifications
-     *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is added to this
-     *        list only once.
+     *        A list of notifications for the event subscriptions. A notification about a particular generated finding
+     *        is added to this list only once.
      */
 
-    public void setNotifications(
-            java.util.Collection<AssessmentRunNotification> notifications) {
+    public void setNotifications(java.util.Collection<AssessmentRunNotification> notifications) {
         if (notifications == null) {
             this.notifications = null;
             return;
         }
 
-        this.notifications = new java.util.ArrayList<AssessmentRunNotification>(
-                notifications);
+        this.notifications = new java.util.ArrayList<AssessmentRunNotification>(notifications);
     }
 
     /**
      * <p>
-     * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is added to this list only once.
+     * A list of notifications for the event subscriptions. A notification about a particular generated finding is added
+     * to this list only once.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNotifications(java.util.Collection)} or
-     * {@link #withNotifications(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotifications(java.util.Collection)} or {@link #withNotifications(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param notifications
-     *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is added to this
-     *        list only once.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of notifications for the event subscriptions. A notification about a particular generated finding
+     *        is added to this list only once.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withNotifications(
-            AssessmentRunNotification... notifications) {
+    public AssessmentRun withNotifications(AssessmentRunNotification... notifications) {
         if (this.notifications == null) {
-            setNotifications(new java.util.ArrayList<AssessmentRunNotification>(
-                    notifications.length));
+            setNotifications(new java.util.ArrayList<AssessmentRunNotification>(notifications.length));
         }
         for (AssessmentRunNotification ele : notifications) {
             this.notifications.add(ele);
@@ -903,27 +853,85 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is added to this list only once.
+     * A list of notifications for the event subscriptions. A notification about a particular generated finding is added
+     * to this list only once.
      * </p>
      * 
      * @param notifications
-     *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is added to this
-     *        list only once.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of notifications for the event subscriptions. A notification about a particular generated finding
+     *        is added to this list only once.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRun withNotifications(
-            java.util.Collection<AssessmentRunNotification> notifications) {
+    public AssessmentRun withNotifications(java.util.Collection<AssessmentRunNotification> notifications) {
         setNotifications(notifications);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @return Provides a total count of generated findings per severity.
+     */
+
+    public java.util.Map<String, Integer> getFindingCounts() {
+        return findingCounts;
+    }
+
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @param findingCounts
+     *        Provides a total count of generated findings per severity.
+     */
+
+    public void setFindingCounts(java.util.Map<String, Integer> findingCounts) {
+        this.findingCounts = findingCounts;
+    }
+
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @param findingCounts
+     *        Provides a total count of generated findings per severity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentRun withFindingCounts(java.util.Map<String, Integer> findingCounts) {
+        setFindingCounts(findingCounts);
+        return this;
+    }
+
+    public AssessmentRun addFindingCountsEntry(String key, Integer value) {
+        if (null == this.findingCounts) {
+            this.findingCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.findingCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.findingCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into FindingCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentRun clearFindingCountsEntries() {
+        this.findingCounts = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -934,35 +942,35 @@ public class AssessmentRun implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn()
-                    + ",");
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds() + ",");
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getUserAttributesForFindings() != null)
-            sb.append("UserAttributesForFindings: "
-                    + getUserAttributesForFindings() + ",");
+            sb.append("UserAttributesForFindings: ").append(getUserAttributesForFindings()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStartedAt() != null)
-            sb.append("StartedAt: " + getStartedAt() + ",");
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: " + getCompletedAt() + ",");
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getStateChangedAt() != null)
-            sb.append("StateChangedAt: " + getStateChangedAt() + ",");
+            sb.append("StateChangedAt: ").append(getStateChangedAt()).append(",");
         if (getDataCollected() != null)
-            sb.append("DataCollected: " + getDataCollected() + ",");
+            sb.append("DataCollected: ").append(getDataCollected()).append(",");
         if (getStateChanges() != null)
-            sb.append("StateChanges: " + getStateChanges() + ",");
+            sb.append("StateChanges: ").append(getStateChanges()).append(",");
         if (getNotifications() != null)
-            sb.append("Notifications: " + getNotifications());
+            sb.append("Notifications: ").append(getNotifications()).append(",");
+        if (getFindingCounts() != null)
+            sb.append("FindingCounts: ").append(getFindingCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -979,82 +987,63 @@ public class AssessmentRun implements Serializable, Cloneable {
         AssessmentRun other = (AssessmentRun) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getAssessmentTemplateArn() == null
-                ^ this.getAssessmentTemplateArn() == null)
+        if (other.getAssessmentTemplateArn() == null ^ this.getAssessmentTemplateArn() == null)
             return false;
-        if (other.getAssessmentTemplateArn() != null
-                && other.getAssessmentTemplateArn().equals(
-                        this.getAssessmentTemplateArn()) == false)
+        if (other.getAssessmentTemplateArn() != null && other.getAssessmentTemplateArn().equals(this.getAssessmentTemplateArn()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getDurationInSeconds() == null
-                ^ this.getDurationInSeconds() == null)
+        if (other.getDurationInSeconds() == null ^ this.getDurationInSeconds() == null)
             return false;
-        if (other.getDurationInSeconds() != null
-                && other.getDurationInSeconds().equals(
-                        this.getDurationInSeconds()) == false)
+        if (other.getDurationInSeconds() != null && other.getDurationInSeconds().equals(this.getDurationInSeconds()) == false)
             return false;
-        if (other.getRulesPackageArns() == null
-                ^ this.getRulesPackageArns() == null)
+        if (other.getRulesPackageArns() == null ^ this.getRulesPackageArns() == null)
             return false;
-        if (other.getRulesPackageArns() != null
-                && other.getRulesPackageArns().equals(
-                        this.getRulesPackageArns()) == false)
+        if (other.getRulesPackageArns() != null && other.getRulesPackageArns().equals(this.getRulesPackageArns()) == false)
             return false;
-        if (other.getUserAttributesForFindings() == null
-                ^ this.getUserAttributesForFindings() == null)
+        if (other.getUserAttributesForFindings() == null ^ this.getUserAttributesForFindings() == null)
             return false;
-        if (other.getUserAttributesForFindings() != null
-                && other.getUserAttributesForFindings().equals(
-                        this.getUserAttributesForFindings()) == false)
+        if (other.getUserAttributesForFindings() != null && other.getUserAttributesForFindings().equals(this.getUserAttributesForFindings()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
-        if (other.getStartedAt() != null
-                && other.getStartedAt().equals(this.getStartedAt()) == false)
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
             return false;
         if (other.getCompletedAt() == null ^ this.getCompletedAt() == null)
             return false;
-        if (other.getCompletedAt() != null
-                && other.getCompletedAt().equals(this.getCompletedAt()) == false)
+        if (other.getCompletedAt() != null && other.getCompletedAt().equals(this.getCompletedAt()) == false)
             return false;
-        if (other.getStateChangedAt() == null
-                ^ this.getStateChangedAt() == null)
+        if (other.getStateChangedAt() == null ^ this.getStateChangedAt() == null)
             return false;
-        if (other.getStateChangedAt() != null
-                && other.getStateChangedAt().equals(this.getStateChangedAt()) == false)
+        if (other.getStateChangedAt() != null && other.getStateChangedAt().equals(this.getStateChangedAt()) == false)
             return false;
         if (other.getDataCollected() == null ^ this.getDataCollected() == null)
             return false;
-        if (other.getDataCollected() != null
-                && other.getDataCollected().equals(this.getDataCollected()) == false)
+        if (other.getDataCollected() != null && other.getDataCollected().equals(this.getDataCollected()) == false)
             return false;
         if (other.getStateChanges() == null ^ this.getStateChanges() == null)
             return false;
-        if (other.getStateChanges() != null
-                && other.getStateChanges().equals(this.getStateChanges()) == false)
+        if (other.getStateChanges() != null && other.getStateChanges().equals(this.getStateChanges()) == false)
             return false;
         if (other.getNotifications() == null ^ this.getNotifications() == null)
             return false;
-        if (other.getNotifications() != null
-                && other.getNotifications().equals(this.getNotifications()) == false)
+        if (other.getNotifications() != null && other.getNotifications().equals(this.getNotifications()) == false)
+            return false;
+        if (other.getFindingCounts() == null ^ this.getFindingCounts() == null)
+            return false;
+        if (other.getFindingCounts() != null && other.getFindingCounts().equals(this.getFindingCounts()) == false)
             return false;
         return true;
     }
@@ -1064,51 +1053,21 @@ public class AssessmentRun implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentTemplateArn() == null) ? 0
-                        : getAssessmentTemplateArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDurationInSeconds() == null) ? 0
-                        : getDurationInSeconds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRulesPackageArns() == null) ? 0 : getRulesPackageArns()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributesForFindings() == null) ? 0
-                        : getUserAttributesForFindings().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateChangedAt() == null) ? 0 : getStateChangedAt()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDataCollected() == null) ? 0 : getDataCollected()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateChanges() == null) ? 0 : getStateChanges()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNotifications() == null) ? 0 : getNotifications()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentTemplateArn() == null) ? 0 : getAssessmentTemplateArn().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getDurationInSeconds() == null) ? 0 : getDurationInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getRulesPackageArns() == null) ? 0 : getRulesPackageArns().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributesForFindings() == null) ? 0 : getUserAttributesForFindings().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
+        hashCode = prime * hashCode + ((getStateChangedAt() == null) ? 0 : getStateChangedAt().hashCode());
+        hashCode = prime * hashCode + ((getDataCollected() == null) ? 0 : getDataCollected().hashCode());
+        hashCode = prime * hashCode + ((getStateChanges() == null) ? 0 : getStateChanges().hashCode());
+        hashCode = prime * hashCode + ((getNotifications() == null) ? 0 : getNotifications().hashCode());
+        hashCode = prime * hashCode + ((getFindingCounts() == null) ? 0 : getFindingCounts().hashCode());
         return hashCode;
     }
 
@@ -1117,9 +1076,13 @@ public class AssessmentRun implements Serializable, Cloneable {
         try {
             return (AssessmentRun) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.AssessmentRunMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

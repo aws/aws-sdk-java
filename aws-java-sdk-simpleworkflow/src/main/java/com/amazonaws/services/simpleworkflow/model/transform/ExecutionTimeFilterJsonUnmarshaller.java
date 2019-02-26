@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ExecutionTimeFilter JSON Unmarshaller
  */
-public class ExecutionTimeFilterJsonUnmarshaller implements
-        Unmarshaller<ExecutionTimeFilter, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ExecutionTimeFilterJsonUnmarshaller implements Unmarshaller<ExecutionTimeFilter, JsonUnmarshallerContext> {
 
-    public ExecutionTimeFilter unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ExecutionTimeFilter unmarshall(JsonUnmarshallerContext context) throws Exception {
         ExecutionTimeFilter executionTimeFilter = new ExecutionTimeFilter();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class ExecutionTimeFilterJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,18 +50,14 @@ public class ExecutionTimeFilterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("oldestDate", targetDepth)) {
                     context.nextToken();
-                    executionTimeFilter.setOldestDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    executionTimeFilter.setOldestDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("latestDate", targetDepth)) {
                     context.nextToken();
-                    executionTimeFilter.setLatestDate(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    executionTimeFilter.setLatestDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

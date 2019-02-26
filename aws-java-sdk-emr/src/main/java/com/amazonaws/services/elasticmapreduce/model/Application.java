@@ -1,50 +1,41 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An application is any Amazon or third-party software that you can add to the
- * cluster. This structure contains a list of strings that indicates the
- * software to use with the cluster and accepts a user argument list. Amazon EMR
- * accepts and forwards the argument list to the corresponding installation
- * script as bootstrap action argument. For more information, see <a href=
- * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html"
- * >Launch a Job Flow on the MapR Distribution for Hadoop</a>. Currently
- * supported values are:
+ * With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments
+ * to applications, you use configuration classifications specified using configuration JSON objects. For more
+ * information, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
+ * Applications</a>.
  * </p>
- * <ul>
- * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
- * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
- * <li>"mapr" with the user arguments specifying "--edition,m3" or
- * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition,
- * respectively.</li>
- * </ul>
- * <note>
  * <p>
- * In Amazon EMR releases 4.0 and greater, the only accepted parameter is the
- * application name. To pass arguments to applications, you supply a
- * configuration for each application.
+ * With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the
+ * cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a
+ * user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as
+ * bootstrap action argument.
  * </p>
- * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Application" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Application implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -66,9 +57,8 @@ public class Application implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> args;
     /**
      * <p>
-     * This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing
-     * purposes.
+     * This option is for advanced users only. This is meta information about third-party applications that third-party
+     * vendors use for testing purposes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> additionalInfo;
@@ -105,8 +95,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application withName(String name) {
@@ -146,8 +135,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @param version
      *        The version of the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application withVersion(String version) {
@@ -193,22 +181,19 @@ public class Application implements Serializable, Cloneable {
      * Arguments for Amazon EMR to pass to the application.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArgs(java.util.Collection)} or
-     * {@link #withArgs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArgs(java.util.Collection)} or {@link #withArgs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param args
      *        Arguments for Amazon EMR to pass to the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application withArgs(String... args) {
         if (this.args == null) {
-            setArgs(new com.amazonaws.internal.SdkInternalList<String>(
-                    args.length));
+            setArgs(new com.amazonaws.internal.SdkInternalList<String>(args.length));
         }
         for (String ele : args) {
             this.args.add(ele);
@@ -223,8 +208,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @param args
      *        Arguments for Amazon EMR to pass to the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application withArgs(java.util.Collection<String> args) {
@@ -234,14 +218,12 @@ public class Application implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing
-     * purposes.
+     * This option is for advanced users only. This is meta information about third-party applications that third-party
+     * vendors use for testing purposes.
      * </p>
      * 
-     * @return This option is for advanced users only. This is meta information
-     *         about third-party applications that third-party vendors use for
-     *         testing purposes.
+     * @return This option is for advanced users only. This is meta information about third-party applications that
+     *         third-party vendors use for testing purposes.
      */
 
     public java.util.Map<String, String> getAdditionalInfo() {
@@ -253,40 +235,32 @@ public class Application implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing
-     * purposes.
+     * This option is for advanced users only. This is meta information about third-party applications that third-party
+     * vendors use for testing purposes.
      * </p>
      * 
      * @param additionalInfo
-     *        This option is for advanced users only. This is meta information
-     *        about third-party applications that third-party vendors use for
-     *        testing purposes.
+     *        This option is for advanced users only. This is meta information about third-party applications that
+     *        third-party vendors use for testing purposes.
      */
 
     public void setAdditionalInfo(java.util.Map<String, String> additionalInfo) {
-        this.additionalInfo = additionalInfo == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        additionalInfo);
+        this.additionalInfo = additionalInfo == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(additionalInfo);
     }
 
     /**
      * <p>
-     * This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing
-     * purposes.
+     * This option is for advanced users only. This is meta information about third-party applications that third-party
+     * vendors use for testing purposes.
      * </p>
      * 
      * @param additionalInfo
-     *        This option is for advanced users only. This is meta information
-     *        about third-party applications that third-party vendors use for
-     *        testing purposes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This option is for advanced users only. This is meta information about third-party applications that
+     *        third-party vendors use for testing purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Application withAdditionalInfo(
-            java.util.Map<String, String> additionalInfo) {
+    public Application withAdditionalInfo(java.util.Map<String, String> additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;
     }
@@ -296,15 +270,15 @@ public class Application implements Serializable, Cloneable {
             this.additionalInfo = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.additionalInfo.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.additionalInfo.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into AdditionalInfo. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into AdditionalInfo.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application clearAdditionalInfoEntries() {
@@ -313,8 +287,8 @@ public class Application implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -325,13 +299,13 @@ public class Application implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs() + ",");
+            sb.append("Args: ").append(getArgs()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo());
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -348,24 +322,19 @@ public class Application implements Serializable, Cloneable {
         Application other = (Application) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getArgs() == null ^ this.getArgs() == null)
             return false;
-        if (other.getArgs() != null
-                && other.getArgs().equals(this.getArgs()) == false)
+        if (other.getArgs() != null && other.getArgs().equals(this.getArgs()) == false)
             return false;
-        if (other.getAdditionalInfo() == null
-                ^ this.getAdditionalInfo() == null)
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null)
             return false;
-        if (other.getAdditionalInfo() != null
-                && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
             return false;
         return true;
     }
@@ -375,16 +344,10 @@ public class Application implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getArgs() == null) ? 0 : getArgs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         return hashCode;
     }
 
@@ -393,9 +356,13 @@ public class Application implements Serializable, Cloneable {
         try {
             return (Application) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.ApplicationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

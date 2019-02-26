@@ -1,36 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains details of a domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DomainDetail" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DomainDetail implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     */
     private DomainInfo domainInfo;
-
+    /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     */
     private DomainConfiguration configuration;
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
+     *        The basic information about a domain, such as its name, status, and description.
      */
 
     public void setDomainInfo(DomainInfo domainInfo) {
@@ -38,7 +53,11 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
+     * @return The basic information about a domain, such as its name, status, and description.
      */
 
     public DomainInfo getDomainInfo() {
@@ -46,9 +65,13 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The basic information about a domain, such as its name, status, and description.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainDetail withDomainInfo(DomainInfo domainInfo) {
@@ -57,7 +80,12 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
+     *        The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public void setConfiguration(DomainConfiguration configuration) {
@@ -65,7 +93,11 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
+     * @return The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public DomainConfiguration getConfiguration() {
@@ -73,9 +105,13 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The domain configuration. Currently, this includes only the domain's retention period.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainDetail withConfiguration(DomainConfiguration configuration) {
@@ -84,8 +120,8 @@ public class DomainDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -96,9 +132,9 @@ public class DomainDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainInfo() != null)
-            sb.append("DomainInfo: " + getDomainInfo() + ",");
+            sb.append("DomainInfo: ").append(getDomainInfo()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -115,13 +151,11 @@ public class DomainDetail implements Serializable, Cloneable {
         DomainDetail other = (DomainDetail) obj;
         if (other.getDomainInfo() == null ^ this.getDomainInfo() == null)
             return false;
-        if (other.getDomainInfo() != null
-                && other.getDomainInfo().equals(this.getDomainInfo()) == false)
+        if (other.getDomainInfo() != null && other.getDomainInfo().equals(this.getDomainInfo()) == false)
             return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
-        if (other.getConfiguration() != null
-                && other.getConfiguration().equals(this.getConfiguration()) == false)
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
         return true;
     }
@@ -131,12 +165,8 @@ public class DomainDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainInfo() == null) ? 0 : getDomainInfo().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfiguration() == null) ? 0 : getConfiguration()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomainInfo() == null) ? 0 : getDomainInfo().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 
@@ -145,9 +175,8 @@ public class DomainDetail implements Serializable, Cloneable {
         try {
             return (DomainDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

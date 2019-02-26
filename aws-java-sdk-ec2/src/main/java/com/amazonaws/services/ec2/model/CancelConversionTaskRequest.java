@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMarshaller;
@@ -26,8 +24,8 @@ import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMar
  * Contains the parameters for CancelConversionTask.
  * </p>
  */
-public class CancelConversionTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<CancelConversionTaskRequest> {
 
     /**
@@ -75,12 +73,10 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * 
      * @param conversionTaskId
      *        The ID of the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CancelConversionTaskRequest withConversionTaskId(
-            String conversionTaskId) {
+    public CancelConversionTaskRequest withConversionTaskId(String conversionTaskId) {
         setConversionTaskId(conversionTaskId);
         return this;
     }
@@ -117,8 +113,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * 
      * @param reasonMessage
      *        The reason for canceling the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CancelConversionTaskRequest withReasonMessage(String reasonMessage) {
@@ -127,21 +122,19 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<CancelConversionTaskRequest> getDryRunRequest() {
-        Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller()
-                .marshall(this);
+        Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -152,9 +145,9 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTaskId() != null)
-            sb.append("ConversionTaskId: " + getConversionTaskId() + ",");
+            sb.append("ConversionTaskId: ").append(getConversionTaskId()).append(",");
         if (getReasonMessage() != null)
-            sb.append("ReasonMessage: " + getReasonMessage());
+            sb.append("ReasonMessage: ").append(getReasonMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -169,17 +162,13 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
         if (obj instanceof CancelConversionTaskRequest == false)
             return false;
         CancelConversionTaskRequest other = (CancelConversionTaskRequest) obj;
-        if (other.getConversionTaskId() == null
-                ^ this.getConversionTaskId() == null)
+        if (other.getConversionTaskId() == null ^ this.getConversionTaskId() == null)
             return false;
-        if (other.getConversionTaskId() != null
-                && other.getConversionTaskId().equals(
-                        this.getConversionTaskId()) == false)
+        if (other.getConversionTaskId() != null && other.getConversionTaskId().equals(this.getConversionTaskId()) == false)
             return false;
         if (other.getReasonMessage() == null ^ this.getReasonMessage() == null)
             return false;
-        if (other.getReasonMessage() != null
-                && other.getReasonMessage().equals(this.getReasonMessage()) == false)
+        if (other.getReasonMessage() != null && other.getReasonMessage().equals(this.getReasonMessage()) == false)
             return false;
         return true;
     }
@@ -189,14 +178,8 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConversionTaskId() == null) ? 0 : getConversionTaskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReasonMessage() == null) ? 0 : getReasonMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getConversionTaskId() == null) ? 0 : getConversionTaskId().hashCode());
+        hashCode = prime * hashCode + ((getReasonMessage() == null) ? 0 : getReasonMessage().hashCode());
         return hashCode;
     }
 

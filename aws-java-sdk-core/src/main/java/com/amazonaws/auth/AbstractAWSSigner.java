@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,33 +16,33 @@ package com.amazonaws.auth;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.ReadLimitInfo;
+import com.amazonaws.SDKGlobalTime;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.SignableRequest;
+import com.amazonaws.internal.SdkDigestInputStream;
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
+import com.amazonaws.util.Base64;
+import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.ReadLimitInfo;
-import com.amazonaws.SDKGlobalTime;
-import com.amazonaws.SignableRequest;
-import com.amazonaws.internal.SdkDigestInputStream;
-import com.amazonaws.util.Base64;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.util.StringUtils;
 
 /**
  * Abstract base class for AWS signing protocol implementations. Provides
@@ -52,9 +52,24 @@ import com.amazonaws.util.StringUtils;
  * Not intended to be sub-classed by developers.
  */
 public abstract class AbstractAWSSigner implements Signer {
+
     public static final String EMPTY_STRING_SHA256_HEX;
+    private static final ThreadLocal<MessageDigest> SHA256_MESSAGE_DIGEST;
 
     static {
+        SHA256_MESSAGE_DIGEST = SdkThreadLocalsRegistry.register(
+                new ThreadLocal<MessageDigest>() {
+                    @Override
+                    protected MessageDigest initialValue() {
+                        try {
+                            return MessageDigest.getInstance("SHA-256");
+                        } catch (NoSuchAlgorithmException e) {
+                            throw new SdkClientException(
+                                    "Unable to get SHA256 Function"
+                                            + e.getMessage(), e);
+                        }
+                    }
+                });
         EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
     }
 
@@ -63,7 +78,7 @@ public abstract class AbstractAWSSigner implements Signer {
      * Base64 encoded string.
      */
     protected String signAndBase64Encode(String data, String key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         return signAndBase64Encode(data.getBytes(UTF8), key, algorithm);
     }
 
@@ -72,24 +87,24 @@ public abstract class AbstractAWSSigner implements Signer {
      * returns the result as a Base64 encoded string.
      */
     protected String signAndBase64Encode(byte[] data, String key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
             byte[] signature = sign(data, key.getBytes(UTF8), algorithm);
             return Base64.encodeAsString(signature);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
     }
 
     public byte[] sign(String stringData, byte[] key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
             byte[] data = stringData.getBytes(UTF8);
             return sign(data, key, algorithm);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
@@ -99,20 +114,20 @@ public abstract class AbstractAWSSigner implements Signer {
         try {
             return mac.doFinal(stringData.getBytes(UTF8));
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
     }
 
     protected byte[] sign(byte[] data, byte[] key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
-            Mac mac = Mac.getInstance(algorithm.toString());
+            Mac mac = algorithm.getMac();
             mac.init(new SecretKeySpec(key, algorithm.toString()));
             return mac.doFinal(data);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
@@ -127,28 +142,28 @@ public abstract class AbstractAWSSigner implements Signer {
      *
      * @return The hashed bytes from the specified string.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the hash cannot be computed.
      */
-    public byte[] hash(String text) throws AmazonClientException {
+    public byte[] hash(String text) throws SdkClientException {
         return AbstractAWSSigner.doHash(text);
     }
 
-    private static byte[] doHash(String text) throws AmazonClientException {
+    private static byte[] doHash(String text) throws SdkClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = getMessageDigestInstance();
             md.update(text.getBytes(UTF8));
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
     }
 
-    protected byte[] hash(InputStream input) throws AmazonClientException {
+    protected byte[] hash(InputStream input) throws SdkClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = getMessageDigestInstance();
             @SuppressWarnings("resource")
             DigestInputStream digestInputStream = new SdkDigestInputStream(
                     input, md);
@@ -157,7 +172,7 @@ public abstract class AbstractAWSSigner implements Signer {
                 ;
             return digestInputStream.getMessageDigest().digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
@@ -171,16 +186,16 @@ public abstract class AbstractAWSSigner implements Signer {
      *
      * @return The hashed bytes from the specified data.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the hash cannot be computed.
      */
-    public byte[] hash(byte[] data) throws AmazonClientException {
+    public byte[] hash(byte[] data) throws SdkClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md =  getMessageDigestInstance();
             md.update(data);
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
@@ -318,7 +333,7 @@ public abstract class AbstractAWSSigner implements Signer {
 
             return byteArrayOutputStream.toByteArray();
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }
     }
 
@@ -341,12 +356,12 @@ public abstract class AbstractAWSSigner implements Signer {
             if (is == null)
                 return new ByteArrayInputStream(new byte[0]);
             if (!is.markSupported())
-                throw new AmazonClientException("Unable to read request payload to sign request.");
+                throw new SdkClientException("Unable to read request payload to sign request.");
             return is;
         } catch (AmazonClientException e) {
             throw e;
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }
     }
 
@@ -459,4 +474,16 @@ public abstract class AbstractAWSSigner implements Signer {
      */
     protected abstract void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials);
+
+
+    /**
+     * Returns the re-usable thread local version of MessageDigest.
+     * @return
+     */
+    private static MessageDigest getMessageDigestInstance() {
+        MessageDigest messageDigest = SHA256_MESSAGE_DIGEST.get();
+        messageDigest.reset();
+        return messageDigest;
+    }
+
 }

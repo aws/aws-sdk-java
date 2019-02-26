@@ -17,9 +17,10 @@
 
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContext.UnmarshallerType;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.BigDecimalJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.BigIntegerJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.BooleanJsonUnmarshaller;
@@ -30,13 +31,13 @@ import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.DateJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.DoubleJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.FloatJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.IntegerJsonUnmarshaller;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.JsonValueStringUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.LongJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.ShortJsonUnmarshaller;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.StringJsonUnmarshaller;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.ImmutableMapParameter;
 import com.fasterxml.jackson.core.JsonFactory;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -46,19 +47,18 @@ import java.util.Map;
 /**
  * Creates generators and protocol handlers for plain text JSON wire format.
  */
-@SdkInternalApi
+@SdkProtectedApi
 public class SdkStructuredPlainJsonFactory {
 
     /**
      * Recommended to share JsonFactory instances per http://wiki.fasterxml
      * .com/JacksonBestPracticesPerformance
      */
-    private static final JsonFactory JSON_FACTORY = new JsonFactory();
-
-    private static final String CONTENT_TYPE_JSON_PREFIX = "application/x-amz-json-";
+    public static final JsonFactory JSON_FACTORY = new JsonFactory();
 
     @SdkTestInternalApi
-    public static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> JSON_SCALAR_UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
+    public static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> JSON_SCALAR_UNMARSHALLERS =
+            new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
             .put(String.class, StringJsonUnmarshaller.getInstance())
             .put(Double.class, DoubleJsonUnmarshaller.getInstance())
             .put(Integer.class, IntegerJsonUnmarshaller.getInstance())
@@ -73,8 +73,14 @@ public class SdkStructuredPlainJsonFactory {
             .put(Character.class, CharacterJsonUnmarshaller.getInstance())
             .put(Short.class, ShortJsonUnmarshaller.getInstance()).build();
 
+    @SdkTestInternalApi
+    public static final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> JSON_CUSTOM_TYPE_UNMARSHALLERS =
+            new ImmutableMapParameter.Builder<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>>()
+                    .put(UnmarshallerType.JSON_VALUE, JsonValueStringUnmarshaller.getInstance())
+                    .build();
+
     public static final SdkStructuredJsonFactory SDK_JSON_FACTORY = new SdkStructuredJsonFactoryImpl(
-            CONTENT_TYPE_JSON_PREFIX, JSON_FACTORY, JSON_SCALAR_UNMARSHALLERS) {
+            JSON_FACTORY, JSON_SCALAR_UNMARSHALLERS, JSON_CUSTOM_TYPE_UNMARSHALLERS) {
         @Override
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {

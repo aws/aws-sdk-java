@@ -1,73 +1,77 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides configuration information about a Lambda function version alias.
+ * Provides configuration information about a Lambda function <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetAliasResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      */
     private String aliasArn;
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     */
+    private AliasRoutingConfiguration routingConfig;
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the
-     *        suffix. For example, if you create an alias called
-     *        <code>BETA</code> that points to a helloworld function version,
-     *        the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *        .
+     *        The Amazon Resource Name (ARN) of the alias.
      */
 
     public void setAliasArn(String aliasArn) {
@@ -76,18 +80,10 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
-     * @return Lambda function ARN that is qualified using the alias name as the
-     *         suffix. For example, if you create an alias called
-     *         <code>BETA</code> that points to a helloworld function version,
-     *         the ARN is
-     *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *         .
+     * @return The Amazon Resource Name (ARN) of the alias.
      */
 
     public String getAliasArn() {
@@ -96,21 +92,12 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix.
-     * For example, if you create an alias called <code>BETA</code> that points
-     * to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the
-     *        suffix. For example, if you create an alias called
-     *        <code>BETA</code> that points to a helloworld function version,
-     *        the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasResult withAliasArn(String aliasArn) {
@@ -120,11 +107,11 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Alias name.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -133,10 +120,10 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
-     * @return Alias name.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -145,13 +132,12 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Alias name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasResult withName(String name) {
@@ -161,11 +147,11 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Function version to which the alias points.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -174,10 +160,10 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Function version to which the alias points.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -186,13 +172,12 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Function version to which the alias points.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The function version that the alias invokes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasResult withFunctionVersion(String functionVersion) {
@@ -202,11 +187,11 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Alias description.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -215,10 +200,10 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
-     * @return Alias description.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -227,13 +212,12 @@ public class GetAliasResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Alias description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAliasResult withDescription(String description) {
@@ -242,8 +226,97 @@ public class GetAliasResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     */
+
+    public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
+     */
+
+    public AliasRoutingConfiguration getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAliasResult withRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        A unique identifier that changes when you update the alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @return A unique identifier that changes when you update the alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        A unique identifier that changes when you update the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAliasResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -254,13 +327,17 @@ public class GetAliasResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasArn() != null)
-            sb.append("AliasArn: " + getAliasArn() + ",");
+            sb.append("AliasArn: ").append(getAliasArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFunctionVersion() != null)
-            sb.append("FunctionVersion: " + getFunctionVersion() + ",");
+            sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -277,24 +354,27 @@ public class GetAliasResult implements Serializable, Cloneable {
         GetAliasResult other = (GetAliasResult) obj;
         if (other.getAliasArn() == null ^ this.getAliasArn() == null)
             return false;
-        if (other.getAliasArn() != null
-                && other.getAliasArn().equals(this.getAliasArn()) == false)
+        if (other.getAliasArn() != null && other.getAliasArn().equals(this.getAliasArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getFunctionVersion() == null
-                ^ this.getFunctionVersion() == null)
+        if (other.getFunctionVersion() == null ^ this.getFunctionVersion() == null)
             return false;
-        if (other.getFunctionVersion() != null
-                && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
+        if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
             return false;
         return true;
     }
@@ -304,17 +384,12 @@ public class GetAliasResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionVersion() == null) ? 0 : getFunctionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 
@@ -323,9 +398,8 @@ public class GetAliasResult implements Serializable, Cloneable {
         try {
             return (GetAliasResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

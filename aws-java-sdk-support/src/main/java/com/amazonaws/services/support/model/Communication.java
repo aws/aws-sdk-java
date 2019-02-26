@@ -1,37 +1,38 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A communication associated with an AWS Support case. The communication
- * consists of the case ID, the message body, attachment information, the
- * account email address, and the date and time of the communication.
+ * A communication associated with an AWS Support case. The communication consists of the case ID, the message body,
+ * attachment information, the account email address, and the date and time of the communication.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Communication" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Communication implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Communication implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      */
     private String caseId;
@@ -62,15 +63,13 @@ public class Communication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The
-     *        case ID is an alphanumeric string formatted as shown in this
-     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted
+     *        as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
     public void setCaseId(String caseId) {
@@ -79,14 +78,12 @@ public class Communication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
-     * @return The AWS Support case ID requested or returned in the call. The
-     *         case ID is an alphanumeric string formatted as shown in this
-     *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string
+     *         formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
     public String getCaseId() {
@@ -95,17 +92,14 @@ public class Communication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is
-     * an alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as
+     * shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The
-     *        case ID is an alphanumeric string formatted as shown in this
-     *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted
+     *        as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Communication withCaseId(String caseId) {
@@ -119,8 +113,7 @@ public class Communication implements Serializable, Cloneable {
      * </p>
      * 
      * @param body
-     *        The text of the communication between the customer and AWS
-     *        Support.
+     *        The text of the communication between the customer and AWS Support.
      */
 
     public void setBody(String body) {
@@ -132,8 +125,7 @@ public class Communication implements Serializable, Cloneable {
      * The text of the communication between the customer and AWS Support.
      * </p>
      * 
-     * @return The text of the communication between the customer and AWS
-     *         Support.
+     * @return The text of the communication between the customer and AWS Support.
      */
 
     public String getBody() {
@@ -146,10 +138,8 @@ public class Communication implements Serializable, Cloneable {
      * </p>
      * 
      * @param body
-     *        The text of the communication between the customer and AWS
-     *        Support.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The text of the communication between the customer and AWS Support.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Communication withBody(String body) {
@@ -163,8 +153,7 @@ public class Communication implements Serializable, Cloneable {
      * </p>
      * 
      * @param submittedBy
-     *        The email address of the account that submitted the AWS Support
-     *        case.
+     *        The email address of the account that submitted the AWS Support case.
      */
 
     public void setSubmittedBy(String submittedBy) {
@@ -176,8 +165,7 @@ public class Communication implements Serializable, Cloneable {
      * The email address of the account that submitted the AWS Support case.
      * </p>
      * 
-     * @return The email address of the account that submitted the AWS Support
-     *         case.
+     * @return The email address of the account that submitted the AWS Support case.
      */
 
     public String getSubmittedBy() {
@@ -190,10 +178,8 @@ public class Communication implements Serializable, Cloneable {
      * </p>
      * 
      * @param submittedBy
-     *        The email address of the account that submitted the AWS Support
-     *        case.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The email address of the account that submitted the AWS Support case.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Communication withSubmittedBy(String submittedBy) {
@@ -233,8 +219,7 @@ public class Communication implements Serializable, Cloneable {
      * 
      * @param timeCreated
      *        The time the communication was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Communication withTimeCreated(String timeCreated) {
@@ -266,15 +251,13 @@ public class Communication implements Serializable, Cloneable {
      *        Information about the attachments to the case communication.
      */
 
-    public void setAttachmentSet(
-            java.util.Collection<AttachmentDetails> attachmentSet) {
+    public void setAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
         if (attachmentSet == null) {
             this.attachmentSet = null;
             return;
         }
 
-        this.attachmentSet = new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(
-                attachmentSet);
+        this.attachmentSet = new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(attachmentSet);
     }
 
     /**
@@ -282,22 +265,19 @@ public class Communication implements Serializable, Cloneable {
      * Information about the attachments to the case communication.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttachmentSet(java.util.Collection)} or
-     * {@link #withAttachmentSet(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachmentSet(java.util.Collection)} or {@link #withAttachmentSet(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param attachmentSet
      *        Information about the attachments to the case communication.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Communication withAttachmentSet(AttachmentDetails... attachmentSet) {
         if (this.attachmentSet == null) {
-            setAttachmentSet(new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(
-                    attachmentSet.length));
+            setAttachmentSet(new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(attachmentSet.length));
         }
         for (AttachmentDetails ele : attachmentSet) {
             this.attachmentSet.add(ele);
@@ -312,19 +292,17 @@ public class Communication implements Serializable, Cloneable {
      * 
      * @param attachmentSet
      *        Information about the attachments to the case communication.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Communication withAttachmentSet(
-            java.util.Collection<AttachmentDetails> attachmentSet) {
+    public Communication withAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
         setAttachmentSet(attachmentSet);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -335,15 +313,15 @@ public class Communication implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId() + ",");
+            sb.append("CaseId: ").append(getCaseId()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getSubmittedBy() != null)
-            sb.append("SubmittedBy: " + getSubmittedBy() + ",");
+            sb.append("SubmittedBy: ").append(getSubmittedBy()).append(",");
         if (getTimeCreated() != null)
-            sb.append("TimeCreated: " + getTimeCreated() + ",");
+            sb.append("TimeCreated: ").append(getTimeCreated()).append(",");
         if (getAttachmentSet() != null)
-            sb.append("AttachmentSet: " + getAttachmentSet());
+            sb.append("AttachmentSet: ").append(getAttachmentSet());
         sb.append("}");
         return sb.toString();
     }
@@ -360,28 +338,23 @@ public class Communication implements Serializable, Cloneable {
         Communication other = (Communication) obj;
         if (other.getCaseId() == null ^ this.getCaseId() == null)
             return false;
-        if (other.getCaseId() != null
-                && other.getCaseId().equals(this.getCaseId()) == false)
+        if (other.getCaseId() != null && other.getCaseId().equals(this.getCaseId()) == false)
             return false;
         if (other.getBody() == null ^ this.getBody() == null)
             return false;
-        if (other.getBody() != null
-                && other.getBody().equals(this.getBody()) == false)
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         if (other.getSubmittedBy() == null ^ this.getSubmittedBy() == null)
             return false;
-        if (other.getSubmittedBy() != null
-                && other.getSubmittedBy().equals(this.getSubmittedBy()) == false)
+        if (other.getSubmittedBy() != null && other.getSubmittedBy().equals(this.getSubmittedBy()) == false)
             return false;
         if (other.getTimeCreated() == null ^ this.getTimeCreated() == null)
             return false;
-        if (other.getTimeCreated() != null
-                && other.getTimeCreated().equals(this.getTimeCreated()) == false)
+        if (other.getTimeCreated() != null && other.getTimeCreated().equals(this.getTimeCreated()) == false)
             return false;
         if (other.getAttachmentSet() == null ^ this.getAttachmentSet() == null)
             return false;
-        if (other.getAttachmentSet() != null
-                && other.getAttachmentSet().equals(this.getAttachmentSet()) == false)
+        if (other.getAttachmentSet() != null && other.getAttachmentSet().equals(this.getAttachmentSet()) == false)
             return false;
         return true;
     }
@@ -391,20 +364,11 @@ public class Communication implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
-        hashCode = prime * hashCode
-                + ((getBody() == null) ? 0 : getBody().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubmittedBy() == null) ? 0 : getSubmittedBy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentSet() == null) ? 0 : getAttachmentSet()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getSubmittedBy() == null) ? 0 : getSubmittedBy().hashCode());
+        hashCode = prime * hashCode + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentSet() == null) ? 0 : getAttachmentSet().hashCode());
         return hashCode;
     }
 
@@ -413,9 +377,13 @@ public class Communication implements Serializable, Cloneable {
         try {
             return (Communication) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.support.model.transform.CommunicationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

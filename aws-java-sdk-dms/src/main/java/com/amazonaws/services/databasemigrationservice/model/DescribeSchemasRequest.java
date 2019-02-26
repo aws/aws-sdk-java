@@ -1,43 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSchemasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String endpointArn;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -49,22 +48,19 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -73,12 +69,10 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getEndpointArn() {
@@ -87,15 +81,12 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSchemasRequest withEndpointArn(String endpointArn) {
@@ -105,10 +96,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -118,10 +108,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -135,10 +124,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -147,10 +135,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
      * Constraints: Minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so
-     *         that the remaining results can be retrieved. </p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *         remaining results can be retrieved. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -164,10 +151,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -177,17 +163,15 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: Minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSchemasRequest withMaxRecords(Integer maxRecords) {
@@ -197,16 +181,13 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -215,15 +196,12 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous request. If
-     *         this parameter is specified, the response includes only records
-     *         beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *         includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -232,18 +210,14 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous request. If this parameter is specified, the response
+     * includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous request. If
-     *        this parameter is specified, the response includes only records
-     *        beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous request. If this parameter is specified, the response
+     *        includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSchemasRequest withMarker(String marker) {
@@ -252,8 +226,8 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -264,11 +238,11 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -285,18 +259,15 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
         DescribeSchemasRequest other = (DescribeSchemasRequest) obj;
         if (other.getEndpointArn() == null ^ this.getEndpointArn() == null)
             return false;
-        if (other.getEndpointArn() != null
-                && other.getEndpointArn().equals(this.getEndpointArn()) == false)
+        if (other.getEndpointArn() != null && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -306,13 +277,9 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -320,4 +287,5 @@ public class DescribeSchemasRequest extends AmazonWebServiceRequest implements
     public DescribeSchemasRequest clone() {
         return (DescribeSchemasRequest) super.clone();
     }
+
 }

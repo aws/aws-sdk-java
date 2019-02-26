@@ -1,30 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBalancingWaiters;
 
 /**
- * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient
- * method forms pass through to the corresponding overload that takes a request
- * object, which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient method forms pass through to the
+ * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
-public class AbstractAmazonElasticLoadBalancing implements
-        AmazonElasticLoadBalancing {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBalancing {
 
     protected AbstractAmazonElasticLoadBalancing() {
     }
@@ -45,92 +44,82 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancer(
-            ApplySecurityGroupsToLoadBalancerRequest request) {
+    public ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachLoadBalancerToSubnetsResult attachLoadBalancerToSubnets(
-            AttachLoadBalancerToSubnetsRequest request) {
+    public AttachLoadBalancerToSubnetsResult attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ConfigureHealthCheckResult configureHealthCheck(
-            ConfigureHealthCheckRequest request) {
+    public ConfigureHealthCheckResult configureHealthCheck(ConfigureHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicy(
-            CreateAppCookieStickinessPolicyRequest request) {
+    public CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLBCookieStickinessPolicyResult createLBCookieStickinessPolicy(
-            CreateLBCookieStickinessPolicyRequest request) {
+    public CreateLBCookieStickinessPolicyResult createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLoadBalancerResult createLoadBalancer(
-            CreateLoadBalancerRequest request) {
+    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLoadBalancerListenersResult createLoadBalancerListeners(
-            CreateLoadBalancerListenersRequest request) {
+    public CreateLoadBalancerListenersResult createLoadBalancerListeners(CreateLoadBalancerListenersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLoadBalancerPolicyResult createLoadBalancerPolicy(
-            CreateLoadBalancerPolicyRequest request) {
+    public CreateLoadBalancerPolicyResult createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLoadBalancerResult deleteLoadBalancer(
-            DeleteLoadBalancerRequest request) {
+    public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLoadBalancerListenersResult deleteLoadBalancerListeners(
-            DeleteLoadBalancerListenersRequest request) {
+    public DeleteLoadBalancerListenersResult deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLoadBalancerPolicyResult deleteLoadBalancerPolicy(
-            DeleteLoadBalancerPolicyRequest request) {
+    public DeleteLoadBalancerPolicyResult deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(
-            DeregisterInstancesFromLoadBalancerRequest request) {
+    public DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeInstanceHealthResult describeInstanceHealth(
-            DescribeInstanceHealthRequest request) {
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(
-            DescribeLoadBalancerAttributesRequest request) {
+    public DescribeInstanceHealthResult describeInstanceHealth(DescribeInstanceHealthRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeLoadBalancerPoliciesResult describeLoadBalancerPolicies(
-            DescribeLoadBalancerPoliciesRequest request) {
+    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLoadBalancerPoliciesResult describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,8 +129,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DescribeLoadBalancerPolicyTypesResult describeLoadBalancerPolicyTypes(
-            DescribeLoadBalancerPolicyTypesRequest request) {
+    public DescribeLoadBalancerPolicyTypesResult describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,8 +139,7 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DescribeLoadBalancersResult describeLoadBalancers(
-            DescribeLoadBalancersRequest request) {
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -167,32 +154,27 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public DetachLoadBalancerFromSubnetsResult detachLoadBalancerFromSubnets(
-            DetachLoadBalancerFromSubnetsRequest request) {
+    public DetachLoadBalancerFromSubnetsResult detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancer(
-            DisableAvailabilityZonesForLoadBalancerRequest request) {
+    public DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancer(
-            EnableAvailabilityZonesForLoadBalancerRequest request) {
+    public EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(
-            ModifyLoadBalancerAttributesRequest request) {
+    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancer(
-            RegisterInstancesWithLoadBalancerRequest request) {
+    public RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,20 +184,17 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public SetLoadBalancerListenerSSLCertificateResult setLoadBalancerListenerSSLCertificate(
-            SetLoadBalancerListenerSSLCertificateRequest request) {
+    public SetLoadBalancerListenerSSLCertificateResult setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetLoadBalancerPoliciesForBackendServerResult setLoadBalancerPoliciesForBackendServer(
-            SetLoadBalancerPoliciesForBackendServerRequest request) {
+    public SetLoadBalancerPoliciesForBackendServerResult setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListener(
-            SetLoadBalancerPoliciesOfListenerRequest request) {
+    public SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -225,8 +204,13 @@ public class AbstractAmazonElasticLoadBalancing implements
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonElasticLoadBalancingWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

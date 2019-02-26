@@ -1,83 +1,92 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      */
     private String keyId;
     /**
      * <p>
-     * Name/value pair that contains additional data to be authenticated during
-     * the encryption and decryption processes that use the key. This value is
-     * logged by AWS CloudTrail to provide context around the data encrypted by
-     * the key.
+     * A set of key-value pairs that represents additional authenticated data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContext;
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, and 1024. 1024 is the current limit. We recommend that you
-     * use the <code>KeySpec</code> parameter instead.
+     * The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data key (64
+     * bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.
      * </p>
      */
     private Integer numberOfBytes;
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      */
     private String keySpec;
@@ -86,74 +95,86 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".</p>
+     *        The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     *        <p>
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Alias name: <code>alias/ExampleAlias</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias Name Example - alias/MyAliasName
+     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -162,63 +183,76 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
-     * @return A unique identifier for the customer master key. This value can
-     *         be a globally unique identifier, a fully specified ARN to either
-     *         an alias or a key, or an alias name prefixed by "alias/".</p>
+     * @return The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     *         <p>
+     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *         alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key
+     *         ARN or alias ARN.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
-     *         1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012
+     *         Alias name: <code>alias/ExampleAlias</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias Name Example - alias/MyAliasName
+     *         Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *         and alias ARN, use <a>ListAliases</a>.
      */
 
     public String getKeyId() {
@@ -227,66 +261,78 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier, a fully specified ARN to either an alias or a
-     * key, or an alias name prefixed by "alias/".
+     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
-     * -1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".</p>
+     *        The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     *        <p>
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     *        -1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012
+     *        Alias name: <code>alias/ExampleAlias</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias Name Example - alias/MyAliasName
+     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateDataKeyRequest withKeyId(String keyId) {
@@ -296,16 +342,19 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name/value pair that contains additional data to be authenticated during
-     * the encryption and decryption processes that use the key. This value is
-     * logged by AWS CloudTrail to provide context around the data encrypted by
-     * the key.
+     * A set of key-value pairs that represents additional authenticated data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Name/value pair that contains additional data to be authenticated
-     *         during the encryption and decryption processes that use the key.
-     *         This value is logged by AWS CloudTrail to provide context around
-     *         the data encrypted by the key.
+     * @return A set of key-value pairs that represents additional authenticated data.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getEncryptionContext() {
@@ -317,64 +366,64 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name/value pair that contains additional data to be authenticated during
-     * the encryption and decryption processes that use the key. This value is
-     * logged by AWS CloudTrail to provide context around the data encrypted by
-     * the key.
+     * A set of key-value pairs that represents additional authenticated data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param encryptionContext
-     *        Name/value pair that contains additional data to be authenticated
-     *        during the encryption and decryption processes that use the key.
-     *        This value is logged by AWS CloudTrail to provide context around
-     *        the data encrypted by the key.
+     *        A set of key-value pairs that represents additional authenticated data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
+     *        in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
-    public void setEncryptionContext(
-            java.util.Map<String, String> encryptionContext) {
-        this.encryptionContext = encryptionContext == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        encryptionContext);
+    public void setEncryptionContext(java.util.Map<String, String> encryptionContext) {
+        this.encryptionContext = encryptionContext == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(encryptionContext);
     }
 
     /**
      * <p>
-     * Name/value pair that contains additional data to be authenticated during
-     * the encryption and decryption processes that use the key. This value is
-     * logged by AWS CloudTrail to provide context around the data encrypted by
-     * the key.
+     * A set of key-value pairs that represents additional authenticated data.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param encryptionContext
-     *        Name/value pair that contains additional data to be authenticated
-     *        during the encryption and decryption processes that use the key.
-     *        This value is logged by AWS CloudTrail to provide context around
-     *        the data encrypted by the key.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of key-value pairs that represents additional authenticated data.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
+     *        in the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GenerateDataKeyRequest withEncryptionContext(
-            java.util.Map<String, String> encryptionContext) {
+    public GenerateDataKeyRequest withEncryptionContext(java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
         return this;
     }
 
-    public GenerateDataKeyRequest addEncryptionContextEntry(String key,
-            String value) {
+    public GenerateDataKeyRequest addEncryptionContextEntry(String key, String value) {
         if (null == this.encryptionContext) {
             this.encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.encryptionContext.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.encryptionContext.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into EncryptionContext. &lt;p> Returns a
-     * reference to this object so that method calls can be chained together.
+     * Removes all the entries added into EncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateDataKeyRequest clearEncryptionContextEntries() {
@@ -384,15 +433,15 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, and 1024. 1024 is the current limit. We recommend that you
-     * use the <code>KeySpec</code> parameter instead.
+     * The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data key (64
+     * bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, and 1024. 1024 is the current limit. We
-     *        recommend that you use the <code>KeySpec</code> parameter instead.
+     *        The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data
+     *        key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that
+     *        you use the <code>KeySpec</code> field instead of this one.
      */
 
     public void setNumberOfBytes(Integer numberOfBytes) {
@@ -401,15 +450,14 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, and 1024. 1024 is the current limit. We recommend that you
-     * use the <code>KeySpec</code> parameter instead.
+     * The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data key (64
+     * bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.
      * </p>
      * 
-     * @return Integer that contains the number of bytes to generate. Common
-     *         values are 128, 256, 512, and 1024. 1024 is the current limit. We
-     *         recommend that you use the <code>KeySpec</code> parameter
-     *         instead.
+     * @return The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data
+     *         key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend
+     *         that you use the <code>KeySpec</code> field instead of this one.
      */
 
     public Integer getNumberOfBytes() {
@@ -418,17 +466,16 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, and 1024. 1024 is the current limit. We recommend that you
-     * use the <code>KeySpec</code> parameter instead.
+     * The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data key (64
+     * bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, and 1024. 1024 is the current limit. We
-     *        recommend that you use the <code>KeySpec</code> parameter instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data
+     *        key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that
+     *        you use the <code>KeySpec</code> field instead of this one.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateDataKeyRequest withNumberOfBytes(Integer numberOfBytes) {
@@ -438,13 +485,13 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      * 
      * @param keySpec
-     *        Value that identifies the encryption algorithm and key size to
-     *        generate a data key for. Currently this can be AES_128 or AES_256.
+     *        The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     *        <code>AES_256</code> to generate a 256-bit symmetric key.
      * @see DataKeySpec
      */
 
@@ -454,13 +501,12 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      * 
-     * @return Value that identifies the encryption algorithm and key size to
-     *         generate a data key for. Currently this can be AES_128 or
-     *         AES_256.
+     * @return The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     *         <code>AES_256</code> to generate a 256-bit symmetric key.
      * @see DataKeySpec
      */
 
@@ -470,15 +516,14 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      * 
      * @param keySpec
-     *        Value that identifies the encryption algorithm and key size to
-     *        generate a data key for. Currently this can be AES_128 or AES_256.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     *        <code>AES_256</code> to generate a 256-bit symmetric key.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeySpec
      */
 
@@ -489,36 +534,35 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      * 
      * @param keySpec
-     *        Value that identifies the encryption algorithm and key size to
-     *        generate a data key for. Currently this can be AES_128 or AES_256.
+     *        The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     *        <code>AES_256</code> to generate a 256-bit symmetric key.
      * @see DataKeySpec
      */
 
     public void setKeySpec(DataKeySpec keySpec) {
-        this.keySpec = keySpec.toString();
+        withKeySpec(keySpec);
     }
 
     /**
      * <p>
-     * Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.
+     * The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     * <code>AES_256</code> to generate a 256-bit symmetric key.
      * </p>
      * 
      * @param keySpec
-     *        Value that identifies the encryption algorithm and key size to
-     *        generate a data key for. Currently this can be AES_128 or AES_256.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of the data encryption key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or
+     *        <code>AES_256</code> to generate a 256-bit symmetric key.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeySpec
      */
 
     public GenerateDataKeyRequest withKeySpec(DataKeySpec keySpec) {
-        setKeySpec(keySpec);
+        this.keySpec = keySpec.toString();
         return this;
     }
 
@@ -527,18 +571,16 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.List<String> getGrantTokens() {
@@ -553,19 +595,17 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
@@ -574,8 +614,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.grantTokens = new com.amazonaws.internal.SdkInternalList<String>(
-                grantTokens);
+        this.grantTokens = new com.amazonaws.internal.SdkInternalList<String>(grantTokens);
     }
 
     /**
@@ -583,33 +622,28 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGrantTokens(java.util.Collection)} or
-     * {@link #withGrantTokens(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGrantTokens(java.util.Collection)} or {@link #withGrantTokens(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateDataKeyRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
-            setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
-                    grantTokens.length));
+            setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(grantTokens.length));
         }
         for (String ele : grantTokens) {
             this.grantTokens.add(ele);
@@ -622,32 +656,28 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
-     *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GenerateDataKeyRequest withGrantTokens(
-            java.util.Collection<String> grantTokens) {
+    public GenerateDataKeyRequest withGrantTokens(java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -658,15 +688,15 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getEncryptionContext() != null)
-            sb.append("EncryptionContext: " + getEncryptionContext() + ",");
+            sb.append("EncryptionContext: ").append(getEncryptionContext()).append(",");
         if (getNumberOfBytes() != null)
-            sb.append("NumberOfBytes: " + getNumberOfBytes() + ",");
+            sb.append("NumberOfBytes: ").append(getNumberOfBytes()).append(",");
         if (getKeySpec() != null)
-            sb.append("KeySpec: " + getKeySpec() + ",");
+            sb.append("KeySpec: ").append(getKeySpec()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }
@@ -683,30 +713,23 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
         GenerateDataKeyRequest other = (GenerateDataKeyRequest) obj;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
-        if (other.getEncryptionContext() == null
-                ^ this.getEncryptionContext() == null)
+        if (other.getEncryptionContext() == null ^ this.getEncryptionContext() == null)
             return false;
-        if (other.getEncryptionContext() != null
-                && other.getEncryptionContext().equals(
-                        this.getEncryptionContext()) == false)
+        if (other.getEncryptionContext() != null && other.getEncryptionContext().equals(this.getEncryptionContext()) == false)
             return false;
         if (other.getNumberOfBytes() == null ^ this.getNumberOfBytes() == null)
             return false;
-        if (other.getNumberOfBytes() != null
-                && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
+        if (other.getNumberOfBytes() != null && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
             return false;
         if (other.getKeySpec() == null ^ this.getKeySpec() == null)
             return false;
-        if (other.getKeySpec() != null
-                && other.getKeySpec().equals(this.getKeySpec()) == false)
+        if (other.getKeySpec() != null && other.getKeySpec().equals(this.getKeySpec()) == false)
             return false;
         if (other.getGrantTokens() == null ^ this.getGrantTokens() == null)
             return false;
-        if (other.getGrantTokens() != null
-                && other.getGrantTokens().equals(this.getGrantTokens()) == false)
+        if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
         return true;
     }
@@ -716,21 +739,11 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEncryptionContext() == null) ? 0
-                        : getEncryptionContext().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKeySpec() == null) ? 0 : getKeySpec().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionContext() == null) ? 0 : getEncryptionContext().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes().hashCode());
+        hashCode = prime * hashCode + ((getKeySpec() == null) ? 0 : getKeySpec().hashCode());
+        hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
         return hashCode;
     }
 
@@ -738,4 +751,5 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
     public GenerateDataKeyRequest clone() {
         return (GenerateDataKeyRequest) super.clone();
     }
+
 }

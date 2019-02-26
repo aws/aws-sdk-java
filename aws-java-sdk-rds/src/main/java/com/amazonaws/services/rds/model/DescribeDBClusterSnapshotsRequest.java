@@ -1,36 +1,35 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the DB cluster to retrieve the list of DB cluster snapshots
-     * for. This parameter cannot be used in conjunction with the
-     * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive.
+     * The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     * conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -38,17 +37,7 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -56,9 +45,8 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     private String dBClusterIdentifier;
     /**
      * <p>
-     * A specific DB cluster snapshot identifier to describe. This parameter
-     * cannot be used in conjunction with the <code>DBClusterIdentifier</code>
-     * parameter. This value is stored as a lowercase string.
+     * A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the
+     * <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -66,23 +54,12 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * If supplied, must match the identifier of an existing DBClusterSnapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this identifier is for an automated snapshot, the
-     * <code>SnapshotType</code> parameter must also be specified.
+     * If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.
      * </p>
      * </li>
      * </ul>
@@ -90,50 +67,42 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     private String dBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The type of DB cluster snapshots to be returned. You can specify one of
-     * the following values:
+     * The type of DB cluster snapshots to be returned. You can specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>automated</code> - Return all DB cluster snapshots that have been
-     * automatically taken by Amazon RDS for my AWS account.
+     * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
+     * AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been
-     * taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have
-     * been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>public</code> - Return all DB cluster snapshots that have been
-     * marked as public.
+     * <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual DB cluster snapshots are returned. You can include
-     * shared DB cluster snapshots with these results by setting the
-     * <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public DB cluster snapshots with these results by setting the
-     * <code>IncludePublic</code> parameter to <code>true</code>.
+     * If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are
+     * returned. You can include shared DB cluster snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
-     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code>
-     * or <code>automated</code>. The <code>IncludePublic</code> parameter
-     * doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't
-     * apply when <code>SnapshotType</code> is set to <code>public</code>.
+     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     * <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
+     * parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.
      * </p>
      */
     private String snapshotType;
@@ -145,10 +114,9 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -160,47 +128,39 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <code>DescribeDBClusterSnapshots</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to
-     * <code>false</code>. The default is <code>false</code>.
+     * True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster
-     * snapshot from another AWS account by the
+     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
      * <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      */
     private Boolean includeShared;
     /**
      * <p>
-     * Set this value to <code>true</code> to include manual DB cluster
-     * snapshots that are public and can be copied or restored by any AWS
-     * account, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>. The default is false.
+     * True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account, and
+     * otherwise false. The default is <code>false</code>. The default is false.
      * </p>
      * <p>
-     * You can share a manual DB cluster snapshot as public by using the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.
      * </p>
      */
     private Boolean includePublic;
 
     /**
      * <p>
-     * The ID of the DB cluster to retrieve the list of DB cluster snapshots
-     * for. This parameter cannot be used in conjunction with the
-     * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive.
+     * The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     * conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -208,43 +168,22 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The ID of the DB cluster to retrieve the list of DB cluster
-     *        snapshots for. This parameter cannot be used in conjunction with
-     *        the <code>DBClusterSnapshotIdentifier</code> parameter. This
-     *        parameter is not case-sensitive. </p>
+     *        The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     *        conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
+     *        case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
      */
@@ -255,10 +194,8 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the DB cluster to retrieve the list of DB cluster snapshots
-     * for. This parameter cannot be used in conjunction with the
-     * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive.
+     * The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     * conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -266,42 +203,21 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The ID of the DB cluster to retrieve the list of DB cluster
-     *         snapshots for. This parameter cannot be used in conjunction with
-     *         the <code>DBClusterSnapshotIdentifier</code> parameter. This
-     *         parameter is not case-sensitive. </p>
+     * @return The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used
+     *         in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
+     *         case-sensitive. </p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match the identifier of an existing DBCluster.
      *         </p>
      *         </li>
      */
@@ -312,10 +228,8 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the DB cluster to retrieve the list of DB cluster snapshots
-     * for. This parameter cannot be used in conjunction with the
-     * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive.
+     * The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     * conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -323,60 +237,36 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The ID of the DB cluster to retrieve the list of DB cluster
-     *        snapshots for. This parameter cannot be used in conjunction with
-     *        the <code>DBClusterSnapshotIdentifier</code> parameter. This
-     *        parameter is not case-sensitive. </p>
+     *        The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
+     *        conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
+     *        case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        If supplied, must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withDBClusterIdentifier(
-            String dBClusterIdentifier) {
+    public DescribeDBClusterSnapshotsRequest withDBClusterIdentifier(String dBClusterIdentifier) {
         setDBClusterIdentifier(dBClusterIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * A specific DB cluster snapshot identifier to describe. This parameter
-     * cannot be used in conjunction with the <code>DBClusterIdentifier</code>
-     * parameter. This value is stored as a lowercase string.
+     * A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the
+     * <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -384,69 +274,44 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * If supplied, must match the identifier of an existing DBClusterSnapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this identifier is for an automated snapshot, the
-     * <code>SnapshotType</code> parameter must also be specified.
+     * If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        A specific DB cluster snapshot identifier to describe. This
-     *        parameter cannot be used in conjunction with the
-     *        <code>DBClusterIdentifier</code> parameter. This value is stored
-     *        as a lowercase string. </p>
+     *        A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
+     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        If supplied, must match the identifier of an existing DBClusterSnapshot.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If this identifier is for an automated snapshot, the
-     *        <code>SnapshotType</code> parameter must also be specified.
+     *        If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be
+     *        specified.
      *        </p>
      *        </li>
      */
 
-    public void setDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         this.dBClusterSnapshotIdentifier = dBClusterSnapshotIdentifier;
     }
 
     /**
      * <p>
-     * A specific DB cluster snapshot identifier to describe. This parameter
-     * cannot be used in conjunction with the <code>DBClusterIdentifier</code>
-     * parameter. This value is stored as a lowercase string.
+     * A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the
+     * <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -454,54 +319,31 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * If supplied, must match the identifier of an existing DBClusterSnapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this identifier is for an automated snapshot, the
-     * <code>SnapshotType</code> parameter must also be specified.
+     * If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A specific DB cluster snapshot identifier to describe. This
-     *         parameter cannot be used in conjunction with the
-     *         <code>DBClusterIdentifier</code> parameter. This value is stored
-     *         as a lowercase string. </p>
+     * @return A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
+     *         the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         If supplied, must match the identifier of an existing DBClusterSnapshot.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If this identifier is for an automated snapshot, the
-     *         <code>SnapshotType</code> parameter must also be specified.
+     *         If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be
+     *         specified.
      *         </p>
      *         </li>
      */
@@ -512,9 +354,8 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific DB cluster snapshot identifier to describe. This parameter
-     * cannot be used in conjunction with the <code>DBClusterIdentifier</code>
-     * parameter. This value is stored as a lowercase string.
+     * A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the
+     * <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -522,161 +363,119 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * If supplied, must match the identifier of an existing DBClusterSnapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this identifier is for an automated snapshot, the
-     * <code>SnapshotType</code> parameter must also be specified.
+     * If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        A specific DB cluster snapshot identifier to describe. This
-     *        parameter cannot be used in conjunction with the
-     *        <code>DBClusterIdentifier</code> parameter. This value is stored
-     *        as a lowercase string. </p>
+     *        A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
+     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        If supplied, must match the identifier of an existing DBClusterSnapshot.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be
+     *        specified.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If this identifier is for an automated snapshot, the
-     *        <code>SnapshotType</code> parameter must also be specified.
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withDBClusterSnapshotIdentifier(
-            String dBClusterSnapshotIdentifier) {
+    public DescribeDBClusterSnapshotsRequest withDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
         setDBClusterSnapshotIdentifier(dBClusterSnapshotIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The type of DB cluster snapshots to be returned. You can specify one of
-     * the following values:
+     * The type of DB cluster snapshots to be returned. You can specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>automated</code> - Return all DB cluster snapshots that have been
-     * automatically taken by Amazon RDS for my AWS account.
+     * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
+     * AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been
-     * taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have
-     * been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>public</code> - Return all DB cluster snapshots that have been
-     * marked as public.
+     * <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual DB cluster snapshots are returned. You can include
-     * shared DB cluster snapshots with these results by setting the
-     * <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public DB cluster snapshots with these results by setting the
-     * <code>IncludePublic</code> parameter to <code>true</code>.
+     * If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are
+     * returned. You can include shared DB cluster snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
-     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code>
-     * or <code>automated</code>. The <code>IncludePublic</code> parameter
-     * doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't
-     * apply when <code>SnapshotType</code> is set to <code>public</code>.
+     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     * <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
+     * parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.
      * </p>
      * 
      * @param snapshotType
-     *        The type of DB cluster snapshots to be returned. You can specify
-     *        one of the following values:</p>
+     *        The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>automated</code> - Return all DB cluster snapshots that have
-     *        been automatically taken by Amazon RDS for my AWS account.
+     *        <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
+     *        for my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manual</code> - Return all DB cluster snapshots that have
-     *        been taken by my AWS account.
+     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>shared</code> - Return all manual DB cluster snapshots that
-     *        have been shared to my AWS account.
+     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>public</code> - Return all DB cluster snapshots that have
-     *        been marked as public.
+     *        <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify a <code>SnapshotType</code> value, then both
-     *        automated and manual DB cluster snapshots are returned. You can
-     *        include shared DB cluster snapshots with these results by setting
-     *        the <code>IncludeShared</code> parameter to <code>true</code>. You
-     *        can include public DB cluster snapshots with these results by
-     *        setting the <code>IncludePublic</code> parameter to
-     *        <code>true</code>.
+     *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster
+     *        snapshots are returned. You can include shared DB cluster snapshots with these results by setting the
+     *        <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots
+     *        with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      *        </p>
      *        <p>
-     *        The <code>IncludeShared</code> and <code>IncludePublic</code>
-     *        parameters don't apply for <code>SnapshotType</code> values of
-     *        <code>manual</code> or <code>automated</code>. The
-     *        <code>IncludePublic</code> parameter doesn't apply when
-     *        <code>SnapshotType</code> is set to <code>shared</code>. The
-     *        <code>IncludeShared</code> parameter doesn't apply when
-     *        <code>SnapshotType</code> is set to <code>public</code>.
+     *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     *        <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The
+     *        <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to
+     *        <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code>
+     *        is set to <code>public</code>.
      */
 
     public void setSnapshotType(String snapshotType) {
@@ -685,96 +484,79 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of DB cluster snapshots to be returned. You can specify one of
-     * the following values:
+     * The type of DB cluster snapshots to be returned. You can specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>automated</code> - Return all DB cluster snapshots that have been
-     * automatically taken by Amazon RDS for my AWS account.
+     * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
+     * AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been
-     * taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have
-     * been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>public</code> - Return all DB cluster snapshots that have been
-     * marked as public.
+     * <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual DB cluster snapshots are returned. You can include
-     * shared DB cluster snapshots with these results by setting the
-     * <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public DB cluster snapshots with these results by setting the
-     * <code>IncludePublic</code> parameter to <code>true</code>.
+     * If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are
+     * returned. You can include shared DB cluster snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
-     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code>
-     * or <code>automated</code>. The <code>IncludePublic</code> parameter
-     * doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't
-     * apply when <code>SnapshotType</code> is set to <code>public</code>.
+     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     * <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
+     * parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.
      * </p>
      * 
-     * @return The type of DB cluster snapshots to be returned. You can specify
-     *         one of the following values:</p>
+     * @return The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>automated</code> - Return all DB cluster snapshots that
-     *         have been automatically taken by Amazon RDS for my AWS account.
+     *         <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
+     *         for my AWS account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>manual</code> - Return all DB cluster snapshots that have
-     *         been taken by my AWS account.
+     *         <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>shared</code> - Return all manual DB cluster snapshots that
-     *         have been shared to my AWS account.
+     *         <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>public</code> - Return all DB cluster snapshots that have
-     *         been marked as public.
+     *         <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify a <code>SnapshotType</code> value, then both
-     *         automated and manual DB cluster snapshots are returned. You can
-     *         include shared DB cluster snapshots with these results by setting
-     *         the <code>IncludeShared</code> parameter to <code>true</code>.
-     *         You can include public DB cluster snapshots with these results by
-     *         setting the <code>IncludePublic</code> parameter to
-     *         <code>true</code>.
+     *         If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster
+     *         snapshots are returned. You can include shared DB cluster snapshots with these results by setting the
+     *         <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots
+     *         with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      *         </p>
      *         <p>
-     *         The <code>IncludeShared</code> and <code>IncludePublic</code>
-     *         parameters don't apply for <code>SnapshotType</code> values of
-     *         <code>manual</code> or <code>automated</code>. The
-     *         <code>IncludePublic</code> parameter doesn't apply when
-     *         <code>SnapshotType</code> is set to <code>shared</code>. The
-     *         <code>IncludeShared</code> parameter doesn't apply when
+     *         The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     *         <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The
+     *         <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to
+     *         <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
      *         <code>SnapshotType</code> is set to <code>public</code>.
      */
 
@@ -784,104 +566,85 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of DB cluster snapshots to be returned. You can specify one of
-     * the following values:
+     * The type of DB cluster snapshots to be returned. You can specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>automated</code> - Return all DB cluster snapshots that have been
-     * automatically taken by Amazon RDS for my AWS account.
+     * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
+     * AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been
-     * taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have
-     * been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>public</code> - Return all DB cluster snapshots that have been
-     * marked as public.
+     * <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual DB cluster snapshots are returned. You can include
-     * shared DB cluster snapshots with these results by setting the
-     * <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public DB cluster snapshots with these results by setting the
-     * <code>IncludePublic</code> parameter to <code>true</code>.
+     * If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are
+     * returned. You can include shared DB cluster snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
-     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code>
-     * or <code>automated</code>. The <code>IncludePublic</code> parameter
-     * doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't
-     * apply when <code>SnapshotType</code> is set to <code>public</code>.
+     * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     * <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
+     * parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.
      * </p>
      * 
      * @param snapshotType
-     *        The type of DB cluster snapshots to be returned. You can specify
-     *        one of the following values:</p>
+     *        The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>automated</code> - Return all DB cluster snapshots that have
-     *        been automatically taken by Amazon RDS for my AWS account.
+     *        <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
+     *        for my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manual</code> - Return all DB cluster snapshots that have
-     *        been taken by my AWS account.
+     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>shared</code> - Return all manual DB cluster snapshots that
-     *        have been shared to my AWS account.
+     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>public</code> - Return all DB cluster snapshots that have
-     *        been marked as public.
+     *        <code>public</code> - Return all DB cluster snapshots that have been marked as public.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify a <code>SnapshotType</code> value, then both
-     *        automated and manual DB cluster snapshots are returned. You can
-     *        include shared DB cluster snapshots with these results by setting
-     *        the <code>IncludeShared</code> parameter to <code>true</code>. You
-     *        can include public DB cluster snapshots with these results by
-     *        setting the <code>IncludePublic</code> parameter to
-     *        <code>true</code>.
+     *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster
+     *        snapshots are returned. You can include shared DB cluster snapshots with these results by setting the
+     *        <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots
+     *        with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
      *        </p>
      *        <p>
-     *        The <code>IncludeShared</code> and <code>IncludePublic</code>
-     *        parameters don't apply for <code>SnapshotType</code> values of
-     *        <code>manual</code> or <code>automated</code>. The
-     *        <code>IncludePublic</code> parameter doesn't apply when
-     *        <code>SnapshotType</code> is set to <code>shared</code>. The
-     *        <code>IncludeShared</code> parameter doesn't apply when
-     *        <code>SnapshotType</code> is set to <code>public</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
+     *        <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The
+     *        <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to
+     *        <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code>
+     *        is set to <code>public</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withSnapshotType(
-            String snapshotType) {
+    public DescribeDBClusterSnapshotsRequest withSnapshotType(String snapshotType) {
         setSnapshotType(snapshotType);
         return this;
     }
@@ -916,8 +679,7 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -925,22 +687,19 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * This parameter is not currently supported.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClusterSnapshotsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -955,22 +714,19 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * 
      * @param filters
      *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeDBClusterSnapshotsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -980,10 +736,9 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -997,10 +752,9 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -1009,10 +763,9 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * Constraints: Minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so
-     *         that the remaining results can be retrieved. </p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *         remaining results can be retrieved. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -1026,10 +779,9 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -1039,17 +791,15 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: Minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClusterSnapshotsRequest withMaxRecords(Integer maxRecords) {
@@ -1059,17 +809,15 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <code>DescribeDBClusterSnapshots</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <code>DescribeDBClusterSnapshots</code> request. If this parameter
-     *        is specified, the response includes only records beyond the
-     *        marker, up to the value specified by <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -1078,16 +826,14 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <code>DescribeDBClusterSnapshots</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous
-     *         <code>DescribeDBClusterSnapshots</code> request. If this
-     *         parameter is specified, the response includes only records beyond
-     *         the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *         this parameter is specified, the response includes only records beyond the marker, up to the value
+     *         specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -1096,19 +842,16 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <code>DescribeDBClusterSnapshots</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <code>DescribeDBClusterSnapshots</code> request. If this parameter
-     *        is specified, the response includes only records beyond the
-     *        marker, up to the value specified by <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClusterSnapshotsRequest withMarker(String marker) {
@@ -1118,27 +861,20 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to
-     * <code>false</code>. The default is <code>false</code>.
+     * True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster
-     * snapshot from another AWS account by the
+     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
      * <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param includeShared
-     *        Set this value to <code>true</code> to include shared manual DB
-     *        cluster snapshots from other AWS accounts that this AWS account
-     *        has been given permission to copy or restore, otherwise set this
-     *        value to <code>false</code>. The default is <code>false</code>
-     *        .</p>
+     *        True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been
+     *        given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
      *        <p>
-     *        You can give an AWS account permission to restore a manual DB
-     *        cluster snapshot from another AWS account by the
-     *        <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *        You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by
+     *        the <a>ModifyDBClusterSnapshotAttribute</a> API action.
      */
 
     public void setIncludeShared(Boolean includeShared) {
@@ -1147,26 +883,19 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to
-     * <code>false</code>. The default is <code>false</code>.
+     * True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster
-     * snapshot from another AWS account by the
+     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
      * <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      * 
-     * @return Set this value to <code>true</code> to include shared manual DB
-     *         cluster snapshots from other AWS accounts that this AWS account
-     *         has been given permission to copy or restore, otherwise set this
-     *         value to <code>false</code>. The default is <code>false</code>
-     *         .</p>
+     * @return True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been
+     *         given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
      *         <p>
-     *         You can give an AWS account permission to restore a manual DB
-     *         cluster snapshot from another AWS account by the
-     *         <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *         You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account
+     *         by the <a>ModifyDBClusterSnapshotAttribute</a> API action.
      */
 
     public Boolean getIncludeShared() {
@@ -1175,59 +904,43 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to
-     * <code>false</code>. The default is <code>false</code>.
+     * True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster
-     * snapshot from another AWS account by the
+     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
      * <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param includeShared
-     *        Set this value to <code>true</code> to include shared manual DB
-     *        cluster snapshots from other AWS accounts that this AWS account
-     *        has been given permission to copy or restore, otherwise set this
-     *        value to <code>false</code>. The default is <code>false</code>
-     *        .</p>
+     *        True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been
+     *        given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
      *        <p>
-     *        You can give an AWS account permission to restore a manual DB
-     *        cluster snapshot from another AWS account by the
-     *        <a>ModifyDBClusterSnapshotAttribute</a> API action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by
+     *        the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withIncludeShared(
-            Boolean includeShared) {
+    public DescribeDBClusterSnapshotsRequest withIncludeShared(Boolean includeShared) {
         setIncludeShared(includeShared);
         return this;
     }
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to
-     * <code>false</code>. The default is <code>false</code>.
+     * True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster
-     * snapshot from another AWS account by the
+     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
      * <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      * 
-     * @return Set this value to <code>true</code> to include shared manual DB
-     *         cluster snapshots from other AWS accounts that this AWS account
-     *         has been given permission to copy or restore, otherwise set this
-     *         value to <code>false</code>. The default is <code>false</code>
-     *         .</p>
+     * @return True to include shared manual DB cluster snapshots from other AWS accounts that this AWS account has been
+     *         given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
      *         <p>
-     *         You can give an AWS account permission to restore a manual DB
-     *         cluster snapshot from another AWS account by the
-     *         <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *         You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account
+     *         by the <a>ModifyDBClusterSnapshotAttribute</a> API action.
      */
 
     public Boolean isIncludeShared() {
@@ -1236,24 +949,20 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include manual DB cluster
-     * snapshots that are public and can be copied or restored by any AWS
-     * account, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>. The default is false.
+     * True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account, and
+     * otherwise false. The default is <code>false</code>. The default is false.
      * </p>
      * <p>
-     * You can share a manual DB cluster snapshot as public by using the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.
      * </p>
      * 
      * @param includePublic
-     *        Set this value to <code>true</code> to include manual DB cluster
-     *        snapshots that are public and can be copied or restored by any AWS
-     *        account, otherwise set this value to <code>false</code>. The
-     *        default is <code>false</code>. The default is false.</p>
+     *        True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS
+     *        account, and otherwise false. The default is <code>false</code>. The default is false.</p>
      *        <p>
-     *        You can share a manual DB cluster snapshot as public by using the
-     *        <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *        You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     *        API action.
      */
 
     public void setIncludePublic(Boolean includePublic) {
@@ -1262,23 +971,19 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include manual DB cluster
-     * snapshots that are public and can be copied or restored by any AWS
-     * account, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>. The default is false.
+     * True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account, and
+     * otherwise false. The default is <code>false</code>. The default is false.
      * </p>
      * <p>
-     * You can share a manual DB cluster snapshot as public by using the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.
      * </p>
      * 
-     * @return Set this value to <code>true</code> to include manual DB cluster
-     *         snapshots that are public and can be copied or restored by any
-     *         AWS account, otherwise set this value to <code>false</code>. The
-     *         default is <code>false</code>. The default is false.</p>
+     * @return True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS
+     *         account, and otherwise false. The default is <code>false</code>. The default is false.</p>
      *         <p>
-     *         You can share a manual DB cluster snapshot as public by using the
-     *         <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *         You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     *         API action.
      */
 
     public Boolean getIncludePublic() {
@@ -1287,53 +992,43 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include manual DB cluster
-     * snapshots that are public and can be copied or restored by any AWS
-     * account, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>. The default is false.
+     * True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account, and
+     * otherwise false. The default is <code>false</code>. The default is false.
      * </p>
      * <p>
-     * You can share a manual DB cluster snapshot as public by using the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.
      * </p>
      * 
      * @param includePublic
-     *        Set this value to <code>true</code> to include manual DB cluster
-     *        snapshots that are public and can be copied or restored by any AWS
-     *        account, otherwise set this value to <code>false</code>. The
-     *        default is <code>false</code>. The default is false.</p>
+     *        True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS
+     *        account, and otherwise false. The default is <code>false</code>. The default is false.</p>
      *        <p>
-     *        You can share a manual DB cluster snapshot as public by using the
-     *        <a>ModifyDBClusterSnapshotAttribute</a> API action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     *        API action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClusterSnapshotsRequest withIncludePublic(
-            Boolean includePublic) {
+    public DescribeDBClusterSnapshotsRequest withIncludePublic(Boolean includePublic) {
         setIncludePublic(includePublic);
         return this;
     }
 
     /**
      * <p>
-     * Set this value to <code>true</code> to include manual DB cluster
-     * snapshots that are public and can be copied or restored by any AWS
-     * account, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>. The default is false.
+     * True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account, and
+     * otherwise false. The default is <code>false</code>. The default is false.
      * </p>
      * <p>
-     * You can share a manual DB cluster snapshot as public by using the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.
      * </p>
      * 
-     * @return Set this value to <code>true</code> to include manual DB cluster
-     *         snapshots that are public and can be copied or restored by any
-     *         AWS account, otherwise set this value to <code>false</code>. The
-     *         default is <code>false</code>. The default is false.</p>
+     * @return True to include manual DB cluster snapshots that are public and can be copied or restored by any AWS
+     *         account, and otherwise false. The default is <code>false</code>. The default is false.</p>
      *         <p>
-     *         You can share a manual DB cluster snapshot as public by using the
-     *         <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     *         You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     *         API action.
      */
 
     public Boolean isIncludePublic() {
@@ -1341,8 +1036,8 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1353,22 +1048,21 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: "
-                    + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier()).append(",");
         if (getSnapshotType() != null)
-            sb.append("SnapshotType: " + getSnapshotType() + ",");
+            sb.append("SnapshotType: ").append(getSnapshotType()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getIncludeShared() != null)
-            sb.append("IncludeShared: " + getIncludeShared() + ",");
+            sb.append("IncludeShared: ").append(getIncludeShared()).append(",");
         if (getIncludePublic() != null)
-            sb.append("IncludePublic: " + getIncludePublic());
+            sb.append("IncludePublic: ").append(getIncludePublic());
         sb.append("}");
         return sb.toString();
     }
@@ -1383,49 +1077,37 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeDBClusterSnapshotsRequest == false)
             return false;
         DescribeDBClusterSnapshotsRequest other = (DescribeDBClusterSnapshotsRequest) obj;
-        if (other.getDBClusterIdentifier() == null
-                ^ this.getDBClusterIdentifier() == null)
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
-        if (other.getDBClusterIdentifier() != null
-                && other.getDBClusterIdentifier().equals(
-                        this.getDBClusterIdentifier()) == false)
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
             return false;
-        if (other.getDBClusterSnapshotIdentifier() == null
-                ^ this.getDBClusterSnapshotIdentifier() == null)
+        if (other.getDBClusterSnapshotIdentifier() == null ^ this.getDBClusterSnapshotIdentifier() == null)
             return false;
-        if (other.getDBClusterSnapshotIdentifier() != null
-                && other.getDBClusterSnapshotIdentifier().equals(
-                        this.getDBClusterSnapshotIdentifier()) == false)
+        if (other.getDBClusterSnapshotIdentifier() != null && other.getDBClusterSnapshotIdentifier().equals(this.getDBClusterSnapshotIdentifier()) == false)
             return false;
         if (other.getSnapshotType() == null ^ this.getSnapshotType() == null)
             return false;
-        if (other.getSnapshotType() != null
-                && other.getSnapshotType().equals(this.getSnapshotType()) == false)
+        if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getIncludeShared() == null ^ this.getIncludeShared() == null)
             return false;
-        if (other.getIncludeShared() != null
-                && other.getIncludeShared().equals(this.getIncludeShared()) == false)
+        if (other.getIncludeShared() != null && other.getIncludeShared().equals(this.getIncludeShared()) == false)
             return false;
         if (other.getIncludePublic() == null ^ this.getIncludePublic() == null)
             return false;
-        if (other.getIncludePublic() != null
-                && other.getIncludePublic().equals(this.getIncludePublic()) == false)
+        if (other.getIncludePublic() != null && other.getIncludePublic().equals(this.getIncludePublic()) == false)
             return false;
         return true;
     }
@@ -1435,32 +1117,14 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterIdentifier() == null) ? 0
-                        : getDBClusterIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterSnapshotIdentifier() == null) ? 0
-                        : getDBClusterSnapshotIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotType() == null) ? 0 : getSnapshotType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIncludeShared() == null) ? 0 : getIncludeShared()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIncludePublic() == null) ? 0 : getIncludePublic()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterSnapshotIdentifier() == null) ? 0 : getDBClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
+        hashCode = prime * hashCode + ((getIncludePublic() == null) ? 0 : getIncludePublic().hashCode());
         return hashCode;
     }
 
@@ -1468,4 +1132,5 @@ public class DescribeDBClusterSnapshotsRequest extends AmazonWebServiceRequest
     public DescribeDBClusterSnapshotsRequest clone() {
         return (DescribeDBClusterSnapshotsRequest) super.clone();
     }
+
 }

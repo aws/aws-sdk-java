@@ -15,12 +15,14 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.internal.Utils;
+
 import java.util.Iterator;
 import java.util.List;
 
-import com.amazonaws.codegen.internal.Utils;
-
 public class SimpleMethodFormModel {
+
+    private boolean deprecated;
 
     private List<ArgumentModel> arguments;
 
@@ -63,5 +65,13 @@ public class SimpleMethodFormModel {
         }
 
         return builder.toString();
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
     }
 }

@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the response from the server from the request to get information
- * about the user.
+ * Represents the response from the server from the request to get information about the user.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetUserResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,6 +36,9 @@ public class GetUserResult implements Serializable, Cloneable {
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      */
     private java.util.List<AttributeType> userAttributes;
     /**
@@ -44,6 +47,18 @@ public class GetUserResult implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     */
+    private String preferredMfaSetting;
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     */
+    private java.util.List<String> userMFASettingList;
 
     /**
      * <p>
@@ -51,8 +66,7 @@ public class GetUserResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve from the get user
-     *        request.
+     *        The user name of the user you wish to retrieve from the get user request.
      */
 
     public void setUsername(String username) {
@@ -64,8 +78,7 @@ public class GetUserResult implements Serializable, Cloneable {
      * The user name of the user you wish to retrieve from the get user request.
      * </p>
      * 
-     * @return The user name of the user you wish to retrieve from the get user
-     *         request.
+     * @return The user name of the user you wish to retrieve from the get user request.
      */
 
     public String getUsername() {
@@ -78,10 +91,8 @@ public class GetUserResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to retrieve from the get user
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user name of the user you wish to retrieve from the get user request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUserResult withUsername(String username) {
@@ -93,8 +104,13 @@ public class GetUserResult implements Serializable, Cloneable {
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of name-value pairs representing user attributes.
+     * @return An array of name-value pairs representing user attributes.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -105,20 +121,23 @@ public class GetUserResult implements Serializable, Cloneable {
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
-    public void setUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
             return;
         }
 
-        this.userAttributes = new java.util.ArrayList<AttributeType>(
-                userAttributes);
+        this.userAttributes = new java.util.ArrayList<AttributeType>(userAttributes);
     }
 
     /**
@@ -126,22 +145,24 @@ public class GetUserResult implements Serializable, Cloneable {
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributes(java.util.Collection)} or
-     * {@link #withUserAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUserResult withUserAttributes(AttributeType... userAttributes) {
         if (this.userAttributes == null) {
-            setUserAttributes(new java.util.ArrayList<AttributeType>(
-                    userAttributes.length));
+            setUserAttributes(new java.util.ArrayList<AttributeType>(userAttributes.length));
         }
         for (AttributeType ele : userAttributes) {
             this.userAttributes.add(ele);
@@ -153,15 +174,18 @@ public class GetUserResult implements Serializable, Cloneable {
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetUserResult withUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public GetUserResult withUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         setUserAttributes(userAttributes);
         return this;
     }
@@ -201,22 +225,19 @@ public class GetUserResult implements Serializable, Cloneable {
      * Specifies the options for MFA (e.g., email or phone number).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMFAOptions(java.util.Collection)} or
-     * {@link #withMFAOptions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMFAOptions(java.util.Collection)} or {@link #withMFAOptions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUserResult withMFAOptions(MFAOptionType... mFAOptions) {
         if (this.mFAOptions == null) {
-            setMFAOptions(new java.util.ArrayList<MFAOptionType>(
-                    mFAOptions.length));
+            setMFAOptions(new java.util.ArrayList<MFAOptionType>(mFAOptions.length));
         }
         for (MFAOptionType ele : mFAOptions) {
             this.mFAOptions.add(ele);
@@ -231,19 +252,127 @@ public class GetUserResult implements Serializable, Cloneable {
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetUserResult withMFAOptions(
-            java.util.Collection<MFAOptionType> mFAOptions) {
+    public GetUserResult withMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
         setMFAOptions(mFAOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
+     */
+
+    public void setPreferredMfaSetting(String preferredMfaSetting) {
+        this.preferredMfaSetting = preferredMfaSetting;
+    }
+
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @return The user's preferred MFA setting.
+     */
+
+    public String getPreferredMfaSetting() {
+        return this.preferredMfaSetting;
+    }
+
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withPreferredMfaSetting(String preferredMfaSetting) {
+        setPreferredMfaSetting(preferredMfaSetting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @return The list of the user's MFA settings.
+     */
+
+    public java.util.List<String> getUserMFASettingList() {
+        return userMFASettingList;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     */
+
+    public void setUserMFASettingList(java.util.Collection<String> userMFASettingList) {
+        if (userMFASettingList == null) {
+            this.userMFASettingList = null;
+            return;
+        }
+
+        this.userMFASettingList = new java.util.ArrayList<String>(userMFASettingList);
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserMFASettingList(java.util.Collection)} or {@link #withUserMFASettingList(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withUserMFASettingList(String... userMFASettingList) {
+        if (this.userMFASettingList == null) {
+            setUserMFASettingList(new java.util.ArrayList<String>(userMFASettingList.length));
+        }
+        for (String ele : userMFASettingList) {
+            this.userMFASettingList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withUserMFASettingList(java.util.Collection<String> userMFASettingList) {
+        setUserMFASettingList(userMFASettingList);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -254,11 +383,15 @@ public class GetUserResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions()).append(",");
+        if (getPreferredMfaSetting() != null)
+            sb.append("PreferredMfaSetting: ").append(getPreferredMfaSetting()).append(",");
+        if (getUserMFASettingList() != null)
+            sb.append("UserMFASettingList: ").append(getUserMFASettingList());
         sb.append("}");
         return sb.toString();
     }
@@ -275,19 +408,23 @@ public class GetUserResult implements Serializable, Cloneable {
         GetUserResult other = (GetUserResult) obj;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
-        if (other.getUserAttributes() == null
-                ^ this.getUserAttributes() == null)
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
-        if (other.getUserAttributes() != null
-                && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
         if (other.getMFAOptions() == null ^ this.getMFAOptions() == null)
             return false;
-        if (other.getMFAOptions() != null
-                && other.getMFAOptions().equals(this.getMFAOptions()) == false)
+        if (other.getMFAOptions() != null && other.getMFAOptions().equals(this.getMFAOptions()) == false)
+            return false;
+        if (other.getPreferredMfaSetting() == null ^ this.getPreferredMfaSetting() == null)
+            return false;
+        if (other.getPreferredMfaSetting() != null && other.getPreferredMfaSetting().equals(this.getPreferredMfaSetting()) == false)
+            return false;
+        if (other.getUserMFASettingList() == null ^ this.getUserMFASettingList() == null)
+            return false;
+        if (other.getUserMFASettingList() != null && other.getUserMFASettingList().equals(this.getUserMFASettingList()) == false)
             return false;
         return true;
     }
@@ -297,14 +434,11 @@ public class GetUserResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributes() == null) ? 0 : getUserAttributes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
+        hashCode = prime * hashCode + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
+        hashCode = prime * hashCode + ((getPreferredMfaSetting() == null) ? 0 : getPreferredMfaSetting().hashCode());
+        hashCode = prime * hashCode + ((getUserMFASettingList() == null) ? 0 : getUserMFASettingList().hashCode());
         return hashCode;
     }
 
@@ -313,9 +447,8 @@ public class GetUserResult implements Serializable, Cloneable {
         try {
             return (GetUserResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

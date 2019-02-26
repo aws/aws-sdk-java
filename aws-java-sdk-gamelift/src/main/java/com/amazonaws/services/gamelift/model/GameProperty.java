@@ -1,40 +1,58 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set of key-value pairs containing information your game server requires to
- * set up sessions. This object allows you to pass in any set of data needed for
- * your game. For more information, see the <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
- * GameLift Developer Guide</a>.
+ * Set of key-value pairs that contain information about a game session. When included in a game session request, these
+ * properties communicate details to be used when setting up the new game session, such as to specify a game mode,
+ * level, or map. Game properties are passed to the game server process when initiating a new game session; the server
+ * process uses the properties as appropriate. For more information, see the <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"
+ * > Amazon GameLift Developer Guide</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GameProperty implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Game property identifier.
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * Game property value.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * Game property identifier.
+     * </p>
+     * 
      * @param key
+     *        Game property identifier.
      */
 
     public void setKey(String key) {
@@ -42,7 +60,11 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Game property identifier.
+     * </p>
+     * 
+     * @return Game property identifier.
      */
 
     public String getKey() {
@@ -50,9 +72,13 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Game property identifier.
+     * </p>
+     * 
      * @param key
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Game property identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GameProperty withKey(String key) {
@@ -61,7 +87,12 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Game property value.
+     * </p>
+     * 
      * @param value
+     *        Game property value.
      */
 
     public void setValue(String value) {
@@ -69,7 +100,11 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Game property value.
+     * </p>
+     * 
+     * @return Game property value.
      */
 
     public String getValue() {
@@ -77,9 +112,13 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Game property value.
+     * </p>
+     * 
      * @param value
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Game property value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GameProperty withValue(String value) {
@@ -88,8 +127,8 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -100,9 +139,9 @@ public class GameProperty implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }
@@ -119,13 +158,11 @@ public class GameProperty implements Serializable, Cloneable {
         GameProperty other = (GameProperty) obj;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -135,10 +172,8 @@ public class GameProperty implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -147,9 +182,13 @@ public class GameProperty implements Serializable, Cloneable {
         try {
             return (GameProperty) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.GamePropertyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

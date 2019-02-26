@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,14 +14,12 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.json.Jackson;
-
-import org.apache.http.annotation.NotThreadSafe;
-
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
@@ -100,9 +98,10 @@ public class DefaultRequest<T> implements Request<T> {
      */
     public DefaultRequest(AmazonWebServiceRequest originalRequest, String serviceName) {
         this.serviceName = serviceName;
-        this.originalRequest = originalRequest == null
-                ? AmazonWebServiceRequest.NOOP
-                : originalRequest;
+
+        this.originalRequest = originalRequest == null ? AmazonWebServiceRequest.NOOP
+                                                       : originalRequest;
+        this.handlerContext.putAll(this.originalRequest.getHandlerContext());
     }
 
     /**

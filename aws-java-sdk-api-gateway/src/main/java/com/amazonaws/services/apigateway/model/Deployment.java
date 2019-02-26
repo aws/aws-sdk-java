@@ -1,31 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An immutable representation of a <a>RestApi</a> resource that can be called
- * by users using <a>Stages</a>. A deployment must be associated with a
- * <a>Stage</a> for it to be callable over the Internet.
+ * An immutable representation of a <a>RestApi</a> resource that can be called by users using <a>Stages</a>. A
+ * deployment must be associated with a <a>Stage</a> for it to be callable over the Internet.
  * </p>
+ * <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a> resource of a
+ * <a>RestApi</a>. To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or
+ * <code>DELETE</code> on the specified deployment resource (
+ * <code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div class="seeAlso"><a>RestApi</a>,
+ * <a>Deployments</a>, <a>Stage</a>, <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
+ * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
-public class Deployment implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,8 +53,7 @@ public class Deployment implements Serializable, Cloneable {
     private java.util.Date createdDate;
     /**
      * <p>
-     * Gets a summary of the <a>RestApi</a> at the date and time that the
-     * deployment resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary;
@@ -85,8 +90,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @param id
      *        The identifier for the deployment resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withId(String id) {
@@ -126,8 +130,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @param description
      *        The description for the deployment resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withDescription(String description) {
@@ -167,8 +170,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @param createdDate
      *        The date and time that the deployment resource was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withCreatedDate(java.util.Date createdDate) {
@@ -178,12 +180,10 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Gets a summary of the <a>RestApi</a> at the date and time that the
-     * deployment resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
-     * @return Gets a summary of the <a>RestApi</a> at the date and time that
-     *         the deployment resource was created.
+     * @return A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      */
 
     public java.util.Map<String, java.util.Map<String, MethodSnapshot>> getApiSummary() {
@@ -192,54 +192,46 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Gets a summary of the <a>RestApi</a> at the date and time that the
-     * deployment resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        Gets a summary of the <a>RestApi</a> at the date and time that the
-     *        deployment resource was created.
+     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      */
 
-    public void setApiSummary(
-            java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
+    public void setApiSummary(java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         this.apiSummary = apiSummary;
     }
 
     /**
      * <p>
-     * Gets a summary of the <a>RestApi</a> at the date and time that the
-     * deployment resource was created.
+     * A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
      * </p>
      * 
      * @param apiSummary
-     *        Gets a summary of the <a>RestApi</a> at the date and time that the
-     *        deployment resource was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Deployment withApiSummary(
-            java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
+    public Deployment withApiSummary(java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         setApiSummary(apiSummary);
         return this;
     }
 
-    public Deployment addApiSummaryEntry(String key,
-            java.util.Map<String, MethodSnapshot> value) {
+    public Deployment addApiSummaryEntry(String key, java.util.Map<String, MethodSnapshot> value) {
         if (null == this.apiSummary) {
             this.apiSummary = new java.util.HashMap<String, java.util.Map<String, MethodSnapshot>>();
         }
         if (this.apiSummary.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.apiSummary.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into ApiSummary. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into ApiSummary.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment clearApiSummaryEntries() {
@@ -248,8 +240,8 @@ public class Deployment implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -260,13 +252,13 @@ public class Deployment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getApiSummary() != null)
-            sb.append("ApiSummary: " + getApiSummary());
+            sb.append("ApiSummary: ").append(getApiSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -283,23 +275,19 @@ public class Deployment implements Serializable, Cloneable {
         Deployment other = (Deployment) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
-        if (other.getCreatedDate() != null
-                && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
         if (other.getApiSummary() == null ^ this.getApiSummary() == null)
             return false;
-        if (other.getApiSummary() != null
-                && other.getApiSummary().equals(this.getApiSummary()) == false)
+        if (other.getApiSummary() != null && other.getApiSummary().equals(this.getApiSummary()) == false)
             return false;
         return true;
     }
@@ -309,16 +297,10 @@ public class Deployment implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getApiSummary() == null) ? 0 : getApiSummary().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getApiSummary() == null) ? 0 : getApiSummary().hashCode());
         return hashCode;
     }
 
@@ -327,9 +309,13 @@ public class Deployment implements Serializable, Cloneable {
         try {
             return (Deployment) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.DeploymentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

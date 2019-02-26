@@ -1,32 +1,31 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
- * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RequestCertificateResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RequestCertificateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the ARN of the issued certificate. This must be of
-     * the form:
+     * String that contains the ARN of the issued certificate. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -36,16 +35,14 @@ public class RequestCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the ARN of the issued certificate. This must be of
-     * the form:
+     * String that contains the ARN of the issued certificate. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the issued certificate. This must
-     *        be of the form: </p>
+     *        String that contains the ARN of the issued certificate. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -56,15 +53,13 @@ public class RequestCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the ARN of the issued certificate. This must be of
-     * the form:
+     * String that contains the ARN of the issued certificate. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
-     * @return String that contains the ARN of the issued certificate. This must
-     *         be of the form: </p>
+     * @return String that contains the ARN of the issued certificate. This must be of the form:</p>
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -75,20 +70,17 @@ public class RequestCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the ARN of the issued certificate. This must be of
-     * the form:
+     * String that contains the ARN of the issued certificate. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the issued certificate. This must
-     *        be of the form: </p>
+     *        String that contains the ARN of the issued certificate. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RequestCertificateResult withCertificateArn(String certificateArn) {
@@ -97,8 +89,8 @@ public class RequestCertificateResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -109,7 +101,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -124,11 +116,9 @@ public class RequestCertificateResult implements Serializable, Cloneable {
         if (obj instanceof RequestCertificateResult == false)
             return false;
         RequestCertificateResult other = (RequestCertificateResult) obj;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         return true;
     }
@@ -138,10 +128,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         return hashCode;
     }
 
@@ -150,9 +137,8 @@ public class RequestCertificateResult implements Serializable, Cloneable {
         try {
             return (RequestCertificateResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

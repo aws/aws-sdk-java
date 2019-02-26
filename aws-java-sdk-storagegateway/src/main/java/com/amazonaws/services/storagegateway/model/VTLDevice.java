@@ -1,34 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a device object associated with a gateway-VTL.
+ * Represents a device object associated with a tape gateway.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice" target="_top">AWS API
+ *      Documentation</a>
  */
-public class VTLDevice implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive
-     * or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      * </p>
      */
     private String vTLDeviceARN;
@@ -47,13 +49,11 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive
-     * or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      * </p>
      * 
      * @param vTLDeviceARN
-     *        Specifies the unique Amazon Resource Name (ARN) of the device
-     *        (tape drive or media changer).
+     *        Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      */
 
     public void setVTLDeviceARN(String vTLDeviceARN) {
@@ -62,12 +62,10 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive
-     * or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      * </p>
      * 
-     * @return Specifies the unique Amazon Resource Name (ARN) of the device
-     *         (tape drive or media changer).
+     * @return Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      */
 
     public String getVTLDeviceARN() {
@@ -76,15 +74,12 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive
-     * or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
      * </p>
      * 
      * @param vTLDeviceARN
-     *        Specifies the unique Amazon Resource Name (ARN) of the device
-     *        (tape drive or media changer).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VTLDevice withVTLDeviceARN(String vTLDeviceARN) {
@@ -110,8 +105,7 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * @param vTLDeviceType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VTLDevice withVTLDeviceType(String vTLDeviceType) {
@@ -137,8 +131,7 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * @param vTLDeviceVendor
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VTLDevice withVTLDeviceVendor(String vTLDeviceVendor) {
@@ -164,12 +157,10 @@ public class VTLDevice implements Serializable, Cloneable {
 
     /**
      * @param vTLDeviceProductIdentifier
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VTLDevice withVTLDeviceProductIdentifier(
-            String vTLDeviceProductIdentifier) {
+    public VTLDevice withVTLDeviceProductIdentifier(String vTLDeviceProductIdentifier) {
         setVTLDeviceProductIdentifier(vTLDeviceProductIdentifier);
         return this;
     }
@@ -183,8 +174,7 @@ public class VTLDevice implements Serializable, Cloneable {
      *        A list of iSCSI information about a VTL device.
      */
 
-    public void setDeviceiSCSIAttributes(
-            DeviceiSCSIAttributes deviceiSCSIAttributes) {
+    public void setDeviceiSCSIAttributes(DeviceiSCSIAttributes deviceiSCSIAttributes) {
         this.deviceiSCSIAttributes = deviceiSCSIAttributes;
     }
 
@@ -207,19 +197,17 @@ public class VTLDevice implements Serializable, Cloneable {
      * 
      * @param deviceiSCSIAttributes
      *        A list of iSCSI information about a VTL device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VTLDevice withDeviceiSCSIAttributes(
-            DeviceiSCSIAttributes deviceiSCSIAttributes) {
+    public VTLDevice withDeviceiSCSIAttributes(DeviceiSCSIAttributes deviceiSCSIAttributes) {
         setDeviceiSCSIAttributes(deviceiSCSIAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -230,16 +218,15 @@ public class VTLDevice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVTLDeviceARN() != null)
-            sb.append("VTLDeviceARN: " + getVTLDeviceARN() + ",");
+            sb.append("VTLDeviceARN: ").append(getVTLDeviceARN()).append(",");
         if (getVTLDeviceType() != null)
-            sb.append("VTLDeviceType: " + getVTLDeviceType() + ",");
+            sb.append("VTLDeviceType: ").append(getVTLDeviceType()).append(",");
         if (getVTLDeviceVendor() != null)
-            sb.append("VTLDeviceVendor: " + getVTLDeviceVendor() + ",");
+            sb.append("VTLDeviceVendor: ").append(getVTLDeviceVendor()).append(",");
         if (getVTLDeviceProductIdentifier() != null)
-            sb.append("VTLDeviceProductIdentifier: "
-                    + getVTLDeviceProductIdentifier() + ",");
+            sb.append("VTLDeviceProductIdentifier: ").append(getVTLDeviceProductIdentifier()).append(",");
         if (getDeviceiSCSIAttributes() != null)
-            sb.append("DeviceiSCSIAttributes: " + getDeviceiSCSIAttributes());
+            sb.append("DeviceiSCSIAttributes: ").append(getDeviceiSCSIAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -256,33 +243,23 @@ public class VTLDevice implements Serializable, Cloneable {
         VTLDevice other = (VTLDevice) obj;
         if (other.getVTLDeviceARN() == null ^ this.getVTLDeviceARN() == null)
             return false;
-        if (other.getVTLDeviceARN() != null
-                && other.getVTLDeviceARN().equals(this.getVTLDeviceARN()) == false)
+        if (other.getVTLDeviceARN() != null && other.getVTLDeviceARN().equals(this.getVTLDeviceARN()) == false)
             return false;
         if (other.getVTLDeviceType() == null ^ this.getVTLDeviceType() == null)
             return false;
-        if (other.getVTLDeviceType() != null
-                && other.getVTLDeviceType().equals(this.getVTLDeviceType()) == false)
+        if (other.getVTLDeviceType() != null && other.getVTLDeviceType().equals(this.getVTLDeviceType()) == false)
             return false;
-        if (other.getVTLDeviceVendor() == null
-                ^ this.getVTLDeviceVendor() == null)
+        if (other.getVTLDeviceVendor() == null ^ this.getVTLDeviceVendor() == null)
             return false;
-        if (other.getVTLDeviceVendor() != null
-                && other.getVTLDeviceVendor().equals(this.getVTLDeviceVendor()) == false)
+        if (other.getVTLDeviceVendor() != null && other.getVTLDeviceVendor().equals(this.getVTLDeviceVendor()) == false)
             return false;
-        if (other.getVTLDeviceProductIdentifier() == null
-                ^ this.getVTLDeviceProductIdentifier() == null)
+        if (other.getVTLDeviceProductIdentifier() == null ^ this.getVTLDeviceProductIdentifier() == null)
             return false;
-        if (other.getVTLDeviceProductIdentifier() != null
-                && other.getVTLDeviceProductIdentifier().equals(
-                        this.getVTLDeviceProductIdentifier()) == false)
+        if (other.getVTLDeviceProductIdentifier() != null && other.getVTLDeviceProductIdentifier().equals(this.getVTLDeviceProductIdentifier()) == false)
             return false;
-        if (other.getDeviceiSCSIAttributes() == null
-                ^ this.getDeviceiSCSIAttributes() == null)
+        if (other.getDeviceiSCSIAttributes() == null ^ this.getDeviceiSCSIAttributes() == null)
             return false;
-        if (other.getDeviceiSCSIAttributes() != null
-                && other.getDeviceiSCSIAttributes().equals(
-                        this.getDeviceiSCSIAttributes()) == false)
+        if (other.getDeviceiSCSIAttributes() != null && other.getDeviceiSCSIAttributes().equals(this.getDeviceiSCSIAttributes()) == false)
             return false;
         return true;
     }
@@ -292,26 +269,11 @@ public class VTLDevice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVTLDeviceARN() == null) ? 0 : getVTLDeviceARN()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVTLDeviceType() == null) ? 0 : getVTLDeviceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVTLDeviceVendor() == null) ? 0 : getVTLDeviceVendor()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVTLDeviceProductIdentifier() == null) ? 0
-                        : getVTLDeviceProductIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceiSCSIAttributes() == null) ? 0
-                        : getDeviceiSCSIAttributes().hashCode());
+        hashCode = prime * hashCode + ((getVTLDeviceARN() == null) ? 0 : getVTLDeviceARN().hashCode());
+        hashCode = prime * hashCode + ((getVTLDeviceType() == null) ? 0 : getVTLDeviceType().hashCode());
+        hashCode = prime * hashCode + ((getVTLDeviceVendor() == null) ? 0 : getVTLDeviceVendor().hashCode());
+        hashCode = prime * hashCode + ((getVTLDeviceProductIdentifier() == null) ? 0 : getVTLDeviceProductIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDeviceiSCSIAttributes() == null) ? 0 : getDeviceiSCSIAttributes().hashCode());
         return hashCode;
     }
 
@@ -320,9 +282,13 @@ public class VTLDevice implements Serializable, Cloneable {
         try {
             return (VTLDevice) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VTLDeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

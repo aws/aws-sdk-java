@@ -1,50 +1,41 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * You started an assessment run, but one of the instances is already
- * participating in another assessment run.
+ * You started an assessment run, but one of the instances is already participating in another assessment run.
  * </p>
  */
-public class AgentsAlreadyRunningAssessmentException extends
-        AmazonServiceException {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AgentsAlreadyRunningAssessmentException extends com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /** <p/> */
-    @com.fasterxml.jackson.annotation.JsonProperty("agents")
     private java.util.List<AgentAlreadyRunningAssessment> agents;
     /** <p/> */
-    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     private Boolean agentsTruncated;
     /**
      * <p>
      * You can immediately retry your request.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     private Boolean canRetry;
 
     /**
-     * Constructs a new AgentsAlreadyRunningAssessmentException with the
-     * specified error message.
+     * Constructs a new AgentsAlreadyRunningAssessmentException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
@@ -59,6 +50,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agents")
     public java.util.List<AgentAlreadyRunningAssessment> getAgents() {
         return agents;
     }
@@ -69,36 +61,31 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @param agents
      */
 
-    public void setAgents(
-            java.util.Collection<AgentAlreadyRunningAssessment> agents) {
+    @com.fasterxml.jackson.annotation.JsonProperty("agents")
+    public void setAgents(java.util.Collection<AgentAlreadyRunningAssessment> agents) {
         if (agents == null) {
             this.agents = null;
             return;
         }
 
-        this.agents = new java.util.ArrayList<AgentAlreadyRunningAssessment>(
-                agents);
+        this.agents = new java.util.ArrayList<AgentAlreadyRunningAssessment>(agents);
     }
 
     /**
      * <p/>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAgents(java.util.Collection)} or
-     * {@link #withAgents(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgents(java.util.Collection)} or {@link #withAgents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param agents
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AgentsAlreadyRunningAssessmentException withAgents(
-            AgentAlreadyRunningAssessment... agents) {
+    public AgentsAlreadyRunningAssessmentException withAgents(AgentAlreadyRunningAssessment... agents) {
         if (this.agents == null) {
-            setAgents(new java.util.ArrayList<AgentAlreadyRunningAssessment>(
-                    agents.length));
+            setAgents(new java.util.ArrayList<AgentAlreadyRunningAssessment>(agents.length));
         }
         for (AgentAlreadyRunningAssessment ele : agents) {
             this.agents.add(ele);
@@ -110,12 +97,10 @@ public class AgentsAlreadyRunningAssessmentException extends
      * <p/>
      * 
      * @param agents
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AgentsAlreadyRunningAssessmentException withAgents(
-            java.util.Collection<AgentAlreadyRunningAssessment> agents) {
+    public AgentsAlreadyRunningAssessmentException withAgents(java.util.Collection<AgentAlreadyRunningAssessment> agents) {
         setAgents(agents);
         return this;
     }
@@ -126,6 +111,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @param agentsTruncated
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     public void setAgentsTruncated(Boolean agentsTruncated) {
         this.agentsTruncated = agentsTruncated;
     }
@@ -136,6 +122,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     public Boolean getAgentsTruncated() {
         return this.agentsTruncated;
     }
@@ -144,12 +131,10 @@ public class AgentsAlreadyRunningAssessmentException extends
      * <p/>
      * 
      * @param agentsTruncated
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AgentsAlreadyRunningAssessmentException withAgentsTruncated(
-            Boolean agentsTruncated) {
+    public AgentsAlreadyRunningAssessmentException withAgentsTruncated(Boolean agentsTruncated) {
         setAgentsTruncated(agentsTruncated);
         return this;
     }
@@ -173,6 +158,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      *        You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public void setCanRetry(Boolean canRetry) {
         this.canRetry = canRetry;
     }
@@ -185,6 +171,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public Boolean getCanRetry() {
         return this.canRetry;
     }
@@ -196,8 +183,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * 
      * @param canRetry
      *        You can immediately retry your request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AgentsAlreadyRunningAssessmentException withCanRetry(Boolean canRetry) {

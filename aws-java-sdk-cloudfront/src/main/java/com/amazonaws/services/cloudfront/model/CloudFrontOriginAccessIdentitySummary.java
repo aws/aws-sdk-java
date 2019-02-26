@@ -1,49 +1,58 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
+ * <p>
  * Summary of the information about a CloudFront origin access identity.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentitySummary"
+ *      target="_top">AWS API Documentation</a>
  */
-public class CloudFrontOriginAccessIdentitySummary implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CloudFrontOriginAccessIdentitySummary implements Serializable, Cloneable {
 
-    /** The ID for the origin access identity. For example: E74FTE3AJFJ256A. */
+    /**
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
+     */
     private String id;
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you
-     * use when giving the origin access identity read permission to an object
-     * in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
+     * identity read permission to an object in Amazon S3.
+     * </p>
      */
     private String s3CanonicalUserId;
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>
+     * The comment for this origin access identity, as originally specified when created.
+     * </p>
      */
     private String comment;
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example:
-     *        E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public void setId(String id) {
@@ -51,10 +60,11 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
-     * @return The ID for the origin access identity. For example:
-     *         E74FTE3AJFJ256A.
+     * @return The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public String getId() {
@@ -62,13 +72,13 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example:
-     *        E74FTE3AJFJ256A.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloudFrontOriginAccessIdentitySummary withId(String id) {
@@ -77,14 +87,14 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you
-     * use when giving the origin access identity read permission to an object
-     * in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
+     * identity read permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
-     *        The Amazon S3 canonical user ID for the origin access identity,
-     *        which you use when giving the origin access identity read
-     *        permission to an object in Amazon S3.
+     *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
+     *        access identity read permission to an object in Amazon S3.
      */
 
     public void setS3CanonicalUserId(String s3CanonicalUserId) {
@@ -92,13 +102,13 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you
-     * use when giving the origin access identity read permission to an object
-     * in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
+     * identity read permission to an object in Amazon S3.
+     * </p>
      * 
-     * @return The Amazon S3 canonical user ID for the origin access identity,
-     *         which you use when giving the origin access identity read
-     *         permission to an object in Amazon S3.
+     * @return The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
+     *         access identity read permission to an object in Amazon S3.
      */
 
     public String getS3CanonicalUserId() {
@@ -106,31 +116,29 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you
-     * use when giving the origin access identity read permission to an object
-     * in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
+     * identity read permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
-     *        The Amazon S3 canonical user ID for the origin access identity,
-     *        which you use when giving the origin access identity read
-     *        permission to an object in Amazon S3.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
+     *        access identity read permission to an object in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CloudFrontOriginAccessIdentitySummary withS3CanonicalUserId(
-            String s3CanonicalUserId) {
+    public CloudFrontOriginAccessIdentitySummary withS3CanonicalUserId(String s3CanonicalUserId) {
         setS3CanonicalUserId(s3CanonicalUserId);
         return this;
     }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>
+     * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
      * @param comment
-     *        The comment for this origin access identity, as originally
-     *        specified when created.
+     *        The comment for this origin access identity, as originally specified when created.
      */
 
     public void setComment(String comment) {
@@ -138,11 +146,11 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>
+     * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
-     * @return The comment for this origin access identity, as originally
-     *         specified when created.
+     * @return The comment for this origin access identity, as originally specified when created.
      */
 
     public String getComment() {
@@ -150,14 +158,13 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * The comment for this origin access identity, as originally specified when
-     * created.
+     * <p>
+     * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
      * @param comment
-     *        The comment for this origin access identity, as originally
-     *        specified when created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The comment for this origin access identity, as originally specified when created.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloudFrontOriginAccessIdentitySummary withComment(String comment) {
@@ -166,8 +173,8 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,11 +185,11 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getS3CanonicalUserId() != null)
-            sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");
+            sb.append("S3CanonicalUserId: ").append(getS3CanonicalUserId()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }
@@ -199,20 +206,15 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
         CloudFrontOriginAccessIdentitySummary other = (CloudFrontOriginAccessIdentitySummary) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getS3CanonicalUserId() == null
-                ^ this.getS3CanonicalUserId() == null)
+        if (other.getS3CanonicalUserId() == null ^ this.getS3CanonicalUserId() == null)
             return false;
-        if (other.getS3CanonicalUserId() != null
-                && other.getS3CanonicalUserId().equals(
-                        this.getS3CanonicalUserId()) == false)
+        if (other.getS3CanonicalUserId() != null && other.getS3CanonicalUserId().equals(this.getS3CanonicalUserId()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -222,14 +224,9 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getS3CanonicalUserId() == null) ? 0
-                        : getS3CanonicalUserId().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getS3CanonicalUserId() == null) ? 0 : getS3CanonicalUserId().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 
@@ -238,9 +235,8 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
         try {
             return (CloudFrontOriginAccessIdentitySummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

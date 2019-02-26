@@ -1,29 +1,26 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Returned if the service cannot complete the request.
  * </p>
  */
-public class ServiceUnavailableException extends AmazonServiceException {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ServiceUnavailableException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -31,19 +28,16 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * Server
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     private String type;
     /**
      * <p>
      * 500 Internal Server Error
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String code;
 
     /**
-     * Constructs a new ServiceUnavailableException with the specified error
-     * message.
+     * Constructs a new ServiceUnavailableException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
@@ -61,6 +55,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      *        Server
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
@@ -73,6 +68,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * @return Server
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -84,8 +80,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * 
      * @param type
      *        Server
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ServiceUnavailableException withType(String type) {
@@ -102,6 +97,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      *        500 Internal Server Error
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(String code) {
         this.code = code;
     }
@@ -114,6 +110,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * @return 500 Internal Server Error
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -125,8 +122,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * 
      * @param code
      *        500 Internal Server Error
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ServiceUnavailableException withCode(String code) {

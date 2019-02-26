@@ -1,37 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeNetworkInterfaceAttribute.
  * </p>
  */
-public class DescribeNetworkInterfaceAttributeResult implements Serializable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      */
-    private String networkInterfaceId;
+    private NetworkInterfaceAttachment attachment;
     /**
      * <p>
      * The description of the network interface.
@@ -40,62 +40,60 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
     private String description;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     */
-    private Boolean sourceDestCheck;
-    /**
-     * <p>
      * The security groups associated with the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
     /**
      * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     */
+    private Boolean sourceDestCheck;
+
+    /**
+     * <p>
      * The attachment (if any) of the network interface.
      * </p>
-     */
-    private NetworkInterfaceAttachment attachment;
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
+     * @param attachment
+     *        The attachment (if any) of the network interface.
      */
 
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
+    public void setAttachment(NetworkInterfaceAttachment attachment) {
+        this.attachment = attachment;
     }
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      * 
-     * @return The ID of the network interface.
+     * @return The attachment (if any) of the network interface.
      */
 
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
+    public NetworkInterfaceAttachment getAttachment() {
+        return this.attachment;
     }
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param attachment
+     *        The attachment (if any) of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(
-            String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
+    public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {
+        setAttachment(attachment);
         return this;
     }
 
@@ -131,13 +129,124 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @param description
      *        The description of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withDescription(
-            String description) {
+    public DescribeNetworkInterfaceAttributeResult withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The security groups associated with the network interface.
+     * </p>
+     * 
+     * @return The security groups associated with the network interface.
+     */
+
+    public java.util.List<GroupIdentifier> getGroups() {
+        if (groups == null) {
+            groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
+        }
+        return groups;
+    }
+
+    /**
+     * <p>
+     * The security groups associated with the network interface.
+     * </p>
+     * 
+     * @param groups
+     *        The security groups associated with the network interface.
+     */
+
+    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+
+        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
+    }
+
+    /**
+     * <p>
+     * The security groups associated with the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param groups
+     *        The security groups associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeResult withGroups(GroupIdentifier... groups) {
+        if (this.groups == null) {
+            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
+        }
+        for (GroupIdentifier ele : groups) {
+            this.groups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The security groups associated with the network interface.
+     * </p>
+     * 
+     * @param groups
+     *        The security groups associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeResult withGroups(java.util.Collection<GroupIdentifier> groups) {
+        setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
@@ -173,12 +282,10 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @param sourceDestCheck
      *        Indicates whether source/destination checking is enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(
-            Boolean sourceDestCheck) {
+    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
     }
@@ -196,130 +303,8 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
     }
 
     /**
-     * <p>
-     * The security groups associated with the network interface.
-     * </p>
-     * 
-     * @return The security groups associated with the network interface.
-     */
-
-    public java.util.List<GroupIdentifier> getGroups() {
-        if (groups == null) {
-            groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
-        }
-        return groups;
-    }
-
-    /**
-     * <p>
-     * The security groups associated with the network interface.
-     * </p>
-     * 
-     * @param groups
-     *        The security groups associated with the network interface.
-     */
-
-    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
-        if (groups == null) {
-            this.groups = null;
-            return;
-        }
-
-        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                groups);
-    }
-
-    /**
-     * <p>
-     * The security groups associated with the network interface.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGroups(java.util.Collection)} or
-     * {@link #withGroups(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param groups
-     *        The security groups associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeNetworkInterfaceAttributeResult withGroups(
-            GroupIdentifier... groups) {
-        if (this.groups == null) {
-            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
-                    groups.length));
-        }
-        for (GroupIdentifier ele : groups) {
-            this.groups.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The security groups associated with the network interface.
-     * </p>
-     * 
-     * @param groups
-     *        The security groups associated with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeNetworkInterfaceAttributeResult withGroups(
-            java.util.Collection<GroupIdentifier> groups) {
-        setGroups(groups);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The attachment (if any) of the network interface.
-     * </p>
-     * 
-     * @param attachment
-     *        The attachment (if any) of the network interface.
-     */
-
-    public void setAttachment(NetworkInterfaceAttachment attachment) {
-        this.attachment = attachment;
-    }
-
-    /**
-     * <p>
-     * The attachment (if any) of the network interface.
-     * </p>
-     * 
-     * @return The attachment (if any) of the network interface.
-     */
-
-    public NetworkInterfaceAttachment getAttachment() {
-        return this.attachment;
-    }
-
-    /**
-     * <p>
-     * The attachment (if any) of the network interface.
-     * </p>
-     * 
-     * @param attachment
-     *        The attachment (if any) of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeNetworkInterfaceAttributeResult withAttachment(
-            NetworkInterfaceAttachment attachment) {
-        setAttachment(attachment);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -329,16 +314,16 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
-        if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
-        if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");
-        if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
         if (getAttachment() != null)
-            sb.append("Attachment: " + getAttachment());
+            sb.append("Attachment: ").append(getAttachment()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getGroups() != null)
+            sb.append("Groups: ").append(getGroups()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getSourceDestCheck() != null)
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
         sb.append("}");
         return sb.toString();
     }
@@ -353,33 +338,25 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
         if (obj instanceof DescribeNetworkInterfaceAttributeResult == false)
             return false;
         DescribeNetworkInterfaceAttributeResult other = (DescribeNetworkInterfaceAttributeResult) obj;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getAttachment() == null ^ this.getAttachment() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getSourceDestCheck() == null
-                ^ this.getSourceDestCheck() == null)
-            return false;
-        if (other.getSourceDestCheck() != null
-                && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getGroups() != null
-                && other.getGroups().equals(this.getGroups()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
-        if (other.getAttachment() == null ^ this.getAttachment() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getAttachment() != null
-                && other.getAttachment().equals(this.getAttachment()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+            return false;
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
+            return false;
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         return true;
     }
@@ -389,21 +366,11 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getGroups() == null) ? 0 : getGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
         return hashCode;
     }
 
@@ -412,9 +379,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
         try {
             return (DescribeNetworkInterfaceAttributeResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

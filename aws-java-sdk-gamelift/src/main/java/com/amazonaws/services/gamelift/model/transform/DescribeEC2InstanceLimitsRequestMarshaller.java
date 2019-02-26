@@ -1,93 +1,55 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEC2InstanceLimitsRequest Marshaller
+ * DescribeEC2InstanceLimitsRequestMarshaller
  */
-public class DescribeEC2InstanceLimitsRequestMarshaller
-        implements
-        Marshaller<Request<DescribeEC2InstanceLimitsRequest>, DescribeEC2InstanceLimitsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class DescribeEC2InstanceLimitsRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> EC2INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceType").build();
 
-    public DescribeEC2InstanceLimitsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEC2InstanceLimitsRequestMarshaller instance = new DescribeEC2InstanceLimitsRequestMarshaller();
+
+    public static DescribeEC2InstanceLimitsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEC2InstanceLimitsRequest> marshall(
-            DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEC2InstanceLimitsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<DescribeEC2InstanceLimitsRequest> request = new DefaultRequest<DescribeEC2InstanceLimitsRequest>(
-                describeEC2InstanceLimitsRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.DescribeEC2InstanceLimits");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeEC2InstanceLimitsRequest.getEC2InstanceType() != null) {
-                jsonGenerator.writeFieldName("EC2InstanceType").writeValue(
-                        describeEC2InstanceLimitsRequest.getEC2InstanceType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEC2InstanceLimitsRequest.getEC2InstanceType(), EC2INSTANCETYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

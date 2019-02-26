@@ -1,35 +1,33 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API Documentation</a>
  */
-public class PutImageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository in which to put the image. If you do not specify a registry,
-     * the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to put the image. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
@@ -45,18 +43,23 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String imageManifest;
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     */
+    private String imageTag;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository in which to put the image. If you do not specify a registry,
-     * the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to put the image. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository in which to put the image. If you do not specify a
-     *        registry, the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository in which to put the image. If
+     *        you do not specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -65,14 +68,12 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository in which to put the image. If you do not specify a registry,
-     * the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to put the image. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         repository in which to put the image. If you do not specify a
-     *         registry, the default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the repository in which to put the image.
+     *         If you do not specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -81,17 +82,14 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository in which to put the image. If you do not specify a registry,
-     * the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to put the image. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository in which to put the image. If you do not specify a
-     *        registry, the default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the repository in which to put the image. If
+     *        you do not specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutImageRequest withRegistryId(String registryId) {
@@ -131,8 +129,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param repositoryName
      *        The name of the repository in which to put the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutImageRequest withRepositoryName(String repositoryName) {
@@ -172,8 +169,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * 
      * @param imageManifest
      *        The image manifest corresponding to the image to be uploaded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutImageRequest withImageManifest(String imageManifest) {
@@ -182,8 +178,54 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @param imageTag
+     *        The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *        Manifest V2 Schema 2 or OCI formats.
+     */
+
+    public void setImageTag(String imageTag) {
+        this.imageTag = imageTag;
+    }
+
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @return The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *         Manifest V2 Schema 2 or OCI formats.
+     */
+
+    public String getImageTag() {
+        return this.imageTag;
+    }
+
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @param imageTag
+     *        The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *        Manifest V2 Schema 2 or OCI formats.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutImageRequest withImageTag(String imageTag) {
+        setImageTag(imageTag);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -194,11 +236,13 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageManifest() != null)
-            sb.append("ImageManifest: " + getImageManifest());
+            sb.append("ImageManifest: ").append(getImageManifest()).append(",");
+        if (getImageTag() != null)
+            sb.append("ImageTag: ").append(getImageTag());
         sb.append("}");
         return sb.toString();
     }
@@ -215,19 +259,19 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
         PutImageRequest other = (PutImageRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getImageManifest() == null ^ this.getImageManifest() == null)
             return false;
-        if (other.getImageManifest() != null
-                && other.getImageManifest().equals(this.getImageManifest()) == false)
+        if (other.getImageManifest() != null && other.getImageManifest().equals(this.getImageManifest()) == false)
+            return false;
+        if (other.getImageTag() == null ^ this.getImageTag() == null)
+            return false;
+        if (other.getImageTag() != null && other.getImageTag().equals(this.getImageTag()) == false)
             return false;
         return true;
     }
@@ -237,16 +281,10 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImageManifest() == null) ? 0 : getImageManifest()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
+        hashCode = prime * hashCode + ((getImageTag() == null) ? 0 : getImageTag().hashCode());
         return hashCode;
     }
 
@@ -254,4 +292,5 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
     public PutImageRequest clone() {
         return (PutImageRequest) super.clone();
     }
+
 }

@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * TestInvokeAuthorizerResult JSON Unmarshaller
  */
-public class TestInvokeAuthorizerResultJsonUnmarshaller implements
-        Unmarshaller<TestInvokeAuthorizerResult, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TestInvokeAuthorizerResultJsonUnmarshaller implements Unmarshaller<TestInvokeAuthorizerResult, JsonUnmarshallerContext> {
 
-    public TestInvokeAuthorizerResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public TestInvokeAuthorizerResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         TestInvokeAuthorizerResult testInvokeAuthorizerResult = new TestInvokeAuthorizerResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return testInvokeAuthorizerResult;
+        }
 
         while (true) {
             if (token == null)
@@ -55,43 +50,36 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientStatus", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult
-                            .setClientStatus(context.getUnmarshaller(
-                                    Integer.class).unmarshall(context));
+                    testInvokeAuthorizerResult.setClientStatus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setLog(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    testInvokeAuthorizerResult.setLog(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("latency", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setLatency(context
-                            .getUnmarshaller(Long.class).unmarshall(context));
+                    testInvokeAuthorizerResult.setLatency(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("principalId", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setPrincipalId(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    testInvokeAuthorizerResult.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setPolicy(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    testInvokeAuthorizerResult.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorization", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult
-                            .setAuthorization(new MapUnmarshaller<String, java.util.List<String>>(
-                                    context.getUnmarshaller(String.class),
-                                    new ListUnmarshaller<String>(context
-                                            .getUnmarshaller(String.class)))
-                                    .unmarshall(context));
+                    testInvokeAuthorizerResult.setAuthorization(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                }
+                if (context.testExpression("claims", targetDepth)) {
+                    context.nextToken();
+                    testInvokeAuthorizerResult.setClaims(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

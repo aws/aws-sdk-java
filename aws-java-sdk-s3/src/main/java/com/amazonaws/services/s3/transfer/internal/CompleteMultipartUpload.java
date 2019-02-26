@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,19 +16,22 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
+import com.amazonaws.services.s3.transfer.Transfer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
@@ -65,9 +68,9 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
     private final ProgressListenerChain listener;
 
     public CompleteMultipartUpload(String uploadId, AmazonS3 s3,
-            PutObjectRequest putObjectRequest, List<Future<PartETag>> futures,
-            List<PartETag> eTagsBeforeResume, ProgressListenerChain progressListenerChain,
-            UploadMonitor monitor) {
+                                   PutObjectRequest putObjectRequest, List<Future<PartETag>> futures,
+                                   List<PartETag> eTagsBeforeResume, ProgressListenerChain progressListenerChain,
+                                   UploadMonitor monitor) {
         this.uploadId = uploadId;
         this.s3 = s3;
         this.origReq = putObjectRequest;
@@ -85,11 +88,13 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
             CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
                     origReq.getBucketName(), origReq.getKey(), uploadId,
                     collectPartETags())
+                    .withRequesterPays(origReq.isRequesterPays())
                 .withGeneralProgressListener(origReq.getGeneralProgressListener())
                 .withRequestMetricCollector(origReq.getRequestMetricCollector())
                 ;
             res = s3.completeMultipartUpload(req);
         } catch (Exception e) {
+            monitor.uploadFailure();
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
@@ -119,7 +124,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
             try {
                 partETags.add(future.get());
             } catch (Exception e) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to complete multi-part upload. Individual part upload failed : "
                                 + e.getCause().getMessage(), e.getCause());
             }

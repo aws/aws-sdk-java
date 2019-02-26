@@ -1,29 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information
+ * about using a custom MAIL FROM domain, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class GetIdentityMailFromDomainAttributesRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetIdentityMailFromDomainAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +67,7 @@ public class GetIdentityMailFromDomainAttributesRequest extends
             return;
         }
 
-        this.identities = new com.amazonaws.internal.SdkInternalList<String>(
-                identities);
+        this.identities = new com.amazonaws.internal.SdkInternalList<String>(identities);
     }
 
     /**
@@ -71,23 +75,19 @@ public class GetIdentityMailFromDomainAttributesRequest extends
      * A list of one or more identities.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIdentities(java.util.Collection)} or
-     * {@link #withIdentities(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIdentities(java.util.Collection)} or {@link #withIdentities(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param identities
      *        A list of one or more identities.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIdentityMailFromDomainAttributesRequest withIdentities(
-            String... identities) {
+    public GetIdentityMailFromDomainAttributesRequest withIdentities(String... identities) {
         if (this.identities == null) {
-            setIdentities(new com.amazonaws.internal.SdkInternalList<String>(
-                    identities.length));
+            setIdentities(new com.amazonaws.internal.SdkInternalList<String>(identities.length));
         }
         for (String ele : identities) {
             this.identities.add(ele);
@@ -102,19 +102,17 @@ public class GetIdentityMailFromDomainAttributesRequest extends
      * 
      * @param identities
      *        A list of one or more identities.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIdentityMailFromDomainAttributesRequest withIdentities(
-            java.util.Collection<String> identities) {
+    public GetIdentityMailFromDomainAttributesRequest withIdentities(java.util.Collection<String> identities) {
         setIdentities(identities);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -125,7 +123,7 @@ public class GetIdentityMailFromDomainAttributesRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentities() != null)
-            sb.append("Identities: " + getIdentities());
+            sb.append("Identities: ").append(getIdentities());
         sb.append("}");
         return sb.toString();
     }
@@ -142,8 +140,7 @@ public class GetIdentityMailFromDomainAttributesRequest extends
         GetIdentityMailFromDomainAttributesRequest other = (GetIdentityMailFromDomainAttributesRequest) obj;
         if (other.getIdentities() == null ^ this.getIdentities() == null)
             return false;
-        if (other.getIdentities() != null
-                && other.getIdentities().equals(this.getIdentities()) == false)
+        if (other.getIdentities() != null && other.getIdentities().equals(this.getIdentities()) == false)
             return false;
         return true;
     }
@@ -153,8 +150,7 @@ public class GetIdentityMailFromDomainAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIdentities() == null) ? 0 : getIdentities().hashCode());
+        hashCode = prime * hashCode + ((getIdentities() == null) ? 0 : getIdentities().hashCode());
         return hashCode;
     }
 
@@ -162,4 +158,5 @@ public class GetIdentityMailFromDomainAttributesRequest extends
     public GetIdentityMailFromDomainAttributesRequest clone() {
         return (GetIdentityMailFromDomainAttributesRequest) super.clone();
     }
+
 }

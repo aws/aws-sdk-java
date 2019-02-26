@@ -1,45 +1,47 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information used with the <a>TerminateWorkspaces</a> operation to
- * terminate a WorkSpace.
+ * Describes the information used to terminate a WorkSpace.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateRequest" target="_top">AWS API
+ *      Documentation</a>
  */
-public class TerminateRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TerminateRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to terminate.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -48,10 +50,10 @@ public class TerminateRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the WorkSpace to terminate.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -60,13 +62,12 @@ public class TerminateRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to terminate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TerminateRequest withWorkspaceId(String workspaceId) {
@@ -75,8 +76,8 @@ public class TerminateRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +88,7 @@ public class TerminateRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -104,8 +105,7 @@ public class TerminateRequest implements Serializable, Cloneable {
         TerminateRequest other = (TerminateRequest) obj;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getWorkspaceId() != null
-                && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -115,9 +115,7 @@ public class TerminateRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 
@@ -126,9 +124,13 @@ public class TerminateRequest implements Serializable, Cloneable {
         try {
             return (TerminateRequest) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.workspaces.model.transform.TerminateRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

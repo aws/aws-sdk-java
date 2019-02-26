@@ -1,33 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ImportKeyPair.
- * </p>
+ * 
  */
-public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<ImportKeyPairRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportKeyPairRequest> {
 
     /**
      * <p>
@@ -37,30 +33,28 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
     private String keyName;
     /**
      * <p>
-     * The public key. For API calls, the text must be base64-encoded. For
-     * command line tools, base64 encoding is performed for you.
+     * The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     * performed for you.
      * </p>
      */
     private String publicKeyMaterial;
 
     /**
-     * Default constructor for ImportKeyPairRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for ImportKeyPairRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public ImportKeyPairRequest() {
     }
 
     /**
-     * Constructs a new ImportKeyPairRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new ImportKeyPairRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param keyName
      *        A unique name for the key pair.
      * @param publicKeyMaterial
-     *        The public key. For API calls, the text must be base64-encoded.
-     *        For command line tools, base64 encoding is performed for you.
+     *        The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     *        performed for you.
      */
     public ImportKeyPairRequest(String keyName, String publicKeyMaterial) {
         setKeyName(keyName);
@@ -99,8 +93,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * 
      * @param keyName
      *        A unique name for the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyPairRequest withKeyName(String keyName) {
@@ -110,13 +103,13 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. For API calls, the text must be base64-encoded. For
-     * command line tools, base64 encoding is performed for you.
+     * The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     * performed for you.
      * </p>
      * 
      * @param publicKeyMaterial
-     *        The public key. For API calls, the text must be base64-encoded.
-     *        For command line tools, base64 encoding is performed for you.
+     *        The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     *        performed for you.
      */
 
     public void setPublicKeyMaterial(String publicKeyMaterial) {
@@ -125,12 +118,12 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. For API calls, the text must be base64-encoded. For
-     * command line tools, base64 encoding is performed for you.
+     * The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     * performed for you.
      * </p>
      * 
-     * @return The public key. For API calls, the text must be base64-encoded.
-     *         For command line tools, base64 encoding is performed for you.
+     * @return The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding
+     *         is performed for you.
      */
 
     public String getPublicKeyMaterial() {
@@ -139,15 +132,14 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. For API calls, the text must be base64-encoded. For
-     * command line tools, base64 encoding is performed for you.
+     * The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     * performed for you.
      * </p>
      * 
      * @param publicKeyMaterial
-     *        The public key. For API calls, the text must be base64-encoded.
-     *        For command line tools, base64 encoding is performed for you.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is
+     *        performed for you.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportKeyPairRequest withPublicKeyMaterial(String publicKeyMaterial) {
@@ -156,21 +148,19 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ImportKeyPairRequest> getDryRunRequest() {
-        Request<ImportKeyPairRequest> request = new ImportKeyPairRequestMarshaller()
-                .marshall(this);
+        Request<ImportKeyPairRequest> request = new ImportKeyPairRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -181,9 +171,9 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getPublicKeyMaterial() != null)
-            sb.append("PublicKeyMaterial: " + getPublicKeyMaterial());
+            sb.append("PublicKeyMaterial: ").append(getPublicKeyMaterial());
         sb.append("}");
         return sb.toString();
     }
@@ -200,15 +190,11 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
         ImportKeyPairRequest other = (ImportKeyPairRequest) obj;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getPublicKeyMaterial() == null
-                ^ this.getPublicKeyMaterial() == null)
+        if (other.getPublicKeyMaterial() == null ^ this.getPublicKeyMaterial() == null)
             return false;
-        if (other.getPublicKeyMaterial() != null
-                && other.getPublicKeyMaterial().equals(
-                        this.getPublicKeyMaterial()) == false)
+        if (other.getPublicKeyMaterial() != null && other.getPublicKeyMaterial().equals(this.getPublicKeyMaterial()) == false)
             return false;
         return true;
     }
@@ -218,12 +204,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPublicKeyMaterial() == null) ? 0
-                        : getPublicKeyMaterial().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getPublicKeyMaterial() == null) ? 0 : getPublicKeyMaterial().hashCode());
         return hashCode;
     }
 

@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteAssessmentTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +38,7 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN that specifies the assessment template that you want to
-     *        delete.
+     *        The ARN that specifies the assessment template that you want to delete.
      */
 
     public void setAssessmentTemplateArn(String assessmentTemplateArn) {
@@ -51,8 +50,7 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
      * The ARN that specifies the assessment template that you want to delete.
      * </p>
      * 
-     * @return The ARN that specifies the assessment template that you want to
-     *         delete.
+     * @return The ARN that specifies the assessment template that you want to delete.
      */
 
     public String getAssessmentTemplateArn() {
@@ -65,21 +63,18 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN that specifies the assessment template that you want to
-     *        delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the assessment template that you want to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteAssessmentTemplateRequest withAssessmentTemplateArn(
-            String assessmentTemplateArn) {
+    public DeleteAssessmentTemplateRequest withAssessmentTemplateArn(String assessmentTemplateArn) {
         setAssessmentTemplateArn(assessmentTemplateArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -90,7 +85,7 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn());
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -105,12 +100,9 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
         if (obj instanceof DeleteAssessmentTemplateRequest == false)
             return false;
         DeleteAssessmentTemplateRequest other = (DeleteAssessmentTemplateRequest) obj;
-        if (other.getAssessmentTemplateArn() == null
-                ^ this.getAssessmentTemplateArn() == null)
+        if (other.getAssessmentTemplateArn() == null ^ this.getAssessmentTemplateArn() == null)
             return false;
-        if (other.getAssessmentTemplateArn() != null
-                && other.getAssessmentTemplateArn().equals(
-                        this.getAssessmentTemplateArn()) == false)
+        if (other.getAssessmentTemplateArn() != null && other.getAssessmentTemplateArn().equals(this.getAssessmentTemplateArn()) == false)
             return false;
         return true;
     }
@@ -120,10 +112,7 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssessmentTemplateArn() == null) ? 0
-                        : getAssessmentTemplateArn().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentTemplateArn() == null) ? 0 : getAssessmentTemplateArn().hashCode());
         return hashCode;
     }
 
@@ -131,4 +120,5 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
     public DeleteAssessmentTemplateRequest clone() {
         return (DeleteAssessmentTemplateRequest) super.clone();
     }
+
 }

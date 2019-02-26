@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
  */
 package com.amazonaws.services.s3.transfer.exception;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 
 /**
  * Failed to complete a pause operation.
  */
-public class PauseException extends AmazonClientException {
+public class PauseException extends SdkClientException {
 
     private static final long serialVersionUID = 1L;
 

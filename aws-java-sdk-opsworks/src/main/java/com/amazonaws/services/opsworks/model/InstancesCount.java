@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes how many instances a stack has for each status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/InstancesCount" target="_top">AWS API
+ *      Documentation</a>
  */
-public class InstancesCount implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -111,6 +114,12 @@ public class InstancesCount implements Serializable, Cloneable {
     private Integer startFailed;
     /**
      * <p>
+     * The number of instances with <code>stop_failed</code> status.
+     * </p>
+     */
+    private Integer stopFailed;
+    /**
+     * <p>
      * The number of instances with <code>stopped</code> status.
      * </p>
      */
@@ -172,8 +181,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param assigning
      *        The number of instances in the Assigning state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withAssigning(Integer assigning) {
@@ -213,8 +221,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param booting
      *        The number of instances with <code>booting</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withBooting(Integer booting) {
@@ -254,8 +261,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param connectionLost
      *        The number of instances with <code>connection_lost</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withConnectionLost(Integer connectionLost) {
@@ -295,8 +301,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param deregistering
      *        The number of instances in the Deregistering state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withDeregistering(Integer deregistering) {
@@ -336,8 +341,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param online
      *        The number of instances with <code>online</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withOnline(Integer online) {
@@ -377,8 +381,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param pending
      *        The number of instances with <code>pending</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withPending(Integer pending) {
@@ -418,8 +421,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param rebooting
      *        The number of instances with <code>rebooting</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withRebooting(Integer rebooting) {
@@ -459,8 +461,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param registered
      *        The number of instances in the Registered state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withRegistered(Integer registered) {
@@ -500,8 +501,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param registering
      *        The number of instances in the Registering state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withRegistering(Integer registering) {
@@ -541,8 +541,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param requested
      *        The number of instances with <code>requested</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withRequested(Integer requested) {
@@ -582,8 +581,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param runningSetup
      *        The number of instances with <code>running_setup</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withRunningSetup(Integer runningSetup) {
@@ -623,8 +621,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param setupFailed
      *        The number of instances with <code>setup_failed</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withSetupFailed(Integer setupFailed) {
@@ -664,8 +661,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param shuttingDown
      *        The number of instances with <code>shutting_down</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withShuttingDown(Integer shuttingDown) {
@@ -705,12 +701,51 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param startFailed
      *        The number of instances with <code>start_failed</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withStartFailed(Integer startFailed) {
         setStartFailed(startFailed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>stop_failed</code> status.
+     * </p>
+     * 
+     * @param stopFailed
+     *        The number of instances with <code>stop_failed</code> status.
+     */
+
+    public void setStopFailed(Integer stopFailed) {
+        this.stopFailed = stopFailed;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>stop_failed</code> status.
+     * </p>
+     * 
+     * @return The number of instances with <code>stop_failed</code> status.
+     */
+
+    public Integer getStopFailed() {
+        return this.stopFailed;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>stop_failed</code> status.
+     * </p>
+     * 
+     * @param stopFailed
+     *        The number of instances with <code>stop_failed</code> status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancesCount withStopFailed(Integer stopFailed) {
+        setStopFailed(stopFailed);
         return this;
     }
 
@@ -746,8 +781,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param stopped
      *        The number of instances with <code>stopped</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withStopped(Integer stopped) {
@@ -787,8 +821,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param stopping
      *        The number of instances with <code>stopping</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withStopping(Integer stopping) {
@@ -828,8 +861,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param terminated
      *        The number of instances with <code>terminated</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withTerminated(Integer terminated) {
@@ -869,8 +901,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param terminating
      *        The number of instances with <code>terminating</code> status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withTerminating(Integer terminating) {
@@ -910,8 +941,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @param unassigning
      *        The number of instances in the Unassigning state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstancesCount withUnassigning(Integer unassigning) {
@@ -920,8 +950,8 @@ public class InstancesCount implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -932,43 +962,45 @@ public class InstancesCount implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssigning() != null)
-            sb.append("Assigning: " + getAssigning() + ",");
+            sb.append("Assigning: ").append(getAssigning()).append(",");
         if (getBooting() != null)
-            sb.append("Booting: " + getBooting() + ",");
+            sb.append("Booting: ").append(getBooting()).append(",");
         if (getConnectionLost() != null)
-            sb.append("ConnectionLost: " + getConnectionLost() + ",");
+            sb.append("ConnectionLost: ").append(getConnectionLost()).append(",");
         if (getDeregistering() != null)
-            sb.append("Deregistering: " + getDeregistering() + ",");
+            sb.append("Deregistering: ").append(getDeregistering()).append(",");
         if (getOnline() != null)
-            sb.append("Online: " + getOnline() + ",");
+            sb.append("Online: ").append(getOnline()).append(",");
         if (getPending() != null)
-            sb.append("Pending: " + getPending() + ",");
+            sb.append("Pending: ").append(getPending()).append(",");
         if (getRebooting() != null)
-            sb.append("Rebooting: " + getRebooting() + ",");
+            sb.append("Rebooting: ").append(getRebooting()).append(",");
         if (getRegistered() != null)
-            sb.append("Registered: " + getRegistered() + ",");
+            sb.append("Registered: ").append(getRegistered()).append(",");
         if (getRegistering() != null)
-            sb.append("Registering: " + getRegistering() + ",");
+            sb.append("Registering: ").append(getRegistering()).append(",");
         if (getRequested() != null)
-            sb.append("Requested: " + getRequested() + ",");
+            sb.append("Requested: ").append(getRequested()).append(",");
         if (getRunningSetup() != null)
-            sb.append("RunningSetup: " + getRunningSetup() + ",");
+            sb.append("RunningSetup: ").append(getRunningSetup()).append(",");
         if (getSetupFailed() != null)
-            sb.append("SetupFailed: " + getSetupFailed() + ",");
+            sb.append("SetupFailed: ").append(getSetupFailed()).append(",");
         if (getShuttingDown() != null)
-            sb.append("ShuttingDown: " + getShuttingDown() + ",");
+            sb.append("ShuttingDown: ").append(getShuttingDown()).append(",");
         if (getStartFailed() != null)
-            sb.append("StartFailed: " + getStartFailed() + ",");
+            sb.append("StartFailed: ").append(getStartFailed()).append(",");
+        if (getStopFailed() != null)
+            sb.append("StopFailed: ").append(getStopFailed()).append(",");
         if (getStopped() != null)
-            sb.append("Stopped: " + getStopped() + ",");
+            sb.append("Stopped: ").append(getStopped()).append(",");
         if (getStopping() != null)
-            sb.append("Stopping: " + getStopping() + ",");
+            sb.append("Stopping: ").append(getStopping()).append(",");
         if (getTerminated() != null)
-            sb.append("Terminated: " + getTerminated() + ",");
+            sb.append("Terminated: ").append(getTerminated()).append(",");
         if (getTerminating() != null)
-            sb.append("Terminating: " + getTerminating() + ",");
+            sb.append("Terminating: ").append(getTerminating()).append(",");
         if (getUnassigning() != null)
-            sb.append("Unassigning: " + getUnassigning());
+            sb.append("Unassigning: ").append(getUnassigning());
         sb.append("}");
         return sb.toString();
     }
@@ -985,99 +1017,83 @@ public class InstancesCount implements Serializable, Cloneable {
         InstancesCount other = (InstancesCount) obj;
         if (other.getAssigning() == null ^ this.getAssigning() == null)
             return false;
-        if (other.getAssigning() != null
-                && other.getAssigning().equals(this.getAssigning()) == false)
+        if (other.getAssigning() != null && other.getAssigning().equals(this.getAssigning()) == false)
             return false;
         if (other.getBooting() == null ^ this.getBooting() == null)
             return false;
-        if (other.getBooting() != null
-                && other.getBooting().equals(this.getBooting()) == false)
+        if (other.getBooting() != null && other.getBooting().equals(this.getBooting()) == false)
             return false;
-        if (other.getConnectionLost() == null
-                ^ this.getConnectionLost() == null)
+        if (other.getConnectionLost() == null ^ this.getConnectionLost() == null)
             return false;
-        if (other.getConnectionLost() != null
-                && other.getConnectionLost().equals(this.getConnectionLost()) == false)
+        if (other.getConnectionLost() != null && other.getConnectionLost().equals(this.getConnectionLost()) == false)
             return false;
         if (other.getDeregistering() == null ^ this.getDeregistering() == null)
             return false;
-        if (other.getDeregistering() != null
-                && other.getDeregistering().equals(this.getDeregistering()) == false)
+        if (other.getDeregistering() != null && other.getDeregistering().equals(this.getDeregistering()) == false)
             return false;
         if (other.getOnline() == null ^ this.getOnline() == null)
             return false;
-        if (other.getOnline() != null
-                && other.getOnline().equals(this.getOnline()) == false)
+        if (other.getOnline() != null && other.getOnline().equals(this.getOnline()) == false)
             return false;
         if (other.getPending() == null ^ this.getPending() == null)
             return false;
-        if (other.getPending() != null
-                && other.getPending().equals(this.getPending()) == false)
+        if (other.getPending() != null && other.getPending().equals(this.getPending()) == false)
             return false;
         if (other.getRebooting() == null ^ this.getRebooting() == null)
             return false;
-        if (other.getRebooting() != null
-                && other.getRebooting().equals(this.getRebooting()) == false)
+        if (other.getRebooting() != null && other.getRebooting().equals(this.getRebooting()) == false)
             return false;
         if (other.getRegistered() == null ^ this.getRegistered() == null)
             return false;
-        if (other.getRegistered() != null
-                && other.getRegistered().equals(this.getRegistered()) == false)
+        if (other.getRegistered() != null && other.getRegistered().equals(this.getRegistered()) == false)
             return false;
         if (other.getRegistering() == null ^ this.getRegistering() == null)
             return false;
-        if (other.getRegistering() != null
-                && other.getRegistering().equals(this.getRegistering()) == false)
+        if (other.getRegistering() != null && other.getRegistering().equals(this.getRegistering()) == false)
             return false;
         if (other.getRequested() == null ^ this.getRequested() == null)
             return false;
-        if (other.getRequested() != null
-                && other.getRequested().equals(this.getRequested()) == false)
+        if (other.getRequested() != null && other.getRequested().equals(this.getRequested()) == false)
             return false;
         if (other.getRunningSetup() == null ^ this.getRunningSetup() == null)
             return false;
-        if (other.getRunningSetup() != null
-                && other.getRunningSetup().equals(this.getRunningSetup()) == false)
+        if (other.getRunningSetup() != null && other.getRunningSetup().equals(this.getRunningSetup()) == false)
             return false;
         if (other.getSetupFailed() == null ^ this.getSetupFailed() == null)
             return false;
-        if (other.getSetupFailed() != null
-                && other.getSetupFailed().equals(this.getSetupFailed()) == false)
+        if (other.getSetupFailed() != null && other.getSetupFailed().equals(this.getSetupFailed()) == false)
             return false;
         if (other.getShuttingDown() == null ^ this.getShuttingDown() == null)
             return false;
-        if (other.getShuttingDown() != null
-                && other.getShuttingDown().equals(this.getShuttingDown()) == false)
+        if (other.getShuttingDown() != null && other.getShuttingDown().equals(this.getShuttingDown()) == false)
             return false;
         if (other.getStartFailed() == null ^ this.getStartFailed() == null)
             return false;
-        if (other.getStartFailed() != null
-                && other.getStartFailed().equals(this.getStartFailed()) == false)
+        if (other.getStartFailed() != null && other.getStartFailed().equals(this.getStartFailed()) == false)
+            return false;
+        if (other.getStopFailed() == null ^ this.getStopFailed() == null)
+            return false;
+        if (other.getStopFailed() != null && other.getStopFailed().equals(this.getStopFailed()) == false)
             return false;
         if (other.getStopped() == null ^ this.getStopped() == null)
             return false;
-        if (other.getStopped() != null
-                && other.getStopped().equals(this.getStopped()) == false)
+        if (other.getStopped() != null && other.getStopped().equals(this.getStopped()) == false)
             return false;
         if (other.getStopping() == null ^ this.getStopping() == null)
             return false;
-        if (other.getStopping() != null
-                && other.getStopping().equals(this.getStopping()) == false)
+        if (other.getStopping() != null && other.getStopping().equals(this.getStopping()) == false)
             return false;
         if (other.getTerminated() == null ^ this.getTerminated() == null)
             return false;
-        if (other.getTerminated() != null
-                && other.getTerminated().equals(this.getTerminated()) == false)
+        if (other.getTerminated() != null && other.getTerminated().equals(this.getTerminated()) == false)
             return false;
         if (other.getTerminating() == null ^ this.getTerminating() == null)
             return false;
-        if (other.getTerminating() != null
-                && other.getTerminating().equals(this.getTerminating()) == false)
+        if (other.getTerminating() != null && other.getTerminating().equals(this.getTerminating()) == false)
             return false;
         if (other.getUnassigning() == null ^ this.getUnassigning() == null)
             return false;
-        if (other.getUnassigning() != null
-                && other.getUnassigning().equals(this.getUnassigning()) == false)
+        if (other.getUnassigning() != null && other.getUnassigning().equals(this.getUnassigning()) == false)
             return false;
         return true;
     }
@@ -1087,57 +1103,26 @@ public class InstancesCount implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAssigning() == null) ? 0 : getAssigning().hashCode());
-        hashCode = prime * hashCode
-                + ((getBooting() == null) ? 0 : getBooting().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionLost() == null) ? 0 : getConnectionLost()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeregistering() == null) ? 0 : getDeregistering()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getOnline() == null) ? 0 : getOnline().hashCode());
-        hashCode = prime * hashCode
-                + ((getPending() == null) ? 0 : getPending().hashCode());
-        hashCode = prime * hashCode
-                + ((getRebooting() == null) ? 0 : getRebooting().hashCode());
-        hashCode = prime * hashCode
-                + ((getRegistered() == null) ? 0 : getRegistered().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistering() == null) ? 0 : getRegistering().hashCode());
-        hashCode = prime * hashCode
-                + ((getRequested() == null) ? 0 : getRequested().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRunningSetup() == null) ? 0 : getRunningSetup()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSetupFailed() == null) ? 0 : getSetupFailed().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getShuttingDown() == null) ? 0 : getShuttingDown()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartFailed() == null) ? 0 : getStartFailed().hashCode());
-        hashCode = prime * hashCode
-                + ((getStopped() == null) ? 0 : getStopped().hashCode());
-        hashCode = prime * hashCode
-                + ((getStopping() == null) ? 0 : getStopping().hashCode());
-        hashCode = prime * hashCode
-                + ((getTerminated() == null) ? 0 : getTerminated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTerminating() == null) ? 0 : getTerminating().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUnassigning() == null) ? 0 : getUnassigning().hashCode());
+        hashCode = prime * hashCode + ((getAssigning() == null) ? 0 : getAssigning().hashCode());
+        hashCode = prime * hashCode + ((getBooting() == null) ? 0 : getBooting().hashCode());
+        hashCode = prime * hashCode + ((getConnectionLost() == null) ? 0 : getConnectionLost().hashCode());
+        hashCode = prime * hashCode + ((getDeregistering() == null) ? 0 : getDeregistering().hashCode());
+        hashCode = prime * hashCode + ((getOnline() == null) ? 0 : getOnline().hashCode());
+        hashCode = prime * hashCode + ((getPending() == null) ? 0 : getPending().hashCode());
+        hashCode = prime * hashCode + ((getRebooting() == null) ? 0 : getRebooting().hashCode());
+        hashCode = prime * hashCode + ((getRegistered() == null) ? 0 : getRegistered().hashCode());
+        hashCode = prime * hashCode + ((getRegistering() == null) ? 0 : getRegistering().hashCode());
+        hashCode = prime * hashCode + ((getRequested() == null) ? 0 : getRequested().hashCode());
+        hashCode = prime * hashCode + ((getRunningSetup() == null) ? 0 : getRunningSetup().hashCode());
+        hashCode = prime * hashCode + ((getSetupFailed() == null) ? 0 : getSetupFailed().hashCode());
+        hashCode = prime * hashCode + ((getShuttingDown() == null) ? 0 : getShuttingDown().hashCode());
+        hashCode = prime * hashCode + ((getStartFailed() == null) ? 0 : getStartFailed().hashCode());
+        hashCode = prime * hashCode + ((getStopFailed() == null) ? 0 : getStopFailed().hashCode());
+        hashCode = prime * hashCode + ((getStopped() == null) ? 0 : getStopped().hashCode());
+        hashCode = prime * hashCode + ((getStopping() == null) ? 0 : getStopping().hashCode());
+        hashCode = prime * hashCode + ((getTerminated() == null) ? 0 : getTerminated().hashCode());
+        hashCode = prime * hashCode + ((getTerminating() == null) ? 0 : getTerminating().hashCode());
+        hashCode = prime * hashCode + ((getUnassigning() == null) ? 0 : getUnassigning().hashCode());
         return hashCode;
     }
 
@@ -1146,9 +1131,13 @@ public class InstancesCount implements Serializable, Cloneable {
         try {
             return (InstancesCount) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.InstancesCountMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

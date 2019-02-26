@@ -1,29 +1,24 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
-public class GetMLModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetMLModelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +28,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
     private String mLModelId;
     /**
      * <p>
-     * Specifies whether the <code>GetMLModel</code> operation should return
-     * <code>Recipe</code>.
+     * Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
      * </p>
      * <p>
      * If true, <code>Recipe</code> is returned.
@@ -77,8 +71,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @param mLModelId
      *        The ID assigned to the <code>MLModel</code> at creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMLModelRequest withMLModelId(String mLModelId) {
@@ -88,8 +81,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <code>GetMLModel</code> operation should return
-     * <code>Recipe</code>.
+     * Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
      * </p>
      * <p>
      * If true, <code>Recipe</code> is returned.
@@ -99,8 +91,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param verbose
-     *        Specifies whether the <code>GetMLModel</code> operation should
-     *        return <code>Recipe</code>.</p>
+     *        Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
      *        <p>
      *        If true, <code>Recipe</code> is returned.
      *        </p>
@@ -114,8 +105,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <code>GetMLModel</code> operation should return
-     * <code>Recipe</code>.
+     * Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
      * </p>
      * <p>
      * If true, <code>Recipe</code> is returned.
@@ -124,8 +114,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * If false, <code>Recipe</code> is not returned.
      * </p>
      * 
-     * @return Specifies whether the <code>GetMLModel</code> operation should
-     *         return <code>Recipe</code>.</p>
+     * @return Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
      *         <p>
      *         If true, <code>Recipe</code> is returned.
      *         </p>
@@ -139,8 +128,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <code>GetMLModel</code> operation should return
-     * <code>Recipe</code>.
+     * Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
      * </p>
      * <p>
      * If true, <code>Recipe</code> is returned.
@@ -150,15 +138,13 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param verbose
-     *        Specifies whether the <code>GetMLModel</code> operation should
-     *        return <code>Recipe</code>.</p>
+     *        Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
      *        <p>
      *        If true, <code>Recipe</code> is returned.
      *        </p>
      *        <p>
      *        If false, <code>Recipe</code> is not returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMLModelRequest withVerbose(Boolean verbose) {
@@ -168,8 +154,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <code>GetMLModel</code> operation should return
-     * <code>Recipe</code>.
+     * Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
      * </p>
      * <p>
      * If true, <code>Recipe</code> is returned.
@@ -178,8 +163,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * If false, <code>Recipe</code> is not returned.
      * </p>
      * 
-     * @return Specifies whether the <code>GetMLModel</code> operation should
-     *         return <code>Recipe</code>.</p>
+     * @return Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
      *         <p>
      *         If true, <code>Recipe</code> is returned.
      *         </p>
@@ -192,8 +176,8 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -204,9 +188,9 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getVerbose() != null)
-            sb.append("Verbose: " + getVerbose());
+            sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
         return sb.toString();
     }
@@ -223,13 +207,11 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
         GetMLModelRequest other = (GetMLModelRequest) obj;
         if (other.getMLModelId() == null ^ this.getMLModelId() == null)
             return false;
-        if (other.getMLModelId() != null
-                && other.getMLModelId().equals(this.getMLModelId()) == false)
+        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false)
             return false;
         if (other.getVerbose() == null ^ this.getVerbose() == null)
             return false;
-        if (other.getVerbose() != null
-                && other.getVerbose().equals(this.getVerbose()) == false)
+        if (other.getVerbose() != null && other.getVerbose().equals(this.getVerbose()) == false)
             return false;
         return true;
     }
@@ -239,10 +221,8 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
+        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime * hashCode + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
         return hashCode;
     }
 
@@ -250,4 +230,5 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
     public GetMLModelRequest clone() {
         return (GetMLModelRequest) super.clone();
     }
+
 }

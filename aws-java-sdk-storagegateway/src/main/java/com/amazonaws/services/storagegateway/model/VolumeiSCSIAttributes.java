@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Lists iSCSI information about a volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeiSCSIAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class VolumeiSCSIAttributes implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class VolumeiSCSIAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -88,8 +91,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param targetARN
      *        The Amazon Resource Name (ARN) of the volume target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeiSCSIAttributes withTargetARN(String targetARN) {
@@ -129,12 +131,10 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param networkInterfaceId
      *        The network interface identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeiSCSIAttributes withNetworkInterfaceId(
-            String networkInterfaceId) {
+    public VolumeiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
@@ -171,12 +171,10 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param networkInterfacePort
      *        The port used to communicate with iSCSI targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeiSCSIAttributes withNetworkInterfacePort(
-            Integer networkInterfacePort) {
+    public VolumeiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
         setNetworkInterfacePort(networkInterfacePort);
         return this;
     }
@@ -213,8 +211,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param lunNumber
      *        The logical disk number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeiSCSIAttributes withLunNumber(Integer lunNumber) {
@@ -254,8 +251,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @param chapEnabled
      *        Indicates whether mutual CHAP is enabled for the iSCSI target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
@@ -276,8 +272,8 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -288,16 +284,15 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN() + ",");
+            sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getNetworkInterfacePort() != null)
-            sb.append("NetworkInterfacePort: " + getNetworkInterfacePort()
-                    + ",");
+            sb.append("NetworkInterfacePort: ").append(getNetworkInterfacePort()).append(",");
         if (getLunNumber() != null)
-            sb.append("LunNumber: " + getLunNumber() + ",");
+            sb.append("LunNumber: ").append(getLunNumber()).append(",");
         if (getChapEnabled() != null)
-            sb.append("ChapEnabled: " + getChapEnabled());
+            sb.append("ChapEnabled: ").append(getChapEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -314,32 +309,23 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
         VolumeiSCSIAttributes other = (VolumeiSCSIAttributes) obj;
         if (other.getTargetARN() == null ^ this.getTargetARN() == null)
             return false;
-        if (other.getTargetARN() != null
-                && other.getTargetARN().equals(this.getTargetARN()) == false)
+        if (other.getTargetARN() != null && other.getTargetARN().equals(this.getTargetARN()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null
-                ^ this.getNetworkInterfaceId() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null
-                && other.getNetworkInterfaceId().equals(
-                        this.getNetworkInterfaceId()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
-        if (other.getNetworkInterfacePort() == null
-                ^ this.getNetworkInterfacePort() == null)
+        if (other.getNetworkInterfacePort() == null ^ this.getNetworkInterfacePort() == null)
             return false;
-        if (other.getNetworkInterfacePort() != null
-                && other.getNetworkInterfacePort().equals(
-                        this.getNetworkInterfacePort()) == false)
+        if (other.getNetworkInterfacePort() != null && other.getNetworkInterfacePort().equals(this.getNetworkInterfacePort()) == false)
             return false;
         if (other.getLunNumber() == null ^ this.getLunNumber() == null)
             return false;
-        if (other.getLunNumber() != null
-                && other.getLunNumber().equals(this.getLunNumber()) == false)
+        if (other.getLunNumber() != null && other.getLunNumber().equals(this.getLunNumber()) == false)
             return false;
         if (other.getChapEnabled() == null ^ this.getChapEnabled() == null)
             return false;
-        if (other.getChapEnabled() != null
-                && other.getChapEnabled().equals(this.getChapEnabled()) == false)
+        if (other.getChapEnabled() != null && other.getChapEnabled().equals(this.getChapEnabled()) == false)
             return false;
         return true;
     }
@@ -349,21 +335,11 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfaceId() == null) ? 0
-                        : getNetworkInterfaceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkInterfacePort() == null) ? 0
-                        : getNetworkInterfacePort().hashCode());
-        hashCode = prime * hashCode
-                + ((getLunNumber() == null) ? 0 : getLunNumber().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChapEnabled() == null) ? 0 : getChapEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTargetARN() == null) ? 0 : getTargetARN().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfacePort() == null) ? 0 : getNetworkInterfacePort().hashCode());
+        hashCode = prime * hashCode + ((getLunNumber() == null) ? 0 : getLunNumber().hashCode());
+        hashCode = prime * hashCode + ((getChapEnabled() == null) ? 0 : getChapEnabled().hashCode());
         return hashCode;
     }
 
@@ -372,9 +348,13 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
         try {
             return (VolumeiSCSIAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VolumeiSCSIAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

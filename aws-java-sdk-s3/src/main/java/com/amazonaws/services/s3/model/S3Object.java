@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ public class S3Object implements Closeable,Serializable, S3RequesterChargedResul
 
     /** The redirect location for this object */
     private String redirectLocation;
+
+    private Integer taggingCount;
 
     /**
      * Indicates if the requester is charged for downloading the data from
@@ -191,6 +193,14 @@ public class S3Object implements Closeable,Serializable, S3RequesterChargedResul
      */
     public void setRedirectLocation(String redirectLocation) {
         this.redirectLocation = redirectLocation;
+    }
+
+    public Integer getTaggingCount() {
+        return taggingCount;
+    }
+
+    public void setTaggingCount(Integer taggingCount) {
+        this.taggingCount = taggingCount;
     }
 
     /**

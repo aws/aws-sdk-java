@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,41 +22,41 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a delete integration response request.
  * </p>
  */
-public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies a delete integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a delete integration response request's resource identifier.
+     * [Required] Specifies a delete integration response request's resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Specifies a delete integration response request's HTTP method.
+     * [Required] Specifies a delete integration response request's HTTP method.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * Specifies a delete integration response request's status code.
+     * [Required] Specifies a delete integration response request's status code.
      * </p>
      */
     private String statusCode;
 
     /**
      * <p>
-     * Specifies a delete integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a delete integration response request's API identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -67,10 +65,10 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Specifies a delete integration response request's API identifier.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -79,13 +77,12 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a delete integration response request's API identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withRestApiId(String restApiId) {
@@ -95,12 +92,11 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's resource identifier.
+     * [Required] Specifies a delete integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration response request's resource
-     *        identifier.
+     *        [Required] Specifies a delete integration response request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -109,11 +105,10 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's resource identifier.
+     * [Required] Specifies a delete integration response request's resource identifier.
      * </p>
      * 
-     * @return Specifies a delete integration response request's resource
-     *         identifier.
+     * @return [Required] Specifies a delete integration response request's resource identifier.
      */
 
     public String getResourceId() {
@@ -122,14 +117,12 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's resource identifier.
+     * [Required] Specifies a delete integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration response request's resource
-     *        identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] Specifies a delete integration response request's resource identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withResourceId(String resourceId) {
@@ -139,11 +132,11 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's HTTP method.
+     * [Required] Specifies a delete integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a delete integration response request's HTTP method.
+     *        [Required] Specifies a delete integration response request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -152,10 +145,10 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's HTTP method.
+     * [Required] Specifies a delete integration response request's HTTP method.
      * </p>
      * 
-     * @return Specifies a delete integration response request's HTTP method.
+     * @return [Required] Specifies a delete integration response request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -164,13 +157,12 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's HTTP method.
+     * [Required] Specifies a delete integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a delete integration response request's HTTP method.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] Specifies a delete integration response request's HTTP method.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withHttpMethod(String httpMethod) {
@@ -180,11 +172,11 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's status code.
+     * [Required] Specifies a delete integration response request's status code.
      * </p>
      * 
      * @param statusCode
-     *        Specifies a delete integration response request's status code.
+     *        [Required] Specifies a delete integration response request's status code.
      */
 
     public void setStatusCode(String statusCode) {
@@ -193,10 +185,10 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's status code.
+     * [Required] Specifies a delete integration response request's status code.
      * </p>
      * 
-     * @return Specifies a delete integration response request's status code.
+     * @return [Required] Specifies a delete integration response request's status code.
      */
 
     public String getStatusCode() {
@@ -205,13 +197,12 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a delete integration response request's status code.
+     * [Required] Specifies a delete integration response request's status code.
      * </p>
      * 
      * @param statusCode
-     *        Specifies a delete integration response request's status code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] Specifies a delete integration response request's status code.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteIntegrationResponseRequest withStatusCode(String statusCode) {
@@ -220,8 +211,8 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -232,13 +223,13 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode());
+            sb.append("StatusCode: ").append(getStatusCode());
         sb.append("}");
         return sb.toString();
     }
@@ -255,23 +246,19 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
         DeleteIntegrationResponseRequest other = (DeleteIntegrationResponseRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
             return false;
-        if (other.getHttpMethod() != null
-                && other.getHttpMethod().equals(this.getHttpMethod()) == false)
+        if (other.getHttpMethod() != null && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
-        if (other.getStatusCode() != null
-                && other.getStatusCode().equals(this.getStatusCode()) == false)
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
         return true;
     }
@@ -281,14 +268,10 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         return hashCode;
     }
 
@@ -296,4 +279,5 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
     public DeleteIntegrationResponseRequest clone() {
         return (DeleteIntegrationResponseRequest) super.clone();
     }
+
 }

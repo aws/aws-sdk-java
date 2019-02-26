@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * A container for facet information.
  * </p>
  */
-public class Bucket implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -33,8 +33,7 @@ public class Bucket implements Serializable, Cloneable {
     private String value;
     /**
      * <p>
-     * The number of hits that contain the facet value in the specified facet
-     * field.
+     * The number of hits that contain the facet value in the specified facet field.
      * </p>
      */
     private Long count;
@@ -71,8 +70,7 @@ public class Bucket implements Serializable, Cloneable {
      * 
      * @param value
      *        The facet value being counted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Bucket withValue(String value) {
@@ -82,13 +80,11 @@ public class Bucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hits that contain the facet value in the specified facet
-     * field.
+     * The number of hits that contain the facet value in the specified facet field.
      * </p>
      * 
      * @param count
-     *        The number of hits that contain the facet value in the specified
-     *        facet field.
+     *        The number of hits that contain the facet value in the specified facet field.
      */
 
     public void setCount(Long count) {
@@ -97,12 +93,10 @@ public class Bucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hits that contain the facet value in the specified facet
-     * field.
+     * The number of hits that contain the facet value in the specified facet field.
      * </p>
      * 
-     * @return The number of hits that contain the facet value in the specified
-     *         facet field.
+     * @return The number of hits that contain the facet value in the specified facet field.
      */
 
     public Long getCount() {
@@ -111,15 +105,12 @@ public class Bucket implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hits that contain the facet value in the specified facet
-     * field.
+     * The number of hits that contain the facet value in the specified facet field.
      * </p>
      * 
      * @param count
-     *        The number of hits that contain the facet value in the specified
-     *        facet field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of hits that contain the facet value in the specified facet field.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Bucket withCount(Long count) {
@@ -128,8 +119,8 @@ public class Bucket implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -140,9 +131,9 @@ public class Bucket implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }
@@ -159,13 +150,11 @@ public class Bucket implements Serializable, Cloneable {
         Bucket other = (Bucket) obj;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         if (other.getCount() == null ^ this.getCount() == null)
             return false;
-        if (other.getCount() != null
-                && other.getCount().equals(this.getCount()) == false)
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
         return true;
     }
@@ -175,10 +164,8 @@ public class Bucket implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
-        hashCode = prime * hashCode
-                + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         return hashCode;
     }
 
@@ -187,9 +174,13 @@ public class Bucket implements Serializable, Cloneable {
         try {
             return (Bucket) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudsearchdomain.model.transform.BucketMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

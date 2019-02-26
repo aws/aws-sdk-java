@@ -1,0 +1,14 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Resource": "resource-arn",
+      "InputPath": null,
+      "OutputPath": null,
+      "ResultPath": null,
+      "Parameters": null,
+      "End": true
+    }
+  }
+}

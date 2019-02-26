@@ -1,51 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Contains the inputs for the <a>DescribeSnapshots</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the directory for which to retrieve snapshot
-     * information.
+     * The identifier of the directory for which to retrieve snapshot information.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * A list of identifiers of the snapshots to obtain the information for. If
-     * this member is null or empty, all snapshots are returned using the
-     * <i>Limit</i> and <i>NextToken</i> members.
+     * A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     * snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> snapshotIds;
     /**
      * <p>
-     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call
-     * to <a>DescribeSnapshots</a>. Pass null if this is the first call.
+     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass null if
+     * this is the first call.
      * </p>
      */
     private String nextToken;
@@ -58,13 +57,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory for which to retrieve snapshot
-     * information.
+     * The identifier of the directory for which to retrieve snapshot information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory for which to retrieve snapshot
-     *        information.
+     *        The identifier of the directory for which to retrieve snapshot information.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -73,12 +70,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory for which to retrieve snapshot
-     * information.
+     * The identifier of the directory for which to retrieve snapshot information.
      * </p>
      * 
-     * @return The identifier of the directory for which to retrieve snapshot
-     *         information.
+     * @return The identifier of the directory for which to retrieve snapshot information.
      */
 
     public String getDirectoryId() {
@@ -87,15 +82,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the directory for which to retrieve snapshot
-     * information.
+     * The identifier of the directory for which to retrieve snapshot information.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the directory for which to retrieve snapshot
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the directory for which to retrieve snapshot information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotsRequest withDirectoryId(String directoryId) {
@@ -105,14 +97,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of identifiers of the snapshots to obtain the information for. If
-     * this member is null or empty, all snapshots are returned using the
-     * <i>Limit</i> and <i>NextToken</i> members.
+     * A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     * snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      * </p>
      * 
-     * @return A list of identifiers of the snapshots to obtain the information
-     *         for. If this member is null or empty, all snapshots are returned
-     *         using the <i>Limit</i> and <i>NextToken</i> members.
+     * @return A list of identifiers of the snapshots to obtain the information for. If this member is null or empty,
+     *         all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      */
 
     public java.util.List<String> getSnapshotIds() {
@@ -124,15 +114,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of identifiers of the snapshots to obtain the information for. If
-     * this member is null or empty, all snapshots are returned using the
-     * <i>Limit</i> and <i>NextToken</i> members.
+     * A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     * snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      * </p>
      * 
      * @param snapshotIds
-     *        A list of identifiers of the snapshots to obtain the information
-     *        for. If this member is null or empty, all snapshots are returned
-     *        using the <i>Limit</i> and <i>NextToken</i> members.
+     *        A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     *        snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      */
 
     public void setSnapshotIds(java.util.Collection<String> snapshotIds) {
@@ -141,35 +129,29 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.snapshotIds = new com.amazonaws.internal.SdkInternalList<String>(
-                snapshotIds);
+        this.snapshotIds = new com.amazonaws.internal.SdkInternalList<String>(snapshotIds);
     }
 
     /**
      * <p>
-     * A list of identifiers of the snapshots to obtain the information for. If
-     * this member is null or empty, all snapshots are returned using the
-     * <i>Limit</i> and <i>NextToken</i> members.
+     * A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     * snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSnapshotIds(java.util.Collection)} or
-     * {@link #withSnapshotIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSnapshotIds(java.util.Collection)} or {@link #withSnapshotIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param snapshotIds
-     *        A list of identifiers of the snapshots to obtain the information
-     *        for. If this member is null or empty, all snapshots are returned
-     *        using the <i>Limit</i> and <i>NextToken</i> members.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     *        snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
         if (this.snapshotIds == null) {
-            setSnapshotIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    snapshotIds.length));
+            setSnapshotIds(new com.amazonaws.internal.SdkInternalList<String>(snapshotIds.length));
         }
         for (String ele : snapshotIds) {
             this.snapshotIds.add(ele);
@@ -179,35 +161,30 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of identifiers of the snapshots to obtain the information for. If
-     * this member is null or empty, all snapshots are returned using the
-     * <i>Limit</i> and <i>NextToken</i> members.
+     * A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     * snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
      * </p>
      * 
      * @param snapshotIds
-     *        A list of identifiers of the snapshots to obtain the information
-     *        for. If this member is null or empty, all snapshots are returned
-     *        using the <i>Limit</i> and <i>NextToken</i> members.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all
+     *        snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotsRequest withSnapshotIds(
-            java.util.Collection<String> snapshotIds) {
+    public DescribeSnapshotsRequest withSnapshotIds(java.util.Collection<String> snapshotIds) {
         setSnapshotIds(snapshotIds);
         return this;
     }
 
     /**
      * <p>
-     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call
-     * to <a>DescribeSnapshots</a>. Pass null if this is the first call.
+     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass null if
+     * this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeSnapshotsResult.NextToken</i> value from a previous
-     *        call to <a>DescribeSnapshots</a>. Pass null if this is the first
-     *        call.
+     *        The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass
+     *        null if this is the first call.
      */
 
     public void setNextToken(String nextToken) {
@@ -216,13 +193,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call
-     * to <a>DescribeSnapshots</a>. Pass null if this is the first call.
+     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass null if
+     * this is the first call.
      * </p>
      * 
-     * @return The <i>DescribeSnapshotsResult.NextToken</i> value from a
-     *         previous call to <a>DescribeSnapshots</a>. Pass null if this is
-     *         the first call.
+     * @return The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass
+     *         null if this is the first call.
      */
 
     public String getNextToken() {
@@ -231,16 +207,14 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call
-     * to <a>DescribeSnapshots</a>. Pass null if this is the first call.
+     * The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass null if
+     * this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeSnapshotsResult.NextToken</i> value from a previous
-     *        call to <a>DescribeSnapshots</a>. Pass null if this is the first
-     *        call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>. Pass
+     *        null if this is the first call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotsRequest withNextToken(String nextToken) {
@@ -280,8 +254,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * 
      * @param limit
      *        The maximum number of objects to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotsRequest withLimit(Integer limit) {
@@ -290,8 +263,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -302,13 +275,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getSnapshotIds() != null)
-            sb.append("SnapshotIds: " + getSnapshotIds() + ",");
+            sb.append("SnapshotIds: ").append(getSnapshotIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -325,23 +298,19 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         DescribeSnapshotsRequest other = (DescribeSnapshotsRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getSnapshotIds() == null ^ this.getSnapshotIds() == null)
             return false;
-        if (other.getSnapshotIds() != null
-                && other.getSnapshotIds().equals(this.getSnapshotIds()) == false)
+        if (other.getSnapshotIds() != null && other.getSnapshotIds().equals(this.getSnapshotIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -351,16 +320,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotIds() == null) ? 0 : getSnapshotIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotIds() == null) ? 0 : getSnapshotIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -368,4 +331,5 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     public DescribeSnapshotsRequest clone() {
         return (DescribeSnapshotsRequest) super.clone();
     }
+
 }

@@ -1,28 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
 
 /**
- * Abstract implementation of {@code AmazonElasticTranscoder}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonElasticTranscoder}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder {
 
     protected AbstractAmazonElasticTranscoder() {
@@ -69,14 +69,12 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     }
 
     @Override
-    public ListJobsByPipelineResult listJobsByPipeline(
-            ListJobsByPipelineRequest request) {
+    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListJobsByStatusResult listJobsByStatus(
-            ListJobsByStatusRequest request) {
+    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -116,6 +114,7 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     }
 
     @Override
+    @Deprecated
     public TestRoleResult testRole(TestRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -126,14 +125,12 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     }
 
     @Override
-    public UpdatePipelineNotificationsResult updatePipelineNotifications(
-            UpdatePipelineNotificationsRequest request) {
+    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdatePipelineStatusResult updatePipelineStatus(
-            UpdatePipelineStatusRequest request) {
+    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,8 +140,13 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonElasticTranscoderWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

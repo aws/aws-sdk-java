@@ -14,9 +14,23 @@
  */
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+import java.util.Arrays;
+
 public enum AuthType {
 
-    NONE("none");
+    NONE("none"),
+
+    // APIG specific
+    CUSTOM("custom"),
+    IAM("iam"),
+
+    // AWS protocol
+    V4("v4"),
+    V4_UNSIGNED_BODY("v4-unsigned-body"),
+
+    ;
 
     private final String value;
 
@@ -24,12 +38,15 @@ public enum AuthType {
         this.value = value;
     }
 
+    @JsonCreator
     public static AuthType fromValue(String value) {
-        for (AuthType authType : AuthType.values()) {
-            if (authType.value.equals(value)) {
-                return authType;
-            }
-        }
-        throw new IllegalArgumentException("Unsupported auth type " + value);
+        return Arrays.stream(values())
+                .filter(authType -> authType.value.equals(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Unknown AuthType '%s'", value)));
+    }
+
+    public String getValue() {
+        return value;
     }
 }

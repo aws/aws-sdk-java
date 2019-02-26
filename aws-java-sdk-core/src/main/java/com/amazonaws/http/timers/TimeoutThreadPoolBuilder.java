@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
@@ -28,24 +28,35 @@ import com.amazonaws.annotation.SdkInternalApi;
  */
 @SdkInternalApi
 public class TimeoutThreadPoolBuilder {
-
+    
     /**
+     * Creates a {@link ScheduledThreadPoolExecutor} with custom name for the threads.
+     *
+     * @param name the prefix to add to the thread name in ThreadFactory.
      * @return The default thread pool for request timeout and client execution timeout features.
      */
-    public static ScheduledThreadPoolExecutor buildDefaultTimeoutThreadPool() {
-        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(5);
+    public static ScheduledThreadPoolExecutor buildDefaultTimeoutThreadPool(final String name) {
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(5, getThreadFactory(name));
         safeSetRemoveOnCancel(executor);
         executor.setKeepAliveTime(5, TimeUnit.SECONDS);
         executor.allowCoreThreadTimeOut(true);
-        executor.setThreadFactory(new ThreadFactory() {
-            @Override
-            public Thread newThread(Runnable runnable) {
-                Thread thread = new Thread(runnable);
+
+        return executor;
+    }
+
+    private static ThreadFactory getThreadFactory(final String name) {
+        return new ThreadFactory() {
+            private int threadCount = 1;
+
+            public Thread newThread(Runnable r) {
+                Thread thread = new Thread(r);
+                if (name != null) {
+                    thread.setName(name + "-" + threadCount++);
+                }
                 thread.setPriority(Thread.MAX_PRIORITY);
                 return thread;
             }
-        });
-        return executor;
+        };
     }
 
     /**
@@ -64,19 +75,19 @@ public class TimeoutThreadPoolBuilder {
         } catch (InvocationTargetException e) {
             throwSetRemoveOnCancelException(e.getCause());
         } catch (NoSuchMethodException e) {
-            throw new AmazonClientException("The request timeout feature is only available for Java 1.7 and above.");
+            throw new SdkClientException("The request timeout feature is only available for Java 1.7 and above.");
         } catch (SecurityException e) {
-            throw new AmazonClientException("The request timeout feature needs additional permissions to function.", e);
+            throw new SdkClientException("The request timeout feature needs additional permissions to function.", e);
         }
     }
 
     /**
-     * Wrap exception caused by calling setRemoveOnCancel in an Amazon client exception
+     * Wrap exception caused by calling setRemoveOnCancel in a {@link SdkClientException}.
      * 
      * @param cause
      *            Root cause of exception
      */
     private static void throwSetRemoveOnCancelException(Throwable cause) {
-        throw new AmazonClientException("Unable to setRemoveOnCancelPolicy for request timeout thread pool", cause);
+        throw new SdkClientException("Unable to setRemoveOnCancelPolicy for request timeout thread pool", cause);
     }
 }

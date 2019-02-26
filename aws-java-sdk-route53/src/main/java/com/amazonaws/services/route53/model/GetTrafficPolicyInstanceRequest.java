@@ -1,55 +1,47 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Gets information about a specified traffic policy instance.
  * </p>
- * <p>
- * To get information about a traffic policy instance, send a <code>GET</code>
- * request to the
- * <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>Id</i></code>
- * resource.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance" target="_top">AWS
+ *      API Documentation</a>
  */
-public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the traffic policy instance that you want to get information
-     * about.
+     * The ID of the traffic policy instance that you want to get information about.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ID of the traffic policy instance that you want to get information
-     * about.
+     * The ID of the traffic policy instance that you want to get information about.
      * </p>
      * 
      * @param id
-     *        The ID of the traffic policy instance that you want to get
-     *        information about.
+     *        The ID of the traffic policy instance that you want to get information about.
      */
 
     public void setId(String id) {
@@ -58,12 +50,10 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the traffic policy instance that you want to get information
-     * about.
+     * The ID of the traffic policy instance that you want to get information about.
      * </p>
      * 
-     * @return The ID of the traffic policy instance that you want to get
-     *         information about.
+     * @return The ID of the traffic policy instance that you want to get information about.
      */
 
     public String getId() {
@@ -72,15 +62,12 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the traffic policy instance that you want to get information
-     * about.
+     * The ID of the traffic policy instance that you want to get information about.
      * </p>
      * 
      * @param id
-     *        The ID of the traffic policy instance that you want to get
-     *        information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the traffic policy instance that you want to get information about.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetTrafficPolicyInstanceRequest withId(String id) {
@@ -89,8 +76,8 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -101,7 +88,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }
@@ -118,8 +105,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
         GetTrafficPolicyInstanceRequest other = (GetTrafficPolicyInstanceRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         return true;
     }
@@ -129,8 +115,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }
 
@@ -138,4 +123,5 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
     public GetTrafficPolicyInstanceRequest clone() {
         return (GetTrafficPolicyInstanceRequest) super.clone();
     }
+
 }

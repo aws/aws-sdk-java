@@ -1,100 +1,61 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeLogGroupsRequest Marshaller
+ * DescribeLogGroupsRequestMarshaller
  */
-public class DescribeLogGroupsRequestMarshaller implements
-        Marshaller<Request<DescribeLogGroupsRequest>, DescribeLogGroupsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class DescribeLogGroupsRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupNamePrefix").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
 
-    public DescribeLogGroupsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeLogGroupsRequestMarshaller instance = new DescribeLogGroupsRequestMarshaller();
+
+    public static DescribeLogGroupsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeLogGroupsRequest> marshall(
-            DescribeLogGroupsRequest describeLogGroupsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeLogGroupsRequest describeLogGroupsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeLogGroupsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<DescribeLogGroupsRequest> request = new DefaultRequest<DescribeLogGroupsRequest>(
-                describeLogGroupsRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DescribeLogGroups");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeLogGroupsRequest.getLogGroupNamePrefix() != null) {
-                jsonGenerator.writeFieldName("logGroupNamePrefix").writeValue(
-                        describeLogGroupsRequest.getLogGroupNamePrefix());
-            }
-            if (describeLogGroupsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        describeLogGroupsRequest.getNextToken());
-            }
-            if (describeLogGroupsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(
-                        describeLogGroupsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeLogGroupsRequest.getLogGroupNamePrefix(), LOGGROUPNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(describeLogGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeLogGroupsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

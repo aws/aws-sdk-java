@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains information about an instance that is part of a DB cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterMember" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DBClusterMember implements Serializable, Cloneable {
 
     /**
@@ -33,25 +34,23 @@ public class DBClusterMember implements Serializable, Cloneable {
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Value that is <code>true</code> if the cluster member is the primary
-     * instance for the DB cluster and <code>false</code> otherwise.
+     * Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * <code>false</code> otherwise.
      * </p>
      */
     private Boolean isClusterWriter;
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of
-     * the DB cluster.
+     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      * </p>
      */
     private String dBClusterParameterGroupStatus;
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private Integer promotionTier;
@@ -62,8 +61,7 @@ public class DBClusterMember implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Specifies the instance identifier for this member of the DB
-     *        cluster.
+     *        Specifies the instance identifier for this member of the DB cluster.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -75,8 +73,7 @@ public class DBClusterMember implements Serializable, Cloneable {
      * Specifies the instance identifier for this member of the DB cluster.
      * </p>
      * 
-     * @return Specifies the instance identifier for this member of the DB
-     *         cluster.
+     * @return Specifies the instance identifier for this member of the DB cluster.
      */
 
     public String getDBInstanceIdentifier() {
@@ -89,10 +86,8 @@ public class DBClusterMember implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Specifies the instance identifier for this member of the DB
-     *        cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the instance identifier for this member of the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterMember withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -102,14 +97,13 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value that is <code>true</code> if the cluster member is the primary
-     * instance for the DB cluster and <code>false</code> otherwise.
+     * Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * <code>false</code> otherwise.
      * </p>
      * 
      * @param isClusterWriter
-     *        Value that is <code>true</code> if the cluster member is the
-     *        primary instance for the DB cluster and <code>false</code>
-     *        otherwise.
+     *        Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *        <code>false</code> otherwise.
      */
 
     public void setIsClusterWriter(Boolean isClusterWriter) {
@@ -118,13 +112,12 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value that is <code>true</code> if the cluster member is the primary
-     * instance for the DB cluster and <code>false</code> otherwise.
+     * Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * <code>false</code> otherwise.
      * </p>
      * 
-     * @return Value that is <code>true</code> if the cluster member is the
-     *         primary instance for the DB cluster and <code>false</code>
-     *         otherwise.
+     * @return Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *         <code>false</code> otherwise.
      */
 
     public Boolean getIsClusterWriter() {
@@ -133,16 +126,14 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value that is <code>true</code> if the cluster member is the primary
-     * instance for the DB cluster and <code>false</code> otherwise.
+     * Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * <code>false</code> otherwise.
      * </p>
      * 
      * @param isClusterWriter
-     *        Value that is <code>true</code> if the cluster member is the
-     *        primary instance for the DB cluster and <code>false</code>
-     *        otherwise.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *        <code>false</code> otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterMember withIsClusterWriter(Boolean isClusterWriter) {
@@ -152,13 +143,12 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value that is <code>true</code> if the cluster member is the primary
-     * instance for the DB cluster and <code>false</code> otherwise.
+     * Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * <code>false</code> otherwise.
      * </p>
      * 
-     * @return Value that is <code>true</code> if the cluster member is the
-     *         primary instance for the DB cluster and <code>false</code>
-     *         otherwise.
+     * @return Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *         <code>false</code> otherwise.
      */
 
     public Boolean isClusterWriter() {
@@ -167,28 +157,23 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of
-     * the DB cluster.
+     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupStatus
-     *        Specifies the status of the DB cluster parameter group for this
-     *        member of the DB cluster.
+     *        Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      */
 
-    public void setDBClusterParameterGroupStatus(
-            String dBClusterParameterGroupStatus) {
+    public void setDBClusterParameterGroupStatus(String dBClusterParameterGroupStatus) {
         this.dBClusterParameterGroupStatus = dBClusterParameterGroupStatus;
     }
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of
-     * the DB cluster.
+     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      * </p>
      * 
-     * @return Specifies the status of the DB cluster parameter group for this
-     *         member of the DB cluster.
+     * @return Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      */
 
     public String getDBClusterParameterGroupStatus() {
@@ -197,38 +182,32 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of
-     * the DB cluster.
+     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupStatus
-     *        Specifies the status of the DB cluster parameter group for this
-     *        member of the DB cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DBClusterMember withDBClusterParameterGroupStatus(
-            String dBClusterParameterGroupStatus) {
+    public DBClusterMember withDBClusterParameterGroupStatus(String dBClusterParameterGroupStatus) {
         setDBClusterParameterGroupStatus(dBClusterParameterGroupStatus);
         return this;
     }
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is
-     *        promoted to the primary instance after a failure of the existing
-     *        primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
+     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *        failure of the existing primary instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setPromotionTier(Integer promotionTier) {
@@ -237,18 +216,16 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that specifies the order in which an Aurora Replica is
-     *         promoted to the primary instance after a failure of the existing
-     *         primary instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *         > Fault Tolerance for an Aurora DB Cluster</a>.
+     * @return A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *         failure of the existing primary instance. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *         > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Integer getPromotionTier() {
@@ -257,21 +234,18 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies the order in which an Aurora Replica is promoted
-     * to the primary instance after a failure of the existing primary instance.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     * > Fault Tolerance for an Aurora DB Cluster</a>.
+     * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
+     * of the existing primary instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
-     *        A value that specifies the order in which an Aurora Replica is
-     *        promoted to the primary instance after a failure of the existing
-     *        primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
+     *        failure of the existing primary instance. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterMember withPromotionTier(Integer promotionTier) {
@@ -280,8 +254,8 @@ public class DBClusterMember implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -292,15 +266,13 @@ public class DBClusterMember implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier()
-                    + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getIsClusterWriter() != null)
-            sb.append("IsClusterWriter: " + getIsClusterWriter() + ",");
+            sb.append("IsClusterWriter: ").append(getIsClusterWriter()).append(",");
         if (getDBClusterParameterGroupStatus() != null)
-            sb.append("DBClusterParameterGroupStatus: "
-                    + getDBClusterParameterGroupStatus() + ",");
+            sb.append("DBClusterParameterGroupStatus: ").append(getDBClusterParameterGroupStatus()).append(",");
         if (getPromotionTier() != null)
-            sb.append("PromotionTier: " + getPromotionTier());
+            sb.append("PromotionTier: ").append(getPromotionTier());
         sb.append("}");
         return sb.toString();
     }
@@ -315,30 +287,22 @@ public class DBClusterMember implements Serializable, Cloneable {
         if (obj instanceof DBClusterMember == false)
             return false;
         DBClusterMember other = (DBClusterMember) obj;
-        if (other.getDBInstanceIdentifier() == null
-                ^ this.getDBInstanceIdentifier() == null)
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null)
             return false;
-        if (other.getDBInstanceIdentifier() != null
-                && other.getDBInstanceIdentifier().equals(
-                        this.getDBInstanceIdentifier()) == false)
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false)
             return false;
-        if (other.getIsClusterWriter() == null
-                ^ this.getIsClusterWriter() == null)
+        if (other.getIsClusterWriter() == null ^ this.getIsClusterWriter() == null)
             return false;
-        if (other.getIsClusterWriter() != null
-                && other.getIsClusterWriter().equals(this.getIsClusterWriter()) == false)
+        if (other.getIsClusterWriter() != null && other.getIsClusterWriter().equals(this.getIsClusterWriter()) == false)
             return false;
-        if (other.getDBClusterParameterGroupStatus() == null
-                ^ this.getDBClusterParameterGroupStatus() == null)
+        if (other.getDBClusterParameterGroupStatus() == null ^ this.getDBClusterParameterGroupStatus() == null)
             return false;
         if (other.getDBClusterParameterGroupStatus() != null
-                && other.getDBClusterParameterGroupStatus().equals(
-                        this.getDBClusterParameterGroupStatus()) == false)
+                && other.getDBClusterParameterGroupStatus().equals(this.getDBClusterParameterGroupStatus()) == false)
             return false;
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null)
             return false;
-        if (other.getPromotionTier() != null
-                && other.getPromotionTier().equals(this.getPromotionTier()) == false)
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false)
             return false;
         return true;
     }
@@ -348,22 +312,10 @@ public class DBClusterMember implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBInstanceIdentifier() == null) ? 0
-                        : getDBInstanceIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsClusterWriter() == null) ? 0 : getIsClusterWriter()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterParameterGroupStatus() == null) ? 0
-                        : getDBClusterParameterGroupStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPromotionTier() == null) ? 0 : getPromotionTier()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getIsClusterWriter() == null) ? 0 : getIsClusterWriter().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupStatus() == null) ? 0 : getDBClusterParameterGroupStatus().hashCode());
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         return hashCode;
     }
 
@@ -372,9 +324,8 @@ public class DBClusterMember implements Serializable, Cloneable {
         try {
             return (DBClusterMember) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

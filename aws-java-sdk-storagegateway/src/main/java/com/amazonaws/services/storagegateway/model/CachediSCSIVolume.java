@@ -1,46 +1,126 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes an iSCSI cached volume.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CachediSCSIVolume" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CachediSCSIVolume implements Serializable, Cloneable {
-
-    private String volumeARN;
-
-    private String volumeId;
-
-    private String volumeType;
-
-    private String volumeStatus;
-
-    private Long volumeSizeInBytes;
-
-    private Double volumeProgress;
-
-    private String sourceSnapshotId;
-
-    private VolumeiSCSIAttributes volumeiSCSIAttributes;
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     */
+    private String volumeARN;
+    /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     */
+    private String volumeId;
+    /**
+     * <p>
+     * One of the VolumeType enumeration values that describes the type of the volume.
+     * </p>
+     */
+    private String volumeType;
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     */
+    private String volumeStatus;
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to or detached from a gateway.
+     * </p>
+     */
+    private String volumeAttachmentStatus;
+    /**
+     * <p>
+     * The size, in bytes, of the volume capacity.
+     * </p>
+     */
+    private Long volumeSizeInBytes;
+    /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the cached volume is not restoring or
+     * bootstrapping.
+     * </p>
+     */
+    private Double volumeProgress;
+    /**
+     * <p>
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     */
+    private String sourceSnapshotId;
+    /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     */
+    private VolumeiSCSIAttributes volumeiSCSIAttributes;
+    /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     */
+    private java.util.Date createdDate;
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     */
+    private Long volumeUsedInBytes;
+
+    private String kMSKey;
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     */
+    private String targetName;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the storage volume.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -48,7 +128,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the storage volume.
      */
 
     public String getVolumeARN() {
@@ -56,9 +140,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
      * @param volumeARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the storage volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeARN(String volumeARN) {
@@ -67,7 +155,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
      * @param volumeId
+     *        The unique identifier of the volume, e.g. vol-AE4B946D.
      */
 
     public void setVolumeId(String volumeId) {
@@ -75,7 +168,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
+     * @return The unique identifier of the volume, e.g. vol-AE4B946D.
      */
 
     public String getVolumeId() {
@@ -83,9 +180,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
      * @param volumeId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeId(String volumeId) {
@@ -94,7 +195,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values that describes the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values that describes the type of the volume.
      */
 
     public void setVolumeType(String volumeType) {
@@ -102,7 +208,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeType enumeration values that describes the type of the volume.
+     * </p>
+     * 
+     * @return One of the VolumeType enumeration values that describes the type of the volume.
      */
 
     public String getVolumeType() {
@@ -110,9 +220,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values that describes the type of the volume.
+     * </p>
+     * 
      * @param volumeType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One of the VolumeType enumeration values that describes the type of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeType(String volumeType) {
@@ -121,7 +235,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public void setVolumeStatus(String volumeStatus) {
@@ -129,7 +248,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @return One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public String getVolumeStatus() {
@@ -137,9 +260,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeStatus
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -148,7 +275,52 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to or detached from a gateway.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        A value that indicates whether a storage volume is attached to or detached from a gateway.
+     */
+
+    public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        this.volumeAttachmentStatus = volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to or detached from a gateway.
+     * </p>
+     * 
+     * @return A value that indicates whether a storage volume is attached to or detached from a gateway.
+     */
+
+    public String getVolumeAttachmentStatus() {
+        return this.volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to or detached from a gateway.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        A value that indicates whether a storage volume is attached to or detached from a gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        setVolumeAttachmentStatus(volumeAttachmentStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of the volume capacity.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size, in bytes, of the volume capacity.
      */
 
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -156,7 +328,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The size, in bytes, of the volume capacity.
+     * </p>
+     * 
+     * @return The size, in bytes, of the volume capacity.
      */
 
     public Long getVolumeSizeInBytes() {
@@ -164,9 +340,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The size, in bytes, of the volume capacity.
+     * </p>
+     * 
      * @param volumeSizeInBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The size, in bytes, of the volume capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -175,7 +355,16 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the cached volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
      * @param volumeProgress
+     *        Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent
+     *        of data transferred. This field does not appear in the response if the cached volume is not restoring or
+     *        bootstrapping.
      */
 
     public void setVolumeProgress(Double volumeProgress) {
@@ -183,7 +372,15 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the cached volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
+     * @return Represents the percentage complete if the volume is restoring or bootstrapping that represents the
+     *         percent of data transferred. This field does not appear in the response if the cached volume is not
+     *         restoring or bootstrapping.
      */
 
     public Double getVolumeProgress() {
@@ -191,9 +388,17 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the cached volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
      * @param volumeProgress
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent
+     *        of data transferred. This field does not appear in the response if the cached volume is not restoring or
+     *        bootstrapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withVolumeProgress(Double volumeProgress) {
@@ -202,7 +407,14 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
      * @param sourceSnapshotId
+     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        snap-78e22663. Otherwise, this field is not included.
      */
 
     public void setSourceSnapshotId(String sourceSnapshotId) {
@@ -210,7 +422,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
+     * @return If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *         snap-78e22663. Otherwise, this field is not included.
      */
 
     public String getSourceSnapshotId() {
@@ -218,9 +436,15 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
      * @param sourceSnapshotId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        snap-78e22663. Otherwise, this field is not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CachediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
@@ -229,16 +453,26 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
      * @param volumeiSCSIAttributes
+     *        An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *        volume.
      */
 
-    public void setVolumeiSCSIAttributes(
-            VolumeiSCSIAttributes volumeiSCSIAttributes) {
+    public void setVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
     }
 
     /**
-     * @return
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
+     * @return An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *         volume.
      */
 
     public VolumeiSCSIAttributes getVolumeiSCSIAttributes() {
@@ -246,20 +480,216 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
      * @param volumeiSCSIAttributes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *        volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CachediSCSIVolume withVolumeiSCSIAttributes(
-            VolumeiSCSIAttributes volumeiSCSIAttributes) {
+    public CachediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         setVolumeiSCSIAttributes(volumeiSCSIAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
+     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @param volumeUsedInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
+     */
+
+    public void setVolumeUsedInBytes(Long volumeUsedInBytes) {
+        this.volumeUsedInBytes = volumeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @return The size of the data stored on the volume in bytes.</p> <note>
+     *         <p>
+     *         This value is not available for volumes created prior to May 13, 2015, until you store data on the
+     *         volume.
+     *         </p>
+     */
+
+    public Long getVolumeUsedInBytes() {
+        return this.volumeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @param volumeUsedInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withVolumeUsedInBytes(Long volumeUsedInBytes) {
+        setVolumeUsedInBytes(volumeUsedInBytes);
+        return this;
+    }
+
+    /**
+     * @param kMSKey
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * @param kMSKey
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @param targetName
+     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *        ARN of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        .
+     */
+
+    public void setTargetName(String targetName) {
+        this.targetName = targetName;
+    }
+
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @return The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *         the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *         ARN of
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *         .
+     */
+
+    public String getTargetName() {
+        return this.targetName;
+    }
+
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @param targetName
+     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *        ARN of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withTargetName(String targetName) {
+        setTargetName(targetName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -270,21 +700,31 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeStatus() != null)
-            sb.append("VolumeStatus: " + getVolumeStatus() + ",");
+            sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
+        if (getVolumeAttachmentStatus() != null)
+            sb.append("VolumeAttachmentStatus: ").append(getVolumeAttachmentStatus()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getVolumeProgress() != null)
-            sb.append("VolumeProgress: " + getVolumeProgress() + ",");
+            sb.append("VolumeProgress: ").append(getVolumeProgress()).append(",");
         if (getSourceSnapshotId() != null)
-            sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
+            sb.append("SourceSnapshotId: ").append(getSourceSnapshotId()).append(",");
         if (getVolumeiSCSIAttributes() != null)
-            sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes());
+            sb.append("VolumeiSCSIAttributes: ").append(getVolumeiSCSIAttributes()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getVolumeUsedInBytes() != null)
+            sb.append("VolumeUsedInBytes: ").append(getVolumeUsedInBytes()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getTargetName() != null)
+            sb.append("TargetName: ").append(getTargetName());
         sb.append("}");
         return sb.toString();
     }
@@ -301,50 +741,55 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
         CachediSCSIVolume other = (CachediSCSIVolume) obj;
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null)
             return false;
-        if (other.getVolumeARN() != null
-                && other.getVolumeARN().equals(this.getVolumeARN()) == false)
+        if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false)
             return false;
         if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getVolumeId() != null
-                && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
         if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
             return false;
-        if (other.getVolumeStatus() != null
-                && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
+        if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
             return false;
-        if (other.getVolumeSizeInBytes() == null
-                ^ this.getVolumeSizeInBytes() == null)
+        if (other.getVolumeAttachmentStatus() == null ^ this.getVolumeAttachmentStatus() == null)
             return false;
-        if (other.getVolumeSizeInBytes() != null
-                && other.getVolumeSizeInBytes().equals(
-                        this.getVolumeSizeInBytes()) == false)
+        if (other.getVolumeAttachmentStatus() != null && other.getVolumeAttachmentStatus().equals(this.getVolumeAttachmentStatus()) == false)
             return false;
-        if (other.getVolumeProgress() == null
-                ^ this.getVolumeProgress() == null)
+        if (other.getVolumeSizeInBytes() == null ^ this.getVolumeSizeInBytes() == null)
             return false;
-        if (other.getVolumeProgress() != null
-                && other.getVolumeProgress().equals(this.getVolumeProgress()) == false)
+        if (other.getVolumeSizeInBytes() != null && other.getVolumeSizeInBytes().equals(this.getVolumeSizeInBytes()) == false)
             return false;
-        if (other.getSourceSnapshotId() == null
-                ^ this.getSourceSnapshotId() == null)
+        if (other.getVolumeProgress() == null ^ this.getVolumeProgress() == null)
             return false;
-        if (other.getSourceSnapshotId() != null
-                && other.getSourceSnapshotId().equals(
-                        this.getSourceSnapshotId()) == false)
+        if (other.getVolumeProgress() != null && other.getVolumeProgress().equals(this.getVolumeProgress()) == false)
             return false;
-        if (other.getVolumeiSCSIAttributes() == null
-                ^ this.getVolumeiSCSIAttributes() == null)
+        if (other.getSourceSnapshotId() == null ^ this.getSourceSnapshotId() == null)
             return false;
-        if (other.getVolumeiSCSIAttributes() != null
-                && other.getVolumeiSCSIAttributes().equals(
-                        this.getVolumeiSCSIAttributes()) == false)
+        if (other.getSourceSnapshotId() != null && other.getSourceSnapshotId().equals(this.getSourceSnapshotId()) == false)
+            return false;
+        if (other.getVolumeiSCSIAttributes() == null ^ this.getVolumeiSCSIAttributes() == null)
+            return false;
+        if (other.getVolumeiSCSIAttributes() != null && other.getVolumeiSCSIAttributes().equals(this.getVolumeiSCSIAttributes()) == false)
+            return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
+        if (other.getVolumeUsedInBytes() == null ^ this.getVolumeUsedInBytes() == null)
+            return false;
+        if (other.getVolumeUsedInBytes() != null && other.getVolumeUsedInBytes().equals(this.getVolumeUsedInBytes()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
+        if (other.getTargetName() == null ^ this.getTargetName() == null)
+            return false;
+        if (other.getTargetName() != null && other.getTargetName().equals(this.getTargetName()) == false)
             return false;
         return true;
     }
@@ -354,32 +799,19 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeStatus() == null) ? 0 : getVolumeStatus()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeSizeInBytes() == null) ? 0
-                        : getVolumeSizeInBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeProgress() == null) ? 0 : getVolumeProgress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeiSCSIAttributes() == null) ? 0
-                        : getVolumeiSCSIAttributes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeARN() == null) ? 0 : getVolumeARN().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
+        hashCode = prime * hashCode + ((getVolumeAttachmentStatus() == null) ? 0 : getVolumeAttachmentStatus().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInBytes() == null) ? 0 : getVolumeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeProgress() == null) ? 0 : getVolumeProgress().hashCode());
+        hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsedInBytes() == null) ? 0 : getVolumeUsedInBytes().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getTargetName() == null) ? 0 : getTargetName().hashCode());
         return hashCode;
     }
 
@@ -388,9 +820,13 @@ public class CachediSCSIVolume implements Serializable, Cloneable {
         try {
             return (CachediSCSIVolume) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.CachediSCSIVolumeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

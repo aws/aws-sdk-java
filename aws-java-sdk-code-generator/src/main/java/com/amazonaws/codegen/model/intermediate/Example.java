@@ -24,8 +24,8 @@ public class Example {
 	private final String title;
 	private final String id;
 
-	private final JsonNode input;
-	private final JsonNode output;
+	private JsonNode input;
+	private JsonNode output;
 	private final ExampleComments comments;
 
     public Example(
@@ -60,8 +60,16 @@ public class Example {
     	return input;
     }
 
+    public void setInput(JsonNode input) {
+        this.input = input;
+    }
+
     public JsonNode getOutput() {
     	return output;
+    }
+
+    public void setOutput(JsonNode output) {
+        this.output = output;
     }
 
     public ExampleComments getComments() {

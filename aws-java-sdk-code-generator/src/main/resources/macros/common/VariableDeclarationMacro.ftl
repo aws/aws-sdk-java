@@ -6,7 +6,6 @@
     <#if member.deprecated>
     @Deprecated
     </#if>
-    <@AdditionalAnnotationsForField.content shape.type member/>
     private ${variable.variableDeclarationType} ${variable.variableName};
 </#list>
 </#if>

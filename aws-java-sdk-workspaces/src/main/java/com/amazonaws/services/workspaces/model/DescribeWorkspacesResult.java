@@ -1,65 +1,58 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results for the <a>DescribeWorkspaces</a> operation.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeWorkspacesResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of
-     * this information may be incomplete for a newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Workspace> workspaces;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation
-     * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of
-     * this information may be incomplete for a newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
-     * @return An array of structures that contain the information about the
-     *         WorkSpaces.</p>
+     * @return Information about the WorkSpaces.</p>
      *         <p>
-     *         Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     *         some of this information may be incomplete for a newly-created
-     *         WorkSpace.
+     *         Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *         incomplete.
      */
 
     public java.util.List<Workspace> getWorkspaces() {
@@ -71,20 +64,18 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of
-     * this information may be incomplete for a newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the
-     *        WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     *        some of this information may be incomplete for a newly-created
-     *        WorkSpace.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
      */
 
     public void setWorkspaces(java.util.Collection<Workspace> workspaces) {
@@ -93,40 +84,34 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
             return;
         }
 
-        this.workspaces = new com.amazonaws.internal.SdkInternalList<Workspace>(
-                workspaces);
+        this.workspaces = new com.amazonaws.internal.SdkInternalList<Workspace>(workspaces);
     }
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of
-     * this information may be incomplete for a newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setWorkspaces(java.util.Collection)} or
-     * {@link #withWorkspaces(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the
-     *        WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     *        some of this information may be incomplete for a newly-created
-     *        WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeWorkspacesResult withWorkspaces(Workspace... workspaces) {
         if (this.workspaces == null) {
-            setWorkspaces(new com.amazonaws.internal.SdkInternalList<Workspace>(
-                    workspaces.length));
+            setWorkspaces(new com.amazonaws.internal.SdkInternalList<Workspace>(workspaces.length));
         }
         for (Workspace ele : workspaces) {
             this.workspaces.add(ele);
@@ -136,43 +121,33 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of
-     * this information may be incomplete for a newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the
-     *        WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     *        some of this information may be incomplete for a newly-created
-     *        WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeWorkspacesResult withWorkspaces(
-            java.util.Collection<Workspace> workspaces) {
+    public DescribeWorkspacesResult withWorkspaces(java.util.Collection<Workspace> workspaces) {
         setWorkspaces(workspaces);
         return this;
     }
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation
-     * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the
-     *        <code>NextToken</code> parameter in a subsequent call to this
-     *        operation to retrieve the next set of items. This token is valid
-     *        for one day and must be used within that timeframe.
+     *        The token to use to retrieve the next set of results, or null if no more results are available.
      */
 
     public void setNextToken(String nextToken) {
@@ -181,16 +156,10 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation
-     * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the
-     *         <code>NextToken</code> parameter in a subsequent call to this
-     *         operation to retrieve the next set of items. This token is valid
-     *         for one day and must be used within that timeframe.
+     * @return The token to use to retrieve the next set of results, or null if no more results are available.
      */
 
     public String getNextToken() {
@@ -199,19 +168,12 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the
-     * <code>NextToken</code> parameter in a subsequent call to this operation
-     * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the
-     *        <code>NextToken</code> parameter in a subsequent call to this
-     *        operation to retrieve the next set of items. This token is valid
-     *        for one day and must be used within that timeframe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use to retrieve the next set of results, or null if no more results are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeWorkspacesResult withNextToken(String nextToken) {
@@ -220,8 +182,8 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -232,9 +194,9 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaces() != null)
-            sb.append("Workspaces: " + getWorkspaces() + ",");
+            sb.append("Workspaces: ").append(getWorkspaces()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -251,13 +213,11 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
         DescribeWorkspacesResult other = (DescribeWorkspacesResult) obj;
         if (other.getWorkspaces() == null ^ this.getWorkspaces() == null)
             return false;
-        if (other.getWorkspaces() != null
-                && other.getWorkspaces().equals(this.getWorkspaces()) == false)
+        if (other.getWorkspaces() != null && other.getWorkspaces().equals(this.getWorkspaces()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -267,10 +227,8 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWorkspaces() == null) ? 0 : getWorkspaces().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaces() == null) ? 0 : getWorkspaces().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -279,9 +237,8 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
         try {
             return (DescribeWorkspacesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

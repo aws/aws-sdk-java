@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
@@ -21,11 +22,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.SdkPredicate;
 import com.amazonaws.util.ValidationUtils;
-
+import java.io.Closeable;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
@@ -38,8 +38,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 @ThreadSafe
 @SdkInternalApi
-class RefreshableTask<T> {
-
+class RefreshableTask<T> implements Closeable {
     /**
      * Maximum time to wait for a blocking refresh lock before calling refresh again. This is to
      * rate limit how many times we call refresh. In the ideal case, refresh always occurs in a
@@ -61,14 +60,7 @@ class RefreshableTask<T> {
     /**
      * Single threaded executor to asynchronous refresh the value.
      */
-    private final ExecutorService executor = Executors.newSingleThreadExecutor(new ThreadFactory() {
-	@Override
-	public Thread newThread(Runnable runnable) {
-	    Thread thread = Executors.defaultThreadFactory().newThread(runnable);
-	    thread.setDaemon(true);
-	    return thread;
-	}
-    });
+    private final ExecutorService executor = Executors.newSingleThreadExecutor(new DaemonThreadFactory());
 
     /**
      * Used to ensure only one thread at any given time refreshes the value.
@@ -97,6 +89,11 @@ class RefreshableTask<T> {
                 .assertNotNull(shouldDoBlockingRefresh, "shouldDoBlockingRefresh");
         this.shouldDoAsyncRefresh = ValidationUtils
                 .assertNotNull(shouldDoAsyncRefresh, "shouldDoAsyncRefresh");
+    }
+
+    @Override
+    public void close() {
+        executor.shutdown();
     }
 
     @NotThreadSafe
@@ -275,7 +272,7 @@ class RefreshableTask<T> {
      */
     private void handleInterruptedException(String message, InterruptedException cause) {
         Thread.currentThread().interrupt();
-        throw new AmazonClientException(message, cause);
+        throw new AbortedException(message, cause);
     }
 
 }

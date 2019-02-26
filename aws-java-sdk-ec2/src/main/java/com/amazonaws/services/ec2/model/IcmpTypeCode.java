@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the ICMP type and code.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IcmpTypeCode" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IcmpTypeCode implements Serializable, Cloneable {
 
     /**
@@ -30,26 +31,25 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * The ICMP code. A value of -1 means all codes for the specified ICMP type.
      * </p>
      */
-    private Integer type;
+    private Integer code;
     /**
      * <p>
      * The ICMP type. A value of -1 means all types.
      * </p>
      */
-    private Integer code;
+    private Integer type;
 
     /**
      * <p>
      * The ICMP code. A value of -1 means all codes for the specified ICMP type.
      * </p>
      * 
-     * @param type
-     *        The ICMP code. A value of -1 means all codes for the specified
-     *        ICMP type.
+     * @param code
+     *        The ICMP code. A value of -1 means all codes for the specified ICMP type.
      */
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
     /**
@@ -57,12 +57,11 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * The ICMP code. A value of -1 means all codes for the specified ICMP type.
      * </p>
      * 
-     * @return The ICMP code. A value of -1 means all codes for the specified
-     *         ICMP type.
+     * @return The ICMP code. A value of -1 means all codes for the specified ICMP type.
      */
 
-    public Integer getType() {
-        return this.type;
+    public Integer getCode() {
+        return this.code;
     }
 
     /**
@@ -70,15 +69,13 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * The ICMP code. A value of -1 means all codes for the specified ICMP type.
      * </p>
      * 
-     * @param type
-     *        The ICMP code. A value of -1 means all codes for the specified
-     *        ICMP type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param code
+     *        The ICMP code. A value of -1 means all codes for the specified ICMP type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public IcmpTypeCode withType(Integer type) {
-        setType(type);
+    public IcmpTypeCode withCode(Integer code) {
+        setCode(code);
         return this;
     }
 
@@ -87,12 +84,12 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * The ICMP type. A value of -1 means all types.
      * </p>
      * 
-     * @param code
+     * @param type
      *        The ICMP type. A value of -1 means all types.
      */
 
-    public void setCode(Integer code) {
-        this.code = code;
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     /**
@@ -103,8 +100,8 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * @return The ICMP type. A value of -1 means all types.
      */
 
-    public Integer getCode() {
-        return this.code;
+    public Integer getType() {
+        return this.type;
     }
 
     /**
@@ -112,20 +109,19 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * The ICMP type. A value of -1 means all types.
      * </p>
      * 
-     * @param code
+     * @param type
      *        The ICMP type. A value of -1 means all types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public IcmpTypeCode withCode(Integer code) {
-        setCode(code);
+    public IcmpTypeCode withType(Integer type) {
+        setType(type);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,10 +131,10 @@ public class IcmpTypeCode implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: " + getType() + ",");
         if (getCode() != null)
-            sb.append("Code: " + getCode());
+            sb.append("Code: ").append(getCode()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -153,15 +149,13 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         if (obj instanceof IcmpTypeCode == false)
             return false;
         IcmpTypeCode other = (IcmpTypeCode) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getCode() == null ^ this.getCode() == null)
             return false;
-        if (other.getCode() != null
-                && other.getCode().equals(this.getCode()) == false)
+        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -171,10 +165,8 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 
@@ -183,9 +175,8 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         try {
             return (IcmpTypeCode) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

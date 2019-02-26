@@ -1,29 +1,24 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
-public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateBatchPredictionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +28,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
     private String batchPredictionId;
     /**
      * <p>
-     * A new user-supplied name or description of the
-     * <code>BatchPrediction</code>.
+     * A new user-supplied name or description of the <code>BatchPrediction</code>.
      * </p>
      */
     private String batchPredictionName;
@@ -45,8 +39,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param batchPredictionId
-     *        The ID assigned to the <code>BatchPrediction</code> during
-     *        creation.
+     *        The ID assigned to the <code>BatchPrediction</code> during creation.
      */
 
     public void setBatchPredictionId(String batchPredictionId) {
@@ -58,8 +51,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * The ID assigned to the <code>BatchPrediction</code> during creation.
      * </p>
      * 
-     * @return The ID assigned to the <code>BatchPrediction</code> during
-     *         creation.
+     * @return The ID assigned to the <code>BatchPrediction</code> during creation.
      */
 
     public String getBatchPredictionId() {
@@ -72,27 +64,22 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param batchPredictionId
-     *        The ID assigned to the <code>BatchPrediction</code> during
-     *        creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID assigned to the <code>BatchPrediction</code> during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateBatchPredictionRequest withBatchPredictionId(
-            String batchPredictionId) {
+    public UpdateBatchPredictionRequest withBatchPredictionId(String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);
         return this;
     }
 
     /**
      * <p>
-     * A new user-supplied name or description of the
-     * <code>BatchPrediction</code>.
+     * A new user-supplied name or description of the <code>BatchPrediction</code>.
      * </p>
      * 
      * @param batchPredictionName
-     *        A new user-supplied name or description of the
-     *        <code>BatchPrediction</code>.
+     *        A new user-supplied name or description of the <code>BatchPrediction</code>.
      */
 
     public void setBatchPredictionName(String batchPredictionName) {
@@ -101,12 +88,10 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A new user-supplied name or description of the
-     * <code>BatchPrediction</code>.
+     * A new user-supplied name or description of the <code>BatchPrediction</code>.
      * </p>
      * 
-     * @return A new user-supplied name or description of the
-     *         <code>BatchPrediction</code>.
+     * @return A new user-supplied name or description of the <code>BatchPrediction</code>.
      */
 
     public String getBatchPredictionName() {
@@ -115,26 +100,22 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A new user-supplied name or description of the
-     * <code>BatchPrediction</code>.
+     * A new user-supplied name or description of the <code>BatchPrediction</code>.
      * </p>
      * 
      * @param batchPredictionName
-     *        A new user-supplied name or description of the
-     *        <code>BatchPrediction</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A new user-supplied name or description of the <code>BatchPrediction</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateBatchPredictionRequest withBatchPredictionName(
-            String batchPredictionName) {
+    public UpdateBatchPredictionRequest withBatchPredictionName(String batchPredictionName) {
         setBatchPredictionName(batchPredictionName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -145,9 +126,9 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBatchPredictionId() != null)
-            sb.append("BatchPredictionId: " + getBatchPredictionId() + ",");
+            sb.append("BatchPredictionId: ").append(getBatchPredictionId()).append(",");
         if (getBatchPredictionName() != null)
-            sb.append("BatchPredictionName: " + getBatchPredictionName());
+            sb.append("BatchPredictionName: ").append(getBatchPredictionName());
         sb.append("}");
         return sb.toString();
     }
@@ -162,19 +143,13 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
         if (obj instanceof UpdateBatchPredictionRequest == false)
             return false;
         UpdateBatchPredictionRequest other = (UpdateBatchPredictionRequest) obj;
-        if (other.getBatchPredictionId() == null
-                ^ this.getBatchPredictionId() == null)
+        if (other.getBatchPredictionId() == null ^ this.getBatchPredictionId() == null)
             return false;
-        if (other.getBatchPredictionId() != null
-                && other.getBatchPredictionId().equals(
-                        this.getBatchPredictionId()) == false)
+        if (other.getBatchPredictionId() != null && other.getBatchPredictionId().equals(this.getBatchPredictionId()) == false)
             return false;
-        if (other.getBatchPredictionName() == null
-                ^ this.getBatchPredictionName() == null)
+        if (other.getBatchPredictionName() == null ^ this.getBatchPredictionName() == null)
             return false;
-        if (other.getBatchPredictionName() != null
-                && other.getBatchPredictionName().equals(
-                        this.getBatchPredictionName()) == false)
+        if (other.getBatchPredictionName() != null && other.getBatchPredictionName().equals(this.getBatchPredictionName()) == false)
             return false;
         return true;
     }
@@ -184,14 +159,8 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getBatchPredictionId() == null) ? 0
-                        : getBatchPredictionId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBatchPredictionName() == null) ? 0
-                        : getBatchPredictionName().hashCode());
+        hashCode = prime * hashCode + ((getBatchPredictionId() == null) ? 0 : getBatchPredictionId().hashCode());
+        hashCode = prime * hashCode + ((getBatchPredictionName() == null) ? 0 : getBatchPredictionName().hashCode());
         return hashCode;
     }
 
@@ -199,4 +168,5 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
     public UpdateBatchPredictionRequest clone() {
         return (UpdateBatchPredictionRequest) super.clone();
     }
+
 }

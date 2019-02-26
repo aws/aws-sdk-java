@@ -1,39 +1,38 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated
- * gateway. It is a string made of information such as your account, gateway
- * name, and region. This ARN is used to reference the gateway in other API
+ * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of
+ * information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API
  * operations as well as resource-based authorization.
  * </p>
  * <note>
  * <p>
- * For gateways activated prior to September 02, 2015 the gateway ARN contains
- * the gateway name rather than the gateway id. Changing the name of the gateway
- * has no effect on the gateway ARN.
+ * For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway
+ * ID. Changing the name of the gateway has no effect on the gateway ARN.
  * </p>
  * </note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ActivateGatewayResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ActivateGatewayResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
 
@@ -55,8 +54,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActivateGatewayResult withGatewayARN(String gatewayARN) {
@@ -65,8 +63,8 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -77,7 +75,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }
@@ -94,8 +92,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
         ActivateGatewayResult other = (ActivateGatewayResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         return true;
     }
@@ -105,8 +102,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         return hashCode;
     }
 
@@ -115,9 +111,8 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
         try {
             return (ActivateGatewayResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

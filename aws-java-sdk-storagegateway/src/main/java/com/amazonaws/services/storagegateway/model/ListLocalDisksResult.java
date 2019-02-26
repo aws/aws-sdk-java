@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListLocalDisksResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListLocalDisksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
 
@@ -45,8 +45,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLocalDisksResult withGatewayARN(String gatewayARN) {
@@ -80,21 +79,18 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDisks(java.util.Collection)} or
-     * {@link #withDisks(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDisks(java.util.Collection)} or {@link #withDisks(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param disks
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLocalDisksResult withDisks(Disk... disks) {
         if (this.disks == null) {
-            setDisks(new com.amazonaws.internal.SdkInternalList<Disk>(
-                    disks.length));
+            setDisks(new com.amazonaws.internal.SdkInternalList<Disk>(disks.length));
         }
         for (Disk ele : disks) {
             this.disks.add(ele);
@@ -104,8 +100,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
 
     /**
      * @param disks
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListLocalDisksResult withDisks(java.util.Collection<Disk> disks) {
@@ -114,8 +109,8 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -126,9 +121,9 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDisks() != null)
-            sb.append("Disks: " + getDisks());
+            sb.append("Disks: ").append(getDisks());
         sb.append("}");
         return sb.toString();
     }
@@ -145,13 +140,11 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
         ListLocalDisksResult other = (ListLocalDisksResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getDisks() == null ^ this.getDisks() == null)
             return false;
-        if (other.getDisks() != null
-                && other.getDisks().equals(this.getDisks()) == false)
+        if (other.getDisks() != null && other.getDisks().equals(this.getDisks()) == false)
             return false;
         return true;
     }
@@ -161,10 +154,8 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getDisks() == null) ? 0 : getDisks().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getDisks() == null) ? 0 : getDisks().hashCode());
         return hashCode;
     }
 
@@ -173,9 +164,8 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
         try {
             return (ListLocalDisksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

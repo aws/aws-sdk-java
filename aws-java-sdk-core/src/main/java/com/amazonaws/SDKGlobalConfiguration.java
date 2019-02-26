@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,17 @@ public class SDKGlobalConfiguration {
 
     /** System property name for the AWS secret key */
     public  static final String SECRET_KEY_SYSTEM_PROPERTY = "aws.secretKey";
+
+    /**
+     * System property name for the AWS session token
+     */
+    public static final String SESSION_TOKEN_SYSTEM_PROPERTY = "aws.sessionToken";
+
+    /**
+     * System property for the AWS region to use when creating clients.
+     * See {@link com.amazonaws.regions.DefaultAwsRegionProviderChain}.
+     */
+    public static final String AWS_REGION_SYSTEM_PROPERTY = "aws.region";
 
     /**
      * System property for overriding the Amazon EC2 Instance Metadata Service
@@ -138,6 +149,28 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.services.s3.enforceV4";
 
     /**
+     * By default, the S3 client constructor does not set a region.
+     * <p>
+     * If the client is not configured with an explicit region, bucket operations
+     * (eg. {@code listObjects}) will attempt to determine the bucket's region the first
+     * time that bucket is seen. This may result in a cross-region call.
+     * <p>
+     * Setting this system property to anything other than {@code null} or
+     * {@code false} will <i>disable</i> this implicit fixed-region invocation,
+     * and any attempt to use a regionless client will fail with an IllegalStateException.
+     * This allows SDK users to force all S3 clients to be created with a region defined,
+     * so that calls to unintended regions are avoided.
+     * <p>
+     * Note: Even with this option enabled, SDK users can still create clients not
+     * attached to fixed regions using specific opt-in methods on the S3 client builder.
+     * For instance, the {@code enableGlobalBucketAccess} option explicitly allows
+     * creation of a client that will automatically identify the location of a bucket via
+     * a call to a single, fixed region.
+     */
+    public static final String DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY =
+            "com.amazonaws.services.s3.disableImplicitGlobalClients";
+
+    /**
      * Overrides the client default {@link ClientConfiguration} to use
      * configuration with values tailored towards clients operating in the
      * same AWS region as the service endpoint they call.  Timeouts in
@@ -172,6 +205,33 @@ public class SDKGlobalConfiguration {
     public static final String PROFILING_SYSTEM_PROPERTY =
         "com.amazonaws.sdk.enableRuntimeProfiling";
 
+    /**
+     * The default port used by client side monitoring.
+     */
+    public static final int DEFAULT_AWS_CSM_PORT = 31000;
+
+    /**
+     * The default client Id used by client side monitoring.
+     */
+    public static final String DEFAULT_AWS_CSM_CLIENT_ID = "";
+
+    /**
+     * System property to enable/disable client side monitoring.
+     */
+    public static final String AWS_CSM_ENABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.enabled";
+
+    /**
+     * System property to set the port of the out of process client side
+     * monitoring agent.
+     */
+    public static final String AWS_CSM_PORT_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.port";
+
+    /**
+     * System property to set the client ID to use for client side monitoring
+     * events.
+     */
+    public static final String AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.clientId";
+
     /////////////////////// Environment Variables ///////////////////////
     /** Environment variable name for the AWS access key ID */
     public static final String ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY_ID";
@@ -189,6 +249,17 @@ public class SDKGlobalConfiguration {
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
     /**
+     * Environment variable containing region used to configure clients.
+     */
+    public static final String AWS_REGION_ENV_VAR = "AWS_REGION";
+
+    /**
+     * Environment variable to set an alternate path to the shared config file (default path is
+     * ~/.aws/config).
+     */
+    public static final String AWS_CONFIG_FILE_ENV_VAR = "AWS_CONFIG_FILE";
+
+    /**
      * Environment variable to disable CBOR protocol. This forces the request
      * to be sent over the wire as a AWS JSON.
      */
@@ -200,6 +271,44 @@ public class SDKGlobalConfiguration {
      */
     public static final String AWS_CBOR_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableCbor";
 
+    /**
+     * Environment variable to disable Ion binary protocol. This forces the request
+     * to be sent over the wire as Ion text.
+     */
+    public static final String AWS_ION_BINARY_DISABLE_ENV_VAR = "AWS_ION_BINARY_DISABLE";
+
+    /**
+     * System property to disable Ion binary protocol. This forces the request to be sent over the wire
+     * as Ion text
+     */
+    public static final String AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableIonBinary";
+
+    /**
+     * Environment variable to disable loading credentials or regions from EC2 Metadata instance service.
+     */
+    public static final String AWS_EC2_METADATA_DISABLED_ENV_VAR = "AWS_EC2_METADATA_DISABLED";
+
+    /**
+     * System property to disable loading credentials or regions from EC2 Metadata instance service.
+     */
+    public static final String AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableEc2Metadata";
+
+    /*
+     * Environment variable to enable/disable client side monitoring.
+     */
+    public static final String AWS_CSM_ENABLED_ENV_VAR = "AWS_CSM_ENABLED";
+
+    /**
+     * Environment varaible to set the port of the out of process client side
+     * monitoring agent.
+     */
+    public static final String AWS_CSM_PORT_ENV_VAR = "AWS_CSM_PORT";
+
+    /**
+     * Environment variable to set the client ID to use for client side
+     * monitoring events.
+     */
+    public static final String AWS_CSM_CLIENT_ID_ENV_VAR = "AWS_CSM_CLIENT_ID";
 
     /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}
@@ -230,6 +339,16 @@ public class SDKGlobalConfiguration {
                 isPropertyEnabled(System.getenv(AWS_CBOR_DISABLE_ENV_VAR));
     }
 
+    public static boolean isIonBinaryDisabled() {
+        return isPropertyEnabled(System.getProperty(AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY)) ||
+                isPropertyEnabled(System.getenv(AWS_ION_BINARY_DISABLE_ENV_VAR));
+    }
+
+    public static boolean isEc2MetadataDisabled() {
+        return isPropertyTrue(System.getProperty(AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY)) ||
+               isPropertyTrue(System.getenv(AWS_EC2_METADATA_DISABLED_ENV_VAR));
+    }
+
     private static boolean isPropertyEnabled(final String property) {
         if (property == null || property.equalsIgnoreCase("false")) {
             return false;
@@ -238,5 +357,10 @@ public class SDKGlobalConfiguration {
         }
     }
 
-
+    private static boolean isPropertyTrue(final String property) {
+        if (property != null && property.equalsIgnoreCase("true")) {
+            return true;
+        }
+        return false;
+    }
 }

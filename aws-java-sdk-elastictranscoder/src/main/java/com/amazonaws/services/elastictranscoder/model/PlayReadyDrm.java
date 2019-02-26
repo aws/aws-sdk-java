@@ -1,51 +1,48 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply
- * to the output files associated with this playlist.
+ * The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with
+ * this playlist.
  * </p>
  * <p>
- * PlayReady DRM encrypts your media files using <code>AES-CTR</code>
- * encryption.
+ * PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
  * </p>
  * <p>
- * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a
- * master playlist.
+ * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
  * </p>
  */
-public class PlayReadyDrm implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PlayReadyDrm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of DRM, if any, that you want Elastic Transcoder to apply to the
-     * output files associated with this playlist.
+     * The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this
+     * playlist.
      * </p>
      */
     private String format;
     /**
      * <p>
-     * The DRM key for your file, provided by your DRM license provider. The key
-     * must be base64-encoded, and it must be one of the following bit lengths
-     * before being base64-encoded:
+     * The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be
+     * one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -57,59 +54,51 @@ public class PlayReadyDrm implements Serializable, Cloneable {
     private String key;
     /**
      * <p>
-     * The MD5 digest of the key used for DRM on your file, and that you want
-     * Elastic Transcoder to use as a checksum to make sure your key was not
-     * corrupted in transit. The key MD5 must be base64-encoded, and it must be
-     * exactly 16 bytes before being base64-encoded.
+     * The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a checksum to
+     * make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16
+     * bytes before being base64-encoded.
      * </p>
      */
     private String keyMd5;
     /**
      * <p>
-     * The ID for your DRM key, so that your DRM license provider knows which
-     * key to provide.
+     * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will
-     * convert it to little endian before inserting it into the PlayReady DRM
-     * headers. If you are unsure whether your license server provides your key
-     * ID in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      */
     private String keyId;
     /**
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your files. The initialization vector must be base64-encoded, and
-     * it must be exactly 8 bytes long before being base64-encoded. If no
-     * initialization vector is provided, Elastic Transcoder generates one for
-     * you.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be
+     * exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder
+     * generates one for you.
      * </p>
      */
     private String initializationVector;
     /**
      * <p>
-     * The location of the license key required to play DRM content. The URL
-     * must be an absolute path, and is referenced by the PlayReady header. The
-     * PlayReady header is referenced in the protection header of the client
-     * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
-     * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced
+     * by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for
+     * Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An
+     * example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      */
     private String licenseAcquisitionUrl;
 
     /**
      * <p>
-     * The type of DRM, if any, that you want Elastic Transcoder to apply to the
-     * output files associated with this playlist.
+     * The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this
+     * playlist.
      * </p>
      * 
      * @param format
-     *        The type of DRM, if any, that you want Elastic Transcoder to apply
-     *        to the output files associated with this playlist.
+     *        The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with
+     *        this playlist.
      */
 
     public void setFormat(String format) {
@@ -118,12 +107,12 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of DRM, if any, that you want Elastic Transcoder to apply to the
-     * output files associated with this playlist.
+     * The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this
+     * playlist.
      * </p>
      * 
-     * @return The type of DRM, if any, that you want Elastic Transcoder to
-     *         apply to the output files associated with this playlist.
+     * @return The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with
+     *         this playlist.
      */
 
     public String getFormat() {
@@ -132,15 +121,14 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of DRM, if any, that you want Elastic Transcoder to apply to the
-     * output files associated with this playlist.
+     * The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this
+     * playlist.
      * </p>
      * 
      * @param format
-     *        The type of DRM, if any, that you want Elastic Transcoder to apply
-     *        to the output files associated with this playlist.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with
+     *        this playlist.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withFormat(String format) {
@@ -150,9 +138,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DRM key for your file, provided by your DRM license provider. The key
-     * must be base64-encoded, and it must be one of the following bit lengths
-     * before being base64-encoded:
+     * The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be
+     * one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -162,9 +149,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * </p>
      * 
      * @param key
-     *        The DRM key for your file, provided by your DRM license provider.
-     *        The key must be base64-encoded, and it must be one of the
-     *        following bit lengths before being base64-encoded:</p>
+     *        The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it
+     *        must be one of the following bit lengths before being base64-encoded:</p>
      *        <p>
      *        <code>128</code>, <code>192</code>, or <code>256</code>.
      *        </p>
@@ -178,9 +164,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DRM key for your file, provided by your DRM license provider. The key
-     * must be base64-encoded, and it must be one of the following bit lengths
-     * before being base64-encoded:
+     * The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be
+     * one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -189,9 +174,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * The key must also be encrypted by using AWS KMS.
      * </p>
      * 
-     * @return The DRM key for your file, provided by your DRM license provider.
-     *         The key must be base64-encoded, and it must be one of the
-     *         following bit lengths before being base64-encoded:</p>
+     * @return The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it
+     *         must be one of the following bit lengths before being base64-encoded:</p>
      *         <p>
      *         <code>128</code>, <code>192</code>, or <code>256</code>.
      *         </p>
@@ -205,9 +189,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DRM key for your file, provided by your DRM license provider. The key
-     * must be base64-encoded, and it must be one of the following bit lengths
-     * before being base64-encoded:
+     * The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it must be
+     * one of the following bit lengths before being base64-encoded:
      * </p>
      * <p>
      * <code>128</code>, <code>192</code>, or <code>256</code>.
@@ -217,16 +200,14 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * </p>
      * 
      * @param key
-     *        The DRM key for your file, provided by your DRM license provider.
-     *        The key must be base64-encoded, and it must be one of the
-     *        following bit lengths before being base64-encoded:</p>
+     *        The DRM key for your file, provided by your DRM license provider. The key must be base64-encoded, and it
+     *        must be one of the following bit lengths before being base64-encoded:</p>
      *        <p>
      *        <code>128</code>, <code>192</code>, or <code>256</code>.
      *        </p>
      *        <p>
      *        The key must also be encrypted by using AWS KMS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withKey(String key) {
@@ -236,17 +217,15 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MD5 digest of the key used for DRM on your file, and that you want
-     * Elastic Transcoder to use as a checksum to make sure your key was not
-     * corrupted in transit. The key MD5 must be base64-encoded, and it must be
-     * exactly 16 bytes before being base64-encoded.
+     * The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a checksum to
+     * make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16
+     * bytes before being base64-encoded.
      * </p>
      * 
      * @param keyMd5
-     *        The MD5 digest of the key used for DRM on your file, and that you
-     *        want Elastic Transcoder to use as a checksum to make sure your key
-     *        was not corrupted in transit. The key MD5 must be base64-encoded,
-     *        and it must be exactly 16 bytes before being base64-encoded.
+     *        The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a
+     *        checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it
+     *        must be exactly 16 bytes before being base64-encoded.
      */
 
     public void setKeyMd5(String keyMd5) {
@@ -255,17 +234,14 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MD5 digest of the key used for DRM on your file, and that you want
-     * Elastic Transcoder to use as a checksum to make sure your key was not
-     * corrupted in transit. The key MD5 must be base64-encoded, and it must be
-     * exactly 16 bytes before being base64-encoded.
+     * The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a checksum to
+     * make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16
+     * bytes before being base64-encoded.
      * </p>
      * 
-     * @return The MD5 digest of the key used for DRM on your file, and that you
-     *         want Elastic Transcoder to use as a checksum to make sure your
-     *         key was not corrupted in transit. The key MD5 must be
-     *         base64-encoded, and it must be exactly 16 bytes before being
-     *         base64-encoded.
+     * @return The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a
+     *         checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it
+     *         must be exactly 16 bytes before being base64-encoded.
      */
 
     public String getKeyMd5() {
@@ -274,19 +250,16 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MD5 digest of the key used for DRM on your file, and that you want
-     * Elastic Transcoder to use as a checksum to make sure your key was not
-     * corrupted in transit. The key MD5 must be base64-encoded, and it must be
-     * exactly 16 bytes before being base64-encoded.
+     * The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a checksum to
+     * make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16
+     * bytes before being base64-encoded.
      * </p>
      * 
      * @param keyMd5
-     *        The MD5 digest of the key used for DRM on your file, and that you
-     *        want Elastic Transcoder to use as a checksum to make sure your key
-     *        was not corrupted in transit. The key MD5 must be base64-encoded,
-     *        and it must be exactly 16 bytes before being base64-encoded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The MD5 digest of the key used for DRM on your file, and that you want Elastic Transcoder to use as a
+     *        checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it
+     *        must be exactly 16 bytes before being base64-encoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withKeyMd5(String keyMd5) {
@@ -296,25 +269,20 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for your DRM key, so that your DRM license provider knows which
-     * key to provide.
+     * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will
-     * convert it to little endian before inserting it into the PlayReady DRM
-     * headers. If you are unsure whether your license server provides your key
-     * ID in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
      * @param keyId
-     *        The ID for your DRM key, so that your DRM license provider knows
-     *        which key to provide.</p>
+     *        The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *        <p>
-     *        The key ID must be provided in big endian, and Elastic Transcoder
-     *        will convert it to little endian before inserting it into the
-     *        PlayReady DRM headers. If you are unsure whether your license
-     *        server provides your key ID in big or little endian, check with
-     *        your DRM provider.
+     *        The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
+     *        inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
+     *        key ID in big or little endian, check with your DRM provider.
      */
 
     public void setKeyId(String keyId) {
@@ -323,24 +291,19 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for your DRM key, so that your DRM license provider knows which
-     * key to provide.
+     * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will
-     * convert it to little endian before inserting it into the PlayReady DRM
-     * headers. If you are unsure whether your license server provides your key
-     * ID in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
-     * @return The ID for your DRM key, so that your DRM license provider knows
-     *         which key to provide.</p>
+     * @return The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *         <p>
-     *         The key ID must be provided in big endian, and Elastic Transcoder
-     *         will convert it to little endian before inserting it into the
-     *         PlayReady DRM headers. If you are unsure whether your license
-     *         server provides your key ID in big or little endian, check with
-     *         your DRM provider.
+     *         The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
+     *         inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
+     *         key ID in big or little endian, check with your DRM provider.
      */
 
     public String getKeyId() {
@@ -349,27 +312,21 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for your DRM key, so that your DRM license provider knows which
-     * key to provide.
+     * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will
-     * convert it to little endian before inserting it into the PlayReady DRM
-     * headers. If you are unsure whether your license server provides your key
-     * ID in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
      * @param keyId
-     *        The ID for your DRM key, so that your DRM license provider knows
-     *        which key to provide.</p>
+     *        The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *        <p>
-     *        The key ID must be provided in big endian, and Elastic Transcoder
-     *        will convert it to little endian before inserting it into the
-     *        PlayReady DRM headers. If you are unsure whether your license
-     *        server provides your key ID in big or little endian, check with
-     *        your DRM provider.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
+     *        inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
+     *        key ID in big or little endian, check with your DRM provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withKeyId(String keyId) {
@@ -379,21 +336,17 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your files. The initialization vector must be base64-encoded, and
-     * it must be exactly 8 bytes long before being base64-encoded. If no
-     * initialization vector is provided, Elastic Transcoder generates one for
-     * you.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be
+     * exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder
+     * generates one for you.
      * </p>
      * 
      * @param initializationVector
-     *        The series of random bits created by a random bit generator,
-     *        unique for every encryption operation, that you want Elastic
-     *        Transcoder to use to encrypt your files. The initialization vector
-     *        must be base64-encoded, and it must be exactly 8 bytes long before
-     *        being base64-encoded. If no initialization vector is provided,
-     *        Elastic Transcoder generates one for you.
+     *        The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *        you want Elastic Transcoder to use to encrypt your files. The initialization vector must be
+     *        base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization
+     *        vector is provided, Elastic Transcoder generates one for you.
      */
 
     public void setInitializationVector(String initializationVector) {
@@ -402,20 +355,16 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your files. The initialization vector must be base64-encoded, and
-     * it must be exactly 8 bytes long before being base64-encoded. If no
-     * initialization vector is provided, Elastic Transcoder generates one for
-     * you.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be
+     * exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder
+     * generates one for you.
      * </p>
      * 
-     * @return The series of random bits created by a random bit generator,
-     *         unique for every encryption operation, that you want Elastic
-     *         Transcoder to use to encrypt your files. The initialization
-     *         vector must be base64-encoded, and it must be exactly 8 bytes
-     *         long before being base64-encoded. If no initialization vector is
-     *         provided, Elastic Transcoder generates one for you.
+     * @return The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *         you want Elastic Transcoder to use to encrypt your files. The initialization vector must be
+     *         base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization
+     *         vector is provided, Elastic Transcoder generates one for you.
      */
 
     public String getInitializationVector() {
@@ -424,23 +373,18 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The series of random bits created by a random bit generator, unique for
-     * every encryption operation, that you want Elastic Transcoder to use to
-     * encrypt your files. The initialization vector must be base64-encoded, and
-     * it must be exactly 8 bytes long before being base64-encoded. If no
-     * initialization vector is provided, Elastic Transcoder generates one for
-     * you.
+     * The series of random bits created by a random bit generator, unique for every encryption operation, that you want
+     * Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be
+     * exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder
+     * generates one for you.
      * </p>
      * 
      * @param initializationVector
-     *        The series of random bits created by a random bit generator,
-     *        unique for every encryption operation, that you want Elastic
-     *        Transcoder to use to encrypt your files. The initialization vector
-     *        must be base64-encoded, and it must be exactly 8 bytes long before
-     *        being base64-encoded. If no initialization vector is provided,
-     *        Elastic Transcoder generates one for you.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The series of random bits created by a random bit generator, unique for every encryption operation, that
+     *        you want Elastic Transcoder to use to encrypt your files. The initialization vector must be
+     *        base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization
+     *        vector is provided, Elastic Transcoder generates one for you.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withInitializationVector(String initializationVector) {
@@ -450,24 +394,17 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the license key required to play DRM content. The URL
-     * must be an absolute path, and is referenced by the PlayReady header. The
-     * PlayReady header is referenced in the protection header of the client
-     * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
-     * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced
+     * by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for
+     * Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An
+     * example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
      * @param licenseAcquisitionUrl
-     *        The location of the license key required to play DRM content. The
-     *        URL must be an absolute path, and is referenced by the PlayReady
-     *        header. The PlayReady header is referenced in the protection
-     *        header of the client manifest for Smooth Streaming outputs, and in
-     *        the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist
-     *        outputs. An example URL looks like this:
-     *        <programlisting>https://www
-     *        .example.com/exampleKey/</programlisting>
+     *        The location of the license key required to play DRM content. The URL must be an absolute path, and is
+     *        referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the
+     *        client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
+     *        HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      */
 
     public void setLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
@@ -476,23 +413,16 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the license key required to play DRM content. The URL
-     * must be an absolute path, and is referenced by the PlayReady header. The
-     * PlayReady header is referenced in the protection header of the client
-     * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
-     * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced
+     * by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for
+     * Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An
+     * example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
-     * @return The location of the license key required to play DRM content. The
-     *         URL must be an absolute path, and is referenced by the PlayReady
-     *         header. The PlayReady header is referenced in the protection
-     *         header of the client manifest for Smooth Streaming outputs, and
-     *         in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS
-     *         playlist outputs. An example URL looks like this:
-     *         <programlisting>
-     *         https://www.example.com/exampleKey/</programlisting>
+     * @return The location of the license key required to play DRM content. The URL must be an absolute path, and is
+     *         referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the
+     *         client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
+     *         HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      */
 
     public String getLicenseAcquisitionUrl() {
@@ -501,26 +431,18 @@ public class PlayReadyDrm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location of the license key required to play DRM content. The URL
-     * must be an absolute path, and is referenced by the PlayReady header. The
-     * PlayReady header is referenced in the protection header of the client
-     * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
-     * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced
+     * by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for
+     * Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An
+     * example URL looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
      * @param licenseAcquisitionUrl
-     *        The location of the license key required to play DRM content. The
-     *        URL must be an absolute path, and is referenced by the PlayReady
-     *        header. The PlayReady header is referenced in the protection
-     *        header of the client manifest for Smooth Streaming outputs, and in
-     *        the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist
-     *        outputs. An example URL looks like this:
-     *        <programlisting>https://www
-     *        .example.com/exampleKey/</programlisting>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The location of the license key required to play DRM content. The URL must be an absolute path, and is
+     *        referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the
+     *        client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
+     *        HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayReadyDrm withLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
@@ -529,8 +451,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -541,18 +463,17 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getKeyMd5() != null)
-            sb.append("KeyMd5: " + getKeyMd5() + ",");
+            sb.append("KeyMd5: ").append(getKeyMd5()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getInitializationVector() != null)
-            sb.append("InitializationVector: " + getInitializationVector()
-                    + ",");
+            sb.append("InitializationVector: ").append(getInitializationVector()).append(",");
         if (getLicenseAcquisitionUrl() != null)
-            sb.append("LicenseAcquisitionUrl: " + getLicenseAcquisitionUrl());
+            sb.append("LicenseAcquisitionUrl: ").append(getLicenseAcquisitionUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -569,37 +490,27 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         PlayReadyDrm other = (PlayReadyDrm) obj;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
-        if (other.getKey() != null
-                && other.getKey().equals(this.getKey()) == false)
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getKeyMd5() == null ^ this.getKeyMd5() == null)
             return false;
-        if (other.getKeyMd5() != null
-                && other.getKeyMd5().equals(this.getKeyMd5()) == false)
+        if (other.getKeyMd5() != null && other.getKeyMd5().equals(this.getKeyMd5()) == false)
             return false;
         if (other.getKeyId() == null ^ this.getKeyId() == null)
             return false;
-        if (other.getKeyId() != null
-                && other.getKeyId().equals(this.getKeyId()) == false)
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
-        if (other.getInitializationVector() == null
-                ^ this.getInitializationVector() == null)
+        if (other.getInitializationVector() == null ^ this.getInitializationVector() == null)
             return false;
-        if (other.getInitializationVector() != null
-                && other.getInitializationVector().equals(
-                        this.getInitializationVector()) == false)
+        if (other.getInitializationVector() != null && other.getInitializationVector().equals(this.getInitializationVector()) == false)
             return false;
-        if (other.getLicenseAcquisitionUrl() == null
-                ^ this.getLicenseAcquisitionUrl() == null)
+        if (other.getLicenseAcquisitionUrl() == null ^ this.getLicenseAcquisitionUrl() == null)
             return false;
-        if (other.getLicenseAcquisitionUrl() != null
-                && other.getLicenseAcquisitionUrl().equals(
-                        this.getLicenseAcquisitionUrl()) == false)
+        if (other.getLicenseAcquisitionUrl() != null && other.getLicenseAcquisitionUrl().equals(this.getLicenseAcquisitionUrl()) == false)
             return false;
         return true;
     }
@@ -609,22 +520,12 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getKey() == null) ? 0 : getKey().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyMd5() == null) ? 0 : getKeyMd5().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInitializationVector() == null) ? 0
-                        : getInitializationVector().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLicenseAcquisitionUrl() == null) ? 0
-                        : getLicenseAcquisitionUrl().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getKeyMd5() == null) ? 0 : getKeyMd5().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getInitializationVector() == null) ? 0 : getInitializationVector().hashCode());
+        hashCode = prime * hashCode + ((getLicenseAcquisitionUrl() == null) ? 0 : getLicenseAcquisitionUrl().hashCode());
         return hashCode;
     }
 
@@ -633,9 +534,13 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         try {
             return (PlayReadyDrm) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elastictranscoder.model.transform.PlayReadyDrmMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

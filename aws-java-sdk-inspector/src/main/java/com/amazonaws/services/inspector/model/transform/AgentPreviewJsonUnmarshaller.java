@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * AgentPreview JSON Unmarshaller
  */
-public class AgentPreviewJsonUnmarshaller implements
-        Unmarshaller<AgentPreview, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AgentPreviewJsonUnmarshaller implements Unmarshaller<AgentPreview, JsonUnmarshallerContext> {
 
-    public AgentPreview unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public AgentPreview unmarshall(JsonUnmarshallerContext context) throws Exception {
         AgentPreview agentPreview = new AgentPreview();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,28 +39,49 @@ public class AgentPreviewJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("hostname", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("agentId", targetDepth)) {
                     context.nextToken();
-                    agentPreview.setAgentId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    agentPreview.setAgentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
                     context.nextToken();
-                    agentPreview.setAutoScalingGroup(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    agentPreview.setAutoScalingGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("agentHealth", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setAgentHealth(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("agentVersion", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("operatingSystem", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("kernelVersion", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setKernelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ipv4Address", targetDepth)) {
+                    context.nextToken();
+                    agentPreview.setIpv4Address(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

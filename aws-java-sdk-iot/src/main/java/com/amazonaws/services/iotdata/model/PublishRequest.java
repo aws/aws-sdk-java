@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iotdata.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the Publish operation.
  * </p>
  */
-public class PublishRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -78,8 +76,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @param topic
      *        The name of the MQTT topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PublishRequest withTopic(String topic) {
@@ -119,8 +116,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @param qos
      *        The Quality of Service (QoS) level.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PublishRequest withQos(Integer qos) {
@@ -133,17 +129,14 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * The state information, in JSON format.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param payload
@@ -159,14 +152,11 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * The state information, in JSON format.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
      * @return The state information, in JSON format.
@@ -180,11 +170,20 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * The state information, in JSON format.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param payload
      *        The state information, in JSON format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PublishRequest withPayload(java.nio.ByteBuffer payload) {
@@ -193,8 +192,8 @@ public class PublishRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -205,11 +204,11 @@ public class PublishRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopic() != null)
-            sb.append("Topic: " + getTopic() + ",");
+            sb.append("Topic: ").append(getTopic()).append(",");
         if (getQos() != null)
-            sb.append("Qos: " + getQos() + ",");
+            sb.append("Qos: ").append(getQos()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload());
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }
@@ -226,18 +225,15 @@ public class PublishRequest extends AmazonWebServiceRequest implements
         PublishRequest other = (PublishRequest) obj;
         if (other.getTopic() == null ^ this.getTopic() == null)
             return false;
-        if (other.getTopic() != null
-                && other.getTopic().equals(this.getTopic()) == false)
+        if (other.getTopic() != null && other.getTopic().equals(this.getTopic()) == false)
             return false;
         if (other.getQos() == null ^ this.getQos() == null)
             return false;
-        if (other.getQos() != null
-                && other.getQos().equals(this.getQos()) == false)
+        if (other.getQos() != null && other.getQos().equals(this.getQos()) == false)
             return false;
         if (other.getPayload() == null ^ this.getPayload() == null)
             return false;
-        if (other.getPayload() != null
-                && other.getPayload().equals(this.getPayload()) == false)
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
             return false;
         return true;
     }
@@ -247,12 +243,9 @@ public class PublishRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTopic() == null) ? 0 : getTopic().hashCode());
-        hashCode = prime * hashCode
-                + ((getQos() == null) ? 0 : getQos().hashCode());
-        hashCode = prime * hashCode
-                + ((getPayload() == null) ? 0 : getPayload().hashCode());
+        hashCode = prime * hashCode + ((getTopic() == null) ? 0 : getTopic().hashCode());
+        hashCode = prime * hashCode + ((getQos() == null) ? 0 : getQos().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }
 
@@ -260,4 +253,5 @@ public class PublishRequest extends AmazonWebServiceRequest implements
     public PublishRequest clone() {
         return (PublishRequest) super.clone();
     }
+
 }

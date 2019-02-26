@@ -1,56 +1,89 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Input to the GetId action.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetIdRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetIdRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** A standard AWS account ID (9+ digits). */
+    /**
+     * <p>
+     * A standard AWS account ID (9+ digits).
+     * </p>
+     */
     private String accountId;
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The available provider names for
+     * <code>Logins</code> are as follows:
      * </p>
-     * <p>
-     * The available provider names for <code>Logins</code> are as follows:
      * <ul>
-     * <li>Facebook: <code>graph.facebook.com</code></li>
-     * <li>Amazon Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
-     * <li>Google: <code>accounts.google.com</code></li>
-     * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>api.twitter.com</code></li>
-     * <li>Digits: <code>www.digits.com</code></li>
-     * </ul>
+     * <li>
+     * <p>
+     * Facebook: <code>graph.facebook.com</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Google: <code>accounts.google.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon: <code>www.amazon.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Twitter: <code>api.twitter.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Digits: <code>www.digits.com</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, String> logins;
 
     /**
+     * <p>
      * A standard AWS account ID (9+ digits).
+     * </p>
      * 
      * @param accountId
      *        A standard AWS account ID (9+ digits).
@@ -61,7 +94,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * A standard AWS account ID (9+ digits).
+     * </p>
      * 
      * @return A standard AWS account ID (9+ digits).
      */
@@ -71,12 +106,13 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * A standard AWS account ID (9+ digits).
+     * </p>
      * 
      * @param accountId
      *        A standard AWS account ID (9+ digits).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdRequest withAccountId(String accountId) {
@@ -85,7 +121,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -96,7 +134,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -106,12 +146,13 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdRequest withIdentityPoolId(String identityPoolId) {
@@ -121,37 +162,75 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The available provider names for
+     * <code>Logins</code> are as follows:
      * </p>
-     * <p>
-     * The available provider names for <code>Logins</code> are as follows:
      * <ul>
-     * <li>Facebook: <code>graph.facebook.com</code></li>
-     * <li>Amazon Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
-     * <li>Google: <code>accounts.google.com</code></li>
-     * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>api.twitter.com</code></li>
-     * <li>Digits: <code>www.digits.com</code></li>
-     * </ul>
+     * <li>
+     * <p>
+     * Facebook: <code>graph.facebook.com</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Google: <code>accounts.google.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon: <code>www.amazon.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Twitter: <code>api.twitter.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Digits: <code>www.digits.com</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A set of optional name-value pairs that map provider names to
-     *         provider tokens.</p>
-     *         <p>
-     *         The available provider names for <code>Logins</code> are as
-     *         follows:
+     * @return A set of optional name-value pairs that map provider names to provider tokens. The available provider
+     *         names for <code>Logins</code> are as follows:</p>
      *         <ul>
-     *         <li>Facebook: <code>graph.facebook.com</code></li>
-     *         <li>Amazon Cognito Identity Provider:
-     *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *         <li>
+     *         <p>
+     *         Facebook: <code>graph.facebook.com</code>
+     *         </p>
      *         </li>
-     *         <li>Google: <code>accounts.google.com</code></li>
-     *         <li>Amazon: <code>www.amazon.com</code></li>
-     *         <li>Twitter: <code>api.twitter.com</code></li>
-     *         <li>Digits: <code>www.digits.com</code></li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Google: <code>accounts.google.com</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon: <code>www.amazon.com</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Twitter: <code>api.twitter.com</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Digits: <code>www.digits.com</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getLogins() {
@@ -160,38 +239,76 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The available provider names for
+     * <code>Logins</code> are as follows:
      * </p>
-     * <p>
-     * The available provider names for <code>Logins</code> are as follows:
      * <ul>
-     * <li>Facebook: <code>graph.facebook.com</code></li>
-     * <li>Amazon Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
-     * <li>Google: <code>accounts.google.com</code></li>
-     * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>api.twitter.com</code></li>
-     * <li>Digits: <code>www.digits.com</code></li>
-     * </ul>
+     * <li>
+     * <p>
+     * Facebook: <code>graph.facebook.com</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Google: <code>accounts.google.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon: <code>www.amazon.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Twitter: <code>api.twitter.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Digits: <code>www.digits.com</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to
-     *        provider tokens.</p>
-     *        <p>
-     *        The available provider names for <code>Logins</code> are as
-     *        follows:
+     *        A set of optional name-value pairs that map provider names to provider tokens. The available provider
+     *        names for <code>Logins</code> are as follows:</p>
      *        <ul>
-     *        <li>Facebook: <code>graph.facebook.com</code></li>
-     *        <li>Amazon Cognito Identity Provider:
-     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        <li>
+     *        <p>
+     *        Facebook: <code>graph.facebook.com</code>
+     *        </p>
      *        </li>
-     *        <li>Google: <code>accounts.google.com</code></li>
-     *        <li>Amazon: <code>www.amazon.com</code></li>
-     *        <li>Twitter: <code>api.twitter.com</code></li>
-     *        <li>Digits: <code>www.digits.com</code></li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Google: <code>accounts.google.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon: <code>www.amazon.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Twitter: <code>api.twitter.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Digits: <code>www.digits.com</code>
+     *        </p>
+     *        </li>
      */
 
     public void setLogins(java.util.Map<String, String> logins) {
@@ -200,40 +317,77 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The available provider names for
+     * <code>Logins</code> are as follows:
      * </p>
-     * <p>
-     * The available provider names for <code>Logins</code> are as follows:
      * <ul>
-     * <li>Facebook: <code>graph.facebook.com</code></li>
-     * <li>Amazon Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
-     * <li>Google: <code>accounts.google.com</code></li>
-     * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>api.twitter.com</code></li>
-     * <li>Digits: <code>www.digits.com</code></li>
-     * </ul>
+     * <li>
+     * <p>
+     * Facebook: <code>graph.facebook.com</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Google: <code>accounts.google.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon: <code>www.amazon.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Twitter: <code>api.twitter.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Digits: <code>www.digits.com</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to
-     *        provider tokens.</p>
-     *        <p>
-     *        The available provider names for <code>Logins</code> are as
-     *        follows:
+     *        A set of optional name-value pairs that map provider names to provider tokens. The available provider
+     *        names for <code>Logins</code> are as follows:</p>
      *        <ul>
-     *        <li>Facebook: <code>graph.facebook.com</code></li>
-     *        <li>Amazon Cognito Identity Provider:
-     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        <li>
+     *        <p>
+     *        Facebook: <code>graph.facebook.com</code>
+     *        </p>
      *        </li>
-     *        <li>Google: <code>accounts.google.com</code></li>
-     *        <li>Amazon: <code>www.amazon.com</code></li>
-     *        <li>Twitter: <code>api.twitter.com</code></li>
-     *        <li>Digits: <code>www.digits.com</code></li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Google: <code>accounts.google.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon: <code>www.amazon.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Twitter: <code>api.twitter.com</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Digits: <code>www.digits.com</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdRequest withLogins(java.util.Map<String, String> logins) {
@@ -246,15 +400,15 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
             this.logins = new java.util.HashMap<String, String>();
         }
         if (this.logins.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.logins.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Logins. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Logins.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdRequest clearLoginsEntries() {
@@ -263,8 +417,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,11 +429,11 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getLogins() != null)
-            sb.append("Logins: " + getLogins());
+            sb.append("Logins: ").append(getLogins());
         sb.append("}");
         return sb.toString();
     }
@@ -296,19 +450,15 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
         GetIdRequest other = (GetIdRequest) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getLogins() == null ^ this.getLogins() == null)
             return false;
-        if (other.getLogins() != null
-                && other.getLogins().equals(this.getLogins()) == false)
+        if (other.getLogins() != null && other.getLogins().equals(this.getLogins()) == false)
             return false;
         return true;
     }
@@ -318,14 +468,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLogins() == null) ? 0 : getLogins().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getLogins() == null) ? 0 : getLogins().hashCode());
         return hashCode;
     }
 
@@ -333,4 +478,5 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
     public GetIdRequest clone() {
         return (GetIdRequest) super.clone();
     }
+
 }

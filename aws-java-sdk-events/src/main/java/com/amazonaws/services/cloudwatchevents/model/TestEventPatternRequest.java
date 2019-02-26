@@ -1,52 +1,56 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>TestEventPattern</a> operation.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
+ *      Documentation</a>
  */
-public class TestEventPatternRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String eventPattern;
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      */
     private String event;
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern you want to test.
+     *        The event pattern. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -55,10 +59,14 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
-     * @return The event pattern you want to test.
+     * @return The event pattern. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *         >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public String getEventPattern() {
@@ -67,13 +75,16 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern you want to test.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The event pattern. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestEventPatternRequest withEventPattern(String eventPattern) {
@@ -83,11 +94,11 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
      * @param event
-     *        The event in the JSON format to test against the event pattern.
+     *        The event, in JSON format, to test against the event pattern.
      */
 
     public void setEvent(String event) {
@@ -96,10 +107,10 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
-     * @return The event in the JSON format to test against the event pattern.
+     * @return The event, in JSON format, to test against the event pattern.
      */
 
     public String getEvent() {
@@ -108,13 +119,12 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
      * @param event
-     *        The event in the JSON format to test against the event pattern.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The event, in JSON format, to test against the event pattern.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestEventPatternRequest withEvent(String event) {
@@ -123,8 +133,8 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,9 +145,9 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventPattern() != null)
-            sb.append("EventPattern: " + getEventPattern() + ",");
+            sb.append("EventPattern: ").append(getEventPattern()).append(",");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent());
+            sb.append("Event: ").append(getEvent());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +164,11 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
         TestEventPatternRequest other = (TestEventPatternRequest) obj;
         if (other.getEventPattern() == null ^ this.getEventPattern() == null)
             return false;
-        if (other.getEventPattern() != null
-                && other.getEventPattern().equals(this.getEventPattern()) == false)
+        if (other.getEventPattern() != null && other.getEventPattern().equals(this.getEventPattern()) == false)
             return false;
         if (other.getEvent() == null ^ this.getEvent() == null)
             return false;
-        if (other.getEvent() != null
-                && other.getEvent().equals(this.getEvent()) == false)
+        if (other.getEvent() != null && other.getEvent().equals(this.getEvent()) == false)
             return false;
         return true;
     }
@@ -170,12 +178,8 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEventPattern() == null) ? 0 : getEventPattern()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEvent() == null) ? 0 : getEvent().hashCode());
+        hashCode = prime * hashCode + ((getEventPattern() == null) ? 0 : getEventPattern().hashCode());
+        hashCode = prime * hashCode + ((getEvent() == null) ? 0 : getEvent().hashCode());
         return hashCode;
     }
 
@@ -183,4 +187,5 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
     public TestEventPatternRequest clone() {
         return (TestEventPatternRequest) super.clone();
     }
+
 }

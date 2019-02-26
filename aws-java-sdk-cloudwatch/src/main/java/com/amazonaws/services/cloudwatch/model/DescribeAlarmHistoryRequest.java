@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -57,8 +57,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      */
     private String nextToken;
@@ -95,8 +94,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param alarmName
      *        The name of the alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withAlarmName(String alarmName) {
@@ -138,13 +136,11 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
-    public DescribeAlarmHistoryRequest withHistoryItemType(
-            String historyItemType) {
+    public DescribeAlarmHistoryRequest withHistoryItemType(String historyItemType) {
         setHistoryItemType(historyItemType);
         return this;
     }
@@ -160,7 +156,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      */
 
     public void setHistoryItemType(HistoryItemType historyItemType) {
-        this.historyItemType = historyItemType.toString();
+        withHistoryItemType(historyItemType);
     }
 
     /**
@@ -170,14 +166,12 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see HistoryItemType
      */
 
-    public DescribeAlarmHistoryRequest withHistoryItemType(
-            HistoryItemType historyItemType) {
-        setHistoryItemType(historyItemType);
+    public DescribeAlarmHistoryRequest withHistoryItemType(HistoryItemType historyItemType) {
+        this.historyItemType = historyItemType.toString();
         return this;
     }
 
@@ -213,8 +207,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param startDate
      *        The starting date to retrieve alarm history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withStartDate(java.util.Date startDate) {
@@ -254,8 +247,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param endDate
      *        The ending date to retrieve alarm history.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withEndDate(java.util.Date endDate) {
@@ -295,8 +287,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param maxRecords
      *        The maximum number of alarm history records to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withMaxRecords(Integer maxRecords) {
@@ -306,13 +297,11 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
+     *        The token returned by a previous call to indicate that there is more data available.
      */
 
     public void setNextToken(String nextToken) {
@@ -321,12 +310,10 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is
-     *         more data available.
+     * @return The token returned by a previous call to indicate that there is more data available.
      */
 
     public String getNextToken() {
@@ -335,15 +322,12 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token returned by a previous call to indicate that there is more data available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmHistoryRequest withNextToken(String nextToken) {
@@ -352,8 +336,8 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -364,17 +348,17 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getHistoryItemType() != null)
-            sb.append("HistoryItemType: " + getHistoryItemType() + ",");
+            sb.append("HistoryItemType: ").append(getHistoryItemType()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate() + ",");
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -391,34 +375,27 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
         DescribeAlarmHistoryRequest other = (DescribeAlarmHistoryRequest) obj;
         if (other.getAlarmName() == null ^ this.getAlarmName() == null)
             return false;
-        if (other.getAlarmName() != null
-                && other.getAlarmName().equals(this.getAlarmName()) == false)
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
             return false;
-        if (other.getHistoryItemType() == null
-                ^ this.getHistoryItemType() == null)
+        if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null)
             return false;
-        if (other.getHistoryItemType() != null
-                && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
+        if (other.getHistoryItemType() != null && other.getHistoryItemType().equals(this.getHistoryItemType()) == false)
             return false;
         if (other.getStartDate() == null ^ this.getStartDate() == null)
             return false;
-        if (other.getStartDate() != null
-                && other.getStartDate().equals(this.getStartDate()) == false)
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -428,20 +405,12 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHistoryItemType() == null) ? 0 : getHistoryItemType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -449,4 +418,5 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
     public DescribeAlarmHistoryRequest clone() {
         return (DescribeAlarmHistoryRequest) super.clone();
     }
+
 }

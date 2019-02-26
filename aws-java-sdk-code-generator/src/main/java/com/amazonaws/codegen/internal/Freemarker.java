@@ -15,18 +15,20 @@
 
 package com.amazonaws.codegen.internal;
 
-import java.io.IOException;
-import java.util.List;
-
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.config.templates.ChildTemplate;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
 import com.amazonaws.codegen.model.config.templates.TopLevelTemplate;
+import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.intermediate.ShapeType;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Util class that sets up the freemarker configuration and loads the templates.
@@ -35,12 +37,35 @@ public class Freemarker {
 
     private final CodeGenTemplatesConfig templateConfig;
 
-    public Freemarker(CodeGenTemplatesConfig templateConfig) {
+    public static Freemarker create(IntermediateModel model) {
+        return new Freemarker(loadProtocolTemplatesConfig(model));
+    }
+
+    private static CodeGenTemplatesConfig loadProtocolTemplatesConfig(IntermediateModel model) {
+        // CBOR is a type of JSON Protocol.  Use JSON Protocol for templates
+        Protocol templateProtocol = model.getMetadata().getProtocol();
+        if (Protocol.CBOR.equals(model.getMetadata().getProtocol()) ||
+            Protocol.ION.equals(model.getMetadata().getProtocol())) {
+            templateProtocol = Protocol.AWS_JSON;
+        }
+        CodeGenTemplatesConfig protocolDefaultConfig = CodeGenTemplatesConfig.load(templateProtocol);
+
+        CustomizationConfig customConfig = model.getCustomizationConfig();
+
+        if (customConfig == null || customConfig.getCustomCodeTemplates() == null) {
+            return protocolDefaultConfig;
+        }
+
+        // merge any custom config and return the result.
+        return CodeGenTemplatesConfig.merge(protocolDefaultConfig, customConfig.getCustomCodeTemplates());
+    }
+
+    private Freemarker(CodeGenTemplatesConfig templateConfig) {
         this.templateConfig = templateConfig;
     }
 
     private Configuration newFreeMarkerConfig() {
-        Configuration freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_21);
+        Configuration freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_24);
         freeMarkerConfig.setDefaultEncoding("UTF-8");
         freeMarkerConfig.setClassForTemplateLoading(this.getClass(), "/");
         freeMarkerConfig
@@ -100,6 +125,14 @@ public class Freemarker {
         return getTemplate(templateConfig.getAsyncInterface());
     }
 
+    public Template getSyncClientBuilderTemplate() throws IOException {
+        return getTemplate(templateConfig.getSyncClientBuilder());
+    }
+
+    public Template getAsyncClientBuilderTemplate() throws IOException {
+        return getTemplate(templateConfig.getAsyncClientBuilder());
+    }
+
     public Template getRequestClassTemplate() throws IOException {
         return getTemplate(templateConfig.getRequestClass());
     }
@@ -120,6 +153,10 @@ public class Freemarker {
         return getTemplate(templateConfig.getModelMarshaller());
     }
 
+    public Template getRequestMarshallerTemplate() throws IOException {
+        return getTemplate(templateConfig.getRequestMarshaller());
+    }
+
     public Template getModelUnmarshallerTemplate() throws IOException {
         return getTemplate(templateConfig.getModelUnmarshaller());
     }
@@ -136,8 +173,36 @@ public class Freemarker {
         return getTemplate(templateConfig.getPolicyActionClass());
     }
 
+    public Template getCucumberModuleInjectorTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberModuleInjector());
+    }
+
+    public Template getCucumberTestTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberTest());
+    }
+
+    public Template getCucumberPropertiesTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberPropertiesFile());
+    }
+
+    public Template getApiGatewayPomTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayPomTemplate());
+    }
+
+    public Template getApiGatewayGradleBuildTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayGradleBuildTemplate());
+    }
+
+    public Template getApiGatewayGradleSettingsTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayGradleSettingsTemplate());
+    }
+
+    public Template getApiGatewayReadmeTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayReadmeTemplate());
+    }
+
     public Template getShapeTemplate(ShapeModel shape) throws IOException {
-        switch (ShapeType.fromValue(shape.getType())) {
+        switch (shape.getShapeType()) {
         case Request:
             return getRequestClassTemplate();
         case Response:
@@ -157,5 +222,33 @@ public class Freemarker {
 
     public Template getPackageInfoTemplate() throws IOException {
         return getTemplate(templateConfig.getPackageInfo());
+    }
+
+    public Template getBaseExceptionClassTemplate() throws IOException {
+        return getTemplate(templateConfig.getBaseExceptionClass());
+    }
+
+    public Template getWaiterSDKFunctionTemplate() throws IOException{
+        return getTemplate(templateConfig.getSdkFunctionClass());
+    }
+
+    public Template getWaiterAcceptorTemplate() throws IOException{
+        return getTemplate(templateConfig.getAcceptorClass());
+    }
+
+    public Template getWaiterTemplate() throws IOException{
+        return getTemplate(templateConfig.getWaiterClass());
+    }
+
+    public Template getCustomAuthorizerTemplate() throws IOException{
+        return getTemplate(templateConfig.getCustomRequestSignerClass());
+    }
+
+    public Template getEndpointDiscoveryCacheTemplate() throws IOException {
+        return getTemplate(templateConfig.getEndpointDiscoveryCache());
+    }
+
+    public Template getEndpointDiscoveryCacheLoaderTemplate() throws IOException {
+        return getTemplate(templateConfig.getEndpointDiscoveryCacheLoader());
     }
 }

@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * EventSourceMappingConfiguration JSON Unmarshaller
  */
-public class EventSourceMappingConfigurationJsonUnmarshaller implements
-        Unmarshaller<EventSourceMappingConfiguration, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarshaller<EventSourceMappingConfiguration, JsonUnmarshallerContext> {
 
-    public EventSourceMappingConfiguration unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public EventSourceMappingConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         EventSourceMappingConfiguration eventSourceMappingConfiguration = new EventSourceMappingConfiguration();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,54 +50,38 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("UUID", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setUUID(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setUUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchSize", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration
-                            .setBatchSize(context
-                                    .getUnmarshaller(Integer.class).unmarshall(
-                                            context));
+                    eventSourceMappingConfiguration.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setEventSourceArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FunctionArn", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setFunctionArn(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setLastModified(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    eventSourceMappingConfiguration.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastProcessingResult", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration
-                            .setLastProcessingResult(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setLastProcessingResult(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setState(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("StateTransitionReason", targetDepth)) {
+                if (context.testExpression("StateTransitionReason", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration
-                            .setStateTransitionReason(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setStateTransitionReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

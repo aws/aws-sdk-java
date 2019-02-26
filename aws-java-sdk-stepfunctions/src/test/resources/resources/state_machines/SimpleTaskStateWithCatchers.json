@@ -1,0 +1,35 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Next": "NextState",
+      "Resource": "resource-arn",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "Foo",
+            "Bar"
+          ],
+          "Next": "RecoveryState",
+          "ResultPath": "$.result-path"
+        },
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "OtherRecoveryState"
+        }
+      ]
+    },
+    "NextState": {
+      "Type": "Succeed"
+    },
+    "RecoveryState": {
+      "Type": "Succeed"
+    },
+    "OtherRecoveryState": {
+      "Type": "Succeed"
+    }
+  }
+}

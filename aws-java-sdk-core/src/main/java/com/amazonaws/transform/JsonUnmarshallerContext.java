@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,13 @@ import com.fasterxml.jackson.core.JsonToken;
  * </p>
  */
 public abstract class JsonUnmarshallerContext {
+
+    public enum UnmarshallerType {
+        /**
+         * @see SimpleTypeJsonUnmarshallers.JsonValueStringUnmarshaller
+         */
+        JSON_VALUE
+    }
 
     /**
      * Returns the value of the header with the specified name from the
@@ -209,11 +216,16 @@ public abstract class JsonUnmarshallerContext {
     }
 
     /**
-     * Returns the JsonUnmarsheller for the specified scalar type. Returns null
-     * by default.
+     * Returns the JsonUnmarshaller for the specified scalar type. Returns null by default.
      */
     public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type) {
         return null;
     }
 
+    /**
+     * Returns the JsonUnmarshaller for requested custom unmarshaller type. Returns null by default.
+     */
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type, UnmarshallerType unmarshallerType) {
+        return null;
+    }
 }

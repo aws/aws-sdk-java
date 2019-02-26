@@ -1,0 +1,20 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Choice",
+      "InputPath": null,
+      "OutputPath": null,
+      "Choices": [
+        {
+          "Variable": "$.foo",
+          "StringEquals": "val",
+          "Next": "EndState"
+        }
+      ]
+    },
+    "EndState": {
+      "Type": "Succeed"
+    }
+  }
+}

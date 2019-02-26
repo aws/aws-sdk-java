@@ -1,44 +1,44 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes an instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Instance" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Instance implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent version. This parameter is set to <code>INHERIT</code> if the
-     * instance inherits the default stack setting or to a a version number for
-     * a fixed agent version.
+     * The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack
+     * setting or to a a version number for a fixed agent version.
      * </p>
      */
     private String agentVersion;
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     private String amiId;
@@ -50,6 +50,12 @@ public class Instance implements Serializable, Cloneable {
     private String architecture;
     /**
      * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * For load-based or time-based instances, the type.
      * </p>
      */
@@ -57,15 +63,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * An array of <code>BlockDeviceMapping</code> objects that specify the
-     * instance's block device mappings.
+     * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -101,9 +105,8 @@ public class Instance implements Serializable, Cloneable {
     private String ecsContainerInstanceArn;
     /**
      * <p>
-     * The instance <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address </a>.
+     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      * </p>
      */
     private String elasticIp;
@@ -115,24 +118,21 @@ public class Instance implements Serializable, Cloneable {
     private String hostname;
     /**
      * <p>
-     * For registered instances, the infrastructure class: <code>ec2</code> or
-     * <code>on-premises</code>.
+     * For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      * </p>
      */
     private String infrastructureClass;
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
-     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
-     * command or by manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
+     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      */
@@ -145,10 +145,8 @@ public class Instance implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The ARN of the instance's IAM profile. For more information about IAM
-     * ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String instanceProfileArn;
@@ -160,8 +158,7 @@ public class Instance implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * The ID of the last service error. For more information, call
-     * <a>DescribeServiceErrors</a>.
+     * The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      * </p>
      */
     private String lastServiceErrorId;
@@ -185,7 +182,7 @@ public class Instance implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      */
     private String privateDns;
@@ -215,7 +212,7 @@ public class Instance implements Serializable, Cloneable {
     private String registeredBy;
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      */
     private String reportedAgentVersion;
@@ -227,9 +224,9 @@ public class Instance implements Serializable, Cloneable {
     private ReportedOs reportedOs;
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      */
     private String rootDeviceType;
@@ -274,56 +271,112 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
     /**
      * <p>
-     * The instance's subnet ID; applicable only if the stack is running in a
-     * VPC.
+     * The instance's subnet ID; applicable only if the stack is running in a VPC.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * The instance's tenancy option, such as <code>dedicated</code> or
-     * <code>host</code>.
+     * The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      * </p>
      */
     private String tenancy;
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      */
     private String virtualizationType;
 
     /**
      * <p>
-     * The agent version. This parameter is set to <code>INHERIT</code> if the
-     * instance inherits the default stack setting or to a a version number for
-     * a fixed agent version.
+     * The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack
+     * setting or to a a version number for a fixed agent version.
      * </p>
      * 
      * @param agentVersion
-     *        The agent version. This parameter is set to <code>INHERIT</code>
-     *        if the instance inherits the default stack setting or to a a
-     *        version number for a fixed agent version.
+     *        The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default
+     *        stack setting or to a a version number for a fixed agent version.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -332,14 +385,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent version. This parameter is set to <code>INHERIT</code> if the
-     * instance inherits the default stack setting or to a a version number for
-     * a fixed agent version.
+     * The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack
+     * setting or to a a version number for a fixed agent version.
      * </p>
      * 
-     * @return The agent version. This parameter is set to <code>INHERIT</code>
-     *         if the instance inherits the default stack setting or to a a
-     *         version number for a fixed agent version.
+     * @return The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default
+     *         stack setting or to a a version number for a fixed agent version.
      */
 
     public String getAgentVersion() {
@@ -348,17 +399,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent version. This parameter is set to <code>INHERIT</code> if the
-     * instance inherits the default stack setting or to a a version number for
-     * a fixed agent version.
+     * The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack
+     * setting or to a a version number for a fixed agent version.
      * </p>
      * 
      * @param agentVersion
-     *        The agent version. This parameter is set to <code>INHERIT</code>
-     *        if the instance inherits the default stack setting or to a a
-     *        version number for a fixed agent version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default
+     *        stack setting or to a a version number for a fixed agent version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withAgentVersion(String agentVersion) {
@@ -368,17 +416,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a>
+     *        A custom AMI ID to be used to create the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      */
 
     public void setAmiId(String amiId) {
@@ -387,15 +431,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
-     * @return A custom AMI ID to be used to create the instance. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     * @return A custom AMI ID to be used to create the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *         >Instances</a>
      */
 
@@ -405,19 +446,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Instances</a>
+     * A custom AMI ID to be used to create the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A custom AMI ID to be used to create the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withAmiId(String amiId) {
@@ -459,8 +495,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The instance architecture: "i386" or "x86_64".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
 
@@ -480,7 +515,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -490,13 +525,52 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The instance architecture: "i386" or "x86_64".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
 
     public Instance withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @param arn
+     *        The instance's Amazon Resource Number (ARN).
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @return The instance's Amazon Resource Number (ARN).
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @param arn
+     *        The instance's Amazon Resource Number (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -534,8 +608,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param autoScalingType
      *        For load-based or time-based instances, the type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingType
      */
 
@@ -555,7 +628,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -565,27 +638,24 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param autoScalingType
      *        For load-based or time-based instances, the type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingType
      */
 
     public Instance withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
-     *        >Regions and Endpoints</a>.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -595,13 +665,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The instance Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
-     *         Regions and Endpoints</a>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getAvailabilityZone() {
@@ -611,16 +679,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
-     *        >Regions and Endpoints</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withAvailabilityZone(String availabilityZone) {
@@ -630,12 +695,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <code>BlockDeviceMapping</code> objects that specify the
-     * instance's block device mappings.
+     * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      * </p>
      * 
-     * @return An array of <code>BlockDeviceMapping</code> objects that specify
-     *         the instance's block device mappings.
+     * @return An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -647,50 +710,40 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <code>BlockDeviceMapping</code> objects that specify the
-     * instance's block device mappings.
+     * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        An array of <code>BlockDeviceMapping</code> objects that specify
-     *        the instance's block device mappings.
+     *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
      * <p>
-     * An array of <code>BlockDeviceMapping</code> objects that specify the
-     * instance's block device mappings.
+     * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        An array of <code>BlockDeviceMapping</code> objects that specify
-     *        the instance's block device mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Instance withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public Instance withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -700,19 +753,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of <code>BlockDeviceMapping</code> objects that specify the
-     * instance's block device mappings.
+     * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        An array of <code>BlockDeviceMapping</code> objects that specify
-     *        the instance's block device mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Instance withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public Instance withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
@@ -749,8 +798,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The time that the instance was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withCreatedAt(String createdAt) {
@@ -790,8 +838,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ebsOptimized
      *        Whether this is an Amazon EBS-optimized instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEbsOptimized(Boolean ebsOptimized) {
@@ -843,8 +890,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ec2InstanceId
      *        The ID of the associated Amazon EC2 instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEc2InstanceId(String ec2InstanceId) {
@@ -884,8 +930,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ecsClusterArn
      *        For container instances, the Amazon ECS cluster's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEcsClusterArn(String ecsClusterArn) {
@@ -925,8 +970,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ecsContainerInstanceArn
      *        For container instances, the instance's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEcsContainerInstanceArn(String ecsContainerInstanceArn) {
@@ -936,15 +980,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address </a>.
+     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      * </p>
      * 
      * @param elasticIp
-     *        The instance <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *        >Elastic IP address </a>.
+     *        The instance <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address
+     *        </a>.
      */
 
     public void setElasticIp(String elasticIp) {
@@ -953,14 +996,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address </a>.
+     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      * </p>
      * 
-     * @return The instance <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *         >Elastic IP address </a>.
+     * @return The instance <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         address </a>.
      */
 
     public String getElasticIp() {
@@ -969,17 +1011,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address </a>.
+     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      * </p>
      * 
      * @param elasticIp
-     *        The instance <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *        >Elastic IP address </a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address
+     *        </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withElasticIp(String elasticIp) {
@@ -1019,8 +1059,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param hostname
      *        The instance host name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withHostname(String hostname) {
@@ -1030,13 +1069,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For registered instances, the infrastructure class: <code>ec2</code> or
-     * <code>on-premises</code>.
+     * For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      * </p>
      * 
      * @param infrastructureClass
-     *        For registered instances, the infrastructure class:
-     *        <code>ec2</code> or <code>on-premises</code>.
+     *        For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      */
 
     public void setInfrastructureClass(String infrastructureClass) {
@@ -1045,12 +1082,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For registered instances, the infrastructure class: <code>ec2</code> or
-     * <code>on-premises</code>.
+     * For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      * </p>
      * 
-     * @return For registered instances, the infrastructure class:
-     *         <code>ec2</code> or <code>on-premises</code>.
+     * @return For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      */
 
     public String getInfrastructureClass() {
@@ -1059,15 +1094,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For registered instances, the infrastructure class: <code>ec2</code> or
-     * <code>on-premises</code>.
+     * For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
      * </p>
      * 
      * @param infrastructureClass
-     *        For registered instances, the infrastructure class:
-     *        <code>ec2</code> or <code>on-premises</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInfrastructureClass(String infrastructureClass) {
@@ -1077,31 +1109,27 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
-     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
-     * command or by manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
+     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. If this
-     *        value is set to <code>false</code>, you must then update your
-     *        instances manually by using <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
+     *        manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
+     *        manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+     *        <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>
-     *        , to ensure that your instances have the latest security updates.
+     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        latest security updates.
      *        </p>
      */
 
@@ -1111,31 +1139,26 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
-     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
-     * command or by manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
+     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. If this
-     *         value is set to <code>false</code>, you must then update your
-     *         instances manually by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
+     *         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+     *         <note>
      *         <p>
-     *         We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.
+     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
+     *         the latest security updates.
      *         </p>
      */
 
@@ -1145,34 +1168,29 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
-     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
-     * command or by manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
+     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. If this
-     *        value is set to <code>false</code>, you must then update your
-     *        instances manually by using <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
+     *        manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
+     *        manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+     *        <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>
-     *        , to ensure that your instances have the latest security updates.
+     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        latest security updates.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
@@ -1182,31 +1200,26 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
-     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
-     * command or by manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
+     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to
-     * ensure that your instances have the latest security updates.
+     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * security updates.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. If this
-     *         value is set to <code>false</code>, you must then update your
-     *         instances manually by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
+     *         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
+     *         <note>
      *         <p>
-     *         We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.
+     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
+     *         the latest security updates.
      *         </p>
      */
 
@@ -1246,8 +1259,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstanceId(String instanceId) {
@@ -1257,17 +1269,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the instance's IAM profile. For more information about IAM
-     * ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param instanceProfileArn
-     *        The ARN of the instance's IAM profile. For more information about
-     *        IAM ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
+     *        The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setInstanceProfileArn(String instanceProfileArn) {
@@ -1276,16 +1284,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the instance's IAM profile. For more information about IAM
-     * ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
-     * @return The ARN of the instance's IAM profile. For more information about
-     *         IAM ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >Using Identifiers</a>.
+     * @return The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getInstanceProfileArn() {
@@ -1294,19 +1298,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the instance's IAM profile. For more information about IAM
-     * ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param instanceProfileArn
-     *        The ARN of the instance's IAM profile. For more information about
-     *        IAM ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstanceProfileArn(String instanceProfileArn) {
@@ -1346,8 +1345,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type, such as <code>t2.micro</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstanceType(String instanceType) {
@@ -1357,13 +1355,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the last service error. For more information, call
-     * <a>DescribeServiceErrors</a>.
+     * The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      * </p>
      * 
      * @param lastServiceErrorId
-     *        The ID of the last service error. For more information, call
-     *        <a>DescribeServiceErrors</a>.
+     *        The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      */
 
     public void setLastServiceErrorId(String lastServiceErrorId) {
@@ -1372,12 +1368,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the last service error. For more information, call
-     * <a>DescribeServiceErrors</a>.
+     * The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      * </p>
      * 
-     * @return The ID of the last service error. For more information, call
-     *         <a>DescribeServiceErrors</a>.
+     * @return The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      */
 
     public String getLastServiceErrorId() {
@@ -1386,15 +1380,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the last service error. For more information, call
-     * <a>DescribeServiceErrors</a>.
+     * The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
      * </p>
      * 
      * @param lastServiceErrorId
-     *        The ID of the last service error. For more information, call
-     *        <a>DescribeServiceErrors</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the last service error. For more information, call <a>DescribeServiceErrors</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withLastServiceErrorId(String lastServiceErrorId) {
@@ -1432,8 +1423,7 @@ public class Instance implements Serializable, Cloneable {
             return;
         }
 
-        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(
-                layerIds);
+        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(layerIds);
     }
 
     /**
@@ -1441,22 +1431,19 @@ public class Instance implements Serializable, Cloneable {
      * An array containing the instance layer IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayerIds(java.util.Collection)} or
-     * {@link #withLayerIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayerIds(java.util.Collection)} or {@link #withLayerIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param layerIds
      *        An array containing the instance layer IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
-            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    layerIds.length));
+            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(layerIds.length));
         }
         for (String ele : layerIds) {
             this.layerIds.add(ele);
@@ -1471,8 +1458,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param layerIds
      *        An array containing the instance layer IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withLayerIds(java.util.Collection<String> layerIds) {
@@ -1512,8 +1498,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param os
      *        The instance's operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withOs(String os) {
@@ -1553,8 +1538,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param platform
      *        The instance's platform.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPlatform(String platform) {
@@ -1564,11 +1548,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
+     *        The instance's private DNS name.
      */
 
     public void setPrivateDns(String privateDns) {
@@ -1577,10 +1561,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
-     * @return The The instance's private DNS name.
+     * @return The instance's private DNS name.
      */
 
     public String getPrivateDns() {
@@ -1589,13 +1573,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's private DNS name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPrivateDns(String privateDns) {
@@ -1635,8 +1618,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param privateIp
      *        The instance's private IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPrivateIp(String privateIp) {
@@ -1676,8 +1658,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param publicDns
      *        The instance public DNS name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPublicDns(String publicDns) {
@@ -1717,8 +1698,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param publicIp
      *        The instance public IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPublicIp(String publicIp) {
@@ -1758,8 +1738,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param registeredBy
      *        For registered instances, who performed the registration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withRegisteredBy(String registeredBy) {
@@ -1769,11 +1748,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public void setReportedAgentVersion(String reportedAgentVersion) {
@@ -1782,10 +1761,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
-     * @return The instance's reported AWS OpsWorks agent version.
+     * @return The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public String getReportedAgentVersion() {
@@ -1794,13 +1773,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withReportedAgentVersion(String reportedAgentVersion) {
@@ -1840,8 +1818,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param reportedOs
      *        For registered instances, the reported operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withReportedOs(ReportedOs reportedOs) {
@@ -1851,14 +1828,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
-     *        The instance's root device type. For more information, see <a
-     *        href=
+     *        The instance's root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
@@ -1870,14 +1846,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      * 
      * @return The instance's root device type. For more information, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1888,18 +1863,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
-     *        The instance's root device type. For more information, see <a
-     *        href=
+     *        The instance's root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
@@ -1910,42 +1883,39 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
-     *        The instance's root device type. For more information, see <a
-     *        href=
+     *        The instance's root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
 
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
      * <p>
-     * The instance's root device type. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
-     * >Storage for the Root Device</a>.
+     * The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
-     *        The instance's root device type. For more information, see <a
-     *        href=
+     *        The instance's root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
     public Instance withRootDeviceType(RootDeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -1981,8 +1951,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param rootDeviceVolumeId
      *        The root device volume ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withRootDeviceVolumeId(String rootDeviceVolumeId) {
@@ -2014,15 +1983,13 @@ public class Instance implements Serializable, Cloneable {
      *        An array containing the instance security group IDs.
      */
 
-    public void setSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
 
-        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroupIds);
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
     }
 
     /**
@@ -2030,22 +1997,19 @@ public class Instance implements Serializable, Cloneable {
      * An array containing the instance security group IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
-     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param securityGroupIds
      *        An array containing the instance security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
-            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroupIds.length));
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
         }
         for (String ele : securityGroupIds) {
             this.securityGroupIds.add(ele);
@@ -2060,12 +2024,10 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param securityGroupIds
      *        An array containing the instance security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Instance withSecurityGroupIds(
-            java.util.Collection<String> securityGroupIds) {
+    public Instance withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
         return this;
     }
@@ -2102,8 +2064,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param sshHostDsaKeyFingerprint
      *        The SSH key's Deep Security Agent (DSA) fingerprint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withSshHostDsaKeyFingerprint(String sshHostDsaKeyFingerprint) {
@@ -2143,8 +2104,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param sshHostRsaKeyFingerprint
      *        The SSH key's RSA fingerprint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withSshHostRsaKeyFingerprint(String sshHostRsaKeyFingerprint) {
@@ -2184,8 +2144,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param sshKeyName
      *        The instance's Amazon EC2 key-pair name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withSshKeyName(String sshKeyName) {
@@ -2225,8 +2184,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withStackId(String stackId) {
@@ -2239,39 +2197,161 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The instance status:</p>
      *        <ul>
-     *        <li> <code>booting</code></li>
-     *        <li> <code>connection_lost</code></li>
-     *        <li> <code>online</code></li>
-     *        <li> <code>pending</code></li>
-     *        <li> <code>rebooting</code></li>
-     *        <li> <code>requested</code></li>
-     *        <li> <code>running_setup</code></li>
-     *        <li> <code>setup_failed</code></li>
-     *        <li> <code>shutting_down</code></li>
-     *        <li> <code>start_failed</code></li>
-     *        <li> <code>stopped</code></li>
-     *        <li> <code>stopping</code></li>
-     *        <li> <code>terminated</code></li>
-     *        <li> <code>terminating</code></li>
+     *        <li>
+     *        <p>
+     *        <code>booting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_lost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>online</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>requested</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>running_setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>shutting_down</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminating</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -2283,38 +2363,160 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The instance status:</p>
      *         <ul>
-     *         <li> <code>booting</code></li>
-     *         <li> <code>connection_lost</code></li>
-     *         <li> <code>online</code></li>
-     *         <li> <code>pending</code></li>
-     *         <li> <code>rebooting</code></li>
-     *         <li> <code>requested</code></li>
-     *         <li> <code>running_setup</code></li>
-     *         <li> <code>setup_failed</code></li>
-     *         <li> <code>shutting_down</code></li>
-     *         <li> <code>start_failed</code></li>
-     *         <li> <code>stopped</code></li>
-     *         <li> <code>stopping</code></li>
-     *         <li> <code>terminated</code></li>
-     *         <li> <code>terminating</code></li>
+     *         <li>
+     *         <p>
+     *         <code>booting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>connection_lost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>online</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rebooting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>requested</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>running_setup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>setup_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>shutting_down</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stop_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopped</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopping</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>terminated</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>terminating</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -2326,41 +2528,162 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The instance status:</p>
      *        <ul>
-     *        <li> <code>booting</code></li>
-     *        <li> <code>connection_lost</code></li>
-     *        <li> <code>online</code></li>
-     *        <li> <code>pending</code></li>
-     *        <li> <code>rebooting</code></li>
-     *        <li> <code>requested</code></li>
-     *        <li> <code>running_setup</code></li>
-     *        <li> <code>setup_failed</code></li>
-     *        <li> <code>shutting_down</code></li>
-     *        <li> <code>start_failed</code></li>
-     *        <li> <code>stopped</code></li>
-     *        <li> <code>stopping</code></li>
-     *        <li> <code>terminated</code></li>
-     *        <li> <code>terminating</code></li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>booting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_lost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>online</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>requested</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>running_setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>shutting_down</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminating</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withStatus(String status) {
@@ -2370,13 +2693,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's subnet ID; applicable only if the stack is running in a
-     * VPC.
+     * The instance's subnet ID; applicable only if the stack is running in a VPC.
      * </p>
      * 
      * @param subnetId
-     *        The instance's subnet ID; applicable only if the stack is running
-     *        in a VPC.
+     *        The instance's subnet ID; applicable only if the stack is running in a VPC.
      */
 
     public void setSubnetId(String subnetId) {
@@ -2385,12 +2706,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's subnet ID; applicable only if the stack is running in a
-     * VPC.
+     * The instance's subnet ID; applicable only if the stack is running in a VPC.
      * </p>
      * 
-     * @return The instance's subnet ID; applicable only if the stack is running
-     *         in a VPC.
+     * @return The instance's subnet ID; applicable only if the stack is running in a VPC.
      */
 
     public String getSubnetId() {
@@ -2399,15 +2718,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's subnet ID; applicable only if the stack is running in a
-     * VPC.
+     * The instance's subnet ID; applicable only if the stack is running in a VPC.
      * </p>
      * 
      * @param subnetId
-     *        The instance's subnet ID; applicable only if the stack is running
-     *        in a VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's subnet ID; applicable only if the stack is running in a VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withSubnetId(String subnetId) {
@@ -2417,13 +2733,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's tenancy option, such as <code>dedicated</code> or
-     * <code>host</code>.
+     * The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      * </p>
      * 
      * @param tenancy
-     *        The instance's tenancy option, such as <code>dedicated</code> or
-     *        <code>host</code>.
+     *        The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      */
 
     public void setTenancy(String tenancy) {
@@ -2432,12 +2746,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's tenancy option, such as <code>dedicated</code> or
-     * <code>host</code>.
+     * The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      * </p>
      * 
-     * @return The instance's tenancy option, such as <code>dedicated</code> or
-     *         <code>host</code>.
+     * @return The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      */
 
     public String getTenancy() {
@@ -2446,15 +2758,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's tenancy option, such as <code>dedicated</code> or
-     * <code>host</code>.
+     * The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
      * </p>
      * 
      * @param tenancy
-     *        The instance's tenancy option, such as <code>dedicated</code> or
-     *        <code>host</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withTenancy(String tenancy) {
@@ -2464,13 +2773,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      * 
      * @param virtualizationType
-     *        The instance's virtualization type: <code>paravirtual</code> or
-     *        <code>hvm</code>.
+     *        The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * @see VirtualizationType
      */
 
@@ -2480,12 +2787,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      * 
-     * @return The instance's virtualization type: <code>paravirtual</code> or
-     *         <code>hvm</code>.
+     * @return The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * @see VirtualizationType
      */
 
@@ -2495,15 +2800,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      * 
      * @param virtualizationType
-     *        The instance's virtualization type: <code>paravirtual</code> or
-     *        <code>hvm</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualizationType
      */
 
@@ -2514,42 +2816,37 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      * 
      * @param virtualizationType
-     *        The instance's virtualization type: <code>paravirtual</code> or
-     *        <code>hvm</code>.
+     *        The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * @see VirtualizationType
      */
 
     public void setVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        withVirtualizationType(virtualizationType);
     }
 
     /**
      * <p>
-     * The instance's virtualization type: <code>paravirtual</code> or
-     * <code>hvm</code>.
+     * The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
      * </p>
      * 
      * @param virtualizationType
-     *        The instance's virtualization type: <code>paravirtual</code> or
-     *        <code>hvm</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VirtualizationType
      */
 
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
-        setVirtualizationType(virtualizationType);
+        this.virtualizationType = virtualizationType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2560,90 +2857,87 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getAutoScalingType() != null)
-            sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+            sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getEcsContainerInstanceArn() != null)
-            sb.append("EcsContainerInstanceArn: "
-                    + getEcsContainerInstanceArn() + ",");
+            sb.append("EcsContainerInstanceArn: ").append(getEcsContainerInstanceArn()).append(",");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getInfrastructureClass() != null)
-            sb.append("InfrastructureClass: " + getInfrastructureClass() + ",");
+            sb.append("InfrastructureClass: ").append(getInfrastructureClass()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot()
-                    + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceProfileArn() != null)
-            sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");
+            sb.append("InstanceProfileArn: ").append(getInstanceProfileArn()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getLastServiceErrorId() != null)
-            sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");
+            sb.append("LastServiceErrorId: ").append(getLastServiceErrorId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds() + ",");
+            sb.append("LayerIds: ").append(getLayerIds()).append(",");
         if (getOs() != null)
-            sb.append("Os: " + getOs() + ",");
+            sb.append("Os: ").append(getOs()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getPrivateDns() != null)
-            sb.append("PrivateDns: " + getPrivateDns() + ",");
+            sb.append("PrivateDns: ").append(getPrivateDns()).append(",");
         if (getPrivateIp() != null)
-            sb.append("PrivateIp: " + getPrivateIp() + ",");
+            sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
         if (getPublicDns() != null)
-            sb.append("PublicDns: " + getPublicDns() + ",");
+            sb.append("PublicDns: ").append(getPublicDns()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getRegisteredBy() != null)
-            sb.append("RegisteredBy: " + getRegisteredBy() + ",");
+            sb.append("RegisteredBy: ").append(getRegisteredBy()).append(",");
         if (getReportedAgentVersion() != null)
-            sb.append("ReportedAgentVersion: " + getReportedAgentVersion()
-                    + ",");
+            sb.append("ReportedAgentVersion: ").append(getReportedAgentVersion()).append(",");
         if (getReportedOs() != null)
-            sb.append("ReportedOs: " + getReportedOs() + ",");
+            sb.append("ReportedOs: ").append(getReportedOs()).append(",");
         if (getRootDeviceType() != null)
-            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+            sb.append("RootDeviceType: ").append(getRootDeviceType()).append(",");
         if (getRootDeviceVolumeId() != null)
-            sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
+            sb.append("RootDeviceVolumeId: ").append(getRootDeviceVolumeId()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getSshHostDsaKeyFingerprint() != null)
-            sb.append("SshHostDsaKeyFingerprint: "
-                    + getSshHostDsaKeyFingerprint() + ",");
+            sb.append("SshHostDsaKeyFingerprint: ").append(getSshHostDsaKeyFingerprint()).append(",");
         if (getSshHostRsaKeyFingerprint() != null)
-            sb.append("SshHostRsaKeyFingerprint: "
-                    + getSshHostRsaKeyFingerprint() + ",");
+            sb.append("SshHostRsaKeyFingerprint: ").append(getSshHostRsaKeyFingerprint()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: " + getSshKeyName() + ",");
+            sb.append("SshKeyName: ").append(getSshKeyName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: " + getTenancy() + ",");
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType());
+            sb.append("VirtualizationType: ").append(getVirtualizationType());
         sb.append("}");
         return sb.toString();
     }
@@ -2660,231 +2954,167 @@ public class Instance implements Serializable, Cloneable {
         Instance other = (Instance) obj;
         if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
             return false;
-        if (other.getAgentVersion() != null
-                && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
             return false;
         if (other.getAmiId() == null ^ this.getAmiId() == null)
             return false;
-        if (other.getAmiId() != null
-                && other.getAmiId().equals(this.getAmiId()) == false)
+        if (other.getAmiId() != null && other.getAmiId().equals(this.getAmiId()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
-        if (other.getAutoScalingType() == null
-                ^ this.getAutoScalingType() == null)
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getAutoScalingType() != null
-                && other.getAutoScalingType().equals(this.getAutoScalingType()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAutoScalingType() == null ^ this.getAutoScalingType() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAutoScalingType() != null && other.getAutoScalingType().equals(this.getAutoScalingType()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
             return false;
-        if (other.getEc2InstanceId() != null
-                && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
             return false;
         if (other.getEcsClusterArn() == null ^ this.getEcsClusterArn() == null)
             return false;
-        if (other.getEcsClusterArn() != null
-                && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false)
+        if (other.getEcsClusterArn() != null && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false)
             return false;
-        if (other.getEcsContainerInstanceArn() == null
-                ^ this.getEcsContainerInstanceArn() == null)
+        if (other.getEcsContainerInstanceArn() == null ^ this.getEcsContainerInstanceArn() == null)
             return false;
-        if (other.getEcsContainerInstanceArn() != null
-                && other.getEcsContainerInstanceArn().equals(
-                        this.getEcsContainerInstanceArn()) == false)
+        if (other.getEcsContainerInstanceArn() != null && other.getEcsContainerInstanceArn().equals(this.getEcsContainerInstanceArn()) == false)
             return false;
         if (other.getElasticIp() == null ^ this.getElasticIp() == null)
             return false;
-        if (other.getElasticIp() != null
-                && other.getElasticIp().equals(this.getElasticIp()) == false)
+        if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false)
             return false;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
-        if (other.getHostname() != null
-                && other.getHostname().equals(this.getHostname()) == false)
+        if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
-        if (other.getInfrastructureClass() == null
-                ^ this.getInfrastructureClass() == null)
+        if (other.getInfrastructureClass() == null ^ this.getInfrastructureClass() == null)
             return false;
-        if (other.getInfrastructureClass() != null
-                && other.getInfrastructureClass().equals(
-                        this.getInfrastructureClass()) == false)
+        if (other.getInfrastructureClass() != null && other.getInfrastructureClass().equals(this.getInfrastructureClass()) == false)
             return false;
-        if (other.getInstallUpdatesOnBoot() == null
-                ^ this.getInstallUpdatesOnBoot() == null)
+        if (other.getInstallUpdatesOnBoot() == null ^ this.getInstallUpdatesOnBoot() == null)
             return false;
-        if (other.getInstallUpdatesOnBoot() != null
-                && other.getInstallUpdatesOnBoot().equals(
-                        this.getInstallUpdatesOnBoot()) == false)
+        if (other.getInstallUpdatesOnBoot() != null && other.getInstallUpdatesOnBoot().equals(this.getInstallUpdatesOnBoot()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getInstanceProfileArn() == null
-                ^ this.getInstanceProfileArn() == null)
+        if (other.getInstanceProfileArn() == null ^ this.getInstanceProfileArn() == null)
             return false;
-        if (other.getInstanceProfileArn() != null
-                && other.getInstanceProfileArn().equals(
-                        this.getInstanceProfileArn()) == false)
+        if (other.getInstanceProfileArn() != null && other.getInstanceProfileArn().equals(this.getInstanceProfileArn()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
-        if (other.getLastServiceErrorId() == null
-                ^ this.getLastServiceErrorId() == null)
+        if (other.getLastServiceErrorId() == null ^ this.getLastServiceErrorId() == null)
             return false;
-        if (other.getLastServiceErrorId() != null
-                && other.getLastServiceErrorId().equals(
-                        this.getLastServiceErrorId()) == false)
+        if (other.getLastServiceErrorId() != null && other.getLastServiceErrorId().equals(this.getLastServiceErrorId()) == false)
             return false;
         if (other.getLayerIds() == null ^ this.getLayerIds() == null)
             return false;
-        if (other.getLayerIds() != null
-                && other.getLayerIds().equals(this.getLayerIds()) == false)
+        if (other.getLayerIds() != null && other.getLayerIds().equals(this.getLayerIds()) == false)
             return false;
         if (other.getOs() == null ^ this.getOs() == null)
             return false;
-        if (other.getOs() != null
-                && other.getOs().equals(this.getOs()) == false)
+        if (other.getOs() != null && other.getOs().equals(this.getOs()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getPrivateDns() == null ^ this.getPrivateDns() == null)
             return false;
-        if (other.getPrivateDns() != null
-                && other.getPrivateDns().equals(this.getPrivateDns()) == false)
+        if (other.getPrivateDns() != null && other.getPrivateDns().equals(this.getPrivateDns()) == false)
             return false;
         if (other.getPrivateIp() == null ^ this.getPrivateIp() == null)
             return false;
-        if (other.getPrivateIp() != null
-                && other.getPrivateIp().equals(this.getPrivateIp()) == false)
+        if (other.getPrivateIp() != null && other.getPrivateIp().equals(this.getPrivateIp()) == false)
             return false;
         if (other.getPublicDns() == null ^ this.getPublicDns() == null)
             return false;
-        if (other.getPublicDns() != null
-                && other.getPublicDns().equals(this.getPublicDns()) == false)
+        if (other.getPublicDns() != null && other.getPublicDns().equals(this.getPublicDns()) == false)
             return false;
         if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
-        if (other.getPublicIp() != null
-                && other.getPublicIp().equals(this.getPublicIp()) == false)
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         if (other.getRegisteredBy() == null ^ this.getRegisteredBy() == null)
             return false;
-        if (other.getRegisteredBy() != null
-                && other.getRegisteredBy().equals(this.getRegisteredBy()) == false)
+        if (other.getRegisteredBy() != null && other.getRegisteredBy().equals(this.getRegisteredBy()) == false)
             return false;
-        if (other.getReportedAgentVersion() == null
-                ^ this.getReportedAgentVersion() == null)
+        if (other.getReportedAgentVersion() == null ^ this.getReportedAgentVersion() == null)
             return false;
-        if (other.getReportedAgentVersion() != null
-                && other.getReportedAgentVersion().equals(
-                        this.getReportedAgentVersion()) == false)
+        if (other.getReportedAgentVersion() != null && other.getReportedAgentVersion().equals(this.getReportedAgentVersion()) == false)
             return false;
         if (other.getReportedOs() == null ^ this.getReportedOs() == null)
             return false;
-        if (other.getReportedOs() != null
-                && other.getReportedOs().equals(this.getReportedOs()) == false)
+        if (other.getReportedOs() != null && other.getReportedOs().equals(this.getReportedOs()) == false)
             return false;
-        if (other.getRootDeviceType() == null
-                ^ this.getRootDeviceType() == null)
+        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null)
             return false;
-        if (other.getRootDeviceType() != null
-                && other.getRootDeviceType().equals(this.getRootDeviceType()) == false)
+        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false)
             return false;
-        if (other.getRootDeviceVolumeId() == null
-                ^ this.getRootDeviceVolumeId() == null)
+        if (other.getRootDeviceVolumeId() == null ^ this.getRootDeviceVolumeId() == null)
             return false;
-        if (other.getRootDeviceVolumeId() != null
-                && other.getRootDeviceVolumeId().equals(
-                        this.getRootDeviceVolumeId()) == false)
+        if (other.getRootDeviceVolumeId() != null && other.getRootDeviceVolumeId().equals(this.getRootDeviceVolumeId()) == false)
             return false;
-        if (other.getSecurityGroupIds() == null
-                ^ this.getSecurityGroupIds() == null)
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
             return false;
-        if (other.getSecurityGroupIds() != null
-                && other.getSecurityGroupIds().equals(
-                        this.getSecurityGroupIds()) == false)
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
-        if (other.getSshHostDsaKeyFingerprint() == null
-                ^ this.getSshHostDsaKeyFingerprint() == null)
+        if (other.getSshHostDsaKeyFingerprint() == null ^ this.getSshHostDsaKeyFingerprint() == null)
             return false;
-        if (other.getSshHostDsaKeyFingerprint() != null
-                && other.getSshHostDsaKeyFingerprint().equals(
-                        this.getSshHostDsaKeyFingerprint()) == false)
+        if (other.getSshHostDsaKeyFingerprint() != null && other.getSshHostDsaKeyFingerprint().equals(this.getSshHostDsaKeyFingerprint()) == false)
             return false;
-        if (other.getSshHostRsaKeyFingerprint() == null
-                ^ this.getSshHostRsaKeyFingerprint() == null)
+        if (other.getSshHostRsaKeyFingerprint() == null ^ this.getSshHostRsaKeyFingerprint() == null)
             return false;
-        if (other.getSshHostRsaKeyFingerprint() != null
-                && other.getSshHostRsaKeyFingerprint().equals(
-                        this.getSshHostRsaKeyFingerprint()) == false)
+        if (other.getSshHostRsaKeyFingerprint() != null && other.getSshHostRsaKeyFingerprint().equals(this.getSshHostRsaKeyFingerprint()) == false)
             return false;
         if (other.getSshKeyName() == null ^ this.getSshKeyName() == null)
             return false;
-        if (other.getSshKeyName() != null
-                && other.getSshKeyName().equals(this.getSshKeyName()) == false)
+        if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false)
             return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getSubnetId() != null
-                && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getTenancy() == null ^ this.getTenancy() == null)
             return false;
-        if (other.getTenancy() != null
-                && other.getTenancy().equals(this.getTenancy()) == false)
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
             return false;
-        if (other.getVirtualizationType() == null
-                ^ this.getVirtualizationType() == null)
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null)
             return false;
-        if (other.getVirtualizationType() != null
-                && other.getVirtualizationType().equals(
-                        this.getVirtualizationType()) == false)
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
             return false;
         return true;
     }
@@ -2894,130 +3124,47 @@ public class Instance implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAgentVersion() == null) ? 0 : getAgentVersion()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingType() == null) ? 0 : getAutoScalingType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEcsContainerInstanceArn() == null) ? 0
-                        : getEcsContainerInstanceArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
-        hashCode = prime * hashCode
-                + ((getHostname() == null) ? 0 : getHostname().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInfrastructureClass() == null) ? 0
-                        : getInfrastructureClass().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstallUpdatesOnBoot() == null) ? 0
-                        : getInstallUpdatesOnBoot().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceProfileArn() == null) ? 0
-                        : getInstanceProfileArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastServiceErrorId() == null) ? 0
-                        : getLastServiceErrorId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getOs() == null) ? 0 : getOs().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrivateDns() == null) ? 0 : getPrivateDns().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrivateIp() == null) ? 0 : getPrivateIp().hashCode());
-        hashCode = prime * hashCode
-                + ((getPublicDns() == null) ? 0 : getPublicDns().hashCode());
-        hashCode = prime * hashCode
-                + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisteredBy() == null) ? 0 : getRegisteredBy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReportedAgentVersion() == null) ? 0
-                        : getReportedAgentVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getReportedOs() == null) ? 0 : getReportedOs().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootDeviceType() == null) ? 0 : getRootDeviceType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRootDeviceVolumeId() == null) ? 0
-                        : getRootDeviceVolumeId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSshHostDsaKeyFingerprint() == null) ? 0
-                        : getSshHostDsaKeyFingerprint().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSshHostRsaKeyFingerprint() == null) ? 0
-                        : getSshHostRsaKeyFingerprint().hashCode());
-        hashCode = prime * hashCode
-                + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode());
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVirtualizationType() == null) ? 0
-                        : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
+        hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingType() == null) ? 0 : getAutoScalingType().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getEcsContainerInstanceArn() == null) ? 0 : getEcsContainerInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
+        hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
+        hashCode = prime * hashCode + ((getInfrastructureClass() == null) ? 0 : getInfrastructureClass().hashCode());
+        hashCode = prime * hashCode + ((getInstallUpdatesOnBoot() == null) ? 0 : getInstallUpdatesOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceProfileArn() == null) ? 0 : getInstanceProfileArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getLastServiceErrorId() == null) ? 0 : getLastServiceErrorId().hashCode());
+        hashCode = prime * hashCode + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
+        hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDns() == null) ? 0 : getPrivateDns().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIp() == null) ? 0 : getPrivateIp().hashCode());
+        hashCode = prime * hashCode + ((getPublicDns() == null) ? 0 : getPublicDns().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode());
+        hashCode = prime * hashCode + ((getReportedAgentVersion() == null) ? 0 : getReportedAgentVersion().hashCode());
+        hashCode = prime * hashCode + ((getReportedOs() == null) ? 0 : getReportedOs().hashCode());
+        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode());
+        hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getSshHostDsaKeyFingerprint() == null) ? 0 : getSshHostDsaKeyFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getSshHostRsaKeyFingerprint() == null) ? 0 : getSshHostRsaKeyFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
         return hashCode;
     }
 
@@ -3026,9 +3173,13 @@ public class Instance implements Serializable, Cloneable {
         try {
             return (Instance) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

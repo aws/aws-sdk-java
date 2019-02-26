@@ -1,71 +1,59 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleemail.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * ReorderReceiptRuleSetRequest Marshaller
  */
 
-public class ReorderReceiptRuleSetRequestMarshaller
-        implements
-        Marshaller<Request<ReorderReceiptRuleSetRequest>, ReorderReceiptRuleSetRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ReorderReceiptRuleSetRequestMarshaller implements Marshaller<Request<ReorderReceiptRuleSetRequest>, ReorderReceiptRuleSetRequest> {
 
-    public Request<ReorderReceiptRuleSetRequest> marshall(
-            ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
+    public Request<ReorderReceiptRuleSetRequest> marshall(ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
 
         if (reorderReceiptRuleSetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ReorderReceiptRuleSetRequest> request = new DefaultRequest<ReorderReceiptRuleSetRequest>(
-                reorderReceiptRuleSetRequest, "AmazonSimpleEmailService");
+        Request<ReorderReceiptRuleSetRequest> request = new DefaultRequest<ReorderReceiptRuleSetRequest>(reorderReceiptRuleSetRequest,
+                "AmazonSimpleEmailService");
         request.addParameter("Action", "ReorderReceiptRuleSet");
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (reorderReceiptRuleSetRequest.getRuleSetName() != null) {
-            request.addParameter("RuleSetName", StringUtils
-                    .fromString(reorderReceiptRuleSetRequest.getRuleSetName()));
+            request.addParameter("RuleSetName", StringUtils.fromString(reorderReceiptRuleSetRequest.getRuleSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
-                .getRuleNames();
-        if (!ruleNamesList.isEmpty() || !ruleNamesList.isAutoConstruct()) {
+        if (!reorderReceiptRuleSetRequest.getRuleNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest.getRuleNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
+                    .getRuleNames();
             int ruleNamesListIndex = 1;
 
             for (String ruleNamesListValue : ruleNamesList) {
                 if (ruleNamesListValue != null) {
-                    request.addParameter("RuleNames.member."
-                            + ruleNamesListIndex,
-                            StringUtils.fromString(ruleNamesListValue));
+                    request.addParameter("RuleNames.member." + ruleNamesListIndex, StringUtils.fromString(ruleNamesListValue));
                 }
                 ruleNamesListIndex++;
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@ import java.net.URISyntaxException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpResponse;
@@ -31,7 +31,6 @@ import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.Headers;
-import com.amazonaws.services.s3.S3ClientOptions;
 import com.amazonaws.util.StringUtils;
 
 /**
@@ -74,7 +73,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
         } else if (canUseVirtualAddressing()) {
             return redirectToS3External();
         } else {
-            throw new AmazonClientException(V4_REGION_WARNING, ase);
+            throw new SdkClientException(V4_REGION_WARNING, ase);
         }
     }
 
@@ -102,7 +101,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
                     String.format("https://%s.s3-external-1.amazonaws.com", endpointResolver.getBucketName()));
             return buildRetryParams(v4Signer, bucketEndpoint);
         } catch (URISyntaxException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Failed to re-send the request to \"s3-external-1.amazonaws.com\". " + V4_REGION_WARNING, e);
         }
     }

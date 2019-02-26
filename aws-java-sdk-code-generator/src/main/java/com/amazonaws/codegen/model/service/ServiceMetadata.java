@@ -27,6 +27,8 @@ public class ServiceMetadata {
 
     private String serviceFullName;
 
+    private String serviceId;
+
     private String xmlNamespace;
 
     private String protocol;
@@ -39,6 +41,8 @@ public class ServiceMetadata {
     private String signatureVersion;
 
     private String targetPrefix;
+
+    private String uid;
 
     public String getApiVersion() {
         return apiVersion;
@@ -81,6 +85,14 @@ public class ServiceMetadata {
 
     public void setServiceFullName(String serviceFullName) {
         this.serviceFullName = serviceFullName;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getXmlNamespace() {
@@ -131,4 +143,11 @@ public class ServiceMetadata {
         this.targetPrefix = targetPrefix;
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 }

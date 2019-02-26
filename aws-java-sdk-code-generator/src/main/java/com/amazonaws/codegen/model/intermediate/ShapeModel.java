@@ -15,15 +15,19 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.model.intermediate.customization.ShapeCustomizationInfo;
+import com.amazonaws.util.StringUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.codegen.model.intermediate.customization.ShapeCustomizationInfo;
-import com.amazonaws.util.StringUtils;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import static com.amazonaws.codegen.internal.Constants.REQUEST_CLASS_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.RESPONSE_CLASS_SUFFIX;
+import static com.amazonaws.codegen.internal.DocumentationUtils.removeFromEnd;
 
 public class ShapeModel extends DocumentationModel {
 
@@ -39,6 +43,10 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
     private boolean wrapper;
+    // For APIG generated requests
+    private String requestSignerClassFqcn;
+    // For AWS service requests
+    private String signerType;
 
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
@@ -80,6 +88,11 @@ public class ShapeModel extends DocumentationModel {
 
     public String getType() {
         return type;
+    }
+
+    @JsonIgnore
+    public ShapeType getShapeType() {
+        return ShapeType.fromValue(type);
     }
 
     @JsonIgnore
@@ -159,6 +172,13 @@ public class ShapeModel extends DocumentationModel {
             }
         }
         return unboundMembers;
+    }
+
+    /**
+     * @return True if the shape has an explicit payload member or implicit payload member(s).
+     */
+    public boolean hasPayloadMembers() {
+        return hasPayloadMember || getUnboundMembers().size() > 0;
     }
 
     public boolean isHasStreamingMember() {
@@ -390,6 +410,18 @@ public class ShapeModel extends DocumentationModel {
         return null;
     }
 
+    @JsonIgnore
+    public String getDocumentationShapeName() {
+        switch (getShapeType()) {
+            case Request:
+                return removeFromEnd(shapeName, REQUEST_CLASS_SUFFIX);
+            case Response:
+                return removeFromEnd(shapeName, RESPONSE_CLASS_SUFFIX);
+            default:
+                return c2jName;
+        }
+    }
+
     @Override
     public String toString() {
         return shapeName;
@@ -401,5 +433,29 @@ public class ShapeModel extends DocumentationModel {
 
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
+    }
+
+    public boolean isRequestSignerAware() {
+        return requestSignerClassFqcn != null;
+    }
+
+    public String getRequestSignerClassFqcn() {
+        return requestSignerClassFqcn;
+    }
+
+    public boolean isSignerAware() {
+        return getSignerType() != null;
+    }
+
+    public String getSignerType() {
+        return signerType;
+    }
+
+    public void setSignerType(String signerType) {
+        this.signerType = signerType;
+    }
+
+    public void setRequestSignerClassFqcn(String authorizerClass) {
+        this.requestSignerClassFqcn = authorizerClass;
     }
 }

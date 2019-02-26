@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Request to delete a configuration template.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteConfigurationTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,26 +42,22 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
     private String templateName;
 
     /**
-     * Default constructor for DeleteConfigurationTemplateRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for DeleteConfigurationTemplateRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DeleteConfigurationTemplateRequest() {
     }
 
     /**
-     * Constructs a new DeleteConfigurationTemplateRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new DeleteConfigurationTemplateRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application to delete the configuration template
-     *        from.
+     *        The name of the application to delete the configuration template from.
      * @param templateName
      *        The name of the configuration template to delete.
      */
-    public DeleteConfigurationTemplateRequest(String applicationName,
-            String templateName) {
+    public DeleteConfigurationTemplateRequest(String applicationName, String templateName) {
         setApplicationName(applicationName);
         setTemplateName(templateName);
     }
@@ -71,8 +68,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to delete the configuration template
-     *        from.
+     *        The name of the application to delete the configuration template from.
      */
 
     public void setApplicationName(String applicationName) {
@@ -84,8 +80,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * The name of the application to delete the configuration template from.
      * </p>
      * 
-     * @return The name of the application to delete the configuration template
-     *         from.
+     * @return The name of the application to delete the configuration template from.
      */
 
     public String getApplicationName() {
@@ -98,14 +93,11 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to delete the configuration template
-     *        from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the application to delete the configuration template from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteConfigurationTemplateRequest withApplicationName(
-            String applicationName) {
+    public DeleteConfigurationTemplateRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
@@ -142,19 +134,17 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * 
      * @param templateName
      *        The name of the configuration template to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteConfigurationTemplateRequest withTemplateName(
-            String templateName) {
+    public DeleteConfigurationTemplateRequest withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -165,9 +155,9 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName());
+            sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
         return sb.toString();
     }
@@ -182,16 +172,13 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
         if (obj instanceof DeleteConfigurationTemplateRequest == false)
             return false;
         DeleteConfigurationTemplateRequest other = (DeleteConfigurationTemplateRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
-        if (other.getTemplateName() != null
-                && other.getTemplateName().equals(this.getTemplateName()) == false)
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
             return false;
         return true;
     }
@@ -201,14 +188,8 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTemplateName() == null) ? 0 : getTemplateName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         return hashCode;
     }
 
@@ -216,4 +197,5 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
     public DeleteConfigurationTemplateRequest clone() {
         return (DeleteConfigurationTemplateRequest) super.clone();
     }
+
 }

@@ -1,44 +1,48 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck" target="_top">AWS
+ *      API Documentation</a>
  */
-public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
+     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private String checkId;
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
+     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check.
+     *        The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
+     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      */
 
     public void setCheckId(String checkId) {
@@ -47,10 +51,12 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
+     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The unique identifier for the Trusted Advisor check.
+     * @return The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
+     *         check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      */
 
     public String getCheckId() {
@@ -59,13 +65,14 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
+     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
+     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RefreshTrustedAdvisorCheckRequest withCheckId(String checkId) {
@@ -74,8 +81,8 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -86,7 +93,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId());
+            sb.append("CheckId: ").append(getCheckId());
         sb.append("}");
         return sb.toString();
     }
@@ -103,8 +110,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
         RefreshTrustedAdvisorCheckRequest other = (RefreshTrustedAdvisorCheckRequest) obj;
         if (other.getCheckId() == null ^ this.getCheckId() == null)
             return false;
-        if (other.getCheckId() != null
-                && other.getCheckId().equals(this.getCheckId()) == false)
+        if (other.getCheckId() != null && other.getCheckId().equals(this.getCheckId()) == false)
             return false;
         return true;
     }
@@ -114,8 +120,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCheckId() == null) ? 0 : getCheckId().hashCode());
+        hashCode = prime * hashCode + ((getCheckId() == null) ? 0 : getCheckId().hashCode());
         return hashCode;
     }
 
@@ -123,4 +128,5 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
     public RefreshTrustedAdvisorCheckRequest clone() {
         return (RefreshTrustedAdvisorCheckRequest) super.clone();
     }
+
 }

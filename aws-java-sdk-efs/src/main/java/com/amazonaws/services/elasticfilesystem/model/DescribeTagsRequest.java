@@ -1,42 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Optional. Maximum number of file system tags to return in the response.
-     * It must be an integer with a value greater than zero.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      */
     private Integer maxItems;
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue
-     * the list from where the previous call left off.
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * present, it specifies to continue the list from where the previous call left off.
      * </p>
      */
     private String marker;
@@ -49,13 +49,13 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. Maximum number of file system tags to return in the response.
-     * It must be an integer with a value greater than zero.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of file system tags to return in the
-     *        response. It must be an integer with a value greater than zero.
+     *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     *        automatically set to 10.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -64,12 +64,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. Maximum number of file system tags to return in the response.
-     * It must be an integer with a value greater than zero.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
-     * @return Optional. Maximum number of file system tags to return in the
-     *         response. It must be an integer with a value greater than zero.
+     * @return (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     *         automatically set to 10.
      */
 
     public Integer getMaxItems() {
@@ -78,15 +78,14 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. Maximum number of file system tags to return in the response.
-     * It must be an integer with a value greater than zero.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of file system tags to return in the
-     *        response. It must be an integer with a value greater than zero.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     *        automatically set to 10.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTagsRequest withMaxItems(Integer maxItems) {
@@ -96,15 +95,13 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue
-     * the list from where the previous call left off.
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeTags</code> operation. If present, it specifies to
-     *        continue the list from where the previous call left off.
+     *        (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous call left off.
      */
 
     public void setMarker(String marker) {
@@ -113,15 +110,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue
-     * the list from where the previous call left off.
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
-     * @return Optional. String. Opaque pagination token returned from a
-     *         previous <code>DescribeTags</code> operation. If present, it
-     *         specifies to continue the list from where the previous call left
-     *         off.
+     * @return (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *         (String). If present, it specifies to continue the list from where the previous call left off.
      */
 
     public String getMarker() {
@@ -130,17 +124,14 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue
-     * the list from where the previous call left off.
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeTags</code> operation. If present, it specifies to
-     *        continue the list from where the previous call left off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous call left off.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTagsRequest withMarker(String marker) {
@@ -180,8 +171,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @param fileSystemId
      *        The ID of the file system whose tag set you want to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTagsRequest withFileSystemId(String fileSystemId) {
@@ -190,8 +180,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -202,11 +192,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId());
+            sb.append("FileSystemId: ").append(getFileSystemId());
         sb.append("}");
         return sb.toString();
     }
@@ -223,18 +213,15 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
         DescribeTagsRequest other = (DescribeTagsRequest) obj;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getFileSystemId() == null ^ this.getFileSystemId() == null)
             return false;
-        if (other.getFileSystemId() != null
-                && other.getFileSystemId().equals(this.getFileSystemId()) == false)
+        if (other.getFileSystemId() != null && other.getFileSystemId().equals(this.getFileSystemId()) == false)
             return false;
         return true;
     }
@@ -244,14 +231,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFileSystemId() == null) ? 0 : getFileSystemId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         return hashCode;
     }
 
@@ -259,4 +241,5 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
     public DescribeTagsRequest clone() {
         return (DescribeTagsRequest) super.clone();
     }
+
 }

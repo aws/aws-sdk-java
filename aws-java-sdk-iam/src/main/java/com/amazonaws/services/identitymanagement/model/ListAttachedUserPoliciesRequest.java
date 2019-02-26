@@ -1,105 +1,93 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListAttachedUserPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to list attached policies
-     * for.
+     * The name (friendly name, not ARN) of the user to list attached policies for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
     /**
      * <p>
-     * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
+     * slash (/), listing all policies.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String pathPrefix;
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to list attached policies
-     * for.
+     * The name (friendly name, not ARN) of the user to list attached policies for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name (friendly name, not ARN) of the user to list attached
-     *        policies for.</p>
+     *        The name (friendly name, not ARN) of the user to list attached policies for.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -108,23 +96,19 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to list attached policies
-     * for.
+     * The name (friendly name, not ARN) of the user to list attached policies for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
-     * @return The name (friendly name, not ARN) of the user to list attached
-     *         policies for.</p>
+     * @return The name (friendly name, not ARN) of the user to list attached policies for.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -133,26 +117,21 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to list attached policies
-     * for.
+     * The name (friendly name, not ARN) of the user to list attached policies for.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name (friendly name, not ARN) of the user to list attached
-     *        policies for.</p>
+     *        The name (friendly name, not ARN) of the user to list attached policies for.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAttachedUserPoliciesRequest withUserName(String userName) {
@@ -162,29 +141,24 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
+     * slash (/), listing all policies.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
-     *        The path prefix for filtering the results. This parameter is
-     *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.</p>
+     *        The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
+     *        to a slash (/), listing all policies.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPathPrefix(String pathPrefix) {
@@ -193,28 +167,23 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
+     * slash (/), listing all policies.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
-     * @return The path prefix for filtering the results. This parameter is
-     *         optional. If it is not included, it defaults to a slash (/),
-     *         listing all policies.</p>
+     * @return The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
+     *         to a slash (/), listing all policies.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of either
-     *         a forward slash (/) by itself or a string that must begin and end
-     *         with forward slashes, containing any ASCII character from the !
-     *         (\u0021) thru the DEL character (\u007F), including most
-     *         punctuation characters, digits, and upper and lowercased letters.
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPathPrefix() {
@@ -223,31 +192,25 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
+     * slash (/), listing all policies.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
-     *        The path prefix for filtering the results. This parameter is
-     *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.</p>
+     *        The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
+     *        to a slash (/), listing all policies.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of either
-     *        a forward slash (/) by itself or a string that must begin and end
-     *        with forward slashes, containing any ASCII character from the !
-     *        (\u0021) thru the DEL character (\u007F), including most
-     *        punctuation characters, digits, and upper and lowercased letters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAttachedUserPoliciesRequest withPathPrefix(String pathPrefix) {
@@ -257,17 +220,15 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
      */
 
     public void setMarker(String marker) {
@@ -276,17 +237,14 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only after
-     *         you receive a response indicating that the results are truncated.
-     *         Set it to the value of the <code>Marker</code> element in the
-     *         response that you received to indicate where the next call should
-     *         start.
+     * @return Use this parameter only when paginating results and only after you receive a response indicating that the
+     *         results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *         received to indicate where the next call should start.
      */
 
     public String getMarker() {
@@ -295,19 +253,16 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only after you
-     * receive a response indicating that the results are truncated. Set it to
-     * the value of the <code>Marker</code> element in the response that you
-     * received to indicate where the next call should start.
+     * Use this parameter only when paginating results and only after you receive a response indicating that the results
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only after you
-     *        receive a response indicating that the results are truncated. Set
-     *        it to the value of the <code>Marker</code> element in the response
-     *        that you received to indicate where the next call should start.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Use this parameter only when paginating results and only after you receive a response indicating that the
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAttachedUserPoliciesRequest withMarker(String marker) {
@@ -317,33 +272,26 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -352,33 +300,25 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return Use this only when paginating results to indicate the maximum
-     *         number of items you want in the response. If additional items
-     *         exist beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>
-     *         .</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         This parameter is optional. If you do not include it, it defaults
-     *         to 100. Note that IAM might return fewer results, even when there
-     *         are more results available. In that case, the
-     *         <code>IsTruncated</code> response element returns
-     *         <code>true</code> and <code>Marker</code> contains a value to
-     *         include in the subsequent call that tells the service where to
-     *         continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -387,35 +327,27 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of
-     * items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
      * <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more
-     * results available. In that case, the <code>IsTruncated</code> response
-     * element returns <code>true</code> and <code>Marker</code> contains a
-     * value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum
-     *        number of items you want in the response. If additional items
-     *        exist beyond the maximum you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults
-     *        to 100. Note that IAM might return fewer results, even when there
-     *        are more results available. In that case, the
-     *        <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to
-     *        include in the subsequent call that tells the service where to
-     *        continue from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAttachedUserPoliciesRequest withMaxItems(Integer maxItems) {
@@ -424,8 +356,8 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -436,13 +368,13 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getPathPrefix() != null)
-            sb.append("PathPrefix: " + getPathPrefix() + ",");
+            sb.append("PathPrefix: ").append(getPathPrefix()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }
@@ -459,23 +391,19 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
         ListAttachedUserPoliciesRequest other = (ListAttachedUserPoliciesRequest) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getPathPrefix() == null ^ this.getPathPrefix() == null)
             return false;
-        if (other.getPathPrefix() != null
-                && other.getPathPrefix().equals(this.getPathPrefix()) == false)
+        if (other.getPathPrefix() != null && other.getPathPrefix().equals(this.getPathPrefix()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -485,14 +413,10 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPathPrefix() == null) ? 0 : getPathPrefix().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getPathPrefix() == null) ? 0 : getPathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -500,4 +424,5 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
     public ListAttachedUserPoliciesRequest clone() {
         return (ListAttachedUserPoliciesRequest) super.clone();
     }
+
 }

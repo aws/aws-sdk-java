@@ -1,97 +1,111 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for <code>GetShardIterator</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      */
     private String streamName;
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      */
     private String shardId;
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      */
     private String shardIteratorType;
     /**
      * <p>
-     * The sequence number of the data record in the shard from which to start
-     * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
-     * AFTER_SEQUENCE_NUMBER.
+     * The sequence number of the data record in the shard from which to start reading. Used with shard iterator type
+     * AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      * </p>
      */
     private String startingSequenceNumber;
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with
-     * shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with
-     * precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>
-     * . If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than
-     * the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON).
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
+     * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      */
     private java.util.Date timestamp;
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
+     *        The name of the Amazon Kinesis data stream.
      */
 
     public void setStreamName(String streamName) {
@@ -100,10 +114,10 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
-     * @return The name of the Amazon Kinesis stream.
+     * @return The name of the Amazon Kinesis data stream.
      */
 
     public String getStreamName() {
@@ -112,13 +126,12 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Amazon Kinesis data stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetShardIteratorRequest withStreamName(String streamName) {
@@ -128,11 +141,11 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Amazon Kinesis shard to get the iterator for.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public void setShardId(String shardId) {
@@ -141,10 +154,10 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
-     * @return The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * @return The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public String getShardId() {
@@ -153,13 +166,12 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Amazon Kinesis shard to get the iterator for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetShardIteratorRequest withShardId(String shardId) {
@@ -169,48 +181,80 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param shardIteratorType
-     *        Determines how the shard iterator is used to start reading data
-     *        records from the shard.</p>
+     *        Determines how the shard iterator is used to start reading data records from the shard.</p>
      *        <p>
      *        The following are the valid Amazon Kinesis shard iterator types:
      *        </p>
      *        <ul>
-     *        <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     *        by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     *        denoted by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AT_TIMESTAMP - Start reading from the position denoted by a
-     *        specific timestamp, provided in the value <code>Timestamp</code>.</li>
-     *        <li>TRIM_HORIZON - Start reading at the last untrimmed record in
-     *        the shard in the system, which is the oldest data record in the
-     *        shard.</li>
-     *        <li>LATEST - Start reading just after the most recent record in
-     *        the shard, so that you always read the most recent data in the
-     *        shard.</li>
+     *        <li>
+     *        <p>
+     *        AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in
+     *        the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number,
+     *        provided in the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     *        <code>Timestamp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest
+     *        data record in the shard.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LATEST - Start reading just after the most recent record in the shard, so that you always read the most
+     *        recent data in the shard.
+     *        </p>
+     *        </li>
      * @see ShardIteratorType
      */
 
@@ -220,48 +264,79 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Determines how the shard iterator is used to start reading data
-     *         records from the shard.</p>
+     * @return Determines how the shard iterator is used to start reading data records from the shard.</p>
      *         <p>
      *         The following are the valid Amazon Kinesis shard iterator types:
      *         </p>
      *         <ul>
-     *         <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     *         by a specific sequence number, provided in the value
-     *         <code>StartingSequenceNumber</code>.</li>
-     *         <li>AFTER_SEQUENCE_NUMBER - Start reading right after the
-     *         position denoted by a specific sequence number, provided in the
-     *         value <code>StartingSequenceNumber</code>.</li>
-     *         <li>AT_TIMESTAMP - Start reading from the position denoted by a
-     *         specific timestamp, provided in the value <code>Timestamp</code>.
+     *         <li>
+     *         <p>
+     *         AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in
+     *         the value <code>StartingSequenceNumber</code>.
+     *         </p>
      *         </li>
-     *         <li>TRIM_HORIZON - Start reading at the last untrimmed record in
-     *         the shard in the system, which is the oldest data record in the
-     *         shard.</li>
-     *         <li>LATEST - Start reading just after the most recent record in
-     *         the shard, so that you always read the most recent data in the
-     *         shard.</li>
+     *         <li>
+     *         <p>
+     *         AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number,
+     *         provided in the value <code>StartingSequenceNumber</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     *         <code>Timestamp</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest
+     *         data record in the shard.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         LATEST - Start reading just after the most recent record in the shard, so that you always read the most
+     *         recent data in the shard.
+     *         </p>
+     *         </li>
      * @see ShardIteratorType
      */
 
@@ -271,176 +346,266 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param shardIteratorType
-     *        Determines how the shard iterator is used to start reading data
-     *        records from the shard.</p>
+     *        Determines how the shard iterator is used to start reading data records from the shard.</p>
      *        <p>
      *        The following are the valid Amazon Kinesis shard iterator types:
      *        </p>
      *        <ul>
-     *        <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     *        by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     *        denoted by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AT_TIMESTAMP - Start reading from the position denoted by a
-     *        specific timestamp, provided in the value <code>Timestamp</code>.</li>
-     *        <li>TRIM_HORIZON - Start reading at the last untrimmed record in
-     *        the shard in the system, which is the oldest data record in the
-     *        shard.</li>
-     *        <li>LATEST - Start reading just after the most recent record in
-     *        the shard, so that you always read the most recent data in the
-     *        shard.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in
+     *        the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number,
+     *        provided in the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     *        <code>Timestamp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest
+     *        data record in the shard.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LATEST - Start reading just after the most recent record in the shard, so that you always read the most
+     *        recent data in the shard.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShardIteratorType
      */
 
-    public GetShardIteratorRequest withShardIteratorType(
-            String shardIteratorType) {
+    public GetShardIteratorRequest withShardIteratorType(String shardIteratorType) {
         setShardIteratorType(shardIteratorType);
         return this;
     }
 
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param shardIteratorType
-     *        Determines how the shard iterator is used to start reading data
-     *        records from the shard.</p>
+     *        Determines how the shard iterator is used to start reading data records from the shard.</p>
      *        <p>
      *        The following are the valid Amazon Kinesis shard iterator types:
      *        </p>
      *        <ul>
-     *        <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     *        by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     *        denoted by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AT_TIMESTAMP - Start reading from the position denoted by a
-     *        specific timestamp, provided in the value <code>Timestamp</code>.</li>
-     *        <li>TRIM_HORIZON - Start reading at the last untrimmed record in
-     *        the shard in the system, which is the oldest data record in the
-     *        shard.</li>
-     *        <li>LATEST - Start reading just after the most recent record in
-     *        the shard, so that you always read the most recent data in the
-     *        shard.</li>
+     *        <li>
+     *        <p>
+     *        AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in
+     *        the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number,
+     *        provided in the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     *        <code>Timestamp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest
+     *        data record in the shard.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LATEST - Start reading just after the most recent record in the shard, so that you always read the most
+     *        recent data in the shard.
+     *        </p>
+     *        </li>
      * @see ShardIteratorType
      */
 
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
-        this.shardIteratorType = shardIteratorType.toString();
+        withShardIteratorType(shardIteratorType);
     }
 
     /**
      * <p>
-     * Determines how the shard iterator is used to start reading data records
-     * from the shard.
+     * Determines how the shard iterator is used to start reading data records from the shard.
      * </p>
      * <p>
      * The following are the valid Amazon Kinesis shard iterator types:
      * </p>
      * <ul>
-     * <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a
-     * specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     * denoted by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li>
-     * <li>AT_TIMESTAMP - Start reading from the position denoted by a specific
-     * timestamp, provided in the value <code>Timestamp</code>.</li>
-     * <li>TRIM_HORIZON - Start reading at the last untrimmed record in the
-     * shard in the system, which is the oldest data record in the shard.</li>
-     * <li>LATEST - Start reading just after the most recent record in the
-     * shard, so that you always read the most recent data in the shard.</li>
+     * <li>
+     * <p>
+     * AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in
+     * the value <code>StartingSequenceNumber</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     * <code>Timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data
+     * record in the shard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent
+     * data in the shard.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param shardIteratorType
-     *        Determines how the shard iterator is used to start reading data
-     *        records from the shard.</p>
+     *        Determines how the shard iterator is used to start reading data records from the shard.</p>
      *        <p>
      *        The following are the valid Amazon Kinesis shard iterator types:
      *        </p>
      *        <ul>
-     *        <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     *        by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AFTER_SEQUENCE_NUMBER - Start reading right after the position
-     *        denoted by a specific sequence number, provided in the value
-     *        <code>StartingSequenceNumber</code>.</li>
-     *        <li>AT_TIMESTAMP - Start reading from the position denoted by a
-     *        specific timestamp, provided in the value <code>Timestamp</code>.</li>
-     *        <li>TRIM_HORIZON - Start reading at the last untrimmed record in
-     *        the shard in the system, which is the oldest data record in the
-     *        shard.</li>
-     *        <li>LATEST - Start reading just after the most recent record in
-     *        the shard, so that you always read the most recent data in the
-     *        shard.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in
+     *        the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number,
+     *        provided in the value <code>StartingSequenceNumber</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
+     *        <code>Timestamp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest
+     *        data record in the shard.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LATEST - Start reading just after the most recent record in the shard, so that you always read the most
+     *        recent data in the shard.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShardIteratorType
      */
 
-    public GetShardIteratorRequest withShardIteratorType(
-            ShardIteratorType shardIteratorType) {
-        setShardIteratorType(shardIteratorType);
+    public GetShardIteratorRequest withShardIteratorType(ShardIteratorType shardIteratorType) {
+        this.shardIteratorType = shardIteratorType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The sequence number of the data record in the shard from which to start
-     * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
-     * AFTER_SEQUENCE_NUMBER.
+     * The sequence number of the data record in the shard from which to start reading. Used with shard iterator type
+     * AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      * </p>
      * 
      * @param startingSequenceNumber
-     *        The sequence number of the data record in the shard from which to
-     *        start reading. Used with shard iterator type AT_SEQUENCE_NUMBER
-     *        and AFTER_SEQUENCE_NUMBER.
+     *        The sequence number of the data record in the shard from which to start reading. Used with shard iterator
+     *        type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      */
 
     public void setStartingSequenceNumber(String startingSequenceNumber) {
@@ -449,14 +614,12 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The sequence number of the data record in the shard from which to start
-     * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
-     * AFTER_SEQUENCE_NUMBER.
+     * The sequence number of the data record in the shard from which to start reading. Used with shard iterator type
+     * AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      * </p>
      * 
-     * @return The sequence number of the data record in the shard from which to
-     *         start reading. Used with shard iterator type AT_SEQUENCE_NUMBER
-     *         and AFTER_SEQUENCE_NUMBER.
+     * @return The sequence number of the data record in the shard from which to start reading. Used with shard iterator
+     *         type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      */
 
     public String getStartingSequenceNumber() {
@@ -465,46 +628,36 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The sequence number of the data record in the shard from which to start
-     * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
-     * AFTER_SEQUENCE_NUMBER.
+     * The sequence number of the data record in the shard from which to start reading. Used with shard iterator type
+     * AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
      * </p>
      * 
      * @param startingSequenceNumber
-     *        The sequence number of the data record in the shard from which to
-     *        start reading. Used with shard iterator type AT_SEQUENCE_NUMBER
-     *        and AFTER_SEQUENCE_NUMBER.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The sequence number of the data record in the shard from which to start reading. Used with shard iterator
+     *        type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetShardIteratorRequest withStartingSequenceNumber(
-            String startingSequenceNumber) {
+    public GetShardIteratorRequest withStartingSequenceNumber(String startingSequenceNumber) {
         setStartingSequenceNumber(startingSequenceNumber);
         return this;
     }
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with
-     * shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with
-     * precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>
-     * . If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than
-     * the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON).
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
+     * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp of the data record from which to start reading. Used
-     *        with shard iterator type AT_TIMESTAMP. A timestamp is the Unix
-     *        epoch date with precision in milliseconds. For example,
-     *        <code>2016-04-04T19:58:46.480-00:00</code> or
-     *        <code>1459799926.480</code>. If a record with this exact timestamp
-     *        does not exist, the iterator returned is for the next (later)
-     *        record. If the timestamp is older than the current trim horizon,
-     *        the iterator returned is for the oldest untrimmed data record
+     *        The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
+     *        A time stamp is the Unix epoch date with precision in milliseconds. For example,
+     *        <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
+     *        time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *        older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
      *        (TRIM_HORIZON).
      */
 
@@ -514,25 +667,19 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with
-     * shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with
-     * precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>
-     * . If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than
-     * the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON).
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
+     * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
-     * @return The timestamp of the data record from which to start reading.
-     *         Used with shard iterator type AT_TIMESTAMP. A timestamp is the
-     *         Unix epoch date with precision in milliseconds. For example,
-     *         <code>2016-04-04T19:58:46.480-00:00</code> or
-     *         <code>1459799926.480</code>. If a record with this exact
-     *         timestamp does not exist, the iterator returned is for the next
-     *         (later) record. If the timestamp is older than the current trim
-     *         horizon, the iterator returned is for the oldest untrimmed data
-     *         record (TRIM_HORIZON).
+     * @return The time stamp of the data record from which to start reading. Used with shard iterator type
+     *         AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example,
+     *         <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
+     *         time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *         older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
+     *         (TRIM_HORIZON).
      */
 
     public java.util.Date getTimestamp() {
@@ -541,28 +688,21 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with
-     * shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with
-     * precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>
-     * . If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than
-     * the current trim horizon, the iterator returned is for the oldest
-     * untrimmed data record (TRIM_HORIZON).
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
+     * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp of the data record from which to start reading. Used
-     *        with shard iterator type AT_TIMESTAMP. A timestamp is the Unix
-     *        epoch date with precision in milliseconds. For example,
-     *        <code>2016-04-04T19:58:46.480-00:00</code> or
-     *        <code>1459799926.480</code>. If a record with this exact timestamp
-     *        does not exist, the iterator returned is for the next (later)
-     *        record. If the timestamp is older than the current trim horizon,
-     *        the iterator returned is for the oldest untrimmed data record
+     *        The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
+     *        A time stamp is the Unix epoch date with precision in milliseconds. For example,
+     *        <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
+     *        time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *        older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
      *        (TRIM_HORIZON).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetShardIteratorRequest withTimestamp(java.util.Date timestamp) {
@@ -571,8 +711,8 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -583,16 +723,15 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardId() != null)
-            sb.append("ShardId: " + getShardId() + ",");
+            sb.append("ShardId: ").append(getShardId()).append(",");
         if (getShardIteratorType() != null)
-            sb.append("ShardIteratorType: " + getShardIteratorType() + ",");
+            sb.append("ShardIteratorType: ").append(getShardIteratorType()).append(",");
         if (getStartingSequenceNumber() != null)
-            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber()
-                    + ",");
+            sb.append("StartingSequenceNumber: ").append(getStartingSequenceNumber()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -609,32 +748,23 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
         GetShardIteratorRequest other = (GetShardIteratorRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
         if (other.getShardId() == null ^ this.getShardId() == null)
             return false;
-        if (other.getShardId() != null
-                && other.getShardId().equals(this.getShardId()) == false)
+        if (other.getShardId() != null && other.getShardId().equals(this.getShardId()) == false)
             return false;
-        if (other.getShardIteratorType() == null
-                ^ this.getShardIteratorType() == null)
+        if (other.getShardIteratorType() == null ^ this.getShardIteratorType() == null)
             return false;
-        if (other.getShardIteratorType() != null
-                && other.getShardIteratorType().equals(
-                        this.getShardIteratorType()) == false)
+        if (other.getShardIteratorType() != null && other.getShardIteratorType().equals(this.getShardIteratorType()) == false)
             return false;
-        if (other.getStartingSequenceNumber() == null
-                ^ this.getStartingSequenceNumber() == null)
+        if (other.getStartingSequenceNumber() == null ^ this.getStartingSequenceNumber() == null)
             return false;
-        if (other.getStartingSequenceNumber() != null
-                && other.getStartingSequenceNumber().equals(
-                        this.getStartingSequenceNumber()) == false)
+        if (other.getStartingSequenceNumber() != null && other.getStartingSequenceNumber().equals(this.getStartingSequenceNumber()) == false)
             return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getTimestamp() != null
-                && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         return true;
     }
@@ -644,20 +774,11 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime * hashCode
-                + ((getShardId() == null) ? 0 : getShardId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getShardIteratorType() == null) ? 0
-                        : getShardIteratorType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStartingSequenceNumber() == null) ? 0
-                        : getStartingSequenceNumber().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
+        hashCode = prime * hashCode + ((getShardIteratorType() == null) ? 0 : getShardIteratorType().hashCode());
+        hashCode = prime * hashCode + ((getStartingSequenceNumber() == null) ? 0 : getStartingSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 
@@ -665,4 +786,5 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
     public GetShardIteratorRequest clone() {
         return (GetShardIteratorRequest) super.clone();
     }
+
 }

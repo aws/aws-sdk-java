@@ -1,63 +1,59 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteGroupRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the IAM group to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String groupName;
 
     /**
-     * Default constructor for DeleteGroupRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for DeleteGroupRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public DeleteGroupRequest() {
     }
 
     /**
-     * Constructs a new DeleteGroupRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new DeleteGroupRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param groupName
      *        The name of the IAM group to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
     public DeleteGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -68,19 +64,17 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * The name of the IAM group to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param groupName
      *        The name of the IAM group to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setGroupName(String groupName) {
@@ -92,18 +86,16 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * The name of the IAM group to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the IAM group to delete.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getGroupName() {
@@ -115,21 +107,18 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * The name of the IAM group to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param groupName
      *        The name of the IAM group to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteGroupRequest withGroupName(String groupName) {
@@ -138,8 +127,8 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -150,7 +139,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -167,8 +156,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
         DeleteGroupRequest other = (DeleteGroupRequest) obj;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
-        if (other.getGroupName() != null
-                && other.getGroupName().equals(this.getGroupName()) == false)
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         return true;
     }
@@ -178,8 +166,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         return hashCode;
     }
 
@@ -187,4 +174,5 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
     public DeleteGroupRequest clone() {
         return (DeleteGroupRequest) super.clone();
     }
+
 }

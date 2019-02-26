@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,7 +31,7 @@ import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 
-import com.amazonaws.internal.EC2MetadataClient;
+import com.amazonaws.util.EC2MetadataUtils;
 
 /**
  * Mock server for imitating the Amazon EC2 Instance Metadata Service. Tests can
@@ -141,11 +141,11 @@ public class EC2MetadataServiceMock {
 
                     String httpResponse = null;
 
-                    if (resourcePath.equals(EC2MetadataClient.SECURITY_CREDENTIALS_RESOURCE)) {
+                    if (resourcePath.equals(EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE)) {
                         httpResponse = formHttpResponse(securityCredentialNames);
                         outputStream.write(httpResponse.getBytes());
 
-                    } else if (resourcePath.startsWith(EC2MetadataClient.SECURITY_CREDENTIALS_RESOURCE)) {
+                    } else if (resourcePath.startsWith(EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE)) {
                         String responseFilePath = "/com/amazonaws/auth/" + responseFileName + ".json";
                         System.out.println("Serving: " + responseFilePath);
 

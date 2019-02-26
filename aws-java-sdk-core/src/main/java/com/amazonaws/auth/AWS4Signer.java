@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,9 +14,10 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.ReadLimitInfo;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.SignableRequest;
+import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.internal.AWS4SignerRequestParams;
 import com.amazonaws.auth.internal.AWS4SignerUtils;
 import com.amazonaws.auth.internal.SignerKey;
@@ -32,27 +33,53 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.amazonaws.auth.internal.SignerConstants.*;
+import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
+import static com.amazonaws.auth.internal.SignerConstants.AWS4_SIGNING_ALGORITHM;
+import static com.amazonaws.auth.internal.SignerConstants.AWS4_TERMINATOR;
+import static com.amazonaws.auth.internal.SignerConstants.HOST;
+import static com.amazonaws.auth.internal.SignerConstants.LINE_SEPARATOR;
+import static com.amazonaws.auth.internal.SignerConstants.PRESIGN_URL_MAX_EXPIRATION_SECONDS;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_ALGORITHM;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CREDENTIAL;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_DATE;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_EXPIRES;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SECURITY_TOKEN;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNATURE;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNED_HEADER;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
  */
 public class AWS4Signer extends AbstractAWSSigner implements
-        ServiceAwareSigner, RegionAwareSigner, Presigner {
+        ServiceAwareSigner, RegionAwareSigner, Presigner, EndpointPrefixAwareSigner {
 
     protected static final InternalLogApi log = InternalLogFactory.getLog(AWS4Signer.class);
     private static final int SIGNER_CACHE_MAX_SIZE = 300;
     private static final FIFOCache<SignerKey> signerCache = new FIFOCache<SignerKey>(SIGNER_CACHE_MAX_SIZE);
-    private static final List<String> listOfHeadersToIgnoreInLowerCase = Arrays.asList("connection");
+    private static final List<String> listOfHeadersToIgnoreInLowerCase = Arrays.asList("connection", "x-amzn-trace-id");
+
+    private final SdkClock clock;
 
     /**
      * Service name override for use when the endpoint can't be used to
      * determine the service name.
      */
     protected String serviceName;
+
+    /**
+     * Endpoint prefix to compute the region name for signing
+     * when the {@link #regionName} is null.
+     */
+    private String endpointPrefix;
 
     /**
      * Region name override for use when the endpoint can't be used to determine
@@ -89,7 +116,17 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *            the canonical request.
      */
     public AWS4Signer(boolean doubleUrlEncoding) {
-        this.doubleUrlEncode = doubleUrlEncoding;
+        this(doubleUrlEncoding, SdkClock.Instance.get());
+    }
+
+    @SdkTestInternalApi
+    public AWS4Signer(SdkClock clock) {
+        this(true, clock);
+    }
+
+    private AWS4Signer(boolean doubleUrlEncode, SdkClock clock) {
+        this.doubleUrlEncode = doubleUrlEncode;
+        this.clock = clock;
     }
 
     /**
@@ -123,11 +160,30 @@ public class AWS4Signer extends AbstractAWSSigner implements
     }
 
     /**
+     * Sets the endpoint prefix which is used to compute the region that is
+     * used for signing the request.
+     *
+     * This value is passed to {@link AWS4SignerRequestParams} class which
+     * has the logic to compute region.
+     *
+     * @param endpointPrefix The endpoint prefix of the service
+     */
+    @Override
+    public void setEndpointPrefix(String endpointPrefix) {
+        this.endpointPrefix = endpointPrefix;
+    }
+
+    /**
      * Sets the date that overrides the signing date in the request. This method
      * is internal and should be used only for testing purposes.
      */
-    void setOverrideDate(Date overriddenDate) {
-        this.overriddenDate = overriddenDate;
+    @SdkTestInternalApi
+    public void setOverrideDate(Date overriddenDate) {
+        if (overriddenDate != null) {
+            this.overriddenDate = new Date(overriddenDate.getTime());
+        } else {
+            this.overriddenDate = null;
+        }
     }
 
     /**
@@ -168,7 +224,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final AWS4SignerRequestParams signerParams = new AWS4SignerRequestParams(
                 request, overriddenDate, regionName, serviceName,
-                AWS4_SIGNING_ALGORITHM);
+                AWS4_SIGNING_ALGORITHM, endpointPrefix);
 
         addHostHeader(request);
         request.addHeader(X_AMZ_DATE,
@@ -226,11 +282,10 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final AWS4SignerRequestParams signerRequestParams = new AWS4SignerRequestParams(
                 request, overriddenDate, regionName, serviceName,
-                AWS4_SIGNING_ALGORITHM);
+                AWS4_SIGNING_ALGORITHM, endpointPrefix);
 
         // Add the important parameters for v4 signing
-        final String timeStamp = AWS4SignerUtils.formatTimestamp(System
-                .currentTimeMillis());
+        final String timeStamp = signerRequestParams.getFormattedSigningDateTime();
 
         addPreSignInformationToRequest(request, sanitizedCredentials,
                 signerRequestParams, timeStamp, expirationInSeconds);
@@ -504,7 +559,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         try {
             payloadStream.reset();
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to reset stream after calculating AWS4 signature",
                     e);
         }
@@ -549,11 +604,11 @@ public class AWS4Signer extends AbstractAWSSigner implements
     private long generateExpirationDate(Date expirationDate) {
 
         long expirationInSeconds = expirationDate != null ? ((expirationDate
-                .getTime() - System.currentTimeMillis()) / 1000L)
+                .getTime() - clock.currentTimeMillis()) / 1000L)
                 : PRESIGN_URL_MAX_EXPIRATION_SECONDS;
 
         if (expirationInSeconds > PRESIGN_URL_MAX_EXPIRATION_SECONDS) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Requests that are pre-signed by SigV4 algorithm are valid for at most 7 days. "
                             + "The expiration date set on the current request ["
                             + AWS4SignerUtils.formatTimestamp(expirationDate
@@ -565,7 +620,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     /**
      * Generates a new signing key from the given parameters and returns it.
      */
-    private byte[] newSigningKey(AWSCredentials credentials,
+    protected byte[] newSigningKey(AWSCredentials credentials,
             String dateStamp, String regionName, String serviceName) {
         byte[] kSecret = ("AWS4" + credentials.getAWSSecretKey())
                 .getBytes(Charset.forName("UTF-8"));

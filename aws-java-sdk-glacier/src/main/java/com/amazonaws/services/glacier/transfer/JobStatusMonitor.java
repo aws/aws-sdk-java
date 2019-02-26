@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,12 @@ import com.amazonaws.auth.policy.Statement.Effect;
 import com.amazonaws.auth.policy.actions.SQSActions;
 import com.amazonaws.auth.policy.conditions.ConditionFactory;
 import com.amazonaws.services.glacier.model.StatusCode;
+import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sns.model.CreateTopicRequest;
 import com.amazonaws.services.sns.model.DeleteTopicRequest;
 import com.amazonaws.services.sns.model.SubscribeRequest;
+import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
@@ -58,8 +60,8 @@ public class JobStatusMonitor {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    private AmazonSQSClient sqs;
-    private AmazonSNSClient sns;
+    private AmazonSQS sqs;
+    private AmazonSNS sns;
     private String queueUrl;
     private String topicArn;
 
@@ -83,6 +85,23 @@ public class JobStatusMonitor {
      *            retrieval job status.
      */
     public JobStatusMonitor(AmazonSQSClient sqs, AmazonSNSClient sns) {
+        this.sqs = sqs;
+        this.sns = sns;
+        setupQueueAndTopic();
+    }
+
+    /**
+     * Constructs a JobStatusMonitor that will use the specified clients for
+     * polling archive download job status.
+     *
+     * @param sqs
+     *            The client for working with Amazon SQS when polling archive
+     *            retrieval job status.
+     * @param sns
+     *            The client for working with Amazon SNS when polling archive
+     *            retrieval job status.
+     */
+    public JobStatusMonitor(AmazonSQS sqs, AmazonSNS sns) {
         this.sqs = sqs;
         this.sns = sns;
         setupQueueAndTopic();

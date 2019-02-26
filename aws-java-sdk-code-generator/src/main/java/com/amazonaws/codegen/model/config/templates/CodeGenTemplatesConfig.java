@@ -16,17 +16,24 @@
 package com.amazonaws.codegen.model.config.templates;
 
 import static com.amazonaws.codegen.internal.Constants.PROTOCOL_CONFIG_LOCATION;
-
-import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.List;
+import static java.util.Collections.singletonList;
 
 import com.amazonaws.codegen.internal.ClassLoaderHelper;
 import com.amazonaws.codegen.internal.Jackson;
 import com.amazonaws.codegen.model.intermediate.Protocol;
+import java.io.InputStream;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CodeGenTemplatesConfig {
 
+    private TopLevelTemplate syncClientBuilder = new TopLevelTemplate("/templates/common/SyncClientBuilder.ftl", null);
+    private TopLevelTemplate asyncClientBuilder = new TopLevelTemplate("/templates/common/AsyncClientBuilder.ftl", null);
+    private TopLevelTemplate sdkFunctionClass = new TopLevelTemplate("/templates/waiter/SdkFunction.ftl", null);
+    private TopLevelTemplate acceptorClass = new TopLevelTemplate("/templates/waiter/Acceptor.ftl", null);
+    private TopLevelTemplate waiterClass = new TopLevelTemplate("/templates/waiter/Waiter.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCache = new TopLevelTemplate("/templates/endpoint-discovery/Cache.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCacheLoader = new TopLevelTemplate("/templates/endpoint-discovery/CacheLoader.ftl", null);
     private TopLevelTemplate syncClient;
     private TopLevelTemplate asyncClient;
     private TopLevelTemplate syncAbstractClass;
@@ -39,10 +46,23 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate modelEnum;
     private TopLevelTemplate modelUnmarshaller;
     private TopLevelTemplate modelMarshaller;
+    private TopLevelTemplate requestMarshaller;
+    private TopLevelTemplate baseExceptionClass;
     private TopLevelTemplate exceptionClass;
     private TopLevelTemplate exceptionUnmarshaller;
     private TopLevelTemplate policyActionClass;
     private TopLevelTemplate packageInfo;
+    private TopLevelTemplate customRequestSignerClass;
+    private TopLevelTemplate cucumberModuleInjector = new TopLevelTemplate("/templates/cucumber/ModuleInjector.ftl", null);
+    private TopLevelTemplate cucumberTest = new TopLevelTemplate("/templates/cucumber/RunCucumberTest.ftl", null);
+    private TopLevelTemplate cucumberPropertiesFile = new TopLevelTemplate("/templates/cucumber/cucumberProperties.ftl", null);
+    private TopLevelTemplate apiGatewayPomTemplate = new TopLevelTemplate("/templates/api-gateway/maven/pom.xml.ftl", null);
+    private TopLevelTemplate apiGatewayGradleBuildTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/build.gradle.ftl", null);
+    private TopLevelTemplate apiGatewayGradleSettingsTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/settings.gradle.ftl", null);
+    private TopLevelTemplate apiGatewayReadmeTemplate =
+            new TopLevelTemplate("/templates/api-gateway/README.md.ftl", singletonList(
+                    new ChildTemplate("/templates/api-gateway/README_Dependencies.ftl", "README_Dependencies")));
+
     private List<ChildTemplate> commonChildTemplates;
 
     public static CodeGenTemplatesConfig load(Protocol protocol) {
@@ -71,6 +91,11 @@ public class CodeGenTemplatesConfig {
                                                CodeGenTemplatesConfig override) {
 
         CodeGenTemplatesConfig merged = new CodeGenTemplatesConfig();
+
+        merged.setSyncClientBuilder(TopLevelTemplate.merge(
+            config.getSyncClientBuilder(), override.getSyncClientBuilder()));
+        merged.setAsyncClientBuilder(TopLevelTemplate.merge(
+            config.getAsyncClientBuilder(), override.getAsyncClientBuilder()));
 
         merged.setSyncClient(TopLevelTemplate.merge(
                 config.getSyncClient(), override.getSyncClient()));
@@ -103,7 +128,11 @@ public class CodeGenTemplatesConfig {
                 config.getModelUnmarshaller(), override.getModelUnmarshaller()));
         merged.setModelMarshaller(TopLevelTemplate.merge(
                 config.getModelMarshaller(), override.getModelMarshaller()));
+        merged.setRequestMarshaller(TopLevelTemplate.merge(
+                config.getRequestMarshaller(), override.getRequestMarshaller()));
 
+        merged.setBaseExceptionClass(TopLevelTemplate.merge(
+                config.getBaseExceptionClass(), override.getBaseExceptionClass()));
         merged.setExceptionClass(TopLevelTemplate.merge(
                 config.getExceptionClass(), override.getExceptionClass()));
         merged.setExceptionUnmarshaller(TopLevelTemplate.merge(
@@ -117,6 +146,9 @@ public class CodeGenTemplatesConfig {
         merged.setPackageInfo(TopLevelTemplate.merge(
                 config.getPackageInfo(), override.getPackageInfo()));
 
+        merged.setCustomRequestSignerClass(TopLevelTemplate.merge(
+                config.getCustomRequestSignerClass(), override.getCustomRequestSignerClass()));
+
         List<ChildTemplate> commonChildTemplates = new LinkedList<ChildTemplate>();
         if (config.getCommonChildTemplates() != null) {
             commonChildTemplates.addAll(config.getCommonChildTemplates());
@@ -128,6 +160,46 @@ public class CodeGenTemplatesConfig {
 
 
         return merged;
+    }
+
+    public TopLevelTemplate getSyncClientBuilder() {
+        return syncClientBuilder;
+    }
+
+    public void setSyncClientBuilder(TopLevelTemplate syncClientBuilder) {
+        this.syncClientBuilder = syncClientBuilder;
+    }
+
+    public TopLevelTemplate getAsyncClientBuilder() {
+        return asyncClientBuilder;
+    }
+
+    public void setAsyncClientBuilder(TopLevelTemplate syncClientBuilder) {
+        this.asyncClientBuilder = syncClientBuilder;
+    }
+
+    public TopLevelTemplate getWaiterClass() {
+        return waiterClass;
+    }
+
+    public void setWaiterClass(TopLevelTemplate waiterClass) {
+        this.waiterClass = waiterClass;
+    }
+
+    public TopLevelTemplate getAcceptorClass() {
+        return acceptorClass;
+    }
+
+    public void setAcceptorClass(TopLevelTemplate acceptorClass) {
+        this.acceptorClass = acceptorClass;
+    }
+
+    public TopLevelTemplate getSdkFunctionClass() {
+        return sdkFunctionClass;
+    }
+
+    public void setSdkFunctionClass(TopLevelTemplate sdkFunctionClass) {
+        this.sdkFunctionClass = sdkFunctionClass;
     }
 
     public TopLevelTemplate getSyncClient() {
@@ -222,8 +294,16 @@ public class CodeGenTemplatesConfig {
         return modelMarshaller;
     }
 
+    public TopLevelTemplate getRequestMarshaller() {
+        return requestMarshaller;
+    }
+
     public void setModelMarshaller(TopLevelTemplate modelMarshaller) {
         this.modelMarshaller = modelMarshaller;
+    }
+
+    public void setRequestMarshaller(TopLevelTemplate requestMarshaller) {
+        this.requestMarshaller = requestMarshaller;
     }
 
     public TopLevelTemplate getExceptionClass() {
@@ -266,5 +346,57 @@ public class CodeGenTemplatesConfig {
 
     public void setPackageInfo(TopLevelTemplate packageInfo) {
         this.packageInfo = packageInfo;
+    }
+
+    public TopLevelTemplate getBaseExceptionClass() {
+        return baseExceptionClass;
+    }
+
+    public void setBaseExceptionClass(TopLevelTemplate baseExceptionClass) {
+        this.baseExceptionClass = baseExceptionClass;
+    }
+
+    public TopLevelTemplate getCucumberModuleInjector() {
+        return cucumberModuleInjector;
+    }
+
+    public TopLevelTemplate getCucumberTest() {
+        return cucumberTest;
+    }
+
+    public TopLevelTemplate getCucumberPropertiesFile() {
+        return cucumberPropertiesFile;
+    }
+
+    public TopLevelTemplate getCustomRequestSignerClass() {
+        return customRequestSignerClass;
+    }
+
+    public void setCustomRequestSignerClass(TopLevelTemplate customRequestSignerClass) {
+        this.customRequestSignerClass = customRequestSignerClass;
+    }
+
+    public TopLevelTemplate getApiGatewayPomTemplate() {
+        return apiGatewayPomTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayGradleBuildTemplate() {
+        return apiGatewayGradleBuildTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayGradleSettingsTemplate() {
+        return apiGatewayGradleSettingsTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayReadmeTemplate() {
+        return apiGatewayReadmeTemplate;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCache() {
+        return endpointDiscoveryCache;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCacheLoader() {
+        return endpointDiscoveryCacheLoader;
     }
 }

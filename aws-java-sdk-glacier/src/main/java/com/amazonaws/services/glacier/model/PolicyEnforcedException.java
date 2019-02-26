@@ -1,30 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if a retrieval job would exceed the current data policy's retrieval
- * rate limit. For more information about data retrieval policies,
+ * Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about
+ * data retrieval policies,
  * </p>
  */
-public class PolicyEnforcedException extends AmazonServiceException {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PolicyEnforcedException extends com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -32,19 +29,16 @@ public class PolicyEnforcedException extends AmazonServiceException {
      * Client
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     private String type;
     /**
      * <p>
      * PolicyEnforcedException
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String code;
 
     /**
-     * Constructs a new PolicyEnforcedException with the specified error
-     * message.
+     * Constructs a new PolicyEnforcedException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
@@ -62,6 +56,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      *        Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
@@ -74,6 +69,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      * @return Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -85,8 +81,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      * 
      * @param type
      *        Client
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyEnforcedException withType(String type) {
@@ -103,6 +98,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      *        PolicyEnforcedException
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(String code) {
         this.code = code;
     }
@@ -115,6 +111,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      * @return PolicyEnforcedException
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -126,8 +123,7 @@ public class PolicyEnforcedException extends AmazonServiceException {
      * 
      * @param code
      *        PolicyEnforcedException
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyEnforcedException withCode(String code) {

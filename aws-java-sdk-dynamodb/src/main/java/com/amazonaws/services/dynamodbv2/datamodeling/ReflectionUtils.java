@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,13 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 
 import com.amazonaws.util.StringUtils;
 
 /**
- * Utilities for reflecting field or method annotations in a DynamoDB table
- * POJO.
+ * @deprecated Replaced by {@link StandardBeanProperties}
  */
+@Deprecated
 class ReflectionUtils {
 
     /**
@@ -61,20 +59,6 @@ class ReflectionUtils {
             return fieldNameWithUpperCamelCase;
         }
 
-    }
-
-    /**
-     * Returns the declared setter method that corresponds to the given method.
-     * @param getter The getter method.
-     * @return The method.
-     */
-    static final Method getDeclaredSetterByGetter(final Method getter) {
-        final String setterName = "set" + getFieldNameByGetter(getter, false);
-        try {
-            return getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
-        } catch (final Exception e) {
-            return null;
-        }
     }
 
     /**
@@ -132,21 +116,4 @@ class ReflectionUtils {
         return getAnnotationFromGetterOrField(getter, annotationClass) != null;
     }
 
-    /**
-     * Resolve the raw class for the given type.
-     */
-    static Class<?> resolveClass(Type type) {
-        Type localType = type;
-
-        if (localType instanceof ParameterizedType) {
-            localType = ((ParameterizedType) type).getRawType();
-        }
-
-        if (!(localType instanceof Class)) {
-            throw new DynamoDBMappingException("Cannot resolve class for type "
-                    + type);
-        }
-
-        return (Class<?>) localType;
-    }
 }

@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a batch get on-premises instances operation.
+ * Represents the input of a BatchGetOnPremisesInstances operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"
+ *      target="_top">AWS API Documentation</a>
  */
-public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,8 +40,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The names of the on-premises instances about which to get information.
      * </p>
      * 
-     * @return The names of the on-premises instances about which to get
-     *         information.
+     * @return The names of the on-premises instances about which to get information.
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -56,8 +56,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get
-     *        information.
+     *        The names of the on-premises instances about which to get information.
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -66,8 +65,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.instanceNames = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceNames);
+        this.instanceNames = new com.amazonaws.internal.SdkInternalList<String>(instanceNames);
     }
 
     /**
@@ -75,24 +73,19 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The names of the on-premises instances about which to get information.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceNames(java.util.Collection)} or
-     * {@link #withInstanceNames(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceNames(java.util.Collection)} or {@link #withInstanceNames(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the on-premises instances about which to get information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetOnPremisesInstancesRequest withInstanceNames(
-            String... instanceNames) {
+    public BatchGetOnPremisesInstancesRequest withInstanceNames(String... instanceNames) {
         if (this.instanceNames == null) {
-            setInstanceNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceNames.length));
+            setInstanceNames(new com.amazonaws.internal.SdkInternalList<String>(instanceNames.length));
         }
         for (String ele : instanceNames) {
             this.instanceNames.add(ele);
@@ -106,21 +99,18 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the on-premises instances about which to get information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchGetOnPremisesInstancesRequest withInstanceNames(
-            java.util.Collection<String> instanceNames) {
+    public BatchGetOnPremisesInstancesRequest withInstanceNames(java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -131,7 +121,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceNames() != null)
-            sb.append("InstanceNames: " + getInstanceNames());
+            sb.append("InstanceNames: ").append(getInstanceNames());
         sb.append("}");
         return sb.toString();
     }
@@ -148,8 +138,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
         BatchGetOnPremisesInstancesRequest other = (BatchGetOnPremisesInstancesRequest) obj;
         if (other.getInstanceNames() == null ^ this.getInstanceNames() == null)
             return false;
-        if (other.getInstanceNames() != null
-                && other.getInstanceNames().equals(this.getInstanceNames()) == false)
+        if (other.getInstanceNames() != null && other.getInstanceNames().equals(this.getInstanceNames()) == false)
             return false;
         return true;
     }
@@ -159,10 +148,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceNames() == null) ? 0 : getInstanceNames()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getInstanceNames() == null) ? 0 : getInstanceNames().hashCode());
         return hashCode;
     }
 
@@ -170,4 +156,5 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
     public BatchGetOnPremisesInstancesRequest clone() {
         return (BatchGetOnPremisesInstancesRequest) super.clone();
     }
+
 }

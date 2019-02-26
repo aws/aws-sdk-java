@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes an Amazon EBS volume configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/VolumeConfiguration" target="_top">AWS API
+ *      Documentation</a>
  */
-public class VolumeConfiguration implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class VolumeConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -33,8 +36,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     private String mountPoint;
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      */
     private Integer raidLevel;
@@ -52,12 +54,40 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     private Integer size;
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
+     * </p>
+     * </li>
      * </ul>
      */
     private String volumeType;
@@ -67,6 +97,13 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private Integer iops;
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     */
+    private Boolean encrypted;
 
     /**
      * <p>
@@ -100,8 +137,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param mountPoint
      *        The volume mount point. For example "/dev/sdh".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withMountPoint(String mountPoint) {
@@ -111,14 +147,11 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The volume <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
+     *        The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public void setRaidLevel(Integer raidLevel) {
@@ -127,13 +160,10 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
-     * @return The volume <a
-     *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *         level</a>.
+     * @return The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public Integer getRaidLevel() {
@@ -142,16 +172,12 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume <a
-     * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The volume <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withRaidLevel(Integer raidLevel) {
@@ -191,8 +217,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param numberOfDisks
      *        The number of disks in the volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withNumberOfDisks(Integer numberOfDisks) {
@@ -232,8 +257,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param size
      *        The volume size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withSize(Integer size) {
@@ -243,20 +267,77 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param volumeType
-     *        The volume type:</p>
+     *        The volume type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        Types</a>.</p>
      *        <ul>
-     *        <li><code>standard</code> - Magnetic</li>
-     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li><code>gp2</code> - General Purpose (SSD)</li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of
+     *        1024 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *        size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *        maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        16384 GiB.
+     *        </p>
+     *        </li>
      */
 
     public void setVolumeType(String volumeType) {
@@ -265,19 +346,76 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The volume type:</p>
+     * @return The volume type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *         Types</a>.</p>
      *         <ul>
-     *         <li><code>standard</code> - Magnetic</li>
-     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *         <li><code>gp2</code> - General Purpose (SSD)</li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size
+     *         of 1024 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *         size of 16384 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *         maximum size of 16384 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *         a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *         16384 GiB.
+     *         </p>
+     *         </li>
      */
 
     public String getVolumeType() {
@@ -286,22 +424,78 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param volumeType
-     *        The volume type:</p>
+     *        The volume type. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        Types</a>.</p>
      *        <ul>
-     *        <li><code>standard</code> - Magnetic</li>
-     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li><code>gp2</code> - General Purpose (SSD)</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of
+     *        1024 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *        size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *        maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        16384 GiB.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withVolumeType(String volumeType) {
@@ -341,8 +535,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VolumeConfiguration withIops(Integer iops) {
@@ -351,8 +544,68 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @param encrypted
+     *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @param encrypted
+     *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeConfiguration withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -363,17 +616,19 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint() + ",");
+            sb.append("MountPoint: ").append(getMountPoint()).append(",");
         if (getRaidLevel() != null)
-            sb.append("RaidLevel: " + getRaidLevel() + ",");
+            sb.append("RaidLevel: ").append(getRaidLevel()).append(",");
         if (getNumberOfDisks() != null)
-            sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
+            sb.append("NumberOfDisks: ").append(getNumberOfDisks()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted());
         sb.append("}");
         return sb.toString();
     }
@@ -390,33 +645,31 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         VolumeConfiguration other = (VolumeConfiguration) obj;
         if (other.getMountPoint() == null ^ this.getMountPoint() == null)
             return false;
-        if (other.getMountPoint() != null
-                && other.getMountPoint().equals(this.getMountPoint()) == false)
+        if (other.getMountPoint() != null && other.getMountPoint().equals(this.getMountPoint()) == false)
             return false;
         if (other.getRaidLevel() == null ^ this.getRaidLevel() == null)
             return false;
-        if (other.getRaidLevel() != null
-                && other.getRaidLevel().equals(this.getRaidLevel()) == false)
+        if (other.getRaidLevel() != null && other.getRaidLevel().equals(this.getRaidLevel()) == false)
             return false;
         if (other.getNumberOfDisks() == null ^ this.getNumberOfDisks() == null)
             return false;
-        if (other.getNumberOfDisks() != null
-                && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
+        if (other.getNumberOfDisks() != null && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
-        if (other.getIops() != null
-                && other.getIops().equals(this.getIops()) == false)
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
         return true;
     }
@@ -426,20 +679,13 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
-        hashCode = prime * hashCode
-                + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode
-                + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
+        hashCode = prime * hashCode + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }
 
@@ -448,9 +694,13 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         try {
             return (VolumeConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.VolumeConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

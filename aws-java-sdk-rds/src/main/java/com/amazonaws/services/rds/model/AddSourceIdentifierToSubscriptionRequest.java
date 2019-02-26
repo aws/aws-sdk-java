@@ -1,42 +1,40 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription"
+ *      target="_top">AWS API Documentation</a>
  */
-public class AddSourceIdentifierToSubscriptionRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to add a
-     * source identifier to.
+     * The name of the RDS event notification subscription you want to add a source identifier to.
      * </p>
      */
     private String subscriptionName;
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin
-     * with a letter and must contain only ASCII letters, digits, and hyphens;
-     * it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -44,26 +42,22 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * <ul>
      * <li>
      * <p>
-     * If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * must be supplied.
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * </ul>
@@ -72,13 +66,11 @@ public class AddSourceIdentifierToSubscriptionRequest extends
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to add a
-     * source identifier to.
+     * The name of the RDS event notification subscription you want to add a source identifier to.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the RDS event notification subscription you want to
-     *        add a source identifier to.
+     *        The name of the RDS event notification subscription you want to add a source identifier to.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -87,12 +79,10 @@ public class AddSourceIdentifierToSubscriptionRequest extends
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to add a
-     * source identifier to.
+     * The name of the RDS event notification subscription you want to add a source identifier to.
      * </p>
      * 
-     * @return The name of the RDS event notification subscription you want to
-     *         add a source identifier to.
+     * @return The name of the RDS event notification subscription you want to add a source identifier to.
      */
 
     public String getSubscriptionName() {
@@ -101,28 +91,22 @@ public class AddSourceIdentifierToSubscriptionRequest extends
 
     /**
      * <p>
-     * The name of the RDS event notification subscription you want to add a
-     * source identifier to.
+     * The name of the RDS event notification subscription you want to add a source identifier to.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the RDS event notification subscription you want to
-     *        add a source identifier to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the RDS event notification subscription you want to add a source identifier to.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddSourceIdentifierToSubscriptionRequest withSubscriptionName(
-            String subscriptionName) {
+    public AddSourceIdentifierToSubscriptionRequest withSubscriptionName(String subscriptionName) {
         setSubscriptionName(subscriptionName);
         return this;
     }
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin
-     * with a letter and must contain only ASCII letters, digits, and hyphens;
-     * it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -130,61 +114,50 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * <ul>
      * <li>
      * <p>
-     * If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * must be supplied.
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must
-     *        begin with a letter and must contain only ASCII letters, digits,
-     *        and hyphens; it cannot end with a hyphen or contain two
-     *        consecutive hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the source type is a DB instance, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB security group, a
-     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB parameter group, a
-     *        <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB snapshot, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      */
@@ -195,9 +168,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin
-     * with a letter and must contain only ASCII letters, digits, and hyphens;
-     * it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -205,60 +176,49 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * <ul>
      * <li>
      * <p>
-     * If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * must be supplied.
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The identifier of the event source to be added. An identifier
-     *         must begin with a letter and must contain only ASCII letters,
-     *         digits, and hyphens; it cannot end with a hyphen or contain two
-     *         consecutive hyphens.</p>
+     * @return The identifier of the event source to be added.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If the source type is a DB instance, then a
-     *         <code>DBInstanceIdentifier</code> must be supplied.
+     *         If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is a DB security group, a
-     *         <code>DBSecurityGroupName</code> must be supplied.
+     *         If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is a DB parameter group, a
-     *         <code>DBParameterGroupName</code> must be supplied.
+     *         If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is a DB snapshot, a
-     *         <code>DBSnapshotIdentifier</code> must be supplied.
+     *         If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      *         </p>
      *         </li>
      */
@@ -269,9 +229,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin
-     * with a letter and must contain only ASCII letters, digits, and hyphens;
-     * it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -279,76 +237,63 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * <ul>
      * <li>
      * <p>
-     * If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * must be supplied.
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must
-     *        begin with a letter and must contain only ASCII letters, digits,
-     *        and hyphens; it cannot end with a hyphen or contain two
-     *        consecutive hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the source type is a DB instance, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB security group, a
-     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB parameter group, a
-     *        <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is a DB snapshot, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AddSourceIdentifierToSubscriptionRequest withSourceIdentifier(
-            String sourceIdentifier) {
+    public AddSourceIdentifierToSubscriptionRequest withSourceIdentifier(String sourceIdentifier) {
         setSourceIdentifier(sourceIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -359,9 +304,9 @@ public class AddSourceIdentifierToSubscriptionRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionName() != null)
-            sb.append("SubscriptionName: " + getSubscriptionName() + ",");
+            sb.append("SubscriptionName: ").append(getSubscriptionName()).append(",");
         if (getSourceIdentifier() != null)
-            sb.append("SourceIdentifier: " + getSourceIdentifier());
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -376,19 +321,13 @@ public class AddSourceIdentifierToSubscriptionRequest extends
         if (obj instanceof AddSourceIdentifierToSubscriptionRequest == false)
             return false;
         AddSourceIdentifierToSubscriptionRequest other = (AddSourceIdentifierToSubscriptionRequest) obj;
-        if (other.getSubscriptionName() == null
-                ^ this.getSubscriptionName() == null)
+        if (other.getSubscriptionName() == null ^ this.getSubscriptionName() == null)
             return false;
-        if (other.getSubscriptionName() != null
-                && other.getSubscriptionName().equals(
-                        this.getSubscriptionName()) == false)
+        if (other.getSubscriptionName() != null && other.getSubscriptionName().equals(this.getSubscriptionName()) == false)
             return false;
-        if (other.getSourceIdentifier() == null
-                ^ this.getSourceIdentifier() == null)
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
             return false;
-        if (other.getSourceIdentifier() != null
-                && other.getSourceIdentifier().equals(
-                        this.getSourceIdentifier()) == false)
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
             return false;
         return true;
     }
@@ -398,14 +337,8 @@ public class AddSourceIdentifierToSubscriptionRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSubscriptionName() == null) ? 0 : getSubscriptionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionName() == null) ? 0 : getSubscriptionName().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;
     }
 
@@ -413,4 +346,5 @@ public class AddSourceIdentifierToSubscriptionRequest extends
     public AddSourceIdentifierToSubscriptionRequest clone() {
         return (AddSourceIdentifierToSubscriptionRequest) super.clone();
     }
+
 }

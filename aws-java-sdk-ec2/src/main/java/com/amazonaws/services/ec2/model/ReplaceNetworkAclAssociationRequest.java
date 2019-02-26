@@ -1,39 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ReplaceNetworkAclAssociation.
- * </p>
+ * 
  */
-public class ReplaceNetworkAclAssociationRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ReplaceNetworkAclAssociationRequest> {
 
     /**
      * <p>
-     * The ID of the current association between the original network ACL and
-     * the subnet.
+     * The ID of the current association between the original network ACL and the subnet.
      * </p>
      */
     private String associationId;
@@ -46,13 +41,11 @@ public class ReplaceNetworkAclAssociationRequest extends
 
     /**
      * <p>
-     * The ID of the current association between the original network ACL and
-     * the subnet.
+     * The ID of the current association between the original network ACL and the subnet.
      * </p>
      * 
      * @param associationId
-     *        The ID of the current association between the original network ACL
-     *        and the subnet.
+     *        The ID of the current association between the original network ACL and the subnet.
      */
 
     public void setAssociationId(String associationId) {
@@ -61,12 +54,10 @@ public class ReplaceNetworkAclAssociationRequest extends
 
     /**
      * <p>
-     * The ID of the current association between the original network ACL and
-     * the subnet.
+     * The ID of the current association between the original network ACL and the subnet.
      * </p>
      * 
-     * @return The ID of the current association between the original network
-     *         ACL and the subnet.
+     * @return The ID of the current association between the original network ACL and the subnet.
      */
 
     public String getAssociationId() {
@@ -75,19 +66,15 @@ public class ReplaceNetworkAclAssociationRequest extends
 
     /**
      * <p>
-     * The ID of the current association between the original network ACL and
-     * the subnet.
+     * The ID of the current association between the original network ACL and the subnet.
      * </p>
      * 
      * @param associationId
-     *        The ID of the current association between the original network ACL
-     *        and the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the current association between the original network ACL and the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplaceNetworkAclAssociationRequest withAssociationId(
-            String associationId) {
+    public ReplaceNetworkAclAssociationRequest withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;
     }
@@ -124,32 +111,28 @@ public class ReplaceNetworkAclAssociationRequest extends
      * 
      * @param networkAclId
      *        The ID of the new network ACL to associate with the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReplaceNetworkAclAssociationRequest withNetworkAclId(
-            String networkAclId) {
+    public ReplaceNetworkAclAssociationRequest withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<ReplaceNetworkAclAssociationRequest> getDryRunRequest() {
-        Request<ReplaceNetworkAclAssociationRequest> request = new ReplaceNetworkAclAssociationRequestMarshaller()
-                .marshall(this);
+        Request<ReplaceNetworkAclAssociationRequest> request = new ReplaceNetworkAclAssociationRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -160,9 +143,9 @@ public class ReplaceNetworkAclAssociationRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId());
+            sb.append("NetworkAclId: ").append(getNetworkAclId());
         sb.append("}");
         return sb.toString();
     }
@@ -179,13 +162,11 @@ public class ReplaceNetworkAclAssociationRequest extends
         ReplaceNetworkAclAssociationRequest other = (ReplaceNetworkAclAssociationRequest) obj;
         if (other.getAssociationId() == null ^ this.getAssociationId() == null)
             return false;
-        if (other.getAssociationId() != null
-                && other.getAssociationId().equals(this.getAssociationId()) == false)
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
         if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null)
             return false;
-        if (other.getNetworkAclId() != null
-                && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
+        if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
             return false;
         return true;
     }
@@ -195,14 +176,8 @@ public class ReplaceNetworkAclAssociationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAssociationId() == null) ? 0 : getAssociationId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNetworkAclId() == null) ? 0 : getNetworkAclId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode());
         return hashCode;
     }
 

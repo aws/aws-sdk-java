@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,17 @@
  */
 package com.amazonaws.services.s3;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
+import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.PartCreationEvent;
@@ -81,7 +83,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     public static final String USER_AGENT = AmazonS3EncryptionClient.class.getName()
             + "/" + VersionInfoUtils.getVersion();
     private final S3CryptoModule<?> crypto;
-    private final AWSKMSClient kms;
+    private final AWSKMS kms;
     /**
      * True if the a default KMS client is constructed, which will be shut down
      * when this instance of S3 encryption client is shutdown.  False otherwise,
@@ -118,7 +120,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *
      * @param encryptionMaterials
      *            The encryption materials to be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(EncryptionMaterials encryptionMaterials) {
         this(new StaticEncryptionMaterialsProvider(encryptionMaterials));
     }
@@ -150,7 +154,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *
      * @param encryptionMaterialsProvider
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
 
@@ -191,7 +197,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *              The encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
      *                The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(EncryptionMaterials encryptionMaterials,
             CryptoConfiguration cryptoConfig) {
         this(new StaticEncryptionMaterialsProvider(encryptionMaterials),
@@ -229,7 +238,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
@@ -251,7 +263,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            with this client.
      * @param encryptionMaterials
      *            The encryption materials to be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterials encryptionMaterials) {
         this(credentials, new StaticEncryptionMaterialsProvider(
@@ -270,7 +285,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            with this client.
      * @param encryptionMaterialsProvider
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
         this(credentials, encryptionMaterialsProvider,
@@ -289,7 +307,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            to authenticate requests with AWS services.
      * @param encryptionMaterialsProvider
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
@@ -312,7 +333,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            The encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterials encryptionMaterials,
             CryptoConfiguration cryptoConfig) {
@@ -335,7 +360,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
@@ -358,7 +387,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
@@ -387,7 +420,12 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
      * @throws IllegalArgumentException
      *            If either of the encryption materials or crypto configuration parameters are null.
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withClientConfiguration(ClientConfiguration)}
      */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterials encryptionMaterials,
             ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
@@ -395,6 +433,13 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
                 encryptionMaterials), clientConfig, cryptoConfig);
     }
 
+    /**
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withClientConfiguration(ClientConfiguration)}
+     */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
@@ -402,6 +447,13 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
                 encryptionMaterialsProvider, clientConfig, cryptoConfig);
     }
 
+    /**
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withClientConfiguration(ClientConfiguration)}
+     */
+    @Deprecated
     public AmazonS3EncryptionClient(
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider kekMaterialsProvider,
@@ -413,6 +465,14 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
         );
     }
 
+    /**
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withMetricsCollector(RequestMetricCollector)}
+     */
+    @Deprecated
     public AmazonS3EncryptionClient(
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider kekMaterialsProvider,
@@ -424,6 +484,15 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             cryptoConfig, requestMetricCollector);
     }
 
+    /**
+     * @deprecated use {@link AmazonS3EncryptionClientBuilder#withEncryptionMaterials(EncryptionMaterialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCredentials(AWSCredentialsProvider)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withCryptoConfiguration(CryptoConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withClientConfiguration(ClientConfiguration)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withMetricsCollector(RequestMetricCollector)} and
+     *                 {@link AmazonS3EncryptionClientBuilder#withKmsClient(AWSKMS)}
+     */
+    @Deprecated
     public AmazonS3EncryptionClient(AWSKMSClient kms,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider kekMaterialsProvider,
@@ -442,6 +511,25 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             : kms;
         this.crypto = new CryptoModuleDispatcher(this.kms, new S3DirectImpl(),
                 credentialsProvider, kekMaterialsProvider, cryptoConfig);
+    }
+
+    @SdkInternalApi
+    AmazonS3EncryptionClient(AmazonS3EncryptionClientParams params) {
+        super(params);
+        assertParameterNotNull(params.getEncryptionMaterials(), "EncryptionMaterialsProvider parameter must not be null.");
+        assertParameterNotNull(params.getCryptoConfiguration(), "CryptoConfiguration parameter must not be null.");
+        this.isKMSClientInternal = params.getKmsClient() == null;
+        this.kms = isKMSClientInternal ?
+                newAWSKMSClient(params.getClientParams().getCredentialsProvider(),
+                        params.getClientParams().getClientConfiguration(),
+                        params.getCryptoConfiguration(),
+                        params.getClientParams().getRequestMetricCollector()) : params.getKmsClient();
+        this.crypto = new CryptoModuleDispatcher(this.kms, new S3DirectImpl(),
+                params.getClientParams().getCredentialsProvider(), params.getEncryptionMaterials(), params.getCryptoConfiguration());
+    }
+
+    public static AmazonS3EncryptionClientBuilder encryptionBuilder() {
+        return AmazonS3EncryptionClientBuilder.standard();
     }
 
     /**
@@ -546,7 +634,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      */
     @Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
-            throws AmazonClientException, AmazonServiceException {
+            throws SdkClientException, AmazonServiceException {
         return crypto.uploadPartSecurely(uploadPartRequest);
     }
 
@@ -626,7 +714,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
 
         @Override
         public UploadPartResult uploadPart(UploadPartRequest req)
-                throws AmazonClientException, AmazonServiceException {
+                throws SdkClientException, AmazonServiceException {
             return AmazonS3EncryptionClient.super.uploadPart(req);
         }
 

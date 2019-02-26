@@ -1,52 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.sns.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Input for ListPlatformApplications action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListPlatformApplicationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page
-     * results.
+     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
+     * available after the first page results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page
-     * results.
+     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
+     * available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is used when calling ListPlatformApplications
-     *        action to retrieve additional records that are available after the
-     *        first page results.
+     *        NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
+     *        are available after the first page results.
      */
 
     public void setNextToken(String nextToken) {
@@ -55,14 +53,12 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page
-     * results.
+     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
+     * available after the first page results.
      * </p>
      * 
-     * @return NextToken string is used when calling ListPlatformApplications
-     *         action to retrieve additional records that are available after
-     *         the first page results.
+     * @return NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
+     *         are available after the first page results.
      */
 
     public String getNextToken() {
@@ -71,17 +67,14 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page
-     * results.
+     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
+     * available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is used when calling ListPlatformApplications
-     *        action to retrieve additional records that are available after the
-     *        first page results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
+     *        are available after the first page results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPlatformApplicationsRequest withNextToken(String nextToken) {
@@ -90,8 +83,8 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -102,7 +95,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -119,8 +112,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
         ListPlatformApplicationsRequest other = (ListPlatformApplicationsRequest) obj;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -130,8 +122,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -139,4 +130,5 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
     public ListPlatformApplicationsRequest clone() {
         return (ListPlatformApplicationsRequest) super.clone();
     }
+
 }

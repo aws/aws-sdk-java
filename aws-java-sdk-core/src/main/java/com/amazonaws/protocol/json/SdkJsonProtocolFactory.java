@@ -23,20 +23,22 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.protocol.OperationInfo;
+import com.amazonaws.protocol.Protocol;
+import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Factory to generate the various JSON protocol handlers and generators depending on the wire
- * protocol to be used for communicating with the AWS service.
+ * Factory to generate the various JSON protocol handlers and generators depending on the wire protocol to be used for
+ * communicating with the AWS service.
  */
 @ThreadSafe
 @SdkProtectedApi
-public class SdkJsonProtocolFactory {
+public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
 
     private final JsonClientMetadata metadata;
 
@@ -47,18 +49,38 @@ public class SdkJsonProtocolFactory {
         createErrorUnmarshallers();
     }
 
-    /**
-     * Returns the {@link SdkJsonGenerator} to be used for marshalling the request.
-     */
+    @Override
     public StructuredJsonGenerator createGenerator() {
-        return getSdkFactory().createWriter(metadata.getProtocolVersion());
+        return getSdkFactory().createWriter(getContentType());
+    }
+
+    @Override
+    public String getContentType() {
+        return getContentTypeResolver().resolveContentType(metadata);
+    }
+
+    public <T> ProtocolRequestMarshaller<T> createProtocolMarshaller(OperationInfo operationInfo, T origRequest) {
+        return JsonProtocolMarshallerBuilder.<T>standard()
+                .jsonGenerator(createGenerator(operationInfo))
+                .contentType(getContentType())
+                .operationInfo(operationInfo)
+                .originalRequest(origRequest)
+                .sendExplicitNullForPayload(false)
+                .build();
+    }
+
+    private StructuredJsonGenerator createGenerator(OperationInfo operationInfo) {
+        if (operationInfo.hasPayloadMembers() || operationInfo.protocol() == Protocol.AWS_JSON) {
+            return createGenerator();
+        } else {
+            return StructuredJsonGenerator.NO_OP;
+        }
     }
 
     /**
-     * Returns the response handler to be used for handling a successfull response.
+     * Returns the response handler to be used for handling a successful response.
      *
-     * @param operationMetadata Additional context information about an operation to create the
-     *                          appropriate response handler.
+     * @param operationMetadata Additional context information about an operation to create the appropriate response handler.
      */
     public <T> HttpResponseHandler<AmazonWebServiceResponse<T>> createResponseHandler(
             JsonOperationMetadata operationMetadata,
@@ -67,7 +89,7 @@ public class SdkJsonProtocolFactory {
     }
 
     /**
-     * Returns the error response handler for handling a error response.
+     * Creates a response handler for handling a error response (non 2xx response).
      */
     public HttpResponseHandler<AmazonServiceException> createErrorResponseHandler(
             JsonErrorResponseMetadata errorResponsMetadata) {
@@ -75,25 +97,58 @@ public class SdkJsonProtocolFactory {
                 .getCustomErrorCodeFieldName());
     }
 
+    @SuppressWarnings("unchecked")
     private void createErrorUnmarshallers() {
         for (JsonErrorShapeMetadata errorMetadata : metadata.getErrorShapeMetadata()) {
-            errorUnmarshallers.add(new JsonErrorUnmarshaller(errorMetadata.getModeledClass(),
-                                                             errorMetadata.getErrorCode()));
+            errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                    (Class<? extends AmazonServiceException>) errorMetadata.getModeledClass(),
+                    errorMetadata.getErrorCode()));
 
         }
-        errorUnmarshallers.add(JsonErrorUnmarshaller.DEFAULT_UNMARSHALLER);
+        errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                (Class<? extends AmazonServiceException>) metadata.getBaseServiceExceptionClass(),
+                null));
     }
 
     /**
      * @return Instance of {@link SdkStructuredJsonFactory} to use in creating handlers.
      */
     private SdkStructuredJsonFactory getSdkFactory() {
-        return isCborEnabled(metadata.isSupportsCbor()) ?
-                SdkStructuredCborFactory.SDK_CBOR_FACTORY :
-                SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
+        if (isCborEnabled()) {
+            return SdkStructuredCborFactory.SDK_CBOR_FACTORY;
+        } else if (isIonEnabled()) {
+            return isIonBinaryEnabled()
+                    ? SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY
+                    : SdkStructuredIonFactory.SDK_ION_TEXT_FACTORY;
+        } else {
+            return SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
+        }
     }
 
-    private static boolean isCborEnabled(boolean supportsCbor) {
-        return supportsCbor && !SDKGlobalConfiguration.isCborDisabled();
+    /**
+     * @return Content type resolver implementation to use.
+     */
+    private JsonContentTypeResolver getContentTypeResolver() {
+        if (isCborEnabled()) {
+            return JsonContentTypeResolver.CBOR;
+        } else if (isIonEnabled()) {
+            return isIonBinaryEnabled()
+                    ? JsonContentTypeResolver.ION_BINARY
+                    : JsonContentTypeResolver.ION_TEXT;
+        } else {
+            return JsonContentTypeResolver.JSON;
+        }
+    }
+
+    private boolean isCborEnabled() {
+        return metadata.isSupportsCbor() && !SDKGlobalConfiguration.isCborDisabled();
+    }
+
+    private boolean isIonEnabled() {
+        return metadata.isSupportsIon();
+    }
+
+    boolean isIonBinaryEnabled() {
+        return !SDKGlobalConfiguration.isIonBinaryDisabled();
     }
 }

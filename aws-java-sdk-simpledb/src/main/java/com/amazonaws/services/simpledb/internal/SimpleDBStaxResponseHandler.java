@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,13 @@
  */
 package com.amazonaws.services.simpledb.internal;
 
+import com.amazonaws.ResponseMetadata;
 import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.services.simpledb.SimpleDBResponseMetadata;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
+
+import java.util.Map;
 
 public class SimpleDBStaxResponseHandler<T> extends StaxResponseHandler<T> {
 
@@ -31,4 +34,8 @@ public class SimpleDBStaxResponseHandler<T> extends StaxResponseHandler<T> {
                 SimpleDBResponseMetadata.BOX_USAGE);
     }
 
+    @Override
+    protected ResponseMetadata getResponseMetadata(Map<String, String> metadata) {
+        return new SimpleDBResponseMetadata(super.getResponseMetadata(metadata));
+    }
 }

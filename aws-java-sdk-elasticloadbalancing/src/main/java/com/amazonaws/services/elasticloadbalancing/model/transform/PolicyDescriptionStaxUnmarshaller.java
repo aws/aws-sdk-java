@@ -1,42 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * PolicyDescription StAX Unmarshaller
  */
-public class PolicyDescriptionStaxUnmarshaller implements
-        Unmarshaller<PolicyDescription, StaxUnmarshallerContext> {
 
-    public PolicyDescription unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PolicyDescriptionStaxUnmarshaller implements Unmarshaller<PolicyDescription, StaxUnmarshallerContext> {
+
+    public PolicyDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
         PolicyDescription policyDescription = new PolicyDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -52,22 +46,22 @@ public class PolicyDescriptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("PolicyName", targetDepth)) {
-                    policyDescription.setPolicyName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    policyDescription.setPolicyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PolicyTypeName", targetDepth)) {
-                    policyDescription.setPolicyTypeName(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    policyDescription.setPolicyTypeName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression(
-                        "PolicyAttributeDescriptions/member", targetDepth)) {
-                    policyDescription
-                            .withPolicyAttributeDescriptions(PolicyAttributeDescriptionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("PolicyAttributeDescriptions", targetDepth)) {
+                    policyDescription.withPolicyAttributeDescriptions(new ArrayList<PolicyAttributeDescription>());
+                    continue;
+                }
+
+                if (context.testExpression("PolicyAttributeDescriptions/member", targetDepth)) {
+                    policyDescription.withPolicyAttributeDescriptions(PolicyAttributeDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

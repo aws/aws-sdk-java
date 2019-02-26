@@ -1,133 +1,79 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddPermissionRequest Marshaller
+ * AddPermissionRequestMarshaller
  */
-public class AddPermissionRequestMarshaller implements
-        Marshaller<Request<AddPermissionRequest>, AddPermissionRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class AddPermissionRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementId").build();
+    private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Action").build();
+    private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Principal").build();
+    private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SourceArn").build();
+    private static final MarshallingInfo<String> SOURCEACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceAccount").build();
+    private static final MarshallingInfo<String> EVENTSOURCETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceToken").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final AddPermissionRequestMarshaller instance = new AddPermissionRequestMarshaller();
 
-    public AddPermissionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static AddPermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddPermissionRequest> marshall(
-            AddPermissionRequest addPermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddPermissionRequest addPermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addPermissionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
-        }
-
-        Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(
-                addPermissionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (addPermissionRequest.getFunctionName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(addPermissionRequest
-                                .getFunctionName()), false) : "");
-        request.setResourcePath(uriResourcePath);
-
-        if (addPermissionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier",
-                    StringUtils.fromString(addPermissionRequest.getQualifier()));
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (addPermissionRequest.getStatementId() != null) {
-                jsonGenerator.writeFieldName("StatementId").writeValue(
-                        addPermissionRequest.getStatementId());
-            }
-            if (addPermissionRequest.getAction() != null) {
-                jsonGenerator.writeFieldName("Action").writeValue(
-                        addPermissionRequest.getAction());
-            }
-            if (addPermissionRequest.getPrincipal() != null) {
-                jsonGenerator.writeFieldName("Principal").writeValue(
-                        addPermissionRequest.getPrincipal());
-            }
-            if (addPermissionRequest.getSourceArn() != null) {
-                jsonGenerator.writeFieldName("SourceArn").writeValue(
-                        addPermissionRequest.getSourceArn());
-            }
-            if (addPermissionRequest.getSourceAccount() != null) {
-                jsonGenerator.writeFieldName("SourceAccount").writeValue(
-                        addPermissionRequest.getSourceAccount());
-            }
-            if (addPermissionRequest.getEventSourceToken() != null) {
-                jsonGenerator.writeFieldName("EventSourceToken").writeValue(
-                        addPermissionRequest.getEventSourceToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-            }
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addPermissionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getStatementId(), STATEMENTID_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getPrincipal(), PRINCIPAL_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getSourceArn(), SOURCEARN_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getSourceAccount(), SOURCEACCOUNT_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getEventSourceToken(), EVENTSOURCETOKEN_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getQualifier(), QUALIFIER_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getRevisionId(), REVISIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,58 +1,60 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The ID of the target requested to be removed from the rule by Amazon
- * CloudWatch Events.
+ * Represents a target that failed to be removed from a rule.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargetsResultEntry" target="_top">AWS
+ *      API Documentation</a>
  */
-public class RemoveTargetsResultEntry implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RemoveTargetsResultEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      */
     private String targetId;
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
      * @param targetId
-     *        The ID of the target requested to be removed by Amazon CloudWatch
-     *        Events.
+     *        The ID of the target.
      */
 
     public void setTargetId(String targetId) {
@@ -61,11 +63,10 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
-     * @return The ID of the target requested to be removed by Amazon CloudWatch
-     *         Events.
+     * @return The ID of the target.
      */
 
     public String getTargetId() {
@@ -74,14 +75,12 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
      * @param targetId
-     *        The ID of the target requested to be removed by Amazon CloudWatch
-     *        Events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsResultEntry withTargetId(String targetId) {
@@ -91,12 +90,13 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the target removal failed on this
-     *        entry.
+     *        The error code that indicates why the target removal failed. If the value is
+     *        <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      */
 
     public void setErrorCode(String errorCode) {
@@ -105,11 +105,12 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
-     * @return The error code representing why the target removal failed on this
-     *         entry.
+     * @return The error code that indicates why the target removal failed. If the value is
+     *         <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      */
 
     public String getErrorCode() {
@@ -118,14 +119,14 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the target removal failed on this
-     *        entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The error code that indicates why the target removal failed. If the value is
+     *        <code>ConcurrentModificationException</code>, too many requests were made at the same time.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsResultEntry withErrorCode(String errorCode) {
@@ -135,12 +136,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the target removal failed on this
-     *        entry.
+     *        The error message that explains why the target removal failed.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -149,11 +149,10 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
-     * @return The error message explaining why the target removal failed on
-     *         this entry.
+     * @return The error message that explains why the target removal failed.
      */
 
     public String getErrorMessage() {
@@ -162,14 +161,12 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the target removal failed on this
-     *        entry.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The error message that explains why the target removal failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveTargetsResultEntry withErrorMessage(String errorMessage) {
@@ -178,8 +175,8 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -190,11 +187,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetId() != null)
-            sb.append("TargetId: " + getTargetId() + ",");
+            sb.append("TargetId: ").append(getTargetId()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -211,18 +208,15 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         RemoveTargetsResultEntry other = (RemoveTargetsResultEntry) obj;
         if (other.getTargetId() == null ^ this.getTargetId() == null)
             return false;
-        if (other.getTargetId() != null
-                && other.getTargetId().equals(this.getTargetId()) == false)
+        if (other.getTargetId() != null && other.getTargetId().equals(this.getTargetId()) == false)
             return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
-        if (other.getErrorCode() != null
-                && other.getErrorCode().equals(this.getErrorCode()) == false)
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
-        if (other.getErrorMessage() != null
-                && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         return true;
     }
@@ -232,14 +226,9 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTargetId() == null) ? 0 : getTargetId().hashCode());
-        hashCode = prime * hashCode
-                + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getErrorMessage() == null) ? 0 : getErrorMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTargetId() == null) ? 0 : getTargetId().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         return hashCode;
     }
 
@@ -248,9 +237,13 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         try {
             return (RemoveTargetsResultEntry) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudwatchevents.model.transform.RemoveTargetsResultEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

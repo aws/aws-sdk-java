@@ -1,16 +1,17 @@
-<@LicenseCommentBlockMacro.content />
-
-package ${metadata.packageName}.model.transform;
+${fileHeader}
+package ${transformPackage};
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
-import com.amazonaws.transform.${metadata.exceptionUnmarshallerImpl};
+import com.amazonaws.transform.${exceptionUnmarshallerImpl};
 
 import ${metadata.packageName}.model.${shape.shapeName};
 
-public class ${shape.shapeName}Unmarshaller extends ${metadata.exceptionUnmarshallerImpl} {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ${shape.shapeName}Unmarshaller extends ${exceptionUnmarshallerImpl} {
 
     public ${shape.shapeName}Unmarshaller() {
         super(${shape.shapeName}.class);
@@ -30,7 +31,7 @@ public class ${shape.shapeName}Unmarshaller extends ${metadata.exceptionUnmarsha
               <#assign variableName = "${memberModel.variable.variableName}"?cap_first/>
               <#if !memberModel.isList() && !memberModel.isMap() >
                 <#-- List and Map are yet to be supported -->
-                e.set${variableName}(XpathUtils.as${memberModel.variable.simpleType}(getErrorPropertyPath("${memberModel.c2jName}"), node));
+                e.${memberModel.setterMethodName}(XpathUtils.as${memberModel.variable.simpleType}(getErrorPropertyPath("${memberModel.c2jName}"), node));
               </#if >
             </#list>
         </#if>

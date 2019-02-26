@@ -2,49 +2,57 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.8-SNAPSHOT</version>
+    <version>1.11.507-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-codegen-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
+
   <name>AWS SDK for Java - Code Generator Maven Plugin</name>
   <description>The AWS SDK for Java - Code Generator Maven Plugin module holds a mojo to generate the AWS Java SDK clients for AWS services.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jre.version>1.8</jre.version>
   </properties>
+
+  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
     <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-plugin-api</artifactId>
-      <version>3.3.9</version>
-      <optional>false</optional>
+        <artifactId>maven-plugin-api</artifactId>
+        <groupId>org.apache.maven</groupId>
+        <optional>false</optional>
+        <version>3.3.9</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.maven.plugin-tools</groupId>
-      <artifactId>maven-plugin-annotations</artifactId>
-      <version>3.4</version>
-      <optional>false</optional>
+        <artifactId>maven-plugin-annotations</artifactId>
+        <groupId>org.apache.maven.plugin-tools</groupId>
+        <optional>false</optional>
+        <version>3.4</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-project</artifactId>
-      <version>2.2.1</version>
-      <optional>false</optional>
+        <artifactId>maven-project</artifactId>
+        <groupId>org.apache.maven</groupId>
+        <optional>false</optional>
+        <version>2.2.1</version>
     </dependency>
     <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-code-generator</artifactId>
-      <version>1.11.7</version>
-      <optional>false</optional>
+        <artifactId>aws-java-sdk-code-generator</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
     </dependency>
-  </dependencies>
+</dependencies>
+
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>
         <version>3.4</version>
         <executions>

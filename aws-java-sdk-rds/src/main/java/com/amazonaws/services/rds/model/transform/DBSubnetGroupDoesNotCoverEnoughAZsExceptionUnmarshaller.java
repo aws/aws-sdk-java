@@ -1,31 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model.transform;
 
 import org.w3c.dom.Node;
+import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.util.XpathUtils;
+
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.rds.model.DBSubnetGroupDoesNotCoverEnoughAZsException;
 
-public class DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller extends
-        StandardErrorUnmarshaller {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller() {
         super(DBSubnetGroupDoesNotCoverEnoughAZsException.class);
@@ -36,12 +33,10 @@ public class DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller extends
         // Bail out if this isn't the right error code that this
         // marshaller understands
         String errorCode = parseErrorCode(node);
-        if (errorCode == null
-                || !errorCode.equals("DBSubnetGroupDoesNotCoverEnoughAZs"))
+        if (errorCode == null || !errorCode.equals("DBSubnetGroupDoesNotCoverEnoughAZs"))
             return null;
 
-        DBSubnetGroupDoesNotCoverEnoughAZsException e = (DBSubnetGroupDoesNotCoverEnoughAZsException) super
-                .unmarshall(node);
+        DBSubnetGroupDoesNotCoverEnoughAZsException e = (DBSubnetGroupDoesNotCoverEnoughAZsException) super.unmarshall(node);
 
         return e;
     }

@@ -1,52 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to flush a stage's cache.
+ * Requests API Gateway to flush a stage's cache.
  * </p>
  */
-public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class FlushStageCacheRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The API identifier of the stage to flush its cache.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the stage to flush its cache.
+     * [Required] The name of the stage to flush its cache.
      * </p>
      */
     private String stageName;
 
     /**
      * <p>
-     * The API identifier of the stage to flush its cache.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The API identifier of the stage to flush its cache.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -55,10 +53,10 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The API identifier of the stage to flush its cache.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The API identifier of the stage to flush its cache.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -67,13 +65,12 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The API identifier of the stage to flush its cache.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The API identifier of the stage to flush its cache.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlushStageCacheRequest withRestApiId(String restApiId) {
@@ -83,11 +80,11 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the stage to flush its cache.
+     * [Required] The name of the stage to flush its cache.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage to flush its cache.
+     *        [Required] The name of the stage to flush its cache.
      */
 
     public void setStageName(String stageName) {
@@ -96,10 +93,10 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the stage to flush its cache.
+     * [Required] The name of the stage to flush its cache.
      * </p>
      * 
-     * @return The name of the stage to flush its cache.
+     * @return [Required] The name of the stage to flush its cache.
      */
 
     public String getStageName() {
@@ -108,13 +105,12 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the stage to flush its cache.
+     * [Required] The name of the stage to flush its cache.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage to flush its cache.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The name of the stage to flush its cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FlushStageCacheRequest withStageName(String stageName) {
@@ -123,8 +119,8 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,9 +131,9 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName());
+            sb.append("StageName: ").append(getStageName());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +150,11 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
         FlushStageCacheRequest other = (FlushStageCacheRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
         return true;
     }
@@ -170,10 +164,8 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
         return hashCode;
     }
 
@@ -181,4 +173,5 @@ public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
     public FlushStageCacheRequest clone() {
         return (FlushStageCacheRequest) super.clone();
     }
+
 }

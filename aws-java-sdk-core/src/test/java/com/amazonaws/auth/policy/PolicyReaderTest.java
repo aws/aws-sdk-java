@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -256,6 +257,32 @@ public class PolicyReaderTest {
 
     }
 
+    @Test
+    public void testNoStatementArray() {
+        String policy = "{\n" +
+                        "  \"Version\": \"2012-10-17\",\n" +
+                        "  \"Statement\": {\n" +
+                        "    \"Effect\": \"Allow\",\n" +
+                        "    \"Action\": [\n" +
+                        "      \"acm:DescribeCertificate\"" +
+                        "    ],\n" +
+                        "    \"Resource\": \"*\"\n" +
+                        "  }\n" +
+                        "}";
+
+        Policy p = Policy.fromJson(policy);
+        assertEquals(POLICY_VERSION, p.getVersion());
+
+        List<Statement> statements = new LinkedList<Statement>(p.getStatements());
+
+        assertEquals(1, statements.size());
+        assertEquals(Effect.Allow, statements.get(0).getEffect());
+        assertEquals(1, statements.get(0).getActions().size());
+        assertEquals("acm:DescribeCertificate", statements.get(0).getActions().get(0).getActionName());
+        assertEquals("*", statements.get(0).getResources().get(0).getId());
+
+    }
+
     /**
      * Tests that SAML-based federated user is supported as principal.
      */
@@ -372,4 +399,43 @@ public class PolicyReaderTest {
                 .getProvider());
     }
 
+    @Test
+    public void testAccountNamePrincipalWithDashesAreStrippedByDefault() {
+        String jsonString =
+                  "{" +
+                    "\"Version\": \"2012-10-17\"," +
+                    "\"Statement\": [" +
+                      "{" +
+                        "\"Effect\": \"Allow\"," +
+                        "\"Principal\": {" +
+                        "\"AWS\": \"test-string\"" +
+                        "}" +
+                      "}" +
+                    "]" +
+                 "}" ;
+        Policy policy = Policy.fromJson(jsonString);
+        List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
+
+        assertEquals("teststring", statements.get(0).getPrincipals().get(0).getId());
+    }
+
+    @Test
+    public void testAccountNamePrincipalWithDashesAreNotStrippedWhenDisabled() {
+        String jsonString =
+                  "{" +
+                    "\"Version\": \"2012-10-17\"," +
+                    "\"Statement\": [" +
+                      "{" +
+                        "\"Effect\": \"Allow\"," +
+                        "\"Principal\": {" +
+                        "\"AWS\": \"test-string\"" +
+                        "}" +
+                      "}" +
+                    "]" +
+                 "}" ;
+        Policy policy = Policy.fromJson(jsonString, new PolicyReaderOptions().withStripAwsPrincipalIdHyphensEnabled(false));
+        List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
+
+        assertEquals("test-string", statements.get(0).getPrincipals().get(0).getId());
+    }
 }

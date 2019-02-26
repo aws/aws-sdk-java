@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 
@@ -33,7 +34,16 @@ public class JsonClientMetadata {
 
     private String protocolVersion;
 
+    private String contentTypeOverride;
+
     private boolean supportsCbor;
+
+    private boolean supportsIon;
+
+    /**
+     * Base class is initialized to {@link AmazonServiceException} for backwards compatibility.
+     */
+    private Class<? extends RuntimeException> baseServiceExceptionClass = AmazonServiceException.class;
 
     public JsonClientMetadata addErrorMetadata(JsonErrorShapeMetadata errorShapeMetadata) {
         this.errorsMetadata.add(errorShapeMetadata);
@@ -58,12 +68,40 @@ public class JsonClientMetadata {
         return this;
     }
 
+    public String getContentTypeOverride() {
+        return contentTypeOverride;
+    }
+
+    public JsonClientMetadata withContentTypeOverride(String contentType) {
+        this.contentTypeOverride = contentType;
+        return this;
+    }
+
     public boolean isSupportsCbor() {
         return supportsCbor;
     }
 
     public JsonClientMetadata withSupportsCbor(boolean supportsCbor) {
         this.supportsCbor = supportsCbor;
+        return this;
+    }
+
+    public Class<? extends RuntimeException> getBaseServiceExceptionClass() {
+        return baseServiceExceptionClass;
+    }
+
+    public boolean isSupportsIon() {
+        return supportsIon;
+    }
+
+    public JsonClientMetadata withSupportsIon(boolean supportsIon) {
+        this.supportsIon = supportsIon;
+        return this;
+    }
+
+    public JsonClientMetadata withBaseServiceExceptionClass(
+            Class<? extends RuntimeException> baseServiceExceptionClass) {
+        this.baseServiceExceptionClass = baseServiceExceptionClass;
         return this;
     }
 }

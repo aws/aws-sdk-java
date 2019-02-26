@@ -1,42 +1,79 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a log group.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogGroup" target="_top">AWS API
+ *      Documentation</a>
  */
-public class LogGroup implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     */
     private String logGroupName;
-
+    /**
+     * <p>
+     * The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * </p>
+     */
     private Long creationTime;
 
     private Integer retentionInDays;
-
+    /**
+     * <p>
+     * The number of metric filters.
+     * </p>
+     */
     private Integer metricFilterCount;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group.
+     * </p>
+     */
     private String arn;
-
+    /**
+     * <p>
+     * The number of bytes stored.
+     * </p>
+     */
     private Long storedBytes;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
      * @param logGroupName
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -44,7 +81,11 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -52,9 +93,13 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
      * @param logGroupName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withLogGroupName(String logGroupName) {
@@ -63,7 +108,13 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * </p>
+     * 
      * @param creationTime
+     *        The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *        UTC.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -71,7 +122,12 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * </p>
+     * 
+     * @return The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *         UTC.
      */
 
     public Long getCreationTime() {
@@ -79,9 +135,14 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * </p>
+     * 
      * @param creationTime
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *        UTC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withCreationTime(Long creationTime) {
@@ -107,8 +168,7 @@ public class LogGroup implements Serializable, Cloneable {
 
     /**
      * @param retentionInDays
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withRetentionInDays(Integer retentionInDays) {
@@ -117,7 +177,12 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of metric filters.
+     * </p>
+     * 
      * @param metricFilterCount
+     *        The number of metric filters.
      */
 
     public void setMetricFilterCount(Integer metricFilterCount) {
@@ -125,7 +190,11 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of metric filters.
+     * </p>
+     * 
+     * @return The number of metric filters.
      */
 
     public Integer getMetricFilterCount() {
@@ -133,9 +202,13 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of metric filters.
+     * </p>
+     * 
      * @param metricFilterCount
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of metric filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withMetricFilterCount(Integer metricFilterCount) {
@@ -144,7 +217,12 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group.
+     * </p>
+     * 
      * @param arn
+     *        The Amazon Resource Name (ARN) of the log group.
      */
 
     public void setArn(String arn) {
@@ -152,7 +230,11 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the log group.
      */
 
     public String getArn() {
@@ -160,9 +242,13 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group.
+     * </p>
+     * 
      * @param arn
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withArn(String arn) {
@@ -171,7 +257,12 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of bytes stored.
+     * </p>
+     * 
      * @param storedBytes
+     *        The number of bytes stored.
      */
 
     public void setStoredBytes(Long storedBytes) {
@@ -179,7 +270,11 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of bytes stored.
+     * </p>
+     * 
+     * @return The number of bytes stored.
      */
 
     public Long getStoredBytes() {
@@ -187,9 +282,13 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of bytes stored.
+     * </p>
+     * 
      * @param storedBytes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of bytes stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withStoredBytes(Long storedBytes) {
@@ -198,8 +297,48 @@ public class LogGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogGroup withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,17 +349,19 @@ public class LogGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getRetentionInDays() != null)
-            sb.append("RetentionInDays: " + getRetentionInDays() + ",");
+            sb.append("RetentionInDays: ").append(getRetentionInDays()).append(",");
         if (getMetricFilterCount() != null)
-            sb.append("MetricFilterCount: " + getMetricFilterCount() + ",");
+            sb.append("MetricFilterCount: ").append(getMetricFilterCount()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStoredBytes() != null)
-            sb.append("StoredBytes: " + getStoredBytes());
+            sb.append("StoredBytes: ").append(getStoredBytes()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -237,36 +378,31 @@ public class LogGroup implements Serializable, Cloneable {
         LogGroup other = (LogGroup) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getRetentionInDays() == null
-                ^ this.getRetentionInDays() == null)
+        if (other.getRetentionInDays() == null ^ this.getRetentionInDays() == null)
             return false;
-        if (other.getRetentionInDays() != null
-                && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
+        if (other.getRetentionInDays() != null && other.getRetentionInDays().equals(this.getRetentionInDays()) == false)
             return false;
-        if (other.getMetricFilterCount() == null
-                ^ this.getMetricFilterCount() == null)
+        if (other.getMetricFilterCount() == null ^ this.getMetricFilterCount() == null)
             return false;
-        if (other.getMetricFilterCount() != null
-                && other.getMetricFilterCount().equals(
-                        this.getMetricFilterCount()) == false)
+        if (other.getMetricFilterCount() != null && other.getMetricFilterCount().equals(this.getMetricFilterCount()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getStoredBytes() == null ^ this.getStoredBytes() == null)
             return false;
-        if (other.getStoredBytes() != null
-                && other.getStoredBytes().equals(this.getStoredBytes()) == false)
+        if (other.getStoredBytes() != null && other.getStoredBytes().equals(this.getStoredBytes()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -276,27 +412,13 @@ public class LogGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetentionInDays() == null) ? 0 : getRetentionInDays()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMetricFilterCount() == null) ? 0
-                        : getMetricFilterCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getRetentionInDays() == null) ? 0 : getRetentionInDays().hashCode());
+        hashCode = prime * hashCode + ((getMetricFilterCount() == null) ? 0 : getMetricFilterCount().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 
@@ -305,9 +427,13 @@ public class LogGroup implements Serializable, Cloneable {
         try {
             return (LogGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.logs.model.transform.LogGroupMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

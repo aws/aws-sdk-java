@@ -1,121 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateEventSourceMappingRequest Marshaller
+ * CreateEventSourceMappingRequestMarshaller
  */
-public class CreateEventSourceMappingRequestMarshaller
-        implements
-        Marshaller<Request<CreateEventSourceMappingRequest>, CreateEventSourceMappingRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateEventSourceMappingRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> EVENTSOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceArn").build();
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
+    private static final MarshallingInfo<String> STARTINGPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPosition").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGPOSITIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPositionTimestamp").timestampFormat("unixTimestamp").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
 
-    public CreateEventSourceMappingRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static CreateEventSourceMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateEventSourceMappingRequest> marshall(
-            CreateEventSourceMappingRequest createEventSourceMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateEventSourceMappingRequest createEventSourceMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createEventSourceMappingRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateEventSourceMappingRequest> request = new DefaultRequest<CreateEventSourceMappingRequest>(
-                createEventSourceMappingRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-03-31/event-source-mappings/";
-
-        request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createEventSourceMappingRequest.getEventSourceArn() != null) {
-                jsonGenerator.writeFieldName("EventSourceArn").writeValue(
-                        createEventSourceMappingRequest.getEventSourceArn());
-            }
-            if (createEventSourceMappingRequest.getFunctionName() != null) {
-                jsonGenerator.writeFieldName("FunctionName").writeValue(
-                        createEventSourceMappingRequest.getFunctionName());
-            }
-            if (createEventSourceMappingRequest.getEnabled() != null) {
-                jsonGenerator.writeFieldName("Enabled").writeValue(
-                        createEventSourceMappingRequest.getEnabled());
-            }
-            if (createEventSourceMappingRequest.getBatchSize() != null) {
-                jsonGenerator.writeFieldName("BatchSize").writeValue(
-                        createEventSourceMappingRequest.getBatchSize());
-            }
-            if (createEventSourceMappingRequest.getStartingPosition() != null) {
-                jsonGenerator.writeFieldName("StartingPosition").writeValue(
-                        createEventSourceMappingRequest.getStartingPosition());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-            }
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getEventSourceArn(), EVENTSOURCEARN_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPosition(), STARTINGPOSITION_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPositionTimestamp(), STARTINGPOSITIONTIMESTAMP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

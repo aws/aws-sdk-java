@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetInstancesRequestMarshaller;
@@ -26,16 +24,17 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetInstancesRequ
  * Contains the parameters for DescribeSpotFleetInstances.
  * </p>
  */
-public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeSpotFleetInstancesRequest> {
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
-    private String spotFleetRequestId;
+    private Integer maxResults;
     /**
      * <p>
      * The token for the next set of results.
@@ -44,53 +43,57 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      */
-    private Integer maxResults;
+    private String spotFleetRequestId;
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
      */
 
-    public void setSpotFleetRequestId(String spotFleetRequestId) {
-        this.spotFleetRequestId = spotFleetRequestId;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *         value is 1000. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
-    public String getSpotFleetRequestId() {
-        return this.spotFleetRequestId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetInstancesRequest withSpotFleetRequestId(
-            String spotFleetRequestId) {
-        setSpotFleetRequestId(spotFleetRequestId);
+    public DescribeSpotFleetInstancesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -126,8 +129,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param nextToken
      *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetInstancesRequest withNextToken(String nextToken) {
@@ -137,79 +139,58 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     * @param spotFleetRequestId
+     *        The ID of the Spot Fleet request.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setSpotFleetRequestId(String spotFleetRequestId) {
+        this.spotFleetRequestId = spotFleetRequestId;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify
-     *         a value between 1 and 1000. The default value is 1000. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The ID of the Spot Fleet request.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getSpotFleetRequestId() {
+        return this.spotFleetRequestId;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param spotFleetRequestId
+     *        The ID of the Spot Fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetInstancesRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
+    public DescribeSpotFleetInstancesRequest withSpotFleetRequestId(String spotFleetRequestId) {
+        setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeSpotFleetInstancesRequest> getDryRunRequest() {
-        Request<DescribeSpotFleetInstancesRequest> request = new DescribeSpotFleetInstancesRequestMarshaller()
-                .marshall(this);
+        Request<DescribeSpotFleetInstancesRequest> request = new DescribeSpotFleetInstancesRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -219,12 +200,12 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
-        if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getSpotFleetRequestId() != null)
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId());
         sb.append("}");
         return sb.toString();
     }
@@ -239,22 +220,17 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeSpotFleetInstancesRequest == false)
             return false;
         DescribeSpotFleetInstancesRequest other = (DescribeSpotFleetInstancesRequest) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
         return true;
     }
@@ -264,14 +240,9 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         return hashCode;
     }
 

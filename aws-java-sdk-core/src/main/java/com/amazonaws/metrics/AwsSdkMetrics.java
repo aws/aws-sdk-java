@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.RegionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -49,6 +51,12 @@ import com.amazonaws.util.AWSServiceMetrics;
  * started at the AWS SDK level. The default implementation uploads the
  * request/response metrics captured to Amazon CloudWatch using AWS credentials
  * obtained via the {@link DefaultAWSCredentialsProviderChain}.
+ * <p>
+ * By default, the metrics are uploaded to the us-east-1 region. You can
+ * change the region by changing the system property as
+ * -Dcom.amazonaws.sdk.enableDefaultMetrics=cloudwatchRegion={newregion}
+ * See #CLOUDWATCH_REGION
+ * </p>
  * <p>
  * For additional optional attributes that can be specified for the system
  * property, please read the javadoc of the individual fields of
@@ -124,9 +132,8 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
-     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
 
     /**
      * Used to specify an AWS credential property file.
@@ -136,8 +143,10 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
+     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
+    @Deprecated
+    public static final String AWS_CREDENTAIL_PROPERTIES_FILE = AWS_CREDENTIAL_PROPERTIES_FILE;
 
     /**
      * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
@@ -245,7 +254,7 @@ public enum AwsSdkMetrics {
      */
     private static volatile boolean httpSocketReadMetricEnabled;
 
-    private static volatile Regions region;
+    private static volatile Region region;
     private static volatile Integer metricQueueSize;
     private static volatile Long queuePollTimeoutMilli;
     private static volatile String metricNameSpace = DEFAULT_METRIC_NAMESPACE;
@@ -302,18 +311,17 @@ public enum AwsSdkMetrics {
                         String key = pair[0].trim();
                         String value  = pair[1].trim();
                         try {
-                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)
-                                    || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
+                            if (AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
-                                region = Regions.fromName(value);
+                                region = RegionUtils.getRegion(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
-                            	Integer i = Integer.valueOf(value);
+                                Integer i = Integer.valueOf(value);
                                 if (i.intValue() < 1)
                                     throw new IllegalArgumentException(METRIC_QUEUE_SIZE + " must be at least 1");
                                 metricQueueSize = i;
                             } else if (QUEUE_POLL_TIMEOUT_MILLI.equals(key)) {
-                            	Long i = Long.valueOf(value);
+                                Long i = Long.valueOf(value);
                                 if (i.intValue() < 1000)
                                     throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
                                 queuePollTimeoutMilli = i;
@@ -361,7 +369,7 @@ public enum AwsSdkMetrics {
     public static boolean isMetricAdminMBeanRegistered() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
         return registeredAdminMbeanName != null
-                && registry.isMBeanRegistered(registeredAdminMbeanName);
+               && registry.isMBeanRegistered(registeredAdminMbeanName);
     }
 
     /**
@@ -617,7 +625,7 @@ public enum AwsSdkMetrics {
                 }
             } catch (Exception e) {
                 LogFactory.getLog(AwsSdkMetrics.class)
-                    .warn("Failed to enable the default metrics", e);
+                          .warn("Failed to enable the default metrics", e);
             } finally {
                 dirtyEnabling = false;
             }
@@ -652,8 +660,8 @@ public enum AwsSdkMetrics {
      */
     public static <T extends MetricType> boolean addAll(Collection<T> types) {
         return types == null || types.size() == 0
-             ? false
-             : registry.addMetricTypes(types);
+               ? false
+               : registry.addMetricTypes(types);
     }
     /**
      * Sets the given metric types to replace the registry of predefined metrics
@@ -704,16 +712,29 @@ public enum AwsSdkMetrics {
      * file property.
      */
     public static synchronized void setCredentialProvider(
-            AWSCredentialsProvider provider) {
+        AWSCredentialsProvider provider) {
         credentialProvider = provider;
     }
 
     /**
      * Returns the region configured for the default AWS SDK metric collector;
      * or null if the default is to be used.
+     *
+     * @throws IllegalArgumentException when using a region not included in
+     * {@link Regions}
+     *
+     * @deprecated Use {@link #getRegionName()}
      */
-    public static Regions getRegion() {
-        return region;
+    public static Regions getRegion() throws IllegalArgumentException {
+        return Regions.fromName(region.getName());
+    }
+
+    /**
+     * Returns the region name configured for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static String getRegionName() {
+        return region == null ? null : region.getName();
     }
 
     /**
@@ -721,13 +742,30 @@ public enum AwsSdkMetrics {
      * or null if the default is to be used.
      */
     public static void setRegion(Regions region) {
-        AwsSdkMetrics.region = region;
+        AwsSdkMetrics.region = RegionUtils.getRegion(region.getName());
+    }
+
+    /**
+     * Sets the region to be used for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static void setRegion(String region) {
+        AwsSdkMetrics.region = RegionUtils.getRegion(region);
+    }
+
+    /**
+     * Returns the last set AWS credential file, or null if there is none.
+     * @deprecated use {@link AwsSdkMetrics#getCredentialFile()}
+     */
+    @Deprecated
+    public static String getCredentailFile() {
+        return credentialFile;
     }
 
     /**
      * Returns the last set AWS credential file, or null if there is none.
      */
-    public static String getCredentailFile() {
+    public static String getCredentialFile() {
         return credentialFile;
     }
 
@@ -737,7 +775,7 @@ public enum AwsSdkMetrics {
      * provider to make use of the given credential file.
      */
     public static void setCredentialFile(String filepath)
-            throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException {
         setCredentialFile0(filepath);
     }
 
@@ -745,7 +783,7 @@ public enum AwsSdkMetrics {
      * Internal method to implement the {@link #setCredentialFile(String)}.
      */
     private static void setCredentialFile0(String filepath)
-            throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException {
         final PropertiesCredentials cred =
             new PropertiesCredentials(new File(filepath));
         synchronized(AwsSdkMetrics.class) {
@@ -869,10 +907,11 @@ public enum AwsSdkMetrics {
             metricTypes.add(Field.HttpClientRetryCount);
             metricTypes.add(Field.HttpRequestTime);
             metricTypes.add(Field.RequestCount);
-//            metricTypes.add(Field.RequestSigningTime);
-//            metricTypes.add(Field.ResponseProcessingTime);
+            //            metricTypes.add(Field.RequestSigningTime);
+            //            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
             metricTypes.add(Field.RetryCapacityConsumed);
+            metricTypes.add(Field.ThrottledRetryCount);
             metricTypes.add(Field.HttpClientSendRequestTime);
             metricTypes.add(Field.HttpClientReceiveResponseTime);
             metricTypes.add(Field.HttpSocketReadTime);

@@ -1,36 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the client-specific data.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientData" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClientData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the disk upload starts.
+     * A user-defined comment about the disk upload.
      * </p>
      */
-    private java.util.Date uploadStart;
+    private String comment;
     /**
      * <p>
      * The time that the disk upload ends.
@@ -45,49 +46,48 @@ public class ClientData implements Serializable, Cloneable {
     private Double uploadSize;
     /**
      * <p>
+     * The time that the disk upload starts.
+     * </p>
+     */
+    private java.util.Date uploadStart;
+
+    /**
+     * <p>
      * A user-defined comment about the disk upload.
      * </p>
-     */
-    private String comment;
-
-    /**
-     * <p>
-     * The time that the disk upload starts.
-     * </p>
      * 
-     * @param uploadStart
-     *        The time that the disk upload starts.
+     * @param comment
+     *        A user-defined comment about the disk upload.
      */
 
-    public void setUploadStart(java.util.Date uploadStart) {
-        this.uploadStart = uploadStart;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**
      * <p>
-     * The time that the disk upload starts.
+     * A user-defined comment about the disk upload.
      * </p>
      * 
-     * @return The time that the disk upload starts.
+     * @return A user-defined comment about the disk upload.
      */
 
-    public java.util.Date getUploadStart() {
-        return this.uploadStart;
+    public String getComment() {
+        return this.comment;
     }
 
     /**
      * <p>
-     * The time that the disk upload starts.
+     * A user-defined comment about the disk upload.
      * </p>
      * 
-     * @param uploadStart
-     *        The time that the disk upload starts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param comment
+     *        A user-defined comment about the disk upload.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClientData withUploadStart(java.util.Date uploadStart) {
-        setUploadStart(uploadStart);
+    public ClientData withComment(String comment) {
+        setComment(comment);
         return this;
     }
 
@@ -123,8 +123,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @param uploadEnd
      *        The time that the disk upload ends.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientData withUploadEnd(java.util.Date uploadEnd) {
@@ -164,8 +163,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @param uploadSize
      *        The size of the uploaded disk image, in GiB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClientData withUploadSize(Double uploadSize) {
@@ -175,48 +173,47 @@ public class ClientData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-defined comment about the disk upload.
+     * The time that the disk upload starts.
      * </p>
      * 
-     * @param comment
-     *        A user-defined comment about the disk upload.
+     * @param uploadStart
+     *        The time that the disk upload starts.
      */
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setUploadStart(java.util.Date uploadStart) {
+        this.uploadStart = uploadStart;
     }
 
     /**
      * <p>
-     * A user-defined comment about the disk upload.
+     * The time that the disk upload starts.
      * </p>
      * 
-     * @return A user-defined comment about the disk upload.
+     * @return The time that the disk upload starts.
      */
 
-    public String getComment() {
-        return this.comment;
+    public java.util.Date getUploadStart() {
+        return this.uploadStart;
     }
 
     /**
      * <p>
-     * A user-defined comment about the disk upload.
+     * The time that the disk upload starts.
      * </p>
      * 
-     * @param comment
-     *        A user-defined comment about the disk upload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param uploadStart
+     *        The time that the disk upload starts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ClientData withComment(String comment) {
-        setComment(comment);
+    public ClientData withUploadStart(java.util.Date uploadStart) {
+        setUploadStart(uploadStart);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -226,14 +223,14 @@ public class ClientData implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUploadStart() != null)
-            sb.append("UploadStart: " + getUploadStart() + ",");
-        if (getUploadEnd() != null)
-            sb.append("UploadEnd: " + getUploadEnd() + ",");
-        if (getUploadSize() != null)
-            sb.append("UploadSize: " + getUploadSize() + ",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getUploadEnd() != null)
+            sb.append("UploadEnd: ").append(getUploadEnd()).append(",");
+        if (getUploadSize() != null)
+            sb.append("UploadSize: ").append(getUploadSize()).append(",");
+        if (getUploadStart() != null)
+            sb.append("UploadStart: ").append(getUploadStart());
         sb.append("}");
         return sb.toString();
     }
@@ -248,25 +245,21 @@ public class ClientData implements Serializable, Cloneable {
         if (obj instanceof ClientData == false)
             return false;
         ClientData other = (ClientData) obj;
-        if (other.getUploadStart() == null ^ this.getUploadStart() == null)
+        if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getUploadStart() != null
-                && other.getUploadStart().equals(this.getUploadStart()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         if (other.getUploadEnd() == null ^ this.getUploadEnd() == null)
             return false;
-        if (other.getUploadEnd() != null
-                && other.getUploadEnd().equals(this.getUploadEnd()) == false)
+        if (other.getUploadEnd() != null && other.getUploadEnd().equals(this.getUploadEnd()) == false)
             return false;
         if (other.getUploadSize() == null ^ this.getUploadSize() == null)
             return false;
-        if (other.getUploadSize() != null
-                && other.getUploadSize().equals(this.getUploadSize()) == false)
+        if (other.getUploadSize() != null && other.getUploadSize().equals(this.getUploadSize()) == false)
             return false;
-        if (other.getComment() == null ^ this.getComment() == null)
+        if (other.getUploadStart() == null ^ this.getUploadStart() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getUploadStart() != null && other.getUploadStart().equals(this.getUploadStart()) == false)
             return false;
         return true;
     }
@@ -276,15 +269,10 @@ public class ClientData implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUploadStart() == null) ? 0 : getUploadStart().hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadEnd() == null) ? 0 : getUploadEnd().hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadSize() == null) ? 0 : getUploadSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getUploadEnd() == null) ? 0 : getUploadEnd().hashCode());
+        hashCode = prime * hashCode + ((getUploadSize() == null) ? 0 : getUploadSize().hashCode());
+        hashCode = prime * hashCode + ((getUploadStart() == null) ? 0 : getUploadStart().hashCode());
         return hashCode;
     }
 
@@ -293,9 +281,8 @@ public class ClientData implements Serializable, Cloneable {
         try {
             return (ClientData) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

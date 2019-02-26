@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon Technologies, Inc.
+ * Copyright 2015-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.apache.http.annotation.Immutable;
+import com.amazonaws.annotation.Immutable;
 
 /**
  * Internal representation of a path to an attribute.

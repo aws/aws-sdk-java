@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a put job failure result action.
+ * Represents the input of a PutJobFailureResult action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult" target="_top">AWS
+ *      API Documentation</a>
  */
-public class PutJobFailureResultRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same
-     * ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      * </p>
      */
     private String jobId;
@@ -43,13 +43,11 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same
-     * ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that failed. This is the
-     *        same ID returned from PollForJobs.
+     *        The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      */
 
     public void setJobId(String jobId) {
@@ -58,12 +56,10 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same
-     * ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      * </p>
      * 
-     * @return The unique system-generated ID of the job that failed. This is
-     *         the same ID returned from PollForJobs.
+     * @return The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      */
 
     public String getJobId() {
@@ -72,15 +68,12 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same
-     * ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that failed. This is the
-     *        same ID returned from PollForJobs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutJobFailureResultRequest withJobId(String jobId) {
@@ -120,19 +113,17 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * 
      * @param failureDetails
      *        The details about the failure of a job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutJobFailureResultRequest withFailureDetails(
-            FailureDetails failureDetails) {
+    public PutJobFailureResultRequest withFailureDetails(FailureDetails failureDetails) {
         setFailureDetails(failureDetails);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,9 +134,9 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getFailureDetails() != null)
-            sb.append("FailureDetails: " + getFailureDetails());
+            sb.append("FailureDetails: ").append(getFailureDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -162,14 +153,11 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
         PutJobFailureResultRequest other = (PutJobFailureResultRequest) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
-        if (other.getFailureDetails() == null
-                ^ this.getFailureDetails() == null)
+        if (other.getFailureDetails() == null ^ this.getFailureDetails() == null)
             return false;
-        if (other.getFailureDetails() != null
-                && other.getFailureDetails().equals(this.getFailureDetails()) == false)
+        if (other.getFailureDetails() != null && other.getFailureDetails().equals(this.getFailureDetails()) == false)
             return false;
         return true;
     }
@@ -179,12 +167,8 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailureDetails() == null) ? 0 : getFailureDetails()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         return hashCode;
     }
 
@@ -192,4 +176,5 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
     public PutJobFailureResultRequest clone() {
         return (PutJobFailureResultRequest) super.clone();
     }
+
 }

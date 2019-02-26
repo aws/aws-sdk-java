@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,34 @@
  */
 package com.amazonaws.http;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Matchers.anyMapOf;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.when;
-
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.internal.http.JsonErrorCodeParser;
+import com.amazonaws.internal.http.JsonErrorMessageParser;
+import com.amazonaws.protocol.json.JsonContent;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.StringUtils;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.internal.http.JsonErrorCodeParser;
-import com.amazonaws.internal.http.JsonErrorMessageParser;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.StringUtils;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.databind.JsonNode;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.hamcrest.Matchers.hasEntry;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.when;
 
 public class JsonErrorResponseHandlerTest {
 
@@ -58,7 +60,7 @@ public class JsonErrorResponseHandlerTest {
     public void setup() throws UnsupportedEncodingException {
         MockitoAnnotations.initMocks(this);
         when(errorCodeParser
-                     .parseErrorCode(anyMapOf(String.class, String.class), (JsonNode) anyObject()))
+                     .parseErrorCode((HttpResponse) anyObject(), (JsonContent) anyObject()))
                 .thenReturn(ERROR_CODE);
 
         httpResponse = new HttpResponse(new DefaultRequest<String>(SERVICE_NAME), null);
@@ -196,6 +198,25 @@ public class JsonErrorResponseHandlerTest {
         AmazonServiceException ase = responseHandler.handle(httpResponse);
 
         assertEquals("1234", ase.getRequestId());
+    }
+
+    /**
+     * All headers (Including ones that populate other fields like request id) should be dumped into
+     * the header map.
+     */
+    @Test
+    public void handle_AllHeaders_DumpedIntoHeaderMap() throws Exception {
+        httpResponse.setStatusCode(500);
+        httpResponse.addHeader("FooHeader", "FooValue");
+        httpResponse.addHeader(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER, "1234");
+        expectUnmarshallerMatches();
+        when(unmarshaller.unmarshall((JsonNode) anyObject()))
+                .thenReturn(new CustomException("error"));
+
+        AmazonServiceException ase = responseHandler.handle(httpResponse);
+        assertThat(ase.getHttpHeaders(), hasEntry("FooHeader", "FooValue"));
+        assertThat(ase.getHttpHeaders(),
+                   hasEntry(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER, "1234"));
     }
 
     private void expectUnmarshallerMatches() throws Exception {

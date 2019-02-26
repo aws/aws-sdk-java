@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,11 @@ import java.io.OutputStream;
 import java.util.Collections;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.SdkFilterInputStream;
-import com.amazonaws.services.kms.AWSKMSClient;
+import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoMode;
@@ -61,10 +61,10 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
-            AWSCredentialsProvider credentialsProvider,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    S3CryptoModuleAE(AWSKMS kms, S3Direct s3,
+                     AWSCredentialsProvider credentialsProvider,
+                     EncryptionMaterialsProvider encryptionMaterialsProvider,
+                     CryptoConfiguration cryptoConfig) {
         super(kms, s3, credentialsProvider, encryptionMaterialsProvider,
                 cryptoConfig);
         CryptoMode mode = cryptoConfig.getCryptoMode();
@@ -86,9 +86,9 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     /**
      * Used for testing purposes only.
      */
-    S3CryptoModuleAE(AWSKMSClient kms, S3Direct s3,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    S3CryptoModuleAE(AWSKMS kms, S3Direct s3,
+                     EncryptionMaterialsProvider encryptionMaterialsProvider,
+                     CryptoConfiguration cryptoConfig) {
         this(kms, s3, new DefaultAWSCredentialsProviderChain(),
                 encryptionMaterialsProvider, cryptoConfig);
     }
@@ -152,10 +152,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         S3ObjectWrapper ifile = fetchInstructionFile(req.getS3ObjectId(), null);
         if (ifile != null) {
             try {
-                if (ifile.isInstructionFile()) {
-                    return decipherWithInstructionFile(req, desiredRange,
-                            cryptoRange, wrapped, ifile);
-                }
+                return decipherWithInstructionFile(req, desiredRange,
+                        cryptoRange, wrapped, ifile);
             } finally {
                 closeQuietly(ifile, log);
             }
@@ -192,18 +190,12 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         // Check if encrypted info is in an instruction file
         final S3ObjectWrapper ifile = fetchInstructionFile(id, instFileSuffix);
         if (ifile == null) {
-            throw new AmazonClientException("Instruction file with suffix "
+            throw new SdkClientException("Instruction file with suffix "
                     + instFileSuffix + " is not found for " + retrieved);
         }
         try {
-            if (ifile.isInstructionFile()) {
-                return decipherWithInstructionFile(req, desiredRange,
-                        cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
-            } else {
-                throw new AmazonClientException(
-                        "Invalid Instruction file with suffix "
-                                + instFileSuffix + " detected for " + retrieved);
-            }
+            return decipherWithInstructionFile(req, desiredRange,
+                    cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
         } finally {
             closeQuietly(ifile, log);
         }
@@ -229,6 +221,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     matdesc,
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(),
+                    cryptoConfig.getAlwaysUseCryptoProvider(),
                     cryptoRange,   // range is sometimes necessary to compute the adjusted IV
                     extraMatDesc,
                     keyWrapExpected,
@@ -257,6 +250,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             .fromObjectMetadata(retrieved.getObjectMetadata(),
                 kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(),
+                cryptoConfig.getAlwaysUseCryptoProvider(),
                 // range is sometimes necessary to compute the adjusted IV
                 cryptoRange,
                 extraMatDesc,
@@ -320,7 +314,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             s3object.setObjectContent(new S3ObjectInputStream(adjustedRangeContents, objectContent.getHttpRequest()));
             return s3object;
         } catch (IOException e) {
-            throw new AmazonClientException("Error adjusting output to desired byte range: " + e.getMessage());
+            throw new SdkClientException("Error adjusting output to desired byte range: " + e.getMessage());
         }
     }
 
@@ -343,7 +337,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                 outputStream.write(buffer, 0, bytesRead);
             }
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
             closeQuietly(outputStream, log);

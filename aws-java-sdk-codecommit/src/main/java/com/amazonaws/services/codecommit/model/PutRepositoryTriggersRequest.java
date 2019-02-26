@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input ofa put repository triggers operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers" target="_top">AWS
+ *      API Documentation</a>
  */
-public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PutRepositoryTriggersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the repository where you want to create or update the
-     * trigger.
+     * The name of the repository where you want to create or update the trigger.
      * </p>
      */
     private String repositoryName;
@@ -43,13 +43,11 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the repository where you want to create or update the
-     * trigger.
+     * The name of the repository where you want to create or update the trigger.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository where you want to create or update the
-     *        trigger.
+     *        The name of the repository where you want to create or update the trigger.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -58,12 +56,10 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the repository where you want to create or update the
-     * trigger.
+     * The name of the repository where you want to create or update the trigger.
      * </p>
      * 
-     * @return The name of the repository where you want to create or update the
-     *         trigger.
+     * @return The name of the repository where you want to create or update the trigger.
      */
 
     public String getRepositoryName() {
@@ -72,15 +68,12 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the repository where you want to create or update the
-     * trigger.
+     * The name of the repository where you want to create or update the trigger.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository where you want to create or update the
-     *        trigger.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository where you want to create or update the trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRepositoryTriggersRequest withRepositoryName(String repositoryName) {
@@ -123,23 +116,19 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
      * The JSON block of configuration information for each trigger.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTriggers(java.util.Collection)} or
-     * {@link #withTriggers(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param triggers
      *        The JSON block of configuration information for each trigger.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutRepositoryTriggersRequest withTriggers(
-            RepositoryTrigger... triggers) {
+    public PutRepositoryTriggersRequest withTriggers(RepositoryTrigger... triggers) {
         if (this.triggers == null) {
-            setTriggers(new java.util.ArrayList<RepositoryTrigger>(
-                    triggers.length));
+            setTriggers(new java.util.ArrayList<RepositoryTrigger>(triggers.length));
         }
         for (RepositoryTrigger ele : triggers) {
             this.triggers.add(ele);
@@ -154,19 +143,17 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
      * 
      * @param triggers
      *        The JSON block of configuration information for each trigger.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutRepositoryTriggersRequest withTriggers(
-            java.util.Collection<RepositoryTrigger> triggers) {
+    public PutRepositoryTriggersRequest withTriggers(java.util.Collection<RepositoryTrigger> triggers) {
         setTriggers(triggers);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -177,9 +164,9 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: " + getTriggers());
+            sb.append("Triggers: ").append(getTriggers());
         sb.append("}");
         return sb.toString();
     }
@@ -194,16 +181,13 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
         if (obj instanceof PutRepositoryTriggersRequest == false)
             return false;
         PutRepositoryTriggersRequest other = (PutRepositoryTriggersRequest) obj;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getTriggers() == null ^ this.getTriggers() == null)
             return false;
-        if (other.getTriggers() != null
-                && other.getTriggers().equals(this.getTriggers()) == false)
+        if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
         return true;
     }
@@ -213,12 +197,8 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
         return hashCode;
     }
 
@@ -226,4 +206,5 @@ public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
     public PutRepositoryTriggersRequest clone() {
         return (PutRepositoryTriggersRequest) super.clone();
     }
+
 }

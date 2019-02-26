@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,8 +49,8 @@
  * myUpload.addProgressListener(myProgressListener);
  *
  * // Or you can block the current thread and wait for your transfer to
- * // to complete.  If the transfer fails, this method will throw an
- * // AmazonClientException or AmazonServiceException detailing the reason.
+ * // to complete.  If the transfer fails, this method will throw a
+ * // SdkClientException or AmazonServiceException detailing the reason.
  * myUpload.waitForCompletion();
  * </pre>
  *

@@ -1,40 +1,38 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      */
     private String nextPageToken;
@@ -46,47 +44,40 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
     private String registrationStatus;
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      */
     private Integer maximumPageSize;
     /**
      * <p>
-     * When set to <code>true</code>, returns the results in reverse order. By
-     * default, the results are returned in ascending alphabetical order by
-     * <code>name</code> of the domains.
+     * When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in
+     * ascending alphabetical order by <code>name</code> of the domains.
      * </p>
      */
     private Boolean reverseOrder;
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -95,24 +86,19 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call,
-     *         there are more results available. To retrieve the next page of
-     *         results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments
-     *         unchanged.</p>
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *         retrieve the next page of results, make the call again using the returned token in
+     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *         <p>
-     *         The configured <code>maximumPageSize</code> determines how many
-     *         results can be returned in a single call.
+     *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
 
     public String getNextPageToken() {
@@ -121,27 +107,21 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDomainsRequest withNextPageToken(String nextPageToken) {
@@ -183,8 +163,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      * 
      * @param registrationStatus
      *        Specifies the registration status of the domains to list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
 
@@ -204,7 +183,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -214,38 +193,33 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      * 
      * @param registrationStatus
      *        Specifies the registration status of the domains to list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
 
-    public ListDomainsRequest withRegistrationStatus(
-            RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+    public ListDomainsRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call.
-     *        <code>nextPageToken</code> can be used to obtain futher pages of
-     *        results. The default is 1000, which is the maximum allowed page
-     *        size. You can, however, specify a page size <i>smaller</i> than
-     *        the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned
-     *        per call may be fewer than the specified maximum.
+     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        specified maximum.
      */
 
     public void setMaximumPageSize(Integer maximumPageSize) {
@@ -254,24 +228,21 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call.
-     *         <code>nextPageToken</code> can be used to obtain futher pages of
-     *         results. The default is 1000, which is the maximum allowed page
-     *         size. You can, however, specify a page size <i>smaller</i> than
-     *         the maximum.</p>
+     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
+     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
+     *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
-     *         This is an upper limit only; the actual number of results
-     *         returned per call may be fewer than the specified maximum.
+     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *         specified maximum.
      */
 
     public Integer getMaximumPageSize() {
@@ -280,27 +251,23 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call.
-     *        <code>nextPageToken</code> can be used to obtain futher pages of
-     *        results. The default is 1000, which is the maximum allowed page
-     *        size. You can, however, specify a page size <i>smaller</i> than
-     *        the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned
-     *        per call may be fewer than the specified maximum.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        specified maximum.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDomainsRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -310,15 +277,13 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the results in reverse order. By
-     * default, the results are returned in ascending alphabetical order by
-     * <code>name</code> of the domains.
+     * When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in
+     * ascending alphabetical order by <code>name</code> of the domains.
      * </p>
      * 
      * @param reverseOrder
-     *        When set to <code>true</code>, returns the results in reverse
-     *        order. By default, the results are returned in ascending
-     *        alphabetical order by <code>name</code> of the domains.
+     *        When set to <code>true</code>, returns the results in reverse order. By default, the results are returned
+     *        in ascending alphabetical order by <code>name</code> of the domains.
      */
 
     public void setReverseOrder(Boolean reverseOrder) {
@@ -327,14 +292,12 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the results in reverse order. By
-     * default, the results are returned in ascending alphabetical order by
-     * <code>name</code> of the domains.
+     * When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in
+     * ascending alphabetical order by <code>name</code> of the domains.
      * </p>
      * 
-     * @return When set to <code>true</code>, returns the results in reverse
-     *         order. By default, the results are returned in ascending
-     *         alphabetical order by <code>name</code> of the domains.
+     * @return When set to <code>true</code>, returns the results in reverse order. By default, the results are returned
+     *         in ascending alphabetical order by <code>name</code> of the domains.
      */
 
     public Boolean getReverseOrder() {
@@ -343,17 +306,14 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the results in reverse order. By
-     * default, the results are returned in ascending alphabetical order by
-     * <code>name</code> of the domains.
+     * When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in
+     * ascending alphabetical order by <code>name</code> of the domains.
      * </p>
      * 
      * @param reverseOrder
-     *        When set to <code>true</code>, returns the results in reverse
-     *        order. By default, the results are returned in ascending
-     *        alphabetical order by <code>name</code> of the domains.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When set to <code>true</code>, returns the results in reverse order. By default, the results are returned
+     *        in ascending alphabetical order by <code>name</code> of the domains.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDomainsRequest withReverseOrder(Boolean reverseOrder) {
@@ -363,14 +323,12 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the results in reverse order. By
-     * default, the results are returned in ascending alphabetical order by
-     * <code>name</code> of the domains.
+     * When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in
+     * ascending alphabetical order by <code>name</code> of the domains.
      * </p>
      * 
-     * @return When set to <code>true</code>, returns the results in reverse
-     *         order. By default, the results are returned in ascending
-     *         alphabetical order by <code>name</code> of the domains.
+     * @return When set to <code>true</code>, returns the results in reverse order. By default, the results are returned
+     *         in ascending alphabetical order by <code>name</code> of the domains.
      */
 
     public Boolean isReverseOrder() {
@@ -378,8 +336,8 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -390,13 +348,13 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getRegistrationStatus() != null)
-            sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");
+            sb.append("RegistrationStatus: ").append(getRegistrationStatus()).append(",");
         if (getMaximumPageSize() != null)
-            sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
+            sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder());
+            sb.append("ReverseOrder: ").append(getReverseOrder());
         sb.append("}");
         return sb.toString();
     }
@@ -413,26 +371,19 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
         ListDomainsRequest other = (ListDomainsRequest) obj;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
-        if (other.getRegistrationStatus() == null
-                ^ this.getRegistrationStatus() == null)
+        if (other.getRegistrationStatus() == null ^ this.getRegistrationStatus() == null)
             return false;
-        if (other.getRegistrationStatus() != null
-                && other.getRegistrationStatus().equals(
-                        this.getRegistrationStatus()) == false)
+        if (other.getRegistrationStatus() != null && other.getRegistrationStatus().equals(this.getRegistrationStatus()) == false)
             return false;
-        if (other.getMaximumPageSize() == null
-                ^ this.getMaximumPageSize() == null)
+        if (other.getMaximumPageSize() == null ^ this.getMaximumPageSize() == null)
             return false;
-        if (other.getMaximumPageSize() != null
-                && other.getMaximumPageSize().equals(this.getMaximumPageSize()) == false)
+        if (other.getMaximumPageSize() != null && other.getMaximumPageSize().equals(this.getMaximumPageSize()) == false)
             return false;
         if (other.getReverseOrder() == null ^ this.getReverseOrder() == null)
             return false;
-        if (other.getReverseOrder() != null
-                && other.getReverseOrder().equals(this.getReverseOrder()) == false)
+        if (other.getReverseOrder() != null && other.getReverseOrder().equals(this.getReverseOrder()) == false)
             return false;
         return true;
     }
@@ -442,22 +393,10 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrationStatus() == null) ? 0
-                        : getRegistrationStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaximumPageSize() == null) ? 0 : getMaximumPageSize()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReverseOrder() == null) ? 0 : getReverseOrder()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationStatus() == null) ? 0 : getRegistrationStatus().hashCode());
+        hashCode = prime * hashCode + ((getMaximumPageSize() == null) ? 0 : getMaximumPageSize().hashCode());
+        hashCode = prime * hashCode + ((getReverseOrder() == null) ? 0 : getReverseOrder().hashCode());
         return hashCode;
     }
 
@@ -465,4 +404,5 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
     public ListDomainsRequest clone() {
         return (ListDomainsRequest) super.clone();
     }
+
 }

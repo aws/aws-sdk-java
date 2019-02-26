@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * This input determines which step to describe.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeStepRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeStepRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -72,8 +73,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * 
      * @param clusterId
      *        The identifier of the cluster with steps to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStepRequest withClusterId(String clusterId) {
@@ -113,8 +113,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * 
      * @param stepId
      *        The identifier of the step to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStepRequest withStepId(String stepId) {
@@ -123,8 +122,8 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,9 +134,9 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getStepId() != null)
-            sb.append("StepId: " + getStepId());
+            sb.append("StepId: ").append(getStepId());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +153,11 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
         DescribeStepRequest other = (DescribeStepRequest) obj;
         if (other.getClusterId() == null ^ this.getClusterId() == null)
             return false;
-        if (other.getClusterId() != null
-                && other.getClusterId().equals(this.getClusterId()) == false)
+        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
         if (other.getStepId() == null ^ this.getStepId() == null)
             return false;
-        if (other.getStepId() != null
-                && other.getStepId().equals(this.getStepId()) == false)
+        if (other.getStepId() != null && other.getStepId().equals(this.getStepId()) == false)
             return false;
         return true;
     }
@@ -170,10 +167,8 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStepId() == null) ? 0 : getStepId().hashCode());
+        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getStepId() == null) ? 0 : getStepId().hashCode());
         return hashCode;
     }
 
@@ -181,4 +176,5 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
     public DescribeStepRequest clone() {
         return (DescribeStepRequest) super.clone();
     }
+
 }

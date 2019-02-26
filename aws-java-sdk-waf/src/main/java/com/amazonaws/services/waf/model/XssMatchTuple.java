@@ -1,92 +1,164 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the part of a web request that you want AWS WAF to inspect for
- * cross-site scripting attacks and, if you want AWS WAF to inspect a header,
- * the name of the header.
+ * Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you
+ * want AWS WAF to inspect a header, the name of the header.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchTuple" target="_top">AWS API
+ *      Documentation</a>
  */
-public class XssMatchTuple implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class XssMatchTuple implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -104,14 +176,18 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      */
     private String textTransformation;
 
     /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for cross-site scripting attacks.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -119,7 +195,11 @@ public class XssMatchTuple implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
+     * @return Specifies where in a web request to look for cross-site scripting attacks.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -127,9 +207,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
      * @param fieldToMatch
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies where in a web request to look for cross-site scripting attacks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public XssMatchTuple withFieldToMatch(FieldToMatch fieldToMatch) {
@@ -139,63 +223,128 @@ public class XssMatchTuple implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -213,78 +362,138 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      * 
      * @param textTransformation
-     *        Text transformations eliminate some of the unusual formatting that
-     *        attackers use in web requests in an effort to bypass AWS WAF. If
-     *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>FieldToMatch</code> before inspecting a request for a
-     *        match.</p>
+     *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
+     *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+     *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating
-     *        system commandline command and using unusual formatting to
-     *        disguise some or all of the command, use this option to perform
-     *        the following transformations:
+     *        When you're concerned that attackers are injecting an operating system command line command and using
+     *        unusual formatting to disguise some or all of the command, use this option to perform the following
+     *        transformations:
      *        </p>
      *        <ul>
-     *        <li>Delete the following characters: \ " ' ^</li>
-     *        <li>Delete spaces before the following characters: / (</li>
-     *        <li>Replace the following characters with a space: , ;</li>
-     *        <li>Replace multiple spaces with one space</li>
-     *        <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     *        <li>
+     *        <p>
+     *        Delete the following characters: \ " ' ^
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delete spaces before the following characters: / (
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace the following characters with a space: , ;
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace multiple spaces with one space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Convert uppercase letters (A-Z) to lowercase (a-z)
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>COMPRESS_WHITE_SPACE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace the following characters with a space
-     *        character (decimal 32):
+     *        Use this option to replace the following characters with a space character (decimal 32):
      *        </p>
      *        <ul>
-     *        <li>\f, formfeed, decimal 12</li>
-     *        <li>\t, tab, decimal 9</li>
-     *        <li>\n, newline, decimal 10</li>
-     *        <li>\r, carriage return, decimal 13</li>
-     *        <li>\v, vertical tab, decimal 11</li>
-     *        <li>non-breaking space, decimal 160</li>
+     *        <li>
+     *        <p>
+     *        \f, formfeed, decimal 12
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \t, tab, decimal 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \n, newline, decimal 10
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \r, carriage return, decimal 13
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \v, vertical tab, decimal 11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        non-breaking space, decimal 160
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces
-     *        with one space.
+     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      *        </p>
      *        <p>
      *        <b>HTML_ENTITY_DECODE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace HTML-encoded characters with unencoded
-     *        characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     *        operations:
+     *        Use this option to replace HTML-encoded characters with unencoded characters.
+     *        <code>HTML_ENTITY_DECODE</code> performs the following operations:
      *        </p>
      *        <ul>
-     *        <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     *        <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking
-     *        space, decimal 160</li>
-     *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     *        </p>
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     *        <li>Replaces characters that are represented in hexadecimal
-     *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
-     *        characters</li>
-     *        <li>Replaces characters that are represented in decimal format,
-     *        <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>LOWERCASE</b>
      *        </p>
      *        <p>
-     *        Use this option to convert uppercase letters (A-Z) to lowercase
-     *        (a-z).
+     *        Use this option to convert uppercase letters (A-Z) to lowercase (a-z).
      *        </p>
      *        <p>
      *        <b>URL_DECODE</b>
@@ -296,8 +505,7 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        <b>NONE</b>
      *        </p>
      *        <p>
-     *        Specify <code>NONE</code> if you don't want to perform any text
-     *        transformations.
+     *        Specify <code>NONE</code> if you don't want to perform any text transformations.
      * @see TextTransformation
      */
 
@@ -307,63 +515,128 @@ public class XssMatchTuple implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -381,78 +654,137 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      * 
-     * @return Text transformations eliminate some of the unusual formatting
-     *         that attackers use in web requests in an effort to bypass AWS
-     *         WAF. If you specify a transformation, AWS WAF performs the
-     *         transformation on <code>FieldToMatch</code> before inspecting a
-     *         request for a match.</p>
+     * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
+     *         effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+     *         <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *         <p>
+     *         You can only specify a single type of TextTransformation.
+     *         </p>
      *         <p>
      *         <b>CMD_LINE</b>
      *         </p>
      *         <p>
-     *         When you're concerned that attackers are injecting an operating
-     *         system commandline command and using unusual formatting to
-     *         disguise some or all of the command, use this option to perform
-     *         the following transformations:
+     *         When you're concerned that attackers are injecting an operating system command line command and using
+     *         unusual formatting to disguise some or all of the command, use this option to perform the following
+     *         transformations:
      *         </p>
      *         <ul>
-     *         <li>Delete the following characters: \ " ' ^</li>
-     *         <li>Delete spaces before the following characters: / (</li>
-     *         <li>Replace the following characters with a space: , ;</li>
-     *         <li>Replace multiple spaces with one space</li>
-     *         <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     *         <li>
+     *         <p>
+     *         Delete the following characters: \ " ' ^
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delete spaces before the following characters: / (
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replace the following characters with a space: , ;
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replace multiple spaces with one space
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Convert uppercase letters (A-Z) to lowercase (a-z)
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>COMPRESS_WHITE_SPACE</b>
      *         </p>
      *         <p>
-     *         Use this option to replace the following characters with a space
-     *         character (decimal 32):
+     *         Use this option to replace the following characters with a space character (decimal 32):
      *         </p>
      *         <ul>
-     *         <li>\f, formfeed, decimal 12</li>
-     *         <li>\t, tab, decimal 9</li>
-     *         <li>\n, newline, decimal 10</li>
-     *         <li>\r, carriage return, decimal 13</li>
-     *         <li>\v, vertical tab, decimal 11</li>
-     *         <li>non-breaking space, decimal 160</li>
+     *         <li>
+     *         <p>
+     *         \f, formfeed, decimal 12
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         \t, tab, decimal 9
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         \n, newline, decimal 10
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         \r, carriage return, decimal 13
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         \v, vertical tab, decimal 11
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         non-breaking space, decimal 160
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces
-     *         with one space.
+     *         <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      *         </p>
      *         <p>
      *         <b>HTML_ENTITY_DECODE</b>
      *         </p>
      *         <p>
-     *         Use this option to replace HTML-encoded characters with unencoded
-     *         characters. <code>HTML_ENTITY_DECODE</code> performs the
-     *         following operations:
+     *         Use this option to replace HTML-encoded characters with unencoded characters.
+     *         <code>HTML_ENTITY_DECODE</code> performs the following operations:
      *         </p>
      *         <ul>
-     *         <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     *         <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking
-     *         space, decimal 160</li>
-     *         <li>Replaces <code>(ampersand)lt;</code> with a "less than"
-     *         symbol</li>
-     *         <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     *         <li>Replaces characters that are represented in hexadecimal
-     *         format, <code>(ampersand)#xhhhh;</code>, with the corresponding
-     *         characters</li>
-     *         <li>Replaces characters that are represented in decimal format,
-     *         <code>(ampersand)#nnnn;</code>, with the corresponding characters
+     *         <li>
+     *         <p>
+     *         Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     *         corresponding characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     *         corresponding characters
+     *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         <b>LOWERCASE</b>
      *         </p>
      *         <p>
-     *         Use this option to convert uppercase letters (A-Z) to lowercase
-     *         (a-z).
+     *         Use this option to convert uppercase letters (A-Z) to lowercase (a-z).
      *         </p>
      *         <p>
      *         <b>URL_DECODE</b>
@@ -464,8 +796,7 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *         <b>NONE</b>
      *         </p>
      *         <p>
-     *         Specify <code>NONE</code> if you don't want to perform any text
-     *         transformations.
+     *         Specify <code>NONE</code> if you don't want to perform any text transformations.
      * @see TextTransformation
      */
 
@@ -475,63 +806,128 @@ public class XssMatchTuple implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -549,78 +945,138 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      * 
      * @param textTransformation
-     *        Text transformations eliminate some of the unusual formatting that
-     *        attackers use in web requests in an effort to bypass AWS WAF. If
-     *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>FieldToMatch</code> before inspecting a request for a
-     *        match.</p>
+     *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
+     *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+     *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating
-     *        system commandline command and using unusual formatting to
-     *        disguise some or all of the command, use this option to perform
-     *        the following transformations:
+     *        When you're concerned that attackers are injecting an operating system command line command and using
+     *        unusual formatting to disguise some or all of the command, use this option to perform the following
+     *        transformations:
      *        </p>
      *        <ul>
-     *        <li>Delete the following characters: \ " ' ^</li>
-     *        <li>Delete spaces before the following characters: / (</li>
-     *        <li>Replace the following characters with a space: , ;</li>
-     *        <li>Replace multiple spaces with one space</li>
-     *        <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     *        <li>
+     *        <p>
+     *        Delete the following characters: \ " ' ^
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delete spaces before the following characters: / (
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace the following characters with a space: , ;
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace multiple spaces with one space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Convert uppercase letters (A-Z) to lowercase (a-z)
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>COMPRESS_WHITE_SPACE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace the following characters with a space
-     *        character (decimal 32):
+     *        Use this option to replace the following characters with a space character (decimal 32):
      *        </p>
      *        <ul>
-     *        <li>\f, formfeed, decimal 12</li>
-     *        <li>\t, tab, decimal 9</li>
-     *        <li>\n, newline, decimal 10</li>
-     *        <li>\r, carriage return, decimal 13</li>
-     *        <li>\v, vertical tab, decimal 11</li>
-     *        <li>non-breaking space, decimal 160</li>
+     *        <li>
+     *        <p>
+     *        \f, formfeed, decimal 12
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \t, tab, decimal 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \n, newline, decimal 10
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \r, carriage return, decimal 13
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \v, vertical tab, decimal 11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        non-breaking space, decimal 160
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces
-     *        with one space.
+     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      *        </p>
      *        <p>
      *        <b>HTML_ENTITY_DECODE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace HTML-encoded characters with unencoded
-     *        characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     *        operations:
+     *        Use this option to replace HTML-encoded characters with unencoded characters.
+     *        <code>HTML_ENTITY_DECODE</code> performs the following operations:
      *        </p>
      *        <ul>
-     *        <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     *        <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking
-     *        space, decimal 160</li>
-     *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     *        </p>
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     *        <li>Replaces characters that are represented in hexadecimal
-     *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
-     *        characters</li>
-     *        <li>Replaces characters that are represented in decimal format,
-     *        <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>LOWERCASE</b>
      *        </p>
      *        <p>
-     *        Use this option to convert uppercase letters (A-Z) to lowercase
-     *        (a-z).
+     *        Use this option to convert uppercase letters (A-Z) to lowercase (a-z).
      *        </p>
      *        <p>
      *        <b>URL_DECODE</b>
@@ -632,10 +1088,8 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        <b>NONE</b>
      *        </p>
      *        <p>
-     *        Specify <code>NONE</code> if you don't want to perform any text
-     *        transformations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify <code>NONE</code> if you don't want to perform any text transformations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TextTransformation
      */
 
@@ -646,63 +1100,128 @@ public class XssMatchTuple implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -720,78 +1239,138 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      * 
      * @param textTransformation
-     *        Text transformations eliminate some of the unusual formatting that
-     *        attackers use in web requests in an effort to bypass AWS WAF. If
-     *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>FieldToMatch</code> before inspecting a request for a
-     *        match.</p>
+     *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
+     *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+     *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating
-     *        system commandline command and using unusual formatting to
-     *        disguise some or all of the command, use this option to perform
-     *        the following transformations:
+     *        When you're concerned that attackers are injecting an operating system command line command and using
+     *        unusual formatting to disguise some or all of the command, use this option to perform the following
+     *        transformations:
      *        </p>
      *        <ul>
-     *        <li>Delete the following characters: \ " ' ^</li>
-     *        <li>Delete spaces before the following characters: / (</li>
-     *        <li>Replace the following characters with a space: , ;</li>
-     *        <li>Replace multiple spaces with one space</li>
-     *        <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     *        <li>
+     *        <p>
+     *        Delete the following characters: \ " ' ^
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delete spaces before the following characters: / (
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace the following characters with a space: , ;
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace multiple spaces with one space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Convert uppercase letters (A-Z) to lowercase (a-z)
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>COMPRESS_WHITE_SPACE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace the following characters with a space
-     *        character (decimal 32):
+     *        Use this option to replace the following characters with a space character (decimal 32):
      *        </p>
      *        <ul>
-     *        <li>\f, formfeed, decimal 12</li>
-     *        <li>\t, tab, decimal 9</li>
-     *        <li>\n, newline, decimal 10</li>
-     *        <li>\r, carriage return, decimal 13</li>
-     *        <li>\v, vertical tab, decimal 11</li>
-     *        <li>non-breaking space, decimal 160</li>
+     *        <li>
+     *        <p>
+     *        \f, formfeed, decimal 12
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \t, tab, decimal 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \n, newline, decimal 10
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \r, carriage return, decimal 13
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \v, vertical tab, decimal 11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        non-breaking space, decimal 160
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces
-     *        with one space.
+     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      *        </p>
      *        <p>
      *        <b>HTML_ENTITY_DECODE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace HTML-encoded characters with unencoded
-     *        characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     *        operations:
+     *        Use this option to replace HTML-encoded characters with unencoded characters.
+     *        <code>HTML_ENTITY_DECODE</code> performs the following operations:
      *        </p>
      *        <ul>
-     *        <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     *        <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking
-     *        space, decimal 160</li>
-     *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     *        </p>
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     *        <li>Replaces characters that are represented in hexadecimal
-     *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
-     *        characters</li>
-     *        <li>Replaces characters that are represented in decimal format,
-     *        <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>LOWERCASE</b>
      *        </p>
      *        <p>
-     *        Use this option to convert uppercase letters (A-Z) to lowercase
-     *        (a-z).
+     *        Use this option to convert uppercase letters (A-Z) to lowercase (a-z).
      *        </p>
      *        <p>
      *        <b>URL_DECODE</b>
@@ -803,74 +1382,138 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        <b>NONE</b>
      *        </p>
      *        <p>
-     *        Specify <code>NONE</code> if you don't want to perform any text
-     *        transformations.
+     *        Specify <code>NONE</code> if you don't want to perform any text transformations.
      * @see TextTransformation
      */
 
     public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation.toString();
+        withTextTransformation(textTransformation);
     }
 
     /**
      * <p>
-     * Text transformations eliminate some of the unusual formatting that
-     * attackers use in web requests in an effort to bypass AWS WAF. If you
-     * specify a transformation, AWS WAF performs the transformation on
-     * <code>FieldToMatch</code> before inspecting a request for a match.
+     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
+     * bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
+     * before inspecting a request for a match.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system
-     * commandline command and using unusual formatting to disguise some or all
-     * of the command, use this option to perform the following transformations:
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
+     * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
-     * <li>Delete the following characters: \ " ' ^</li>
-     * <li>Delete spaces before the following characters: / (</li>
-     * <li>Replace the following characters with a space: , ;</li>
-     * <li>Replace multiple spaces with one space</li>
-     * <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     * <li>
+     * <p>
+     * Delete the following characters: \ " ' ^
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete spaces before the following characters: / (
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace the following characters with a space: , ;
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replace multiple spaces with one space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Convert uppercase letters (A-Z) to lowercase (a-z)
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>COMPRESS_WHITE_SPACE</b>
      * </p>
      * <p>
-     * Use this option to replace the following characters with a space
-     * character (decimal 32):
+     * Use this option to replace the following characters with a space character (decimal 32):
      * </p>
      * <ul>
-     * <li>\f, formfeed, decimal 12</li>
-     * <li>\t, tab, decimal 9</li>
-     * <li>\n, newline, decimal 10</li>
-     * <li>\r, carriage return, decimal 13</li>
-     * <li>\v, vertical tab, decimal 11</li>
-     * <li>non-breaking space, decimal 160</li>
+     * <li>
+     * <p>
+     * \f, formfeed, decimal 12
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \t, tab, decimal 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \n, newline, decimal 10
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \r, carriage return, decimal 13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * \v, vertical tab, decimal 11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * non-breaking space, decimal 160
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one
-     * space.
+     * <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      * </p>
      * <p>
      * <b>HTML_ENTITY_DECODE</b>
      * </p>
      * <p>
-     * Use this option to replace HTML-encoded characters with unencoded
-     * characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     * operations:
+     * Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+     * performs the following operations:
      * </p>
      * <ul>
-     * <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     * <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space,
-     * decimal 160</li>
-     * <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</li>
-     * <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     * <li>Replaces characters that are represented in hexadecimal format,
-     * <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li>
-     * <li>Replaces characters that are represented in decimal format,
-     * <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     * corresponding characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>LOWERCASE</b>
@@ -888,78 +1531,138 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * <b>NONE</b>
      * </p>
      * <p>
-     * Specify <code>NONE</code> if you don't want to perform any text
-     * transformations.
+     * Specify <code>NONE</code> if you don't want to perform any text transformations.
      * </p>
      * 
      * @param textTransformation
-     *        Text transformations eliminate some of the unusual formatting that
-     *        attackers use in web requests in an effort to bypass AWS WAF. If
-     *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>FieldToMatch</code> before inspecting a request for a
-     *        match.</p>
+     *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
+     *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
+     *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating
-     *        system commandline command and using unusual formatting to
-     *        disguise some or all of the command, use this option to perform
-     *        the following transformations:
+     *        When you're concerned that attackers are injecting an operating system command line command and using
+     *        unusual formatting to disguise some or all of the command, use this option to perform the following
+     *        transformations:
      *        </p>
      *        <ul>
-     *        <li>Delete the following characters: \ " ' ^</li>
-     *        <li>Delete spaces before the following characters: / (</li>
-     *        <li>Replace the following characters with a space: , ;</li>
-     *        <li>Replace multiple spaces with one space</li>
-     *        <li>Convert uppercase letters (A-Z) to lowercase (a-z)</li>
+     *        <li>
+     *        <p>
+     *        Delete the following characters: \ " ' ^
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delete spaces before the following characters: / (
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace the following characters with a space: , ;
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replace multiple spaces with one space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Convert uppercase letters (A-Z) to lowercase (a-z)
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>COMPRESS_WHITE_SPACE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace the following characters with a space
-     *        character (decimal 32):
+     *        Use this option to replace the following characters with a space character (decimal 32):
      *        </p>
      *        <ul>
-     *        <li>\f, formfeed, decimal 12</li>
-     *        <li>\t, tab, decimal 9</li>
-     *        <li>\n, newline, decimal 10</li>
-     *        <li>\r, carriage return, decimal 13</li>
-     *        <li>\v, vertical tab, decimal 11</li>
-     *        <li>non-breaking space, decimal 160</li>
+     *        <li>
+     *        <p>
+     *        \f, formfeed, decimal 12
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \t, tab, decimal 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \n, newline, decimal 10
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \r, carriage return, decimal 13
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        \v, vertical tab, decimal 11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        non-breaking space, decimal 160
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces
-     *        with one space.
+     *        <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
      *        </p>
      *        <p>
      *        <b>HTML_ENTITY_DECODE</b>
      *        </p>
      *        <p>
-     *        Use this option to replace HTML-encoded characters with unencoded
-     *        characters. <code>HTML_ENTITY_DECODE</code> performs the following
-     *        operations:
+     *        Use this option to replace HTML-encoded characters with unencoded characters.
+     *        <code>HTML_ENTITY_DECODE</code> performs the following operations:
      *        </p>
      *        <ul>
-     *        <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li>
-     *        <li>Replaces <code>(ampersand)nbsp;</code> with a non-breaking
-     *        space, decimal 160</li>
-     *        <li>Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)quot;</code> with <code>"</code>
+     *        </p>
      *        </li>
-     *        <li>Replaces <code>(ampersand)gt;</code> with <code>></code></li>
-     *        <li>Replaces characters that are represented in hexadecimal
-     *        format, <code>(ampersand)#xhhhh;</code>, with the corresponding
-     *        characters</li>
-     *        <li>Replaces characters that are represented in decimal format,
-     *        <code>(ampersand)#nnnn;</code>, with the corresponding characters</li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces <code>(ampersand)gt;</code> with <code>&gt;</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the
+     *        corresponding characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>LOWERCASE</b>
      *        </p>
      *        <p>
-     *        Use this option to convert uppercase letters (A-Z) to lowercase
-     *        (a-z).
+     *        Use this option to convert uppercase letters (A-Z) to lowercase (a-z).
      *        </p>
      *        <p>
      *        <b>URL_DECODE</b>
@@ -971,22 +1674,19 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        <b>NONE</b>
      *        </p>
      *        <p>
-     *        Specify <code>NONE</code> if you don't want to perform any text
-     *        transformations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify <code>NONE</code> if you don't want to perform any text transformations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TextTransformation
      */
 
-    public XssMatchTuple withTextTransformation(
-            TextTransformation textTransformation) {
-        setTextTransformation(textTransformation);
+    public XssMatchTuple withTextTransformation(TextTransformation textTransformation) {
+        this.textTransformation = textTransformation.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -997,9 +1697,9 @@ public class XssMatchTuple implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldToMatch() != null)
-            sb.append("FieldToMatch: " + getFieldToMatch() + ",");
+            sb.append("FieldToMatch: ").append(getFieldToMatch()).append(",");
         if (getTextTransformation() != null)
-            sb.append("TextTransformation: " + getTextTransformation());
+            sb.append("TextTransformation: ").append(getTextTransformation());
         sb.append("}");
         return sb.toString();
     }
@@ -1016,15 +1716,11 @@ public class XssMatchTuple implements Serializable, Cloneable {
         XssMatchTuple other = (XssMatchTuple) obj;
         if (other.getFieldToMatch() == null ^ this.getFieldToMatch() == null)
             return false;
-        if (other.getFieldToMatch() != null
-                && other.getFieldToMatch().equals(this.getFieldToMatch()) == false)
+        if (other.getFieldToMatch() != null && other.getFieldToMatch().equals(this.getFieldToMatch()) == false)
             return false;
-        if (other.getTextTransformation() == null
-                ^ this.getTextTransformation() == null)
+        if (other.getTextTransformation() == null ^ this.getTextTransformation() == null)
             return false;
-        if (other.getTextTransformation() != null
-                && other.getTextTransformation().equals(
-                        this.getTextTransformation()) == false)
+        if (other.getTextTransformation() != null && other.getTextTransformation().equals(this.getTextTransformation()) == false)
             return false;
         return true;
     }
@@ -1034,14 +1730,8 @@ public class XssMatchTuple implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFieldToMatch() == null) ? 0 : getFieldToMatch()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTextTransformation() == null) ? 0
-                        : getTextTransformation().hashCode());
+        hashCode = prime * hashCode + ((getFieldToMatch() == null) ? 0 : getFieldToMatch().hashCode());
+        hashCode = prime * hashCode + ((getTextTransformation() == null) ? 0 : getTextTransformation().hashCode());
         return hashCode;
     }
 
@@ -1050,9 +1740,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
         try {
             return (XssMatchTuple) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.XssMatchTupleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

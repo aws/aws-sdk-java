@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,14 +14,19 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
+import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
-import org.apache.http.annotation.NotThreadSafe;
-
 import java.net.InetAddress;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
@@ -47,6 +52,11 @@ public class ClientConfiguration {
      */
     public static final int DEFAULT_CLIENT_EXECUTION_TIMEOUT = 0;
 
+    /**
+     * The default on whether to disable {@code Socket} proxies.
+     */
+    public static final boolean DEFAULT_DISABLE_SOCKET_PROXY = false;
+
     /** The default max connection pool size. */
     public static final int DEFAULT_MAX_CONNECTIONS = 50;
 
@@ -54,7 +64,7 @@ public class ClientConfiguration {
      * The default on whether to utilize the USE_EXPECT_CONTINUE handshake for operations. Currently
      * only honored for PUT operations.
      */
-    private static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
+    public static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
 
     /** The default HTTP user agent header for AWS Java SDK clients. */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
@@ -91,6 +101,11 @@ public class ClientConfiguration {
     public static final long DEFAULT_CONNECTION_MAX_IDLE_MILLIS = 60 * 1000;
 
     /**
+     * The default time a connection can be idle in the connection pool before it must be validated that it's still open.
+     */
+    public static final int DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS = 5 * 1000;
+
+    /**
      * The default on whether to use TCP KeepAlive.
      */
     public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
@@ -98,15 +113,26 @@ public class ClientConfiguration {
     /**
      * The default on whether to throttle retries.
      */
-    public static final boolean DEFAULT_THROTTLE_RETRIES = false;
+    public static final boolean DEFAULT_THROTTLE_RETRIES = true;
+
+    /**
+     * The default on whether to cache response metadata.
+     */
+    public static final boolean DEFAULT_CACHE_RESPONSE_METADATA = true;
 
     /**
      * The default response metadata cache size.
      */
     public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
 
-    /** The HTTP user agent header passed with all HTTP requests. */
-    private String userAgent = DEFAULT_USER_AGENT;
+    public static final int DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING = 100;
+
+
+    /** A prefix to the HTTP user agent header passed with all HTTP requests.  */
+    private String userAgentPrefix = DEFAULT_USER_AGENT;
+
+    /** A suffix to the HTTP user agent header. */
+    private String userAgentSuffix;
 
     /**
      * The maximum number of times that a retryable failed request (ex: a 5xx response from a
@@ -128,6 +154,13 @@ public class ClientConfiguration {
      */
     private Protocol protocol = Protocol.HTTPS;
 
+    /**
+     * The protocol to use when connecting to an HTTP proxy.
+     * <p>
+     * The default configuration is to use {@link Protocol#HTTP}.
+     */
+    private Protocol proxyProtocol = Protocol.HTTP;
+
     /** Optionally specifies the proxy host to connect through. */
     private String proxyHost = null;
 
@@ -148,6 +181,20 @@ public class ClientConfiguration {
 
     /** Optional specifies the hosts that should be accessed without going through the proxy. */
     private String nonProxyHosts = null;
+
+    /** Specifies the proxy authentication methods that should be used, in priority order. */
+    private List<ProxyAuthenticationMethod> proxyAuthenticationMethods = null;
+
+    /**
+     * Controls whether {@link java.net.Socket}s created by the client should
+     * use the default {@link java.net.ProxySelector} when connecting to the
+     * remote host to find an appropriate proxy or connect directly to the
+     * host.
+     * <p />
+     * Note this property is only guaranteed to be honored when using the
+     * default connection factories.
+     */
+    private boolean disableSocketProxy = DEFAULT_DISABLE_SOCKET_PROXY;
 
     /**
      * Whether to pre-emptively authenticate against a proxy server using basic authentication
@@ -227,6 +274,8 @@ public class ClientConfiguration {
      */
     private long connectionMaxIdleMillis = DEFAULT_CONNECTION_MAX_IDLE_MILLIS;
 
+    private int validateAfterInactivityMillis = DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS;
+
     /**
      * Optional override to enable support for TCP KeepAlive (not to be confused with HTTP
      * KeepAlive). TCP KeepAlive can be used to detect misbehaving routers or down servers through
@@ -238,7 +287,20 @@ public class ClientConfiguration {
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
 
     /**
-     * Size of the response metadata cache.
+     * Whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     */
+    private boolean cacheResponseMetadata = DEFAULT_CACHE_RESPONSE_METADATA;
+
+    /**
+     * Size of the response metadata cache, if it is enabled.
      * <p>
      * Response metadata is typically used for troubleshooting issues with AWS support staff when
      * services aren't acting as expected.
@@ -257,6 +319,11 @@ public class ClientConfiguration {
     private SecureRandom secureRandom;
 
     /**
+     * Headers to be added to all requests
+     */
+    private Map<String, String> headers = new HashMap<String, String>();
+
+    /**
      * Optional override to enable/disable support for HTTP/1.1 handshake utilizing EXPECT:
      * 100-Continue. The default value is true.
      * <p>
@@ -269,43 +336,71 @@ public class ClientConfiguration {
     private boolean useExpectContinue = DEFAULT_USE_EXPECT_CONTINUE;
 
     /**
+     * The maximum number of throttled retries if the initial request
+     * fails.
+     */
+    private int maxConsecutiveRetriesBeforeThrottling = DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING;
+
+    /**
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
+
+    /**
+     * Configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    private boolean disableHostPrefixInjection;
 
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
 
     public ClientConfiguration(ClientConfiguration other) {
-        this.connectionTimeout = other.connectionTimeout;
-        this.maxConnections = other.maxConnections;
-        this.maxErrorRetry = other.maxErrorRetry;
-        this.retryPolicy = other.retryPolicy;
-        this.throttleRetries = other.throttleRetries;
-        this.localAddress = other.localAddress;
-        this.protocol = other.protocol;
-        this.proxyDomain = other.proxyDomain;
-        this.proxyHost = other.proxyHost;
-        this.proxyPassword = other.proxyPassword;
-        this.proxyPort = other.proxyPort;
-        this.proxyUsername = other.proxyUsername;
-        this.proxyWorkstation = other.proxyWorkstation;
-        this.nonProxyHosts = other.nonProxyHosts;
-        this.preemptiveBasicProxyAuth = other.preemptiveBasicProxyAuth;
-        this.socketTimeout = other.socketTimeout;
-        this.requestTimeout = other.requestTimeout;
-        this.clientExecutionTimeout = other.clientExecutionTimeout;
-        this.userAgent = other.userAgent;
-        this.useReaper = other.useReaper;
-        this.useGzip = other.useGzip;
-        this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
-        this.socketSendBufferSizeHint = other.socketSendBufferSizeHint;
-        this.signerOverride = other.signerOverride;
-        this.responseMetadataCacheSize = other.responseMetadataCacheSize;
-        this.dnsResolver = other.dnsResolver;
-        this.useExpectContinue = other.useExpectContinue;
-        this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.apacheHttpClientConfig);
+        this.connectionTimeout = other.getConnectionTimeout();
+        this.maxConnections = other.getMaxConnections();
+        this.maxErrorRetry = other.getMaxErrorRetry();
+        this.retryPolicy = other.getRetryPolicy();
+        this.throttleRetries = other.useThrottledRetries();
+        this.localAddress = other.getLocalAddress();
+        this.protocol = other.getProtocol();
+        this.proxyProtocol = other.getProxyProtocol();
+        this.proxyDomain = other.getProxyDomain();
+        this.proxyHost = other.getProxyHost();
+        this.proxyPassword = other.getProxyPassword();
+        this.proxyPort = other.getProxyPort();
+        this.proxyUsername = other.getProxyUsername();
+        this.proxyWorkstation = other.getProxyWorkstation();
+        this.nonProxyHosts = other.getNonProxyHosts();
+        this.disableSocketProxy = other.disableSocketProxy();
+        this.proxyAuthenticationMethods = other.getProxyAuthenticationMethods();
+        this.preemptiveBasicProxyAuth = other.isPreemptiveBasicProxyAuth();
+        this.socketTimeout = other.getSocketTimeout();
+        this.requestTimeout = other.getRequestTimeout();
+        this.clientExecutionTimeout = other.getClientExecutionTimeout();
+        this.userAgentPrefix = other.getUserAgentPrefix();
+        this.userAgentSuffix = other.getUserAgentSuffix();
+        this.useReaper = other.useReaper();
+        this.useGzip = other.useGzip();
+        this.socketSendBufferSizeHint = other.getSocketBufferSizeHints()[0];
+        this.socketReceiveBufferSizeHint = other.getSocketBufferSizeHints()[1];
+        this.signerOverride = other.getSignerOverride();
+        this.responseMetadataCacheSize = other.getResponseMetadataCacheSize();
+        this.dnsResolver = other.getDnsResolver();
+        this.useExpectContinue = other.isUseExpectContinue();
+        this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.getApacheHttpClientConfig());
+        this.cacheResponseMetadata = other.getCacheResponseMetadata();
+        this.connectionTTL = other.getConnectionTTL();
+        this.connectionMaxIdleMillis = other.getConnectionMaxIdleMillis();
+        this.validateAfterInactivityMillis = other.getValidateAfterInactivityMillis();
+        this.tcpKeepAlive = other.useTcpKeepAlive();
+        this.secureRandom = other.getSecureRandom();
+        this.headers.clear();
+        this.headers.putAll(other.getHeaders());
+        this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
+        this.disableHostPrefixInjection = other.disableHostPrefixInjection;
     }
 
     /**
@@ -389,34 +484,96 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the HTTP user agent header to send with all requests.
-     *
+     * @deprecated Replaced by {@link #getUserAgentPrefix()} and {@link #getUserAgentSuffix()}
      * @return The user agent string to use when sending requests.
      */
+    @Deprecated
     public String getUserAgent() {
-        return userAgent;
+        return getUserAgentPrefix();
     }
 
     /**
-     * Sets the HTTP user agent header to send with all requests.
-     *
+     * @deprecated Replaced by {@link #setUserAgentPrefix(String)} and {@link #setUserAgentSuffix(String)}
      * @param userAgent
      *            The user agent string to use when sending requests.
      */
+    @Deprecated
     public void setUserAgent(String userAgent) {
-        this.userAgent = userAgent;
+        setUserAgentPrefix(userAgent);
     }
 
     /**
-     * Sets the HTTP user agent header used in requests and returns the updated ClientConfiguration
-     * object.
-     *
+     * @deprecated Replaced by {@link #withUserAgentPrefix(String)} and {@link #withUserAgentSuffix(String)}
      * @param userAgent
      *            The user agent string to use when sending requests.
      * @return The updated ClientConfiguration object.
      */
+    @Deprecated
     public ClientConfiguration withUserAgent(String userAgent) {
-        setUserAgent(userAgent);
+        return withUserAgentPrefix(userAgent);
+    }
+
+    /**
+     * Returns the HTTP user agent header prefix to send with all requests.
+     *
+     * @return The user agent string prefix to use when sending requests.
+     */
+    public String getUserAgentPrefix() {
+        return userAgentPrefix;
+    }
+
+    /**
+     * Sets the HTTP user agent prefix to send with all requests.
+     *
+     * @param prefix
+     *            The string to prefix to user agent to use when sending requests.
+     */
+    public void setUserAgentPrefix(String prefix) {
+        this.userAgentPrefix = prefix;
+    }
+
+    /**
+     * Sets the HTTP user agent prefix header used in requests and returns the updated ClientConfiguration
+     * object.
+     *
+     * @param prefix
+     *            The string to prefix to user agent to use when sending requests.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUserAgentPrefix(String prefix) {
+        setUserAgentPrefix(prefix);
+        return this;
+    }
+
+    /**
+     * Returns the HTTP user agent header suffix to add to the end of the user agent header on all requests.
+     *
+     * @return The user agent string suffix to use when sending requests.
+     */
+    public String getUserAgentSuffix() {
+        return userAgentSuffix;
+    }
+
+    /**
+     * Sets the HTTP user agent suffix to send with all requests.
+     *
+     * @param suffix
+     *            The string to suffix to user agent to use when sending requests.
+     */
+    public void setUserAgentSuffix(String suffix) {
+        this.userAgentSuffix = suffix;
+    }
+
+    /**
+     * Sets the HTTP user agent suffix header used in requests and returns the updated ClientConfiguration
+     * object.
+     *
+     * @param suffix
+     *            The string to suffix to user agent to use when sending requests.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUserAgentSuffix(String suffix) {
+        setUserAgentSuffix(suffix);
         return this;
     }
 
@@ -460,8 +617,35 @@ public class ClientConfiguration {
     }
 
     /**
+     * @return The {@link Protocol} to use for connecting to the proxy.
+     */
+    public Protocol getProxyProtocol() {
+        return proxyProtocol;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyProtocol(Protocol proxyProtocol) {
+        this.proxyProtocol = proxyProtocol == null ? Protocol.HTTP : proxyProtocol;
+        return this;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     */
+    public void setProxyProtocol(Protocol proxyProtocol) {
+        withProxyProtocol(proxyProtocol);
+    }
+
+    /**
      * Returns the Java system property for proxy host depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyHost, otherwise
      * returns value of http.proxyHost.
      */
@@ -475,7 +659,7 @@ public class ClientConfiguration {
      * Returns the optional proxy host the client will connect
      * through.  Returns either the proxyHost set on this object, or
      * if not provided, checks the value of the Java system property
-     * for proxy host according to {@link this.getProtocol()}: i.e. if
+     * for proxy host according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyHost, otherwise returns value of http.proxyHost.
      *
@@ -510,7 +694,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy port depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyPort, otherwise
      * returns value of http.proxyPort.  Defaults to {@link this.proxyPort}
      * if the system property is not set with a valid port number.
@@ -530,7 +714,7 @@ public class ClientConfiguration {
      * Returns the optional proxy port the client will connect
      * through.  Returns either the proxyPort set on this object, or
      * if not provided, checks the value of the Java system property
-     * for proxy port according to {@link this.getProtocol()}: i.e. if
+     * for proxy port according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyPort, otherwise returns value of http.proxyPort.
      *
@@ -564,8 +748,36 @@ public class ClientConfiguration {
     }
 
     /**
+     * Set whether to disable proxies at the socket level.
+     *
+     * @param disableSocketProxy Whether to disable proxies at the socket level.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withDisableSocketProxy(boolean disableSocketProxy) {
+        this.disableSocketProxy = disableSocketProxy;
+        return this;
+    }
+
+    /**
+     * Set whether to disable proxies at the socket level.
+     *
+     * @param disableSocketProxy Whether to disable proxies at the socket level.
+     */
+    public void setDisableSocketProxy(boolean disableSocketProxy) {
+        withDisableSocketProxy(disableSocketProxy);
+    }
+
+    /**
+     * @return Whether to disable proxies at the socket level.
+     */
+    public boolean disableSocketProxy() {
+        return disableSocketProxy;
+    }
+
+    /**
      * Returns the Java system property for proxy user name depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyUser, otherwise
      * returns value of http.proxyUser.
      */
@@ -579,10 +791,10 @@ public class ClientConfiguration {
      * Returns the optional proxy user name to use if connecting
      * through a proxy.  Returns either the proxyUsername set on this
      * object, or if not provided, checks the value of the Java system
-     * property for proxy user name according to {@link this.getProtocol()}:
+     * property for proxy user name according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
-     * property https.proxyUsername, otherwise returns value of
-     * http.proxyUsername.
+     * property https.proxyUser, otherwise returns value of
+     * http.proxyUser.
      *
      * @return The optional proxy user name the configured client will use if connecting through a
      *         proxy.
@@ -615,7 +827,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy password depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyPassword, otherwise
      * returns value of http.proxyPassword.
      */
@@ -629,7 +841,7 @@ public class ClientConfiguration {
      * Returns the optional proxy password to use if connecting
      * through a proxy.  Returns either the proxyPassword set on this
      * object, or if not provided, checks the value of the Java system
-     * property for proxy password according to {@link this.getProtocol()}:
+     * property for proxy password according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
      * property https.proxyPassword, otherwise returns value of
      * http.proxyPassword.
@@ -735,7 +947,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for nonProxyHosts. We still honor this property even
-     * {@link this.getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
+     * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
      */
     private String getNonProxyHostsProperty() {
         return getSystemProperty("http.nonProxyHosts");
@@ -745,7 +957,7 @@ public class ClientConfiguration {
      * Returns the optional hosts the client will access without going
      * through the proxy. Returns either the nonProxyHosts set on this
      * object, or if not provided, checks the value of the Java system property
-     * for nonProxyHosts according to {@link this.getProtocol()}: i.e. if
+     * for nonProxyHosts according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns null, otherwise returns value of http.nonProxyHosts.
      *
      * @return The hosts the client will connect through bypassing the proxy.
@@ -775,6 +987,52 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withNonProxyHosts(String nonProxyHosts) {
         setNonProxyHosts(nonProxyHosts);
+        return this;
+    }
+
+    /**
+     * Returns the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order they
+     * should be attempted.
+     *
+     * @return An unmodifiable view of the proxy authentication methods that should be attempted, in order.
+     */
+    public List<ProxyAuthenticationMethod> getProxyAuthenticationMethods() {
+        return this.proxyAuthenticationMethods;
+    }
+
+    /**
+     * Configure the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order
+     * they should be attempted. Any methods not included in this list will not be attempted. If one authentication method fails,
+     * the next method will be attempted, until a working method is found (or all methods have been attempted).
+     *
+     * <p>Setting this value to null indicates using the default behavior, which is to try all authentication methods in an
+     * unspecified order.</p>
+     *
+     * @param proxyAuthenticationMethods The proxy authentication methods to be attempted, in the order they should be attempted.
+     */
+    public void setProxyAuthenticationMethods(List<ProxyAuthenticationMethod> proxyAuthenticationMethods) {
+        if(proxyAuthenticationMethods == null) {
+            this.proxyAuthenticationMethods = null;
+        } else {
+            ValidationUtils.assertNotEmpty(proxyAuthenticationMethods, "proxyAuthenticationMethods");
+            this.proxyAuthenticationMethods =
+                    Collections.unmodifiableList(new ArrayList<ProxyAuthenticationMethod>(proxyAuthenticationMethods));
+        }
+    }
+
+    /**
+     * Configure the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order
+     * they should be attempted. Any methods not included in this list will not be attempted. If one authentication method fails,
+     * the next method will be attempted, until a working method is found (or all methods have been attempted).
+     *
+     * <p>Setting this value to null indicates using the default behavior, which is to try all authentication methods in an
+     * unspecified order.</p>
+     *
+     * @param proxyAuthenticationMethods The proxy authentication methods to be attempted, in the order they should be attempted.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyAuthenticationMethods(List<ProxyAuthenticationMethod> proxyAuthenticationMethods) {
+        setProxyAuthenticationMethods(proxyAuthenticationMethods);
         return this;
     }
 
@@ -872,7 +1130,7 @@ public class ClientConfiguration {
      *
      * @param socketTimeout
      *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     *            established, open connection before the connection times out and is closed.
      */
     public void setSocketTimeout(int socketTimeout) {
         this.socketTimeout = socketTimeout;
@@ -885,7 +1143,7 @@ public class ClientConfiguration {
      *
      * @param socketTimeout
      *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     *            established, open connection before the connection times out and is closed.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withSocketTimeout(int socketTimeout) {
@@ -1081,7 +1339,7 @@ public class ClientConfiguration {
      *
      * @param clientExecutionTimeout
      *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     *            of an API call. A value of '0' disables this feature.
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
     public void setClientExecutionTimeout(int clientExecutionTimeout) {
@@ -1116,7 +1374,7 @@ public class ClientConfiguration {
      *
      * @param clientExecutionTimeout
      *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     *            of an API call. A value of '0' disables this feature.
      * @return The updated ClientConfiguration object for method chaining
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
@@ -1230,6 +1488,49 @@ public class ClientConfiguration {
     public ClientConfiguration withThrottledRetries(boolean use) {
         setUseThrottleRetries(use);
         return this;
+    }
+
+    /**
+     * Set the maximum number of consecutive failed retries that the client will permit before
+     * throttling all subsequent retries of failed requests.
+     * <p>
+     * Note: This does not guarantee that each failed request will be retried up to this many times.
+     * Depending on the configured {@link RetryPolicy} and the number of past failed and successful
+     * requests, the actual number of retries attempted may be less.
+     * <p>
+     * This has a default value of {@link #DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING}.
+     *
+     * @param maxConsecutiveRetriesBeforeThrottling The maximum number of consecutive retries.
+     */
+    public void setMaxConsecutiveRetriesBeforeThrottling(int maxConsecutiveRetriesBeforeThrottling) {
+        this.maxConsecutiveRetriesBeforeThrottling = ValidationUtils.assertIsPositive(maxConsecutiveRetriesBeforeThrottling,
+                "maxConsecutiveRetriesBeforeThrottling");
+    }
+    /**
+     * Set the maximum number of consecutive failed retries that the client will permit before
+     * throttling all subsequent retries of failed requests.
+     * <p>
+     * Note: This does not guarantee that each failed request will be retried up to this many times.
+     * Depending on the configured {@link RetryPolicy} and the number of past failed and successful
+     * requests, the actual number of retries attempted may be less.
+     * <p>
+     * This has a default value of {@link #DEFAULT_MAX_CONSECUTIVE_RETRIES_BEFORE_THROTTLING}.
+     *
+     * @param maxConsecutiveRetriesBeforeThrottling The maximum number of consecutive retries.
+     *
+     * @return This object for chaining.
+     */
+    public ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int maxConsecutiveRetriesBeforeThrottling) {
+        setMaxConsecutiveRetriesBeforeThrottling(maxConsecutiveRetriesBeforeThrottling);
+        return this;
+    }
+
+    /**
+     * @return Set the maximum number of consecutive failed retries that the client will permit
+     * before throttling all subsequent retries of failed requests.
+     */
+    public int getMaxConsecutiveRetriesBeforeThrottling() {
+        return maxConsecutiveRetriesBeforeThrottling;
     }
 
     /**
@@ -1607,6 +1908,62 @@ public class ClientConfiguration {
     }
 
     /**
+     * Returns the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be
+     * validated to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the
+     * connection. Setting this value to larger values may increase the likelihood that the connection is not usable, potentially
+     * resulting in a {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing
+     * connections from the connection pool. It is recommended to tune this setting based on how long a service allows a
+     * connection to be idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     */
+    public int getValidateAfterInactivityMillis() {
+        return validateAfterInactivityMillis;
+    }
+
+    /**
+     * Sets the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be validated
+     * to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the connection. Setting
+     * this value to larger values may increase the likelihood that the connection is not usable, potentially resulting in a
+     * {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing connections
+     * from the connection pool. It is recommended to tune this setting based on how long a service allows a connection to be
+     * idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     *
+     * @param validateAfterInactivityMillis The allowed time, in milliseconds, a connection can be idle before it must be
+     *                                      re-validated.
+     */
+    public void setValidateAfterInactivityMillis(int validateAfterInactivityMillis) {
+        this.validateAfterInactivityMillis = validateAfterInactivityMillis;
+    }
+
+    /**
+     * Sets the amount of time (in milliseconds) that a connection can be idle in the connection pool before it must be validated
+     * to ensure it's still open. This "stale connection check" adds a small bit of overhead to validate the connection. Setting
+     * this value to larger values may increase the likelihood that the connection is not usable, potentially resulting in a
+     * {@link org.apache.http.NoHttpResponseException}. Lowering this setting increases the overhead when leasing connections
+     * from the connection pool. It is recommended to tune this setting based on how long a service allows a connection to be
+     * idle before closing.
+     *
+     * <p>A non positive value disables validation of connections.</p>
+     *
+     * <p>The default value is {@value #DEFAULT_VALIDATE_AFTER_INACTIVITY_MILLIS} milliseconds.</p>
+     *
+     * @param validateAfterInactivityMillis The allowed time, in milliseconds, a connection can be idle before it must be
+     *                                      re-validated.
+     * @return The updated {@link ClientConfiguration} object.
+     */
+    public ClientConfiguration withValidateAfterInactivityMillis(int validateAfterInactivityMillis) {
+        setValidateAfterInactivityMillis(validateAfterInactivityMillis);
+        return this;
+    }
+
+    /**
      * Returns whether or not TCP KeepAlive support is enabled.
      */
     public boolean useTcpKeepAlive() {
@@ -1656,6 +2013,57 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withDnsResolver(final DnsResolver resolver) {
         setDnsResolver(resolver);
+        return this;
+    }
+
+    /**
+     * Returns whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @return true if response metadata will be cached
+     */
+    public boolean getCacheResponseMetadata() { return cacheResponseMetadata; }
+
+    /**
+     * Sets whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @param shouldCache true if response metadata should be cached
+     */
+    public void setCacheResponseMetadata(boolean shouldCache) {
+        this.cacheResponseMetadata = shouldCache;
+    }
+
+    /**
+     * Sets whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @param shouldCache true if response metadata should be cached
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withCacheResponseMetadata(final boolean shouldCache) {
+        setCacheResponseMetadata(shouldCache);
         return this;
     }
 
@@ -1754,6 +2162,73 @@ public class ClientConfiguration {
     public ClientConfiguration withUseExpectContinue(boolean useExpectContinue) {
         setUseExpectContinue(useExpectContinue);
 
+        return this;
+    }
+
+    /**
+     * Adds a header to be added on all requests and returns the {@link ClientConfiguration} object
+     *
+     * @param name
+     *            the name of the header
+     * @param value
+     *            the value of the header
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withHeader(String name, String value) {
+        addHeader(name, value);
+        return this;
+    }
+
+    /**
+     * Adds a header to be added on all requests
+     *
+     * @param name
+     *            the name of the header
+     * @param value
+     *            the value of the header
+     */
+    public void addHeader(String name, String value) {
+        headers.put(name, value);
+    }
+
+    /**
+     * Returns headers to be added to all requests
+     *
+     * @return headers to be added to all requests
+     */
+    public Map<String, String> getHeaders() {
+        return Collections.unmodifiableMap(headers);
+    }
+
+    /**
+     * Returns the boolean value to indicate if the host prefix injection is disabled or not.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public boolean isDisableHostPrefixInjection() {
+        return disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public void setDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        this.disableHostPrefixInjection = disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public ClientConfiguration withDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        setDisableHostPrefixInjection(disableHostPrefixInjection);
         return this;
     }
 }

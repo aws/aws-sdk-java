@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a get deployment configuration operation.
+ * Represents the output of a GetDeploymentConfig operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetDeploymentConfigResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetDeploymentConfigResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,8 +42,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
      *        Information about the deployment configuration.
      */
 
-    public void setDeploymentConfigInfo(
-            DeploymentConfigInfo deploymentConfigInfo) {
+    public void setDeploymentConfigInfo(DeploymentConfigInfo deploymentConfigInfo) {
         this.deploymentConfigInfo = deploymentConfigInfo;
     }
 
@@ -65,19 +65,17 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
      * 
      * @param deploymentConfigInfo
      *        Information about the deployment configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDeploymentConfigResult withDeploymentConfigInfo(
-            DeploymentConfigInfo deploymentConfigInfo) {
+    public GetDeploymentConfigResult withDeploymentConfigInfo(DeploymentConfigInfo deploymentConfigInfo) {
         setDeploymentConfigInfo(deploymentConfigInfo);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,7 +86,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigInfo() != null)
-            sb.append("DeploymentConfigInfo: " + getDeploymentConfigInfo());
+            sb.append("DeploymentConfigInfo: ").append(getDeploymentConfigInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -103,12 +101,9 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
         if (obj instanceof GetDeploymentConfigResult == false)
             return false;
         GetDeploymentConfigResult other = (GetDeploymentConfigResult) obj;
-        if (other.getDeploymentConfigInfo() == null
-                ^ this.getDeploymentConfigInfo() == null)
+        if (other.getDeploymentConfigInfo() == null ^ this.getDeploymentConfigInfo() == null)
             return false;
-        if (other.getDeploymentConfigInfo() != null
-                && other.getDeploymentConfigInfo().equals(
-                        this.getDeploymentConfigInfo()) == false)
+        if (other.getDeploymentConfigInfo() != null && other.getDeploymentConfigInfo().equals(this.getDeploymentConfigInfo()) == false)
             return false;
         return true;
     }
@@ -118,10 +113,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentConfigInfo() == null) ? 0
-                        : getDeploymentConfigInfo().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfigInfo() == null) ? 0 : getDeploymentConfigInfo().hashCode());
         return hashCode;
     }
 
@@ -130,9 +122,8 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
         try {
             return (GetDeploymentConfigResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

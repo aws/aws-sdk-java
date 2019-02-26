@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,13 +28,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.TestPreConditions;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.UnresponsiveMockServerTestBase;
 import com.amazonaws.http.exception.HttpRequestTimeoutException;
 import com.amazonaws.http.request.EmptyHttpRequest;
+
+import utils.model.EmptyAmazonWebServiceRequest;
 
 /**
  * Tests requiring an unresponsive server, that is a server that accepts a connection but doesn't
@@ -45,9 +46,6 @@ public class UnresponsiveServerTests extends UnresponsiveMockServerTestBase {
     private static final int REQUEST_TIMEOUT = 5 * 1000;
     private static final int LONGER_SOCKET_TIMEOUT = REQUEST_TIMEOUT * PRECISION_MULTIPLIER;
     private static final int SHORTER_SOCKET_TIMEOUT = REQUEST_TIMEOUT / PRECISION_MULTIPLIER;
-
-    private static class EmptyAmazonWebServiceRequest extends AmazonWebServiceRequest {
-    }
 
     private AmazonHttpClient httpClient;
 

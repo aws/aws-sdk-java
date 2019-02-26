@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,17 +22,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * SetVaultAccessPolicy input.
  * </p>
  */
-public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SetVaultAccessPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
@@ -53,21 +49,17 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -76,21 +68,16 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
-     * @return The <code>AccountId</code> value is the AWS account ID of the
-     *         account that owns the vault. You can either specify an AWS
-     *         account ID or optionally a single apos<code>-</code>apos
-     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
-     *         associated with the credentials used to sign the request. If you
-     *         use an account ID, do not include any hyphens (apos-apos) in the
-     *         ID.
+     * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *         ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -99,23 +86,18 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetVaultAccessPolicyRequest withAccountId(String accountId) {
@@ -155,8 +137,7 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
      * 
      * @param vaultName
      *        The name of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetVaultAccessPolicyRequest withVaultName(String vaultName) {
@@ -196,8 +177,7 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
      * 
      * @param policy
      *        The vault access policy as a JSON string.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetVaultAccessPolicyRequest withPolicy(VaultAccessPolicy policy) {
@@ -206,8 +186,8 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -218,11 +198,11 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy());
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -239,18 +219,15 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
         SetVaultAccessPolicyRequest other = (SetVaultAccessPolicyRequest) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
         if (other.getVaultName() == null ^ this.getVaultName() == null)
             return false;
-        if (other.getVaultName() != null
-                && other.getVaultName().equals(this.getVaultName()) == false)
+        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false)
             return false;
         if (other.getPolicy() == null ^ this.getPolicy() == null)
             return false;
-        if (other.getPolicy() != null
-                && other.getPolicy().equals(this.getPolicy()) == false)
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
         return true;
     }
@@ -260,12 +237,9 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         return hashCode;
     }
 
@@ -273,4 +247,5 @@ public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
     public SetVaultAccessPolicyRequest clone() {
         return (SetVaultAccessPolicyRequest) super.clone();
     }
+
 }

@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the request to reset a user's password.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,19 +36,30 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
     private String clientId;
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      */
     private String secretHash;
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
+    /**
+     * <p>
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
 
     /**
      * <p>
@@ -81,8 +93,7 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
      * 
      * @param clientId
      *        The ID of the client associated with the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ForgotPasswordRequest withClientId(String clientId) {
@@ -92,15 +103,13 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
      * @param secretHash
-     *        A keyed-hash message authentication code (HMAC) calculated using
-     *        the secret key of a user pool client and username plus the client
-     *        ID in the message.
+     *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *        username plus the client ID in the message.
      */
 
     public void setSecretHash(String secretHash) {
@@ -109,14 +118,12 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
-     * @return A keyed-hash message authentication code (HMAC) calculated using
-     *         the secret key of a user pool client and username plus the client
-     *         ID in the message.
+     * @return A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *         username plus the client ID in the message.
      */
 
     public String getSecretHash() {
@@ -125,17 +132,14 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A keyed-hash message authentication code (HMAC) calculated using the
-     * secret key of a user pool client and username plus the client ID in the
-     * message.
+     * A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     * username plus the client ID in the message.
      * </p>
      * 
      * @param secretHash
-     *        A keyed-hash message authentication code (HMAC) calculated using
-     *        the secret key of a user pool client and username plus the client
-     *        ID in the message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and
+     *        username plus the client ID in the message.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ForgotPasswordRequest withSecretHash(String secretHash) {
@@ -145,13 +149,57 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ForgotPasswordRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to
-     *        retrieve a forgotten password.
+     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
      */
 
     public void setUsername(String username) {
@@ -160,12 +208,10 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
-     * @return The user name of the user for whom you want to enter a code to
-     *         retrieve a forgotten password.
+     * @return The user name of the user for whom you want to enter a code to reset a forgotten password.
      */
 
     public String getUsername() {
@@ -174,15 +220,12 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a
-     * forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to
-     *        retrieve a forgotten password.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ForgotPasswordRequest withUsername(String username) {
@@ -191,8 +234,48 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ForgotPasswordRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -203,11 +286,15 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: " + getSecretHash() + ",");
+            sb.append("SecretHash: ").append("***Sensitive Data Redacted***").append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -224,18 +311,23 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
         ForgotPasswordRequest other = (ForgotPasswordRequest) obj;
         if (other.getClientId() == null ^ this.getClientId() == null)
             return false;
-        if (other.getClientId() != null
-                && other.getClientId().equals(this.getClientId()) == false)
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
         if (other.getSecretHash() == null ^ this.getSecretHash() == null)
             return false;
-        if (other.getSecretHash() != null
-                && other.getSecretHash().equals(this.getSecretHash()) == false)
+        if (other.getSecretHash() != null && other.getSecretHash().equals(this.getSecretHash()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
+            return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
             return false;
         return true;
     }
@@ -245,12 +337,11 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClientId() == null) ? 0 : getClientId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSecretHash() == null) ? 0 : getSecretHash().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getSecretHash() == null) ? 0 : getSecretHash().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
         return hashCode;
     }
 
@@ -258,4 +349,5 @@ public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
     public ForgotPasswordRequest clone() {
         return (ForgotPasswordRequest) super.clone();
     }
+
 }

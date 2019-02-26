@@ -15,7 +15,7 @@ package com.amazonaws.metrics.internal.cloudwatch;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.http.annotation.NotThreadSafe;
+import com.amazonaws.annotation.NotThreadSafe;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;

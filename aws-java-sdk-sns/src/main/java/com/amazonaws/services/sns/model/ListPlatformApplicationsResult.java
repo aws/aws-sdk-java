@@ -1,53 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.sns.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Response for ListPlatformApplications action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListPlatformApplicationsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications
-     * action.
+     * Platform applications returned when calling ListPlatformApplications action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlatformApplication> platformApplications;
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action
-     * if additional records are available after the first page results.
+     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
+     * after the first page results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications
-     * action.
+     * Platform applications returned when calling ListPlatformApplications action.
      * </p>
      * 
-     * @return Platform applications returned when calling
-     *         ListPlatformApplications action.
+     * @return Platform applications returned when calling ListPlatformApplications action.
      */
 
     public java.util.List<PlatformApplication> getPlatformApplications() {
@@ -59,50 +57,40 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications
-     * action.
+     * Platform applications returned when calling ListPlatformApplications action.
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling
-     *        ListPlatformApplications action.
+     *        Platform applications returned when calling ListPlatformApplications action.
      */
 
-    public void setPlatformApplications(
-            java.util.Collection<PlatformApplication> platformApplications) {
+    public void setPlatformApplications(java.util.Collection<PlatformApplication> platformApplications) {
         if (platformApplications == null) {
             this.platformApplications = null;
             return;
         }
 
-        this.platformApplications = new com.amazonaws.internal.SdkInternalList<PlatformApplication>(
-                platformApplications);
+        this.platformApplications = new com.amazonaws.internal.SdkInternalList<PlatformApplication>(platformApplications);
     }
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications
-     * action.
+     * Platform applications returned when calling ListPlatformApplications action.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlatformApplications(java.util.Collection)} or
-     * {@link #withPlatformApplications(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformApplications(java.util.Collection)} or {@link #withPlatformApplications(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling
-     *        ListPlatformApplications action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Platform applications returned when calling ListPlatformApplications action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListPlatformApplicationsResult withPlatformApplications(
-            PlatformApplication... platformApplications) {
+    public ListPlatformApplicationsResult withPlatformApplications(PlatformApplication... platformApplications) {
         if (this.platformApplications == null) {
-            setPlatformApplications(new com.amazonaws.internal.SdkInternalList<PlatformApplication>(
-                    platformApplications.length));
+            setPlatformApplications(new com.amazonaws.internal.SdkInternalList<PlatformApplication>(platformApplications.length));
         }
         for (PlatformApplication ele : platformApplications) {
             this.platformApplications.add(ele);
@@ -112,33 +100,28 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications
-     * action.
+     * Platform applications returned when calling ListPlatformApplications action.
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling
-     *        ListPlatformApplications action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Platform applications returned when calling ListPlatformApplications action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListPlatformApplicationsResult withPlatformApplications(
-            java.util.Collection<PlatformApplication> platformApplications) {
+    public ListPlatformApplicationsResult withPlatformApplications(java.util.Collection<PlatformApplication> platformApplications) {
         setPlatformApplications(platformApplications);
         return this;
     }
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action
-     * if additional records are available after the first page results.
+     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
+     * after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListPlatformApplications
-     *        action if additional records are available after the first page
-     *        results.
+     *        NextToken string is returned when calling ListPlatformApplications action if additional records are
+     *        available after the first page results.
      */
 
     public void setNextToken(String nextToken) {
@@ -147,12 +130,11 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action
-     * if additional records are available after the first page results.
+     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
+     * after the first page results.
      * </p>
      * 
-     * @return NextToken string is returned when calling
-     *         ListPlatformApplications action if additional records are
+     * @return NextToken string is returned when calling ListPlatformApplications action if additional records are
      *         available after the first page results.
      */
 
@@ -162,16 +144,14 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action
-     * if additional records are available after the first page results.
+     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
+     * after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListPlatformApplications
-     *        action if additional records are available after the first page
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        NextToken string is returned when calling ListPlatformApplications action if additional records are
+     *        available after the first page results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPlatformApplicationsResult withNextToken(String nextToken) {
@@ -180,8 +160,8 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -192,10 +172,9 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplications() != null)
-            sb.append("PlatformApplications: " + getPlatformApplications()
-                    + ",");
+            sb.append("PlatformApplications: ").append(getPlatformApplications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -210,17 +189,13 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
         if (obj instanceof ListPlatformApplicationsResult == false)
             return false;
         ListPlatformApplicationsResult other = (ListPlatformApplicationsResult) obj;
-        if (other.getPlatformApplications() == null
-                ^ this.getPlatformApplications() == null)
+        if (other.getPlatformApplications() == null ^ this.getPlatformApplications() == null)
             return false;
-        if (other.getPlatformApplications() != null
-                && other.getPlatformApplications().equals(
-                        this.getPlatformApplications()) == false)
+        if (other.getPlatformApplications() != null && other.getPlatformApplications().equals(this.getPlatformApplications()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -230,12 +205,8 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPlatformApplications() == null) ? 0
-                        : getPlatformApplications().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPlatformApplications() == null) ? 0 : getPlatformApplications().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -244,9 +215,8 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
         try {
             return (ListPlatformApplicationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

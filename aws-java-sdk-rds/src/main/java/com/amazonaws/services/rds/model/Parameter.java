@@ -1,34 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a request parameter in the
- * <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions.
- * </p>
- * <p>
- * This data type is used as a response element in the
- * <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a>
+ * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a>
  * actions.
  * </p>
+ * <p>
+ * This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and
+ * <a>DescribeDBParameters</a> actions.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Parameter" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Parameter implements Serializable, Cloneable {
 
     /**
@@ -75,9 +75,8 @@ public class Parameter implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      */
     private Boolean isModifiable;
@@ -93,6 +92,12 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      */
     private String applyMethod;
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
 
     /**
      * <p>
@@ -126,8 +131,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param parameterName
      *        Specifies the name of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withParameterName(String parameterName) {
@@ -167,8 +171,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param parameterValue
      *        Specifies the value of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withParameterValue(String parameterValue) {
@@ -208,8 +211,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param description
      *        Provides a description of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withDescription(String description) {
@@ -249,8 +251,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param source
      *        Indicates the source of the parameter value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withSource(String source) {
@@ -290,8 +291,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param applyType
      *        Specifies the engine specific parameters type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withApplyType(String applyType) {
@@ -331,8 +331,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param dataType
      *        Specifies the valid data type for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withDataType(String dataType) {
@@ -372,8 +371,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param allowedValues
      *        Specifies the valid range of values for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withAllowedValues(String allowedValues) {
@@ -383,15 +381,13 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -400,14 +396,12 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean getIsModifiable() {
@@ -416,17 +410,14 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withIsModifiable(Boolean isModifiable) {
@@ -436,14 +427,12 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean isModifiable() {
@@ -482,8 +471,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param minimumEngineVersion
      *        The earliest engine version to which the parameter can apply.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Parameter withMinimumEngineVersion(String minimumEngineVersion) {
@@ -525,8 +513,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param applyMethod
      *        Indicates when to apply parameter updates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplyMethod
      */
 
@@ -546,7 +533,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public void setApplyMethod(ApplyMethod applyMethod) {
-        this.applyMethod = applyMethod.toString();
+        withApplyMethod(applyMethod);
     }
 
     /**
@@ -556,19 +543,91 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @param applyMethod
      *        Indicates when to apply parameter updates.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplyMethod
      */
 
     public Parameter withApplyMethod(ApplyMethod applyMethod) {
-        setApplyMethod(applyMethod);
+        this.applyMethod = applyMethod.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @return The valid DB engine modes.
+     */
+
+    public java.util.List<String> getSupportedEngineModes() {
+        if (supportedEngineModes == null) {
+            supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedEngineModes;
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     */
+
+    public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        if (supportedEngineModes == null) {
+            this.supportedEngineModes = null;
+            return;
+        }
+
+        this.supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes);
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSupportedEngineModes(String... supportedEngineModes) {
+        if (this.supportedEngineModes == null) {
+            setSupportedEngineModes(new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes.length));
+        }
+        for (String ele : supportedEngineModes) {
+            this.supportedEngineModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        setSupportedEngineModes(supportedEngineModes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -579,26 +638,27 @@ public class Parameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterName() != null)
-            sb.append("ParameterName: " + getParameterName() + ",");
+            sb.append("ParameterName: ").append(getParameterName()).append(",");
         if (getParameterValue() != null)
-            sb.append("ParameterValue: " + getParameterValue() + ",");
+            sb.append("ParameterValue: ").append(getParameterValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getApplyType() != null)
-            sb.append("ApplyType: " + getApplyType() + ",");
+            sb.append("ApplyType: ").append(getApplyType()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues() + ",");
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: " + getIsModifiable() + ",");
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
         if (getMinimumEngineVersion() != null)
-            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion()
-                    + ",");
+            sb.append("MinimumEngineVersion: ").append(getMinimumEngineVersion()).append(",");
         if (getApplyMethod() != null)
-            sb.append("ApplyMethod: " + getApplyMethod());
+            sb.append("ApplyMethod: ").append(getApplyMethod()).append(",");
+        if (getSupportedEngineModes() != null)
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes());
         sb.append("}");
         return sb.toString();
     }
@@ -615,56 +675,47 @@ public class Parameter implements Serializable, Cloneable {
         Parameter other = (Parameter) obj;
         if (other.getParameterName() == null ^ this.getParameterName() == null)
             return false;
-        if (other.getParameterName() != null
-                && other.getParameterName().equals(this.getParameterName()) == false)
+        if (other.getParameterName() != null && other.getParameterName().equals(this.getParameterName()) == false)
             return false;
-        if (other.getParameterValue() == null
-                ^ this.getParameterValue() == null)
+        if (other.getParameterValue() == null ^ this.getParameterValue() == null)
             return false;
-        if (other.getParameterValue() != null
-                && other.getParameterValue().equals(this.getParameterValue()) == false)
+        if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
-        if (other.getSource() != null
-                && other.getSource().equals(this.getSource()) == false)
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getApplyType() == null ^ this.getApplyType() == null)
             return false;
-        if (other.getApplyType() != null
-                && other.getApplyType().equals(this.getApplyType()) == false)
+        if (other.getApplyType() != null && other.getApplyType().equals(this.getApplyType()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
-        if (other.getDataType() != null
-                && other.getDataType().equals(this.getDataType()) == false)
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
         if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
             return false;
-        if (other.getAllowedValues() != null
-                && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
             return false;
         if (other.getIsModifiable() == null ^ this.getIsModifiable() == null)
             return false;
-        if (other.getIsModifiable() != null
-                && other.getIsModifiable().equals(this.getIsModifiable()) == false)
+        if (other.getIsModifiable() != null && other.getIsModifiable().equals(this.getIsModifiable()) == false)
             return false;
-        if (other.getMinimumEngineVersion() == null
-                ^ this.getMinimumEngineVersion() == null)
+        if (other.getMinimumEngineVersion() == null ^ this.getMinimumEngineVersion() == null)
             return false;
-        if (other.getMinimumEngineVersion() != null
-                && other.getMinimumEngineVersion().equals(
-                        this.getMinimumEngineVersion()) == false)
+        if (other.getMinimumEngineVersion() != null && other.getMinimumEngineVersion().equals(this.getMinimumEngineVersion()) == false)
             return false;
         if (other.getApplyMethod() == null ^ this.getApplyMethod() == null)
             return false;
-        if (other.getApplyMethod() != null
-                && other.getApplyMethod().equals(this.getApplyMethod()) == false)
+        if (other.getApplyMethod() != null && other.getApplyMethod().equals(this.getApplyMethod()) == false)
+            return false;
+        if (other.getSupportedEngineModes() == null ^ this.getSupportedEngineModes() == null)
+            return false;
+        if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
             return false;
         return true;
     }
@@ -674,38 +725,17 @@ public class Parameter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterName() == null) ? 0 : getParameterName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getParameterValue() == null) ? 0 : getParameterValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getApplyType() == null) ? 0 : getApplyType().hashCode());
-        hashCode = prime * hashCode
-                + ((getDataType() == null) ? 0 : getDataType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowedValues() == null) ? 0 : getAllowedValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsModifiable() == null) ? 0 : getIsModifiable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinimumEngineVersion() == null) ? 0
-                        : getMinimumEngineVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getApplyMethod() == null) ? 0 : getApplyMethod().hashCode());
+        hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode());
+        hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getApplyType() == null) ? 0 : getApplyType().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
+        hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
+        hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getApplyMethod() == null) ? 0 : getApplyMethod().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         return hashCode;
     }
 
@@ -714,9 +744,8 @@ public class Parameter implements Serializable, Cloneable {
         try {
             return (Parameter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

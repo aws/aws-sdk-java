@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents the result of a list device pools request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListDevicePoolsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDevicePoolsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +34,8 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
     private java.util.List<DevicePool> devicePools;
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      */
     private String nextToken;
@@ -75,22 +75,19 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * Information about the device pools.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDevicePools(java.util.Collection)} or
-     * {@link #withDevicePools(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDevicePools(java.util.Collection)} or {@link #withDevicePools(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param devicePools
      *        Information about the device pools.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDevicePoolsResult withDevicePools(DevicePool... devicePools) {
         if (this.devicePools == null) {
-            setDevicePools(new java.util.ArrayList<DevicePool>(
-                    devicePools.length));
+            setDevicePools(new java.util.ArrayList<DevicePool>(devicePools.length));
         }
         for (DevicePool ele : devicePools) {
             this.devicePools.add(ele);
@@ -105,28 +102,24 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * 
      * @param devicePools
      *        Information about the device pools.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDevicePoolsResult withDevicePools(
-            java.util.Collection<DevicePool> devicePools) {
+    public ListDevicePoolsResult withDevicePools(java.util.Collection<DevicePool> devicePools) {
         setDevicePools(devicePools);
         return this;
     }
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the number of items that are returned is significantly large,
-     *        this is an identifier that is also returned, which can be used in
-     *        a subsequent call to this operation to return the next set of
-     *        items in the list.
+     *        If the number of items that are returned is significantly large, this is an identifier that is also
+     *        returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *        list.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,15 +128,13 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
-     * @return If the number of items that are returned is significantly large,
-     *         this is an identifier that is also returned, which can be used in
-     *         a subsequent call to this operation to return the next set of
-     *         items in the list.
+     * @return If the number of items that are returned is significantly large, this is an identifier that is also
+     *         returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *         list.
      */
 
     public String getNextToken() {
@@ -152,18 +143,15 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the number of items that are returned is significantly large, this is
-     * an identifier that is also returned, which can be used in a subsequent
-     * call to this operation to return the next set of items in the list.
+     * If the number of items that are returned is significantly large, this is an identifier that is also returned,
+     * which can be used in a subsequent call to this operation to return the next set of items in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the number of items that are returned is significantly large,
-     *        this is an identifier that is also returned, which can be used in
-     *        a subsequent call to this operation to return the next set of
-     *        items in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the number of items that are returned is significantly large, this is an identifier that is also
+     *        returned, which can be used in a subsequent call to this operation to return the next set of items in the
+     *        list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDevicePoolsResult withNextToken(String nextToken) {
@@ -172,8 +160,8 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -184,9 +172,9 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevicePools() != null)
-            sb.append("DevicePools: " + getDevicePools() + ",");
+            sb.append("DevicePools: ").append(getDevicePools()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -203,13 +191,11 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
         ListDevicePoolsResult other = (ListDevicePoolsResult) obj;
         if (other.getDevicePools() == null ^ this.getDevicePools() == null)
             return false;
-        if (other.getDevicePools() != null
-                && other.getDevicePools().equals(this.getDevicePools()) == false)
+        if (other.getDevicePools() != null && other.getDevicePools().equals(this.getDevicePools()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -219,11 +205,8 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDevicePools() == null) ? 0 : getDevicePools().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getDevicePools() == null) ? 0 : getDevicePools().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -232,9 +215,8 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
         try {
             return (ListDevicePoolsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

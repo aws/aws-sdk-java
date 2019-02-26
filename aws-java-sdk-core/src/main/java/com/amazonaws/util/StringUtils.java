@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public class StringUtils {
 
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
-    private static final Locale LOCALE_ENGLSIH = Locale.ENGLISH;
+    private static final Locale LOCALE_ENGLISH = Locale.ENGLISH;
 
     // white space character that match Pattern.compile("\\s")
     private static final char CHAR_SPACE = ' ';
@@ -63,6 +63,10 @@ public class StringUtils {
 
     public static String fromLong(Long value) {
         return Long.toString(value);
+    }
+
+    public static String fromShort(Short value) {
+        return Short.toString(value);
     }
 
     public static String fromString(String value) {
@@ -105,6 +109,26 @@ public class StringUtils {
      */
     public static String fromDate(Date value) {
         return DateUtils.formatISO8601Date(value);
+    }
+
+    public static String fromDate(Date date, String timestampFormat) {
+        if ("unixTimestamp".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatServiceSpecificDate(date);
+        }
+
+        if ("iso8601".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatISO8601Date(date);
+        }
+
+        if ("rfc822".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatRFC822Date(date);
+        }
+
+        if ("unixTimestampInMillis".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatUnixTimestampInMills(date);
+        }
+
+        throw new IllegalArgumentException("unsupported timestamp format");
     }
 
     /**
@@ -190,10 +214,14 @@ public class StringUtils {
      * @return true if the given value is either null or the empty string
      */
     public static boolean isNullOrEmpty(String value) {
-        if (value == null) {
-            return true;
-        }
-        return value.isEmpty();
+        return value == null || value.isEmpty();
+    }
+
+    /**
+     * @return true if the given value is non-null and non-empty
+     */
+    public static boolean hasValue(String str) {
+        return !isNullOrEmpty(str);
     }
 
     /**
@@ -206,7 +234,7 @@ public class StringUtils {
         if(isNullOrEmpty(str)) {
             return str;
         }
-        return str.toLowerCase(LOCALE_ENGLSIH);
+        return str.toLowerCase(LOCALE_ENGLISH);
     }
 
     /**
@@ -219,7 +247,7 @@ public class StringUtils {
         if(isNullOrEmpty(str)) {
             return str;
         }
-        return str.toUpperCase(LOCALE_ENGLSIH);
+        return str.toUpperCase(LOCALE_ENGLISH);
     }
 
     /**
@@ -237,7 +265,7 @@ public class StringUtils {
             throw new IllegalArgumentException("Arguments cannot be null");
         }
 
-        Collator collator = Collator.getInstance(LOCALE_ENGLSIH);
+        Collator collator = Collator.getInstance(LOCALE_ENGLISH);
         return collator.compare(str1, str2);
     }
 

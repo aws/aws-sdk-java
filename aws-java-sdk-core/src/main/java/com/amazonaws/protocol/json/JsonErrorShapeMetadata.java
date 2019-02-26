@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  */
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 
@@ -28,7 +27,9 @@ public class JsonErrorShapeMetadata {
 
     private String errorCode;
 
-    private Class<? extends AmazonServiceException> modeledClass;
+    private Integer httpStatusCode;
+
+    private Class<? extends RuntimeException> modeledClass;
 
 
     public String getErrorCode() {
@@ -40,12 +41,20 @@ public class JsonErrorShapeMetadata {
         return this;
     }
 
-    public Class<? extends AmazonServiceException> getModeledClass() {
+    public Integer getHttpStatusCode() {
+        return httpStatusCode;
+    }
+
+    public JsonErrorShapeMetadata withHttpStatusCode(Integer httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
+        return this;
+    }
+
+    public Class<? extends RuntimeException> getModeledClass() {
         return modeledClass;
     }
 
-    public JsonErrorShapeMetadata withModeledClass(
-            Class<? extends AmazonServiceException> modeledClass) {
+    public JsonErrorShapeMetadata withModeledClass(Class<? extends RuntimeException> modeledClass) {
         this.modeledClass = modeledClass;
         return this;
     }

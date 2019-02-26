@@ -1,35 +1,35 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeDBClustersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter
-     * isn't case-sensitive.
+     * The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB
+     * cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -37,17 +37,7 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -55,16 +45,26 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
     private String dBClusterIdentifier;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB clusters to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -76,19 +76,17 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeDBClusters</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter
-     * isn't case-sensitive.
+     * The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB
+     * cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -96,42 +94,21 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The user-supplied DB cluster identifier. If this parameter is
-     *        specified, information from only the specific DB cluster is
-     *        returned. This parameter isn't case-sensitive.</p>
+     *        The user-supplied DB cluster identifier. If this parameter is specified, information from only the
+     *        specific DB cluster is returned. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      */
@@ -142,9 +119,8 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter
-     * isn't case-sensitive.
+     * The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB
+     * cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -152,41 +128,20 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The user-supplied DB cluster identifier. If this parameter is
-     *         specified, information from only the specific DB cluster is
-     *         returned. This parameter isn't case-sensitive.</p>
+     * @return The user-supplied DB cluster identifier. If this parameter is specified, information from only the
+     *         specific DB cluster is returned. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match an existing DBClusterIdentifier.
      *         </p>
      *         </li>
      */
@@ -197,9 +152,8 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter
-     * isn't case-sensitive.
+     * The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB
+     * cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -207,60 +161,58 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The user-supplied DB cluster identifier. If this parameter is
-     *        specified, information from only the specific DB cluster is
-     *        returned. This parameter isn't case-sensitive.</p>
+     *        The user-supplied DB cluster identifier. If this parameter is specified, information from only the
+     *        specific DB cluster is returned. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        If supplied, must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClustersRequest withDBClusterIdentifier(
-            String dBClusterIdentifier) {
+    public DescribeDBClustersRequest withDBClusterIdentifier(String dBClusterIdentifier) {
         setDBClusterIdentifier(dBClusterIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB clusters to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter is not currently supported.
+     * @return A filter that specifies one or more DB clusters to describe.</p>
+     *         <p>
+     *         Supported filters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *         The results list will only include information about the DB clusters identified by these ARNs.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -272,11 +224,32 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB clusters to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB clusters to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        The results list will only include information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -285,31 +258,48 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A filter that specifies one or more DB clusters to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        The results list will only include information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClustersRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -319,27 +309,45 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB clusters to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A filter that specifies one or more DB clusters to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        The results list will only include information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBClustersRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeDBClustersRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -349,10 +357,9 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -366,10 +373,9 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -378,10 +384,9 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * Constraints: Minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so
-     *         that the remaining results can be retrieved. </p>
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *         remaining results can be retrieved. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -395,10 +400,9 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination
-     * token called a marker is included in the response so that the remaining
-     * results can be retrieved.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     * remaining results can be retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -408,17 +412,15 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
-     *        records exist than the specified <code>MaxRecords</code> value, a
-     *        pagination token called a marker is included in the response so
-     *        that the remaining results can be retrieved. </p>
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
+     *        remaining results can be retrieved. </p>
      *        <p>
      *        Default: 100
      *        </p>
      *        <p>
      *        Constraints: Minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClustersRequest withMaxRecords(Integer maxRecords) {
@@ -428,17 +430,15 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeDBClusters</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <a>DescribeDBClusters</a> request. If this parameter is specified,
-     *        the response includes only records beyond the marker, up to the
-     *        value specified by <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter
+     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -447,16 +447,14 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeDBClusters</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous
-     *         <a>DescribeDBClusters</a> request. If this parameter is
-     *         specified, the response includes only records beyond the marker,
-     *         up to the value specified by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter
+     *         is specified, the response includes only records beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -465,19 +463,16 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional pagination token provided by a previous
-     * <a>DescribeDBClusters</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous
-     *        <a>DescribeDBClusters</a> request. If this parameter is specified,
-     *        the response includes only records beyond the marker, up to the
-     *        value specified by <code>MaxRecords</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional pagination token provided by a previous <a>DescribeDBClusters</a> request. If this parameter
+     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDBClustersRequest withMarker(String marker) {
@@ -486,8 +481,8 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -498,13 +493,13 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -519,27 +514,21 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeDBClustersRequest == false)
             return false;
         DescribeDBClustersRequest other = (DescribeDBClustersRequest) obj;
-        if (other.getDBClusterIdentifier() == null
-                ^ this.getDBClusterIdentifier() == null)
+        if (other.getDBClusterIdentifier() == null ^ this.getDBClusterIdentifier() == null)
             return false;
-        if (other.getDBClusterIdentifier() != null
-                && other.getDBClusterIdentifier().equals(
-                        this.getDBClusterIdentifier()) == false)
+        if (other.getDBClusterIdentifier() != null && other.getDBClusterIdentifier().equals(this.getDBClusterIdentifier()) == false)
             return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -549,16 +538,10 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBClusterIdentifier() == null) ? 0
-                        : getDBClusterIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -566,4 +549,5 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
     public DescribeDBClustersRequest clone() {
         return (DescribeDBClustersRequest) super.clone();
     }
+
 }

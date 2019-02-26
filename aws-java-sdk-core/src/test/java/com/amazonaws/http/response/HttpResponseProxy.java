@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,7 +27,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.StatusLine;
-import org.apache.http.annotation.NotThreadSafe;
+import com.amazonaws.annotation.NotThreadSafe;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.params.HttpParams;
 
@@ -45,7 +45,7 @@ public class HttpResponseProxy implements CloseableHttpResponse {
 
     @Override
     public void close() throws IOException {
-       
+
     }
 
     @Override
@@ -87,7 +87,7 @@ public class HttpResponseProxy implements CloseableHttpResponse {
     public void setEntity(final HttpEntity entity) {
         original.setEntity(entity);
     }
- 
+
     @Override
     public Locale getLocale() {
         return original.getLocale();

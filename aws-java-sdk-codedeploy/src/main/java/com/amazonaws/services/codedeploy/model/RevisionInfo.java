@@ -1,36 +1,53 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Information about an application revision.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RevisionInfo" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RevisionInfo implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RevisionInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     */
     private RevisionLocation revisionLocation;
-
+    /**
+     * <p>
+     * Information about an application revision, including usage details and associated deployment groups.
+     * </p>
+     */
     private GenericRevisionInfo genericRevisionInfo;
 
     /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
      * @param revisionLocation
+     *        Information about the location and type of an application revision.
      */
 
     public void setRevisionLocation(RevisionLocation revisionLocation) {
@@ -38,7 +55,11 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
+     * @return Information about the location and type of an application revision.
      */
 
     public RevisionLocation getRevisionLocation() {
@@ -46,9 +67,13 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the location and type of an application revision.
+     * </p>
+     * 
      * @param revisionLocation
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the location and type of an application revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RevisionInfo withRevisionLocation(RevisionLocation revisionLocation) {
@@ -57,7 +82,12 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about an application revision, including usage details and associated deployment groups.
+     * </p>
+     * 
      * @param genericRevisionInfo
+     *        Information about an application revision, including usage details and associated deployment groups.
      */
 
     public void setGenericRevisionInfo(GenericRevisionInfo genericRevisionInfo) {
@@ -65,7 +95,11 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about an application revision, including usage details and associated deployment groups.
+     * </p>
+     * 
+     * @return Information about an application revision, including usage details and associated deployment groups.
      */
 
     public GenericRevisionInfo getGenericRevisionInfo() {
@@ -73,20 +107,23 @@ public class RevisionInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about an application revision, including usage details and associated deployment groups.
+     * </p>
+     * 
      * @param genericRevisionInfo
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about an application revision, including usage details and associated deployment groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RevisionInfo withGenericRevisionInfo(
-            GenericRevisionInfo genericRevisionInfo) {
+    public RevisionInfo withGenericRevisionInfo(GenericRevisionInfo genericRevisionInfo) {
         setGenericRevisionInfo(genericRevisionInfo);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -97,9 +134,9 @@ public class RevisionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevisionLocation() != null)
-            sb.append("RevisionLocation: " + getRevisionLocation() + ",");
+            sb.append("RevisionLocation: ").append(getRevisionLocation()).append(",");
         if (getGenericRevisionInfo() != null)
-            sb.append("GenericRevisionInfo: " + getGenericRevisionInfo());
+            sb.append("GenericRevisionInfo: ").append(getGenericRevisionInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -114,19 +151,13 @@ public class RevisionInfo implements Serializable, Cloneable {
         if (obj instanceof RevisionInfo == false)
             return false;
         RevisionInfo other = (RevisionInfo) obj;
-        if (other.getRevisionLocation() == null
-                ^ this.getRevisionLocation() == null)
+        if (other.getRevisionLocation() == null ^ this.getRevisionLocation() == null)
             return false;
-        if (other.getRevisionLocation() != null
-                && other.getRevisionLocation().equals(
-                        this.getRevisionLocation()) == false)
+        if (other.getRevisionLocation() != null && other.getRevisionLocation().equals(this.getRevisionLocation()) == false)
             return false;
-        if (other.getGenericRevisionInfo() == null
-                ^ this.getGenericRevisionInfo() == null)
+        if (other.getGenericRevisionInfo() == null ^ this.getGenericRevisionInfo() == null)
             return false;
-        if (other.getGenericRevisionInfo() != null
-                && other.getGenericRevisionInfo().equals(
-                        this.getGenericRevisionInfo()) == false)
+        if (other.getGenericRevisionInfo() != null && other.getGenericRevisionInfo().equals(this.getGenericRevisionInfo()) == false)
             return false;
         return true;
     }
@@ -136,14 +167,8 @@ public class RevisionInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRevisionLocation() == null) ? 0 : getRevisionLocation()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGenericRevisionInfo() == null) ? 0
-                        : getGenericRevisionInfo().hashCode());
+        hashCode = prime * hashCode + ((getRevisionLocation() == null) ? 0 : getRevisionLocation().hashCode());
+        hashCode = prime * hashCode + ((getGenericRevisionInfo() == null) ? 0 : getGenericRevisionInfo().hashCode());
         return hashCode;
     }
 
@@ -152,9 +177,13 @@ public class RevisionInfo implements Serializable, Cloneable {
         try {
             return (RevisionInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.RevisionInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

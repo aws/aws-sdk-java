@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ package com.amazonaws.services.s3.transfer;
 
 import java.util.concurrent.CountDownLatch;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.internal.MultipleFileTransfer;
 import com.amazonaws.services.s3.transfer.internal.TransferStateChangeListener;
@@ -39,7 +39,7 @@ final class MultipleFileTransferStateChangeListener implements TransferStateChan
         try {
             latch.await();
         } catch ( InterruptedException e ) {
-            throw new AmazonClientException("Couldn't wait for all downloads to be queued");
+            throw new SdkClientException("Couldn't wait for all downloads to be queued");
         }
 
         synchronized (multipleFileTransfer) {

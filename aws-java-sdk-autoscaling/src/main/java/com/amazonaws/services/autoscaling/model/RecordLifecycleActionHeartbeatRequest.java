@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"
+ *      target="_top">AWS API Documentation</a>
  */
-public class RecordLifecycleActionHeartbeatRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RecordLifecycleActionHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,15 +33,14 @@ public class RecordLifecycleActionHeartbeatRequest extends
     private String lifecycleHookName;
     /**
      * <p>
-     * The name of the Auto Scaling group for the hook.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * A token that uniquely identifies a specific lifecycle action associated
-     * with an instance. Auto Scaling sends this token to the notification
-     * target you specified when you created the lifecycle hook.
+     * A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling
+     * sends this token to the notification target that you specified when you created the lifecycle hook.
      * </p>
      */
     private String lifecycleActionToken;
@@ -84,23 +83,21 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordLifecycleActionHeartbeatRequest withLifecycleHookName(
-            String lifecycleHookName) {
+    public RecordLifecycleActionHeartbeatRequest withLifecycleHookName(String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
         return this;
     }
 
     /**
      * <p>
-     * The name of the Auto Scaling group for the hook.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group for the hook.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -109,10 +106,10 @@ public class RecordLifecycleActionHeartbeatRequest extends
 
     /**
      * <p>
-     * The name of the Auto Scaling group for the hook.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the Auto Scaling group for the hook.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -121,32 +118,28 @@ public class RecordLifecycleActionHeartbeatRequest extends
 
     /**
      * <p>
-     * The name of the Auto Scaling group for the hook.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group for the hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordLifecycleActionHeartbeatRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public RecordLifecycleActionHeartbeatRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * A token that uniquely identifies a specific lifecycle action associated
-     * with an instance. Auto Scaling sends this token to the notification
-     * target you specified when you created the lifecycle hook.
+     * A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling
+     * sends this token to the notification target that you specified when you created the lifecycle hook.
      * </p>
      * 
      * @param lifecycleActionToken
-     *        A token that uniquely identifies a specific lifecycle action
-     *        associated with an instance. Auto Scaling sends this token to the
-     *        notification target you specified when you created the lifecycle
+     *        A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto
+     *        Scaling sends this token to the notification target that you specified when you created the lifecycle
      *        hook.
      */
 
@@ -156,14 +149,12 @@ public class RecordLifecycleActionHeartbeatRequest extends
 
     /**
      * <p>
-     * A token that uniquely identifies a specific lifecycle action associated
-     * with an instance. Auto Scaling sends this token to the notification
-     * target you specified when you created the lifecycle hook.
+     * A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling
+     * sends this token to the notification target that you specified when you created the lifecycle hook.
      * </p>
      * 
-     * @return A token that uniquely identifies a specific lifecycle action
-     *         associated with an instance. Auto Scaling sends this token to the
-     *         notification target you specified when you created the lifecycle
+     * @return A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto
+     *         Scaling sends this token to the notification target that you specified when you created the lifecycle
      *         hook.
      */
 
@@ -173,22 +164,18 @@ public class RecordLifecycleActionHeartbeatRequest extends
 
     /**
      * <p>
-     * A token that uniquely identifies a specific lifecycle action associated
-     * with an instance. Auto Scaling sends this token to the notification
-     * target you specified when you created the lifecycle hook.
+     * A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling
+     * sends this token to the notification target that you specified when you created the lifecycle hook.
      * </p>
      * 
      * @param lifecycleActionToken
-     *        A token that uniquely identifies a specific lifecycle action
-     *        associated with an instance. Auto Scaling sends this token to the
-     *        notification target you specified when you created the lifecycle
+     *        A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto
+     *        Scaling sends this token to the notification target that you specified when you created the lifecycle
      *        hook.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordLifecycleActionHeartbeatRequest withLifecycleActionToken(
-            String lifecycleActionToken) {
+    public RecordLifecycleActionHeartbeatRequest withLifecycleActionToken(String lifecycleActionToken) {
         setLifecycleActionToken(lifecycleActionToken);
         return this;
     }
@@ -225,19 +212,17 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RecordLifecycleActionHeartbeatRequest withInstanceId(
-            String instanceId) {
+    public RecordLifecycleActionHeartbeatRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -248,15 +233,13 @@ public class RecordLifecycleActionHeartbeatRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookName() != null)
-            sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
+            sb.append("LifecycleHookName: ").append(getLifecycleHookName()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLifecycleActionToken() != null)
-            sb.append("LifecycleActionToken: " + getLifecycleActionToken()
-                    + ",");
+            sb.append("LifecycleActionToken: ").append(getLifecycleActionToken()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -271,31 +254,21 @@ public class RecordLifecycleActionHeartbeatRequest extends
         if (obj instanceof RecordLifecycleActionHeartbeatRequest == false)
             return false;
         RecordLifecycleActionHeartbeatRequest other = (RecordLifecycleActionHeartbeatRequest) obj;
-        if (other.getLifecycleHookName() == null
-                ^ this.getLifecycleHookName() == null)
+        if (other.getLifecycleHookName() == null ^ this.getLifecycleHookName() == null)
             return false;
-        if (other.getLifecycleHookName() != null
-                && other.getLifecycleHookName().equals(
-                        this.getLifecycleHookName()) == false)
+        if (other.getLifecycleHookName() != null && other.getLifecycleHookName().equals(this.getLifecycleHookName()) == false)
             return false;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getLifecycleActionToken() == null
-                ^ this.getLifecycleActionToken() == null)
+        if (other.getLifecycleActionToken() == null ^ this.getLifecycleActionToken() == null)
             return false;
-        if (other.getLifecycleActionToken() != null
-                && other.getLifecycleActionToken().equals(
-                        this.getLifecycleActionToken()) == false)
+        if (other.getLifecycleActionToken() != null && other.getLifecycleActionToken().equals(this.getLifecycleActionToken()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         return true;
     }
@@ -305,20 +278,10 @@ public class RecordLifecycleActionHeartbeatRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleHookName() == null) ? 0
-                        : getLifecycleHookName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleActionToken() == null) ? 0
-                        : getLifecycleActionToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookName() == null) ? 0 : getLifecycleHookName().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleActionToken() == null) ? 0 : getLifecycleActionToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 
@@ -326,4 +289,5 @@ public class RecordLifecycleActionHeartbeatRequest extends
     public RecordLifecycleActionHeartbeatRequest clone() {
         return (RecordLifecycleActionHeartbeatRequest) super.clone();
     }
+
 }

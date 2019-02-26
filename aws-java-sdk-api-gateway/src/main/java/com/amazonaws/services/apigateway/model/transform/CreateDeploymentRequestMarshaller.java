@@ -1,144 +1,81 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDeploymentRequest Marshaller
+ * CreateDeploymentRequestMarshaller
  */
-public class CreateDeploymentRequestMarshaller implements
-        Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateDeploymentRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageName").build();
+    private static final MarshallingInfo<String> STAGEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stageDescription").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Boolean> CACHECLUSTERENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheClusterEnabled").build();
+    private static final MarshallingInfo<String> CACHECLUSTERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheClusterSize").build();
+    private static final MarshallingInfo<Map> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("variables").build();
+    private static final MarshallingInfo<StructuredPojo> CANARYSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("canarySettings").build();
+    private static final MarshallingInfo<Boolean> TRACINGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tracingEnabled").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final CreateDeploymentRequestMarshaller instance = new CreateDeploymentRequestMarshaller();
 
-    public CreateDeploymentRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static CreateDeploymentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDeploymentRequest> marshall(
-            CreateDeploymentRequest createDeploymentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDeploymentRequest createDeploymentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDeploymentRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateDeploymentRequest> request = new DefaultRequest<CreateDeploymentRequest>(
-                createDeploymentRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/deployments";
-
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (createDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils
-                                .fromString(createDeploymentRequest
-                                        .getRestApiId()), false) : "");
-        request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createDeploymentRequest.getStageName() != null) {
-                jsonGenerator.writeFieldName("stageName").writeValue(
-                        createDeploymentRequest.getStageName());
-            }
-            if (createDeploymentRequest.getStageDescription() != null) {
-                jsonGenerator.writeFieldName("stageDescription").writeValue(
-                        createDeploymentRequest.getStageDescription());
-            }
-            if (createDeploymentRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        createDeploymentRequest.getDescription());
-            }
-            if (createDeploymentRequest.getCacheClusterEnabled() != null) {
-                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
-                        createDeploymentRequest.getCacheClusterEnabled());
-            }
-            if (createDeploymentRequest.getCacheClusterSize() != null) {
-                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
-                        createDeploymentRequest.getCacheClusterSize());
-            }
-
-            java.util.Map<String, String> variablesMap = createDeploymentRequest
-                    .getVariables();
-            if (variablesMap != null) {
-                jsonGenerator.writeFieldName("variables");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> variablesMapValue : variablesMap
-                        .entrySet()) {
-                    if (variablesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(variablesMapValue.getKey());
-
-                        jsonGenerator.writeValue(variablesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-            }
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDeploymentRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getStageDescription(), STAGEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCacheClusterEnabled(), CACHECLUSTERENABLED_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCacheClusterSize(), CACHECLUSTERSIZE_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getVariables(), VARIABLES_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCanarySettings(), CANARYSETTINGS_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getTracingEnabled(), TRACINGENABLED_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

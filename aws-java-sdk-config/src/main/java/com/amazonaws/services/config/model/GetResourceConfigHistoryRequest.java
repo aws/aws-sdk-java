@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * The input for the <a>GetResourceConfigHistory</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory" target="_top">AWS
+ *      API Documentation</a>
  */
-public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,38 +42,35 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
     private String resourceId;
     /**
      * <p>
-     * The time stamp that indicates a later time. If not specified, current
-     * time is taken.
+     * The time stamp that indicates a later time. If not specified, current time is taken.
      * </p>
      */
     private java.util.Date laterTime;
     /**
      * <p>
-     * The time stamp that indicates an earlier time. If not specified, the
-     * action returns paginated results that contain configuration items that
-     * start from when the first configuration item was recorded.
+     * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      */
     private java.util.Date earlierTime;
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      */
     private String chronologicalOrder;
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
@@ -111,8 +109,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The resource type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
 
@@ -132,7 +129,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -142,14 +139,12 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The resource type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
 
-    public GetResourceConfigHistoryRequest withResourceType(
-            ResourceType resourceType) {
-        setResourceType(resourceType);
+    public GetResourceConfigHistoryRequest withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -185,8 +180,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param resourceId
      *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceConfigHistoryRequest withResourceId(String resourceId) {
@@ -196,13 +190,11 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time stamp that indicates a later time. If not specified, current
-     * time is taken.
+     * The time stamp that indicates a later time. If not specified, current time is taken.
      * </p>
      * 
      * @param laterTime
-     *        The time stamp that indicates a later time. If not specified,
-     *        current time is taken.
+     *        The time stamp that indicates a later time. If not specified, current time is taken.
      */
 
     public void setLaterTime(java.util.Date laterTime) {
@@ -211,12 +203,10 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time stamp that indicates a later time. If not specified, current
-     * time is taken.
+     * The time stamp that indicates a later time. If not specified, current time is taken.
      * </p>
      * 
-     * @return The time stamp that indicates a later time. If not specified,
-     *         current time is taken.
+     * @return The time stamp that indicates a later time. If not specified, current time is taken.
      */
 
     public java.util.Date getLaterTime() {
@@ -225,35 +215,28 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time stamp that indicates a later time. If not specified, current
-     * time is taken.
+     * The time stamp that indicates a later time. If not specified, current time is taken.
      * </p>
      * 
      * @param laterTime
-     *        The time stamp that indicates a later time. If not specified,
-     *        current time is taken.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time stamp that indicates a later time. If not specified, current time is taken.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetResourceConfigHistoryRequest withLaterTime(
-            java.util.Date laterTime) {
+    public GetResourceConfigHistoryRequest withLaterTime(java.util.Date laterTime) {
         setLaterTime(laterTime);
         return this;
     }
 
     /**
      * <p>
-     * The time stamp that indicates an earlier time. If not specified, the
-     * action returns paginated results that contain configuration items that
-     * start from when the first configuration item was recorded.
+     * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
      * @param earlierTime
-     *        The time stamp that indicates an earlier time. If not specified,
-     *        the action returns paginated results that contain configuration
-     *        items that start from when the first configuration item was
-     *        recorded.
+     *        The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     *        contain configuration items that start when the first configuration item was recorded.
      */
 
     public void setEarlierTime(java.util.Date earlierTime) {
@@ -262,15 +245,12 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time stamp that indicates an earlier time. If not specified, the
-     * action returns paginated results that contain configuration items that
-     * start from when the first configuration item was recorded.
+     * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
-     * @return The time stamp that indicates an earlier time. If not specified,
-     *         the action returns paginated results that contain configuration
-     *         items that start from when the first configuration item was
-     *         recorded.
+     * @return The time stamp that indicates an earlier time. If not specified, the action returns paginated results
+     *         that contain configuration items that start when the first configuration item was recorded.
      */
 
     public java.util.Date getEarlierTime() {
@@ -279,35 +259,30 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The time stamp that indicates an earlier time. If not specified, the
-     * action returns paginated results that contain configuration items that
-     * start from when the first configuration item was recorded.
+     * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
      * @param earlierTime
-     *        The time stamp that indicates an earlier time. If not specified,
-     *        the action returns paginated results that contain configuration
-     *        items that start from when the first configuration item was
-     *        recorded.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
+     *        contain configuration items that start when the first configuration item was recorded.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetResourceConfigHistoryRequest withEarlierTime(
-            java.util.Date earlierTime) {
+    public GetResourceConfigHistoryRequest withEarlierTime(java.util.Date earlierTime) {
         setEarlierTime(earlierTime);
         return this;
     }
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default
-     *        the results are listed in reverse chronological order.
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
+     *        chronological order.
      * @see ChronologicalOrder
      */
 
@@ -317,12 +292,12 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      * 
-     * @return The chronological order for configuration items listed. By
-     *         default the results are listed in reverse chronological order.
+     * @return The chronological order for configuration items listed. By default, the results are listed in reverse
+     *         chronological order.
      * @see ChronologicalOrder
      */
 
@@ -332,71 +307,65 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default
-     *        the results are listed in reverse chronological order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
+     *        chronological order.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChronologicalOrder
      */
 
-    public GetResourceConfigHistoryRequest withChronologicalOrder(
-            String chronologicalOrder) {
+    public GetResourceConfigHistoryRequest withChronologicalOrder(String chronologicalOrder) {
         setChronologicalOrder(chronologicalOrder);
         return this;
     }
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default
-     *        the results are listed in reverse chronological order.
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
+     *        chronological order.
      * @see ChronologicalOrder
      */
 
     public void setChronologicalOrder(ChronologicalOrder chronologicalOrder) {
-        this.chronologicalOrder = chronologicalOrder.toString();
+        withChronologicalOrder(chronologicalOrder);
     }
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the
-     * results are listed in reverse chronological order.
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
+     * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default
-     *        the results are listed in reverse chronological order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
+     *        chronological order.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChronologicalOrder
      */
 
-    public GetResourceConfigHistoryRequest withChronologicalOrder(
-            ChronologicalOrder chronologicalOrder) {
-        setChronologicalOrder(chronologicalOrder);
+    public GetResourceConfigHistoryRequest withChronologicalOrder(ChronologicalOrder chronologicalOrder) {
+        this.chronologicalOrder = chronologicalOrder.toString();
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of configuration items returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
+     *        The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -405,14 +374,12 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
-     * @return The maximum number of configuration items returned on each page.
-     *         The default is 10. You cannot specify a limit greater than 100.
-     *         If you specify 0, AWS Config uses the default.
+     * @return The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
+     *         number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -421,17 +388,14 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of configuration items returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceConfigHistoryRequest withLimit(Integer limit) {
@@ -441,13 +405,13 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -456,13 +420,12 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The <code>nextToken</code> string returned on a previous page
-     *         that you use to get the next page of results in a paginated
-     *         response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -471,15 +434,14 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceConfigHistoryRequest withNextToken(String nextToken) {
@@ -488,8 +450,8 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -500,19 +462,19 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getLaterTime() != null)
-            sb.append("LaterTime: " + getLaterTime() + ",");
+            sb.append("LaterTime: ").append(getLaterTime()).append(",");
         if (getEarlierTime() != null)
-            sb.append("EarlierTime: " + getEarlierTime() + ",");
+            sb.append("EarlierTime: ").append(getEarlierTime()).append(",");
         if (getChronologicalOrder() != null)
-            sb.append("ChronologicalOrder: " + getChronologicalOrder() + ",");
+            sb.append("ChronologicalOrder: ").append(getChronologicalOrder()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -529,40 +491,31 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
         GetResourceConfigHistoryRequest other = (GetResourceConfigHistoryRequest) obj;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getLaterTime() == null ^ this.getLaterTime() == null)
             return false;
-        if (other.getLaterTime() != null
-                && other.getLaterTime().equals(this.getLaterTime()) == false)
+        if (other.getLaterTime() != null && other.getLaterTime().equals(this.getLaterTime()) == false)
             return false;
         if (other.getEarlierTime() == null ^ this.getEarlierTime() == null)
             return false;
-        if (other.getEarlierTime() != null
-                && other.getEarlierTime().equals(this.getEarlierTime()) == false)
+        if (other.getEarlierTime() != null && other.getEarlierTime().equals(this.getEarlierTime()) == false)
             return false;
-        if (other.getChronologicalOrder() == null
-                ^ this.getChronologicalOrder() == null)
+        if (other.getChronologicalOrder() == null ^ this.getChronologicalOrder() == null)
             return false;
-        if (other.getChronologicalOrder() != null
-                && other.getChronologicalOrder().equals(
-                        this.getChronologicalOrder()) == false)
+        if (other.getChronologicalOrder() != null && other.getChronologicalOrder().equals(this.getChronologicalOrder()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -572,25 +525,13 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getLaterTime() == null) ? 0 : getLaterTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEarlierTime() == null) ? 0 : getEarlierTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getChronologicalOrder() == null) ? 0
-                        : getChronologicalOrder().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getLaterTime() == null) ? 0 : getLaterTime().hashCode());
+        hashCode = prime * hashCode + ((getEarlierTime() == null) ? 0 : getEarlierTime().hashCode());
+        hashCode = prime * hashCode + ((getChronologicalOrder() == null) ? 0 : getChronologicalOrder().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -598,4 +539,5 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
     public GetResourceConfigHistoryRequest clone() {
         return (GetResourceConfigHistoryRequest) super.clone();
     }
+
 }

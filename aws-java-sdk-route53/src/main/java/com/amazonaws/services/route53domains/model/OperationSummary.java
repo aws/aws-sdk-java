@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * OperationSummary includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/OperationSummary" target="_top">AWS
+ *      API Documentation</a>
  */
-public class OperationSummary implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class OperationSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Identifier returned to track the requested action.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String operationId;
@@ -38,23 +38,11 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String status;
     /**
      * <p>
      * Type of the action requested.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
      * </p>
      */
     private String type;
@@ -69,14 +57,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        Identifier returned to track the requested action.</p>
-     *        <p>
-     *        Type: String
+     *        Identifier returned to track the requested action.
      */
 
     public void setOperationId(String operationId) {
@@ -87,13 +70,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Identifier returned to track the requested action.</p>
-     *         <p>
-     *         Type: String
+     * @return Identifier returned to track the requested action.
      */
 
     public String getOperationId() {
@@ -104,16 +82,10 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        Identifier returned to track the requested action.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identifier returned to track the requested action.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OperationSummary withOperationId(String operationId) {
@@ -125,14 +97,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -144,13 +111,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The current status of the requested operation in the system.</p>
-     *         <p>
-     *         Type: String
+     * @return The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -162,16 +124,10 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current status of the requested operation in the system.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
 
@@ -184,40 +140,29 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
     public void setStatus(OperationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current status of the requested operation in the system.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
 
     public OperationSummary withStatus(OperationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -225,27 +170,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> |
-     *        <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     *        <code>UPDATE_DOMAIN_CONTACT</code> |
-     *        <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @see OperationType
      */
 
@@ -257,26 +184,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
-     * @return Type of the action requested.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Valid values: <code>REGISTER_DOMAIN</code> |
-     *         <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     *         <code>UPDATE_DOMAIN_CONTACT</code> |
-     *         <code>UPDATE_NAMESERVER</code> |
-     *         <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     * @return Type of the action requested.
      * @see OperationType
      */
 
@@ -288,29 +197,10 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> |
-     *        <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     *        <code>UPDATE_DOMAIN_CONTACT</code> |
-     *        <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Type of the action requested.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
@@ -323,66 +213,29 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> |
-     *        <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     *        <code>UPDATE_DOMAIN_CONTACT</code> |
-     *        <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @see OperationType
      */
 
     public void setType(OperationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> |
-     * <code>TRANSFER_IN_DOMAIN</code> | <code>UPDATE_DOMAIN_CONTACT</code> |
-     * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> |
-     *        <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     *        <code>UPDATE_DOMAIN_CONTACT</code> |
-     *        <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Type of the action requested.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
     public OperationSummary withType(OperationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -418,8 +271,7 @@ public class OperationSummary implements Serializable, Cloneable {
      * 
      * @param submittedDate
      *        The date when the request was submitted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OperationSummary withSubmittedDate(java.util.Date submittedDate) {
@@ -428,8 +280,8 @@ public class OperationSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -440,13 +292,13 @@ public class OperationSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId() + ",");
+            sb.append("OperationId: ").append(getOperationId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getSubmittedDate() != null)
-            sb.append("SubmittedDate: " + getSubmittedDate());
+            sb.append("SubmittedDate: ").append(getSubmittedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -463,23 +315,19 @@ public class OperationSummary implements Serializable, Cloneable {
         OperationSummary other = (OperationSummary) obj;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
-        if (other.getOperationId() != null
-                && other.getOperationId().equals(this.getOperationId()) == false)
+        if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getSubmittedDate() == null ^ this.getSubmittedDate() == null)
             return false;
-        if (other.getSubmittedDate() != null
-                && other.getSubmittedDate().equals(this.getSubmittedDate()) == false)
+        if (other.getSubmittedDate() != null && other.getSubmittedDate().equals(this.getSubmittedDate()) == false)
             return false;
         return true;
     }
@@ -489,17 +337,10 @@ public class OperationSummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubmittedDate() == null) ? 0 : getSubmittedDate()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getSubmittedDate() == null) ? 0 : getSubmittedDate().hashCode());
         return hashCode;
     }
 
@@ -508,9 +349,13 @@ public class OperationSummary implements Serializable, Cloneable {
         try {
             return (OperationSummary) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.OperationSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

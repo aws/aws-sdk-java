@@ -15,11 +15,11 @@
 
 package com.amazonaws.codegen.model.config.templates;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class TopLevelTemplate {
 

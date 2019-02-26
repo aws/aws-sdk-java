@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the response to a successful <a>ListSSHPublicKeys</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListSSHPublicKeysResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListSSHPublicKeysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,21 +34,18 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata> sSHPublicKeys;
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      */
     private String marker;
@@ -76,15 +74,13 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *        A list of the SSH public keys assigned to IAM user.
      */
 
-    public void setSSHPublicKeys(
-            java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
+    public void setSSHPublicKeys(java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
         if (sSHPublicKeys == null) {
             this.sSHPublicKeys = null;
             return;
         }
 
-        this.sSHPublicKeys = new com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata>(
-                sSHPublicKeys);
+        this.sSHPublicKeys = new com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata>(sSHPublicKeys);
     }
 
     /**
@@ -92,23 +88,19 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * A list of the SSH public keys assigned to IAM user.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSSHPublicKeys(java.util.Collection)} or
-     * {@link #withSSHPublicKeys(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSSHPublicKeys(java.util.Collection)} or {@link #withSSHPublicKeys(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param sSHPublicKeys
      *        A list of the SSH public keys assigned to IAM user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListSSHPublicKeysResult withSSHPublicKeys(
-            SSHPublicKeyMetadata... sSHPublicKeys) {
+    public ListSSHPublicKeysResult withSSHPublicKeys(SSHPublicKeyMetadata... sSHPublicKeys) {
         if (this.sSHPublicKeys == null) {
-            setSSHPublicKeys(new com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata>(
-                    sSHPublicKeys.length));
+            setSSHPublicKeys(new com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata>(sSHPublicKeys.length));
         }
         for (SSHPublicKeyMetadata ele : sSHPublicKeys) {
             this.sSHPublicKeys.add(ele);
@@ -123,36 +115,29 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * 
      * @param sSHPublicKeys
      *        A list of the SSH public keys assigned to IAM user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListSSHPublicKeysResult withSSHPublicKeys(
-            java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
+    public ListSSHPublicKeysResult withSSHPublicKeys(java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
         setSSHPublicKeys(sSHPublicKeys);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all your results.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -161,23 +146,18 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all your results.
      */
 
     public Boolean getIsTruncated() {
@@ -186,26 +166,20 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If
-     *        your results were truncated, you can make a subsequent pagination
-     *        request using the <code>Marker</code> request parameter to
-     *        retrieve more items. Note that IAM might return fewer than the
-     *        <code>MaxItems</code> number of results even when there are more
-     *        results available. We recommend that you check
-     *        <code>IsTruncated</code> after every call to ensure that you
-     *        receive all of your results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all your results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListSSHPublicKeysResult withIsTruncated(Boolean isTruncated) {
@@ -215,23 +189,18 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request
-     * using the <code>Marker</code> request parameter to retrieve more items.
-     * Note that IAM might return fewer than the <code>MaxItems</code> number of
-     * results even when there are more results available. We recommend that you
-     * check <code>IsTruncated</code> after every call to ensure that you
-     * receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to
-     *         retrieve more items. Note that IAM might return fewer than the
-     *         <code>MaxItems</code> number of results even when there are more
-     *         results available. We recommend that you check
-     *         <code>IsTruncated</code> after every call to ensure that you
-     *         receive all of your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all your results.
      */
 
     public Boolean isTruncated() {
@@ -240,15 +209,13 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public void setMarker(String marker) {
@@ -257,14 +224,12 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
-     * @return When <code>IsTruncated</code> is <code>true</code>, this element
-     *         is present and contains the value to use for the
-     *         <code>Marker</code> parameter in a subsequent pagination request.
+     * @return When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *         for the <code>Marker</code> parameter in a subsequent pagination request.
      */
 
     public String getMarker() {
@@ -273,17 +238,14 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When <code>IsTruncated</code> is <code>true</code>, this element is
-     * present and contains the value to use for the <code>Marker</code>
-     * parameter in a subsequent pagination request.
+     * When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the
+     * <code>Marker</code> parameter in a subsequent pagination request.
      * </p>
      * 
      * @param marker
-     *        When <code>IsTruncated</code> is <code>true</code>, this element
-     *        is present and contains the value to use for the
-     *        <code>Marker</code> parameter in a subsequent pagination request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use
+     *        for the <code>Marker</code> parameter in a subsequent pagination request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListSSHPublicKeysResult withMarker(String marker) {
@@ -292,8 +254,8 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,11 +266,11 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSSHPublicKeys() != null)
-            sb.append("SSHPublicKeys: " + getSSHPublicKeys() + ",");
+            sb.append("SSHPublicKeys: ").append(getSSHPublicKeys()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -325,18 +287,15 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
         ListSSHPublicKeysResult other = (ListSSHPublicKeysResult) obj;
         if (other.getSSHPublicKeys() == null ^ this.getSSHPublicKeys() == null)
             return false;
-        if (other.getSSHPublicKeys() != null
-                && other.getSSHPublicKeys().equals(this.getSSHPublicKeys()) == false)
+        if (other.getSSHPublicKeys() != null && other.getSSHPublicKeys().equals(this.getSSHPublicKeys()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -346,15 +305,9 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSSHPublicKeys() == null) ? 0 : getSSHPublicKeys()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getSSHPublicKeys() == null) ? 0 : getSSHPublicKeys().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -363,9 +316,8 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
         try {
             return (ListSSHPublicKeysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

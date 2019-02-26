@@ -1,5 +1,7 @@
-<@LicenseCommentBlockMacro.content />
+${fileHeader}
 package ${metadata.packageName};
+
+import javax.annotation.Generated;
 
 import ${metadata.packageName}.model.*;
 
@@ -9,14 +11,17 @@ import ${metadata.packageName}.model.*;
  * request object and an {@code AsyncHandler}, which throws an
  * {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${metadata.asyncAbstractClass} extends ${metadata.syncAbstractClass}
         implements ${metadata.asyncInterface} {
 
     protected ${metadata.asyncAbstractClass}() {
     }
   <#list operations?values as operationModel>
-    <@AsyncClientMethodForUnsupportedOperation.content operationModel />
-    <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@AsyncClientMethodForUnsupportedOperation.content operationModel />
+        <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalClientMethodsMacro?has_content>

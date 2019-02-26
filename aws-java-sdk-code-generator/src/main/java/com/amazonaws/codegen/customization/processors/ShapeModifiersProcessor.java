@@ -15,10 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.ShapeModifier;
@@ -30,6 +26,13 @@ import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * This processor handles all the modification on the shape members in the
@@ -61,7 +64,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
 
             if (ALL.equals(key)) {
                 for (Shape shape : serviceModel.getShapes().values()) {
-                    preprocess_ModifyShapeMembers(shape, modifier);
+                    preprocess_ModifyShapeMembers(serviceModel, shape, modifier);
                 }
 
             } else {
@@ -73,7 +76,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
                             + ", but this shape doesn't exist in the model!");
                 }
 
-                preprocess_ModifyShapeMembers(shape, modifier);
+                preprocess_ModifyShapeMembers(serviceModel, shape, modifier);
             }
         }
     }
@@ -89,7 +92,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
 
             if (ALL.equals(key)) continue;
 
-            ShapeModel shapeModel = null;
+            ShapeModel shapeModel;
             try {
                 shapeModel = Utils.findShapeModelByC2jName(
                         intermediateModel, key);
@@ -152,7 +155,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
     /**
      * Exclude/modify/inject shape members
      */
-    private void preprocess_ModifyShapeMembers(Shape shape, ShapeModifier modifier) {
+    private void preprocess_ModifyShapeMembers(ServiceModel serviceModel, Shape shape, ShapeModifier modifier) {
 
         if (modifier.getModify() != null) {
             for (Map<String, ShapeModifier_ModifyModel> modifies : modifier.getModify()) {
@@ -161,7 +164,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
                     String memberToModify = entry.getKey();
                     ShapeModifier_ModifyModel modifyModel = entry.getValue();
 
-                    doModifyShapeMembers(shape, memberToModify, modifyModel);
+                    doModifyShapeMembers(serviceModel, shape, memberToModify, modifyModel);
                 }
             }
         }
@@ -186,14 +189,23 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
         if (modifier.getInject() != null) {
             for (Map<String, Member> injects : modifier.getInject()) {
                 if (shape.getMembers() == null) {
-                    shape.setMembers(new HashMap<String, Member>());
+                    shape.setMembers(new HashMap<>());
                 }
                 shape.getMembers().putAll(injects);
             }
         }
+
+        if (modifier.getInjectEnumValues() != null) {
+            if (shape.getEnumValues() == null) {
+                throw new IllegalStateException("Attempted to add enum members to a non-enum shape!");
+            }
+            Set<String> extendValues = new HashSet<>(shape.getEnumValues());
+            extendValues.addAll(modifier.getInjectEnumValues());
+            shape.setEnumValues(new ArrayList<>(extendValues));
+        }
     }
 
-    private void doModifyShapeMembers(Shape shape, String memberToModify,
+    private void doModifyShapeMembers(ServiceModel serviceModel, Shape shape, String memberToModify,
             ShapeModifier_ModifyModel modifyModel) {
 
         // Currrenly only supports emitPropertyName which is to rename the member
@@ -207,6 +219,15 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
             }
 
             shape.getMembers().put(modifyModel.getEmitPropertyName(), member);
+        }
+        if (modifyModel.getEmitAsType() != null) {
+            // Must create a shape for the primitive type.
+            Shape newShapeForType = new Shape();
+            newShapeForType.setType(modifyModel.getEmitAsType());
+            final String shapeName = "SDK_" + modifyModel.getEmitAsType();
+            serviceModel.getShapes().put(shapeName, newShapeForType);
+
+            shape.getMembers().get(memberToModify).setShape(shapeName);
         }
     }
 

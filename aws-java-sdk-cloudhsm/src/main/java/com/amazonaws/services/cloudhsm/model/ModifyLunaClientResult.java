@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ModifyLunaClientResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ModifyLunaClientResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +62,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
      * 
      * @param clientArn
      *        The ARN of the client.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyLunaClientResult withClientArn(String clientArn) {
@@ -72,8 +71,8 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +83,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn());
+            sb.append("ClientArn: ").append(getClientArn());
         sb.append("}");
         return sb.toString();
     }
@@ -101,8 +100,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
         ModifyLunaClientResult other = (ModifyLunaClientResult) obj;
         if (other.getClientArn() == null ^ this.getClientArn() == null)
             return false;
-        if (other.getClientArn() != null
-                && other.getClientArn().equals(this.getClientArn()) == false)
+        if (other.getClientArn() != null && other.getClientArn().equals(this.getClientArn()) == false)
             return false;
         return true;
     }
@@ -112,8 +110,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClientArn() == null) ? 0 : getClientArn().hashCode());
+        hashCode = prime * hashCode + ((getClientArn() == null) ? 0 : getClientArn().hashCode());
         return hashCode;
     }
 
@@ -122,9 +119,8 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
         try {
             return (ModifyLunaClientResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

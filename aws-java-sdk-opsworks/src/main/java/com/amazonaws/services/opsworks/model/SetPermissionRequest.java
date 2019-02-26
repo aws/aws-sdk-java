@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission" target="_top">AWS API
+ *      Documentation</a>
  */
-public class SetPermissionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,7 +33,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
     private String stackId;
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      */
     private String iamUserArn;
@@ -51,21 +51,40 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
     private Boolean allowSudo;
     /**
      * <p>
-     * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level.
+     * The user's permission level, which must be set to one of the following strings. You cannot set your own
+     * permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see
-     * <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * >Managing User Permissions</a>.
+     * For more information about the permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * Permissions</a>.
      * </p>
      */
     private String level;
@@ -102,8 +121,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetPermissionRequest withStackId(String stackId) {
@@ -113,11 +131,11 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
+     *        The user's IAM ARN. This can also be a federated user's ARN.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -126,10 +144,10 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
-     * @return The user's IAM ARN.
+     * @return The user's IAM ARN. This can also be a federated user's ARN.
      */
 
     public String getIamUserArn() {
@@ -138,13 +156,12 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user's IAM ARN. This can also be a federated user's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetPermissionRequest withIamUserArn(String iamUserArn) {
@@ -184,8 +201,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @param allowSsh
      *        The user is allowed to use SSH to communicate with the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetPermissionRequest withAllowSsh(Boolean allowSsh) {
@@ -237,8 +253,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @param allowSudo
      *        The user is allowed to use <b>sudo</b> to elevate privileges.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetPermissionRequest withAllowSudo(Boolean allowSudo) {
@@ -260,38 +275,76 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level.
+     * The user's permission level, which must be set to one of the following strings. You cannot set your own
+     * permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see
-     * <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * >Managing User Permissions</a>.
+     * For more information about the permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * Permissions</a>.
      * </p>
      * 
      * @param level
-     *        The user's permission level, which must be set to one of the
-     *        following strings. You cannot set your own permissions level.</p>
+     *        The user's permission level, which must be set to one of the following strings. You cannot set your own
+     *        permissions level.</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the permissions associated with these
-     *        levels, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     *        >Managing User Permissions</a>.
+     *        For more information about the permissions associated with these levels, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *        Permissions</a>.
      */
 
     public void setLevel(String level) {
@@ -300,37 +353,75 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level.
+     * The user's permission level, which must be set to one of the following strings. You cannot set your own
+     * permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see
-     * <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * >Managing User Permissions</a>.
+     * For more information about the permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * Permissions</a>.
      * </p>
      * 
-     * @return The user's permission level, which must be set to one of the
-     *         following strings. You cannot set your own permissions level.</p>
+     * @return The user's permission level, which must be set to one of the following strings. You cannot set your own
+     *         permissions level.</p>
      *         <ul>
-     *         <li> <code>deny</code></li>
-     *         <li> <code>show</code></li>
-     *         <li> <code>deploy</code></li>
-     *         <li> <code>manage</code></li>
-     *         <li> <code>iam_only</code></li>
+     *         <li>
+     *         <p>
+     *         <code>deny</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>show</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>manage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>iam_only</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         For more information on the permissions associated with these
-     *         levels, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     *         >Managing User Permissions</a>.
+     *         For more information about the permissions associated with these levels, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *         Permissions</a>.
      */
 
     public String getLevel() {
@@ -339,40 +430,77 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's permission level, which must be set to one of the following
-     * strings. You cannot set your own permissions level.
+     * The user's permission level, which must be set to one of the following strings. You cannot set your own
+     * permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see
-     * <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * >Managing User Permissions</a>.
+     * For more information about the permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * Permissions</a>.
      * </p>
      * 
      * @param level
-     *        The user's permission level, which must be set to one of the
-     *        following strings. You cannot set your own permissions level.</p>
+     *        The user's permission level, which must be set to one of the following strings. You cannot set your own
+     *        permissions level.</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the permissions associated with these
-     *        levels, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     *        >Managing User Permissions</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about the permissions associated with these levels, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *        Permissions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetPermissionRequest withLevel(String level) {
@@ -381,8 +509,8 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -393,15 +521,15 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getAllowSsh() != null)
-            sb.append("AllowSsh: " + getAllowSsh() + ",");
+            sb.append("AllowSsh: ").append(getAllowSsh()).append(",");
         if (getAllowSudo() != null)
-            sb.append("AllowSudo: " + getAllowSudo() + ",");
+            sb.append("AllowSudo: ").append(getAllowSudo()).append(",");
         if (getLevel() != null)
-            sb.append("Level: " + getLevel());
+            sb.append("Level: ").append(getLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -418,28 +546,23 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
         SetPermissionRequest other = (SetPermissionRequest) obj;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         if (other.getAllowSsh() == null ^ this.getAllowSsh() == null)
             return false;
-        if (other.getAllowSsh() != null
-                && other.getAllowSsh().equals(this.getAllowSsh()) == false)
+        if (other.getAllowSsh() != null && other.getAllowSsh().equals(this.getAllowSsh()) == false)
             return false;
         if (other.getAllowSudo() == null ^ this.getAllowSudo() == null)
             return false;
-        if (other.getAllowSudo() != null
-                && other.getAllowSudo().equals(this.getAllowSudo()) == false)
+        if (other.getAllowSudo() != null && other.getAllowSudo().equals(this.getAllowSudo()) == false)
             return false;
         if (other.getLevel() == null ^ this.getLevel() == null)
             return false;
-        if (other.getLevel() != null
-                && other.getLevel().equals(this.getLevel()) == false)
+        if (other.getLevel() != null && other.getLevel().equals(this.getLevel()) == false)
             return false;
         return true;
     }
@@ -449,16 +572,11 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getAllowSsh() == null) ? 0 : getAllowSsh().hashCode());
-        hashCode = prime * hashCode
-                + ((getAllowSudo() == null) ? 0 : getAllowSudo().hashCode());
-        hashCode = prime * hashCode
-                + ((getLevel() == null) ? 0 : getLevel().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getAllowSsh() == null) ? 0 : getAllowSsh().hashCode());
+        hashCode = prime * hashCode + ((getAllowSudo() == null) ? 0 : getAllowSudo().hashCode());
+        hashCode = prime * hashCode + ((getLevel() == null) ? 0 : getLevel().hashCode());
         return hashCode;
     }
 
@@ -466,4 +584,5 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
     public SetPermissionRequest clone() {
         return (SetPermissionRequest) super.clone();
     }
+
 }

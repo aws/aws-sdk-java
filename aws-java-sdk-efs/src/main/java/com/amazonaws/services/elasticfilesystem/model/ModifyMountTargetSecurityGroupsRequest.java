@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"
+ *      target="_top">AWS API Documentation</a>
  */
-public class ModifyMountTargetSecurityGroupsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ModifyMountTargetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -44,8 +45,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        modify.
+     *        The ID of the mount target whose security groups you want to modify.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -57,8 +57,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * The ID of the mount target whose security groups you want to modify.
      * </p>
      * 
-     * @return The ID of the mount target whose security groups you want to
-     *         modify.
+     * @return The ID of the mount target whose security groups you want to modify.
      */
 
     public String getMountTargetId() {
@@ -71,14 +70,11 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        modify.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the mount target whose security groups you want to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyMountTargetSecurityGroupsRequest withMountTargetId(
-            String mountTargetId) {
+    public ModifyMountTargetSecurityGroupsRequest withMountTargetId(String mountTargetId) {
         setMountTargetId(mountTargetId);
         return this;
     }
@@ -113,8 +109,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
@@ -122,23 +117,19 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * An array of up to five VPC security group IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
      *        An array of up to five VPC security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(
-            String... securityGroups) {
+    public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -153,19 +144,17 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * 
      * @param securityGroups
      *        An array of up to five VPC security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,9 +165,9 @@ public class ModifyMountTargetSecurityGroupsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId() + ",");
+            sb.append("MountTargetId: ").append(getMountTargetId()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -195,14 +184,11 @@ public class ModifyMountTargetSecurityGroupsRequest extends
         ModifyMountTargetSecurityGroupsRequest other = (ModifyMountTargetSecurityGroupsRequest) obj;
         if (other.getMountTargetId() == null ^ this.getMountTargetId() == null)
             return false;
-        if (other.getMountTargetId() != null
-                && other.getMountTargetId().equals(this.getMountTargetId()) == false)
+        if (other.getMountTargetId() != null && other.getMountTargetId().equals(this.getMountTargetId()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
         return true;
     }
@@ -212,14 +198,8 @@ public class ModifyMountTargetSecurityGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMountTargetId() == null) ? 0 : getMountTargetId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMountTargetId() == null) ? 0 : getMountTargetId().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }
 
@@ -227,4 +207,5 @@ public class ModifyMountTargetSecurityGroupsRequest extends
     public ModifyMountTargetSecurityGroupsRequest clone() {
         return (ModifyMountTargetSecurityGroupsRequest) super.clone();
     }
+
 }

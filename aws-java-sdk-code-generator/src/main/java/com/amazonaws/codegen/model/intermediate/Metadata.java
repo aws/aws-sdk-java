@@ -15,15 +15,19 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
+
+import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 public class Metadata {
 
     private String apiVersion;
 
-    private String exceptionUnmarshallerImpl;
-
     private Protocol protocol;
+
+    private ProtocolMetadataProvider protocolMetadataProvider;
 
     // TODO Not sure if this is needed.Remove if not needed.
     private String checksumFormat;
@@ -31,6 +35,8 @@ public class Metadata {
     private String documentation;
 
     private String defaultEndpoint;
+
+    private String defaultRegion;
 
     private String defaultEndpointWithoutHttpProtocol;
 
@@ -52,13 +58,21 @@ public class Metadata {
 
     private boolean hasApiWithStreamInput;
 
-    private String jsonContentVersion;
+    private String contentType;
 
     private String jsonVersion;
 
     private String endpointPrefix;
 
     private String signingName;
+
+    private boolean requiresIamSigners;
+
+    private boolean requiresApiKey;
+
+    private String uid;
+
+    private String serviceId;
 
     public String getApiVersion() {
         return apiVersion;
@@ -79,6 +93,7 @@ public class Metadata {
 
     public void setProtocol(Protocol protocol) {
         this.protocol = protocol;
+        this.protocolMetadataProvider = protocol.getProvider();
     }
 
     public Metadata withProtocol(Protocol protocol) {
@@ -86,17 +101,12 @@ public class Metadata {
         return this;
     }
 
-    public String getExceptionUnmarshallerImpl() {
-        return exceptionUnmarshallerImpl;
-    }
-
-    public void setExceptionUnmarshallerImpl(String protocolDefaultExceptionUnmarshallerImpl) {
-        this.exceptionUnmarshallerImpl = protocolDefaultExceptionUnmarshallerImpl;
-    }
-
-    public Metadata withExceptionUnmarshallerImpl(String protocolDefaultExceptionUnmarshallerImpl) {
-        setExceptionUnmarshallerImpl(protocolDefaultExceptionUnmarshallerImpl);
-        return this;
+    /**
+     * @return The default implementation of exception unmarshallers to use when no custom one is
+     * provided through {@link com.amazonaws.codegen.model.config.customization.CustomizationConfig}
+     */
+    public String getProtocolDefaultExceptionUmarshallerImpl() {
+        return protocolMetadataProvider.getExceptionUnmarshallerImpl();
     }
 
     public String getChecksumFormat() {
@@ -135,6 +145,19 @@ public class Metadata {
 
     public Metadata withDefaultEndpoint(String defaultEndpoint) {
         setDefaultEndpoint(defaultEndpoint);
+        return this;
+    }
+
+    public String getDefaultRegion() {
+        return defaultRegion;
+    }
+
+    public void setDefaultRegion(String defaultRegion) {
+        this.defaultRegion = defaultRegion;
+    }
+
+    public Metadata withDefaultRegion(String defaultRegion) {
+        setDefaultRegion(defaultRegion);
         return this;
     }
 
@@ -215,6 +238,20 @@ public class Metadata {
         return this;
     }
 
+    /**
+     * @return The class name for the fluent sync client builder.
+     */
+    public String getSyncClientBuilderClassName() {
+        return syncClient + "Builder";
+    }
+
+    /**
+     * @return The class name for the fluent async client builder.
+     */
+    public String getAsyncClientBuilderClassName() {
+        return asyncClient + "Builder";
+    }
+
     public String getPackageName() {
         return packageName;
     }
@@ -239,6 +276,20 @@ public class Metadata {
     public Metadata withPackagePath(String packagePath) {
         setPackagePath(packagePath);
         return this;
+    }
+
+    /**
+     * @return The class name for service specific ModuleInjector.
+     */
+    public String getCucumberModuleInjectorClassName() {
+        return getSyncInterface() + "ModuleInjector";
+    }
+
+    /**
+     * @return The package name for the smoke tests.
+     */
+    public String getSmokeTestsPackageName() {
+        return packageName + "." + SMOKE_TESTS_DIR_NAME;
     }
 
     /**
@@ -305,19 +356,6 @@ public class Metadata {
         return this;
     }
 
-    public String getJsonContentVersion() {
-        return jsonContentVersion;
-    }
-
-    public void setJsonContentVersion(String jsonContentVersion) {
-        this.jsonContentVersion = jsonContentVersion;
-    }
-
-    public Metadata withJsonContentVersion(String jsonContentVersion) {
-        setJsonContentVersion(jsonContentVersion);
-        return this;
-    }
-
     public String getJsonVersion() {
         return jsonVersion;
     }
@@ -331,22 +369,34 @@ public class Metadata {
         return this;
     }
 
+    public boolean isIonProtocol() {
+        return protocolMetadataProvider.isIonProtocol();
+    }
+
     public boolean isCborProtocol() {
-        return protocol == Protocol.CBOR || protocol == Protocol.REST_CBOR;
+        return protocolMetadataProvider.isCborProtocol();
     }
 
     public boolean isJsonProtocol() {
-        return protocol == Protocol.REST_JSON ||
-               protocol == Protocol.JSON ||
-               protocol == Protocol.CBOR ||
-               protocol == Protocol.REST_CBOR;
+        return protocolMetadataProvider.isJsonProtocol();
     }
 
     public boolean isXmlProtocol() {
-        return protocol == Protocol.QUERY ||
-               protocol == Protocol.REST_XML ||
-               protocol == Protocol.EC2;
+        return protocolMetadataProvider.isXmlProtocol();
+    }
 
+    /**
+     * @return True for RESTful protocols. False for all other protocols (RPC, Query, etc).
+     */
+    public static boolean isNotRestProtocol(String protocol) {
+        switch (Protocol.fromValue(protocol)) {
+            case API_GATEWAY:
+            case REST_JSON:
+            case REST_XML:
+                return false;
+            default:
+                return true;
+        }
     }
 
     public String getEndpointPrefix() {
@@ -375,57 +425,73 @@ public class Metadata {
         return this;
     }
 
-    public String getUnmarshallerContextClassName() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StaxUnmarshallerContext";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonUnmarshallerContext";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the unmarshaller context class name for "
-                            + protocol.getValue());
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    public String getContentType() {
+        if (contentType != null) {
+            return contentType;
         }
+        return protocolMetadataProvider.getContentType();
+    }
+
+    public String getUnmarshallerContextClassName() {
+        return protocolMetadataProvider.getUnmarshallerContextClassName();
     }
 
     public String getUnmarshallerClassSuffix() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StaxUnmarshaller";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonUnmarshaller";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the unmarshaller class name suffix for "
-                            + protocol.getValue());
-        }
+        return protocolMetadataProvider.getUnmarshallerClassSuffix();
     }
 
-    public String getProtocolDefaultExceptionUnmarshallerType() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StandardErrorUnmarshaller";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonErrorUnmarshaller";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the protocol specific default exception unsmarshaller class name for "
-                            + protocol.getValue());
-        }
+    public String getProtocolFactory() {
+        return protocolMetadataProvider.getProtocolFactoryImplFqcn();
+    }
+
+    public boolean isRequiresIamSigners() {
+        return requiresIamSigners;
+    }
+
+    public void setRequiresIamSigners(boolean requiresIamSigners) {
+        this.requiresIamSigners = requiresIamSigners;
+    }
+
+    public String getRequestBaseFqcn() {
+        return protocolMetadataProvider.getRequestBaseFqcn();
+    }
+
+    public boolean isRequiresApiKey() {
+        return requiresApiKey;
+    }
+
+    public Metadata withRequiresApiKey(boolean requiresApiKey) {
+        this.requiresApiKey = requiresApiKey;
+        return this;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Metadata withUid(String uid) {
+        setUid(uid);
+        return this;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public Metadata withServiceId(String serviceId) {
+        setServiceId(serviceId);
+        return this;
     }
 }

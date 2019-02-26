@@ -1,1059 +1,1059 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.lambda;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.lambda.model.*;
 
 /**
- * Interface for accessing AWS Lambda asynchronously. Each asynchronous method
- * will return a Java Future object representing the asynchronous operation;
- * overloads which accept an {@code AsyncHandler} can be used to receive
+ * Interface for accessing AWS Lambda asynchronously. Each asynchronous method will return a Java Future object
+ * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.lambda.AbstractAWSLambdaAsync} instead.
+ * </p>
  * <p>
  * <fullname>AWS Lambda</fullname>
  * <p>
  * <b>Overview</b>
  * </p>
  * <p>
- * This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide
- * provides additional information. For the service overview, go to <a
- * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
- * Lambda</a>, and for information about how the service works, go to <a
- * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
- * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+ * This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional information. For the
+ * service overview, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and
+ * for information about how the service works, see <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the
+ * <b>AWS Lambda Developer Guide</b>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Adds a permission to the resource policy associated with the specified
-     * AWS Lambda function. You use resource policies to grant permissions to
-     * event sources that use <i>push</i> model. In a <i>push</i> model, event
-     * sources (such as Amazon S3 and custom applications) invoke your Lambda
-     * function. Each permission you add to the resource policy allows an event
-     * source, permission to invoke the Lambda function.
+     * Adds permissions to the resource-based policy of a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. Use this
+     * action to grant layer usage permission to other accounts. You can grant permission to a single account, all AWS
+     * accounts, or all accounts in an organization.
      * </p>
      * <p>
-     * For information about the push model, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
-     * >AWS Lambda: How it Works</a>.
-     * </p>
-     * <p>
-     * If you are using versioning, the permissions you add are specific to the
-     * Lambda function version or alias you specify in the
-     * <code>AddPermission</code> request via the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:AddPermission</code> action.
+     * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
+     * added it.
      * </p>
      * 
-     * @param addPermissionRequest
-     * @return A Java Future containing the result of the AddPermission
-     *         operation returned by the service.
-     * @sample AWSLambdaAsync.AddPermission
+     * @param addLayerVersionPermissionRequest
+     * @return A Java Future containing the result of the AddLayerVersionPermission operation returned by the service.
+     * @sample AWSLambdaAsync.AddLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
-            AddPermissionRequest addPermissionRequest);
+    java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(
+            AddLayerVersionPermissionRequest addLayerVersionPermissionRequest);
 
     /**
      * <p>
-     * Adds a permission to the resource policy associated with the specified
-     * AWS Lambda function. You use resource policies to grant permissions to
-     * event sources that use <i>push</i> model. In a <i>push</i> model, event
-     * sources (such as Amazon S3 and custom applications) invoke your Lambda
-     * function. Each permission you add to the resource policy allows an event
-     * source, permission to invoke the Lambda function.
+     * Adds permissions to the resource-based policy of a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. Use this
+     * action to grant layer usage permission to other accounts. You can grant permission to a single account, all AWS
+     * accounts, or all accounts in an organization.
      * </p>
      * <p>
-     * For information about the push model, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
-     * >AWS Lambda: How it Works</a>.
+     * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
+     * added it.
+     * </p>
+     * 
+     * @param addLayerVersionPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddLayerVersionPermission operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.AddLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(
+            AddLayerVersionPermissionRequest addLayerVersionPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Grants an AWS service or another account permission to use a function. You can apply the policy at the function
+     * level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the
+     * invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
      * </p>
      * <p>
-     * If you are using versioning, the permissions you add are specific to the
-     * Lambda function version or alias you specify in the
-     * <code>AddPermission</code> request via the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * To grant permission to another account, specify the account ID as the <code>Principal</code>. For AWS services,
+     * the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or
+     * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN or owning account of the
+     * associated resource as the <code>SourceArn</code> or <code>SourceAccount</code>. If you grant permission to a
+     * service principal without specifying the source, other accounts could potentially configure resources in their
+     * account to invoke your Lambda function.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:AddPermission</code> action.
+     * This action adds a statement to a resource-based permission policy for the function. For more information about
+     * function policies, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function
+     * Policies</a>.
+     * </p>
+     * 
+     * @param addPermissionRequest
+     * @return A Java Future containing the result of the AddPermission operation returned by the service.
+     * @sample AWSLambdaAsync.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest);
+
+    /**
+     * <p>
+     * Grants an AWS service or another account permission to use a function. You can apply the policy at the function
+     * level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the
+     * invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
+     * </p>
+     * <p>
+     * To grant permission to another account, specify the account ID as the <code>Principal</code>. For AWS services,
+     * the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or
+     * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN or owning account of the
+     * associated resource as the <code>SourceArn</code> or <code>SourceAccount</code>. If you grant permission to a
+     * service principal without specifying the source, other accounts could potentially configure resources in their
+     * account to invoke your Lambda function.
+     * </p>
+     * <p>
+     * This action adds a statement to a resource-based permission policy for the function. For more information about
+     * function policies, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function
+     * Policies</a>.
      * </p>
      * 
      * @param addPermissionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the AddPermission
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the AddPermission operation returned by the service.
      * @sample AWSLambdaAsyncHandler.AddPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
-            AddPermissionRequest addPermissionRequest,
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest addPermissionRequest,
             com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
 
     /**
      * <p>
-     * Creates an alias that points to the specified Lambda function version.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a Lambda
+     * function version. Use aliases to provide clients with a function identifier that you can update to invoke a
+     * different version.
      * </p>
-     * Alias names are unique for a given function.
      * <p>
-     * This requires permission for the lambda:CreateAlias action.
+     * You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code>
+     * parameter to specify a second version and the percentage of invocation requests that it receives.
      * </p>
      * 
      * @param createAliasRequest
-     * @return A Java Future containing the result of the CreateAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AWSLambdaAsync.CreateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<CreateAliasResult> createAliasAsync(
-            CreateAliasRequest createAliasRequest);
+    java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest);
 
     /**
      * <p>
-     * Creates an alias that points to the specified Lambda function version.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a Lambda
+     * function version. Use aliases to provide clients with a function identifier that you can update to invoke a
+     * different version.
      * </p>
-     * Alias names are unique for a given function.
      * <p>
-     * This requires permission for the lambda:CreateAlias action.
+     * You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code>
+     * parameter to specify a second version and the percentage of invocation requests that it receives.
      * </p>
      * 
      * @param createAliasRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the CreateAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<CreateAliasResult> createAliasAsync(
-            CreateAliasRequest createAliasRequest,
+    java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest createAliasRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler);
 
     /**
      * <p>
-     * Identifies a stream as an event source for a Lambda function. It can be
-     * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda
-     * invokes the specified function when records are posted to the stream.
+     * Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source
+     * and triggers the function.
      * </p>
      * <p>
-     * This association between a stream source and a Lambda function is called
-     * the event source mapping.
+     * For details about each event source type, see the following topics.
      * </p>
-     * <important>This event source mapping is relevant only in the AWS Lambda
-     * pull model, where AWS Lambda invokes the function. For more information,
-     * go to <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
-     * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer
-     * Guide</i>.</important>
+     * <ul>
+     * <li>
      * <p>
-     * You provide mapping information (for example, which stream to read from
-     * and which Lambda function to invoke) in the request body.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS Lambda with Amazon Kinesis</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be
-     * associated with multiple AWS Lambda function. A given Lambda function can
-     * be associated with multiple AWS event sources.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <p>
-     * If you are using versioning, you can specify a specific function version
-     * or an alias via the function name parameter. For more information about
-     * versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda with Amazon DynamoDB</a>
      * </p>
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:CreateEventSourceMapping</code> action.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createEventSourceMappingRequest
-     * @return A Java Future containing the result of the
-     *         CreateEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the CreateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.CreateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(
-            CreateEventSourceMappingRequest createEventSourceMappingRequest);
+    java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(CreateEventSourceMappingRequest createEventSourceMappingRequest);
 
     /**
      * <p>
-     * Identifies a stream as an event source for a Lambda function. It can be
-     * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda
-     * invokes the specified function when records are posted to the stream.
+     * Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source
+     * and triggers the function.
      * </p>
      * <p>
-     * This association between a stream source and a Lambda function is called
-     * the event source mapping.
+     * For details about each event source type, see the following topics.
      * </p>
-     * <important>This event source mapping is relevant only in the AWS Lambda
-     * pull model, where AWS Lambda invokes the function. For more information,
-     * go to <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
-     * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer
-     * Guide</i>.</important>
+     * <ul>
+     * <li>
      * <p>
-     * You provide mapping information (for example, which stream to read from
-     * and which Lambda function to invoke) in the request body.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS Lambda with Amazon Kinesis</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be
-     * associated with multiple AWS Lambda function. A given Lambda function can
-     * be associated with multiple AWS event sources.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <p>
-     * If you are using versioning, you can specify a specific function version
-     * or an alias via the function name parameter. For more information about
-     * versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda with Amazon DynamoDB</a>
      * </p>
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:CreateEventSourceMapping</code> action.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createEventSourceMappingRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         CreateEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the CreateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(
-            CreateEventSourceMappingRequest createEventSourceMappingRequest,
+    java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(CreateEventSourceMappingRequest createEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEventSourceMappingRequest, CreateEventSourceMappingResult> asyncHandler);
 
     /**
      * <p>
-     * Creates a new Lambda function. The function metadata is created from the
-     * request parameters, and the code for the function is provided by a .zip
-     * file in the request body. If the function name already exists, the
-     * operation will fail. Note that the function name is case-sensitive.
+     * Creates a Lambda function. To create a function, you need a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
+     * execution role</a>. The deployment package contains your function code. The execution role grants the function
+     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
+     * tracing.
      * </p>
      * <p>
-     * If you are using versioning, you can also publish a version of the Lambda
-     * function you are creating using the <code>Publish</code> parameter. For
-     * more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * A function has an unpublished version, and can have published versions and aliases. The unpublished version
+     * changes when you update your function's code and configuration. A published version is a snapshot of your
+     * function code and configuration that can't be changed. An alias is a named resource that maps to a version, and
+     * can be changed to map to a different version. Use the <code>Publish</code> parameter to create version
+     * <code>1</code> of your function from its initial configuration.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:CreateFunction</code> action.
+     * The other parameters let you configure version-specific and function-level settings. You can modify
+     * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
+     * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
+     * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
+     * creating a resource-based IAM policy. You can grant permissions at the function level, on a version, or on an
+     * alias.
+     * </p>
+     * <p>
+     * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other AWS
+     * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function trigger in
+     * the other service. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking Functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
-     * @return A Java Future containing the result of the CreateFunction
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
      * @sample AWSLambdaAsync.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(
-            CreateFunctionRequest createFunctionRequest);
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest);
 
     /**
      * <p>
-     * Creates a new Lambda function. The function metadata is created from the
-     * request parameters, and the code for the function is provided by a .zip
-     * file in the request body. If the function name already exists, the
-     * operation will fail. Note that the function name is case-sensitive.
+     * Creates a Lambda function. To create a function, you need a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
+     * execution role</a>. The deployment package contains your function code. The execution role grants the function
+     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
+     * tracing.
      * </p>
      * <p>
-     * If you are using versioning, you can also publish a version of the Lambda
-     * function you are creating using the <code>Publish</code> parameter. For
-     * more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * A function has an unpublished version, and can have published versions and aliases. The unpublished version
+     * changes when you update your function's code and configuration. A published version is a snapshot of your
+     * function code and configuration that can't be changed. An alias is a named resource that maps to a version, and
+     * can be changed to map to a different version. Use the <code>Publish</code> parameter to create version
+     * <code>1</code> of your function from its initial configuration.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:CreateFunction</code> action.
+     * The other parameters let you configure version-specific and function-level settings. You can modify
+     * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
+     * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
+     * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
+     * creating a resource-based IAM policy. You can grant permissions at the function level, on a version, or on an
+     * alias.
+     * </p>
+     * <p>
+     * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other AWS
+     * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function trigger in
+     * the other service. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking Functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateFunction
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(
-            CreateFunctionRequest createFunctionRequest,
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the specified Lambda function alias. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">
-     * Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the lambda:DeleteAlias action.
+     * Deletes a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
      * </p>
      * 
      * @param deleteAliasRequest
-     * @return A Java Future containing the result of the DeleteAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AWSLambdaAsync.DeleteAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
-            DeleteAliasRequest deleteAliasRequest);
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest);
 
     /**
      * <p>
-     * Deletes the specified Lambda function alias. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">
-     * Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the lambda:DeleteAlias action.
+     * Deletes a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
      * </p>
      * 
      * @param deleteAliasRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
-            DeleteAliasRequest deleteAliasRequest,
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
 
     /**
      * <p>
-     * Removes an event source mapping. This means AWS Lambda will no longer
-     * invoke the function for events in the associated source.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:DeleteEventSourceMapping</code> action.
+     * Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source
+     * mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.
      * </p>
      * 
      * @param deleteEventSourceMappingRequest
-     * @return A Java Future containing the result of the
-     *         DeleteEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the DeleteEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.DeleteEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(
-            DeleteEventSourceMappingRequest deleteEventSourceMappingRequest);
+    java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest);
 
     /**
      * <p>
-     * Removes an event source mapping. This means AWS Lambda will no longer
-     * invoke the function for events in the associated source.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:DeleteEventSourceMapping</code> action.
+     * Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source
+     * mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.
      * </p>
      * 
      * @param deleteEventSourceMappingRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DeleteEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the DeleteEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(
-            DeleteEventSourceMappingRequest deleteEventSourceMappingRequest,
+    java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the specified Lambda function code and configuration.
+     * Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter.
+     * Otherwise, all versions and aliases are deleted.
      * </p>
      * <p>
-     * If you are using the versioning feature and you don't specify a function
-     * version in your <code>DeleteFunction</code> request, AWS Lambda will
-     * delete the function, including all its versions, and any aliases pointing
-     * to the function versions. To delete a specific function version, you must
-     * provide the function version via the <code>Qualifier</code> parameter.
-     * For information about function versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * When you delete a function the associated resource policy is also
-     * deleted. You will need to delete the event source mappings explicitly.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:DeleteFunction</code> action.
+     * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For AWS
+     * services and resources that invoke your function directly, delete the trigger in the service where you originally
+     * configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
-     * @return A Java Future containing the result of the DeleteFunction
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
      * @sample AWSLambdaAsync.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
-            DeleteFunctionRequest deleteFunctionRequest);
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest);
 
     /**
      * <p>
-     * Deletes the specified Lambda function code and configuration.
+     * Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter.
+     * Otherwise, all versions and aliases are deleted.
      * </p>
      * <p>
-     * If you are using the versioning feature and you don't specify a function
-     * version in your <code>DeleteFunction</code> request, AWS Lambda will
-     * delete the function, including all its versions, and any aliases pointing
-     * to the function versions. To delete a specific function version, you must
-     * provide the function version via the <code>Qualifier</code> parameter.
-     * For information about function versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * When you delete a function the associated resource policy is also
-     * deleted. You will need to delete the event source mappings explicitly.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:DeleteFunction</code> action.
+     * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For AWS
+     * services and resources that invoke your function directly, delete the trigger in the service where you originally
+     * configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteFunction
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
-            DeleteFunctionRequest deleteFunctionRequest,
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
 
     /**
      * <p>
-     * Returns the specified alias information such as the alias ARN,
-     * description, and function version it is pointing to. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the <code>lambda:GetAlias</code> action.
+     * Removes a concurrent execution limit from a function.
      * </p>
      * 
-     * @param getAliasRequest
-     * @return A Java Future containing the result of the GetAlias operation
-     *         returned by the service.
-     * @sample AWSLambdaAsync.GetAlias
+     * @param deleteFunctionConcurrencyRequest
+     * @return A Java Future containing the result of the DeleteFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetAliasResult> getAliasAsync(
-            GetAliasRequest getAliasRequest);
+    java.util.concurrent.Future<DeleteFunctionConcurrencyResult> deleteFunctionConcurrencyAsync(
+            DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest);
 
     /**
      * <p>
-     * Returns the specified alias information such as the alias ARN,
-     * description, and function version it is pointing to. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
+     * Removes a concurrent execution limit from a function.
      * </p>
+     * 
+     * @param deleteFunctionConcurrencyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionConcurrencyResult> deleteFunctionConcurrencyAsync(
+            DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionConcurrencyRequest, DeleteFunctionConcurrencyResult> asyncHandler);
+
+    /**
      * <p>
-     * This requires permission for the <code>lambda:GetAlias</code> action.
+     * Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+     * Lambda layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a
+     * copy of the version remains in Lambda until no functions refer to it.
+     * </p>
+     * 
+     * @param deleteLayerVersionRequest
+     * @return A Java Future containing the result of the DeleteLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest deleteLayerVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+     * Lambda layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a
+     * copy of the version remains in Lambda until no functions refer to it.
+     * </p>
+     * 
+     * @param deleteLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest deleteLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayerVersionRequest, DeleteLayerVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about your account's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
+     * @sample AWSLambdaAsync.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Retrieves details about your account's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns details about a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * </p>
+     * 
+     * @param getAliasRequest
+     * @return A Java Future containing the result of the GetAlias operation returned by the service.
+     * @sample AWSLambdaAsync.GetAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAliasResult> getAliasAsync(GetAliasRequest getAliasRequest);
+
+    /**
+     * <p>
+     * Returns details about a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
      * </p>
      * 
      * @param getAliasRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the GetAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetAliasResult> getAliasAsync(
-            GetAliasRequest getAliasRequest,
+    java.util.concurrent.Future<GetAliasResult> getAliasAsync(GetAliasRequest getAliasRequest,
             com.amazonaws.handlers.AsyncHandler<GetAliasRequest, GetAliasResult> asyncHandler);
 
     /**
      * <p>
-     * Returns configuration information for the specified event source mapping
-     * (see <a>CreateEventSourceMapping</a>).
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSourceMapping</code> action.
+     * Returns details about an event source mapping. You can get the identifier of a mapping from the output of
+     * <a>ListEventSourceMappings</a>.
      * </p>
      * 
      * @param getEventSourceMappingRequest
-     * @return A Java Future containing the result of the GetEventSourceMapping
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the GetEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.GetEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(
-            GetEventSourceMappingRequest getEventSourceMappingRequest);
+    java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(GetEventSourceMappingRequest getEventSourceMappingRequest);
 
     /**
      * <p>
-     * Returns configuration information for the specified event source mapping
-     * (see <a>CreateEventSourceMapping</a>).
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSourceMapping</code> action.
+     * Returns details about an event source mapping. You can get the identifier of a mapping from the output of
+     * <a>ListEventSourceMappings</a>.
      * </p>
      * 
      * @param getEventSourceMappingRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetEventSourceMapping
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the GetEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(
-            GetEventSourceMappingRequest getEventSourceMappingRequest,
+    java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(GetEventSourceMappingRequest getEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult> asyncHandler);
 
     /**
      * <p>
-     * Returns the configuration information of the Lambda function and a
-     * presigned URL link to the .zip file you uploaded with
-     * <a>CreateFunction</a> so you can download the .zip file. Note that the
-     * URL is valid for up to 10 minutes. The configuration information is the
-     * same information you provided as parameters when uploading the function.
-     * </p>
-     * <p>
-     * Using the optional <code>Qualifier</code> parameter, you can specify a
-     * specific function version for which you want this information. If you
-     * don't specify this parameter, the API uses unqualified function ARN which
-     * return information about the <code>$LATEST</code> version of the Lambda
-     * function. For more information, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunction</code> action.
+     * Returns information about the function or function version, with a link to download the deployment package that's
+     * valid for 10 minutes. If you specify a function version, only details that are specific to that version are
+     * returned.
      * </p>
      * 
      * @param getFunctionRequest
-     * @return A Java Future containing the result of the GetFunction operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
      * @sample AWSLambdaAsync.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(
-            GetFunctionRequest getFunctionRequest);
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest);
 
     /**
      * <p>
-     * Returns the configuration information of the Lambda function and a
-     * presigned URL link to the .zip file you uploaded with
-     * <a>CreateFunction</a> so you can download the .zip file. Note that the
-     * URL is valid for up to 10 minutes. The configuration information is the
-     * same information you provided as parameters when uploading the function.
-     * </p>
-     * <p>
-     * Using the optional <code>Qualifier</code> parameter, you can specify a
-     * specific function version for which you want this information. If you
-     * don't specify this parameter, the API uses unqualified function ARN which
-     * return information about the <code>$LATEST</code> version of the Lambda
-     * function. For more information, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunction</code> action.
+     * Returns information about the function or function version, with a link to download the deployment package that's
+     * valid for 10 minutes. If you specify a function version, only details that are specific to that version are
+     * returned.
      * </p>
      * 
      * @param getFunctionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetFunction operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(
-            GetFunctionRequest getFunctionRequest,
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
 
     /**
      * <p>
-     * Returns the configuration information of the Lambda function. This the
-     * same information you provided as parameters when uploading the function
-     * by using <a>CreateFunction</a>.
+     * Returns the version-specific settings of a Lambda function or version. The output includes only options that can
+     * vary between versions of a function. To modify these settings, use <a>UpdateFunctionConfiguration</a>.
      * </p>
      * <p>
-     * If you are using the versioning feature, you can retrieve this
-     * information for a specific function version by using the optional
-     * <code>Qualifier</code> parameter and specifying the function version or
-     * alias that points to it. If you don't provide it, the API returns
-     * information about the $LATEST version of the function. For more
-     * information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunctionConfiguration</code> operation.
+     * To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
      * </p>
      * 
      * @param getFunctionConfigurationRequest
-     * @return A Java Future containing the result of the
-     *         GetFunctionConfiguration operation returned by the service.
+     * @return A Java Future containing the result of the GetFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsync.GetFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(
-            GetFunctionConfigurationRequest getFunctionConfigurationRequest);
+    java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest getFunctionConfigurationRequest);
 
     /**
      * <p>
-     * Returns the configuration information of the Lambda function. This the
-     * same information you provided as parameters when uploading the function
-     * by using <a>CreateFunction</a>.
+     * Returns the version-specific settings of a Lambda function or version. The output includes only options that can
+     * vary between versions of a function. To modify these settings, use <a>UpdateFunctionConfiguration</a>.
      * </p>
      * <p>
-     * If you are using the versioning feature, you can retrieve this
-     * information for a specific function version by using the optional
-     * <code>Qualifier</code> parameter and specifying the function version or
-     * alias that points to it. If you don't provide it, the API returns
-     * information about the $LATEST version of the function. For more
-     * information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunctionConfiguration</code> operation.
+     * To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
      * </p>
      * 
      * @param getFunctionConfigurationRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         GetFunctionConfiguration operation returned by the service.
+     * @return A Java Future containing the result of the GetFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(
-            GetFunctionConfigurationRequest getFunctionConfigurationRequest,
+    java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest getFunctionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler);
 
     /**
      * <p>
-     * Returns the resource policy associated with the specified Lambda
-     * function.
-     * </p>
-     * <p>
-     * If you are using the versioning feature, you can get the resource policy
-     * associated with the specific Lambda function version or alias by
-     * specifying the version or alias name using the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * For information about adding permissions, see <a>AddPermission</a>.
-     * </p>
-     * <p>
-     * You need permission for the <code>lambda:GetPolicy action.</code>
+     * Returns information about a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
+     * to download the layer archive that's valid for 10 minutes.
      * </p>
      * 
-     * @param getPolicyRequest
-     * @return A Java Future containing the result of the GetPolicy operation
-     *         returned by the service.
-     * @sample AWSLambdaAsync.GetPolicy
+     * @param getLayerVersionRequest
+     * @return A Java Future containing the result of the GetLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.GetLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(
-            GetPolicyRequest getPolicyRequest);
+    java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest getLayerVersionRequest);
 
     /**
      * <p>
-     * Returns the resource policy associated with the specified Lambda
-     * function.
+     * Returns information about a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
+     * to download the layer archive that's valid for 10 minutes.
      * </p>
+     * 
+     * @param getLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest getLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionRequest, GetLayerVersionResult> asyncHandler);
+
+    /**
      * <p>
-     * If you are using the versioning feature, you can get the resource policy
-     * associated with the specific Lambda function version or alias by
-     * specifying the version or alias name using the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Returns the permission policy for a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * information, see <a>AddLayerVersionPermission</a>.
      * </p>
+     * 
+     * @param getLayerVersionPolicyRequest
+     * @return A Java Future containing the result of the GetLayerVersionPolicy operation returned by the service.
+     * @sample AWSLambdaAsync.GetLayerVersionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest getLayerVersionPolicyRequest);
+
+    /**
      * <p>
-     * For information about adding permissions, see <a>AddPermission</a>.
+     * Returns the permission policy for a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * information, see <a>AddLayerVersionPermission</a>.
      * </p>
+     * 
+     * @param getLayerVersionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLayerVersionPolicy operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetLayerVersionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest getLayerVersionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResult> asyncHandler);
+
+    /**
      * <p>
-     * You need permission for the <code>lambda:GetPolicy action.</code>
+     * Returns the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM
+     * policy</a> for a function, version, or alias.
+     * </p>
+     * 
+     * @param getPolicyRequest
+     * @return A Java Future containing the result of the GetPolicy operation returned by the service.
+     * @sample AWSLambdaAsync.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM
+     * policy</a> for a function, version, or alias.
      * </p>
      * 
      * @param getPolicyRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetPolicy operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the GetPolicy operation returned by the service.
      * @sample AWSLambdaAsyncHandler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(
-            GetPolicyRequest getPolicyRequest,
+    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler);
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or
+     * asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.
      * </p>
      * <p>
-     * If you are using the versioning feature, you can invoke the specific
-     * function version by providing function version or alias name that is
-     * pointing to the function version using the <code>Qualifier</code>
-     * parameter in the request. If you don't provide the <code>Qualifier</code>
-     * parameter, the <code>$LATEST</code> version of the Lambda function is
-     * invoked. For information about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * For synchronous invocation, details about the function response, including errors, are included in the response
+     * body and headers. For either invocation type, you can find more information in the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution log</a> and <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To record function errors for
+     * asynchronous invocations, configure your function with a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
+     * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
+     * prevent your function from executing, such as permissions errors, <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
+     * code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if executing the
+     * function would cause you to exceed a concurrency limit at either the account level (
+     * <code>ConcurrentInvocationLimitExceeded</code>) or function level (
+     * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
+     * </p>
+     * <p>
+     * For functions with a long timeout, your client might be disconnected during synchronous invocation while it waits
+     * for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
+     * connections with timeout or keep-alive settings.
+     * </p>
+     * <p>
+     * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
      * 
      * @param invokeRequest
-     * @return A Java Future containing the result of the Invoke operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the Invoke operation returned by the service.
      * @sample AWSLambdaAsync.Invoke
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<InvokeResult> invokeAsync(
-            InvokeRequest invokeRequest);
+    java.util.concurrent.Future<InvokeResult> invokeAsync(InvokeRequest invokeRequest);
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or
+     * asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.
      * </p>
      * <p>
-     * If you are using the versioning feature, you can invoke the specific
-     * function version by providing function version or alias name that is
-     * pointing to the function version using the <code>Qualifier</code>
-     * parameter in the request. If you don't provide the <code>Qualifier</code>
-     * parameter, the <code>$LATEST</code> version of the Lambda function is
-     * invoked. For information about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * For synchronous invocation, details about the function response, including errors, are included in the response
+     * body and headers. For either invocation type, you can find more information in the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution log</a> and <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To record function errors for
+     * asynchronous invocations, configure your function with a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
+     * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
+     * prevent your function from executing, such as permissions errors, <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
+     * code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if executing the
+     * function would cause you to exceed a concurrency limit at either the account level (
+     * <code>ConcurrentInvocationLimitExceeded</code>) or function level (
+     * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
+     * </p>
+     * <p>
+     * For functions with a long timeout, your client might be disconnected during synchronous invocation while it waits
+     * for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
+     * connections with timeout or keep-alive settings.
+     * </p>
+     * <p>
+     * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
      * 
      * @param invokeRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the Invoke operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the Invoke operation returned by the service.
      * @sample AWSLambdaAsyncHandler.Invoke
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<InvokeResult> invokeAsync(
-            InvokeRequest invokeRequest,
+    java.util.concurrent.Future<InvokeResult> invokeAsync(InvokeRequest invokeRequest,
             com.amazonaws.handlers.AsyncHandler<InvokeRequest, InvokeResult> asyncHandler);
 
     /**
-     * <important>This API is deprecated. We recommend you use
-     * <code>Invoke</code> API (see <a>Invoke</a>).</important>
+     * <important>
      * <p>
-     * Submits an invocation request to AWS Lambda. Upon receiving the request,
-     * Lambda executes the specified function asynchronously. To see the logs
-     * generated by the Lambda function execution, see the CloudWatch Logs
-     * console.
+     * For asynchronous function invocation, use <a>Invoke</a>.
      * </p>
+     * </important>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
+     * Invokes a function asynchronously.
      * </p>
      * 
      * @param invokeAsyncRequest
-     * @return A Java Future containing the result of the InvokeAsync operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the InvokeAsync operation returned by the service.
      * @sample AWSLambdaAsync.InvokeAsync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync" target="_top">AWS API
+     *      Documentation</a>
      */
     @Deprecated
-    java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(
-            InvokeAsyncRequest invokeAsyncRequest);
+    java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(InvokeAsyncRequest invokeAsyncRequest);
 
     /**
-     * <important>This API is deprecated. We recommend you use
-     * <code>Invoke</code> API (see <a>Invoke</a>).</important>
+     * <important>
      * <p>
-     * Submits an invocation request to AWS Lambda. Upon receiving the request,
-     * Lambda executes the specified function asynchronously. To see the logs
-     * generated by the Lambda function execution, see the CloudWatch Logs
-     * console.
+     * For asynchronous function invocation, use <a>Invoke</a>.
      * </p>
+     * </important>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
+     * Invokes a function asynchronously.
      * </p>
      * 
      * @param invokeAsyncRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the InvokeAsync operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the InvokeAsync operation returned by the service.
      * @sample AWSLambdaAsyncHandler.InvokeAsync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync" target="_top">AWS API
+     *      Documentation</a>
      */
     @Deprecated
-    java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(
-            InvokeAsyncRequest invokeAsyncRequest,
+    java.util.concurrent.Future<InvokeAsyncResult> invokeAsyncAsync(InvokeAsyncRequest invokeAsyncRequest,
             com.amazonaws.handlers.AsyncHandler<InvokeAsyncRequest, InvokeAsyncResult> asyncHandler);
 
     /**
      * <p>
-     * Returns list of aliases created for a Lambda function. For each alias,
-     * the response includes information such as the alias ARN, description,
-     * alias name, and the function version to which it points. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the lambda:ListAliases action.
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a> for
+     * a Lambda function.
      * </p>
      * 
      * @param listAliasesRequest
-     * @return A Java Future containing the result of the ListAliases operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AWSLambdaAsync.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
-            ListAliasesRequest listAliasesRequest);
+    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest);
 
     /**
      * <p>
-     * Returns list of aliases created for a Lambda function. For each alias,
-     * the response includes information such as the alias ARN, description,
-     * alias name, and the function version to which it points. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the lambda:ListAliases action.
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a> for
+     * a Lambda function.
      * </p>
      * 
      * @param listAliasesRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListAliases operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListAliases operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
-            ListAliasesRequest listAliasesRequest,
+    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler);
 
     /**
      * <p>
-     * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see
-     * <a>CreateEventSourceMapping</a>).
-     * </p>
-     * <p>
-     * For each mapping, the API returns configuration information. You can
-     * optionally specify filters to retrieve specific event source mappings.
-     * </p>
-     * <p>
-     * If you are using the versioning feature, you can get list of event source
-     * mappings for a specific Lambda function version or an alias as described
-     * in the <code>FunctionName</code> parameter. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListEventSourceMappings</code> action.
+     * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
+     * single event source.
      * </p>
      * 
      * @param listEventSourceMappingsRequest
-     * @return A Java Future containing the result of the
-     *         ListEventSourceMappings operation returned by the service.
+     * @return A Java Future containing the result of the ListEventSourceMappings operation returned by the service.
      * @sample AWSLambdaAsync.ListEventSourceMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
-            ListEventSourceMappingsRequest listEventSourceMappingsRequest);
+    java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(ListEventSourceMappingsRequest listEventSourceMappingsRequest);
 
     /**
      * <p>
-     * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see
-     * <a>CreateEventSourceMapping</a>).
-     * </p>
-     * <p>
-     * For each mapping, the API returns configuration information. You can
-     * optionally specify filters to retrieve specific event source mappings.
-     * </p>
-     * <p>
-     * If you are using the versioning feature, you can get list of event source
-     * mappings for a specific Lambda function version or an alias as described
-     * in the <code>FunctionName</code> parameter. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListEventSourceMappings</code> action.
+     * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
+     * single event source.
      * </p>
      * 
      * @param listEventSourceMappingsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         ListEventSourceMappings operation returned by the service.
+     * @return A Java Future containing the result of the ListEventSourceMappings operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListEventSourceMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
-            ListEventSourceMappingsRequest listEventSourceMappingsRequest,
+    java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(ListEventSourceMappingsRequest listEventSourceMappingsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler);
 
     /**
-     * Simplified method form for invoking the ListEventSourceMappings
-     * operation.
+     * Simplified method form for invoking the ListEventSourceMappings operation.
      *
      * @see #listEventSourceMappingsAsync(ListEventSourceMappingsRequest)
      */
     java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync();
 
     /**
-     * Simplified method form for invoking the ListEventSourceMappings operation
-     * with an AsyncHandler.
+     * Simplified method form for invoking the ListEventSourceMappings operation with an AsyncHandler.
      *
-     * @see #listEventSourceMappingsAsync(ListEventSourceMappingsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #listEventSourceMappingsAsync(ListEventSourceMappingsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
             com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler);
 
     /**
      * <p>
-     * Returns a list of your Lambda functions. For each function, the response
-     * includes the function configuration information. You must use
-     * <a>GetFunction</a> to retrieve the code for your function.
+     * Returns a list of Lambda functions, with the version-specific configuration of each.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListFunctions</code> action.
-     * </p>
-     * <p>
-     * If you are using versioning feature, the response returns list of $LATEST
-     * versions of your functions. For information about the versioning feature,
-     * see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
+     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
      * </p>
      * 
      * @param listFunctionsRequest
-     * @return A Java Future containing the result of the ListFunctions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
      * @sample AWSLambdaAsync.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
-            ListFunctionsRequest listFunctionsRequest);
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest);
 
     /**
      * <p>
-     * Returns a list of your Lambda functions. For each function, the response
-     * includes the function configuration information. You must use
-     * <a>GetFunction</a> to retrieve the code for your function.
+     * Returns a list of Lambda functions, with the version-specific configuration of each.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListFunctions</code> action.
-     * </p>
-     * <p>
-     * If you are using versioning feature, the response returns list of $LATEST
-     * versions of your functions. For information about the versioning feature,
-     * see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
+     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
      * </p>
      * 
      * @param listFunctionsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListFunctions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
-            ListFunctionsRequest listFunctionsRequest,
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
 
     /**
@@ -1064,396 +1064,585 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync();
 
     /**
-     * Simplified method form for invoking the ListFunctions operation with an
-     * AsyncHandler.
+     * Simplified method form for invoking the ListFunctions operation with an AsyncHandler.
      *
-     * @see #listFunctionsAsync(ListFunctionsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #listFunctionsAsync(ListFunctionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
 
     /**
      * <p>
-     * List all versions of a function. For information about the versioning
-     * feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+     * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * versions that indicate that they're compatible with that runtime.
      * </p>
      * 
-     * @param listVersionsByFunctionRequest
-     * @return A Java Future containing the result of the ListVersionsByFunction
-     *         operation returned by the service.
-     * @sample AWSLambdaAsync.ListVersionsByFunction
+     * @param listLayerVersionsRequest
+     * @return A Java Future containing the result of the ListLayerVersions operation returned by the service.
+     * @sample AWSLambdaAsync.ListLayerVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(
-            ListVersionsByFunctionRequest listVersionsByFunctionRequest);
+    java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest listLayerVersionsRequest);
 
     /**
      * <p>
-     * List all versions of a function. For information about the versioning
-     * feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+     * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * versions that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayerVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLayerVersions operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListLayerVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest listLayerVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLayerVersionsRequest, ListLayerVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layers</a> and
+     * shows information about the latest version of each. Specify a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * layers that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayersRequest
+     * @return A Java Future containing the result of the ListLayers operation returned by the service.
+     * @sample AWSLambdaAsync.ListLayers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest listLayersRequest);
+
+    /**
+     * <p>
+     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layers</a> and
+     * shows information about the latest version of each. Specify a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * layers that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLayers operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListLayers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest listLayersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLayersRequest, ListLayersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also
+     * view tags with <a>GetFunction</a>.
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @return A Java Future containing the result of the ListTags operation returned by the service.
+     * @sample AWSLambdaAsync.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also
+     * view tags with <a>GetFunction</a>.
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTags operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
+     * with the version-specific configuration of each.
+     * </p>
+     * 
+     * @param listVersionsByFunctionRequest
+     * @return A Java Future containing the result of the ListVersionsByFunction operation returned by the service.
+     * @sample AWSLambdaAsync.ListVersionsByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(ListVersionsByFunctionRequest listVersionsByFunctionRequest);
+
+    /**
+     * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
+     * with the version-specific configuration of each.
      * </p>
      * 
      * @param listVersionsByFunctionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListVersionsByFunction
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListVersionsByFunction operation returned by the service.
      * @sample AWSLambdaAsyncHandler.ListVersionsByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(
-            ListVersionsByFunctionRequest listVersionsByFunctionRequest,
+    java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(ListVersionsByFunctionRequest listVersionsByFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult> asyncHandler);
 
     /**
      * <p>
-     * Publishes a version of your function from the current snapshot of
-     * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
-     * configuration information from $LATEST and publishes a new version. The
-     * code and configuration cannot be modified after publication. For
-     * information about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>
+     * from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same version name, a new version
+     * is created.
+     * </p>
+     * <p>
+     * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
      * </p>
      * 
-     * @param publishVersionRequest
-     * @return A Java Future containing the result of the PublishVersion
-     *         operation returned by the service.
-     * @sample AWSLambdaAsync.PublishVersion
+     * @param publishLayerVersionRequest
+     * @return A Java Future containing the result of the PublishLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.PublishLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(
-            PublishVersionRequest publishVersionRequest);
+    java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest publishLayerVersionRequest);
 
     /**
      * <p>
-     * Publishes a version of your function from the current snapshot of
-     * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
-     * configuration information from $LATEST and publishes a new version. The
-     * code and configuration cannot be modified after publication. For
-     * information about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>
+     * from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same version name, a new version
+     * is created.
+     * </p>
+     * <p>
+     * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
+     * </p>
+     * 
+     * @param publishLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PublishLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.PublishLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest publishLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<PublishLayerVersionRequest, PublishLayerVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the
+     * current code and configuration of a function. Use versions to create a snapshot of your function code and
+     * configuration that doesn't change.
+     * </p>
+     * <p>
+     * AWS Lambda doesn't publish a version if the function's configuration and code haven't changed since the last
+     * version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the function before
+     * publishing a version.
+     * </p>
+     * <p>
+     * Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.
+     * </p>
+     * 
+     * @param publishVersionRequest
+     * @return A Java Future containing the result of the PublishVersion operation returned by the service.
+     * @sample AWSLambdaAsync.PublishVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest publishVersionRequest);
+
+    /**
+     * <p>
+     * Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the
+     * current code and configuration of a function. Use versions to create a snapshot of your function code and
+     * configuration that doesn't change.
+     * </p>
+     * <p>
+     * AWS Lambda doesn't publish a version if the function's configuration and code haven't changed since the last
+     * version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the function before
+     * publishing a version.
+     * </p>
+     * <p>
+     * Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.
      * </p>
      * 
      * @param publishVersionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PublishVersion
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PublishVersion operation returned by the service.
      * @sample AWSLambdaAsyncHandler.PublishVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(
-            PublishVersionRequest publishVersionRequest,
+    java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest publishVersionRequest,
             com.amazonaws.handlers.AsyncHandler<PublishVersionRequest, PublishVersionResult> asyncHandler);
 
     /**
      * <p>
-     * You can remove individual permissions from an resource policy associated
-     * with a Lambda function by providing a statement ID that you provided when
-     * you added the permission.
+     * Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency
+     * level.
      * </p>
      * <p>
-     * If you are using versioning, the permissions you remove are specific to
-     * the Lambda function version or alias you specify in the
-     * <code>AddPermission</code> request via the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Concurrency settings apply to the function as a whole, including all published versions and the unpublished
+     * version. Reserving concurrency both ensures that your function has capacity to process the specified number of
+     * events simultaneously, and prevents it from scaling beyond that level. Use <a>GetFunction</a> to see the current
+     * setting for a function.
      * </p>
      * <p>
-     * Note that removal of a permission will cause an active event source to
-     * lose permission to the function.
-     * </p>
-     * <p>
-     * You need permission for the <code>lambda:RemovePermission</code> action.
+     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
+     * aren't configured with a per-function limit. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
      * 
-     * @param removePermissionRequest
-     * @return A Java Future containing the result of the RemovePermission
-     *         operation returned by the service.
-     * @sample AWSLambdaAsync.RemovePermission
+     * @param putFunctionConcurrencyRequest
+     * @return A Java Future containing the result of the PutFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsync.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
-            RemovePermissionRequest removePermissionRequest);
+    java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest);
 
     /**
      * <p>
-     * You can remove individual permissions from an resource policy associated
-     * with a Lambda function by providing a statement ID that you provided when
-     * you added the permission.
+     * Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency
+     * level.
      * </p>
      * <p>
-     * If you are using versioning, the permissions you remove are specific to
-     * the Lambda function version or alias you specify in the
-     * <code>AddPermission</code> request via the <code>Qualifier</code>
-     * parameter. For more information about versioning, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * Concurrency settings apply to the function as a whole, including all published versions and the unpublished
+     * version. Reserving concurrency both ensures that your function has capacity to process the specified number of
+     * events simultaneously, and prevents it from scaling beyond that level. Use <a>GetFunction</a> to see the current
+     * setting for a function.
      * </p>
      * <p>
-     * Note that removal of a permission will cause an active event source to
-     * lose permission to the function.
+     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
+     * aren't configured with a per-function limit. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
+     * 
+     * @param putFunctionConcurrencyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResult> asyncHandler);
+
+    /**
      * <p>
-     * You need permission for the <code>lambda:RemovePermission</code> action.
+     * Removes a statement from the permissions policy for a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * information, see <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param removeLayerVersionPermissionRequest
+     * @return A Java Future containing the result of the RemoveLayerVersionPermission operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.RemoveLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(
+            RemoveLayerVersionPermissionRequest removeLayerVersionPermissionRequest);
+
+    /**
+     * <p>
+     * Removes a statement from the permissions policy for a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * information, see <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param removeLayerVersionPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveLayerVersionPermission operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.RemoveLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(
+            RemoveLayerVersionPermissionRequest removeLayerVersionPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveLayerVersionPermissionRequest, RemoveLayerVersionPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Revokes function-use permission from an AWS service or another account. You can get the ID of the statement from
+     * the output of <a>GetPolicy</a>.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
+     * @sample AWSLambdaAsync.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest);
+
+    /**
+     * <p>
+     * Revokes function-use permission from an AWS service or another account. You can get the ID of the statement from
+     * the output of <a>GetPolicy</a>.
      * </p>
      * 
      * @param removePermissionRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the RemovePermission
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
      * @sample AWSLambdaAsyncHandler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
-            RemovePermissionRequest removePermissionRequest,
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * <p>
-     * Using this API you can update the function version to which the alias
-     * points and the alias description. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
-     * </p>
-     * <p>
-     * This requires permission for the lambda:UpdateAlias action.
+     * Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.
      * </p>
      * 
-     * @param updateAliasRequest
-     * @return A Java Future containing the result of the UpdateAlias operation
-     *         returned by the service.
-     * @sample AWSLambdaAsync.UpdateAlias
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLambdaAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(
-            UpdateAliasRequest updateAliasRequest);
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
      * <p>
-     * Using this API you can update the function version to which the alias
-     * points and the alias description. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
-     * >Introduction to AWS Lambda Aliases</a>.
+     * Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.
      * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
      * <p>
-     * This requires permission for the lambda:UpdateAlias action.
+     * Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLambdaAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * </p>
+     * 
+     * @param updateAliasRequest
+     * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
+     * @sample AWSLambdaAsync.UpdateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of a Lambda function <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
      * </p>
      * 
      * @param updateAliasRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateAlias operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the UpdateAlias operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(
-            UpdateAliasRequest updateAliasRequest,
+    java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest updateAliasRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler);
 
     /**
      * <p>
-     * You can update an event source mapping. This is useful if you want to
-     * change the parameters of the existing mapping without losing your
-     * position in the stream. You can change which function will receive the
-     * stream records, but to change the stream itself, you must create a new
-     * mapping.
-     * </p>
-     * <p>
-     * If you are using the versioning feature, you can update the event source
-     * mapping to map to a specific Lambda function version or alias as
-     * described in the <code>FunctionName</code> parameter. For information
-     * about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * If you disable the event source mapping, AWS Lambda stops polling. If you
-     * enable again, it will resume polling from the time it had stopped
-     * polling, so you don't lose processing of any records. However, if you
-     * delete event source mapping and create it again, it will reset.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateEventSourceMapping</code> action.
+     * Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and
+     * resume later from the same location.
      * </p>
      * 
      * @param updateEventSourceMappingRequest
-     * @return A Java Future containing the result of the
-     *         UpdateEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the UpdateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsync.UpdateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(
-            UpdateEventSourceMappingRequest updateEventSourceMappingRequest);
+    java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(UpdateEventSourceMappingRequest updateEventSourceMappingRequest);
 
     /**
      * <p>
-     * You can update an event source mapping. This is useful if you want to
-     * change the parameters of the existing mapping without losing your
-     * position in the stream. You can change which function will receive the
-     * stream records, but to change the stream itself, you must create a new
-     * mapping.
-     * </p>
-     * <p>
-     * If you are using the versioning feature, you can update the event source
-     * mapping to map to a specific Lambda function version or alias as
-     * described in the <code>FunctionName</code> parameter. For information
-     * about the versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * If you disable the event source mapping, AWS Lambda stops polling. If you
-     * enable again, it will resume polling from the time it had stopped
-     * polling, so you don't lose processing of any records. However, if you
-     * delete event source mapping and create it again, it will reset.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateEventSourceMapping</code> action.
+     * Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and
+     * resume later from the same location.
      * </p>
      * 
      * @param updateEventSourceMappingRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         UpdateEventSourceMapping operation returned by the service.
+     * @return A Java Future containing the result of the UpdateEventSourceMapping operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateEventSourceMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(
-            UpdateEventSourceMappingRequest updateEventSourceMappingRequest,
+    java.util.concurrent.Future<UpdateEventSourceMappingResult> updateEventSourceMappingAsync(UpdateEventSourceMappingRequest updateEventSourceMappingRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResult> asyncHandler);
 
     /**
      * <p>
-     * Updates the code for the specified Lambda function. This operation must
-     * only be used on an existing Lambda function and cannot be used to update
-     * the function configuration.
+     * Updates a Lambda function's code.
      * </p>
      * <p>
-     * If you are using the versioning feature, note this API will always update
-     * the $LATEST version of your Lambda function. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateFunctionCode</code> action.
+     * The function's code is locked when you publish a version. You can't modify the code of a published version, only
+     * the unpublished version.
      * </p>
      * 
      * @param updateFunctionCodeRequest
-     * @return A Java Future containing the result of the UpdateFunctionCode
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UpdateFunctionCode operation returned by the service.
      * @sample AWSLambdaAsync.UpdateFunctionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(
-            UpdateFunctionCodeRequest updateFunctionCodeRequest);
+    java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(UpdateFunctionCodeRequest updateFunctionCodeRequest);
 
     /**
      * <p>
-     * Updates the code for the specified Lambda function. This operation must
-     * only be used on an existing Lambda function and cannot be used to update
-     * the function configuration.
+     * Updates a Lambda function's code.
      * </p>
      * <p>
-     * If you are using the versioning feature, note this API will always update
-     * the $LATEST version of your Lambda function. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateFunctionCode</code> action.
+     * The function's code is locked when you publish a version. You can't modify the code of a published version, only
+     * the unpublished version.
      * </p>
      * 
      * @param updateFunctionCodeRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateFunctionCode
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UpdateFunctionCode operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateFunctionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(
-            UpdateFunctionCodeRequest updateFunctionCodeRequest,
+    java.util.concurrent.Future<UpdateFunctionCodeResult> updateFunctionCodeAsync(UpdateFunctionCodeRequest updateFunctionCodeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFunctionCodeRequest, UpdateFunctionCodeResult> asyncHandler);
 
     /**
      * <p>
-     * Updates the configuration parameters for the specified Lambda function by
-     * using the values provided in the request. You provide only the parameters
-     * you want to change. This operation must only be used on an existing
-     * Lambda function and cannot be used to update the function's code.
+     * Modify the version-specifc settings of a Lambda function.
      * </p>
      * <p>
-     * If you are using the versioning feature, note this API will always update
-     * the $LATEST version of your Lambda function. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * These settings can vary between versions of a function and are locked when you publish a version. You can't
+     * modify the configuration of a published version, only the unpublished version.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateFunctionConfiguration</code> action.
+     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
+     * or AWS service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest
-     * @return A Java Future containing the result of the
-     *         UpdateFunctionConfiguration operation returned by the service.
+     * @return A Java Future containing the result of the UpdateFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsync.UpdateFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionConfigurationResult> updateFunctionConfigurationAsync(
             UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest);
 
     /**
      * <p>
-     * Updates the configuration parameters for the specified Lambda function by
-     * using the values provided in the request. You provide only the parameters
-     * you want to change. This operation must only be used on an existing
-     * Lambda function and cannot be used to update the function's code.
+     * Modify the version-specifc settings of a Lambda function.
      * </p>
      * <p>
-     * If you are using the versioning feature, note this API will always update
-     * the $LATEST version of your Lambda function. For information about the
-     * versioning feature, see <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a>.
+     * These settings can vary between versions of a function and are locked when you publish a version. You can't
+     * modify the configuration of a published version, only the unpublished version.
      * </p>
      * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateFunctionConfiguration</code> action.
+     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
+     * or AWS service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         UpdateFunctionConfiguration operation returned by the service.
+     * @return A Java Future containing the result of the UpdateFunctionConfiguration operation returned by the service.
      * @sample AWSLambdaAsyncHandler.UpdateFunctionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFunctionConfigurationResult> updateFunctionConfigurationAsync(
             UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest,

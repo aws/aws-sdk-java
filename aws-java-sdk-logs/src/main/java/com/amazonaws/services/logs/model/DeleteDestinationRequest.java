@@ -1,44 +1,44 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      */
     private String destinationName;
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
      * @param destinationName
-     *        The name of destination to delete.
+     *        The name of the destination.
      */
 
     public void setDestinationName(String destinationName) {
@@ -47,10 +47,10 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
-     * @return The name of destination to delete.
+     * @return The name of the destination.
      */
 
     public String getDestinationName() {
@@ -59,13 +59,12 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
      * @param destinationName
-     *        The name of destination to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteDestinationRequest withDestinationName(String destinationName) {
@@ -74,8 +73,8 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -86,7 +85,7 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationName() != null)
-            sb.append("DestinationName: " + getDestinationName());
+            sb.append("DestinationName: ").append(getDestinationName());
         sb.append("}");
         return sb.toString();
     }
@@ -101,11 +100,9 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
         if (obj instanceof DeleteDestinationRequest == false)
             return false;
         DeleteDestinationRequest other = (DeleteDestinationRequest) obj;
-        if (other.getDestinationName() == null
-                ^ this.getDestinationName() == null)
+        if (other.getDestinationName() == null ^ this.getDestinationName() == null)
             return false;
-        if (other.getDestinationName() != null
-                && other.getDestinationName().equals(this.getDestinationName()) == false)
+        if (other.getDestinationName() != null && other.getDestinationName().equals(this.getDestinationName()) == false)
             return false;
         return true;
     }
@@ -115,10 +112,7 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinationName() == null) ? 0 : getDestinationName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
         return hashCode;
     }
 
@@ -126,4 +120,5 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
     public DeleteDestinationRequest clone() {
         return (DeleteDestinationRequest) super.clone();
     }
+
 }

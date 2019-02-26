@@ -1,127 +1,74 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListInstancesRequest Marshaller
+ * ListInstancesRequestMarshaller
  */
-public class ListInstancesRequestMarshaller implements
-        Marshaller<Request<ListInstancesRequest>, ListInstancesRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ListInstancesRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClusterId").build();
+    private static final MarshallingInfo<String> INSTANCEGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupId").build();
+    private static final MarshallingInfo<List> INSTANCEGROUPTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupTypes").build();
+    private static final MarshallingInfo<String> INSTANCEFLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleetId").build();
+    private static final MarshallingInfo<String> INSTANCEFLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleetType").build();
+    private static final MarshallingInfo<List> INSTANCESTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceStates").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public ListInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListInstancesRequestMarshaller instance = new ListInstancesRequestMarshaller();
+
+    public static ListInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListInstancesRequest> marshall(
-            ListInstancesRequest listInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListInstancesRequest listInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listInstancesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<ListInstancesRequest> request = new DefaultRequest<ListInstancesRequest>(
-                listInstancesRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.ListInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listInstancesRequest.getClusterId() != null) {
-                jsonGenerator.writeFieldName("ClusterId").writeValue(
-                        listInstancesRequest.getClusterId());
-            }
-            if (listInstancesRequest.getInstanceGroupId() != null) {
-                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(
-                        listInstancesRequest.getInstanceGroupId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> instanceGroupTypesList = (com.amazonaws.internal.SdkInternalList<String>) listInstancesRequest
-                    .getInstanceGroupTypes();
-            if (!instanceGroupTypesList.isEmpty()
-                    || !instanceGroupTypesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("InstanceGroupTypes");
-                jsonGenerator.writeStartArray();
-                for (String instanceGroupTypesListValue : instanceGroupTypesList) {
-                    if (instanceGroupTypesListValue != null) {
-                        jsonGenerator.writeValue(instanceGroupTypesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> instanceStatesList = (com.amazonaws.internal.SdkInternalList<String>) listInstancesRequest
-                    .getInstanceStates();
-            if (!instanceStatesList.isEmpty()
-                    || !instanceStatesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("InstanceStates");
-                jsonGenerator.writeStartArray();
-                for (String instanceStatesListValue : instanceStatesList) {
-                    if (instanceStatesListValue != null) {
-                        jsonGenerator.writeValue(instanceStatesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listInstancesRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(
-                        listInstancesRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listInstancesRequest.getClusterId(), CLUSTERID_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceGroupId(), INSTANCEGROUPID_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceGroupTypes(), INSTANCEGROUPTYPES_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceFleetId(), INSTANCEFLEETID_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceFleetType(), INSTANCEFLEETTYPE_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceStates(), INSTANCESTATES_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

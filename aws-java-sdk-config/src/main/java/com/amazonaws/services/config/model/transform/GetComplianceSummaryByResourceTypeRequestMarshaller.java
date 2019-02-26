@@ -1,103 +1,56 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetComplianceSummaryByResourceTypeRequest Marshaller
+ * GetComplianceSummaryByResourceTypeRequestMarshaller
  */
-public class GetComplianceSummaryByResourceTypeRequestMarshaller
-        implements
-        Marshaller<Request<GetComplianceSummaryByResourceTypeRequest>, GetComplianceSummaryByResourceTypeRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class GetComplianceSummaryByResourceTypeRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ResourceTypes").build();
 
-    public GetComplianceSummaryByResourceTypeRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetComplianceSummaryByResourceTypeRequestMarshaller instance = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+
+    public static GetComplianceSummaryByResourceTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetComplianceSummaryByResourceTypeRequest> marshall(
-            GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getComplianceSummaryByResourceTypeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<GetComplianceSummaryByResourceTypeRequest> request = new DefaultRequest<GetComplianceSummaryByResourceTypeRequest>(
-                getComplianceSummaryByResourceTypeRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target",
-                "StarlingDoveService.GetComplianceSummaryByResourceType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) getComplianceSummaryByResourceTypeRequest
-                    .getResourceTypes();
-            if (!resourceTypesList.isEmpty()
-                    || !resourceTypesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ResourceTypes");
-                jsonGenerator.writeStartArray();
-                for (String resourceTypesListValue : resourceTypesList) {
-                    if (resourceTypesListValue != null) {
-                        jsonGenerator.writeValue(resourceTypesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getComplianceSummaryByResourceTypeRequest.getResourceTypes(), RESOURCETYPES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

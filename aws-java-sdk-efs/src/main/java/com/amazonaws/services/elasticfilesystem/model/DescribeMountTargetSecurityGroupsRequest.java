@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeMountTargetSecurityGroupsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeMountTargetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +39,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        retrieve.
+     *        The ID of the mount target whose security groups you want to retrieve.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -51,8 +51,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends
      * The ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
-     * @return The ID of the mount target whose security groups you want to
-     *         retrieve.
+     * @return The ID of the mount target whose security groups you want to retrieve.
      */
 
     public String getMountTargetId() {
@@ -65,21 +64,18 @@ public class DescribeMountTargetSecurityGroupsRequest extends
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the mount target whose security groups you want to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMountTargetSecurityGroupsRequest withMountTargetId(
-            String mountTargetId) {
+    public DescribeMountTargetSecurityGroupsRequest withMountTargetId(String mountTargetId) {
         setMountTargetId(mountTargetId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -90,7 +86,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId());
+            sb.append("MountTargetId: ").append(getMountTargetId());
         sb.append("}");
         return sb.toString();
     }
@@ -107,8 +103,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends
         DescribeMountTargetSecurityGroupsRequest other = (DescribeMountTargetSecurityGroupsRequest) obj;
         if (other.getMountTargetId() == null ^ this.getMountTargetId() == null)
             return false;
-        if (other.getMountTargetId() != null
-                && other.getMountTargetId().equals(this.getMountTargetId()) == false)
+        if (other.getMountTargetId() != null && other.getMountTargetId().equals(this.getMountTargetId()) == false)
             return false;
         return true;
     }
@@ -118,10 +113,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getMountTargetId() == null) ? 0 : getMountTargetId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMountTargetId() == null) ? 0 : getMountTargetId().hashCode());
         return hashCode;
     }
 
@@ -129,4 +121,5 @@ public class DescribeMountTargetSecurityGroupsRequest extends
     public DescribeMountTargetSecurityGroupsRequest clone() {
         return (DescribeMountTargetSecurityGroupsRequest) super.clone();
     }
+
 }

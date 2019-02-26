@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ import com.amazonaws.services.sqs.model.GetQueueUrlRequest;
 import com.amazonaws.services.sqs.model.GetQueueUrlResult;
 import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesRequest;
 import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesResult;
+import com.amazonaws.services.sqs.model.ListQueueTagsRequest;
+import com.amazonaws.services.sqs.model.ListQueueTagsResult;
 import com.amazonaws.services.sqs.model.ListQueuesRequest;
 import com.amazonaws.services.sqs.model.ListQueuesResult;
 import com.amazonaws.services.sqs.model.PurgeQueueRequest;
@@ -64,6 +66,10 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
 import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.SetQueueAttributesResult;
+import com.amazonaws.services.sqs.model.TagQueueRequest;
+import com.amazonaws.services.sqs.model.TagQueueResult;
+import com.amazonaws.services.sqs.model.UntagQueueRequest;
+import com.amazonaws.services.sqs.model.UntagQueueResult;
 import com.amazonaws.util.VersionInfoUtils;
 
 /**
@@ -173,6 +179,16 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
             buffer.shutdown();
         }
         realSQS.shutdown();
+    }
+
+    /**
+     * Flushes all outstanding outbound requests. Calling this method will wait for
+     * the pending outbound tasks in the {@link QueueBuffer} to finish.
+     */
+    public void flush() {
+        for (QueueBuffer buffer : buffers.values()) {
+            buffer.flush();
+        }
     }
 
     public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest)
@@ -792,5 +808,97 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
     @Override
     public GetQueueAttributesResult getQueueAttributes(String queueUrl, List<String> attributeNames) {
         return getQueueAttributes(new GetQueueAttributesRequest(queueUrl, attributeNames));
+    }
+
+    public TagQueueResult tagQueue(TagQueueRequest tagQueueRequest) {
+        ResultConverter.appendUserAgent(tagQueueRequest, USER_AGENT);
+        return realSQS.tagQueue(tagQueueRequest);
+    }
+
+    public TagQueueResult tagQueue(String queueUrl, Map<String, String> tags) {
+        return tagQueue(new TagQueueRequest(queueUrl, tags));
+    }
+
+    @Override
+    public Future<TagQueueResult> tagQueueAsync(TagQueueRequest tagQueueRequest) {
+        ResultConverter.appendUserAgent(tagQueueRequest, USER_AGENT);
+        return realSQS.tagQueueAsync(tagQueueRequest);
+    }
+
+    @Override
+    public Future<TagQueueResult> tagQueueAsync(TagQueueRequest tagQueueRequest, AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+        ResultConverter.appendUserAgent(tagQueueRequest, USER_AGENT);
+        return realSQS.tagQueueAsync(tagQueueRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<TagQueueResult> tagQueueAsync(String queueUrl, Map<String, String> tags) {
+        return tagQueueAsync(new TagQueueRequest(queueUrl, tags));
+    }
+
+    @Override
+    public Future<TagQueueResult> tagQueueAsync(String queueUrl, Map<String, String> tags, AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+        return tagQueueAsync(new TagQueueRequest(queueUrl, tags), asyncHandler);
+    }
+
+    public UntagQueueResult untagQueue(UntagQueueRequest untagQueueRequest) {
+        ResultConverter.appendUserAgent(untagQueueRequest, USER_AGENT);
+        return realSQS.untagQueue(untagQueueRequest);
+    }
+
+    public UntagQueueResult untagQueue(String queueUrl, List<String> tagKeys) {
+        return untagQueue(new UntagQueueRequest(queueUrl, tagKeys));
+    }
+
+    @Override
+    public Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest untagQueueRequest) {
+        ResultConverter.appendUserAgent(untagQueueRequest, USER_AGENT);
+        return realSQS.untagQueueAsync(untagQueueRequest);
+    }
+
+    @Override
+    public Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest untagQueueRequest, AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+        ResultConverter.appendUserAgent(untagQueueRequest, USER_AGENT);
+        return realSQS.untagQueueAsync(untagQueueRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<UntagQueueResult> untagQueueAsync(String queueUrl, List<String> tagKeys) {
+        return untagQueueAsync(new UntagQueueRequest(queueUrl, tagKeys));
+    }
+
+    @Override
+    public Future<UntagQueueResult> untagQueueAsync(String queueUrl, List<String> tagKeys, AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+        return untagQueueAsync(new UntagQueueRequest(queueUrl, tagKeys), asyncHandler);
+    }
+
+    public ListQueueTagsResult listQueueTags(ListQueueTagsRequest listQueueTagsRequest) {
+        ResultConverter.appendUserAgent(listQueueTagsRequest, USER_AGENT);
+        return realSQS.listQueueTags(listQueueTagsRequest);
+    }
+
+    public ListQueueTagsResult listQueueTags(String queueUrl) {
+        return listQueueTags(new ListQueueTagsRequest(queueUrl));
+    }
+
+    @Override
+    public Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest listQueueTagsRequest) {
+        ResultConverter.appendUserAgent(listQueueTagsRequest, USER_AGENT);
+        return realSQS.listQueueTagsAsync(listQueueTagsRequest);
+    }
+
+    @Override
+    public Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest listQueueTagsRequest, AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+        return realSQS.listQueueTagsAsync(listQueueTagsRequest, asyncHandler);
+    }
+
+    @Override
+    public Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl) {
+        return listQueueTagsAsync(new ListQueueTagsRequest(queueUrl));
+    }
+
+    @Override
+    public Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl, AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+        return listQueueTagsAsync(new ListQueueTagsRequest(queueUrl), asyncHandler);
     }
 }

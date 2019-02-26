@@ -1,30 +1,33 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about an Amazon Inspector application. This data type is
- * used as the response element in the <a>DescribeAssessmentTargets</a> action.
+ * Contains information about an Amazon Inspector application. This data type is used as the response element in the
+ * <a>DescribeAssessmentTargets</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTarget" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AssessmentTarget implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AssessmentTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,8 +43,7 @@ public class AssessmentTarget implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The ARN that specifies the resource group that is associated with the
-     * assessment target.
+     * The ARN that specifies the resource group that is associated with the assessment target.
      * </p>
      */
     private String resourceGroupArn;
@@ -90,8 +92,7 @@ public class AssessmentTarget implements Serializable, Cloneable {
      * 
      * @param arn
      *        The ARN that specifies the Amazon Inspector assessment target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentTarget withArn(String arn) {
@@ -131,8 +132,7 @@ public class AssessmentTarget implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the Amazon Inspector assessment target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentTarget withName(String name) {
@@ -142,13 +142,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is associated with the
-     * assessment target.
+     * The ARN that specifies the resource group that is associated with the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN that specifies the resource group that is associated with
-     *        the assessment target.
+     *        The ARN that specifies the resource group that is associated with the assessment target.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -157,12 +155,10 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is associated with the
-     * assessment target.
+     * The ARN that specifies the resource group that is associated with the assessment target.
      * </p>
      * 
-     * @return The ARN that specifies the resource group that is associated with
-     *         the assessment target.
+     * @return The ARN that specifies the resource group that is associated with the assessment target.
      */
 
     public String getResourceGroupArn() {
@@ -171,15 +167,12 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN that specifies the resource group that is associated with the
-     * assessment target.
+     * The ARN that specifies the resource group that is associated with the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN that specifies the resource group that is associated with
-     *        the assessment target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN that specifies the resource group that is associated with the assessment target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentTarget withResourceGroupArn(String resourceGroupArn) {
@@ -219,8 +212,7 @@ public class AssessmentTarget implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The time at which the assessment target is created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentTarget withCreatedAt(java.util.Date createdAt) {
@@ -260,8 +252,7 @@ public class AssessmentTarget implements Serializable, Cloneable {
      * 
      * @param updatedAt
      *        The time at which <a>UpdateAssessmentTarget</a> is called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssessmentTarget withUpdatedAt(java.util.Date updatedAt) {
@@ -270,8 +261,8 @@ public class AssessmentTarget implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -282,15 +273,15 @@ public class AssessmentTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getResourceGroupArn() != null)
-            sb.append("ResourceGroupArn: " + getResourceGroupArn() + ",");
+            sb.append("ResourceGroupArn: ").append(getResourceGroupArn()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: " + getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -307,30 +298,23 @@ public class AssessmentTarget implements Serializable, Cloneable {
         AssessmentTarget other = (AssessmentTarget) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getResourceGroupArn() == null
-                ^ this.getResourceGroupArn() == null)
+        if (other.getResourceGroupArn() == null ^ this.getResourceGroupArn() == null)
             return false;
-        if (other.getResourceGroupArn() != null
-                && other.getResourceGroupArn().equals(
-                        this.getResourceGroupArn()) == false)
+        if (other.getResourceGroupArn() != null && other.getResourceGroupArn().equals(this.getResourceGroupArn()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
-        if (other.getUpdatedAt() != null
-                && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         return true;
     }
@@ -340,18 +324,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }
 
@@ -360,9 +337,13 @@ public class AssessmentTarget implements Serializable, Cloneable {
         try {
             return (AssessmentTarget) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.AssessmentTargetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

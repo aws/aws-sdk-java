@@ -1,0 +1,12 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Wait",
+      "Seconds": 4,
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "End": true
+    }
+  }
+}

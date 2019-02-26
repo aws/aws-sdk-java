@@ -1,123 +1,151 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudwatch.model.*;
 
 /**
- * Interface for accessing CloudWatch asynchronously. Each asynchronous method
- * will return a Java Future object representing the asynchronous operation;
- * overloads which accept an {@code AsyncHandler} can be used to receive
+ * Interface for accessing CloudWatch asynchronously. Each asynchronous method will return a Java Future object
+ * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <p>
- * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
- * applications you run on AWS in real-time. You can use CloudWatch to collect
- * and track metrics, which are the variables you want to measure for your
- * resources and applications.
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudwatch.AbstractAmazonCloudWatchAsync} instead.
  * </p>
  * <p>
- * CloudWatch alarms send notifications or automatically make changes to the
- * resources you are monitoring based on rules that you define. For example, you
- * can monitor the CPU usage and disk reads and writes of your Amazon Elastic
- * Compute Cloud (Amazon EC2) instances and then use this data to determine
- * whether you should launch additional instances to handle increased load. You
- * can also use this data to stop under-used instances to save money.
+ * <p>
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time.
+ * You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources
+ * and applications.
  * </p>
  * <p>
- * In addition to monitoring the built-in metrics that come with AWS, you can
- * monitor your own custom metrics. With CloudWatch, you gain system-wide
- * visibility into resource utilization, application performance, and
- * operational health.
+ * CloudWatch alarms send notifications or automatically change the resources you are monitoring based on rules that you
+ * define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon EC2 instances. Then, use
+ * this data to determine whether you should launch additional instances to handle increased load. You can also use this
+ * data to stop under-used instances to save money.
+ * </p>
+ * <p>
+ * In addition to monitoring the built-in metrics that come with AWS, you can monitor your own custom metrics. With
+ * CloudWatch, you gain system-wide visibility into resource utilization, application performance, and operational
+ * health.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Deletes all specified alarms. In the event of an error, no alarms are
-     * deleted.
+     * Deletes the specified alarms. In the event of an error, no alarms are deleted.
      * </p>
      * 
      * @param deleteAlarmsRequest
-     * @return A Java Future containing the result of the DeleteAlarms operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsync.DeleteAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
-            DeleteAlarmsRequest deleteAlarmsRequest);
+    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest);
 
     /**
      * <p>
-     * Deletes all specified alarms. In the event of an error, no alarms are
-     * deleted.
+     * Deletes the specified alarms. In the event of an error, no alarms are deleted.
      * </p>
      * 
      * @param deleteAlarmsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteAlarms operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DeleteAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
-            DeleteAlarmsRequest deleteAlarmsRequest,
+    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, DeleteAlarmsResult> asyncHandler);
 
     /**
      * <p>
-     * Retrieves history for the specified alarm. Filter alarms by date range or
-     * item type. If an alarm name is not specified, Amazon CloudWatch returns
-     * histories for all of the owner's alarms.
+     * Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete. If there is an error
+     * during this call, no dashboards are deleted.
      * </p>
-     * <note> Amazon CloudWatch retains the history of an alarm for two weeks,
-     * whether or not you delete the alarm. </note>
      * 
-     * @param describeAlarmHistoryRequest
-     * @return A Java Future containing the result of the DescribeAlarmHistory
-     *         operation returned by the service.
-     * @sample AmazonCloudWatchAsync.DescribeAlarmHistory
+     * @param deleteDashboardsRequest
+     * @return A Java Future containing the result of the DeleteDashboards operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DeleteDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
-            DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
+    java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest deleteDashboardsRequest);
 
     /**
      * <p>
-     * Retrieves history for the specified alarm. Filter alarms by date range or
-     * item type. If an alarm name is not specified, Amazon CloudWatch returns
-     * histories for all of the owner's alarms.
+     * Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete. If there is an error
+     * during this call, no dashboards are deleted.
      * </p>
-     * <note> Amazon CloudWatch retains the history of an alarm for two weeks,
-     * whether or not you delete the alarm. </note>
+     * 
+     * @param deleteDashboardsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDashboards operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DeleteDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest deleteDashboardsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDashboardsRequest, DeleteDashboardsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
+     * name is not specified, the histories for all alarms are returned.
+     * </p>
+     * <p>
+     * CloudWatch retains the history of an alarm even if you delete the alarm.
+     * </p>
+     * 
+     * @param describeAlarmHistoryRequest
+     * @return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeAlarmHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest);
+
+    /**
+     * <p>
+     * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
+     * name is not specified, the histories for all alarms are returned.
+     * </p>
+     * <p>
+     * CloudWatch retains the history of an alarm even if you delete the alarm.
+     * </p>
      * 
      * @param describeAlarmHistoryRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeAlarmHistory
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAlarmHistory operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
-            DescribeAlarmHistoryRequest describeAlarmHistoryRequest,
+    java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler);
 
     /**
@@ -128,49 +156,44 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync();
 
     /**
-     * Simplified method form for invoking the DescribeAlarmHistory operation
-     * with an AsyncHandler.
+     * Simplified method form for invoking the DescribeAlarmHistory operation with an AsyncHandler.
      *
-     * @see #describeAlarmHistoryAsync(DescribeAlarmHistoryRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeAlarmHistoryAsync(DescribeAlarmHistoryRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler);
 
     /**
      * <p>
-     * Retrieves alarms with the specified names. If no name is specified, all
-     * alarms for the user are returned. Alarms can be retrieved by using only a
-     * prefix for the alarm name, the alarm state, or a prefix for any action.
+     * Retrieves the specified alarms. If no alarms are specified, all alarms are returned. Alarms can be retrieved by
+     * using only a prefix for the alarm name, the alarm state, or a prefix for any action.
      * </p>
      * 
      * @param describeAlarmsRequest
-     * @return A Java Future containing the result of the DescribeAlarms
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
-            DescribeAlarmsRequest describeAlarmsRequest);
+    java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest);
 
     /**
      * <p>
-     * Retrieves alarms with the specified names. If no name is specified, all
-     * alarms for the user are returned. Alarms can be retrieved by using only a
-     * prefix for the alarm name, the alarm state, or a prefix for any action.
+     * Retrieves the specified alarms. If no alarms are specified, all alarms are returned. Alarms can be retrieved by
+     * using only a prefix for the alarm name, the alarm state, or a prefix for any action.
      * </p>
      * 
      * @param describeAlarmsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeAlarms
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAlarms operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
-            DescribeAlarmsRequest describeAlarmsRequest,
+    java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler);
 
     /**
@@ -181,271 +204,610 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync();
 
     /**
-     * Simplified method form for invoking the DescribeAlarms operation with an
-     * AsyncHandler.
+     * Simplified method form for invoking the DescribeAlarms operation with an AsyncHandler.
      *
-     * @see #describeAlarmsAsync(DescribeAlarmsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #describeAlarmsAsync(DescribeAlarmsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler);
 
     /**
      * <p>
-     * Retrieves all alarms for a single metric. Specify a statistic, period, or
-     * unit to filter the set of alarms further.
+     * Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
-     * @return A Java Future containing the result of the
-     *         DescribeAlarmsForMetric operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarmsForMetric
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(
-            DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
+    java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest);
 
     /**
      * <p>
-     * Retrieves all alarms for a single metric. Specify a statistic, period, or
-     * unit to filter the set of alarms further.
+     * Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DescribeAlarmsForMetric operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DescribeAlarmsForMetric
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(
-            DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
+    java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult> asyncHandler);
 
     /**
      * <p>
-     * Disables actions for the specified alarms. When an alarm's actions are
-     * disabled the alarm's state may change, but none of the alarm's actions
-     * will execute.
+     * Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not
+     * execute when the alarm state changes.
      * </p>
      * 
      * @param disableAlarmActionsRequest
-     * @return A Java Future containing the result of the DisableAlarmActions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DisableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsync.DisableAlarmActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
-            DisableAlarmActionsRequest disableAlarmActionsRequest);
+    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest);
 
     /**
      * <p>
-     * Disables actions for the specified alarms. When an alarm's actions are
-     * disabled the alarm's state may change, but none of the alarm's actions
-     * will execute.
+     * Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not
+     * execute when the alarm state changes.
      * </p>
      * 
      * @param disableAlarmActionsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DisableAlarmActions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DisableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DisableAlarmActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
-            DisableAlarmActionsRequest disableAlarmActionsRequest,
+    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest,
             com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler);
 
     /**
      * <p>
-     * Enables actions for the specified alarms.
+     * Enables the actions for the specified alarms.
      * </p>
      * 
      * @param enableAlarmActionsRequest
-     * @return A Java Future containing the result of the EnableAlarmActions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the EnableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsync.EnableAlarmActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
-            EnableAlarmActionsRequest enableAlarmActionsRequest);
+    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest);
 
     /**
      * <p>
-     * Enables actions for the specified alarms.
+     * Enables the actions for the specified alarms.
      * </p>
      * 
      * @param enableAlarmActionsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the EnableAlarmActions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the EnableAlarmActions operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.EnableAlarmActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
-            EnableAlarmActionsRequest enableAlarmActionsRequest,
+    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest,
             com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler);
 
     /**
      * <p>
-     * Gets statistics for the specified metric.
+     * Displays the details of the dashboard that you specify.
      * </p>
      * <p>
-     * The maximum number of data points that can be queried is 50,850, whereas
-     * the maximum number of data points returned from a single
-     * <code>GetMetricStatistics</code> request is 1,440. If you make a request
-     * that generates more than 1,440 data points, Amazon CloudWatch returns an
-     * error. In such a case, you can alter the request by narrowing the
-     * specified time range or increasing the specified period. Alternatively,
-     * you can make multiple requests across adjacent time ranges.
-     * <code>GetMetricStatistics</code> does not return the data in
-     * chronological order.
-     * </p>
-     * <p>
-     * Amazon CloudWatch aggregates data points based on the length of the
-     * <code>period</code> that you specify. For example, if you request
-     * statistics with a one-minute granularity, Amazon CloudWatch aggregates
-     * data points with time stamps that fall within the same one-minute period.
-     * In such a case, the data points queried can greatly outnumber the data
-     * points returned.
-     * </p>
-     * <p>
-     * The following examples show various statistics allowed by the data point
-     * query maximum of 50,850 when you call <code>GetMetricStatistics</code> on
-     * Amazon EC2 instances with detailed (one-minute) monitoring enabled:
-     * </p>
-     * <ul>
-     * <li>Statistics for up to 400 instances for a span of one hour</li>
-     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
-     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
-     * </ul>
-     * <p>
-     * For information about the namespace, metric names, and dimensions that
-     * other Amazon Web Services products use to send metrics to CloudWatch, go
-     * to <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in
-     * the <i>Amazon CloudWatch Developer Guide</i>.
+     * To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within
+     * <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to
+     * create the copy.
      * </p>
      * 
-     * @param getMetricStatisticsRequest
-     * @return A Java Future containing the result of the GetMetricStatistics
-     *         operation returned by the service.
-     * @sample AmazonCloudWatchAsync.GetMetricStatistics
+     * @param getDashboardRequest
+     * @return A Java Future containing the result of the GetDashboard operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(
-            GetMetricStatisticsRequest getMetricStatisticsRequest);
+    java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest getDashboardRequest);
+
+    /**
+     * <p>
+     * Displays the details of the dashboard that you specify.
+     * </p>
+     * <p>
+     * To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within
+     * <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to
+     * create the copy.
+     * </p>
+     * 
+     * @param getDashboardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDashboard operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest getDashboardRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDashboardRequest, GetDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
+     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * the returned statistics, to create new time series that represent new insights into your data. For example, using
+     * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
+     * For more information about metric math expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
+     * >Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * Calls to the <code>GetMetricData</code> API have a different pricing structure than calls to
+     * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * Amazon CloudWatch retains metric data as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of less than 60 seconds are available for 3 hours. These data points are
+     * high-resolution metrics and are available only for custom metrics that have been defined with a
+     * <code>StorageResolution</code> of 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Data points that are initially published with a shorter period are aggregated together for long-term storage. For
+     * example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute
+     * resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution
+     * of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.
+     * </p>
+     * 
+     * @param getMetricDataRequest
+     * @return A Java Future containing the result of the GetMetricData operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricDataResult> getMetricDataAsync(GetMetricDataRequest getMetricDataRequest);
+
+    /**
+     * <p>
+     * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
+     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * the returned statistics, to create new time series that represent new insights into your data. For example, using
+     * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
+     * For more information about metric math expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
+     * >Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * Calls to the <code>GetMetricData</code> API have a different pricing structure than calls to
+     * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * Amazon CloudWatch retains metric data as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of less than 60 seconds are available for 3 hours. These data points are
+     * high-resolution metrics and are available only for custom metrics that have been defined with a
+     * <code>StorageResolution</code> of 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Data points that are initially published with a shorter period are aggregated together for long-term storage. For
+     * example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute
+     * resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution
+     * of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.
+     * </p>
+     * 
+     * @param getMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricData operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricDataResult> getMetricDataAsync(GetMetricDataRequest getMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricDataRequest, GetMetricDataResult> asyncHandler);
 
     /**
      * <p>
      * Gets statistics for the specified metric.
      * </p>
      * <p>
-     * The maximum number of data points that can be queried is 50,850, whereas
-     * the maximum number of data points returned from a single
-     * <code>GetMetricStatistics</code> request is 1,440. If you make a request
-     * that generates more than 1,440 data points, Amazon CloudWatch returns an
-     * error. In such a case, you can alter the request by narrowing the
-     * specified time range or increasing the specified period. Alternatively,
-     * you can make multiple requests across adjacent time ranges.
-     * <code>GetMetricStatistics</code> does not return the data in
-     * chronological order.
+     * The maximum number of data points returned from a single call is 1,440. If you request more than 1,440 data
+     * points, CloudWatch returns an error. To reduce the number of data points, you can narrow the specified time range
+     * and make multiple requests across adjacent time ranges, or you can increase the specified period. Data points are
+     * not returned in chronological order.
      * </p>
      * <p>
-     * Amazon CloudWatch aggregates data points based on the length of the
-     * <code>period</code> that you specify. For example, if you request
-     * statistics with a one-minute granularity, Amazon CloudWatch aggregates
-     * data points with time stamps that fall within the same one-minute period.
-     * In such a case, the data points queried can greatly outnumber the data
+     * CloudWatch aggregates data points based on the length of the period that you specify. For example, if you request
+     * statistics with a one-hour period, CloudWatch aggregates all data points with time stamps that fall within each
+     * one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than the number of data
      * points returned.
      * </p>
      * <p>
-     * The following examples show various statistics allowed by the data point
-     * query maximum of 50,850 when you call <code>GetMetricStatistics</code> on
-     * Amazon EC2 instances with detailed (one-minute) monitoring enabled:
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
      * </p>
      * <ul>
-     * <li>Statistics for up to 400 instances for a span of one hour</li>
-     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
-     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+     * <li>
+     * <p>
+     * The SampleCount value of the statistic set is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Min and the Max values of the statistic set are equal.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For information about the namespace, metric names, and dimensions that
-     * other Amazon Web Services products use to send metrics to CloudWatch, go
-     * to <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in
-     * the <i>Amazon CloudWatch Developer Guide</i>.
+     * Percentile statistics are not available for metrics when any of the metric values are negative numbers.
+     * </p>
+     * <p>
+     * Amazon CloudWatch retains metric data as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of less than 60 seconds are available for 3 hours. These data points are
+     * high-resolution metrics and are available only for custom metrics that have been defined with a
+     * <code>StorageResolution</code> of 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Data points that are initially published with a shorter period are aggregated together for long-term storage. For
+     * example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute
+     * resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution
+     * of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.
+     * </p>
+     * <p>
+     * CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
+     * </p>
+     * <p>
+     * For information about metrics and dimensions supported by AWS services, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch
+     * Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * 
+     * @param getMetricStatisticsRequest
+     * @return A Java Future containing the result of the GetMetricStatistics operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetMetricStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest);
+
+    /**
+     * <p>
+     * Gets statistics for the specified metric.
+     * </p>
+     * <p>
+     * The maximum number of data points returned from a single call is 1,440. If you request more than 1,440 data
+     * points, CloudWatch returns an error. To reduce the number of data points, you can narrow the specified time range
+     * and make multiple requests across adjacent time ranges, or you can increase the specified period. Data points are
+     * not returned in chronological order.
+     * </p>
+     * <p>
+     * CloudWatch aggregates data points based on the length of the period that you specify. For example, if you request
+     * statistics with a one-hour period, CloudWatch aggregates all data points with time stamps that fall within each
+     * one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than the number of data
+     * points returned.
+     * </p>
+     * <p>
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The SampleCount value of the statistic set is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Min and the Max values of the statistic set are equal.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Percentile statistics are not available for metrics when any of the metric values are negative numbers.
+     * </p>
+     * <p>
+     * Amazon CloudWatch retains metric data as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of less than 60 seconds are available for 3 hours. These data points are
+     * high-resolution metrics and are available only for custom metrics that have been defined with a
+     * <code>StorageResolution</code> of 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Data points that are initially published with a shorter period are aggregated together for long-term storage. For
+     * example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute
+     * resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution
+     * of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.
+     * </p>
+     * <p>
+     * CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
+     * </p>
+     * <p>
+     * For information about metrics and dimensions supported by AWS services, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch
+     * Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param getMetricStatisticsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetMetricStatistics
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the GetMetricStatistics operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.GetMetricStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(
-            GetMetricStatisticsRequest getMetricStatisticsRequest,
+    java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest,
             com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult> asyncHandler);
 
     /**
      * <p>
-     * Returns a list of valid metrics stored for the AWS account owner.
-     * Returned metrics can be used with <a>GetMetricStatistics</a> to obtain
-     * statistical data for a given metric.
+     * You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon
+     * CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki
+     * pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your
+     * own custom live dashboard.
      * </p>
-     * <note> Up to 500 results are returned for any one call. To retrieve
-     * further results, use returned <code>NextToken</code> values with
-     * subsequent <code>ListMetrics</code> operations. </note> <note> If you
-     * create a metric with the <a>PutMetricData</a> action, allow up to fifteen
-     * minutes for the metric to appear in calls to the <code>ListMetrics</code>
-     * action. Statistics about the metric, however, are available sooner using
-     * <a>GetMetricStatistics</a>. </note>
+     * <p>
+     * The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and
+     * vertical annotations.
+     * </p>
+     * <p>
+     * There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has
+     * the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * As many as 100 metrics in the graph.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Up to 100 KB uncompressed payload.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param listMetricsRequest
-     * @return A Java Future containing the result of the ListMetrics operation
-     *         returned by the service.
-     * @sample AmazonCloudWatchAsync.ListMetrics
+     * @param getMetricWidgetImageRequest
+     * @return A Java Future containing the result of the GetMetricWidgetImage operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetMetricWidgetImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
-            ListMetricsRequest listMetricsRequest);
+    java.util.concurrent.Future<GetMetricWidgetImageResult> getMetricWidgetImageAsync(GetMetricWidgetImageRequest getMetricWidgetImageRequest);
 
     /**
      * <p>
-     * Returns a list of valid metrics stored for the AWS account owner.
-     * Returned metrics can be used with <a>GetMetricStatistics</a> to obtain
-     * statistical data for a given metric.
+     * You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon
+     * CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki
+     * pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your
+     * own custom live dashboard.
      * </p>
-     * <note> Up to 500 results are returned for any one call. To retrieve
-     * further results, use returned <code>NextToken</code> values with
-     * subsequent <code>ListMetrics</code> operations. </note> <note> If you
-     * create a metric with the <a>PutMetricData</a> action, allow up to fifteen
-     * minutes for the metric to appear in calls to the <code>ListMetrics</code>
-     * action. Statistics about the metric, however, are available sooner using
-     * <a>GetMetricStatistics</a>. </note>
+     * <p>
+     * The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and
+     * vertical annotations.
+     * </p>
+     * <p>
+     * There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has
+     * the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * As many as 100 metrics in the graph.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Up to 100 KB uncompressed payload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getMetricWidgetImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricWidgetImage operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetMetricWidgetImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricWidgetImageResult> getMetricWidgetImageAsync(GetMetricWidgetImageRequest getMetricWidgetImageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricWidgetImageRequest, GetMetricWidgetImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those
+     * dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed.
+     * </p>
+     * <p>
+     * <code>ListDashboards</code> returns up to 1000 results on one page. If there are more than 1000 dashboards, you
+     * can call <code>ListDashboards</code> again and include the value you received for <code>NextToken</code> in the
+     * first call, to receive the next 1000 results.
+     * </p>
+     * 
+     * @param listDashboardsRequest
+     * @return A Java Future containing the result of the ListDashboards operation returned by the service.
+     * @sample AmazonCloudWatchAsync.ListDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest listDashboardsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those
+     * dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed.
+     * </p>
+     * <p>
+     * <code>ListDashboards</code> returns up to 1000 results on one page. If there are more than 1000 dashboards, you
+     * can call <code>ListDashboards</code> again and include the value you received for <code>NextToken</code> in the
+     * first call, to receive the next 1000 results.
+     * </p>
+     * 
+     * @param listDashboardsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDashboards operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.ListDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest listDashboardsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the specified metrics. You can use the returned metrics with <a>GetMetricData</a> or
+     * <a>GetMetricStatistics</a> to obtain statistical data.
+     * </p>
+     * <p>
+     * Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with
+     * subsequent calls.
+     * </p>
+     * <p>
+     * After you create a metric, allow up to fifteen minutes before the metric appears. Statistics about the metric,
+     * however, are available sooner using <a>GetMetricData</a> or <a>GetMetricStatistics</a>.
+     * </p>
+     * 
+     * @param listMetricsRequest
+     * @return A Java Future containing the result of the ListMetrics operation returned by the service.
+     * @sample AmazonCloudWatchAsync.ListMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(ListMetricsRequest listMetricsRequest);
+
+    /**
+     * <p>
+     * List the specified metrics. You can use the returned metrics with <a>GetMetricData</a> or
+     * <a>GetMetricStatistics</a> to obtain statistical data.
+     * </p>
+     * <p>
+     * Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with
+     * subsequent calls.
+     * </p>
+     * <p>
+     * After you create a metric, allow up to fifteen minutes before the metric appears. Statistics about the metric,
+     * however, are available sooner using <a>GetMetricData</a> or <a>GetMetricStatistics</a>.
+     * </p>
      * 
      * @param listMetricsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListMetrics operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListMetrics operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.ListMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
-            ListMetricsRequest listMetricsRequest,
+    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(ListMetricsRequest listMetricsRequest,
             com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler);
 
     /**
@@ -456,253 +818,398 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     java.util.concurrent.Future<ListMetricsResult> listMetricsAsync();
 
     /**
-     * Simplified method form for invoking the ListMetrics operation with an
-     * AsyncHandler.
+     * Simplified method form for invoking the ListMetrics operation with an AsyncHandler.
      *
-     * @see #listMetricsAsync(ListMetricsRequest,
-     *      com.amazonaws.handlers.AsyncHandler)
+     * @see #listMetricsAsync(ListMetricsRequest, com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
-            com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler);
+    java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler);
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified Amazon
-     * CloudWatch metric. Optionally, this operation can associate one or more
-     * Amazon Simple Notification Service resources with the alarm.
+     * Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
+     * the entire contents are replaced with what you specify here.
      * </p>
      * <p>
-     * When this operation creates an alarm, the alarm state is immediately set
-     * to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its
-     * <code>StateValue</code> is set appropriately. Any actions associated with
-     * the <code>StateValue</code> is then executed.
+     * There is no limit to the number of dashboards in your account. All dashboards in your account are global, not
+     * region-specific.
      * </p>
-     * <note> When updating an existing alarm, its <code>StateValue</code> is
-     * left unchanged. </note> <note> If you are using an AWS Identity and
-     * Access Management (IAM) account to create or modify an alarm, you must
-     * have the following Amazon EC2 permissions:
+     * <p>
+     * A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing dashboard. To copy an
+     * existing dashboard using the console, you can load the dashboard and then use the View/edit source command in the
+     * Actions menu to display the JSON block for that dashboard. Another way to copy a dashboard is to use
+     * <code>GetDashboard</code>, and then use the data returned within <code>DashboardBody</code> as the template for
+     * the new dashboard when you call <code>PutDashboard</code>.
+     * </p>
+     * <p>
+     * When you create a dashboard with <code>PutDashboard</code>, a good practice is to add a text widget at the top of
+     * the dashboard with a message that the dashboard was created by script and should not be changed in the console.
+     * This message could also point console users to the location of the <code>DashboardBody</code> script or the
+     * CloudFormation template used to create the dashboard.
+     * </p>
+     * 
+     * @param putDashboardRequest
+     * @return A Java Future containing the result of the PutDashboard operation returned by the service.
+     * @sample AmazonCloudWatchAsync.PutDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest putDashboardRequest);
+
+    /**
+     * <p>
+     * Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
+     * the entire contents are replaced with what you specify here.
+     * </p>
+     * <p>
+     * There is no limit to the number of dashboards in your account. All dashboards in your account are global, not
+     * region-specific.
+     * </p>
+     * <p>
+     * A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing dashboard. To copy an
+     * existing dashboard using the console, you can load the dashboard and then use the View/edit source command in the
+     * Actions menu to display the JSON block for that dashboard. Another way to copy a dashboard is to use
+     * <code>GetDashboard</code>, and then use the data returned within <code>DashboardBody</code> as the template for
+     * the new dashboard when you call <code>PutDashboard</code>.
+     * </p>
+     * <p>
+     * When you create a dashboard with <code>PutDashboard</code>, a good practice is to add a text widget at the top of
+     * the dashboard with a message that the dashboard was created by script and should not be changed in the console.
+     * This message could also point console users to the location of the <code>DashboardBody</code> script or the
+     * CloudFormation template used to create the dashboard.
+     * </p>
+     * 
+     * @param putDashboardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDashboard operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.PutDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest putDashboardRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDashboardRequest, PutDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates an alarm and associates it with the specified metric or metric math expression.
+     * </p>
+     * <p>
+     * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+     * alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then
+     * executed.
+     * </p>
+     * <p>
+     * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
+     * configuration of the alarm.
+     * </p>
+     * <p>
+     * If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:
+     * </p>
      * <ul>
-     * <li><code>ec2:DescribeInstanceStatus</code> and
-     * <code>ec2:DescribeInstances</code> for all alarms on Amazon EC2 instance
-     * status metrics.</li>
-     * <li><code>ec2:StopInstances</code> for alarms with stop actions.</li>
-     * <li><code>ec2:TerminateInstances</code> for alarms with terminate
-     * actions.</li>
-     * <li><code>ec2:DescribeInstanceRecoveryAttribute</code>, and
-     * <code>ec2:RecoverInstances</code> for alarms with recover actions.</li>
+     * <li>
+     * <p>
+     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
+     * status metrics
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:StopInstances</code> for alarms with stop actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:TerminateInstances</code> for alarms with terminate actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code> for alarms with recover
+     * actions
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * If you have read/write permissions for Amazon CloudWatch but not for
-     * Amazon EC2, you can still create an alarm but the stop or terminate
-     * actions won't be performed on the Amazon EC2 instance. However, if you
-     * are later granted permission to use the associated Amazon EC2 APIs, the
-     * alarm actions you created earlier will be performed. For more information
-     * about IAM permissions, see <a href=
-     * "http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html"
-     * >Permissions and Policies</a> in <i>Using IAM</i>.
+     * If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm,
+     * but the stop or terminate actions are not performed. However, if you are later granted the required permissions,
+     * the alarm actions that you created earlier are performed.
      * </p>
      * <p>
-     * If you are using an IAM role (e.g., an Amazon EC2 instance profile), you
-     * cannot stop or terminate the instance using alarm actions. However, you
-     * can still see the alarm state and perform any other actions such as
-     * Amazon SNS notifications or Auto Scaling policies.
+     * If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance
+     * using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS
+     * notifications or Auto Scaling policies.
      * </p>
      * <p>
-     * If you are using temporary security credentials granted using the AWS
-     * Security Token Service (AWS STS), you cannot stop or terminate an Amazon
-     * EC2 instance using alarm actions.
+     * If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2
+     * instance using alarm actions.
      * </p>
-     * </note>
+     * <p>
+     * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
+     * CloudWatch creates the necessary service-linked role for you. The service-linked role is called
+     * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * >AWS service-linked role</a>.
+     * </p>
      * 
      * @param putMetricAlarmRequest
-     * @return A Java Future containing the result of the PutMetricAlarm
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PutMetricAlarm operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
-            PutMetricAlarmRequest putMetricAlarmRequest);
+    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest);
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified Amazon
-     * CloudWatch metric. Optionally, this operation can associate one or more
-     * Amazon Simple Notification Service resources with the alarm.
+     * Creates or updates an alarm and associates it with the specified metric or metric math expression.
      * </p>
      * <p>
-     * When this operation creates an alarm, the alarm state is immediately set
-     * to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its
-     * <code>StateValue</code> is set appropriately. Any actions associated with
-     * the <code>StateValue</code> is then executed.
+     * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+     * alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then
+     * executed.
      * </p>
-     * <note> When updating an existing alarm, its <code>StateValue</code> is
-     * left unchanged. </note> <note> If you are using an AWS Identity and
-     * Access Management (IAM) account to create or modify an alarm, you must
-     * have the following Amazon EC2 permissions:
+     * <p>
+     * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
+     * configuration of the alarm.
+     * </p>
+     * <p>
+     * If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:
+     * </p>
      * <ul>
-     * <li><code>ec2:DescribeInstanceStatus</code> and
-     * <code>ec2:DescribeInstances</code> for all alarms on Amazon EC2 instance
-     * status metrics.</li>
-     * <li><code>ec2:StopInstances</code> for alarms with stop actions.</li>
-     * <li><code>ec2:TerminateInstances</code> for alarms with terminate
-     * actions.</li>
-     * <li><code>ec2:DescribeInstanceRecoveryAttribute</code>, and
-     * <code>ec2:RecoverInstances</code> for alarms with recover actions.</li>
+     * <li>
+     * <p>
+     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
+     * status metrics
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:StopInstances</code> for alarms with stop actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:TerminateInstances</code> for alarms with terminate actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code> for alarms with recover
+     * actions
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * If you have read/write permissions for Amazon CloudWatch but not for
-     * Amazon EC2, you can still create an alarm but the stop or terminate
-     * actions won't be performed on the Amazon EC2 instance. However, if you
-     * are later granted permission to use the associated Amazon EC2 APIs, the
-     * alarm actions you created earlier will be performed. For more information
-     * about IAM permissions, see <a href=
-     * "http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html"
-     * >Permissions and Policies</a> in <i>Using IAM</i>.
+     * If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm,
+     * but the stop or terminate actions are not performed. However, if you are later granted the required permissions,
+     * the alarm actions that you created earlier are performed.
      * </p>
      * <p>
-     * If you are using an IAM role (e.g., an Amazon EC2 instance profile), you
-     * cannot stop or terminate the instance using alarm actions. However, you
-     * can still see the alarm state and perform any other actions such as
-     * Amazon SNS notifications or Auto Scaling policies.
+     * If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance
+     * using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS
+     * notifications or Auto Scaling policies.
      * </p>
      * <p>
-     * If you are using temporary security credentials granted using the AWS
-     * Security Token Service (AWS STS), you cannot stop or terminate an Amazon
-     * EC2 instance using alarm actions.
+     * If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2
+     * instance using alarm actions.
      * </p>
-     * </note>
+     * <p>
+     * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
+     * CloudWatch creates the necessary service-linked role for you. The service-linked role is called
+     * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * >AWS service-linked role</a>.
+     * </p>
      * 
      * @param putMetricAlarmRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutMetricAlarm
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PutMetricAlarm operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
-            PutMetricAlarmRequest putMetricAlarmRequest,
+    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest,
             com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, PutMetricAlarmResult> asyncHandler);
 
     /**
      * <p>
-     * Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch
-     * associates the data points with the specified metric. If the specified
-     * metric does not exist, Amazon CloudWatch creates the metric. When Amazon
-     * CloudWatch creates a metric, it can take up to fifteen minutes for the
-     * metric to appear in calls to the <a>ListMetrics</a> action.
+     * Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified
+     * metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric,
+     * it can take up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
      * </p>
      * <p>
-     * Each <code>PutMetricData</code> request is limited to 8 KB in size for
-     * HTTP GET requests and is limited to 40 KB in size for HTTP POST requests.
+     * You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number
+     * of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in
+     * the <code>MetricDatum</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+     * to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving
+     * percentile statistics on this data.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
      * <p>
-     * Data that is timestamped 24 hours or more in the past may take in excess
-     * of 48 hours to become available from submission time using
-     * <code>GetMetricStatistics</code>.
+     * Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can send a
+     * payload compressed by gzip. Each request is also limited to no more than 20 different metrics.
      * </p>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
+     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
+     * supported.
+     * </p>
+     * <p>
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
+     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for
+     * <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time they are submitted.
+     * </p>
+     * <p>
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>, <code>Max</code>, and
+     * <code>Sum</code> are all equal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code> multiplied
+     * by <code>SampleCount</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putMetricDataRequest
-     * @return A Java Future containing the result of the PutMetricData
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PutMetricData operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
-            PutMetricDataRequest putMetricDataRequest);
+    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(PutMetricDataRequest putMetricDataRequest);
 
     /**
      * <p>
-     * Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch
-     * associates the data points with the specified metric. If the specified
-     * metric does not exist, Amazon CloudWatch creates the metric. When Amazon
-     * CloudWatch creates a metric, it can take up to fifteen minutes for the
-     * metric to appear in calls to the <a>ListMetrics</a> action.
+     * Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified
+     * metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric,
+     * it can take up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
      * </p>
      * <p>
-     * Each <code>PutMetricData</code> request is limited to 8 KB in size for
-     * HTTP GET requests and is limited to 40 KB in size for HTTP POST requests.
+     * You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number
+     * of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in
+     * the <code>MetricDatum</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+     * to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving
+     * percentile statistics on this data.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
      * <p>
-     * Data that is timestamped 24 hours or more in the past may take in excess
-     * of 48 hours to become available from submission time using
-     * <code>GetMetricStatistics</code>.
+     * Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can send a
+     * payload compressed by gzip. Each request is also limited to no more than 20 different metrics.
      * </p>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
+     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
+     * supported.
+     * </p>
+     * <p>
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
+     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for
+     * <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time they are submitted.
+     * </p>
+     * <p>
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>, <code>Max</code>, and
+     * <code>Sum</code> are all equal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code> multiplied
+     * by <code>SampleCount</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putMetricDataRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutMetricData
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PutMetricData operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
-            PutMetricDataRequest putMetricDataRequest,
+    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(PutMetricDataRequest putMetricDataRequest,
             com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, PutMetricDataResult> asyncHandler);
 
     /**
      * <p>
-     * Temporarily sets the state of an alarm. When the updated
-     * <code>StateValue</code> differs from the previous value, the action
-     * configured for the appropriate state is invoked. For example, if your
-     * alarm is configured to send an Amazon SNS message when an alarm is
-     * triggered, temporarily changing the alarm's state to <b>ALARM</b> will
-     * send an Amazon SNS message. This is not a permanent change. The next
-     * periodic alarm check (in about a minute) will set the alarm to its actual
-     * state. Because the alarm state change happens very quickly, it is
-     * typically only visibile in the alarm's <b>History</b> tab in the Amazon
-     * CloudWatch console or through <code>DescribeAlarmHistory</code>.
+     * Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous
+     * value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to
+     * send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
+     * sends an SNS message. The alarm returns to its actual state (often within seconds). Because the alarm state
+     * change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch
+     * console or through <a>DescribeAlarmHistory</a>.
      * </p>
      * 
      * @param setAlarmStateRequest
-     * @return A Java Future containing the result of the SetAlarmState
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SetAlarmState operation returned by the service.
      * @sample AmazonCloudWatchAsync.SetAlarmState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
-            SetAlarmStateRequest setAlarmStateRequest);
+    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest);
 
     /**
      * <p>
-     * Temporarily sets the state of an alarm. When the updated
-     * <code>StateValue</code> differs from the previous value, the action
-     * configured for the appropriate state is invoked. For example, if your
-     * alarm is configured to send an Amazon SNS message when an alarm is
-     * triggered, temporarily changing the alarm's state to <b>ALARM</b> will
-     * send an Amazon SNS message. This is not a permanent change. The next
-     * periodic alarm check (in about a minute) will set the alarm to its actual
-     * state. Because the alarm state change happens very quickly, it is
-     * typically only visibile in the alarm's <b>History</b> tab in the Amazon
-     * CloudWatch console or through <code>DescribeAlarmHistory</code>.
+     * Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous
+     * value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to
+     * send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
+     * sends an SNS message. The alarm returns to its actual state (often within seconds). Because the alarm state
+     * change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch
+     * console or through <a>DescribeAlarmHistory</a>.
      * </p>
      * 
      * @param setAlarmStateRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the SetAlarmState
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SetAlarmState operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.SetAlarmState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
-            SetAlarmStateRequest setAlarmStateRequest,
+    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest,
             com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler);
 
 }

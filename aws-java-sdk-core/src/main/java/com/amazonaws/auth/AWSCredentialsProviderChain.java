@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * {@link AWSCredentialsProvider} implementation that chains together multiple
@@ -105,11 +105,13 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
         this.reuseLastProvider = b;
     }
 
+    @Override
     public AWSCredentials getCredentials() {
         if (reuseLastProvider && lastUsedProvider != null) {
             return lastUsedProvider.getCredentials();
         }
 
+        List<String> exceptionMessages = null;
         for (AWSCredentialsProvider provider : credentialsProviders) {
             try {
                 AWSCredentials credentials = provider.getCredentials();
@@ -123,14 +125,19 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                 }
             } catch (Exception e) {
                 // Ignore any exceptions and move onto the next provider
-                log.debug("Unable to load credentials from " + provider.toString() +
-                          ": " + e.getMessage());
+                String message = provider + ": " + e.getMessage();
+                log.debug("Unable to load credentials from " + message);
+                if (exceptionMessages == null) {
+                    exceptionMessages = new LinkedList<String>();
+                }
+                exceptionMessages.add(message);
             }
         }
-
-        throw new AmazonClientException("Unable to load AWS credentials from any provider in the chain");
+        throw new SdkClientException("Unable to load AWS credentials from any provider in the chain: "
+                                     + exceptionMessages);
     }
 
+    @Override
     public void refresh() {
         for (AWSCredentialsProvider provider : credentialsProviders) {
             provider.refresh();

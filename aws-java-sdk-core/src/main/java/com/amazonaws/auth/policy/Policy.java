@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
  */
 package com.amazonaws.auth.policy;
 
+import com.amazonaws.auth.policy.internal.JsonPolicyReader;
+import com.amazonaws.auth.policy.internal.JsonPolicyWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import com.amazonaws.auth.policy.internal.JsonPolicyReader;
-import com.amazonaws.auth.policy.internal.JsonPolicyWriter;
 
 /**
  * An AWS access control policy is a object that acts as a container for one or
@@ -214,7 +213,10 @@ public class Policy {
     }
 
     /**
-     * Returns an AWS access control policy object generated from JSON string.
+     * Returns an AWS access control policy object generated from JSON string. This will automatically strip all dashes from
+     * AWS principal IDs, because AWS account IDs must not contain dashes. If this behavior isn't desirable (eg. because you are
+     * using IAM AWS principal IDs with dashes in the name), you may disable this behavior by specifying custom JSON policy reader
+     * options in {@link #fromJson(String, PolicyReaderOptions)}.
      *
      * @param jsonString
      *            The JSON string representation of this AWS access control policy.
@@ -226,7 +228,26 @@ public class Policy {
      *      converted to an AWS policy object.
      */
     public static Policy fromJson(String jsonString) {
-        return new JsonPolicyReader().createPolicyFromJsonString(jsonString);
+        return fromJson(jsonString, new PolicyReaderOptions());
+    }
+
+    /**
+     * Returns an AWS access control policy object generated from JSON string. Allows configuring options for the JSON policy
+     * reader (for example, to disable the stripping of dashes in the principal ID).
+     *
+     * @param jsonString
+     *            The JSON string representation of this AWS access control policy.
+     * @param options
+     *            Configuration for the JSON policy reader that affects the way in which it converts the JSON configuration.
+     *
+     * @return An AWS access control policy object.
+     *
+     * @throws IllegalArgumentException
+     *      If the specified JSON string is null or invalid and cannot be
+     *      converted to an AWS policy object.
+     */
+    public static Policy fromJson(String jsonString, PolicyReaderOptions options) {
+        return new JsonPolicyReader(options).createPolicyFromJsonString(jsonString);
     }
 
     private void assignUniqueStatementIds() {

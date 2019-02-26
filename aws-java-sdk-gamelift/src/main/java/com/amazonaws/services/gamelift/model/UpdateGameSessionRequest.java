@@ -1,50 +1,48 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for a request action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession" target="_top">AWS API
+ *      Documentation</a>
  */
-public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for the game session to update.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
-     * need to be unique.
+     * Descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String name;
@@ -57,25 +55,30 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String protectionPolicy;
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for the game session to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you
-     *        want to update.
+     *        Unique identifier for the game session to update.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -84,12 +87,10 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for the game session to update.
      * </p>
      * 
-     * @return Unique identifier for a game session. Specify the game session
-     *         you want to update.
+     * @return Unique identifier for the game session to update.
      */
 
     public String getGameSessionId() {
@@ -98,15 +99,12 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want
-     * to update.
+     * Unique identifier for the game session to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you
-     *        want to update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for the game session to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameSessionRequest withGameSessionId(String gameSessionId) {
@@ -116,13 +114,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
-     *        the game session.
+     *        Maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -131,12 +127,10 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be simultaneously connected to
-     *         the game session.
+     * @return Maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -145,32 +139,26 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
-     * game session.
+     * Maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
-     *        the game session.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum number of players that can be connected simultaneously to the game session.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateGameSessionRequest withMaximumPlayerSessionCount(
-            Integer maximumPlayerSessionCount) {
+    public UpdateGameSessionRequest withMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
         return this;
     }
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
-     * need to be unique.
+     * Descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -179,12 +167,10 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
-     * need to be unique.
+     * Descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this game session. Session
-     *         names do not need to be unique.
+     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getName() {
@@ -193,15 +179,12 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
-     * need to be unique.
+     * Descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameSessionRequest withName(String name) {
@@ -215,13 +198,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
+     *        Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
-    public void setPlayerSessionCreationPolicy(
-            String playerSessionCreationPolicy) {
+    public void setPlayerSessionCreationPolicy(String playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy;
     }
 
@@ -230,8 +211,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
-     * @return Policy determining whether or not the game session accepts new
-     *         players.
+     * @return Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -245,15 +225,12 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Policy determining whether or not the game session accepts new players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */
 
-    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
-            String playerSessionCreationPolicy) {
+    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(String playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
         return this;
     }
@@ -264,15 +241,12 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
+     *        Policy determining whether or not the game session accepts new players.
      * @see PlayerSessionCreationPolicy
      */
 
-    public void setPlayerSessionCreationPolicy(
-            PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        this.playerSessionCreationPolicy = playerSessionCreationPolicy
-                .toString();
+    public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
+        withPlayerSessionCreationPolicy(playerSessionCreationPolicy);
     }
 
     /**
@@ -281,38 +255,48 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new
-     *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Policy determining whether or not the game session accepts new players.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */
 
-    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
-            PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
+    public UpdateGameSessionRequest withPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
+        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
         return this;
     }
 
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session only.
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
-     *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -323,22 +307,34 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Game session protection policy to apply to this game session
-     *         only.
+     * @return Game session protection policy to apply to this game session only.</p>
      *         <ul>
-     *         <li>NoProtection: The game session can be terminated during a
-     *         scale-down event.</li>
-     *         <li>FullProtection: If the game session is in an ACTIVE status,
-     *         it cannot be terminated during a scale-down event.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         during a scale-down event.
+     *         </p>
+     *         </li>
      * @see ProtectionPolicy
      */
 
@@ -349,24 +345,36 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session only.
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
-     *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
@@ -378,62 +386,86 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session only.
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
-     *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        this.protectionPolicy = protectionPolicy.toString();
+        withProtectionPolicy(protectionPolicy);
     }
 
     /**
      * <p>
      * Game session protection policy to apply to this game session only.
-     * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protectionPolicy
-     *        Game session protection policy to apply to this game session only.
+     *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
-     *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
 
-    public UpdateGameSessionRequest withProtectionPolicy(
-            ProtectionPolicy protectionPolicy) {
-        setProtectionPolicy(protectionPolicy);
+    public UpdateGameSessionRequest withProtectionPolicy(ProtectionPolicy protectionPolicy) {
+        this.protectionPolicy = protectionPolicy.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -444,17 +476,15 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: "
-                    + getMaximumPlayerSessionCount() + ",");
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPlayerSessionCreationPolicy() != null)
-            sb.append("PlayerSessionCreationPolicy: "
-                    + getPlayerSessionCreationPolicy() + ",");
+            sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getProtectionPolicy() != null)
-            sb.append("ProtectionPolicy: " + getProtectionPolicy());
+            sb.append("ProtectionPolicy: ").append(getProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -471,34 +501,23 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
         UpdateGameSessionRequest other = (UpdateGameSessionRequest) obj;
         if (other.getGameSessionId() == null ^ this.getGameSessionId() == null)
             return false;
-        if (other.getGameSessionId() != null
-                && other.getGameSessionId().equals(this.getGameSessionId()) == false)
+        if (other.getGameSessionId() != null && other.getGameSessionId().equals(this.getGameSessionId()) == false)
             return false;
-        if (other.getMaximumPlayerSessionCount() == null
-                ^ this.getMaximumPlayerSessionCount() == null)
+        if (other.getMaximumPlayerSessionCount() == null ^ this.getMaximumPlayerSessionCount() == null)
             return false;
-        if (other.getMaximumPlayerSessionCount() != null
-                && other.getMaximumPlayerSessionCount().equals(
-                        this.getMaximumPlayerSessionCount()) == false)
+        if (other.getMaximumPlayerSessionCount() != null && other.getMaximumPlayerSessionCount().equals(this.getMaximumPlayerSessionCount()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getPlayerSessionCreationPolicy() == null
-                ^ this.getPlayerSessionCreationPolicy() == null)
+        if (other.getPlayerSessionCreationPolicy() == null ^ this.getPlayerSessionCreationPolicy() == null)
             return false;
-        if (other.getPlayerSessionCreationPolicy() != null
-                && other.getPlayerSessionCreationPolicy().equals(
-                        this.getPlayerSessionCreationPolicy()) == false)
+        if (other.getPlayerSessionCreationPolicy() != null && other.getPlayerSessionCreationPolicy().equals(this.getPlayerSessionCreationPolicy()) == false)
             return false;
-        if (other.getProtectionPolicy() == null
-                ^ this.getProtectionPolicy() == null)
+        if (other.getProtectionPolicy() == null ^ this.getProtectionPolicy() == null)
             return false;
-        if (other.getProtectionPolicy() != null
-                && other.getProtectionPolicy().equals(
-                        this.getProtectionPolicy()) == false)
+        if (other.getProtectionPolicy() != null && other.getProtectionPolicy().equals(this.getProtectionPolicy()) == false)
             return false;
         return true;
     }
@@ -508,24 +527,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getGameSessionId() == null) ? 0 : getGameSessionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaximumPlayerSessionCount() == null) ? 0
-                        : getMaximumPlayerSessionCount().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPlayerSessionCreationPolicy() == null) ? 0
-                        : getPlayerSessionCreationPolicy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProtectionPolicy() == null) ? 0 : getProtectionPolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
+        hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlayerSessionCreationPolicy() == null) ? 0 : getPlayerSessionCreationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getProtectionPolicy() == null) ? 0 : getProtectionPolicy().hashCode());
         return hashCode;
     }
 
@@ -533,4 +539,5 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     public UpdateGameSessionRequest clone() {
         return (UpdateGameSessionRequest) super.clone();
     }
+
 }

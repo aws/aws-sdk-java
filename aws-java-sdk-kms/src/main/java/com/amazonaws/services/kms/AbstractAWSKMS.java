@@ -1,28 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.kms;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSKMS}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSKMS}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSKMS implements AWSKMS {
 
     protected AbstractAWSKMS() {
@@ -39,13 +38,22 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public CancelKeyDeletionResult cancelKeyDeletion(
-            CancelKeyDeletionRequest request) {
+    public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ConnectCustomKeyStoreResult connectCustomKeyStore(ConnectCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCustomKeyStoreResult createCustomKeyStore(CreateCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,6 +83,21 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public DeleteCustomKeyStoreResult deleteCustomKeyStore(DeleteCustomKeyStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCustomKeyStoresResult describeCustomKeyStores(DescribeCustomKeyStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKeyResult describeKey(DescribeKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,8 +108,12 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public DisableKeyRotationResult disableKeyRotation(
-            DisableKeyRotationRequest request) {
+    public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisconnectCustomKeyStoreResult disconnectCustomKeyStore(DisconnectCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,8 +123,7 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public EnableKeyRotationResult enableKeyRotation(
-            EnableKeyRotationRequest request) {
+    public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,8 +138,7 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(
-            GenerateDataKeyWithoutPlaintextRequest request) {
+    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,8 +158,17 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public GetKeyRotationStatusResult getKeyRotationStatus(
-            GetKeyRotationStatusRequest request) {
+    public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,8 +203,12 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public ListRetirableGrantsResult listRetirableGrants(
-            ListRetirableGrantsRequest request) {
+    public ListResourceTagsResult listResourceTags(ListResourceTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,8 +238,17 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public ScheduleKeyDeletionResult scheduleKeyDeletion(
-            ScheduleKeyDeletionRequest request) {
+    public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -211,8 +258,12 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public UpdateKeyDescriptionResult updateKeyDescription(
-            UpdateKeyDescriptionRequest request) {
+    public UpdateCustomKeyStoreResult updateCustomKeyStore(UpdateCustomKeyStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -222,8 +273,8 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

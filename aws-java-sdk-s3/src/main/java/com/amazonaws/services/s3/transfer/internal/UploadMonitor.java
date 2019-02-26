@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -40,7 +41,7 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
 /**
  * Manages an upload by periodically checking to see if the upload is done, and
  * returning a result if so. Otherwise, schedules a copy of itself to be run in
- * the future and returns null. When waiting on the result of this class via a
+ * the futureReference and returns null. When waiting on the result of this class via a
  * Future object, clients must call {@link UploadMonitor#isDone()} and
  * {@link UploadMonitor#getFuture()}
  */
@@ -64,18 +65,14 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * State for clients wishing to poll for completion
      */
     private boolean isUploadDone = false;
-    private Future<UploadResult> future;
+    private AtomicReference<Future<UploadResult>> futureReference = new AtomicReference<Future<UploadResult>>(null);
 
-    public synchronized Future<UploadResult> getFuture() {
-        return future;
-    }
-
-    private synchronized void setFuture(Future<UploadResult> future) {
-        this.future = future;
+    public Future<UploadResult> getFuture() {
+        return futureReference.get();
     }
 
     private synchronized void cancelFuture() {
-        future.cancel(true);
+        futureReference.get().cancel(true);
     }
 
     public synchronized boolean isDone() {
@@ -117,7 +114,14 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         UploadMonitor uploadMonitor = new UploadMonitor(manager, transfer,
                 threadPool, multipartUploadCallable, putObjectRequest,
                 progressListenerChain);
-        uploadMonitor.setFuture(threadPool.submit(uploadMonitor));
+        Future<UploadResult> thisFuture = threadPool.submit(uploadMonitor);
+        // Use an atomic compareAndSet to prevent a possible race between the
+        // setting of the UploadMonitor's futureReference, and setting the
+        // CompleteMultipartUpload's futureReference within the call() method.
+        // We only want to set the futureReference to UploadMonitor's futureReference if the
+        // current value is null, otherwise the futureReference that's set is
+        // CompleteMultipartUpload's which is ultimately what we want.
+        uploadMonitor.futureReference.compareAndSet(null, thisFuture);
         return uploadMonitor;
     }
 
@@ -145,7 +149,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
              */
             if (result == null) {
                 futures.addAll(multipartUploadCallable.getFutures());
-                setFuture(threadPool.submit(new CompleteMultipartUpload(
+                futureReference.set(threadPool.submit(new CompleteMultipartUpload(
                         multipartUploadCallable.getMultipartUploadId(), s3,
                         origReq, futures, multipartUploadCallable
                                 .getETags(), listener, this)));
@@ -156,7 +160,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
             publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
-            throw new AmazonClientException("Upload canceled");
+            throw new SdkClientException("Upload canceled");
         } catch (Exception e) {
             transfer.setState(TransferState.Failed);
             throw e;
@@ -172,6 +176,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         if (multipartUploadCallable.isMultipartUpload()) {
             publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
+    }
+
+    /**
+     * Marks the upload as a failure.
+     */
+    void uploadFailure() {
+        transfer.setState(TransferState.Failed);
     }
 
     /**

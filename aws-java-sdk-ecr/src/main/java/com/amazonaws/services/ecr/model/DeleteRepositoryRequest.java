@@ -1,35 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
@@ -41,22 +40,20 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
     private String repositoryName;
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      */
     private Boolean force;
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to delete. If you do not specify a registry, the
-     *        default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -65,14 +62,12 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the
-     *         repository to delete. If you do not specify a registry, the
-     *         default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *         specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -81,17 +76,14 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the
-     * repository to delete. If you do not specify a registry, the default
-     * registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the
-     *        repository to delete. If you do not specify a registry, the
-     *        default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry that contains the repository to delete. If you do not
+     *        specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withRegistryId(String registryId) {
@@ -131,8 +123,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param repositoryName
      *        The name of the repository to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withRepositoryName(String repositoryName) {
@@ -142,11 +133,11 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
+     *        If a repository contains images, forces the deletion.
      */
 
     public void setForce(Boolean force) {
@@ -155,10 +146,10 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean getForce() {
@@ -167,13 +158,12 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If a repository contains images, forces the deletion.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteRepositoryRequest withForce(Boolean force) {
@@ -183,10 +173,10 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean isForce() {
@@ -194,8 +184,8 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -206,11 +196,11 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -227,19 +217,15 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
         DeleteRepositoryRequest other = (DeleteRepositoryRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
-        if (other.getForce() != null
-                && other.getForce().equals(this.getForce()) == false)
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -249,14 +235,9 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 
@@ -264,4 +245,5 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
     public DeleteRepositoryRequest clone() {
         return (DeleteRepositoryRequest) super.clone();
     }
+
 }

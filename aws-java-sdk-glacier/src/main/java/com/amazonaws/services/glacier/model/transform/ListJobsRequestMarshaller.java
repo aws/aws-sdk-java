@@ -1,113 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListJobsRequest Marshaller
+ * ListJobsRequestMarshaller
  */
-public class ListJobsRequestMarshaller implements
-        Marshaller<Request<ListJobsRequest>, ListJobsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ListJobsRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("statuscode").build();
+    private static final MarshallingInfo<String> COMPLETED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completed").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final ListJobsRequestMarshaller instance = new ListJobsRequestMarshaller();
 
-    public ListJobsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static ListJobsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListJobsRequest> marshall(ListJobsRequest listJobsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListJobsRequest listJobsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listJobsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListJobsRequest> request = new DefaultRequest<ListJobsRequest>(
-                listJobsRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
-
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (listJobsRequest.getAccountId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(listJobsRequest
-                                .getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (listJobsRequest.getVaultName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(listJobsRequest
-                                .getVaultName()), false) : "");
-        request.setResourcePath(uriResourcePath);
-
-        if (listJobsRequest.getLimit() != null) {
-            request.addParameter("limit",
-                    StringUtils.fromString(listJobsRequest.getLimit()));
+        try {
+            protocolMarshaller.marshall(listJobsRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getStatuscode(), STATUSCODE_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getCompleted(), COMPLETED_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listJobsRequest.getMarker() != null) {
-            request.addParameter("marker",
-                    StringUtils.fromString(listJobsRequest.getMarker()));
-        }
-
-        if (listJobsRequest.getStatuscode() != null) {
-            request.addParameter("statuscode",
-                    StringUtils.fromString(listJobsRequest.getStatuscode()));
-        }
-
-        if (listJobsRequest.getCompleted() != null) {
-            request.addParameter("completed",
-                    StringUtils.fromString(listJobsRequest.getCompleted()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-        }
-
-        return request;
     }
 
 }

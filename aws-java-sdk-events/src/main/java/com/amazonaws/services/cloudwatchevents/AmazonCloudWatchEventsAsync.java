@@ -1,661 +1,1080 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cloudwatchevents;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 
 /**
- * Interface for accessing Amazon CloudWatch Events asynchronously. Each
- * asynchronous method will return a Java Future object representing the
- * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
- * used to receive notification when an asynchronous operation completes.
+ * Interface for accessing Amazon CloudWatch Events asynchronously. Each asynchronous method will return a Java Future
+ * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudwatchevents.AbstractAmazonCloudWatchEventsAsync} instead.
+ * </p>
  * <p>
  * <p>
- * Amazon CloudWatch Events helps you to respond to state changes in your AWS
- * resources. When your resources change state they automatically send events
- * into an event stream. You can create rules that match selected events in the
- * stream and route them to targets to take action. You can also use rules to
- * take action on a pre-determined schedule. For example, you can configure
- * rules to:
+ * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
+ * state, they automatically send events into an event stream. You can create rules that match selected events in the
+ * stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule.
+ * For example, you can configure rules to:
  * </p>
  * <ul>
- * <li>Automatically invoke an AWS Lambda function to update DNS entries when an
- * event notifies you that Amazon EC2 instance enters the running state.</li>
- * <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream
- * for detailed analysis of potential security or availability risks.</li>
- * <li>Periodically invoke a built-in target to create a snapshot of an Amazon
- * EBS volume.</li>
+ * <li>
+ * <p>
+ * Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance
+ * enters the running state.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential
+ * security or availability risks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * For more information about Amazon CloudWatch Events features, see the <a
- * href=
- * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon
- * CloudWatch Developer Guide</a>.
+ * For more information about the features of Amazon CloudWatch Events, see the <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Deletes a rule. You must remove all targets from a rule using
-     * <a>RemoveTargets</a> before you can delete the rule.
+     * Deletes the specified rule.
      * </p>
      * <p>
-     * <b>Note:</b> When you delete a rule, incoming events might still continue
-     * to match to the deleted rule. Please allow a short period of time for
-     * changes to take effect.
+     * Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.
+     * </p>
+     * <p>
+     * When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time
+     * for changes to take effect.
+     * </p>
+     * <p>
+     * Managed rules are rules created and managed by another AWS service on your behalf. These rules are created by
+     * those other AWS services to support functionality in those services. You can delete these rules using the
+     * <code>Force</code> option, but you should do so only if you are sure the other service is not still using that
+     * rule.
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Container for the parameters to the <a>DeleteRule</a> operation.
-     * @return A Java Future containing the result of the DeleteRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
-            DeleteRuleRequest deleteRuleRequest);
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
 
     /**
      * <p>
-     * Deletes a rule. You must remove all targets from a rule using
-     * <a>RemoveTargets</a> before you can delete the rule.
+     * Deletes the specified rule.
      * </p>
      * <p>
-     * <b>Note:</b> When you delete a rule, incoming events might still continue
-     * to match to the deleted rule. Please allow a short period of time for
-     * changes to take effect.
+     * Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.
+     * </p>
+     * <p>
+     * When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time
+     * for changes to take effect.
+     * </p>
+     * <p>
+     * Managed rules are rules created and managed by another AWS service on your behalf. These rules are created by
+     * those other AWS services to support functionality in those services. You can delete these rules using the
+     * <code>Force</code> option, but you should do so only if you are sure the other service is not still using that
+     * rule.
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Container for the parameters to the <a>DeleteRule</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
-            DeleteRuleRequest deleteRuleRequest,
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Describes the details of the specified rule.
+     * Displays the external AWS accounts that are permitted to write events to your account using your account's event
+     * bus, and the associated policy. To enable your account to receive events from other accounts, use
+     * <a>PutPermission</a>.
      * </p>
      * 
-     * @param describeRuleRequest
-     *        Container for the parameters to the <a>DescribeRule</a> operation.
-     * @return A Java Future containing the result of the DescribeRule operation
-     *         returned by the service.
-     * @sample AmazonCloudWatchEventsAsync.DescribeRule
+     * @param describeEventBusRequest
+     * @return A Java Future containing the result of the DescribeEventBus operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeEventBus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(
-            DescribeRuleRequest describeRuleRequest);
+    java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest describeEventBusRequest);
 
     /**
      * <p>
-     * Describes the details of the specified rule.
+     * Displays the external AWS accounts that are permitted to write events to your account using your account's event
+     * bus, and the associated policy. To enable your account to receive events from other accounts, use
+     * <a>PutPermission</a>.
+     * </p>
+     * 
+     * @param describeEventBusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventBus operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeEventBus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest describeEventBusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventBusRequest, DescribeEventBusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified rule.
+     * </p>
+     * <p>
+     * DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
      * </p>
      * 
      * @param describeRuleRequest
-     *        Container for the parameters to the <a>DescribeRule</a> operation.
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeRule operation
-     *         returned by the service.
-     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeRule
+     * @return A Java Future containing the result of the DescribeRule operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(
-            DescribeRuleRequest describeRuleRequest,
+    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest);
+
+    /**
+     * <p>
+     * Describes the specified rule.
+     * </p>
+     * <p>
+     * DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
+     * </p>
+     * 
+     * @param describeRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRule operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Disables a rule. A disabled rule won't match any events, and won't
-     * self-trigger if it has a schedule expression.
+     * Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule
+     * expression.
      * </p>
      * <p>
-     * <b>Note:</b> When you disable a rule, incoming events might still
-     * continue to match to the disabled rule. Please allow a short period of
+     * When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of
      * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
-     *        Container for the parameters to the <a>DisableRule</a> operation.
-     * @return A Java Future containing the result of the DisableRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DisableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DisableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
-            DisableRuleRequest disableRuleRequest);
+    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(DisableRuleRequest disableRuleRequest);
 
     /**
      * <p>
-     * Disables a rule. A disabled rule won't match any events, and won't
-     * self-trigger if it has a schedule expression.
+     * Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule
+     * expression.
      * </p>
      * <p>
-     * <b>Note:</b> When you disable a rule, incoming events might still
-     * continue to match to the disabled rule. Please allow a short period of
+     * When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of
      * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
-     *        Container for the parameters to the <a>DisableRule</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DisableRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the DisableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DisableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
-            DisableRuleRequest disableRuleRequest,
+    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(DisableRuleRequest disableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Enables a rule. If the rule does not exist, the operation fails.
+     * Enables the specified rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * <b>Note:</b> When you enable a rule, incoming events might not
-     * immediately start matching to a newly enabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a
+     * short period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
-     *        Container for the parameters to the <a>EnableRule</a> operation.
-     * @return A Java Future containing the result of the EnableRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the EnableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.EnableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
-            EnableRuleRequest enableRuleRequest);
+    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest);
 
     /**
      * <p>
-     * Enables a rule. If the rule does not exist, the operation fails.
+     * Enables the specified rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * <b>Note:</b> When you enable a rule, incoming events might not
-     * immediately start matching to a newly enabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a
+     * short period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
-     *        Container for the parameters to the <a>EnableRule</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the EnableRule operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the EnableRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.EnableRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
-            EnableRuleRequest enableRuleRequest,
+    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the names of the rules that the given target is put to. You can see
-     * which of the rules in Amazon CloudWatch Events can invoke a specific
-     * target in your account. If you have more rules in your account than the
-     * given limit, the results will be paginated. In that case, use the next
-     * token returned in the response and repeat ListRulesByTarget until the
-     * NextToken in the response is returned as null.
+     * Lists the rules for the specified target. You can see which of the rules in Amazon CloudWatch Events can invoke a
+     * specific target in your account.
      * </p>
      * 
      * @param listRuleNamesByTargetRequest
-     *        Container for the parameters to the <a>ListRuleNamesByTarget</a>
-     *        operation.
-     * @return A Java Future containing the result of the ListRuleNamesByTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListRuleNamesByTarget operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListRuleNamesByTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(
-            ListRuleNamesByTargetRequest listRuleNamesByTargetRequest);
+    java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest);
 
     /**
      * <p>
-     * Lists the names of the rules that the given target is put to. You can see
-     * which of the rules in Amazon CloudWatch Events can invoke a specific
-     * target in your account. If you have more rules in your account than the
-     * given limit, the results will be paginated. In that case, use the next
-     * token returned in the response and repeat ListRulesByTarget until the
-     * NextToken in the response is returned as null.
+     * Lists the rules for the specified target. You can see which of the rules in Amazon CloudWatch Events can invoke a
+     * specific target in your account.
      * </p>
      * 
      * @param listRuleNamesByTargetRequest
-     *        Container for the parameters to the <a>ListRuleNamesByTarget</a>
-     *        operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListRuleNamesByTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListRuleNamesByTarget operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListRuleNamesByTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(
-            ListRuleNamesByTargetRequest listRuleNamesByTargetRequest,
+    java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest,
             com.amazonaws.handlers.AsyncHandler<ListRuleNamesByTargetRequest, ListRuleNamesByTargetResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the Amazon CloudWatch Events rules in your account. You can either
-     * list all the rules or you can provide a prefix to match to the rule
-     * names. If you have more rules in your account than the given limit, the
-     * results will be paginated. In that case, use the next token returned in
-     * the response and repeat ListRules until the NextToken in the response is
-     * returned as null.
+     * Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match
+     * to the rule names.
+     * </p>
+     * <p>
+     * ListRules does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
      * </p>
      * 
      * @param listRulesRequest
-     *        Container for the parameters to the <a>ListRules</a> operation.
-     * @return A Java Future containing the result of the ListRules operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListRulesResult> listRulesAsync(
-            ListRulesRequest listRulesRequest);
+    java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest);
 
     /**
      * <p>
-     * Lists the Amazon CloudWatch Events rules in your account. You can either
-     * list all the rules or you can provide a prefix to match to the rule
-     * names. If you have more rules in your account than the given limit, the
-     * results will be paginated. In that case, use the next token returned in
-     * the response and repeat ListRules until the NextToken in the response is
-     * returned as null.
+     * Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match
+     * to the rule names.
+     * </p>
+     * <p>
+     * ListRules does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
      * </p>
      * 
      * @param listRulesRequest
-     *        Container for the parameters to the <a>ListRules</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListRules operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListRules operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListRulesResult> listRulesAsync(
-            ListRulesRequest listRulesRequest,
+    java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
 
     /**
      * <p>
-     * Lists of targets assigned to the rule.
+     * Lists the targets assigned to the specified rule.
      * </p>
      * 
      * @param listTargetsByRuleRequest
-     *        Container for the parameters to the <a>ListTargetsByRule</a>
-     *        operation.
-     * @return A Java Future containing the result of the ListTargetsByRule
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListTargetsByRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.ListTargetsByRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(
-            ListTargetsByRuleRequest listTargetsByRuleRequest);
+    java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(ListTargetsByRuleRequest listTargetsByRuleRequest);
 
     /**
      * <p>
-     * Lists of targets assigned to the rule.
+     * Lists the targets assigned to the specified rule.
      * </p>
      * 
      * @param listTargetsByRuleRequest
-     *        Container for the parameters to the <a>ListTargetsByRule</a>
-     *        operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListTargetsByRule
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListTargetsByRule operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.ListTargetsByRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(
-            ListTargetsByRuleRequest listTargetsByRuleRequest,
+    java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(ListTargetsByRuleRequest listTargetsByRuleRequest,
             com.amazonaws.handlers.AsyncHandler<ListTargetsByRuleRequest, ListTargetsByRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Sends custom events to Amazon CloudWatch Events so that they can be
-     * matched to rules.
+     * Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.
      * </p>
      * 
      * @param putEventsRequest
-     *        Container for the parameters to the <a>PutEvents</a> operation.
-     * @return A Java Future containing the result of the PutEvents operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the PutEvents operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutEventsResult> putEventsAsync(
-            PutEventsRequest putEventsRequest);
+    java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest);
 
     /**
      * <p>
-     * Sends custom events to Amazon CloudWatch Events so that they can be
-     * matched to rules.
+     * Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.
      * </p>
      * 
      * @param putEventsRequest
-     *        Container for the parameters to the <a>PutEvents</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutEvents operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the PutEvents operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutEventsResult> putEventsAsync(
-            PutEventsRequest putEventsRequest,
+    java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler);
 
     /**
      * <p>
-     * Creates or updates a rule. Rules are enabled by default, or based on
-     * value of the State parameter. You can disable a rule using
-     * <a>DisableRule</a>.
+     * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to your
+     * account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events
+     * arriving to your default event bus.
      * </p>
      * <p>
-     * <b>Note:</b> When you create or update a rule, incoming events might not
-     * immediately start matching to new or updated rules. Please allow a short
-     * period of time for changes to take effect.
+     * For another account to send events to your account, that external account must have a CloudWatch Events rule with
+     * your account's default event bus as a target.
      * </p>
      * <p>
-     * A rule must contain at least an EventPattern or ScheduleExpression. Rules
-     * with EventPatterns are triggered when a matching event is observed. Rules
-     * with ScheduleExpressions self-trigger based on the given schedule. A rule
-     * can have both an EventPattern and a ScheduleExpression, in which case the
-     * rule will trigger on matching events as well as on a schedule.
+     * To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for
+     * each of these accounts. Or, if all the accounts are members of the same AWS organization, you can run
+     * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and specifying the AWS organization ID
+     * in <code>Condition</code>, to grant permissions to all accounts in that organization.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in
-     * Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact
-     * match in event patterns and rules. Be sure to use the correct ARN
-     * characters when creating event patterns so that they match the ARN syntax
-     * in the event you want to match.
+     * If you grant permissions using an organization, then accounts in that organization must specify a
+     * <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus
+     * as a target. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+     * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * The permission policy on the default event bus cannot exceed 10 KB in size.
      * </p>
      * 
-     * @param putRuleRequest
-     *        Container for the parameters to the <a>PutRule</a> operation.
-     * @return A Java Future containing the result of the PutRule operation
-     *         returned by the service.
-     * @sample AmazonCloudWatchEventsAsync.PutRule
+     * @param putPermissionRequest
+     * @return A Java Future containing the result of the PutPermission operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutRuleResult> putRuleAsync(
-            PutRuleRequest putRuleRequest);
+    java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest putPermissionRequest);
 
     /**
      * <p>
-     * Creates or updates a rule. Rules are enabled by default, or based on
-     * value of the State parameter. You can disable a rule using
-     * <a>DisableRule</a>.
+     * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to your
+     * account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events
+     * arriving to your default event bus.
      * </p>
      * <p>
-     * <b>Note:</b> When you create or update a rule, incoming events might not
-     * immediately start matching to new or updated rules. Please allow a short
-     * period of time for changes to take effect.
+     * For another account to send events to your account, that external account must have a CloudWatch Events rule with
+     * your account's default event bus as a target.
      * </p>
      * <p>
-     * A rule must contain at least an EventPattern or ScheduleExpression. Rules
-     * with EventPatterns are triggered when a matching event is observed. Rules
-     * with ScheduleExpressions self-trigger based on the given schedule. A rule
-     * can have both an EventPattern and a ScheduleExpression, in which case the
-     * rule will trigger on matching events as well as on a schedule.
+     * To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for
+     * each of these accounts. Or, if all the accounts are members of the same AWS organization, you can run
+     * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and specifying the AWS organization ID
+     * in <code>Condition</code>, to grant permissions to all accounts in that organization.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in
-     * Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact
-     * match in event patterns and rules. Be sure to use the correct ARN
-     * characters when creating event patterns so that they match the ARN syntax
-     * in the event you want to match.
+     * If you grant permissions using an organization, then accounts in that organization must specify a
+     * <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus
+     * as a target. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+     * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * The permission policy on the default event bus cannot exceed 10 KB in size.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPermission operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest putPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can
+     * disable a rule using <a>DisableRule</a>.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, the rule is replaced with what you specify in this <code>PutRule</code>
+     * command. If you omit arguments in <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+     * they are replaced with null values.
+     * </p>
+     * <p>
+     * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
+     * Allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a
+     * matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can
+     * have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as
+     * on a schedule.
+     * </p>
+     * <p>
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
+     * </p>
+     * <p>
+     * In CloudWatch Events, it is possible to create rules that lead to infinite loops, where a rule is fired
+     * repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket, and trigger software to
+     * change them to the desired state. If the rule is not written carefully, the subsequent change to the ACLs fires
+     * the rule again, creating an infinite loop.
+     * </p>
+     * <p>
+     * To prevent this, write the rules so that the triggered actions do not re-fire the same rule. For example, your
+     * rule could fire only if ACLs are found to be in a bad state, instead of after any change.
+     * </p>
+     * <p>
+     * An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which
+     * alerts you when charges exceed your specified limit. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
+     * Costs with Budgets</a>.
      * </p>
      * 
      * @param putRuleRequest
-     *        Container for the parameters to the <a>PutRule</a> operation.
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutRule operation
-     *         returned by the service.
-     * @sample AmazonCloudWatchEventsAsyncHandler.PutRule
+     * @return A Java Future containing the result of the PutRule operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.PutRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutRuleResult> putRuleAsync(
-            PutRuleRequest putRuleRequest,
+    java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest putRuleRequest);
+
+    /**
+     * <p>
+     * Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can
+     * disable a rule using <a>DisableRule</a>.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, the rule is replaced with what you specify in this <code>PutRule</code>
+     * command. If you omit arguments in <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+     * they are replaced with null values.
+     * </p>
+     * <p>
+     * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
+     * Allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a
+     * matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can
+     * have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as
+     * on a schedule.
+     * </p>
+     * <p>
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
+     * </p>
+     * <p>
+     * In CloudWatch Events, it is possible to create rules that lead to infinite loops, where a rule is fired
+     * repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket, and trigger software to
+     * change them to the desired state. If the rule is not written carefully, the subsequent change to the ACLs fires
+     * the rule again, creating an infinite loop.
+     * </p>
+     * <p>
+     * To prevent this, write the rules so that the triggered actions do not re-fire the same rule. For example, your
+     * rule could fire only if ACLs are found to be in a bad state, instead of after any change.
+     * </p>
+     * <p>
+     * An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which
+     * alerts you when charges exceed your specified limit. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
+     * Costs with Budgets</a>.
+     * </p>
+     * 
+     * @param putRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRule operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.PutRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest putRuleRequest,
             com.amazonaws.handlers.AsyncHandler<PutRuleRequest, PutRuleResult> asyncHandler);
 
     /**
      * <p>
-     * Adds target(s) to a rule. Targets are the resources that can be invoked
-     * when a rule is triggered. For example, AWS Lambda functions, Amazon
-     * Kinesis streams, and built-in targets. Updates the target(s) if they are
-     * already associated with the role. In other words, if there is already a
-     * target with the given target ID, then the target associated with that ID
-     * is updated.
+     * Adds the specified targets to the specified rule, or updates the targets if they are already associated with the
+     * rule.
      * </p>
      * <p>
-     * In order to be able to make API calls against the resources you own,
-     * Amazon CloudWatch Events needs the appropriate permissions. For AWS
-     * Lambda and Amazon SNS resources, CloudWatch Events relies on
-     * resource-based policies. For Amazon Kinesis streams, CloudWatch Events
-     * relies on IAM roles. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html"
-     * >Permissions for Sending Events to Targets</a> in the <b><i>Amazon
-     * CloudWatch Developer Guide</i></b>.
+     * Targets are the resources that are invoked when a rule is triggered.
      * </p>
      * <p>
-     * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional
-     * parameters of a target. When a rule is triggered due to a matched event,
-     * if for a target:
+     * You can configure the following as targets for CloudWatch Events:
      * </p>
      * <ul>
-     * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the
-     * entire event is passed to the target in JSON form.</li>
-     * <li><b>InputPath</b> is specified in the form of JSONPath (e.g.
-     * <b>$.detail</b>), then only the part of the event specified in the path
-     * is passed to the target (e.g. only the detail part of the event is
-     * passed).</li>
-     * <li><b>Input</b> is specified in the form of a valid JSON, then the
-     * matched event is overridden with this constant.</li>
+     * <li>
+     * <p>
+     * EC2 instances
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Run Command
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Automation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Lambda functions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data streams in Amazon Kinesis Data Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data delivery streams in Amazon Kinesis Data Firehose
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ECS tasks
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Step Functions state machines
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Batch jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS CodeBuild projects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pipelines in AWS CodePipeline
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Inspector assessment templates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS topics
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SQS queues, including FIFO queues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default event bus of another AWS account
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Note:</b> When you add targets to a rule, when the associated rule
-     * triggers, new or updated targets might not be immediately invoked. Please
-     * allow a short period of time for changes to take effect.
+     * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
+     * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+     * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
+     * </p>
+     * <p>
+     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis
+     * data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code>
+     * argument. To invoke a command on multiple EC2 instances with one rule, you can use the
+     * <code>RunCommandParameters</code> field.
+     * </p>
+     * <p>
+     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
+     * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+     * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
+     * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>),
+     * you can send events to that account. Set that account's event bus as a target of the rules in your account. To
+     * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
+     * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
+     * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
+     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.
+     * </p>
+     * <p>
+     * If you are setting the event bus of another account as the target, and that account granted permission to your
+     * account through an organization instead of directly by the account ID, then you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
+     * Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about enabling cross-account events, see <a>PutPermission</a>.
+     * </p>
+     * <p>
+     * <b>Input</b>, <b>InputPath</b>, and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+     * target. When a rule is triggered due to a matched event:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If none of the following arguments are specified for a target, then the entire event is passed to the target in
+     * JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
+     * is passed to the target).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part
+     * of the event specified in the path is passed to the target (for example, only the detail part of the event is
+     * passed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and
+     * used as values in a template that you specify as the input to the target.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not
+     * bracket notation.
+     * </p>
+     * <p>
+     * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
+     * immediately invoked. Allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param putTargetsRequest
-     *        Container for the parameters to the <a>PutTargets</a> operation.
-     * @return A Java Future containing the result of the PutTargets operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the PutTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.PutTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(
-            PutTargetsRequest putTargetsRequest);
+    java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(PutTargetsRequest putTargetsRequest);
 
     /**
      * <p>
-     * Adds target(s) to a rule. Targets are the resources that can be invoked
-     * when a rule is triggered. For example, AWS Lambda functions, Amazon
-     * Kinesis streams, and built-in targets. Updates the target(s) if they are
-     * already associated with the role. In other words, if there is already a
-     * target with the given target ID, then the target associated with that ID
-     * is updated.
+     * Adds the specified targets to the specified rule, or updates the targets if they are already associated with the
+     * rule.
      * </p>
      * <p>
-     * In order to be able to make API calls against the resources you own,
-     * Amazon CloudWatch Events needs the appropriate permissions. For AWS
-     * Lambda and Amazon SNS resources, CloudWatch Events relies on
-     * resource-based policies. For Amazon Kinesis streams, CloudWatch Events
-     * relies on IAM roles. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html"
-     * >Permissions for Sending Events to Targets</a> in the <b><i>Amazon
-     * CloudWatch Developer Guide</i></b>.
+     * Targets are the resources that are invoked when a rule is triggered.
      * </p>
      * <p>
-     * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional
-     * parameters of a target. When a rule is triggered due to a matched event,
-     * if for a target:
+     * You can configure the following as targets for CloudWatch Events:
      * </p>
      * <ul>
-     * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the
-     * entire event is passed to the target in JSON form.</li>
-     * <li><b>InputPath</b> is specified in the form of JSONPath (e.g.
-     * <b>$.detail</b>), then only the part of the event specified in the path
-     * is passed to the target (e.g. only the detail part of the event is
-     * passed).</li>
-     * <li><b>Input</b> is specified in the form of a valid JSON, then the
-     * matched event is overridden with this constant.</li>
+     * <li>
+     * <p>
+     * EC2 instances
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Run Command
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Automation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Lambda functions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data streams in Amazon Kinesis Data Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data delivery streams in Amazon Kinesis Data Firehose
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ECS tasks
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Step Functions state machines
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Batch jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS CodeBuild projects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pipelines in AWS CodePipeline
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Inspector assessment templates
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS topics
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SQS queues, including FIFO queues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default event bus of another AWS account
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Note:</b> When you add targets to a rule, when the associated rule
-     * triggers, new or updated targets might not be immediately invoked. Please
-     * allow a short period of time for changes to take effect.
+     * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
+     * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+     * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
+     * </p>
+     * <p>
+     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis
+     * data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code>
+     * argument. To invoke a command on multiple EC2 instances with one rule, you can use the
+     * <code>RunCommandParameters</code> field.
+     * </p>
+     * <p>
+     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
+     * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+     * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
+     * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>),
+     * you can send events to that account. Set that account's event bus as a target of the rules in your account. To
+     * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
+     * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
+     * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
+     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.
+     * </p>
+     * <p>
+     * If you are setting the event bus of another account as the target, and that account granted permission to your
+     * account through an organization instead of directly by the account ID, then you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
+     * Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about enabling cross-account events, see <a>PutPermission</a>.
+     * </p>
+     * <p>
+     * <b>Input</b>, <b>InputPath</b>, and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+     * target. When a rule is triggered due to a matched event:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If none of the following arguments are specified for a target, then the entire event is passed to the target in
+     * JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
+     * is passed to the target).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part
+     * of the event specified in the path is passed to the target (for example, only the detail part of the event is
+     * passed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and
+     * used as values in a template that you specify as the input to the target.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not
+     * bracket notation.
+     * </p>
+     * <p>
+     * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
+     * immediately invoked. Allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param putTargetsRequest
-     *        Container for the parameters to the <a>PutTargets</a> operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutTargets operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the PutTargets operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.PutTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(
-            PutTargetsRequest putTargetsRequest,
+    java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(PutTargetsRequest putTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult> asyncHandler);
 
     /**
      * <p>
-     * Removes target(s) from a rule so that when the rule is triggered, those
-     * targets will no longer be invoked.
-     * </p>
-     * <p>
-     * <b>Note:</b> When you remove a target, when the associated rule triggers,
-     * removed targets might still continue to be invoked. Please allow a short
-     * period of time for changes to take effect.
+     * Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the
+     * account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it
+     * permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using
+     * <a>DescribeEventBus</a>.
      * </p>
      * 
-     * @param removeTargetsRequest
-     *        Container for the parameters to the <a>RemoveTargets</a>
-     *        operation.
-     * @return A Java Future containing the result of the RemoveTargets
-     *         operation returned by the service.
-     * @sample AmazonCloudWatchEventsAsync.RemoveTargets
+     * @param removePermissionRequest
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(
-            RemoveTargetsRequest removeTargetsRequest);
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest);
 
     /**
      * <p>
-     * Removes target(s) from a rule so that when the rule is triggered, those
-     * targets will no longer be invoked.
+     * Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the
+     * account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it
+     * permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using
+     * <a>DescribeEventBus</a>.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be
+     * invoked.
      * </p>
      * <p>
-     * <b>Note:</b> When you remove a target, when the associated rule triggers,
-     * removed targets might still continue to be invoked. Please allow a short
-     * period of time for changes to take effect.
+     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow
+     * a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param removeTargetsRequest
-     *        Container for the parameters to the <a>RemoveTargets</a>
-     *        operation.
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the RemoveTargets
-     *         operation returned by the service.
-     * @sample AmazonCloudWatchEventsAsyncHandler.RemoveTargets
+     * @return A Java Future containing the result of the RemoveTargets operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.RemoveTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(
-            RemoveTargetsRequest removeTargetsRequest,
+    java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(RemoveTargetsRequest removeTargetsRequest);
+
+    /**
+     * <p>
+     * Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be
+     * invoked.
+     * </p>
+     * <p>
+     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow
+     * a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
+     * </p>
+     * 
+     * @param removeTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTargets operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.RemoveTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(RemoveTargetsRequest removeTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTargetsRequest, RemoveTargetsResult> asyncHandler);
 
     /**
      * <p>
-     * Tests whether an event pattern matches the provided event.
+     * Tests whether the specified event pattern matches the provided event.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in
-     * Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact
-     * match in event patterns and rules. Be sure to use the correct ARN
-     * characters when creating event patterns so that they match the ARN syntax
-     * in the event you want to match.
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
      * </p>
      * 
      * @param testEventPatternRequest
-     *        Container for the parameters to the <a>TestEventPattern</a>
-     *        operation.
-     * @return A Java Future containing the result of the TestEventPattern
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the TestEventPattern operation returned by the service.
      * @sample AmazonCloudWatchEventsAsync.TestEventPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(
-            TestEventPatternRequest testEventPatternRequest);
+    java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest testEventPatternRequest);
 
     /**
      * <p>
-     * Tests whether an event pattern matches the provided event.
+     * Tests whether the specified event pattern matches the provided event.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in
-     * Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact
-     * match in event patterns and rules. Be sure to use the correct ARN
-     * characters when creating event patterns so that they match the ARN syntax
-     * in the event you want to match.
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
      * </p>
      * 
      * @param testEventPatternRequest
-     *        Container for the parameters to the <a>TestEventPattern</a>
-     *        operation.
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the TestEventPattern
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the TestEventPattern operation returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.TestEventPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(
-            TestEventPatternRequest testEventPatternRequest,
+    java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest testEventPatternRequest,
             com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult> asyncHandler);
 
 }

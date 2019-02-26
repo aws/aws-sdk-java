@@ -15,14 +15,18 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CustomizationConfig {
+
+    public static final CustomizationConfig DEFAULT = new CustomizationConfig();
 
     /**
      * The fully-qualified class name of the custom metric types to be collected by the client.
@@ -77,6 +81,12 @@ public class CustomizationConfig {
     private String customResponseMetadataClassName;
 
     /**
+     * Fully qualified class name of response handler implementation to use. Services with custom response metadata
+     * tends to use this like SimpleDB. This customization currently is only supported for XML based protocols.
+     */
+    private String customResponseHandlerFqcn;
+
+    /**
      * True if the generated interface should NOT include shutdown() and getCachedResponseData
      * methods. Currently it's only set true for SimpleDB.
      */
@@ -121,6 +131,12 @@ public class CustomizationConfig {
     private Map<String, List<String>> sendEmptyAutoConstructedListAsEmptyList;
 
     /**
+     * Marshalls empty lists on the wire. This customization does not send empty lists created by
+     * the autoconstruct customization and is only applicable to AWS Query services.
+     */
+    private boolean sendExplicitlyEmptyListsForQuery;
+
+    /**
      * Configuration for generating policy action enums.
      */
     private AuthPolicyActions authPolicyActions;
@@ -156,10 +172,86 @@ public class CustomizationConfig {
     private boolean useModeledOutputShapeNames;
 
     /**
+     * Service specific base class for all modeled exceptions. By default this is syncInterface +
+     * Exception (i.e. AmazonSQSException). Currently only DynamoDB Streams utilizes this
+     * customization since it shares exception types with the DynamoDB client.
+     *
+     * <p>This customization should only provide the simple class name. The typical model package
+     * will be used when fully qualifying references to this exception</p>
+     *
+     * <p><b>Note:</b> that if a custom base class is provided the generator will not generate one.
+     * We assume it already exists.</p>
+     */
+    private String sdkModeledExceptionBaseClassName;
+
+    /**
+     * Uses the specified SignerProvider implementation for this client.
+     */
+    private String customSignerProvider;
+
+    /**
+     * Service calculates CRC32 checksum from compressed file when Accept-Encoding: gzip header is provided.
+     */
+    private boolean calculateCRC32FromCompressedData;
+
+    /**
+     * Custom file header for all generated Java classes. If not specified uses default Amazon
+     * license header.
+     */
+    private String customFileHeader;
+
+    /**
      * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
      * different type that is adapted to the real type
      */
     private final List<ConvenienceTypeOverload> convenienceTypeOverloads = new ArrayList<ConvenienceTypeOverload>();
+
+    /**
+     * Skips generating smoketests if set to true.
+     */
+    private boolean skipSmokeTests;
+
+    /**
+     * Fully qualified class name of presigner extension class if it exists.
+     */
+    private String presignersFqcn;
+
+    /**
+     * A set of deprecated code that generation can be suppressed for
+     */
+    private Set<DeprecatedSuppression> deprecatedSuppressions;
+
+    /**
+     * Relative path to customize transform directory. Will be generated relative
+     * to the models directory. Default is {@value Constants#PACKAGE_NAME_TRANSFORM_SUFFIX}.
+     */
+    private String transformDirectory = Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
+
+    /**
+     * Customization to emit a setter overload that takes an enum. This breaks the POJO contract so we only do it
+     * for enums previously shipped to maintain backwards compatibility.
+     */
+    private Map<String, List<String>> emitLegacyEnumSetterFor;
+
+    /**
+     * Customization to omit an operation from the client interface (and abstract class and client implementation) but still
+     * generate the input/output Java POJOs and marshaller/unmarshaller.
+     */
+    private List<String> skipClientMethodForOperations = Collections.emptyList();
+
+    /**
+     * Overrides the Content-Type header for the protocol. For Rest-JSON we send empty content type
+     * which causes some problems with API Gateway fronted services in certain scenarios.
+     */
+    private String contentTypeOverride;
+
+    /**
+     * True if uid is used as file name prefix, false otherwise
+     */
+    private boolean useUidAsFilePrefix;
+
+    private CustomizationConfig(){
+    }
 
     public String getRequestMetrics() {
         return requestMetrics;
@@ -208,6 +300,14 @@ public class CustomizationConfig {
 
     public void setCustomResponseMetadataClassName(String customResponseMetadataClassName) {
         this.customResponseMetadataClassName = customResponseMetadataClassName;
+    }
+
+    public String getCustomResponseHandlerFqcn() {
+        return customResponseHandlerFqcn;
+    }
+
+    public void setCustomResponseHandlerFqcn(String customResponseHandlerFqcn) {
+        this.customResponseHandlerFqcn = customResponseHandlerFqcn;
     }
 
     public boolean isSkipInterfaceAdditions() {
@@ -344,13 +444,12 @@ public class CustomizationConfig {
                 .add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
     }
 
-    /**
-     * Only meant to be used by templates/macros. When customizing a service use one of the
-     * pre-canned options like {@link #setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember)}
-     * or {@link #setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember)}
-     */
     public List<ConvenienceTypeOverload> getConvenienceTypeOverloads() {
         return this.convenienceTypeOverloads;
+    }
+
+    public void setConvenienceTypeOverloads(List<ConvenienceTypeOverload> convenienceTypeOverloads) {
+        this.convenienceTypeOverloads.addAll(convenienceTypeOverloads);
     }
 
     public MetadataConfig getCustomServiceMetadata() {
@@ -376,5 +475,130 @@ public class CustomizationConfig {
     public void setUseModeledOutputShapeNames(boolean useModeledOutputShapeNames) {
         this.useModeledOutputShapeNames = useModeledOutputShapeNames;
     }
+
+    public String getSdkModeledExceptionBaseClassName() {
+        return sdkModeledExceptionBaseClassName;
+    }
+
+    public void setSdkModeledExceptionBaseClassName(String sdkModeledExceptionBaseClassName) {
+        this.sdkModeledExceptionBaseClassName = sdkModeledExceptionBaseClassName;
+    }
+
+    public String getCustomSignerProvider() {
+        return customSignerProvider;
+    }
+
+    public void setCustomSignerProvider(String customSignerProvider) {
+        this.customSignerProvider = customSignerProvider;
+    }
+
+    public boolean isCalculateCRC32FromCompressedData() {
+        return calculateCRC32FromCompressedData;
+    }
+
+    public void setCalculateCRC32FromCompressedData(
+            boolean calculateCRC32FromCompressedData) {
+        this.calculateCRC32FromCompressedData = calculateCRC32FromCompressedData;
+    }
+
+    public String getCustomFileHeader() {
+        return customFileHeader;
+    }
+
+    public void setCustomFileHeader(String customFileHeader) {
+        this.customFileHeader = customFileHeader;
+    }
+
+    public boolean isSkipSmokeTests() {
+        return skipSmokeTests;
+    }
+
+    public void setSkipSmokeTests(boolean skipSmokeTests) {
+        this.skipSmokeTests = skipSmokeTests;
+    }
+
+    public boolean isSendExplicitlyEmptyListsForQuery() {
+        return sendExplicitlyEmptyListsForQuery;
+    }
+
+    public void setSendExplicitlyEmptyListsForQuery(boolean sendExplicitlyEmptyListsForQuery) {
+        this.sendExplicitlyEmptyListsForQuery = sendExplicitlyEmptyListsForQuery;
+    }
+
+    public String getPresignersFqcn() {
+        return presignersFqcn;
+    }
+
+    public void setPresignersFqcn(String presignersFqcn) {
+        this.presignersFqcn = presignersFqcn;
+    }
+
+    public String getTransformDirectory() {
+        return transformDirectory;
+    }
+
+    public CustomizationConfig setTransformDirectory(String transformDirectory) {
+        this.transformDirectory = transformDirectory;
+        return this;
+    }
+
+    public Set<DeprecatedSuppression> getDeprecatedSuppressions() {
+        return deprecatedSuppressions;
+    }
+
+    public void setDeprecatedSuppressions(Set<DeprecatedSuppression> deprecatedSuppressions) {
+        this.deprecatedSuppressions = deprecatedSuppressions;
+    }
+
+    public boolean emitClientMutationMethods() {
+        return !shouldSuppress(DeprecatedSuppression.ClientMutationMethods);
+    }
+
+    public boolean emitClientConstructors() {
+        return !shouldSuppress(DeprecatedSuppression.ClientConstructors);
+    }
+
+    public boolean emitEnumSetterOverload() {
+        return !shouldSuppress(DeprecatedSuppression.EnumSetterOverload);
+    }
+
+    private boolean shouldSuppress(DeprecatedSuppression suppression) {
+        return deprecatedSuppressions != null && deprecatedSuppressions.contains(suppression);
+    }
+
+    public Map<String, List<String>> getEmitLegacyEnumSetterFor() {
+        return emitLegacyEnumSetterFor;
+    }
+
+    public CustomizationConfig setEmitLegacyEnumSetterFor(
+            Map<String, List<String>> emitLegacyEnumSetterFor) {
+        this.emitLegacyEnumSetterFor = emitLegacyEnumSetterFor;
+        return this;
+    }
+
+    public List<String> getSkipClientMethodForOperations() {
+        return skipClientMethodForOperations;
+    }
+
+    public void setSkipClientMethodForOperations(List<String> skipClientMethodForOperations) {
+        this.skipClientMethodForOperations = skipClientMethodForOperations;
+    }
+
+    public String getContentTypeOverride() {
+        return contentTypeOverride;
+    }
+
+    public void setContentTypeOverride(String contentTypeOverride) {
+        this.contentTypeOverride = contentTypeOverride;
+    }
+
+    public boolean isUseUidAsFilePrefix() {
+        return useUidAsFilePrefix;
+    }
+
+    public void setUseUidAsFilePrefix(boolean useUidAsFilePrefix) {
+        this.useUidAsFilePrefix = useUidAsFilePrefix;
+    }
+
 
 }

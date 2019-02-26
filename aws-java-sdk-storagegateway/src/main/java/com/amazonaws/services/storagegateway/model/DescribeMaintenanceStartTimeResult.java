@@ -1,35 +1,74 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
+ * <p>
+ * A JSON object containing the following fields:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$Timezone</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeMaintenanceStartTimeResult implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     */
     private Integer hourOfDay;
-
+    /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     */
     private Integer minuteOfHour;
-
+    /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     */
     private Integer dayOfWeek;
 
     private String timezone;
@@ -52,8 +91,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
@@ -62,7 +100,14 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param hourOfDay
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *        to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setHourOfDay(Integer hourOfDay) {
@@ -70,7 +115,13 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *         to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getHourOfDay() {
@@ -78,9 +129,15 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param hourOfDay
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *        to 23). The hour of the day is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMaintenanceStartTimeResult withHourOfDay(Integer hourOfDay) {
@@ -89,7 +146,14 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
      * @param minuteOfHour
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (0 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public void setMinuteOfHour(Integer minuteOfHour) {
@@ -97,7 +161,13 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the
+     *         minute (0 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public Integer getMinuteOfHour() {
@@ -105,19 +175,31 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
      * @param minuteOfHour
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (0 to 59). The minute of the hour is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeMaintenanceStartTimeResult withMinuteOfHour(
-            Integer minuteOfHour) {
+    public DescribeMaintenanceStartTimeResult withMinuteOfHour(Integer minuteOfHour) {
         setMinuteOfHour(minuteOfHour);
         return this;
     }
 
     /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
      * @param dayOfWeek
+     *        An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *        represents Saturday. The day of week is in the time zone of the gateway.
      */
 
     public void setDayOfWeek(Integer dayOfWeek) {
@@ -125,7 +207,13 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *         represents Saturday. The day of week is in the time zone of the gateway.
      */
 
     public Integer getDayOfWeek() {
@@ -133,9 +221,15 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
      * @param dayOfWeek
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *        represents Saturday. The day of week is in the time zone of the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMaintenanceStartTimeResult withDayOfWeek(Integer dayOfWeek) {
@@ -161,8 +255,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
 
     /**
      * @param timezone
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMaintenanceStartTimeResult withTimezone(String timezone) {
@@ -171,8 +264,8 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -183,15 +276,15 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getHourOfDay() != null)
-            sb.append("HourOfDay: " + getHourOfDay() + ",");
+            sb.append("HourOfDay: ").append(getHourOfDay()).append(",");
         if (getMinuteOfHour() != null)
-            sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");
+            sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
-            sb.append("DayOfWeek: " + getDayOfWeek() + ",");
+            sb.append("DayOfWeek: ").append(getDayOfWeek()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: " + getTimezone());
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -208,28 +301,23 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
         DescribeMaintenanceStartTimeResult other = (DescribeMaintenanceStartTimeResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getHourOfDay() == null ^ this.getHourOfDay() == null)
             return false;
-        if (other.getHourOfDay() != null
-                && other.getHourOfDay().equals(this.getHourOfDay()) == false)
+        if (other.getHourOfDay() != null && other.getHourOfDay().equals(this.getHourOfDay()) == false)
             return false;
         if (other.getMinuteOfHour() == null ^ this.getMinuteOfHour() == null)
             return false;
-        if (other.getMinuteOfHour() != null
-                && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
+        if (other.getMinuteOfHour() != null && other.getMinuteOfHour().equals(this.getMinuteOfHour()) == false)
             return false;
         if (other.getDayOfWeek() == null ^ this.getDayOfWeek() == null)
             return false;
-        if (other.getDayOfWeek() != null
-                && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
+        if (other.getDayOfWeek() != null && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
             return false;
         if (other.getTimezone() == null ^ this.getTimezone() == null)
             return false;
-        if (other.getTimezone() != null
-                && other.getTimezone().equals(this.getTimezone()) == false)
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
         return true;
     }
@@ -239,18 +327,11 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
-        hashCode = prime * hashCode
-                + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
+        hashCode = prime * hashCode + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour().hashCode());
+        hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 
@@ -259,9 +340,8 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
         try {
             return (DescribeMaintenanceStartTimeResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

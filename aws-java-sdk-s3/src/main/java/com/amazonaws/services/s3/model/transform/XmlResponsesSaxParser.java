@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -21,6 +21,8 @@ import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -28,21 +30,56 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleFilterPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecyclePrefixPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleTagPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsAndOperator;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.metrics.MetricsFilter;
+import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsPrefixPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsTagPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsAndOperator;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsExportDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilter;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilterPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsPrefixPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsTagPredicate;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.inventory.InventoryDestination;
+import com.amazonaws.services.s3.model.inventory.InventoryFilter;
+import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
+import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
+import com.amazonaws.services.s3.model.inventory.InventorySchedule;
+
+import com.amazonaws.services.s3.model.replication.ReplicationAndOperator;
+import com.amazonaws.services.s3.model.replication.ReplicationFilter;
+import com.amazonaws.services.s3.model.replication.ReplicationFilterPredicate;
+import com.amazonaws.services.s3.model.replication.ReplicationPrefixPredicate;
+import com.amazonaws.services.s3.model.replication.ReplicationTagPredicate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotRecognizedException;
+import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
@@ -75,14 +112,15 @@ public class XmlResponsesSaxParser {
     /**
      * Constructs the XML SAX parser.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
-    public XmlResponsesSaxParser() throws AmazonClientException {
+    public XmlResponsesSaxParser() throws SdkClientException {
         // Ensure we can load the XML Reader.
         try {
             xr = XMLReaderFactory.createXMLReader();
+            disableExternalResourceFetching(xr);
         } catch (SAXException e) {
-            throw new AmazonClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
+            throw new SdkClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
         }
     }
 
@@ -96,7 +134,7 @@ public class XmlResponsesSaxParser {
      *
      * @throws IOException
      *             on error reading from the input stream (ie connection reset)
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             on error with malformed XML, etc
      */
     protected void parseXmlInputStream(DefaultHandler handler, InputStream inputStream)
@@ -124,7 +162,7 @@ public class XmlResponsesSaxParser {
                     log.error("Unable to close response InputStream up after XML parse failure", e);
                 }
             }
-            throw new AmazonClientException("Failed to parse XML document with handler "
+            throw new SdkClientException("Failed to parse XML document with handler "
                 + handler.getClass(), t);
         }
     }
@@ -182,11 +220,25 @@ public class XmlResponsesSaxParser {
                         log.error("Unable to close response InputStream after failure sanitizing XML document", e);
                     }
                 }
-                throw new AmazonClientException("Failed to sanitize XML document destined for handler "
+                throw new SdkClientException("Failed to sanitize XML document destined for handler "
                     + handler.getClass(), t);
             }
             return sanitizedInputStream;
         }
+    }
+
+    /**
+     * Disables certain dangerous features that attempt to automatically fetch DTDs
+     *
+     * See <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet#XMLReader">OWASP XXE Cheat Sheet</a>
+     * @param reader the reader to disable the features on
+     * @throws SAXNotRecognizedException
+     * @throws SAXNotSupportedException
+     */
+    private void disableExternalResourceFetching(XMLReader reader) throws SAXNotRecognizedException, SAXNotSupportedException {
+        reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);
     }
 
     /**
@@ -262,7 +314,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -279,7 +331,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListObjectsV2Handler parseListObjectsV2Response(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -296,7 +348,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListVersionsHandler parseListVersionsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -312,7 +364,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListAllMyBucketsHandler parseListMyBucketsResponse(InputStream inputStream)
             throws IOException {
@@ -330,7 +382,7 @@ public class XmlResponsesSaxParser {
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public AccessControlListHandler parseAccessControlListResponse(InputStream inputStream)
             throws IOException {
@@ -348,7 +400,7 @@ public class XmlResponsesSaxParser {
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public BucketLoggingConfigurationHandler parseLoggingStatusResponse(InputStream inputStream)
             throws IOException {
@@ -456,6 +508,53 @@ public class XmlResponsesSaxParser {
         return handler;
     }
 
+    public GetObjectTaggingHandler parseObjectTaggingResponse(InputStream inputStream) throws IOException {
+        GetObjectTaggingHandler handler = new GetObjectTaggingHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetBucketMetricsConfigurationHandler parseGetBucketMetricsConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        GetBucketMetricsConfigurationHandler handler = new GetBucketMetricsConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListBucketMetricsConfigurationsHandler parseListBucketMetricsConfigurationsResponse(InputStream inputStream)
+            throws IOException {
+        ListBucketMetricsConfigurationsHandler handler = new ListBucketMetricsConfigurationsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetBucketAnalyticsConfigurationHandler parseGetBucketAnalyticsConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        GetBucketAnalyticsConfigurationHandler handler = new GetBucketAnalyticsConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListBucketAnalyticsConfigurationHandler parseListBucketAnalyticsConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        ListBucketAnalyticsConfigurationHandler handler = new ListBucketAnalyticsConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetBucketInventoryConfigurationHandler parseGetBucketInventoryConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        GetBucketInventoryConfigurationHandler handler = new GetBucketInventoryConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListBucketInventoryConfigurationsHandler parseBucketListInventoryConfigurationsResponse(InputStream inputStream)
+            throws IOException {
+        ListBucketInventoryConfigurationsHandler handler = new ListBucketInventoryConfigurationsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
 
     /**
      * @param inputStream
@@ -463,11 +562,29 @@ public class XmlResponsesSaxParser {
      * @return true if the bucket's is configured as Requester Pays, false if it
      *         is configured as Owner pays.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public RequestPaymentConfigurationHandler parseRequestPaymentConfigurationResponse(InputStream inputStream)
             throws IOException {
         RequestPaymentConfigurationHandler handler = new RequestPaymentConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLegalHoldResponseHandler parseGetObjectLegalHoldResponse(InputStream inputStream) throws IOException {
+        GetObjectLegalHoldResponseHandler handler = new GetObjectLegalHoldResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLockConfigurationResponseHandler parseGetObjectLockConfigurationResponse(InputStream inputStream) throws IOException {
+        GetObjectLockConfigurationResponseHandler handler = new GetObjectLockConfigurationResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectRetentionResponseHandler parseGetObjectRetentionResponse(InputStream inputStream) throws IOException {
+        GetObjectRetentionResponseHandler handler = new GetObjectRetentionResponseHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -2064,16 +2181,39 @@ public class XmlResponsesSaxParser {
         private final BucketReplicationConfiguration bucketReplicationConfiguration = new BucketReplicationConfiguration();
         private String currentRuleId;
         private ReplicationRule currentRule;
+        private ReplicationFilter currentFilter;
+        private List<ReplicationFilterPredicate> andOperandsList;
+        private String currentTagKey;
+        private String currentTagValue;
+        private DeleteMarkerReplication deleteMarkerReplication;
         private ReplicationDestinationConfig destinationConfig;
+        private AccessControlTranslation accessControlTranslation;
+        private EncryptionConfiguration encryptionConfiguration;
+        private SourceSelectionCriteria sourceSelectionCriteria;
+        private SseKmsEncryptedObjects sseKmsEncryptedObjects;
         private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
         private static final String ROLE = "Role";
         private static final String RULE = "Rule";
         private static final String DESTINATION = "Destination";
         private static final String ID = "ID";
         private static final String PREFIX = "Prefix";
+        private static final String FILTER = "Filter";
+        private static final String AND = "And";
+        private static final String TAG = "Tag";
+        private static final String TAG_KEY = "Key";
+        private static final String TAG_VALUE = "Value";
+        private static final String DELETE_MARKER_REPLICATION = "DeleteMarkerReplication";
+        private static final String PRIORITY = "Priority";
         private static final String STATUS = "Status";
         private static final String BUCKET = "Bucket";
         private static final String STORAGECLASS = "StorageClass";
+        private static final String ACCOUNT = "Account";
+        private static final String ACCESS_CONTROL_TRANSLATION = "AccessControlTranslation";
+        private static final String OWNER = "Owner";
+        private static final String ENCRYPTION_CONFIGURATION = "EncryptionConfiguration";
+        private static final String REPLICA_KMS_KEY_ID = "ReplicaKmsKeyID";
+        private static final String SOURCE_SELECTION_CRITERIA = "SourceSelectionCriteria";
+        private static final String SSE_KMS_ENCRYPTED_OBJECTS = "SseKmsEncryptedObjects";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -2090,6 +2230,26 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE)) {
                 if (name.equals(DESTINATION)) {
                     destinationConfig = new ReplicationDestinationConfig();
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    sourceSelectionCriteria = new SourceSelectionCriteria();
+                } else if (name.equals(DELETE_MARKER_REPLICATION)) {
+                    deleteMarkerReplication = new DeleteMarkerReplication();
+                } else if (name.equals(FILTER)) {
+                    currentFilter = new ReplicationFilter();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
+                if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    accessControlTranslation = new AccessControlTranslation();
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    encryptionConfiguration = new EncryptionConfiguration();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sseKmsEncryptedObjects = new SseKmsEncryptedObjects();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
+                if (name.equals(AND)) {
+                    andOperandsList = new ArrayList<ReplicationFilterPredicate>();
                 }
             }
         }
@@ -2102,7 +2262,11 @@ public class XmlResponsesSaxParser {
                             currentRule);
                     currentRule = null;
                     currentRuleId = null;
+                    deleteMarkerReplication = null;
                     destinationConfig = null;
+                    sseKmsEncryptedObjects = null;
+                    accessControlTranslation = null;
+                    encryptionConfiguration = null;
                 } else if (name.equals(ROLE)) {
                     bucketReplicationConfiguration.setRoleARN(getText());
                 }
@@ -2111,6 +2275,15 @@ public class XmlResponsesSaxParser {
                     currentRuleId = getText();
                 } else if (name.equals(PREFIX)) {
                     currentRule.setPrefix(getText());
+                } else if (name.equals(PRIORITY)) {
+                    currentRule.setPriority(Integer.valueOf(getText()));
+                } else if (name.equals(DELETE_MARKER_REPLICATION)) {
+                    currentRule.setDeleteMarkerReplication(deleteMarkerReplication);
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    currentRule.setSourceSelectionCriteria(sourceSelectionCriteria);
+                } else if (name.equals(FILTER)) {
+                    currentRule.setFilter(currentFilter);
+                    currentFilter = null;
                 } else {
                     if (name.equals(STATUS)) {
                         currentRule.setStatus(getText());
@@ -2119,11 +2292,68 @@ public class XmlResponsesSaxParser {
                         currentRule.setDestinationConfig(destinationConfig);
                     }
                 }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
+                if (name.equals(PREFIX)) {
+                    currentFilter.setPredicate(new ReplicationPrefixPredicate(getText()));
+                } else if (name.equals(TAG)) {
+                    currentFilter.setPredicate(new ReplicationTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals(AND)) {
+                    currentFilter.setPredicate(new ReplicationAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, TAG)) {
+                if (name.equals(TAG_KEY)) {
+                    currentTagKey = getText();
+                } else if (name.equals(TAG_VALUE)) {
+                    currentTagValue = getText();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, AND)) {
+                if (name.equals(PREFIX)) {
+                    andOperandsList.add(new ReplicationPrefixPredicate(getText()));
+                } else if (name.equals(TAG)) {
+                    andOperandsList.add(new ReplicationTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, AND, TAG)) {
+                if (name.equals(TAG_KEY)) {
+                    currentTagKey = getText();
+                } else if (name.equals(TAG_VALUE)) {
+                    currentTagValue = getText();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sourceSelectionCriteria.setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
+                if (name.equals(STATUS)) {
+                    sseKmsEncryptedObjects.setStatus(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DELETE_MARKER_REPLICATION)) {
+                if (name.equals(STATUS)) {
+                    deleteMarkerReplication.setStatus(getText());
+                }
             } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
                 if (name.equals(BUCKET)) {
                     destinationConfig.setBucketARN(getText());
                 } else if (name.equals(STORAGECLASS)) {
                     destinationConfig.setStorageClass(getText());
+                } else if (name.equals(ACCOUNT)) {
+                    destinationConfig.setAccount(getText());
+                } else if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    destinationConfig.setAccessControlTranslation(accessControlTranslation);
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    destinationConfig.setEncryptionConfiguration(encryptionConfiguration);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ACCESS_CONTROL_TRANSLATION)) {
+                if (name.equals(OWNER)) {
+                    accessControlTranslation.setOwner(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ENCRYPTION_CONFIGURATION)) {
+                if (name.equals(REPLICA_KMS_KEY_ID)) {
+                    encryptionConfiguration.setReplicaKmsKeyID(getText());
                 }
             }
         }
@@ -2151,7 +2381,7 @@ public class XmlResponsesSaxParser {
 
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
-                    currentTagSet = new HashMap<String, String>();
+                    currentTagSet = new LinkedHashMap<String, String>();
                 }
             }
         }
@@ -2177,6 +2407,70 @@ public class XmlResponsesSaxParser {
             }
 
             else if (in("Tagging", "TagSet", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+        }
+    }
+
+    /**
+     * Handler for unmarshalling the response from GET Object Tagging.
+     *
+     * <Tagging>
+     *     <TagSet>
+     *         <Tag>
+     *             <Key>Foo</Key>
+     *             <Value>1</Value>
+     *         </Tag>
+     *         <Tag>
+     *             <Key>Bar</Key>
+     *             <Value>2</Value>
+     *         </Tag>
+     *         <Tag>
+     *             <Key>Baz</Key>
+     *             <Value>3</Value>
+     *         </Tag>
+     *     </TagSet>
+     * </Tagging>
+     */
+    public static class GetObjectTaggingHandler extends AbstractHandler {
+        private GetObjectTaggingResult getObjectTaggingResult;
+        private List<Tag> tagSet;
+        private String currentTagValue;
+        private String currentTagKey;
+
+        public GetObjectTaggingResult getResult() {
+            return getObjectTaggingResult;
+        }
+
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            if (in("Tagging")) {
+                if (name.equals("TagSet")) {
+                    tagSet = new ArrayList<Tag>();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("Tagging")) {
+                if (name.equals("TagSet")) {
+                    getObjectTaggingResult = new GetObjectTaggingResult(tagSet);
+                    tagSet = null;
+                }
+            }
+            if (in("Tagging", "TagSet")) {
+                if (name.equals("Tag")) {
+                    tagSet.add(new Tag(currentTagKey, currentTagValue));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            } else if (in("Tagging", "TagSet", "Tag")) {
                 if (name.equals("Key")) {
                     currentTagKey = getText();
                 } else if (name.equals("Value")) {
@@ -2302,6 +2596,24 @@ public class XmlResponsesSaxParser {
           <ID>logs-rule</ID>
           <Prefix>logs/</Prefix>
           <Status>Enabled</Status>
+          <Filter>
+                <Prefix>logs/</Prefix>
+                <Tag>
+                    <Key>key1</Key>
+                    <Value>value1</Value>
+                </Tag>
+                <And>
+                    <Prefix>logs/</Prefix>
+                    <Tag>
+                        <Key>key1</Key>
+                        <Value>value1</Value>
+                    </Tag>
+                    <Tag>
+                        <Key>key1</Key>
+                        <Value>value1</Value>
+                    </Tag>
+                </And>
+          </Filter>
           <Transition>
               <Days>30</Days>
               <StorageClass>STANDARD_IA</StorageClass>
@@ -2351,6 +2663,10 @@ public class XmlResponsesSaxParser {
         private Transition currentTransition;
         private NoncurrentVersionTransition currentNcvTransition;
         private AbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
+        private LifecycleFilter currentFilter;
+        private List<LifecycleFilterPredicate> andOperandsList;
+        private String currentTagKey;
+        private String currentTagValue;
 
         public BucketLifecycleConfiguration getConfiguration() {
             return configuration;
@@ -2375,6 +2691,12 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("AbortIncompleteMultipartUpload")) {
                     abortIncompleteMultipartUpload = new
                             AbortIncompleteMultipartUpload();
+                } else if (name.equals("Filter")) {
+                    currentFilter = new LifecycleFilter();
+                }
+            } else if (in("LifecycleConfiguration", "Rule", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<LifecycleFilterPredicate>();
                 }
             }
         }
@@ -2409,6 +2731,9 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("AbortIncompleteMultipartUpload")) {
                     currentRule.setAbortIncompleteMultipartUpload(abortIncompleteMultipartUpload);
                     abortIncompleteMultipartUpload = null;
+                } else if (name.equals("Filter")) {
+                    currentRule.setFilter(currentFilter);
+                    currentFilter = null;
                 }
             }
 
@@ -2457,6 +2782,46 @@ public class XmlResponsesSaxParser {
                             (Integer.parseInt(getText()));
                 }
             }
+
+            else if (in("LifecycleConfiguration", "Rule", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new LifecyclePrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    currentFilter.setPredicate(new LifecycleTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    currentFilter.setPredicate(new LifecycleAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("LifecycleConfiguration", "Rule", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("LifecycleConfiguration", "Rule", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new LifecyclePrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new LifecycleTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("LifecycleConfiguration", "Rule", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
         }
     }
 
@@ -2558,6 +2923,994 @@ public class XmlResponsesSaxParser {
 
                 } else if (name.equals("AllowedHeader")) {
                     allowedHeaders.add(getText());
+                }
+            }
+        }
+    }
+
+    /*
+      HTTP/1.1 200 OK
+      x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
+      x-amz-request-id: 51991C342C575321
+      Date: Wed, 14 May 2014 02:11:22 GMT
+      Server: AmazonS3
+      Content-Length: ...
+
+     <?xml version="1.0" encoding="UTF-8"?>
+     <MetricsConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+       <Id>metrics-id</Id>
+       <Filter>
+       <!-- A filter should have only one of Prefix, Tag or And predicate. ->
+         <Prefix>prefix</Prefix>
+         <Tag>
+             <Key>Project</Key>
+             <Value>Foo</Value>
+         </Tag>
+         <And>
+           <Prefix>documents/</Prefix>
+           <Tag>
+             <Key>foo</Key>
+             <Value>bar</Value>
+           </Tag>
+         </And>
+       </Filter>
+     </MetricsConfiguration>
+    */
+    public static class GetBucketMetricsConfigurationHandler extends AbstractHandler {
+
+        private final MetricsConfiguration configuration = new MetricsConfiguration();
+
+        private MetricsFilter filter;
+        private List<MetricsFilterPredicate> andOperandsList;
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public GetBucketMetricsConfigurationResult getResult() {
+            return new GetBucketMetricsConfigurationResult().withMetricsConfiguration(configuration);
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("MetricsConfiguration")) {
+                if (name.equals("Filter")) {
+                    filter = new MetricsFilter();
+                }
+
+            } else if (in("MetricsConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<MetricsFilterPredicate>();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("MetricsConfiguration")) {
+                if (name.equals("Id")) {
+                    configuration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    configuration.setFilter(filter);
+                    filter = null;
+                }
+            }
+
+            else if (in("MetricsConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    filter.setPredicate(new MetricsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    filter.setPredicate(new MetricsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    filter.setPredicate(new MetricsAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("MetricsConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("MetricsConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new MetricsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new MetricsTagPredicate(
+                            new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("MetricsConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+        }
+
+    }
+
+    /*
+        HTTP/1.1 200 OK
+        x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
+        x-amz-request-id: 51991C342C575321
+        Date: Wed, 14 May 2014 02:11:22 GMT
+        Server: AmazonS3
+        Content-Length: ...
+
+        <ListMetricsConfigurationsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+          <MetricsConfiguration>
+            ...
+          </MetricsConfiguration>
+          <IsTruncated>true</IsTruncated>
+          <ContinuationToken>token1</ContinuationToken>
+          <NextContinuationToken>token2</NextContinuationToken>
+        </ListMetricsConfigurationsResult>
+    */
+    public static class ListBucketMetricsConfigurationsHandler extends AbstractHandler {
+
+        private final ListBucketMetricsConfigurationsResult result =
+                new ListBucketMetricsConfigurationsResult();
+
+        private MetricsConfiguration currentConfiguration;
+        private MetricsFilter currentFilter;
+        private List<MetricsFilterPredicate> andOperandsList;
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public ListBucketMetricsConfigurationsResult getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListMetricsConfigurationsResult")) {
+                if (name.equals("MetricsConfiguration")) {
+                    currentConfiguration = new MetricsConfiguration();
+                }
+
+            } else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration")) {
+                if (name.equals("Filter")) {
+                    currentFilter = new MetricsFilter();
+                }
+
+            } else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<MetricsFilterPredicate>();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("ListMetricsConfigurationsResult")) {
+                if (name.equals("MetricsConfiguration")) {
+                    if (result.getMetricsConfigurationList() == null) {
+                        result.setMetricsConfigurationList(new ArrayList<MetricsConfiguration>());
+                    }
+                    result.getMetricsConfigurationList().add(currentConfiguration);
+                    currentConfiguration = null;
+                } else if (name.equals("IsTruncated")) {
+                    result.setTruncated("true".equals(getText()));
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+                }
+            }
+
+            else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration")) {
+                if (name.equals("Id")) {
+                    currentConfiguration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    currentConfiguration.setFilter(currentFilter);
+                    currentFilter = null;
+                }
+            }
+
+            else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new MetricsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    currentFilter.setPredicate(new MetricsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    currentFilter.setPredicate(new MetricsAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new MetricsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new MetricsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("ListMetricsConfigurationsResult", "MetricsConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+        }
+    }
+
+    /*
+         HTTP/1.1 200 OK
+         x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
+         x-amz-request-id: 51991C342C575321
+         Date: Wed, 14 May 2014 02:11:22 GMT
+         Server: AmazonS3
+         Content-Length: ...
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <AnalyticsConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+           <Id>XXX</Id>
+           <Filter>
+             <And>
+               <Prefix>documents/</Prefix>
+               <Tag>
+                 <Key>foo</Key>
+                 <Value>bar</Value>
+               </Tag>
+             </And>
+           </Filter>
+           <StorageClassAnalysis>
+             <DataExport>
+               <OutputSchemaVersion>1</OutputSchemaVersion>
+               <Destination>
+                 <S3BucketDestination>
+                   <Format>CSV</Format>
+                   <BucketAccountId>123456789</BucketAccountId>
+                   <Bucket>destination-bucket</Bucket>
+                   <Prefix>destination-prefix</Prefix>
+                 </S3BucketDestination>
+               </Destination>
+             </DataExport>
+           </StorageClassAnalysis>
+        </AnalyticsConfiguration>
+     */
+    public static class GetBucketAnalyticsConfigurationHandler extends AbstractHandler {
+
+        private final AnalyticsConfiguration configuration = new AnalyticsConfiguration();
+
+        private AnalyticsFilter filter;
+        private List<AnalyticsFilterPredicate> andOperandsList;
+        private StorageClassAnalysis storageClassAnalysis;
+        private StorageClassAnalysisDataExport dataExport;
+        private AnalyticsExportDestination destination;
+        private AnalyticsS3BucketDestination s3BucketDestination;
+
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public GetBucketAnalyticsConfigurationResult getResult() {
+            return new GetBucketAnalyticsConfigurationResult().withAnalyticsConfiguration(configuration);
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("AnalyticsConfiguration")) {
+                if (name.equals("Filter")) {
+                    filter = new AnalyticsFilter();
+                } else if (name.equals("StorageClassAnalysis")) {
+                    storageClassAnalysis = new StorageClassAnalysis();
+                }
+
+            } else if (in("AnalyticsConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<AnalyticsFilterPredicate>();
+                }
+
+            } else if (in("AnalyticsConfiguration", "StorageClassAnalysis")) {
+                if (name.equals("DataExport")) {
+                    dataExport = new StorageClassAnalysisDataExport();
+                }
+
+            } else if (in("AnalyticsConfiguration", "StorageClassAnalysis", "DataExport")) {
+                if (name.equals("Destination")) {
+                    destination = new AnalyticsExportDestination();
+                }
+
+            } else if (in("AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    s3BucketDestination = new AnalyticsS3BucketDestination();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("AnalyticsConfiguration")) {
+                if (name.equals("Id")) {
+                    configuration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    configuration.setFilter(filter);
+                } else if (name.equals("StorageClassAnalysis")) {
+                    configuration.setStorageClassAnalysis(storageClassAnalysis);
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    filter.setPredicate(new AnalyticsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    filter.setPredicate(new AnalyticsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    filter.setPredicate(new AnalyticsAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new AnalyticsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new AnalyticsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "StorageClassAnalysis")) {
+                if (name.equals("DataExport")) {
+                    storageClassAnalysis.setDataExport(dataExport);
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "StorageClassAnalysis", "DataExport")) {
+                if (name.equals("OutputSchemaVersion")) {
+                    dataExport.setOutputSchemaVersion(getText());
+                } else if (name.equals("Destination")) {
+                    dataExport.setDestination(destination);
+
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    destination.setS3BucketDestination(s3BucketDestination);
+                }
+            }
+
+            else if (in("AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination", "S3BucketDestination")) {
+                if (name.equals("Format")) {
+                    s3BucketDestination.setFormat(getText());
+                } else if (name.equals("BucketAccountId")) {
+                    s3BucketDestination.setBucketAccountId(getText());
+                } else if (name.equals("Bucket")) {
+                    s3BucketDestination.setBucketArn(getText());
+                } else if (name.equals("Prefix")) {
+                    s3BucketDestination.setPrefix(getText());
+                }
+            }
+        }
+
+    }
+
+    /*
+        HTTP/1.1 200 OK
+        x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
+        x-amz-request-id: 51991C342C575321
+        Date: Wed, 14 May 2014 02:11:22 GMT
+        Server: AmazonS3
+        Content-Length: ...
+
+        <ListBucketAnalyticsConfigurationsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+          <AnalyticsConfiguration>
+            ...
+          </AnalyticsConfiguration>
+          <IsTruncated>true</IsTruncated>
+          <ContinuationToken>token1</ContinuationToken>
+          <NextContinuationToken>token2</NextContinuationToken>
+        </ListBucketAnalyticsConfigurationsResult>
+     */
+    public static class ListBucketAnalyticsConfigurationHandler extends AbstractHandler {
+
+        private final ListBucketAnalyticsConfigurationsResult result =
+                new ListBucketAnalyticsConfigurationsResult();
+
+        private AnalyticsConfiguration currentConfiguration;
+        private AnalyticsFilter currentFilter;
+        private List<AnalyticsFilterPredicate> andOperandsList;
+        private StorageClassAnalysis storageClassAnalysis;
+        private StorageClassAnalysisDataExport dataExport;
+        private AnalyticsExportDestination destination;
+        private AnalyticsS3BucketDestination s3BucketDestination;
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public ListBucketAnalyticsConfigurationsResult getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListBucketAnalyticsConfigurationsResult")) {
+                if (name.equals("AnalyticsConfiguration")) {
+                    currentConfiguration = new AnalyticsConfiguration();
+                }
+
+            } else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration")) {
+                if (name.equals("Filter")) {
+                    currentFilter = new AnalyticsFilter();
+                } else if (name.equals("StorageClassAnalysis")) {
+                    storageClassAnalysis = new StorageClassAnalysis();
+                }
+
+            } else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<AnalyticsFilterPredicate>();
+                }
+
+            } else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis")) {
+                if (name.equals("DataExport")) {
+                    dataExport = new StorageClassAnalysisDataExport();
+                }
+
+            } else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis", "DataExport")) {
+                if (name.equals("Destination")) {
+                    destination = new AnalyticsExportDestination();
+                }
+
+            } else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    s3BucketDestination = new AnalyticsS3BucketDestination();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("ListBucketAnalyticsConfigurationsResult")) {
+                if (name.equals("AnalyticsConfiguration")) {
+                    if (result.getAnalyticsConfigurationList() == null) {
+                        result.setAnalyticsConfigurationList(new ArrayList<AnalyticsConfiguration>());
+                    }
+                    result.getAnalyticsConfigurationList().add(currentConfiguration);
+                    currentConfiguration = null;
+                } else if (name.equals("IsTruncated")) {
+                    result.setTruncated("true".equals(getText()));
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration")) {
+                if (name.equals("Id")) {
+                    currentConfiguration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    currentConfiguration.setFilter(currentFilter);
+                } else if (name.equals("StorageClassAnalysis")) {
+                    currentConfiguration.setStorageClassAnalysis(storageClassAnalysis);
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new AnalyticsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    currentFilter.setPredicate(new AnalyticsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    currentFilter.setPredicate(new AnalyticsAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new AnalyticsPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new AnalyticsTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis")) {
+                if (name.equals("DataExport")) {
+                    storageClassAnalysis.setDataExport(dataExport);
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis", "DataExport")) {
+                if (name.equals("OutputSchemaVersion")) {
+                    dataExport.setOutputSchemaVersion(getText());
+                } else if (name.equals("Destination")) {
+                    dataExport.setDestination(destination);
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    destination.setS3BucketDestination(s3BucketDestination);
+                }
+            }
+
+            else if (in("ListBucketAnalyticsConfigurationsResult", "AnalyticsConfiguration", "StorageClassAnalysis", "DataExport", "Destination", "S3BucketDestination")) {
+                if (name.equals("Format")) {
+                    s3BucketDestination.setFormat(getText());
+                } else if (name.equals("BucketAccountId")) {
+                    s3BucketDestination.setBucketAccountId(getText());
+                } else if (name.equals("Bucket")) {
+                    s3BucketDestination.setBucketArn(getText());
+                } else if (name.equals("Prefix")) {
+                    s3BucketDestination.setPrefix(getText());
+                }
+            }
+        }
+
+    }
+
+    /*
+      HTTP/1.1 200 OK
+      x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+      x-amz-request-id: 656c76696e6727732072657175657374
+      Date: Tue, 20 Sep 2012 20:34:56 GMT
+      Content-Length: xxx
+      Connection: keep-alive
+      Server: AmazonS3
+
+     <InventoryConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <Destination>
+           <S3BucketDestination>
+              <AccountId>A2OCNCIEQW9MSG</AccountId>
+              <Bucket>s3-object-inventory-list-gamma-us-east-1</Bucket>
+              <Format>CSV</Format>
+              <Prefix>string</Prefix>
+           </S3BucketDestination>
+        </Destination>
+        <IsEnabled>true</IsEnabled>
+        <Filter>
+           <Prefix>string</Prefix>
+        </Filter>
+        <Id>configId</Id>
+        <IncludedObjectVersions>All</IncludedObjectVersions>
+        <OptionalFields>
+           <Field>Size</Field>
+           <Field>LastModifiedDate</Field>
+           <Field>StorageClass</Field>
+           <Field>ETag</Field>
+           <Field>IsMultipartUploaded</Field>
+           <Field>ReplicationStatus</Field>
+        </OptionalFields>
+        <Schedule>
+           <Frequency>Daily</Frequency>
+        </Schedule>
+     </InventoryConfiguration>
+  */
+    public static class GetBucketInventoryConfigurationHandler extends AbstractHandler {
+
+        public static final String SSE_S3 = "SSE-S3";
+        public static final String SSE_KMS = "SSE-KMS";
+        private final GetBucketInventoryConfigurationResult result = new GetBucketInventoryConfigurationResult();
+        private final InventoryConfiguration configuration = new InventoryConfiguration();
+
+        private List<String> optionalFields;
+        private InventoryDestination inventoryDestination;
+        private InventoryFilter filter;
+        private InventoryS3BucketDestination s3BucketDestination;
+        private InventorySchedule inventorySchedule;
+
+        public GetBucketInventoryConfigurationResult getResult() {
+            return result.withInventoryConfiguration(configuration);
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("InventoryConfiguration")) {
+                if (name.equals("Destination")) {
+                    inventoryDestination = new InventoryDestination();
+                } else if(name.equals("Filter")) {
+                    filter = new InventoryFilter();
+                } else if(name.equals("Schedule")) {
+                    inventorySchedule = new InventorySchedule();
+                } else if(name.equals("OptionalFields")) {
+                    optionalFields = new ArrayList<String>();
+                }
+
+            } else if (in("InventoryConfiguration", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    s3BucketDestination = new InventoryS3BucketDestination();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("InventoryConfiguration")) {
+                if (name.equals("Id")) {
+                    configuration.setId(getText());
+
+                } else if (name.equals("Destination")) {
+                    configuration.setDestination(inventoryDestination);
+                    inventoryDestination = null;
+
+                } else if (name.equals("IsEnabled")) {
+                    configuration.setEnabled("true".equals(getText()));
+
+                } else if (name.equals("Filter")) {
+                    configuration.setInventoryFilter(filter);
+                    filter = null;
+
+                } else if (name.equals("IncludedObjectVersions")) {
+                    configuration.setIncludedObjectVersions(getText());
+
+                } else if (name.equals("Schedule")) {
+                    configuration.setSchedule(inventorySchedule);
+                    inventorySchedule = null;
+
+                } else if (name.equals("OptionalFields")) {
+                    configuration.setOptionalFields(optionalFields);
+                    optionalFields = null;
+                }
+
+            } else if (in("InventoryConfiguration", "Destination")) {
+                if ( name.equals("S3BucketDestination") ) {
+                    inventoryDestination.setS3BucketDestination(s3BucketDestination);
+                    s3BucketDestination = null;
+                }
+
+            } else if (in("InventoryConfiguration", "Destination", "S3BucketDestination")) {
+                if (name.equals("AccountId")) {
+                    s3BucketDestination.setAccountId(getText());
+                } else if (name.equals("Bucket")) {
+                    s3BucketDestination.setBucketArn(getText());
+                } else if (name.equals("Format")) {
+                    s3BucketDestination.setFormat(getText());
+                } else if (name.equals("Prefix")) {
+                    s3BucketDestination.setPrefix(getText());
+                }
+            } else if (in("InventoryConfiguration", "Destination", "S3BucketDestination", "Encryption")) {
+                if (name.equals(SSE_S3)) {
+                    s3BucketDestination.setEncryption(new ServerSideEncryptionS3());
+                } else if (name.equals(SSE_KMS)) {
+                    ServerSideEncryptionKMS kmsEncryption = new ServerSideEncryptionKMS().withKeyId(getText());
+                    s3BucketDestination.setEncryption(kmsEncryption);
+                }
+            } else if (in("InventoryConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    filter.setPredicate(new InventoryPrefixPredicate(getText()));
+                }
+
+            } else if (in("InventoryConfiguration", "Schedule")) {
+                if (name.equals("Frequency")) {
+                    inventorySchedule.setFrequency(getText());
+                }
+
+            } else if (in("InventoryConfiguration", "OptionalFields")) {
+                if (name.equals("Field")) {
+                    optionalFields.add(getText());
+                }
+            }
+        }
+
+    }
+
+    /*
+        HTTP/1.1 200 OK
+        x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
+        x-amz-request-id: 51991C342C575321
+        Date: Wed, 14 May 2014 02:11:22 GMT
+        Server: AmazonS3
+        Content-Length: ...
+
+        <ListInventoryConfigurationsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+          <InventoryConfiguration>
+            ...
+          </InventoryConfiguration>
+          <InventoryConfiguration>
+            ...
+          </InventoryConfiguration>
+          <IsTruncated>true</IsTruncated>
+          <ContinuationToken>token1</ContinuationToken>
+          <NextContinuationToken>token2</NextContinuationToken>
+        </ListInventoryConfigurationsResult>
+ */
+    public static class ListBucketInventoryConfigurationsHandler extends AbstractHandler {
+
+        private final ListBucketInventoryConfigurationsResult result = new ListBucketInventoryConfigurationsResult();
+
+        private InventoryConfiguration currentConfiguration;
+        private List<String> currentOptionalFieldsList;
+        private InventoryDestination currentDestination;
+        private InventoryFilter currentFilter;
+        private InventoryS3BucketDestination currentS3BucketDestination;
+        private InventorySchedule currentSchedule;
+
+        public ListBucketInventoryConfigurationsResult getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListInventoryConfigurationsResult")) {
+                if (name.equals("InventoryConfiguration")) {
+                    currentConfiguration = new InventoryConfiguration();
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration")) {
+                if (name.equals("Destination")) {
+                    currentDestination = new InventoryDestination();
+                } else if(name.equals("Filter")) {
+                    currentFilter = new InventoryFilter();
+                } else if(name.equals("Schedule")) {
+                    currentSchedule = new InventorySchedule();
+                } else if(name.equals("OptionalFields")) {
+                    currentOptionalFieldsList = new ArrayList<String>();
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "Destination")) {
+                if (name.equals("S3BucketDestination")) {
+                    currentS3BucketDestination = new InventoryS3BucketDestination();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("ListInventoryConfigurationsResult")) {
+                if (name.equals("InventoryConfiguration")) {
+                    if (result.getInventoryConfigurationList() == null) {
+                        result.setInventoryConfigurationList(new ArrayList<InventoryConfiguration>());
+                    }
+                    result.getInventoryConfigurationList().add(currentConfiguration);
+                    currentConfiguration = null;
+                } else if (name.equals("IsTruncated")) {
+                    result.setTruncated("true".equals(getText()));
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+                }
+            }
+
+            else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration")) {
+                if (name.equals("Id")) {
+                    currentConfiguration.setId(getText());
+
+                } else if (name.equals("Destination")) {
+                    currentConfiguration.setDestination(currentDestination);
+                    currentDestination = null;
+
+                } else if (name.equals("IsEnabled")) {
+                    currentConfiguration.setEnabled("true".equals(getText()));
+
+                } else if (name.equals("Filter")) {
+                    currentConfiguration.setInventoryFilter(currentFilter);
+                    currentFilter = null;
+
+                } else if (name.equals("IncludedObjectVersions")) {
+                    currentConfiguration.setIncludedObjectVersions(getText());
+
+                } else if (name.equals("Schedule")) {
+                    currentConfiguration.setSchedule(currentSchedule);
+                    currentSchedule = null;
+
+                } else if (name.equals("OptionalFields")) {
+                    currentConfiguration.setOptionalFields(currentOptionalFieldsList);
+                    currentOptionalFieldsList = null;
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "Destination")) {
+                if ( name.equals("S3BucketDestination") ) {
+                    currentDestination.setS3BucketDestination(currentS3BucketDestination);
+                    currentS3BucketDestination = null;
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "Destination", "S3BucketDestination")) {
+                if (name.equals("AccountId")) {
+                    currentS3BucketDestination.setAccountId(getText());
+                } else if (name.equals("Bucket")) {
+                    currentS3BucketDestination.setBucketArn(getText());
+                } else if (name.equals("Format")) {
+                    currentS3BucketDestination.setFormat(getText());
+                } else if (name.equals("Prefix")) {
+                    currentS3BucketDestination.setPrefix(getText());
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new InventoryPrefixPredicate(getText()));
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "Schedule")) {
+                if (name.equals("Frequency")) {
+                    currentSchedule.setFrequency(getText());
+                }
+
+            } else if (in("ListInventoryConfigurationsResult", "InventoryConfiguration", "OptionalFields")) {
+                if (name.equals("Field")) {
+                    currentOptionalFieldsList.add(getText());
+                }
+            }
+        }
+
+    }
+
+    public static class GetObjectLegalHoldResponseHandler extends AbstractHandler {
+        private GetObjectLegalHoldResult getObjectLegalHoldResult = new GetObjectLegalHoldResult();
+
+        private ObjectLockLegalHold legalHold = new ObjectLockLegalHold();
+
+        public GetObjectLegalHoldResult getResult() {
+            return getObjectLegalHoldResult.withLegalHold(legalHold);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("LegalHold")) {
+                if ("Status".equals(name)) {
+                    legalHold.setStatus(getText());
+                }
+            }
+        }
+    }
+
+    public static class GetObjectLockConfigurationResponseHandler extends AbstractHandler {
+        private GetObjectLockConfigurationResult result = new GetObjectLockConfigurationResult();
+        private ObjectLockConfiguration objectLockConfiguration = new ObjectLockConfiguration();
+        private ObjectLockRule rule;
+        private DefaultRetention defaultRetention;
+
+        public GetObjectLockConfigurationResult getResult() {
+            return result.withObjectLockConfiguration(objectLockConfiguration);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            if (in("ObjectLockConfiguration")) {
+                if ("Rule".equals(name)) {
+                    rule = new ObjectLockRule();
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    defaultRetention = new DefaultRetention();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("ObjectLockConfiguration")) {
+                if ("ObjectLockEnabled".equals(name)) {
+                    objectLockConfiguration.setObjectLockEnabled(getText());
+                } else if ("Rule".equals(name)) {
+                    objectLockConfiguration.setRule(rule);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    rule.setDefaultRetention(defaultRetention);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule", "DefaultRetention")) {
+                if ("Mode".equals(name)) {
+                    defaultRetention.setMode(getText());
+                } else if ("Days".equals(name)) {
+                    defaultRetention.setDays(Integer.parseInt(getText()));
+                } else if ("Years".equals(name)) {
+                    defaultRetention.setYears(Integer.parseInt(getText()));
+                }
+            }
+        }
+    }
+
+    public static class GetObjectRetentionResponseHandler extends AbstractHandler {
+        private GetObjectRetentionResult result = new GetObjectRetentionResult();
+
+        private ObjectLockRetention retention = new ObjectLockRetention();
+
+        public GetObjectRetentionResult getResult() {
+            return result.withRetention(retention);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("Retention")) {
+                if ("Mode".equals(name)) {
+                    retention.setMode(getText());
+                } else if ("RetainUntilDate".equals(name)) {
+                    retention.setRetainUntilDate(ServiceUtils.parseIso8601Date(getText()));
                 }
             }
         }

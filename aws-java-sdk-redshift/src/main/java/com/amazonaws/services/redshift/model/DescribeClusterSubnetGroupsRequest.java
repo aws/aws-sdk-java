@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeClusterSubnetGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,11 +34,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
     private String clusterSubnetGroupName;
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -50,37 +48,30 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching cluster
-     * subnet groups that are associated with the specified key or keys. For
-     * example, suppose that you have subnet groups that are tagged with keys
-     * called <code>owner</code> and <code>environment</code>. If you specify
-     * both of these tag keys in the request, Amazon Redshift returns a response
-     * with the subnet groups that have either or both of these tag keys
-     * associated with them.
+     * A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the
+     * specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag keys associated with
+     * them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
     /**
      * <p>
-     * A tag value or values for which you want to return all matching cluster
-     * subnet groups that are associated with the specified tag value or values.
-     * For example, suppose that you have subnet groups that are tagged with
-     * values called <code>admin</code> and <code>test</code>. If you specify
-     * both of these tag values in the request, Amazon Redshift returns a
-     * response with the subnet groups that have either or both of these tag
-     * values associated with them.
+     * A tag value or values for which you want to return all matching cluster subnet groups that are associated with
+     * the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values
+     * called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag values associated with
+     * them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagValues;
@@ -91,8 +82,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterSubnetGroupName
-     *        The name of the cluster subnet group for which information is
-     *        requested.
+     *        The name of the cluster subnet group for which information is requested.
      */
 
     public void setClusterSubnetGroupName(String clusterSubnetGroupName) {
@@ -104,8 +94,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * The name of the cluster subnet group for which information is requested.
      * </p>
      * 
-     * @return The name of the cluster subnet group for which information is
-     *         requested.
+     * @return The name of the cluster subnet group for which information is requested.
      */
 
     public String getClusterSubnetGroupName() {
@@ -118,25 +107,20 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterSubnetGroupName
-     *        The name of the cluster subnet group for which information is
-     *        requested.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the cluster subnet group for which information is requested.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterSubnetGroupsRequest withClusterSubnetGroupName(
-            String clusterSubnetGroupName) {
+    public DescribeClusterSubnetGroupsRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         setClusterSubnetGroupName(clusterSubnetGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -146,12 +130,10 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
@@ -165,11 +147,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -178,11 +158,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * Constraints: minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of response records to return in each call. If
-     *         the number of remaining response records exceeds the specified
-     *         <code>MaxRecords</code> value, a value is returned in a
-     *         <code>marker</code> field of the response. You can retrieve the
-     *         next set of records by retrying the command with the returned
+     * @return The maximum number of response records to return in each call. If the number of remaining response
+     *         records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code>
+     *         field of the response. You can retrieve the next set of records by retrying the command with the returned
      *         marker value. </p>
      *         <p>
      *         Default: <code>100</code>
@@ -197,11 +175,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -211,19 +187,16 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
      *        <p>
      *        Constraints: minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -233,24 +206,18 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterSubnetGroups</a> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request.
      */
 
     public void setMarker(String marker) {
@@ -259,23 +226,17 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
-     * @return An optional parameter that specifies the starting point to return
-     *         a set of response records. When the results of a
-     *         <a>DescribeClusterSubnetGroups</a> request exceed the value
-     *         specified in <code>MaxRecords</code>, AWS returns a value in the
-     *         <code>Marker</code> field of the response. You can retrieve the
-     *         next set of response records by providing the returned marker
-     *         value in the <code>Marker</code> parameter and retrying the
-     *         request.
+     * @return An optional parameter that specifies the starting point to return a set of response records. When the
+     *         results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
+     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request.
      */
 
     public String getMarker() {
@@ -284,26 +245,19 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
-     * <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
-     * field of the response. You can retrieve the next set of response records
-     * by providing the returned marker value in the <code>Marker</code>
-     * parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
+     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <a>DescribeClusterSubnetGroups</a> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterSubnetGroupsRequest withMarker(String marker) {
@@ -313,23 +267,18 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching cluster
-     * subnet groups that are associated with the specified key or keys. For
-     * example, suppose that you have subnet groups that are tagged with keys
-     * called <code>owner</code> and <code>environment</code>. If you specify
-     * both of these tag keys in the request, Amazon Redshift returns a response
-     * with the subnet groups that have either or both of these tag keys
-     * associated with them.
+     * A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the
+     * specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag keys associated with
+     * them.
      * </p>
      * 
-     * @return A tag key or keys for which you want to return all matching
-     *         cluster subnet groups that are associated with the specified key
-     *         or keys. For example, suppose that you have subnet groups that
-     *         are tagged with keys called <code>owner</code> and
-     *         <code>environment</code>. If you specify both of these tag keys
-     *         in the request, Amazon Redshift returns a response with the
-     *         subnet groups that have either or both of these tag keys
-     *         associated with them.
+     * @return A tag key or keys for which you want to return all matching cluster subnet groups that are associated
+     *         with the specified key or keys. For example, suppose that you have subnet groups that are tagged with
+     *         keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the
+     *         request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag
+     *         keys associated with them.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -341,24 +290,19 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching cluster
-     * subnet groups that are associated with the specified key or keys. For
-     * example, suppose that you have subnet groups that are tagged with keys
-     * called <code>owner</code> and <code>environment</code>. If you specify
-     * both of these tag keys in the request, Amazon Redshift returns a response
-     * with the subnet groups that have either or both of these tag keys
-     * associated with them.
+     * A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the
+     * specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag keys associated with
+     * them.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified key
-     *        or keys. For example, suppose that you have subnet groups that are
-     *        tagged with keys called <code>owner</code> and
-     *        <code>environment</code>. If you specify both of these tag keys in
-     *        the request, Amazon Redshift returns a response with the subnet
-     *        groups that have either or both of these tag keys associated with
-     *        them.
+     *        A tag key or keys for which you want to return all matching cluster subnet groups that are associated with
+     *        the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys
+     *        called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the
+     *        request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag
+     *        keys associated with them.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -367,44 +311,35 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(
-                tagKeys);
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(tagKeys);
     }
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching cluster
-     * subnet groups that are associated with the specified key or keys. For
-     * example, suppose that you have subnet groups that are tagged with keys
-     * called <code>owner</code> and <code>environment</code>. If you specify
-     * both of these tag keys in the request, Amazon Redshift returns a response
-     * with the subnet groups that have either or both of these tag keys
-     * associated with them.
+     * A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the
+     * specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag keys associated with
+     * them.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or
-     * {@link #withTagKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified key
-     *        or keys. For example, suppose that you have subnet groups that are
-     *        tagged with keys called <code>owner</code> and
-     *        <code>environment</code>. If you specify both of these tag keys in
-     *        the request, Amazon Redshift returns a response with the subnet
-     *        groups that have either or both of these tag keys associated with
-     *        them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag key or keys for which you want to return all matching cluster subnet groups that are associated with
+     *        the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys
+     *        called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the
+     *        request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag
+     *        keys associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterSubnetGroupsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
-            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagKeys.length));
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(tagKeys.length));
         }
         for (String ele : tagKeys) {
             this.tagKeys.add(ele);
@@ -414,53 +349,41 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching cluster
-     * subnet groups that are associated with the specified key or keys. For
-     * example, suppose that you have subnet groups that are tagged with keys
-     * called <code>owner</code> and <code>environment</code>. If you specify
-     * both of these tag keys in the request, Amazon Redshift returns a response
-     * with the subnet groups that have either or both of these tag keys
-     * associated with them.
+     * A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the
+     * specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag keys associated with
+     * them.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified key
-     *        or keys. For example, suppose that you have subnet groups that are
-     *        tagged with keys called <code>owner</code> and
-     *        <code>environment</code>. If you specify both of these tag keys in
-     *        the request, Amazon Redshift returns a response with the subnet
-     *        groups that have either or both of these tag keys associated with
-     *        them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag key or keys for which you want to return all matching cluster subnet groups that are associated with
+     *        the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys
+     *        called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the
+     *        request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag
+     *        keys associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterSubnetGroupsRequest withTagKeys(
-            java.util.Collection<String> tagKeys) {
+    public DescribeClusterSubnetGroupsRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;
     }
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching cluster
-     * subnet groups that are associated with the specified tag value or values.
-     * For example, suppose that you have subnet groups that are tagged with
-     * values called <code>admin</code> and <code>test</code>. If you specify
-     * both of these tag values in the request, Amazon Redshift returns a
-     * response with the subnet groups that have either or both of these tag
-     * values associated with them.
+     * A tag value or values for which you want to return all matching cluster subnet groups that are associated with
+     * the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values
+     * called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag values associated with
+     * them.
      * </p>
      * 
-     * @return A tag value or values for which you want to return all matching
-     *         cluster subnet groups that are associated with the specified tag
-     *         value or values. For example, suppose that you have subnet groups
-     *         that are tagged with values called <code>admin</code> and
-     *         <code>test</code>. If you specify both of these tag values in the
-     *         request, Amazon Redshift returns a response with the subnet
-     *         groups that have either or both of these tag values associated
-     *         with them.
+     * @return A tag value or values for which you want to return all matching cluster subnet groups that are associated
+     *         with the specified tag value or values. For example, suppose that you have subnet groups that are tagged
+     *         with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     *         the request, Amazon Redshift returns a response with the subnet groups that have either or both of these
+     *         tag values associated with them.
      */
 
     public java.util.List<String> getTagValues() {
@@ -472,23 +395,19 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching cluster
-     * subnet groups that are associated with the specified tag value or values.
-     * For example, suppose that you have subnet groups that are tagged with
-     * values called <code>admin</code> and <code>test</code>. If you specify
-     * both of these tag values in the request, Amazon Redshift returns a
-     * response with the subnet groups that have either or both of these tag
-     * values associated with them.
+     * A tag value or values for which you want to return all matching cluster subnet groups that are associated with
+     * the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values
+     * called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag values associated with
+     * them.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified tag
-     *        value or values. For example, suppose that you have subnet groups
-     *        that are tagged with values called <code>admin</code> and
-     *        <code>test</code>. If you specify both of these tag values in the
-     *        request, Amazon Redshift returns a response with the subnet groups
-     *        that have either or both of these tag values associated with them.
+     *        A tag value or values for which you want to return all matching cluster subnet groups that are associated
+     *        with the specified tag value or values. For example, suppose that you have subnet groups that are tagged
+     *        with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     *        the request, Amazon Redshift returns a response with the subnet groups that have either or both of these
+     *        tag values associated with them.
      */
 
     public void setTagValues(java.util.Collection<String> tagValues) {
@@ -497,43 +416,35 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.tagValues = new com.amazonaws.internal.SdkInternalList<String>(
-                tagValues);
+        this.tagValues = new com.amazonaws.internal.SdkInternalList<String>(tagValues);
     }
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching cluster
-     * subnet groups that are associated with the specified tag value or values.
-     * For example, suppose that you have subnet groups that are tagged with
-     * values called <code>admin</code> and <code>test</code>. If you specify
-     * both of these tag values in the request, Amazon Redshift returns a
-     * response with the subnet groups that have either or both of these tag
-     * values associated with them.
+     * A tag value or values for which you want to return all matching cluster subnet groups that are associated with
+     * the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values
+     * called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag values associated with
+     * them.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagValues(java.util.Collection)} or
-     * {@link #withTagValues(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified tag
-     *        value or values. For example, suppose that you have subnet groups
-     *        that are tagged with values called <code>admin</code> and
-     *        <code>test</code>. If you specify both of these tag values in the
-     *        request, Amazon Redshift returns a response with the subnet groups
-     *        that have either or both of these tag values associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag value or values for which you want to return all matching cluster subnet groups that are associated
+     *        with the specified tag value or values. For example, suppose that you have subnet groups that are tagged
+     *        with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     *        the request, Amazon Redshift returns a response with the subnet groups that have either or both of these
+     *        tag values associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClusterSubnetGroupsRequest withTagValues(String... tagValues) {
         if (this.tagValues == null) {
-            setTagValues(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagValues.length));
+            setTagValues(new com.amazonaws.internal.SdkInternalList<String>(tagValues.length));
         }
         for (String ele : tagValues) {
             this.tagValues.add(ele);
@@ -543,36 +454,30 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching cluster
-     * subnet groups that are associated with the specified tag value or values.
-     * For example, suppose that you have subnet groups that are tagged with
-     * values called <code>admin</code> and <code>test</code>. If you specify
-     * both of these tag values in the request, Amazon Redshift returns a
-     * response with the subnet groups that have either or both of these tag
-     * values associated with them.
+     * A tag value or values for which you want to return all matching cluster subnet groups that are associated with
+     * the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values
+     * called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     * Redshift returns a response with the subnet groups that have either or both of these tag values associated with
+     * them.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        cluster subnet groups that are associated with the specified tag
-     *        value or values. For example, suppose that you have subnet groups
-     *        that are tagged with values called <code>admin</code> and
-     *        <code>test</code>. If you specify both of these tag values in the
-     *        request, Amazon Redshift returns a response with the subnet groups
-     *        that have either or both of these tag values associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag value or values for which you want to return all matching cluster subnet groups that are associated
+     *        with the specified tag value or values. For example, suppose that you have subnet groups that are tagged
+     *        with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     *        the request, Amazon Redshift returns a response with the subnet groups that have either or both of these
+     *        tag values associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClusterSubnetGroupsRequest withTagValues(
-            java.util.Collection<String> tagValues) {
+    public DescribeClusterSubnetGroupsRequest withTagValues(java.util.Collection<String> tagValues) {
         setTagValues(tagValues);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -583,16 +488,15 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName()
-                    + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: " + getTagKeys() + ",");
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
         if (getTagValues() != null)
-            sb.append("TagValues: " + getTagValues());
+            sb.append("TagValues: ").append(getTagValues());
         sb.append("}");
         return sb.toString();
     }
@@ -607,32 +511,25 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeClusterSubnetGroupsRequest == false)
             return false;
         DescribeClusterSubnetGroupsRequest other = (DescribeClusterSubnetGroupsRequest) obj;
-        if (other.getClusterSubnetGroupName() == null
-                ^ this.getClusterSubnetGroupName() == null)
+        if (other.getClusterSubnetGroupName() == null ^ this.getClusterSubnetGroupName() == null)
             return false;
-        if (other.getClusterSubnetGroupName() != null
-                && other.getClusterSubnetGroupName().equals(
-                        this.getClusterSubnetGroupName()) == false)
+        if (other.getClusterSubnetGroupName() != null && other.getClusterSubnetGroupName().equals(this.getClusterSubnetGroupName()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
-        if (other.getTagKeys() != null
-                && other.getTagKeys().equals(this.getTagKeys()) == false)
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
         if (other.getTagValues() == null ^ this.getTagValues() == null)
             return false;
-        if (other.getTagValues() != null
-                && other.getTagValues().equals(this.getTagValues()) == false)
+        if (other.getTagValues() != null && other.getTagValues().equals(this.getTagValues()) == false)
             return false;
         return true;
     }
@@ -642,18 +539,11 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterSubnetGroupName() == null) ? 0
-                        : getClusterSubnetGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
+        hashCode = prime * hashCode + ((getClusterSubnetGroupName() == null) ? 0 : getClusterSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
         return hashCode;
     }
 
@@ -661,4 +551,5 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest
     public DescribeClusterSubnetGroupsRequest clone() {
         return (DescribeClusterSubnetGroupsRequest) super.clone();
     }
+
 }

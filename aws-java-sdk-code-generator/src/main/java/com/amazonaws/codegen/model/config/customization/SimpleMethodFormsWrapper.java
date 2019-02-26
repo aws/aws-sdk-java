@@ -15,11 +15,13 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class SimpleMethodFormsWrapper {
+
+    private List<Boolean> deprecated;
 
     private List<List<String>> methodForms;
 
@@ -30,5 +32,13 @@ public class SimpleMethodFormsWrapper {
     @JsonProperty(value = "methodForms")
     public void setMethodForms(List<List<String>> methodForms) {
         this.methodForms = methodForms;
+    }
+
+    public List<Boolean> getDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(List<Boolean> deprecated) {
+        this.deprecated = deprecated;
     }
 }

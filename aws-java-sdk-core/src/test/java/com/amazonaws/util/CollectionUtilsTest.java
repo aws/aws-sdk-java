@@ -14,13 +14,18 @@
  */
 package com.amazonaws.util;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.isEmptyString;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CollectionUtilsTest {
 
@@ -37,5 +42,42 @@ public class CollectionUtilsTest {
     @Test
     public void isEmpty_NonEmptyCollection_ReturnsFalse() {
         assertFalse(CollectionUtils.isNullOrEmpty(Arrays.asList("something")));
+    }
+
+    @Test
+    public void join_NullCollection_ReturnsNull() {
+        assertThat(CollectionUtils.join(null, ","), isEmptyString());
+    }
+
+    @Test
+    public void join_EmptyCollection_ReturnsNull() {
+        assertThat(CollectionUtils.join(Collections.<String>emptyList(), ","), isEmptyString());
+    }
+
+    @Test
+    public void join_SingleItemCollection_ReturnsItemAsString() {
+        assertEquals("foo", CollectionUtils.join(Arrays.asList("foo"), ","));
+    }
+
+    @Test
+    public void join_SingleItemCollectionOfNullString_ReturnsEmptyString() {
+        List<String> list = new ArrayList<String>();
+        list.add(null);
+        assertEquals("", CollectionUtils.join(list, ","));
+    }
+
+    @Test
+    public void join_MultiItemCollection_ReturnsItemsJoinedWithSeparator() {
+        assertEquals("foo,bar,baz", CollectionUtils.join(Arrays.asList("foo", "bar", "baz"), ","));
+    }
+
+    @Test
+    public void join_MultiItemCollectionWithNullItem_ReturnsItemsJoinedWithSeparator() {
+        assertEquals("foo,,baz", CollectionUtils.join(Arrays.asList("foo", null, "baz"), ","));
+    }
+
+    @Test
+    public void join_MultiItemCollectionWithAllNulls_ReturnsItemsJoinedWithSeparator() {
+        assertEquals(",,", CollectionUtils.join(Arrays.<String>asList(null, null, null), ","));
     }
 }

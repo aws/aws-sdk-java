@@ -1,77 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A complex type that contains the response information for the request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListTrafficPoliciesResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list that contains one <code>TrafficPolicySummary</code> element for
-     * each traffic policy that was created by the current AWS account.
+     * A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by
+     * the current AWS account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TrafficPolicySummary> trafficPolicySummaries;
     /**
      * <p>
-     * A flag that indicates whether there are more traffic policies to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> is <code>true</code>,
-     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.
+     * If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of
+     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      * </p>
      */
     private String trafficPolicyIdMarker;
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in
-     * the call to <code>ListTrafficPolicies</code> that produced the current
-     * response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A list that contains one <code>TrafficPolicySummary</code> element for
-     * each traffic policy that was created by the current AWS account.
+     * A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by
+     * the current AWS account.
      * </p>
      * 
-     * @return A list that contains one <code>TrafficPolicySummary</code>
-     *         element for each traffic policy that was created by the current
-     *         AWS account.
+     * @return A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was
+     *         created by the current AWS account.
      */
 
     public java.util.List<TrafficPolicySummary> getTrafficPolicySummaries() {
@@ -83,52 +76,44 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list that contains one <code>TrafficPolicySummary</code> element for
-     * each traffic policy that was created by the current AWS account.
+     * A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by
+     * the current AWS account.
      * </p>
      * 
      * @param trafficPolicySummaries
-     *        A list that contains one <code>TrafficPolicySummary</code> element
-     *        for each traffic policy that was created by the current AWS
-     *        account.
+     *        A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was
+     *        created by the current AWS account.
      */
 
-    public void setTrafficPolicySummaries(
-            java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
+    public void setTrafficPolicySummaries(java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
         if (trafficPolicySummaries == null) {
             this.trafficPolicySummaries = null;
             return;
         }
 
-        this.trafficPolicySummaries = new com.amazonaws.internal.SdkInternalList<TrafficPolicySummary>(
-                trafficPolicySummaries);
+        this.trafficPolicySummaries = new com.amazonaws.internal.SdkInternalList<TrafficPolicySummary>(trafficPolicySummaries);
     }
 
     /**
      * <p>
-     * A list that contains one <code>TrafficPolicySummary</code> element for
-     * each traffic policy that was created by the current AWS account.
+     * A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by
+     * the current AWS account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTrafficPolicySummaries(java.util.Collection)} or
-     * {@link #withTrafficPolicySummaries(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrafficPolicySummaries(java.util.Collection)} or
+     * {@link #withTrafficPolicySummaries(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param trafficPolicySummaries
-     *        A list that contains one <code>TrafficPolicySummary</code> element
-     *        for each traffic policy that was created by the current AWS
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was
+     *        created by the current AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTrafficPoliciesResult withTrafficPolicySummaries(
-            TrafficPolicySummary... trafficPolicySummaries) {
+    public ListTrafficPoliciesResult withTrafficPolicySummaries(TrafficPolicySummary... trafficPolicySummaries) {
         if (this.trafficPolicySummaries == null) {
-            setTrafficPolicySummaries(new com.amazonaws.internal.SdkInternalList<TrafficPolicySummary>(
-                    trafficPolicySummaries.length));
+            setTrafficPolicySummaries(new com.amazonaws.internal.SdkInternalList<TrafficPolicySummary>(trafficPolicySummaries.length));
         }
         for (TrafficPolicySummary ele : trafficPolicySummaries) {
             this.trafficPolicySummaries.add(ele);
@@ -138,46 +123,34 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list that contains one <code>TrafficPolicySummary</code> element for
-     * each traffic policy that was created by the current AWS account.
+     * A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by
+     * the current AWS account.
      * </p>
      * 
      * @param trafficPolicySummaries
-     *        A list that contains one <code>TrafficPolicySummary</code> element
-     *        for each traffic policy that was created by the current AWS
-     *        account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was
+     *        created by the current AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTrafficPoliciesResult withTrafficPolicySummaries(
-            java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
+    public ListTrafficPoliciesResult withTrafficPolicySummaries(java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
         setTrafficPolicySummaries(trafficPolicySummaries);
         return this;
     }
 
     /**
      * <p>
-     * A flag that indicates whether there are more traffic policies to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more traffic policies to
-     *        be listed. If the response was truncated, you can get the next
-     *        group of <code>MaxItems</code> traffic policies by calling
-     *        <code>ListTrafficPolicies</code> again and specifying the value of
-     *        the <code>TrafficPolicyIdMarker</code> element in the
-     *        <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
+     *        you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code>
+     *        request and specifying the value of <code>TrafficPolicyIdMarker</code> in the
+     *        <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -186,25 +159,16 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more traffic policies to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
-     * @return A flag that indicates whether there are more traffic policies to
-     *         be listed. If the response was truncated, you can get the next
-     *         group of <code>MaxItems</code> traffic policies by calling
-     *         <code>ListTrafficPolicies</code> again and specifying the value
-     *         of the <code>TrafficPolicyIdMarker</code> element in the
-     *         <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+     *         in the <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -213,28 +177,18 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more traffic policies to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more traffic policies to
-     *        be listed. If the response was truncated, you can get the next
-     *        group of <code>MaxItems</code> traffic policies by calling
-     *        <code>ListTrafficPolicies</code> again and specifying the value of
-     *        the <code>TrafficPolicyIdMarker</code> element in the
-     *        <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
+     *        you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code>
+     *        request and specifying the value of <code>TrafficPolicyIdMarker</code> in the
+     *        <code>TrafficPolicyIdMarker</code> request parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTrafficPoliciesResult withIsTruncated(Boolean isTruncated) {
@@ -244,25 +198,16 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more traffic policies to be
-     * listed. If the response was truncated, you can get the next group of
-     * <code>MaxItems</code> traffic policies by calling
-     * <code>ListTrafficPolicies</code> again and specifying the value of the
-     * <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
-     * @return A flag that indicates whether there are more traffic policies to
-     *         be listed. If the response was truncated, you can get the next
-     *         group of <code>MaxItems</code> traffic policies by calling
-     *         <code>ListTrafficPolicies</code> again and specifying the value
-     *         of the <code>TrafficPolicyIdMarker</code> element in the
-     *         <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+     *         in the <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public Boolean isTruncated() {
@@ -271,16 +216,13 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> is <code>true</code>,
-     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.
+     * If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of
+     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      * </p>
      * 
      * @param trafficPolicyIdMarker
-     *        If the value of <code>IsTruncated</code> is <code>true</code>,
-     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
-     *        policy in the next group of <code>MaxItems</code> traffic
-     *        policies.
+     *        If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the
+     *        ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      */
 
     public void setTrafficPolicyIdMarker(String trafficPolicyIdMarker) {
@@ -289,15 +231,12 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> is <code>true</code>,
-     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.
+     * If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of
+     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      * </p>
      * 
-     * @return If the value of <code>IsTruncated</code> is <code>true</code>,
-     *         <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
-     *         policy in the next group of <code>MaxItems</code> traffic
-     *         policies.
+     * @return If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the
+     *         ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      */
 
     public String getTrafficPolicyIdMarker() {
@@ -306,37 +245,30 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> is <code>true</code>,
-     * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
-     * in the next group of <code>MaxItems</code> traffic policies.
+     * If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of
+     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
      * </p>
      * 
      * @param trafficPolicyIdMarker
-     *        If the value of <code>IsTruncated</code> is <code>true</code>,
-     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
-     *        policy in the next group of <code>MaxItems</code> traffic
-     *        policies.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the
+     *        ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListTrafficPoliciesResult withTrafficPolicyIdMarker(
-            String trafficPolicyIdMarker) {
+    public ListTrafficPoliciesResult withTrafficPolicyIdMarker(String trafficPolicyIdMarker) {
         setTrafficPolicyIdMarker(trafficPolicyIdMarker);
         return this;
     }
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in
-     * the call to <code>ListTrafficPolicies</code> that produced the current
-     * response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>MaxItems</code>
-     *        parameter in the call to <code>ListTrafficPolicies</code> that
-     *        produced the current response.
+     *        The value that you specified for the <code>MaxItems</code> parameter in the
+     *        <code>ListTrafficPolicies</code> request that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -345,14 +277,12 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in
-     * the call to <code>ListTrafficPolicies</code> that produced the current
-     * response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
-     * @return The value that you specified for the <code>MaxItems</code>
-     *         parameter in the call to <code>ListTrafficPolicies</code> that
-     *         produced the current response.
+     * @return The value that you specified for the <code>MaxItems</code> parameter in the
+     *         <code>ListTrafficPolicies</code> request that produced the current response.
      */
 
     public String getMaxItems() {
@@ -361,17 +291,14 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in
-     * the call to <code>ListTrafficPolicies</code> that produced the current
-     * response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>MaxItems</code>
-     *        parameter in the call to <code>ListTrafficPolicies</code> that
-     *        produced the current response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value that you specified for the <code>MaxItems</code> parameter in the
+     *        <code>ListTrafficPolicies</code> request that produced the current response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTrafficPoliciesResult withMaxItems(String maxItems) {
@@ -380,8 +307,8 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -392,15 +319,13 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicySummaries() != null)
-            sb.append("TrafficPolicySummaries: " + getTrafficPolicySummaries()
-                    + ",");
+            sb.append("TrafficPolicySummaries: ").append(getTrafficPolicySummaries()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getTrafficPolicyIdMarker() != null)
-            sb.append("TrafficPolicyIdMarker: " + getTrafficPolicyIdMarker()
-                    + ",");
+            sb.append("TrafficPolicyIdMarker: ").append(getTrafficPolicyIdMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }
@@ -415,29 +340,21 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
         if (obj instanceof ListTrafficPoliciesResult == false)
             return false;
         ListTrafficPoliciesResult other = (ListTrafficPoliciesResult) obj;
-        if (other.getTrafficPolicySummaries() == null
-                ^ this.getTrafficPolicySummaries() == null)
+        if (other.getTrafficPolicySummaries() == null ^ this.getTrafficPolicySummaries() == null)
             return false;
-        if (other.getTrafficPolicySummaries() != null
-                && other.getTrafficPolicySummaries().equals(
-                        this.getTrafficPolicySummaries()) == false)
+        if (other.getTrafficPolicySummaries() != null && other.getTrafficPolicySummaries().equals(this.getTrafficPolicySummaries()) == false)
             return false;
         if (other.getIsTruncated() == null ^ this.getIsTruncated() == null)
             return false;
-        if (other.getIsTruncated() != null
-                && other.getIsTruncated().equals(this.getIsTruncated()) == false)
+        if (other.getIsTruncated() != null && other.getIsTruncated().equals(this.getIsTruncated()) == false)
             return false;
-        if (other.getTrafficPolicyIdMarker() == null
-                ^ this.getTrafficPolicyIdMarker() == null)
+        if (other.getTrafficPolicyIdMarker() == null ^ this.getTrafficPolicyIdMarker() == null)
             return false;
-        if (other.getTrafficPolicyIdMarker() != null
-                && other.getTrafficPolicyIdMarker().equals(
-                        this.getTrafficPolicyIdMarker()) == false)
+        if (other.getTrafficPolicyIdMarker() != null && other.getTrafficPolicyIdMarker().equals(this.getTrafficPolicyIdMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -447,19 +364,10 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTrafficPolicySummaries() == null) ? 0
-                        : getTrafficPolicySummaries().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTrafficPolicyIdMarker() == null) ? 0
-                        : getTrafficPolicyIdMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getTrafficPolicySummaries() == null) ? 0 : getTrafficPolicySummaries().hashCode());
+        hashCode = prime * hashCode + ((getIsTruncated() == null) ? 0 : getIsTruncated().hashCode());
+        hashCode = prime * hashCode + ((getTrafficPolicyIdMarker() == null) ? 0 : getTrafficPolicyIdMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -468,9 +376,8 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
         try {
             return (ListTrafficPoliciesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

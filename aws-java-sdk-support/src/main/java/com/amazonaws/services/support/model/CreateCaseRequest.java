@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateCaseRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,21 +34,18 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
     private String subject;
     /**
      * <p>
-     * The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.
+     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support
-     * subscription. In other words, your subscription may not necessarily
-     * require the urgent level of response time.
+     * The availability of severity levels depends on each customer's support subscription. In other words, your
+     * subscription may not necessarily require the urgent level of response time.
      * </p>
      * </note>
      */
@@ -60,8 +58,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
     private String categoryCode;
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by
-     * calling <a>CreateCase</a>.
+     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      * </p>
      */
     private String communicationBody;
@@ -73,24 +70,21 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> ccEmailAddresses;
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      */
     private String language;
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service"
-     * or "technical." If you do not indicate a value, the default is
-     * "technical."
+     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
+     * a value, the default is "technical."
      * </p>
      */
     private String issueType;
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set
-     * by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
      * </p>
      */
     private String attachmentSetId;
@@ -127,8 +121,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * 
      * @param subject
      *        The title of the AWS Support case.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withSubject(String subject) {
@@ -138,13 +131,11 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.
+     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to
-     *        <a>DescribeServices</a>.
+     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -153,12 +144,10 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.
+     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
      * </p>
      * 
-     * @return The code for the AWS service returned by the call to
-     *         <a>DescribeServices</a>.
+     * @return The code for the AWS service returned by the call to <a>DescribeServices</a>.
      */
 
     public String getServiceCode() {
@@ -167,15 +156,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.
+     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to
-     *        <a>DescribeServices</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withServiceCode(String serviceCode) {
@@ -185,24 +171,20 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support
-     * subscription. In other words, your subscription may not necessarily
-     * require the urgent level of response time.
+     * The availability of severity levels depends on each customer's support subscription. In other words, your
+     * subscription may not necessarily require the urgent level of response time.
      * </p>
      * </note>
      * 
      * @param severityCode
-     *        The code for the severity level returned by the call to
-     *        <a>DescribeSeverityLevels</a>.</p> <note>
+     *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *        <p>
-     *        The availability of severity levels depends on each customer's
-     *        support subscription. In other words, your subscription may not
-     *        necessarily require the urgent level of response time.
+     *        The availability of severity levels depends on each customer's support subscription. In other words, your
+     *        subscription may not necessarily require the urgent level of response time.
      *        </p>
      */
 
@@ -212,23 +194,19 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support
-     * subscription. In other words, your subscription may not necessarily
-     * require the urgent level of response time.
+     * The availability of severity levels depends on each customer's support subscription. In other words, your
+     * subscription may not necessarily require the urgent level of response time.
      * </p>
      * </note>
      * 
-     * @return The code for the severity level returned by the call to
-     *         <a>DescribeSeverityLevels</a>.</p> <note>
+     * @return The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *         <p>
-     *         The availability of severity levels depends on each customer's
-     *         support subscription. In other words, your subscription may not
-     *         necessarily require the urgent level of response time.
+     *         The availability of severity levels depends on each customer's support subscription. In other words, your
+     *         subscription may not necessarily require the urgent level of response time.
      *         </p>
      */
 
@@ -238,27 +216,22 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.
+     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support
-     * subscription. In other words, your subscription may not necessarily
-     * require the urgent level of response time.
+     * The availability of severity levels depends on each customer's support subscription. In other words, your
+     * subscription may not necessarily require the urgent level of response time.
      * </p>
      * </note>
      * 
      * @param severityCode
-     *        The code for the severity level returned by the call to
-     *        <a>DescribeSeverityLevels</a>.</p> <note>
+     *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *        <p>
-     *        The availability of severity levels depends on each customer's
-     *        support subscription. In other words, your subscription may not
-     *        necessarily require the urgent level of response time.
+     *        The availability of severity levels depends on each customer's support subscription. In other words, your
+     *        subscription may not necessarily require the urgent level of response time.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withSeverityCode(String severityCode) {
@@ -298,8 +271,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * 
      * @param categoryCode
      *        The category of problem for the AWS Support case.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withCategoryCode(String categoryCode) {
@@ -309,13 +281,11 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by
-     * calling <a>CreateCase</a>.
+     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      * </p>
      * 
      * @param communicationBody
-     *        The communication body text when you create an AWS Support case by
-     *        calling <a>CreateCase</a>.
+     *        The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      */
 
     public void setCommunicationBody(String communicationBody) {
@@ -324,12 +294,10 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by
-     * calling <a>CreateCase</a>.
+     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      * </p>
      * 
-     * @return The communication body text when you create an AWS Support case
-     *         by calling <a>CreateCase</a>.
+     * @return The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      */
 
     public String getCommunicationBody() {
@@ -338,15 +306,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by
-     * calling <a>CreateCase</a>.
+     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
      * </p>
      * 
      * @param communicationBody
-     *        The communication body text when you create an AWS Support case by
-     *        calling <a>CreateCase</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withCommunicationBody(String communicationBody) {
@@ -359,8 +324,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * A list of email addresses that AWS Support copies on case correspondence.
      * </p>
      * 
-     * @return A list of email addresses that AWS Support copies on case
-     *         correspondence.
+     * @return A list of email addresses that AWS Support copies on case correspondence.
      */
 
     public java.util.List<String> getCcEmailAddresses() {
@@ -376,19 +340,16 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case
-     *        correspondence.
+     *        A list of email addresses that AWS Support copies on case correspondence.
      */
 
-    public void setCcEmailAddresses(
-            java.util.Collection<String> ccEmailAddresses) {
+    public void setCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {
             this.ccEmailAddresses = null;
             return;
         }
 
-        this.ccEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>(
-                ccEmailAddresses);
+        this.ccEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>(ccEmailAddresses);
     }
 
     /**
@@ -396,23 +357,19 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * A list of email addresses that AWS Support copies on case correspondence.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCcEmailAddresses(java.util.Collection)} or
-     * {@link #withCcEmailAddresses(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case
-     *        correspondence.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of email addresses that AWS Support copies on case correspondence.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
         if (this.ccEmailAddresses == null) {
-            setCcEmailAddresses(new com.amazonaws.internal.SdkInternalList<String>(
-                    ccEmailAddresses.length));
+            setCcEmailAddresses(new com.amazonaws.internal.SdkInternalList<String>(ccEmailAddresses.length));
         }
         for (String ele : ccEmailAddresses) {
             this.ccEmailAddresses.add(ele);
@@ -426,30 +383,24 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case
-     *        correspondence.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of email addresses that AWS Support copies on case correspondence.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCaseRequest withCcEmailAddresses(
-            java.util.Collection<String> ccEmailAddresses) {
+    public CreateCaseRequest withCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
         setCcEmailAddresses(ccEmailAddresses);
         return this;
     }
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support.
-     *        AWS Support currently supports English ("en") and Japanese ("ja").
-     *        Language parameters must be passed explicitly for operations that
-     *        take them.
+     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      */
 
     public void setLanguage(String language) {
@@ -458,15 +409,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
-     * @return The ISO 639-1 code for the language in which AWS provides
-     *         support. AWS Support currently supports English ("en") and
-     *         Japanese ("ja"). Language parameters must be passed explicitly
-     *         for operations that take them.
+     * @return The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *         ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      */
 
     public String getLanguage() {
@@ -475,18 +423,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.
+     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
+     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support.
-     *        AWS Support currently supports English ("en") and Japanese ("ja").
-     *        Language parameters must be passed explicitly for operations that
-     *        take them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
+     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withLanguage(String language) {
@@ -496,15 +440,13 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service"
-     * or "technical." If you do not indicate a value, the default is
-     * "technical."
+     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
+     * a value, the default is "technical."
      * </p>
      * 
      * @param issueType
-     *        The type of issue for the case. You can specify either
-     *        "customer-service" or "technical." If you do not indicate a value,
-     *        the default is "technical."
+     *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
+     *        indicate a value, the default is "technical."
      */
 
     public void setIssueType(String issueType) {
@@ -513,14 +455,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service"
-     * or "technical." If you do not indicate a value, the default is
-     * "technical."
+     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
+     * a value, the default is "technical."
      * </p>
      * 
-     * @return The type of issue for the case. You can specify either
-     *         "customer-service" or "technical." If you do not indicate a
-     *         value, the default is "technical."
+     * @return The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
+     *         indicate a value, the default is "technical."
      */
 
     public String getIssueType() {
@@ -529,17 +469,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service"
-     * or "technical." If you do not indicate a value, the default is
-     * "technical."
+     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
+     * a value, the default is "technical."
      * </p>
      * 
      * @param issueType
-     *        The type of issue for the case. You can specify either
-     *        "customer-service" or "technical." If you do not indicate a value,
-     *        the default is "technical."
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
+     *        indicate a value, the default is "technical."
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withIssueType(String issueType) {
@@ -549,13 +486,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set
-     * by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of a set of one or more attachments for the case. Create
-     *        the set by using <a>AddAttachmentsToSet</a>.
+     *        The ID of a set of one or more attachments for the case. Create the set by using
+     *        <a>AddAttachmentsToSet</a>.
      */
 
     public void setAttachmentSetId(String attachmentSetId) {
@@ -564,12 +500,11 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set
-     * by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
      * </p>
      * 
-     * @return The ID of a set of one or more attachments for the case. Create
-     *         the set by using <a>AddAttachmentsToSet</a>.
+     * @return The ID of a set of one or more attachments for the case. Create the set by using
+     *         <a>AddAttachmentsToSet</a>.
      */
 
     public String getAttachmentSetId() {
@@ -578,15 +513,13 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set
-     * by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of a set of one or more attachments for the case. Create
-     *        the set by using <a>AddAttachmentsToSet</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of a set of one or more attachments for the case. Create the set by using
+     *        <a>AddAttachmentsToSet</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCaseRequest withAttachmentSetId(String attachmentSetId) {
@@ -595,8 +528,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -607,23 +540,23 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getServiceCode() != null)
-            sb.append("ServiceCode: " + getServiceCode() + ",");
+            sb.append("ServiceCode: ").append(getServiceCode()).append(",");
         if (getSeverityCode() != null)
-            sb.append("SeverityCode: " + getSeverityCode() + ",");
+            sb.append("SeverityCode: ").append(getSeverityCode()).append(",");
         if (getCategoryCode() != null)
-            sb.append("CategoryCode: " + getCategoryCode() + ",");
+            sb.append("CategoryCode: ").append(getCategoryCode()).append(",");
         if (getCommunicationBody() != null)
-            sb.append("CommunicationBody: " + getCommunicationBody() + ",");
+            sb.append("CommunicationBody: ").append(getCommunicationBody()).append(",");
         if (getCcEmailAddresses() != null)
-            sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+            sb.append("CcEmailAddresses: ").append(getCcEmailAddresses()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage() + ",");
+            sb.append("Language: ").append(getLanguage()).append(",");
         if (getIssueType() != null)
-            sb.append("IssueType: " + getIssueType() + ",");
+            sb.append("IssueType: ").append(getIssueType()).append(",");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId());
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId());
         sb.append("}");
         return sb.toString();
     }
@@ -640,53 +573,39 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
         CreateCaseRequest other = (CreateCaseRequest) obj;
         if (other.getSubject() == null ^ this.getSubject() == null)
             return false;
-        if (other.getSubject() != null
-                && other.getSubject().equals(this.getSubject()) == false)
+        if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
             return false;
         if (other.getServiceCode() == null ^ this.getServiceCode() == null)
             return false;
-        if (other.getServiceCode() != null
-                && other.getServiceCode().equals(this.getServiceCode()) == false)
+        if (other.getServiceCode() != null && other.getServiceCode().equals(this.getServiceCode()) == false)
             return false;
         if (other.getSeverityCode() == null ^ this.getSeverityCode() == null)
             return false;
-        if (other.getSeverityCode() != null
-                && other.getSeverityCode().equals(this.getSeverityCode()) == false)
+        if (other.getSeverityCode() != null && other.getSeverityCode().equals(this.getSeverityCode()) == false)
             return false;
         if (other.getCategoryCode() == null ^ this.getCategoryCode() == null)
             return false;
-        if (other.getCategoryCode() != null
-                && other.getCategoryCode().equals(this.getCategoryCode()) == false)
+        if (other.getCategoryCode() != null && other.getCategoryCode().equals(this.getCategoryCode()) == false)
             return false;
-        if (other.getCommunicationBody() == null
-                ^ this.getCommunicationBody() == null)
+        if (other.getCommunicationBody() == null ^ this.getCommunicationBody() == null)
             return false;
-        if (other.getCommunicationBody() != null
-                && other.getCommunicationBody().equals(
-                        this.getCommunicationBody()) == false)
+        if (other.getCommunicationBody() != null && other.getCommunicationBody().equals(this.getCommunicationBody()) == false)
             return false;
-        if (other.getCcEmailAddresses() == null
-                ^ this.getCcEmailAddresses() == null)
+        if (other.getCcEmailAddresses() == null ^ this.getCcEmailAddresses() == null)
             return false;
-        if (other.getCcEmailAddresses() != null
-                && other.getCcEmailAddresses().equals(
-                        this.getCcEmailAddresses()) == false)
+        if (other.getCcEmailAddresses() != null && other.getCcEmailAddresses().equals(this.getCcEmailAddresses()) == false)
             return false;
         if (other.getLanguage() == null ^ this.getLanguage() == null)
             return false;
-        if (other.getLanguage() != null
-                && other.getLanguage().equals(this.getLanguage()) == false)
+        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
         if (other.getIssueType() == null ^ this.getIssueType() == null)
             return false;
-        if (other.getIssueType() != null
-                && other.getIssueType().equals(this.getIssueType()) == false)
+        if (other.getIssueType() != null && other.getIssueType().equals(this.getIssueType()) == false)
             return false;
-        if (other.getAttachmentSetId() == null
-                ^ this.getAttachmentSetId() == null)
+        if (other.getAttachmentSetId() == null ^ this.getAttachmentSetId() == null)
             return false;
-        if (other.getAttachmentSetId() != null
-                && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
+        if (other.getAttachmentSetId() != null && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
             return false;
         return true;
     }
@@ -696,35 +615,15 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubject() == null) ? 0 : getSubject().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceCode() == null) ? 0 : getServiceCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSeverityCode() == null) ? 0 : getSeverityCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCategoryCode() == null) ? 0 : getCategoryCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCommunicationBody() == null) ? 0
-                        : getCommunicationBody().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCcEmailAddresses() == null) ? 0 : getCcEmailAddresses()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
-        hashCode = prime * hashCode
-                + ((getIssueType() == null) ? 0 : getIssueType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
+        hashCode = prime * hashCode + ((getServiceCode() == null) ? 0 : getServiceCode().hashCode());
+        hashCode = prime * hashCode + ((getSeverityCode() == null) ? 0 : getSeverityCode().hashCode());
+        hashCode = prime * hashCode + ((getCategoryCode() == null) ? 0 : getCategoryCode().hashCode());
+        hashCode = prime * hashCode + ((getCommunicationBody() == null) ? 0 : getCommunicationBody().hashCode());
+        hashCode = prime * hashCode + ((getCcEmailAddresses() == null) ? 0 : getCcEmailAddresses().hashCode());
+        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode + ((getIssueType() == null) ? 0 : getIssueType().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId().hashCode());
         return hashCode;
     }
 
@@ -732,4 +631,5 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
     public CreateCaseRequest clone() {
         return (CreateCaseRequest) super.clone();
     }
+
 }

@@ -1,22 +1,21 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -39,20 +38,23 @@ import java.io.Serializable;
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndexUpdate"
+ *      target="_top">AWS API Documentation</a>
  */
-public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an existing global secondary index, along with new
-     * provisioned throughput settings to be applied to that index.
+     * The name of an existing global secondary index, along with new provisioned throughput settings to be applied to
+     * that index.
      * </p>
      */
     private UpdateGlobalSecondaryIndexAction update;
     /**
      * <p>
-     * The parameters required for creating a global secondary index on an
-     * existing table:
+     * The parameters required for creating a global secondary index on an existing table:
      * </p>
      * <ul>
      * <li>
@@ -92,13 +94,13 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an existing global secondary index, along with new
-     * provisioned throughput settings to be applied to that index.
+     * The name of an existing global secondary index, along with new provisioned throughput settings to be applied to
+     * that index.
      * </p>
      * 
      * @param update
-     *        The name of an existing global secondary index, along with new
-     *        provisioned throughput settings to be applied to that index.
+     *        The name of an existing global secondary index, along with new provisioned throughput settings to be
+     *        applied to that index.
      */
 
     public void setUpdate(UpdateGlobalSecondaryIndexAction update) {
@@ -107,12 +109,12 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an existing global secondary index, along with new
-     * provisioned throughput settings to be applied to that index.
+     * The name of an existing global secondary index, along with new provisioned throughput settings to be applied to
+     * that index.
      * </p>
      * 
-     * @return The name of an existing global secondary index, along with new
-     *         provisioned throughput settings to be applied to that index.
+     * @return The name of an existing global secondary index, along with new provisioned throughput settings to be
+     *         applied to that index.
      */
 
     public UpdateGlobalSecondaryIndexAction getUpdate() {
@@ -121,27 +123,24 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an existing global secondary index, along with new
-     * provisioned throughput settings to be applied to that index.
+     * The name of an existing global secondary index, along with new provisioned throughput settings to be applied to
+     * that index.
      * </p>
      * 
      * @param update
-     *        The name of an existing global secondary index, along with new
-     *        provisioned throughput settings to be applied to that index.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an existing global secondary index, along with new provisioned throughput settings to be
+     *        applied to that index.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexUpdate withUpdate(
-            UpdateGlobalSecondaryIndexAction update) {
+    public GlobalSecondaryIndexUpdate withUpdate(UpdateGlobalSecondaryIndexAction update) {
         setUpdate(update);
         return this;
     }
 
     /**
      * <p>
-     * The parameters required for creating a global secondary index on an
-     * existing table:
+     * The parameters required for creating a global secondary index on an existing table:
      * </p>
      * <ul>
      * <li>
@@ -172,8 +171,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * </ul>
      * 
      * @param create
-     *        The parameters required for creating a global secondary index on
-     *        an existing table:</p>
+     *        The parameters required for creating a global secondary index on an existing table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -208,8 +206,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters required for creating a global secondary index on an
-     * existing table:
+     * The parameters required for creating a global secondary index on an existing table:
      * </p>
      * <ul>
      * <li>
@@ -239,8 +236,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The parameters required for creating a global secondary index on
-     *         an existing table:</p>
+     * @return The parameters required for creating a global secondary index on an existing table:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -275,8 +271,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters required for creating a global secondary index on an
-     * existing table:
+     * The parameters required for creating a global secondary index on an existing table:
      * </p>
      * <ul>
      * <li>
@@ -307,8 +302,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * </ul>
      * 
      * @param create
-     *        The parameters required for creating a global secondary index on
-     *        an existing table:</p>
+     *        The parameters required for creating a global secondary index on an existing table:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -335,12 +329,10 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      *        <code>ProvisionedThroughput </code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexUpdate withCreate(
-            CreateGlobalSecondaryIndexAction create) {
+    public GlobalSecondaryIndexUpdate withCreate(CreateGlobalSecondaryIndexAction create) {
         setCreate(create);
         return this;
     }
@@ -377,19 +369,17 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * 
      * @param delete
      *        The name of an existing global secondary index to be removed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GlobalSecondaryIndexUpdate withDelete(
-            DeleteGlobalSecondaryIndexAction delete) {
+    public GlobalSecondaryIndexUpdate withDelete(DeleteGlobalSecondaryIndexAction delete) {
         setDelete(delete);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -400,11 +390,11 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUpdate() != null)
-            sb.append("Update: " + getUpdate() + ",");
+            sb.append("Update: ").append(getUpdate()).append(",");
         if (getCreate() != null)
-            sb.append("Create: " + getCreate() + ",");
+            sb.append("Create: ").append(getCreate()).append(",");
         if (getDelete() != null)
-            sb.append("Delete: " + getDelete());
+            sb.append("Delete: ").append(getDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -421,18 +411,15 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
         GlobalSecondaryIndexUpdate other = (GlobalSecondaryIndexUpdate) obj;
         if (other.getUpdate() == null ^ this.getUpdate() == null)
             return false;
-        if (other.getUpdate() != null
-                && other.getUpdate().equals(this.getUpdate()) == false)
+        if (other.getUpdate() != null && other.getUpdate().equals(this.getUpdate()) == false)
             return false;
         if (other.getCreate() == null ^ this.getCreate() == null)
             return false;
-        if (other.getCreate() != null
-                && other.getCreate().equals(this.getCreate()) == false)
+        if (other.getCreate() != null && other.getCreate().equals(this.getCreate()) == false)
             return false;
         if (other.getDelete() == null ^ this.getDelete() == null)
             return false;
-        if (other.getDelete() != null
-                && other.getDelete().equals(this.getDelete()) == false)
+        if (other.getDelete() != null && other.getDelete().equals(this.getDelete()) == false)
             return false;
         return true;
     }
@@ -442,12 +429,9 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUpdate() == null) ? 0 : getUpdate().hashCode());
-        hashCode = prime * hashCode
-                + ((getCreate() == null) ? 0 : getCreate().hashCode());
-        hashCode = prime * hashCode
-                + ((getDelete() == null) ? 0 : getDelete().hashCode());
+        hashCode = prime * hashCode + ((getUpdate() == null) ? 0 : getUpdate().hashCode());
+        hashCode = prime * hashCode + ((getCreate() == null) ? 0 : getCreate().hashCode());
+        hashCode = prime * hashCode + ((getDelete() == null) ? 0 : getDelete().hashCode());
         return hashCode;
     }
 
@@ -456,9 +440,13 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
         try {
             return (GlobalSecondaryIndexUpdate) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.GlobalSecondaryIndexUpdateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

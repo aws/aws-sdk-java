@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the request to update the user's attributes as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to update user
-     * attributes.
+     * The user pool ID for the user pool where you want to update user attributes.
      * </p>
      */
     private String userPoolId;
@@ -44,18 +44,19 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      */
     private java.util.List<AttributeType> userAttributes;
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to update user
-     * attributes.
+     * The user pool ID for the user pool where you want to update user attributes.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to update user
-     *        attributes.
+     *        The user pool ID for the user pool where you want to update user attributes.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -64,12 +65,10 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to update user
-     * attributes.
+     * The user pool ID for the user pool where you want to update user attributes.
      * </p>
      * 
-     * @return The user pool ID for the user pool where you want to update user
-     *         attributes.
+     * @return The user pool ID for the user pool where you want to update user attributes.
      */
 
     public String getUserPoolId() {
@@ -78,15 +77,12 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to update user
-     * attributes.
+     * The user pool ID for the user pool where you want to update user attributes.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to update user
-     *        attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool where you want to update user attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminUpdateUserAttributesRequest withUserPoolId(String userPoolId) {
@@ -100,8 +96,7 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to update user
-     *        attributes.
+     *        The user name of the user for whom you want to update user attributes.
      */
 
     public void setUsername(String username) {
@@ -113,8 +108,7 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * The user name of the user for whom you want to update user attributes.
      * </p>
      * 
-     * @return The user name of the user for whom you want to update user
-     *         attributes.
+     * @return The user name of the user for whom you want to update user attributes.
      */
 
     public String getUsername() {
@@ -127,10 +121,8 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to update user
-     *        attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user name of the user for whom you want to update user attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminUpdateUserAttributesRequest withUsername(String username) {
@@ -142,8 +134,13 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of name-value pairs representing user attributes.
+     * @return An array of name-value pairs representing user attributes.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -154,20 +151,23 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
-    public void setUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
             return;
         }
 
-        this.userAttributes = new java.util.ArrayList<AttributeType>(
-                userAttributes);
+        this.userAttributes = new java.util.ArrayList<AttributeType>(userAttributes);
     }
 
     /**
@@ -175,23 +175,24 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributes(java.util.Collection)} or
-     * {@link #withUserAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminUpdateUserAttributesRequest withUserAttributes(
-            AttributeType... userAttributes) {
+    public AdminUpdateUserAttributesRequest withUserAttributes(AttributeType... userAttributes) {
         if (this.userAttributes == null) {
-            setUserAttributes(new java.util.ArrayList<AttributeType>(
-                    userAttributes.length));
+            setUserAttributes(new java.util.ArrayList<AttributeType>(userAttributes.length));
         }
         for (AttributeType ele : userAttributes) {
             this.userAttributes.add(ele);
@@ -203,22 +204,25 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminUpdateUserAttributesRequest withUserAttributes(
-            java.util.Collection<AttributeType> userAttributes) {
+    public AdminUpdateUserAttributesRequest withUserAttributes(java.util.Collection<AttributeType> userAttributes) {
         setUserAttributes(userAttributes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,11 +233,11 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes());
+            sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -250,19 +254,15 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
         AdminUpdateUserAttributesRequest other = (AdminUpdateUserAttributesRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
-        if (other.getUserAttributes() == null
-                ^ this.getUserAttributes() == null)
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
-        if (other.getUserAttributes() != null
-                && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
         return true;
     }
@@ -272,14 +272,9 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributes() == null) ? 0 : getUserAttributes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         return hashCode;
     }
 
@@ -287,4 +282,5 @@ public class AdminUpdateUserAttributesRequest extends AmazonWebServiceRequest
     public AdminUpdateUserAttributesRequest clone() {
         return (AdminUpdateUserAttributesRequest) super.clone();
     }
+
 }

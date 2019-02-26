@@ -1,82 +1,52 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the AllocateConnectionOnInterconnect
- * operation.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
+ *      target="_top">AWS API Documentation</a>
  */
-public class AllocateConnectionOnInterconnectRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      */
     private String bandwidth;
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      */
     private String connectionName;
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be
-     * provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      */
     private String interconnectId;
@@ -84,39 +54,18 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private Integer vlan;
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        Bandwidth of the connection.</p>
-     *        <p>
-     *        Example: "<i>500Mbps</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     *        The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *        400Mbps, and 500Mbps.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -125,27 +74,12 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
-     * @return Bandwidth of the connection.</p>
-     *         <p>
-     *         Example: "<i>500Mbps</i>"
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * @return The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *         400Mbps, and 500Mbps.
      */
 
     public String getBandwidth() {
@@ -154,56 +88,28 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        Bandwidth of the connection.</p>
-     *        <p>
-     *        Example: "<i>500Mbps</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *        400Mbps, and 500Mbps.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocateConnectionOnInterconnectRequest withBandwidth(
-            String bandwidth) {
+    public AllocateConnectionOnInterconnectRequest withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
     }
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
      * @param connectionName
-     *        Name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<i>500M Connection to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the provisioned connection.
      */
 
     public void setConnectionName(String connectionName) {
@@ -212,21 +118,10 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
-     * @return Name of the provisioned connection.</p>
-     *         <p>
-     *         Example: "<i>500M Connection to AWS</i>"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the provisioned connection.
      */
 
     public String getConnectionName() {
@@ -235,52 +130,26 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
      * @param connectionName
-     *        Name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<i>500M Connection to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the provisioned connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocateConnectionOnInterconnectRequest withConnectionName(
-            String connectionName) {
+    public AllocateConnectionOnInterconnectRequest withConnectionName(String connectionName) {
         setConnectionName(connectionName);
         return this;
     }
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be
-     * provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        Numeric account Id of the customer for whom the connection will be
-     *        provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -289,23 +158,10 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be
-     * provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
-     * @return Numeric account Id of the customer for whom the connection will
-     *         be provisioned.</p>
-     *         <p>
-     *         Example: 123443215678
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the AWS account of the customer for whom the connection will be provisioned.
      */
 
     public String getOwnerAccount() {
@@ -314,53 +170,26 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be
-     * provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        Numeric account Id of the customer for whom the connection will be
-     *        provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocateConnectionOnInterconnectRequest withOwnerAccount(
-            String ownerAccount) {
+    public AllocateConnectionOnInterconnectRequest withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
     }
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
      * @param interconnectId
-     *        ID of the interconnect on which the connection will be
-     *        provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      */
 
     public void setInterconnectId(String interconnectId) {
@@ -369,22 +198,10 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
-     * @return ID of the interconnect on which the connection will be
-     *         provisioned.</p>
-     *         <p>
-     *         Example: dxcon-456abc78
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      */
 
     public String getInterconnectId() {
@@ -393,29 +210,15 @@ public class AllocateConnectionOnInterconnectRequest extends
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
      * @param interconnectId
-     *        ID of the interconnect on which the connection will be
-     *        provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AllocateConnectionOnInterconnectRequest withInterconnectId(
-            String interconnectId) {
+    public AllocateConnectionOnInterconnectRequest withInterconnectId(String interconnectId) {
         setInterconnectId(interconnectId);
         return this;
     }
@@ -424,20 +227,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The dedicated VLAN provisioned to the connection.
      */
 
     public void setVlan(Integer vlan) {
@@ -448,19 +240,8 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The dedicated VLAN provisioned to the connection.</p>
-     *         <p>
-     *         Example: 101
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The dedicated VLAN provisioned to the connection.
      */
 
     public Integer getVlan() {
@@ -471,22 +252,10 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The dedicated VLAN provisioned to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateConnectionOnInterconnectRequest withVlan(Integer vlan) {
@@ -495,8 +264,8 @@ public class AllocateConnectionOnInterconnectRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -507,15 +276,15 @@ public class AllocateConnectionOnInterconnectRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: " + getConnectionName() + ",");
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getInterconnectId() != null)
-            sb.append("InterconnectId: " + getInterconnectId() + ",");
+            sb.append("InterconnectId: ").append(getInterconnectId()).append(",");
         if (getVlan() != null)
-            sb.append("Vlan: " + getVlan());
+            sb.append("Vlan: ").append(getVlan());
         sb.append("}");
         return sb.toString();
     }
@@ -532,30 +301,23 @@ public class AllocateConnectionOnInterconnectRequest extends
         AllocateConnectionOnInterconnectRequest other = (AllocateConnectionOnInterconnectRequest) obj;
         if (other.getBandwidth() == null ^ this.getBandwidth() == null)
             return false;
-        if (other.getBandwidth() != null
-                && other.getBandwidth().equals(this.getBandwidth()) == false)
+        if (other.getBandwidth() != null && other.getBandwidth().equals(this.getBandwidth()) == false)
             return false;
-        if (other.getConnectionName() == null
-                ^ this.getConnectionName() == null)
+        if (other.getConnectionName() == null ^ this.getConnectionName() == null)
             return false;
-        if (other.getConnectionName() != null
-                && other.getConnectionName().equals(this.getConnectionName()) == false)
+        if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
             return false;
-        if (other.getOwnerAccount() != null
-                && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
-        if (other.getInterconnectId() == null
-                ^ this.getInterconnectId() == null)
+        if (other.getInterconnectId() == null ^ this.getInterconnectId() == null)
             return false;
-        if (other.getInterconnectId() != null
-                && other.getInterconnectId().equals(this.getInterconnectId()) == false)
+        if (other.getInterconnectId() != null && other.getInterconnectId().equals(this.getInterconnectId()) == false)
             return false;
         if (other.getVlan() == null ^ this.getVlan() == null)
             return false;
-        if (other.getVlan() != null
-                && other.getVlan().equals(this.getVlan()) == false)
+        if (other.getVlan() != null && other.getVlan().equals(this.getVlan()) == false)
             return false;
         return true;
     }
@@ -565,22 +327,11 @@ public class AllocateConnectionOnInterconnectRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectionName() == null) ? 0 : getConnectionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getOwnerAccount() == null) ? 0 : getOwnerAccount()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInterconnectId() == null) ? 0 : getInterconnectId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getVlan() == null) ? 0 : getVlan().hashCode());
+        hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
+        hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
+        hashCode = prime * hashCode + ((getInterconnectId() == null) ? 0 : getInterconnectId().hashCode());
+        hashCode = prime * hashCode + ((getVlan() == null) ? 0 : getVlan().hashCode());
         return hashCode;
     }
 
@@ -588,4 +339,5 @@ public class AllocateConnectionOnInterconnectRequest extends
     public AllocateConnectionOnInterconnectRequest clone() {
         return (AllocateConnectionOnInterconnectRequest) super.clone();
     }
+
 }

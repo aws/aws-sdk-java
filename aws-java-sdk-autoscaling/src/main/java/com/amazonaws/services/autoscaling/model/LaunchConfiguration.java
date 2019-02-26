@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a launch configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchConfiguration" target="_top">AWS
+ *      API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
@@ -57,22 +58,23 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
-     * instances. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you
+     * are launching EC2-Classic instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String classicLinkVPCId;
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
-     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is
+     * required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroups;
@@ -102,15 +104,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String ramdiskId;
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the
-     * instance.
+     * A block device mapping, which specifies the block devices for the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     * <code>false</code>) monitoring.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -122,8 +123,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String spotPrice;
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance.
+     * The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      */
     private String iamInstanceProfile;
@@ -135,24 +135,20 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private java.util.Date createdTime;
     /**
      * <p>
-     * Controls whether the instance is optimized for EBS I/O (<code>true</code>
-     * ) or not (<code>false</code>).
+     * Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      * </p>
      */
     private Boolean ebsOptimized;
     /**
      * <p>
-     * [EC2-VPC] Indicates whether to assign a public IP address to each
-     * instance.
+     * [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      * </p>
      */
     private Boolean associatePublicIpAddress;
     /**
      * <p>
-     * The tenancy of the instance, either <code>default</code> or
-     * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy
-     * runs in an isolated, single-tenant hardware and can only be launched into
-     * a VPC.
+     * The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     * <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.
      * </p>
      */
     private String placementTenancy;
@@ -189,12 +185,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param launchConfigurationName
      *        The name of the launch configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withLaunchConfigurationName(
-            String launchConfigurationName) {
+    public LaunchConfiguration withLaunchConfigurationName(String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
         return this;
     }
@@ -231,12 +225,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param launchConfigurationARN
      *        The Amazon Resource Name (ARN) of the launch configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withLaunchConfigurationARN(
-            String launchConfigurationARN) {
+    public LaunchConfiguration withLaunchConfigurationARN(String launchConfigurationARN) {
         setLaunchConfigurationARN(launchConfigurationARN);
         return this;
     }
@@ -273,8 +265,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withImageId(String imageId) {
@@ -314,8 +305,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param keyName
      *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withKeyName(String keyName) {
@@ -353,8 +343,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
             return;
         }
 
-        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                securityGroups);
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(securityGroups);
     }
 
     /**
@@ -362,22 +351,19 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * The security groups to associate with the instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
-     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param securityGroups
      *        The security groups to associate with the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
-            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    securityGroups.length));
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(securityGroups.length));
         }
         for (String ele : securityGroups) {
             this.securityGroups.add(ele);
@@ -392,32 +378,31 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param securityGroups
      *        The security groups to associate with the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withSecurityGroups(
-            java.util.Collection<String> securityGroups) {
+    public LaunchConfiguration withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
-     * instances. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you
+     * are launching EC2-Classic instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic
-     *        instances to. This parameter can only be used if you are launching
-     *        EC2-Classic instances. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used
+     *        if you are launching EC2-Classic instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setClassicLinkVPCId(String classicLinkVPCId) {
@@ -426,20 +411,20 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
-     * instances. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you
+     * are launching EC2-Classic instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic
-     *         instances to. This parameter can only be used if you are
-     *         launching EC2-Classic instances. For more information, see <a
-     *         href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *         >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be
+     *         used if you are launching EC2-Classic instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *         <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *         EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getClassicLinkVPCId() {
@@ -448,22 +433,22 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
-     * to. This parameter can only be used if you are launching EC2-Classic
-     * instances. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used if you
+     * are launching EC2-Classic instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic
-     *        instances to. This parameter can only be used if you are launching
-     *        EC2-Classic instances. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter can only be used
+     *        if you are launching EC2-Classic instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withClassicLinkVPCId(String classicLinkVPCId) {
@@ -473,21 +458,21 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
-     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is
+     * required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The IDs of one or more security groups for the VPC specified in
-     *         <code>ClassicLinkVPCId</code>. This parameter is required if you
-     *         specify a ClassicLink-enabled VPC, and cannot be used otherwise.
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *         >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *         Guide</i>.
+     * @return The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This
+     *         parameter is required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *         <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *         EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public java.util.List<String> getClassicLinkVPCSecurityGroups() {
@@ -499,68 +484,62 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
-     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is
+     * required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
-     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This
+     *        parameter is required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
-    public void setClassicLinkVPCSecurityGroups(
-            java.util.Collection<String> classicLinkVPCSecurityGroups) {
+    public void setClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
         if (classicLinkVPCSecurityGroups == null) {
             this.classicLinkVPCSecurityGroups = null;
             return;
         }
 
-        this.classicLinkVPCSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(
-                classicLinkVPCSecurityGroups);
+        this.classicLinkVPCSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>(classicLinkVPCSecurityGroups);
     }
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
-     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is
+     * required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClassicLinkVPCSecurityGroups(java.util.Collection)}
-     * or {@link #withClassicLinkVPCSecurityGroups(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClassicLinkVPCSecurityGroups(java.util.Collection)} or
+     * {@link #withClassicLinkVPCSecurityGroups(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
-     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This
+     *        parameter is required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withClassicLinkVPCSecurityGroups(
-            String... classicLinkVPCSecurityGroups) {
+    public LaunchConfiguration withClassicLinkVPCSecurityGroups(String... classicLinkVPCSecurityGroups) {
         if (this.classicLinkVPCSecurityGroups == null) {
-            setClassicLinkVPCSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
-                    classicLinkVPCSecurityGroups.length));
+            setClassicLinkVPCSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(classicLinkVPCSecurityGroups.length));
         }
         for (String ele : classicLinkVPCSecurityGroups) {
             this.classicLinkVPCSecurityGroups.add(ele);
@@ -570,28 +549,26 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
-     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This parameter is
+     * required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
-     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
-     *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. This
+     *        parameter is required if you specify a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withClassicLinkVPCSecurityGroups(
-            java.util.Collection<String> classicLinkVPCSecurityGroups) {
+    public LaunchConfiguration withClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
         setClassicLinkVPCSecurityGroups(classicLinkVPCSecurityGroups);
         return this;
     }
@@ -628,8 +605,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param userData
      *        The user data available to the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withUserData(String userData) {
@@ -669,8 +645,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for the instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withInstanceType(String instanceType) {
@@ -710,8 +685,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param kernelId
      *        The ID of the kernel associated with the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withKernelId(String kernelId) {
@@ -751,8 +725,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param ramdiskId
      *        The ID of the RAM disk associated with the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withRamdiskId(String ramdiskId) {
@@ -762,12 +735,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the
-     * instance.
+     * A block device mapping, which specifies the block devices for the instance.
      * </p>
      * 
-     * @return A block device mapping, which specifies the block devices for the
-     *         instance.
+     * @return A block device mapping, which specifies the block devices for the instance.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -779,50 +750,40 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the
-     * instance.
+     * A block device mapping, which specifies the block devices for the instance.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the
-     *        instance.
+     *        A block device mapping, which specifies the block devices for the instance.
      */
 
-    public void setBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
 
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                blockDeviceMappings);
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
     }
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the
-     * instance.
+     * A block device mapping, which specifies the block devices for the instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
-     * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A block device mapping, which specifies the block devices for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withBlockDeviceMappings(
-            BlockDeviceMapping... blockDeviceMappings) {
+    public LaunchConfiguration withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(
-                    blockDeviceMappings.length));
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
         }
         for (BlockDeviceMapping ele : blockDeviceMappings) {
             this.blockDeviceMappings.add(ele);
@@ -832,32 +793,28 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A block device mapping, which specifies the block devices for the
-     * instance.
+     * A block device mapping, which specifies the block devices for the instance.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        A block device mapping, which specifies the block devices for the
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A block device mapping, which specifies the block devices for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withBlockDeviceMappings(
-            java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+    public LaunchConfiguration withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     * <code>false</code>) monitoring.
      * </p>
      * 
      * @param instanceMonitoring
-     *        Controls whether instances in this group are launched with
-     *        detailed monitoring.
+     *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     *        <code>false</code>) monitoring.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -866,12 +823,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     * <code>false</code>) monitoring.
      * </p>
      * 
-     * @return Controls whether instances in this group are launched with
-     *         detailed monitoring.
+     * @return Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     *         <code>false</code>) monitoring.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -880,19 +837,17 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     * <code>false</code>) monitoring.
      * </p>
      * 
      * @param instanceMonitoring
-     *        Controls whether instances in this group are launched with
-     *        detailed monitoring.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
+     *        <code>false</code>) monitoring.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withInstanceMonitoring(
-            InstanceMonitoring instanceMonitoring) {
+    public LaunchConfiguration withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
         setInstanceMonitoring(instanceMonitoring);
         return this;
     }
@@ -929,8 +884,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param spotPrice
      *        The price to bid when launching Spot Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withSpotPrice(String spotPrice) {
@@ -940,13 +894,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance.
+     * The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The name or Amazon Resource Name (ARN) of the instance profile
-     *        associated with the IAM role for the instance.
+     *        The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
+     *        instance.
      */
 
     public void setIamInstanceProfile(String iamInstanceProfile) {
@@ -955,12 +908,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance.
+     * The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * 
-     * @return The name or Amazon Resource Name (ARN) of the instance profile
-     *         associated with the IAM role for the instance.
+     * @return The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
+     *         instance.
      */
 
     public String getIamInstanceProfile() {
@@ -969,15 +921,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance.
+     * The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The name or Amazon Resource Name (ARN) of the instance profile
-     *        associated with the IAM role for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name or Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withIamInstanceProfile(String iamInstanceProfile) {
@@ -1017,8 +967,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param createdTime
      *        The creation date and time for the launch configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withCreatedTime(java.util.Date createdTime) {
@@ -1028,13 +977,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether the instance is optimized for EBS I/O (<code>true</code>
-     * ) or not (<code>false</code>).
+     * Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
      * @param ebsOptimized
-     *        Controls whether the instance is optimized for EBS I/O (
-     *        <code>true</code>) or not (<code>false</code>).
+     *        Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      */
 
     public void setEbsOptimized(Boolean ebsOptimized) {
@@ -1043,12 +990,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether the instance is optimized for EBS I/O (<code>true</code>
-     * ) or not (<code>false</code>).
+     * Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
-     * @return Controls whether the instance is optimized for EBS I/O (
-     *         <code>true</code>) or not (<code>false</code>).
+     * @return Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      */
 
     public Boolean getEbsOptimized() {
@@ -1057,15 +1002,12 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether the instance is optimized for EBS I/O (<code>true</code>
-     * ) or not (<code>false</code>).
+     * Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
      * @param ebsOptimized
-     *        Controls whether the instance is optimized for EBS I/O (
-     *        <code>true</code>) or not (<code>false</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withEbsOptimized(Boolean ebsOptimized) {
@@ -1075,12 +1017,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether the instance is optimized for EBS I/O (<code>true</code>
-     * ) or not (<code>false</code>).
+     * Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      * </p>
      * 
-     * @return Controls whether the instance is optimized for EBS I/O (
-     *         <code>true</code>) or not (<code>false</code>).
+     * @return Controls whether the instance is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>).
      */
 
     public Boolean isEbsOptimized() {
@@ -1089,13 +1029,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] Indicates whether to assign a public IP address to each
-     * instance.
+     * [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        [EC2-VPC] Indicates whether to assign a public IP address to each
-     *        instance.
+     *        [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      */
 
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -1104,12 +1042,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] Indicates whether to assign a public IP address to each
-     * instance.
+     * [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      * </p>
      * 
-     * @return [EC2-VPC] Indicates whether to assign a public IP address to each
-     *         instance.
+     * @return [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      */
 
     public Boolean getAssociatePublicIpAddress() {
@@ -1118,31 +1054,25 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] Indicates whether to assign a public IP address to each
-     * instance.
+     * [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        [EC2-VPC] Indicates whether to assign a public IP address to each
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [EC2-VPC] Indicates whether to assign a public IP address to each instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LaunchConfiguration withAssociatePublicIpAddress(
-            Boolean associatePublicIpAddress) {
+    public LaunchConfiguration withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         setAssociatePublicIpAddress(associatePublicIpAddress);
         return this;
     }
 
     /**
      * <p>
-     * [EC2-VPC] Indicates whether to assign a public IP address to each
-     * instance.
+     * [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      * </p>
      * 
-     * @return [EC2-VPC] Indicates whether to assign a public IP address to each
-     *         instance.
+     * @return [EC2-VPC] Indicates whether to assign a public IP address to each instance.
      */
 
     public Boolean isAssociatePublicIpAddress() {
@@ -1151,17 +1081,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tenancy of the instance, either <code>default</code> or
-     * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy
-     * runs in an isolated, single-tenant hardware and can only be launched into
-     * a VPC.
+     * The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     * <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.
      * </p>
      * 
      * @param placementTenancy
-     *        The tenancy of the instance, either <code>default</code> or
-     *        <code>dedicated</code>. An instance with <code>dedicated</code>
-     *        tenancy runs in an isolated, single-tenant hardware and can only
-     *        be launched into a VPC.
+     *        The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     *        <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a
+     *        VPC.
      */
 
     public void setPlacementTenancy(String placementTenancy) {
@@ -1170,16 +1097,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tenancy of the instance, either <code>default</code> or
-     * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy
-     * runs in an isolated, single-tenant hardware and can only be launched into
-     * a VPC.
+     * The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     * <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.
      * </p>
      * 
-     * @return The tenancy of the instance, either <code>default</code> or
-     *         <code>dedicated</code>. An instance with <code>dedicated</code>
-     *         tenancy runs in an isolated, single-tenant hardware and can only
-     *         be launched into a VPC.
+     * @return The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     *         <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into
+     *         a VPC.
      */
 
     public String getPlacementTenancy() {
@@ -1188,19 +1112,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tenancy of the instance, either <code>default</code> or
-     * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy
-     * runs in an isolated, single-tenant hardware and can only be launched into
-     * a VPC.
+     * The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     * <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a VPC.
      * </p>
      * 
      * @param placementTenancy
-     *        The tenancy of the instance, either <code>default</code> or
-     *        <code>dedicated</code>. An instance with <code>dedicated</code>
-     *        tenancy runs in an isolated, single-tenant hardware and can only
-     *        be launched into a VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with
+     *        <code>dedicated</code> tenancy runs in an isolated, single-tenant hardware and can only be launched into a
+     *        VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LaunchConfiguration withPlacementTenancy(String placementTenancy) {
@@ -1209,8 +1129,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1221,47 +1141,43 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: "
-                    + getLaunchConfigurationName() + ",");
+            sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getLaunchConfigurationARN() != null)
-            sb.append("LaunchConfigurationARN: " + getLaunchConfigurationARN()
-                    + ",");
+            sb.append("LaunchConfigurationARN: ").append(getLaunchConfigurationARN()).append(",");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getClassicLinkVPCId() != null)
-            sb.append("ClassicLinkVPCId: " + getClassicLinkVPCId() + ",");
+            sb.append("ClassicLinkVPCId: ").append(getClassicLinkVPCId()).append(",");
         if (getClassicLinkVPCSecurityGroups() != null)
-            sb.append("ClassicLinkVPCSecurityGroups: "
-                    + getClassicLinkVPCSecurityGroups() + ",");
+            sb.append("ClassicLinkVPCSecurityGroups: ").append(getClassicLinkVPCSecurityGroups()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: " + getUserData() + ",");
+            sb.append("UserData: ").append(getUserData()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getInstanceMonitoring() != null)
-            sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ",");
+            sb.append("InstanceMonitoring: ").append(getInstanceMonitoring()).append(",");
         if (getSpotPrice() != null)
-            sb.append("SpotPrice: " + getSpotPrice() + ",");
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getAssociatePublicIpAddress() != null)
-            sb.append("AssociatePublicIpAddress: "
-                    + getAssociatePublicIpAddress() + ",");
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getPlacementTenancy() != null)
-            sb.append("PlacementTenancy: " + getPlacementTenancy());
+            sb.append("PlacementTenancy: ").append(getPlacementTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -1276,119 +1192,81 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         if (obj instanceof LaunchConfiguration == false)
             return false;
         LaunchConfiguration other = (LaunchConfiguration) obj;
-        if (other.getLaunchConfigurationName() == null
-                ^ this.getLaunchConfigurationName() == null)
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
-        if (other.getLaunchConfigurationName() != null
-                && other.getLaunchConfigurationName().equals(
-                        this.getLaunchConfigurationName()) == false)
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
-        if (other.getLaunchConfigurationARN() == null
-                ^ this.getLaunchConfigurationARN() == null)
+        if (other.getLaunchConfigurationARN() == null ^ this.getLaunchConfigurationARN() == null)
             return false;
-        if (other.getLaunchConfigurationARN() != null
-                && other.getLaunchConfigurationARN().equals(
-                        this.getLaunchConfigurationARN()) == false)
+        if (other.getLaunchConfigurationARN() != null && other.getLaunchConfigurationARN().equals(this.getLaunchConfigurationARN()) == false)
             return false;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getImageId() != null
-                && other.getImageId().equals(this.getImageId()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
-        if (other.getKeyName() != null
-                && other.getKeyName().equals(this.getKeyName()) == false)
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
-        if (other.getSecurityGroups() == null
-                ^ this.getSecurityGroups() == null)
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
-        if (other.getSecurityGroups() != null
-                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
-        if (other.getClassicLinkVPCId() == null
-                ^ this.getClassicLinkVPCId() == null)
+        if (other.getClassicLinkVPCId() == null ^ this.getClassicLinkVPCId() == null)
             return false;
-        if (other.getClassicLinkVPCId() != null
-                && other.getClassicLinkVPCId().equals(
-                        this.getClassicLinkVPCId()) == false)
+        if (other.getClassicLinkVPCId() != null && other.getClassicLinkVPCId().equals(this.getClassicLinkVPCId()) == false)
             return false;
-        if (other.getClassicLinkVPCSecurityGroups() == null
-                ^ this.getClassicLinkVPCSecurityGroups() == null)
+        if (other.getClassicLinkVPCSecurityGroups() == null ^ this.getClassicLinkVPCSecurityGroups() == null)
             return false;
-        if (other.getClassicLinkVPCSecurityGroups() != null
-                && other.getClassicLinkVPCSecurityGroups().equals(
-                        this.getClassicLinkVPCSecurityGroups()) == false)
+        if (other.getClassicLinkVPCSecurityGroups() != null && other.getClassicLinkVPCSecurityGroups().equals(this.getClassicLinkVPCSecurityGroups()) == false)
             return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
-        if (other.getUserData() != null
-                && other.getUserData().equals(this.getUserData()) == false)
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
-        if (other.getInstanceType() != null
-                && other.getInstanceType().equals(this.getInstanceType()) == false)
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
-        if (other.getKernelId() != null
-                && other.getKernelId().equals(this.getKernelId()) == false)
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
-        if (other.getRamdiskId() != null
-                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null
-                ^ this.getBlockDeviceMappings() == null)
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
-        if (other.getBlockDeviceMappings() != null
-                && other.getBlockDeviceMappings().equals(
-                        this.getBlockDeviceMappings()) == false)
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
-        if (other.getInstanceMonitoring() == null
-                ^ this.getInstanceMonitoring() == null)
+        if (other.getInstanceMonitoring() == null ^ this.getInstanceMonitoring() == null)
             return false;
-        if (other.getInstanceMonitoring() != null
-                && other.getInstanceMonitoring().equals(
-                        this.getInstanceMonitoring()) == false)
+        if (other.getInstanceMonitoring() != null && other.getInstanceMonitoring().equals(this.getInstanceMonitoring()) == false)
             return false;
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
             return false;
-        if (other.getSpotPrice() != null
-                && other.getSpotPrice().equals(this.getSpotPrice()) == false)
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
             return false;
-        if (other.getIamInstanceProfile() == null
-                ^ this.getIamInstanceProfile() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getIamInstanceProfile() != null
-                && other.getIamInstanceProfile().equals(
-                        this.getIamInstanceProfile()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
-        if (other.getCreatedTime() != null
-                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getEbsOptimized() != null
-                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
-        if (other.getAssociatePublicIpAddress() == null
-                ^ this.getAssociatePublicIpAddress() == null)
+        if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
             return false;
-        if (other.getAssociatePublicIpAddress() != null
-                && other.getAssociatePublicIpAddress().equals(
-                        this.getAssociatePublicIpAddress()) == false)
+        if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
             return false;
-        if (other.getPlacementTenancy() == null
-                ^ this.getPlacementTenancy() == null)
+        if (other.getPlacementTenancy() == null ^ this.getPlacementTenancy() == null)
             return false;
-        if (other.getPlacementTenancy() != null
-                && other.getPlacementTenancy().equals(
-                        this.getPlacementTenancy()) == false)
+        if (other.getPlacementTenancy() != null && other.getPlacementTenancy().equals(this.getPlacementTenancy()) == false)
             return false;
         return true;
     }
@@ -1398,69 +1276,25 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLaunchConfigurationName() == null) ? 0
-                        : getLaunchConfigurationName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLaunchConfigurationARN() == null) ? 0
-                        : getLaunchConfigurationARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClassicLinkVPCId() == null) ? 0 : getClassicLinkVPCId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getClassicLinkVPCSecurityGroups() == null) ? 0
-                        : getClassicLinkVPCSecurityGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserData() == null) ? 0 : getUserData().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceType() == null) ? 0 : getInstanceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBlockDeviceMappings() == null) ? 0
-                        : getBlockDeviceMappings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceMonitoring() == null) ? 0
-                        : getInstanceMonitoring().hashCode());
-        hashCode = prime * hashCode
-                + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIamInstanceProfile() == null) ? 0
-                        : getIamInstanceProfile().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociatePublicIpAddress() == null) ? 0
-                        : getAssociatePublicIpAddress().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPlacementTenancy() == null) ? 0 : getPlacementTenancy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationARN() == null) ? 0 : getLaunchConfigurationARN().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getClassicLinkVPCId() == null) ? 0 : getClassicLinkVPCId().hashCode());
+        hashCode = prime * hashCode + ((getClassicLinkVPCSecurityGroups() == null) ? 0 : getClassicLinkVPCSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMonitoring() == null) ? 0 : getInstanceMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getPlacementTenancy() == null) ? 0 : getPlacementTenancy().hashCode());
         return hashCode;
     }
 
@@ -1469,9 +1303,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         try {
             return (LaunchConfiguration) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

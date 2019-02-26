@@ -1,33 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the
- * <code><a>DescribeScalingParameters</a></code> operation. Specifies the name
- * of the domain you want to describe.
+ * Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of
+ * the domain you want to describe.
  * </p>
  */
-public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeScalingParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String domainName;
 
@@ -49,8 +46,7 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
 
     /**
      * @param domainName
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScalingParametersRequest withDomainName(String domainName) {
@@ -59,8 +55,8 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -71,7 +67,7 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName());
+            sb.append("DomainName: ").append(getDomainName());
         sb.append("}");
         return sb.toString();
     }
@@ -88,8 +84,7 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
         DescribeScalingParametersRequest other = (DescribeScalingParametersRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         return true;
     }
@@ -99,8 +94,7 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         return hashCode;
     }
 
@@ -108,4 +102,5 @@ public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
     public DescribeScalingParametersRequest clone() {
         return (DescribeScalingParametersRequest) super.clone();
     }
+
 }

@@ -1,47 +1,45 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the results of the <a>GetSnapshotLimits</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetSnapshotLimitsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetSnapshotLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits
-     * for the specified directory.
+     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      * </p>
      */
     private SnapshotLimits snapshotLimits;
 
     /**
      * <p>
-     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits
-     * for the specified directory.
+     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      * </p>
      * 
      * @param snapshotLimits
-     *        A <a>SnapshotLimits</a> object that contains the manual snapshot
-     *        limits for the specified directory.
+     *        A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      */
 
     public void setSnapshotLimits(SnapshotLimits snapshotLimits) {
@@ -50,12 +48,10 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits
-     * for the specified directory.
+     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      * </p>
      * 
-     * @return A <a>SnapshotLimits</a> object that contains the manual snapshot
-     *         limits for the specified directory.
+     * @return A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      */
 
     public SnapshotLimits getSnapshotLimits() {
@@ -64,26 +60,22 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits
-     * for the specified directory.
+     * A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
      * </p>
      * 
      * @param snapshotLimits
-     *        A <a>SnapshotLimits</a> object that contains the manual snapshot
-     *        limits for the specified directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetSnapshotLimitsResult withSnapshotLimits(
-            SnapshotLimits snapshotLimits) {
+    public GetSnapshotLimitsResult withSnapshotLimits(SnapshotLimits snapshotLimits) {
         setSnapshotLimits(snapshotLimits);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -94,7 +86,7 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotLimits() != null)
-            sb.append("SnapshotLimits: " + getSnapshotLimits());
+            sb.append("SnapshotLimits: ").append(getSnapshotLimits());
         sb.append("}");
         return sb.toString();
     }
@@ -109,11 +101,9 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
         if (obj instanceof GetSnapshotLimitsResult == false)
             return false;
         GetSnapshotLimitsResult other = (GetSnapshotLimitsResult) obj;
-        if (other.getSnapshotLimits() == null
-                ^ this.getSnapshotLimits() == null)
+        if (other.getSnapshotLimits() == null ^ this.getSnapshotLimits() == null)
             return false;
-        if (other.getSnapshotLimits() != null
-                && other.getSnapshotLimits().equals(this.getSnapshotLimits()) == false)
+        if (other.getSnapshotLimits() != null && other.getSnapshotLimits().equals(this.getSnapshotLimits()) == false)
             return false;
         return true;
     }
@@ -123,10 +113,7 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotLimits() == null) ? 0 : getSnapshotLimits()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSnapshotLimits() == null) ? 0 : getSnapshotLimits().hashCode());
         return hashCode;
     }
 
@@ -135,9 +122,8 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
         try {
             return (GetSnapshotLimitsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

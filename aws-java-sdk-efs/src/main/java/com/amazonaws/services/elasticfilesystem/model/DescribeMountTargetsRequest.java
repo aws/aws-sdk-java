@@ -1,71 +1,69 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
-     * must be an integer with a value greater than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10.
      * </p>
      */
     private Integer maxItems;
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String).
+     * If present, it specifies to continue the list from where the previous returning call left off.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
-     * <code>MountTargetId</code> is not included.
+     * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
+     * request if <code>MountTargetId</code> is not included.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
-     * <code>FileSystemId</code> is not included.
+     * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
+     * if <code>FileSystemId</code> is not included.
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
-     * must be an integer with a value greater than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of mount targets to return in the
-     *        response. It must be an integer with a value greater than zero.
+     *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *        automatically set to 10.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -74,12 +72,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
-     * must be an integer with a value greater than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10.
      * </p>
      * 
-     * @return Optional. Maximum number of mount targets to return in the
-     *         response. It must be an integer with a value greater than zero.
+     * @return (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *         automatically set to 10.
      */
 
     public Integer getMaxItems() {
@@ -88,15 +86,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
-     * must be an integer with a value greater than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of mount targets to return in the
-     *        response. It must be an integer with a value greater than zero.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *        automatically set to 10.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMountTargetsRequest withMaxItems(Integer maxItems) {
@@ -106,16 +103,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String).
+     * If present, it specifies to continue the list from where the previous returning call left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeMountTargets</code> operation. If present, it
-     *        specifies to continue the list from where the previous returning
-     *        call left off.
+     *        (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous returning call left off.
      */
 
     public void setMarker(String marker) {
@@ -124,15 +118,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String).
+     * If present, it specifies to continue the list from where the previous returning call left off.
      * </p>
      * 
-     * @return Optional. String. Opaque pagination token returned from a
-     *         previous <code>DescribeMountTargets</code> operation. If present,
-     *         it specifies to continue the list from where the previous
-     *         returning call left off.
+     * @return (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation
+     *         (String). If present, it specifies to continue the list from where the previous returning call left off.
      */
 
     public String getMarker() {
@@ -141,18 +132,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String).
+     * If present, it specifies to continue the list from where the previous returning call left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeMountTargets</code> operation. If present, it
-     *        specifies to continue the list from where the previous returning
-     *        call left off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous returning call left off.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMountTargetsRequest withMarker(String marker) {
@@ -162,15 +149,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
-     * <code>MountTargetId</code> is not included.
+     * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
+     * request if <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        Optional. String. The ID of the file system whose mount targets
-     *        you want to list. It must be included in your request if
-     *        <code>MountTargetId</code> is not included.
+     *        (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
+     *        your request if <code>MountTargetId</code> is not included.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -179,14 +164,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
-     * <code>MountTargetId</code> is not included.
+     * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
+     * request if <code>MountTargetId</code> is not included.
      * </p>
      * 
-     * @return Optional. String. The ID of the file system whose mount targets
-     *         you want to list. It must be included in your request if
-     *         <code>MountTargetId</code> is not included.
+     * @return (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
+     *         your request if <code>MountTargetId</code> is not included.
      */
 
     public String getFileSystemId() {
@@ -195,17 +178,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
-     * <code>MountTargetId</code> is not included.
+     * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
+     * request if <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        Optional. String. The ID of the file system whose mount targets
-     *        you want to list. It must be included in your request if
-     *        <code>MountTargetId</code> is not included.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
+     *        your request if <code>MountTargetId</code> is not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMountTargetsRequest withFileSystemId(String fileSystemId) {
@@ -215,15 +195,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
-     * <code>FileSystemId</code> is not included.
+     * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
+     * if <code>FileSystemId</code> is not included.
      * </p>
      * 
      * @param mountTargetId
-     *        Optional. String. The ID of the mount target that you want to have
-     *        described. It must be included in your request if
-     *        <code>FileSystemId</code> is not included.
+     *        (Optional) ID of the mount target that you want to have described (String). It must be included in your
+     *        request if <code>FileSystemId</code> is not included.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -232,14 +210,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
-     * <code>FileSystemId</code> is not included.
+     * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
+     * if <code>FileSystemId</code> is not included.
      * </p>
      * 
-     * @return Optional. String. The ID of the mount target that you want to
-     *         have described. It must be included in your request if
-     *         <code>FileSystemId</code> is not included.
+     * @return (Optional) ID of the mount target that you want to have described (String). It must be included in your
+     *         request if <code>FileSystemId</code> is not included.
      */
 
     public String getMountTargetId() {
@@ -248,17 +224,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
-     * <code>FileSystemId</code> is not included.
+     * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
+     * if <code>FileSystemId</code> is not included.
      * </p>
      * 
      * @param mountTargetId
-     *        Optional. String. The ID of the mount target that you want to have
-     *        described. It must be included in your request if
-     *        <code>FileSystemId</code> is not included.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) ID of the mount target that you want to have described (String). It must be included in your
+     *        request if <code>FileSystemId</code> is not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMountTargetsRequest withMountTargetId(String mountTargetId) {
@@ -267,8 +240,8 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -279,13 +252,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId() + ",");
+            sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId());
+            sb.append("MountTargetId: ").append(getMountTargetId());
         sb.append("}");
         return sb.toString();
     }
@@ -302,23 +275,19 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         DescribeMountTargetsRequest other = (DescribeMountTargetsRequest) obj;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getFileSystemId() == null ^ this.getFileSystemId() == null)
             return false;
-        if (other.getFileSystemId() != null
-                && other.getFileSystemId().equals(this.getFileSystemId()) == false)
+        if (other.getFileSystemId() != null && other.getFileSystemId().equals(this.getFileSystemId()) == false)
             return false;
         if (other.getMountTargetId() == null ^ this.getMountTargetId() == null)
             return false;
-        if (other.getMountTargetId() != null
-                && other.getMountTargetId().equals(this.getMountTargetId()) == false)
+        if (other.getMountTargetId() != null && other.getMountTargetId().equals(this.getMountTargetId()) == false)
             return false;
         return true;
     }
@@ -328,18 +297,10 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFileSystemId() == null) ? 0 : getFileSystemId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMountTargetId() == null) ? 0 : getMountTargetId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
+        hashCode = prime * hashCode + ((getMountTargetId() == null) ? 0 : getMountTargetId().hashCode());
         return hashCode;
     }
 
@@ -347,4 +308,5 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
     public DescribeMountTargetsRequest clone() {
         return (DescribeMountTargetsRequest) super.clone();
     }
+
 }

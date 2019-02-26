@@ -1,13 +1,17 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ${shape.shapeName} extends ${baseClassFqcn}
+    implements Serializable, Cloneable {
 
     <@VariableDeclarationMacro.content shape/>
 

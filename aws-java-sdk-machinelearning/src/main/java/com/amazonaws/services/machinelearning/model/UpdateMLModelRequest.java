@@ -1,29 +1,24 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
-public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,16 +34,13 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
     private String mLModelName;
     /**
      * <p>
-     * The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive
-     * prediction and a negative prediction.
+     * The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     * between a positive prediction and a negative prediction.
      * </p>
      * <p>
-     * Output values greater than or equal to the <code>ScoreThreshold</code>
-     * receive a positive result from the <code>MLModel</code>, such as
-     * <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.
+     * Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     * <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive
+     * a negative response from the <code>MLModel</code>, such as <code>false</code>.
      * </p>
      */
     private Float scoreThreshold;
@@ -85,8 +77,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @param mLModelId
      *        The ID assigned to the <code>MLModel</code> during creation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMLModelRequest withMLModelId(String mLModelId) {
@@ -126,8 +117,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @param mLModelName
      *        A user-supplied name or description of the <code>MLModel</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMLModelRequest withMLModelName(String mLModelName) {
@@ -137,28 +127,22 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive
-     * prediction and a negative prediction.
+     * The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     * between a positive prediction and a negative prediction.
      * </p>
      * <p>
-     * Output values greater than or equal to the <code>ScoreThreshold</code>
-     * receive a positive result from the <code>MLModel</code>, such as
-     * <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.
+     * Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     * <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive
+     * a negative response from the <code>MLModel</code>, such as <code>false</code>.
      * </p>
      * 
      * @param scoreThreshold
-     *        The <code>ScoreThreshold</code> used in binary classification
-     *        <code>MLModel</code> that marks the boundary between a positive
-     *        prediction and a negative prediction.</p>
+     *        The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     *        between a positive prediction and a negative prediction.</p>
      *        <p>
-     *        Output values greater than or equal to the
-     *        <code>ScoreThreshold</code> receive a positive result from the
-     *        <code>MLModel</code>, such as <code>true</code>. Output values
-     *        less than the <code>ScoreThreshold</code> receive a negative
-     *        response from the <code>MLModel</code>, such as <code>false</code>.
+     *        Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     *        <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code>
+     *        receive a negative response from the <code>MLModel</code>, such as <code>false</code>.
      */
 
     public void setScoreThreshold(Float scoreThreshold) {
@@ -167,28 +151,21 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive
-     * prediction and a negative prediction.
+     * The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     * between a positive prediction and a negative prediction.
      * </p>
      * <p>
-     * Output values greater than or equal to the <code>ScoreThreshold</code>
-     * receive a positive result from the <code>MLModel</code>, such as
-     * <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.
+     * Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     * <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive
+     * a negative response from the <code>MLModel</code>, such as <code>false</code>.
      * </p>
      * 
-     * @return The <code>ScoreThreshold</code> used in binary classification
-     *         <code>MLModel</code> that marks the boundary between a positive
-     *         prediction and a negative prediction.</p>
+     * @return The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the
+     *         boundary between a positive prediction and a negative prediction.</p>
      *         <p>
-     *         Output values greater than or equal to the
-     *         <code>ScoreThreshold</code> receive a positive result from the
-     *         <code>MLModel</code>, such as <code>true</code>. Output values
-     *         less than the <code>ScoreThreshold</code> receive a negative
-     *         response from the <code>MLModel</code>, such as
-     *         <code>false</code>.
+     *         Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     *         <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code>
+     *         receive a negative response from the <code>MLModel</code>, such as <code>false</code>.
      */
 
     public Float getScoreThreshold() {
@@ -197,30 +174,23 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive
-     * prediction and a negative prediction.
+     * The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     * between a positive prediction and a negative prediction.
      * </p>
      * <p>
-     * Output values greater than or equal to the <code>ScoreThreshold</code>
-     * receive a positive result from the <code>MLModel</code>, such as
-     * <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.
+     * Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     * <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive
+     * a negative response from the <code>MLModel</code>, such as <code>false</code>.
      * </p>
      * 
      * @param scoreThreshold
-     *        The <code>ScoreThreshold</code> used in binary classification
-     *        <code>MLModel</code> that marks the boundary between a positive
-     *        prediction and a negative prediction.</p>
+     *        The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary
+     *        between a positive prediction and a negative prediction.</p>
      *        <p>
-     *        Output values greater than or equal to the
-     *        <code>ScoreThreshold</code> receive a positive result from the
-     *        <code>MLModel</code>, such as <code>true</code>. Output values
-     *        less than the <code>ScoreThreshold</code> receive a negative
-     *        response from the <code>MLModel</code>, such as <code>false</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the
+     *        <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code>
+     *        receive a negative response from the <code>MLModel</code>, such as <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMLModelRequest withScoreThreshold(Float scoreThreshold) {
@@ -229,8 +199,8 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -241,11 +211,11 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getMLModelName() != null)
-            sb.append("MLModelName: " + getMLModelName() + ",");
+            sb.append("MLModelName: ").append(getMLModelName()).append(",");
         if (getScoreThreshold() != null)
-            sb.append("ScoreThreshold: " + getScoreThreshold());
+            sb.append("ScoreThreshold: ").append(getScoreThreshold());
         sb.append("}");
         return sb.toString();
     }
@@ -262,19 +232,15 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
         UpdateMLModelRequest other = (UpdateMLModelRequest) obj;
         if (other.getMLModelId() == null ^ this.getMLModelId() == null)
             return false;
-        if (other.getMLModelId() != null
-                && other.getMLModelId().equals(this.getMLModelId()) == false)
+        if (other.getMLModelId() != null && other.getMLModelId().equals(this.getMLModelId()) == false)
             return false;
         if (other.getMLModelName() == null ^ this.getMLModelName() == null)
             return false;
-        if (other.getMLModelName() != null
-                && other.getMLModelName().equals(this.getMLModelName()) == false)
+        if (other.getMLModelName() != null && other.getMLModelName().equals(this.getMLModelName()) == false)
             return false;
-        if (other.getScoreThreshold() == null
-                ^ this.getScoreThreshold() == null)
+        if (other.getScoreThreshold() == null ^ this.getScoreThreshold() == null)
             return false;
-        if (other.getScoreThreshold() != null
-                && other.getScoreThreshold().equals(this.getScoreThreshold()) == false)
+        if (other.getScoreThreshold() != null && other.getScoreThreshold().equals(this.getScoreThreshold()) == false)
             return false;
         return true;
     }
@@ -284,15 +250,9 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMLModelName() == null) ? 0 : getMLModelName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScoreThreshold() == null) ? 0 : getScoreThreshold()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMLModelId() == null) ? 0 : getMLModelId().hashCode());
+        hashCode = prime * hashCode + ((getMLModelName() == null) ? 0 : getMLModelName().hashCode());
+        hashCode = prime * hashCode + ((getScoreThreshold() == null) ? 0 : getScoreThreshold().hashCode());
         return hashCode;
     }
 
@@ -300,4 +260,5 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
     public UpdateMLModelRequest clone() {
         return (UpdateMLModelRequest) super.clone();
     }
+
 }

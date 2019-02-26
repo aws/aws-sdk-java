@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,16 +15,18 @@
 package com.amazonaws.http;
 
 import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.timers.client.ClientExecutionAbortTrackerTask;
-import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.internal.auth.NoOpSignerProvider;
+import com.amazonaws.internal.auth.SignerProviderContext;
+import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetricsFullSupport;
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.net.URI;
 import java.util.List;
@@ -38,6 +40,7 @@ public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
     private final List<RequestHandler2> requestHandler2s;
     private final AmazonWebServiceClient awsClient;
+    private final SignerProvider signerProvider;
 
     private boolean retryCapacityConsumed;
 
@@ -57,19 +60,33 @@ public class ExecutionContext {
 
     /** For testing purposes. */
     public ExecutionContext(boolean isMetricEnabled) {
-        this(null, isMetricEnabled, null);
+        this(builder().withUseRequestMetrics(isMetricEnabled).withSignerProvider(new NoOpSignerProvider()));
     }
 
     /** For testing purposes. */
     public ExecutionContext() {
-        this(null, false, null);
+        this(builder().withSignerProvider(new NoOpSignerProvider()));
     }
 
+    @Deprecated
     public ExecutionContext(List<RequestHandler2> requestHandler2s, boolean isMetricEnabled,
             AmazonWebServiceClient awsClient) {
         this.requestHandler2s = requestHandler2s;
         awsRequestMetrics = isMetricEnabled ? new AWSRequestMetricsFullSupport() : new AWSRequestMetrics();
         this.awsClient = awsClient;
+        this.signerProvider = new SignerProvider() {
+            @Override
+            public Signer getSigner(SignerProviderContext context) {
+                return getSignerByURI(context.getUri());
+            }
+        };
+    }
+
+    private ExecutionContext(final Builder builder) {
+        this.requestHandler2s = builder.requestHandler2s;
+        this.awsRequestMetrics = builder.useRequestMetrics ? new AWSRequestMetricsFullSupport() : new AWSRequestMetrics();
+        this.awsClient = builder.awsClient;
+        this.signerProvider = builder.signerProvider;
     }
 
     public List<RequestHandler2> getRequestHandler2s() {
@@ -91,6 +108,7 @@ public class ExecutionContext {
      * this method. We may consider supporting a per request level signer determination for S3 later
      * on.
      */
+    @Deprecated
     public void setSigner(Signer signer) {
     }
 
@@ -111,8 +129,15 @@ public class ExecutionContext {
     }
 
     /**
+     * Passes in the provided {@link SignerProviderContext} into a {@link SignerProvider} and returns
+     * a {@link Signer} instance.
+     */
+    public Signer getSigner(SignerProviderContext context) { return signerProvider.getSigner(context); }
+
+    /**
      * Returns the signer for the given uri. Note S3 in particular overrides this method.
      */
+    @Deprecated
     public Signer getSignerByURI(URI uri) {
         return awsClient == null ? null : awsClient.getSignerByURI(uri);
     }
@@ -168,6 +193,75 @@ public class ExecutionContext {
 
     public void setClientExecutionTrackerTask(ClientExecutionAbortTrackerTask clientExecutionTrackerTask) {
         this.clientExecutionTrackerTask = clientExecutionTrackerTask;
+    }
+
+    public static ExecutionContext.Builder builder() { return new ExecutionContext.Builder(); }
+
+    public static class Builder {
+
+        private boolean useRequestMetrics;
+        private List<RequestHandler2> requestHandler2s;
+        private AmazonWebServiceClient awsClient;
+        private SignerProvider signerProvider = new NoOpSignerProvider();
+
+        private Builder() {}
+
+        public boolean useRequestMetrics() {
+            return useRequestMetrics;
+        }
+
+        public void setUseRequestMetrics(final boolean useRequestMetrics) {
+            this.useRequestMetrics = useRequestMetrics;
+        }
+
+        public Builder withUseRequestMetrics(final boolean withUseRequestMetrics) {
+            setUseRequestMetrics(withUseRequestMetrics);
+            return this;
+        }
+
+        public List<RequestHandler2> getRequestHandler2s() {
+            return requestHandler2s;
+        }
+
+        public void setRequestHandler2s(final List<RequestHandler2> requestHandler2s) {
+            this.requestHandler2s = requestHandler2s;
+        }
+
+        public Builder withRequestHandler2s(final List<RequestHandler2> requestHandler2s) {
+            setRequestHandler2s(requestHandler2s);
+            return this;
+        }
+
+        public AmazonWebServiceClient getAwsClient() {
+            return awsClient;
+        }
+
+        public void setAwsClient(final AmazonWebServiceClient awsClient) {
+            this.awsClient = awsClient;
+        }
+
+        public Builder withAwsClient(final AmazonWebServiceClient awsClient) {
+            setAwsClient(awsClient);
+            return this;
+        }
+
+        public SignerProvider getSignerProvider() {
+            return signerProvider;
+        }
+
+        public void setSignerProvider(final SignerProvider signerProvider) {
+            this.signerProvider = signerProvider;
+        }
+
+        public Builder withSignerProvider(final SignerProvider signerProvider) {
+            setSignerProvider(signerProvider);
+            return this;
+        }
+
+        public ExecutionContext build() {
+            return new ExecutionContext(this);
+        }
+
     }
 
 }

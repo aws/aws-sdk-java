@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * The <code>DimensionFilter</code> data type is used to filter
- * <a>ListMetrics</a> results.
+ * Represents filters for a dimension.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DimensionFilter" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DimensionFilter implements Serializable, Cloneable {
 
     /**
@@ -36,9 +36,6 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
      */
     private String value;
 
@@ -74,8 +71,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      * 
      * @param name
      *        The dimension name to be matched.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DimensionFilter withName(String name) {
@@ -87,14 +83,9 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
      * 
      * @param value
-     *        The value of the dimension to be matched. </p> <note> Specifying a
-     *        <code>Name</code> without specifying a <code>Value</code> returns
-     *        all values associated with that <code>Name</code>.
+     *        The value of the dimension to be matched.
      */
 
     public void setValue(String value) {
@@ -105,13 +96,8 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
      * 
-     * @return The value of the dimension to be matched. </p> <note> Specifying
-     *         a <code>Name</code> without specifying a <code>Value</code>
-     *         returns all values associated with that <code>Name</code>.
+     * @return The value of the dimension to be matched.
      */
 
     public String getValue() {
@@ -122,16 +108,10 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
      * 
      * @param value
-     *        The value of the dimension to be matched. </p> <note> Specifying a
-     *        <code>Name</code> without specifying a <code>Value</code> returns
-     *        all values associated with that <code>Name</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of the dimension to be matched.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DimensionFilter withValue(String value) {
@@ -140,8 +120,8 @@ public class DimensionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -152,9 +132,9 @@ public class DimensionFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }
@@ -171,13 +151,11 @@ public class DimensionFilter implements Serializable, Cloneable {
         DimensionFilter other = (DimensionFilter) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -187,10 +165,8 @@ public class DimensionFilter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 
@@ -199,9 +175,8 @@ public class DimensionFilter implements Serializable, Cloneable {
         try {
             return (DimensionFilter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,118 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteIntegrationResponseRequest Marshaller
+ * DeleteIntegrationResponseRequestMarshaller
  */
-public class DeleteIntegrationResponseRequestMarshaller
-        implements
-        Marshaller<Request<DeleteIntegrationResponseRequest>, DeleteIntegrationResponseRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class DeleteIntegrationResponseRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("status_code").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final DeleteIntegrationResponseRequestMarshaller instance = new DeleteIntegrationResponseRequestMarshaller();
 
-    public DeleteIntegrationResponseRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static DeleteIntegrationResponseRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteIntegrationResponseRequest> marshall(
-            DeleteIntegrationResponseRequest deleteIntegrationResponseRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteIntegrationResponseRequest deleteIntegrationResponseRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteIntegrationResponseRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteIntegrationResponseRequest> request = new DefaultRequest<DeleteIntegrationResponseRequest>(
-                deleteIntegrationResponseRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
-
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (deleteIntegrationResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(deleteIntegrationResponseRequest
-                                                .getRestApiId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{resource_id}",
-                        (deleteIntegrationResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(deleteIntegrationResponseRequest
-                                                .getResourceId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{http_method}",
-                        (deleteIntegrationResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(deleteIntegrationResponseRequest
-                                                .getHttpMethod()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{status_code}",
-                        (deleteIntegrationResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(deleteIntegrationResponseRequest
-                                                .getStatusCode()), false)
-                                : "");
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            protocolMarshaller.marshall(deleteIntegrationResponseRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(deleteIntegrationResponseRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(deleteIntegrationResponseRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(deleteIntegrationResponseRequest.getStatusCode(), STATUSCODE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

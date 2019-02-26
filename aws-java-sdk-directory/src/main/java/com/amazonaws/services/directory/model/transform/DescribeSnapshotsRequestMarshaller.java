@@ -1,115 +1,65 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeSnapshotsRequest Marshaller
+ * DescribeSnapshotsRequestMarshaller
  */
-public class DescribeSnapshotsRequestMarshaller implements
-        Marshaller<Request<DescribeSnapshotsRequest>, DescribeSnapshotsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class DescribeSnapshotsRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<List> SNAPSHOTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SnapshotIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeSnapshotsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeSnapshotsRequestMarshaller instance = new DescribeSnapshotsRequestMarshaller();
+
+    public static DescribeSnapshotsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeSnapshotsRequest> marshall(
-            DescribeSnapshotsRequest describeSnapshotsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeSnapshotsRequest describeSnapshotsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeSnapshotsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<DescribeSnapshotsRequest> request = new DefaultRequest<DescribeSnapshotsRequest>(
-                describeSnapshotsRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target",
-                "DirectoryService_20150416.DescribeSnapshots");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeSnapshotsRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(
-                        describeSnapshotsRequest.getDirectoryId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> snapshotIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequest
-                    .getSnapshotIds();
-            if (!snapshotIdsList.isEmpty()
-                    || !snapshotIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("SnapshotIds");
-                jsonGenerator.writeStartArray();
-                for (String snapshotIdsListValue : snapshotIdsList) {
-                    if (snapshotIdsListValue != null) {
-                        jsonGenerator.writeValue(snapshotIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeSnapshotsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(
-                        describeSnapshotsRequest.getNextToken());
-            }
-            if (describeSnapshotsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        describeSnapshotsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeSnapshotsRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(describeSnapshotsRequest.getSnapshotIds(), SNAPSHOTIDS_BINDING);
+            protocolMarshaller.marshall(describeSnapshotsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeSnapshotsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

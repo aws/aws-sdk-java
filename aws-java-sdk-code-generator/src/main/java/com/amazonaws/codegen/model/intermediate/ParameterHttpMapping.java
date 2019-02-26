@@ -15,8 +15,8 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.amazonaws.codegen.model.service.Location;
+import com.amazonaws.protocol.MarshallLocation;
 
 public class ParameterHttpMapping {
 
@@ -30,6 +30,7 @@ public class ParameterHttpMapping {
     private boolean isStreaming;
     private Location location;
     private boolean flattened;
+    private boolean isGreedy;
 
     public boolean getIsPayload() {
         return isPayload;
@@ -151,36 +152,34 @@ public class ParameterHttpMapping {
         return this;
     }
 
-    public enum Location {
-
-        URI("uri"),
-        HEADER("header"),
-        STATUS_CODE("statusCode"),
-        QUERY_STRING("querystring");
-
-        private final String location;
-
-        private Location(String location) {
-            this.location = location;
-        }
-
-        @JsonCreator
-        public static Location forValue(String location) {
-            if (location == null)
-                return null;
-            for (Location locationEnum : Location.values()) {
-                if (locationEnum.location.equals(location)) {
-                    return locationEnum;
-                }
-            }
-            throw new IllegalArgumentException(
-                    "Unknown enum value for ParameterHttpMapping.location: " + location);
-        }
-
-        @JsonValue
-        @Override
-        public String toString() {
-            return this.location;
-        }
+    public boolean isGreedy() {
+        return isGreedy;
     }
+
+    public ParameterHttpMapping setIsGreedy(boolean greedy) {
+        isGreedy = greedy;
+        return this;
+    }
+
+    public ParameterHttpMapping withIsGreedy(boolean greedy) {
+        setIsGreedy(greedy);
+        return this;
+    }
+
+    public MarshallLocation getMarshallLocation() {
+        if(location == null) {
+            return MarshallLocation.PAYLOAD;
+        }
+        switch (location) {
+            case HEADER:
+            case HEADERS:
+                return MarshallLocation.HEADER;
+            case QUERY_STRING:
+                return MarshallLocation.QUERY_PARAM;
+            case URI:
+                return isGreedy ? MarshallLocation.GREEDY_PATH : MarshallLocation.PATH;
+        }
+        return MarshallLocation.PAYLOAD;
+    }
+
 }

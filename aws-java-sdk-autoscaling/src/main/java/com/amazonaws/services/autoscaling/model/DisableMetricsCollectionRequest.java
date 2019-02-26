@@ -1,40 +1,39 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are disabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
      * </p>
      * <ul>
      * <li>
@@ -83,11 +82,11 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name or Amazon Resource Name (ARN) of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -96,10 +95,10 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name or Amazon Resource Name (ARN) of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -108,25 +107,22 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name or Amazon Resource Name (ARN) of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisableMetricsCollectionRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DisableMetricsCollectionRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are disabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
      * </p>
      * <ul>
      * <li>
@@ -171,8 +167,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return One or more of the following metrics. If you omit this parameter,
-     *         all metrics are disabled.</p>
+     * @return One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -225,8 +220,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are disabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
      * </p>
      * <ul>
      * <li>
@@ -272,8 +266,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </ul>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are disabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -323,14 +316,12 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.metrics = new com.amazonaws.internal.SdkInternalList<String>(
-                metrics);
+        this.metrics = new com.amazonaws.internal.SdkInternalList<String>(metrics);
     }
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are disabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
      * </p>
      * <ul>
      * <li>
@@ -375,15 +366,13 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMetrics(java.util.Collection)} or
-     * {@link #withMetrics(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are disabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -425,14 +414,12 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisableMetricsCollectionRequest withMetrics(String... metrics) {
         if (this.metrics == null) {
-            setMetrics(new com.amazonaws.internal.SdkInternalList<String>(
-                    metrics.length));
+            setMetrics(new com.amazonaws.internal.SdkInternalList<String>(metrics.length));
         }
         for (String ele : metrics) {
             this.metrics.add(ele);
@@ -442,8 +429,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all
-     * metrics are disabled.
+     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
      * </p>
      * <ul>
      * <li>
@@ -489,8 +475,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </ul>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter,
-     *        all metrics are disabled.</p>
+     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -532,19 +517,17 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DisableMetricsCollectionRequest withMetrics(
-            java.util.Collection<String> metrics) {
+    public DisableMetricsCollectionRequest withMetrics(java.util.Collection<String> metrics) {
         setMetrics(metrics);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -555,10 +538,9 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics());
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -573,17 +555,13 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
         if (obj instanceof DisableMetricsCollectionRequest == false)
             return false;
         DisableMetricsCollectionRequest other = (DisableMetricsCollectionRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
-        if (other.getMetrics() != null
-                && other.getMetrics().equals(this.getMetrics()) == false)
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
         return true;
     }
@@ -593,12 +571,8 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 
@@ -606,4 +580,5 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
     public DisableMetricsCollectionRequest clone() {
         return (DisableMetricsCollectionRequest) super.clone();
     }
+
 }

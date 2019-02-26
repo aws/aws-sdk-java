@@ -1,111 +1,80 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateRestApiRequest Marshaller
+ * CreateRestApiRequestMarshaller
  */
-public class CreateRestApiRequestMarshaller implements
-        Marshaller<Request<CreateRestApiRequest>, CreateRestApiRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateRestApiRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> CLONEFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cloneFrom").build();
+    private static final MarshallingInfo<List> BINARYMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("binaryMediaTypes").build();
+    private static final MarshallingInfo<Integer> MINIMUMCOMPRESSIONSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumCompressionSize").build();
+    private static final MarshallingInfo<String> APIKEYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySource").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
+    private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("policy").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final CreateRestApiRequestMarshaller instance = new CreateRestApiRequestMarshaller();
 
-    public CreateRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static CreateRestApiRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateRestApiRequest> marshall(
-            CreateRestApiRequest createRestApiRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateRestApiRequest createRestApiRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createRestApiRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateRestApiRequest> request = new DefaultRequest<CreateRestApiRequest>(
-                createRestApiRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis";
-
-        request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createRestApiRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(
-                        createRestApiRequest.getName());
-            }
-            if (createRestApiRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(
-                        createRestApiRequest.getDescription());
-            }
-            if (createRestApiRequest.getCloneFrom() != null) {
-                jsonGenerator.writeFieldName("cloneFrom").writeValue(
-                        createRestApiRequest.getCloneFrom());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-            }
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createRestApiRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getCloneFrom(), CLONEFROM_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getBinaryMediaTypes(), BINARYMEDIATYPES_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getMinimumCompressionSize(), MINIMUMCOMPRESSIONSIZE_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getApiKeySource(), APIKEYSOURCE_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getPolicy(), POLICY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

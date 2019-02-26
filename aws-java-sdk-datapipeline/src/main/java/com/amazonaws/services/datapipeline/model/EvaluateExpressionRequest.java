@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Contains the parameters for EvaluateExpression.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression" target="_top">AWS
+ *      API Documentation</a>
  */
-public class EvaluateExpressionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EvaluateExpressionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -78,8 +79,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @param pipelineId
      *        The ID of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withPipelineId(String pipelineId) {
@@ -119,8 +119,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @param objectId
      *        The ID of the object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withObjectId(String objectId) {
@@ -160,8 +159,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @param expression
      *        The expression to evaluate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EvaluateExpressionRequest withExpression(String expression) {
@@ -170,8 +168,8 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -182,11 +180,11 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getObjectId() != null)
-            sb.append("ObjectId: " + getObjectId() + ",");
+            sb.append("ObjectId: ").append(getObjectId()).append(",");
         if (getExpression() != null)
-            sb.append("Expression: " + getExpression());
+            sb.append("Expression: ").append(getExpression());
         sb.append("}");
         return sb.toString();
     }
@@ -203,18 +201,15 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
         EvaluateExpressionRequest other = (EvaluateExpressionRequest) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
         if (other.getObjectId() == null ^ this.getObjectId() == null)
             return false;
-        if (other.getObjectId() != null
-                && other.getObjectId().equals(this.getObjectId()) == false)
+        if (other.getObjectId() != null && other.getObjectId().equals(this.getObjectId()) == false)
             return false;
         if (other.getExpression() == null ^ this.getExpression() == null)
             return false;
-        if (other.getExpression() != null
-                && other.getExpression().equals(this.getExpression()) == false)
+        if (other.getExpression() != null && other.getExpression().equals(this.getExpression()) == false)
             return false;
         return true;
     }
@@ -224,12 +219,9 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime * hashCode
-                + ((getObjectId() == null) ? 0 : getObjectId().hashCode());
-        hashCode = prime * hashCode
-                + ((getExpression() == null) ? 0 : getExpression().hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getObjectId() == null) ? 0 : getObjectId().hashCode());
+        hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         return hashCode;
     }
 
@@ -237,4 +229,5 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
     public EvaluateExpressionRequest clone() {
         return (EvaluateExpressionRequest) super.clone();
     }
+
 }

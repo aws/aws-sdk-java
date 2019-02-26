@@ -1,37 +1,43 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the private IP address of a network interface.
+ * Describes the private IPv4 address of a network interface.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfacePrivateIpAddress"
+ *      target="_top">AWS API Documentation</a>
  */
-public class NetworkInterfacePrivateIpAddress implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      */
-    private String privateIpAddress;
+    private NetworkInterfaceAssociation association;
+    /**
+     * <p>
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * </p>
+     */
+    private Boolean primary;
     /**
      * <p>
      * The private DNS name.
@@ -40,59 +46,101 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
     private String privateDnsName;
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of
-     * the network interface.
+     * The private IPv4 address.
      * </p>
      */
-    private Boolean primary;
-    /**
-     * <p>
-     * The association information for an Elastic IP address associated with the
-     * network interface.
-     * </p>
-     */
-    private NetworkInterfaceAssociation association;
+    private String privateIpAddress;
 
     /**
      * <p>
-     * The private IP address.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
-     * @param privateIpAddress
-     *        The private IP address.
+     * @param association
+     *        The association information for an Elastic IP address (IPv4) associated with the network interface.
      */
 
-    public void setPrivateIpAddress(String privateIpAddress) {
-        this.privateIpAddress = privateIpAddress;
+    public void setAssociation(NetworkInterfaceAssociation association) {
+        this.association = association;
     }
 
     /**
      * <p>
-     * The private IP address.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
-     * @return The private IP address.
+     * @return The association information for an Elastic IP address (IPv4) associated with the network interface.
      */
 
-    public String getPrivateIpAddress() {
-        return this.privateIpAddress;
+    public NetworkInterfaceAssociation getAssociation() {
+        return this.association;
     }
 
     /**
      * <p>
-     * The private IP address.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
-     * @param privateIpAddress
-     *        The private IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param association
+     *        The association information for an Elastic IP address (IPv4) associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkInterfacePrivateIpAddress withPrivateIpAddress(
-            String privateIpAddress) {
-        setPrivateIpAddress(privateIpAddress);
+    public NetworkInterfacePrivateIpAddress withAssociation(NetworkInterfaceAssociation association) {
+        setAssociation(association);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @param primary
+     *        Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     */
+
+    public void setPrimary(Boolean primary) {
+        this.primary = primary;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @return Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     */
+
+    public Boolean getPrimary() {
+        return this.primary;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @param primary
+     *        Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfacePrivateIpAddress withPrimary(Boolean primary) {
+        setPrimary(primary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @return Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
+     */
+
+    public Boolean isPrimary() {
+        return this.primary;
     }
 
     /**
@@ -127,128 +175,57 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * 
      * @param privateDnsName
      *        The private DNS name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkInterfacePrivateIpAddress withPrivateDnsName(
-            String privateDnsName) {
+    public NetworkInterfacePrivateIpAddress withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of
-     * the network interface.
+     * The private IPv4 address.
      * </p>
      * 
-     * @param primary
-     *        Indicates whether this IP address is the primary private IP
-     *        address of the network interface.
+     * @param privateIpAddress
+     *        The private IPv4 address.
      */
 
-    public void setPrimary(Boolean primary) {
-        this.primary = primary;
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
     }
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of
-     * the network interface.
+     * The private IPv4 address.
      * </p>
      * 
-     * @return Indicates whether this IP address is the primary private IP
-     *         address of the network interface.
+     * @return The private IPv4 address.
      */
 
-    public Boolean getPrimary() {
-        return this.primary;
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
     }
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of
-     * the network interface.
+     * The private IPv4 address.
      * </p>
      * 
-     * @param primary
-     *        Indicates whether this IP address is the primary private IP
-     *        address of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param privateIpAddress
+     *        The private IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkInterfacePrivateIpAddress withPrimary(Boolean primary) {
-        setPrimary(primary);
+    public NetworkInterfacePrivateIpAddress withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
     /**
-     * <p>
-     * Indicates whether this IP address is the primary private IP address of
-     * the network interface.
-     * </p>
-     * 
-     * @return Indicates whether this IP address is the primary private IP
-     *         address of the network interface.
-     */
-
-    public Boolean isPrimary() {
-        return this.primary;
-    }
-
-    /**
-     * <p>
-     * The association information for an Elastic IP address associated with the
-     * network interface.
-     * </p>
-     * 
-     * @param association
-     *        The association information for an Elastic IP address associated
-     *        with the network interface.
-     */
-
-    public void setAssociation(NetworkInterfaceAssociation association) {
-        this.association = association;
-    }
-
-    /**
-     * <p>
-     * The association information for an Elastic IP address associated with the
-     * network interface.
-     * </p>
-     * 
-     * @return The association information for an Elastic IP address associated
-     *         with the network interface.
-     */
-
-    public NetworkInterfaceAssociation getAssociation() {
-        return this.association;
-    }
-
-    /**
-     * <p>
-     * The association information for an Elastic IP address associated with the
-     * network interface.
-     * </p>
-     * 
-     * @param association
-     *        The association information for an Elastic IP address associated
-     *        with the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public NetworkInterfacePrivateIpAddress withAssociation(
-            NetworkInterfaceAssociation association) {
-        setAssociation(association);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -258,14 +235,14 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
-        if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
-        if (getPrimary() != null)
-            sb.append("Primary: " + getPrimary() + ",");
         if (getAssociation() != null)
-            sb.append("Association: " + getAssociation());
+            sb.append("Association: ").append(getAssociation()).append(",");
+        if (getPrimary() != null)
+            sb.append("Primary: ").append(getPrimary()).append(",");
+        if (getPrivateDnsName() != null)
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -280,28 +257,21 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
         if (obj instanceof NetworkInterfacePrivateIpAddress == false)
             return false;
         NetworkInterfacePrivateIpAddress other = (NetworkInterfacePrivateIpAddress) obj;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getAssociation() == null ^ this.getAssociation() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
-            return false;
-        if (other.getPrivateDnsName() == null
-                ^ this.getPrivateDnsName() == null)
-            return false;
-        if (other.getPrivateDnsName() != null
-                && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+        if (other.getAssociation() != null && other.getAssociation().equals(this.getAssociation()) == false)
             return false;
         if (other.getPrimary() == null ^ this.getPrimary() == null)
             return false;
-        if (other.getPrimary() != null
-                && other.getPrimary().equals(this.getPrimary()) == false)
+        if (other.getPrimary() != null && other.getPrimary().equals(this.getPrimary()) == false)
             return false;
-        if (other.getAssociation() == null ^ this.getAssociation() == null)
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
             return false;
-        if (other.getAssociation() != null
-                && other.getAssociation().equals(this.getAssociation()) == false)
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+            return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         return true;
     }
@@ -311,19 +281,10 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssociation() == null) ? 0 : getAssociation().hashCode());
+        hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode());
+        hashCode = prime * hashCode + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         return hashCode;
     }
 
@@ -332,9 +293,8 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
         try {
             return (NetworkInterfacePrivateIpAddress) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

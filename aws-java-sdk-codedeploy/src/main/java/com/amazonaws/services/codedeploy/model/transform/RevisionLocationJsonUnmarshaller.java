@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * RevisionLocation JSON Unmarshaller
  */
-public class RevisionLocationJsonUnmarshaller implements
-        Unmarshaller<RevisionLocation, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RevisionLocationJsonUnmarshaller implements Unmarshaller<RevisionLocation, JsonUnmarshallerContext> {
 
-    public RevisionLocation unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public RevisionLocation unmarshall(JsonUnmarshallerContext context) throws Exception {
         RevisionLocation revisionLocation = new RevisionLocation();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class RevisionLocationJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,24 +50,26 @@ public class RevisionLocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("revisionType", targetDepth)) {
                     context.nextToken();
-                    revisionLocation.setRevisionType(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    revisionLocation.setRevisionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Location", targetDepth)) {
                     context.nextToken();
-                    revisionLocation.setS3Location(S3LocationJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    revisionLocation.setS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("gitHubLocation", targetDepth)) {
                     context.nextToken();
-                    revisionLocation
-                            .setGitHubLocation(GitHubLocationJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    revisionLocation.setGitHubLocation(GitHubLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("string", targetDepth)) {
+                    context.nextToken();
+                    revisionLocation.setString(RawStringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("appSpecContent", targetDepth)) {
+                    context.nextToken();
+                    revisionLocation.setAppSpecContent(AppSpecContentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

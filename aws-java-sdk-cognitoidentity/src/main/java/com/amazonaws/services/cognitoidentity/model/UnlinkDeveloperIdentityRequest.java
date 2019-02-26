@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Input to the <code>UnlinkDeveloperIdentity</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity"
+ *      target="_top">AWS API Documentation</a>
  */
-public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +47,9 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      */
     private String developerProviderName;
     /**
-     * A unique ID used by your backend authentication process to identify a
-     * user.
+     * <p>
+     * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      */
     private String developerUserIdentifier;
 
@@ -83,8 +85,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UnlinkDeveloperIdentityRequest withIdentityId(String identityId) {
@@ -124,12 +125,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnlinkDeveloperIdentityRequest withIdentityPoolId(
-            String identityPoolId) {
+    public UnlinkDeveloperIdentityRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
     }
@@ -166,23 +165,21 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param developerProviderName
      *        The "domain" by which Cognito will refer to your users.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnlinkDeveloperIdentityRequest withDeveloperProviderName(
-            String developerProviderName) {
+    public UnlinkDeveloperIdentityRequest withDeveloperProviderName(String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
         return this;
     }
 
     /**
-     * A unique ID used by your backend authentication process to identify a
-     * user.
+     * <p>
+     * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
      * @param developerUserIdentifier
-     *        A unique ID used by your backend authentication process to
-     *        identify a user.
+     *        A unique ID used by your backend authentication process to identify a user.
      */
 
     public void setDeveloperUserIdentifier(String developerUserIdentifier) {
@@ -190,11 +187,11 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * A unique ID used by your backend authentication process to identify a
-     * user.
+     * <p>
+     * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
-     * @return A unique ID used by your backend authentication process to
-     *         identify a user.
+     * @return A unique ID used by your backend authentication process to identify a user.
      */
 
     public String getDeveloperUserIdentifier() {
@@ -202,25 +199,23 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * A unique ID used by your backend authentication process to identify a
-     * user.
+     * <p>
+     * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
      * @param developerUserIdentifier
-     *        A unique ID used by your backend authentication process to
-     *        identify a user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique ID used by your backend authentication process to identify a user.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnlinkDeveloperIdentityRequest withDeveloperUserIdentifier(
-            String developerUserIdentifier) {
+    public UnlinkDeveloperIdentityRequest withDeveloperUserIdentifier(String developerUserIdentifier) {
         setDeveloperUserIdentifier(developerUserIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -231,15 +226,13 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getDeveloperProviderName() != null)
-            sb.append("DeveloperProviderName: " + getDeveloperProviderName()
-                    + ",");
+            sb.append("DeveloperProviderName: ").append(getDeveloperProviderName()).append(",");
         if (getDeveloperUserIdentifier() != null)
-            sb.append("DeveloperUserIdentifier: "
-                    + getDeveloperUserIdentifier());
+            sb.append("DeveloperUserIdentifier: ").append(getDeveloperUserIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -256,28 +249,19 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
         UnlinkDeveloperIdentityRequest other = (UnlinkDeveloperIdentityRequest) obj;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
-        if (other.getDeveloperProviderName() == null
-                ^ this.getDeveloperProviderName() == null)
+        if (other.getDeveloperProviderName() == null ^ this.getDeveloperProviderName() == null)
             return false;
-        if (other.getDeveloperProviderName() != null
-                && other.getDeveloperProviderName().equals(
-                        this.getDeveloperProviderName()) == false)
+        if (other.getDeveloperProviderName() != null && other.getDeveloperProviderName().equals(this.getDeveloperProviderName()) == false)
             return false;
-        if (other.getDeveloperUserIdentifier() == null
-                ^ this.getDeveloperUserIdentifier() == null)
+        if (other.getDeveloperUserIdentifier() == null ^ this.getDeveloperUserIdentifier() == null)
             return false;
-        if (other.getDeveloperUserIdentifier() != null
-                && other.getDeveloperUserIdentifier().equals(
-                        this.getDeveloperUserIdentifier()) == false)
+        if (other.getDeveloperUserIdentifier() != null && other.getDeveloperUserIdentifier().equals(this.getDeveloperUserIdentifier()) == false)
             return false;
         return true;
     }
@@ -287,20 +271,10 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeveloperProviderName() == null) ? 0
-                        : getDeveloperProviderName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeveloperUserIdentifier() == null) ? 0
-                        : getDeveloperUserIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getDeveloperProviderName() == null) ? 0 : getDeveloperProviderName().hashCode());
+        hashCode = prime * hashCode + ((getDeveloperUserIdentifier() == null) ? 0 : getDeveloperUserIdentifier().hashCode());
         return hashCode;
     }
 
@@ -308,4 +282,5 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
     public UnlinkDeveloperIdentityRequest clone() {
         return (UnlinkDeveloperIdentityRequest) super.clone();
     }
+
 }

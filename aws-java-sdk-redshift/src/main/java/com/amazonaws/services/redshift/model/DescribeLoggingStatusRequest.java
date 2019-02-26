@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeLoggingStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -45,8 +45,7 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster from which to get the logging
-     *        status. </p>
+     *        The identifier of the cluster from which to get the logging status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -63,8 +62,7 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
      * Example: <code>examplecluster</code>
      * </p>
      * 
-     * @return The identifier of the cluster from which to get the logging
-     *         status. </p>
+     * @return The identifier of the cluster from which to get the logging status.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -82,23 +80,20 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster from which to get the logging
-     *        status. </p>
+     *        The identifier of the cluster from which to get the logging status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoggingStatusRequest withClusterIdentifier(
-            String clusterIdentifier) {
+    public DescribeLoggingStatusRequest withClusterIdentifier(String clusterIdentifier) {
         setClusterIdentifier(clusterIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -109,7 +104,7 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier());
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -124,12 +119,9 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeLoggingStatusRequest == false)
             return false;
         DescribeLoggingStatusRequest other = (DescribeLoggingStatusRequest) obj;
-        if (other.getClusterIdentifier() == null
-                ^ this.getClusterIdentifier() == null)
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
-        if (other.getClusterIdentifier() != null
-                && other.getClusterIdentifier().equals(
-                        this.getClusterIdentifier()) == false)
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
         return true;
     }
@@ -139,10 +131,7 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterIdentifier() == null) ? 0
-                        : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         return hashCode;
     }
 
@@ -150,4 +139,5 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
     public DescribeLoggingStatusRequest clone() {
         return (DescribeLoggingStatusRequest) super.clone();
     }
+
 }

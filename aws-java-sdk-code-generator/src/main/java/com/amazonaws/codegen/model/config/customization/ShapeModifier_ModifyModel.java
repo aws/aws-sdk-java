@@ -25,6 +25,12 @@ public class ShapeModifier_ModifyModel {
      */
     private String emitEnumName;
 
+    /**
+     * Emit as a different primitive type. Used by AWS Budget Service to change string
+     * to BigDecimal (see API-433).
+     */
+    private String emitAsType;
+
     private String marshallLocationName;
 
     private String unmarshallLocationName;
@@ -59,5 +65,13 @@ public class ShapeModifier_ModifyModel {
 
     public void setUnmarshallLocationName(String unmarshallLocationName) {
         this.unmarshallLocationName = unmarshallLocationName;
+    }
+
+    public String getEmitAsType() {
+        return emitAsType;
+    }
+
+    public void setEmitAsType(String emitAsType) {
+        this.emitAsType = emitAsType;
     }
 }

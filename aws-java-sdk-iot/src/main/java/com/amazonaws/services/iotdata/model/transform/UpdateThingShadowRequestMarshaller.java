@@ -1,93 +1,58 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iotdata.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.iotdata.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateThingShadowRequest Marshaller
+ * UpdateThingShadowRequestMarshaller
  */
-public class UpdateThingShadowRequestMarshaller implements
-        Marshaller<Request<UpdateThingShadowRequest>, UpdateThingShadowRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class UpdateThingShadowRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final UpdateThingShadowRequestMarshaller instance = new UpdateThingShadowRequestMarshaller();
 
-    public UpdateThingShadowRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static UpdateThingShadowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateThingShadowRequest> marshall(
-            UpdateThingShadowRequest updateThingShadowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateThingShadowRequest updateThingShadowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateThingShadowRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateThingShadowRequest> request = new DefaultRequest<UpdateThingShadowRequest>(
-                updateThingShadowRequest, "AWSIotData");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/things/{thingName}/shadow";
-
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{thingName}",
-                        (updateThingShadowRequest.getThingName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(updateThingShadowRequest
-                                                .getThingName()), false) : "");
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(BinaryUtils.toStream(updateThingShadowRequest
-                .getPayload()));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            protocolMarshaller.marshall(updateThingShadowRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(updateThingShadowRequest.getPayload(), PAYLOAD_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

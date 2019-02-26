@@ -14,34 +14,80 @@
  */
 package com.amazonaws.http.apache.utils;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.Request;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.FakeIOException;
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpStatus;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.AuthCache;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
+import org.apache.http.protocol.HttpContext;
 
 public class ApacheUtils {
 
     /**
+     * Checks if the request was successful or not based on the status code.
+     *
+     * @param response HTTP response
+     * @return True if the request was successful (i.e. has a 2xx status code), false otherwise.
+     */
+    public static boolean isRequestSuccessful(org.apache.http.HttpResponse response) {
+        int status = response.getStatusLine().getStatusCode();
+        return status / 100 == HttpStatus.SC_OK / 100;
+    }
+
+    /**
+     * Creates and initializes an HttpResponse object suitable to be passed to an HTTP response
+     * handler object.
+     *
+     * @param request Marshalled request object.
+     * @param method  The HTTP method that was invoked to get the response.
+     * @param context The HTTP context associated with the request and response.
+     * @return The new, initialized HttpResponse object ready to be passed to an HTTP response
+     * handler object.
+     * @throws IOException If there were any problems getting any response information from the
+     *                     HttpClient method object.
+     */
+    public static HttpResponse createResponse(Request<?> request,
+                                        HttpRequestBase method,
+                                        org.apache.http.HttpResponse apacheHttpResponse,
+                                        HttpContext context) throws IOException {
+        HttpResponse httpResponse = new HttpResponse(request, method, context);
+
+        if (apacheHttpResponse.getEntity() != null) {
+            httpResponse.setContent(apacheHttpResponse.getEntity().getContent());
+        }
+
+        httpResponse.setStatusCode(apacheHttpResponse.getStatusLine().getStatusCode());
+        httpResponse.setStatusText(apacheHttpResponse.getStatusLine().getReasonPhrase());
+        for (Header header : apacheHttpResponse.getAllHeaders()) {
+            httpResponse.addHeader(header.getName(), header.getValue());
+        }
+
+        return httpResponse;
+    }
+
+    /**
      * Utility function for creating a new StringEntity and wrapping any errors
-     * as an AmazonClientException.
+     * as a SdkClientException.
      *
      * @param s The string contents of the returned HTTP entity.
      * @return A new StringEntity with the specified contents.
@@ -50,13 +96,13 @@ public class ApacheUtils {
         try {
             return new StringEntity(s);
         } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to create HTTP entity: " + e.getMessage(), e);
         }
     }
 
     /**
      * Utility function for creating a new BufferedEntity and wrapping any errors
-     * as an AmazonClientException.
+     * as a SdkClientException.
      *
      * @param entity The HTTP entity to wrap with a buffered HTTP entity.
      * @return A new BufferedHttpEntity wrapping the specified entity.
@@ -70,7 +116,7 @@ public class ApacheUtils {
             // Only for test simulation.
             throw e;
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to create HTTP entity: " + e.getMessage(), e);
         }
     }
 
@@ -89,6 +135,8 @@ public class ApacheUtils {
         }
 
         addPreemptiveAuthenticationProxy(clientContext, settings);
+
+        clientContext.setAttribute(HttpContextUtils.DISABLE_SOCKET_PROXY_PROPERTY, settings.disableSocketProxy());
         return clientContext;
 
     }

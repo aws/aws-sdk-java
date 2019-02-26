@@ -1,101 +1,61 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.cloudsearchdomain.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SuggestRequest Marshaller
+ * SuggestRequestMarshaller
  */
-public class SuggestRequestMarshaller implements
-        Marshaller<Request<SuggestRequest>, SuggestRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class SuggestRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> QUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("q").build();
+    private static final MarshallingInfo<String> SUGGESTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("suggester").build();
+    private static final MarshallingInfo<Long> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("size").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final SuggestRequestMarshaller instance = new SuggestRequestMarshaller();
 
-    public SuggestRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static SuggestRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SuggestRequest> marshall(SuggestRequest suggestRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SuggestRequest suggestRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (suggestRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SuggestRequest> request = new DefaultRequest<SuggestRequest>(
-                suggestRequest, "AmazonCloudSearchDomain");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2013-01-01/suggest?format=sdk&pretty=true";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils
-                .addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        request.setResourcePath(uriResourcePath);
-
-        if (suggestRequest.getQuery() != null) {
-            request.addParameter("q",
-                    StringUtils.fromString(suggestRequest.getQuery()));
+        try {
+            protocolMarshaller.marshall(suggestRequest.getQuery(), QUERY_BINDING);
+            protocolMarshaller.marshall(suggestRequest.getSuggester(), SUGGESTER_BINDING);
+            protocolMarshaller.marshall(suggestRequest.getSize(), SIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (suggestRequest.getSuggester() != null) {
-            request.addParameter("suggester",
-                    StringUtils.fromString(suggestRequest.getSuggester()));
-        }
-
-        if (suggestRequest.getSize() != null) {
-            request.addParameter("size",
-                    StringUtils.fromLong(suggestRequest.getSize()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-        }
-
-        return request;
     }
 
 }

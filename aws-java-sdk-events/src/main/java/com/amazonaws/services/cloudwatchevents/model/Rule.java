@@ -1,34 +1,35 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a rule in Amazon CloudWatch Events. A
- * ListRulesResult contains a list of Rules.
+ * Contains information about a rule in Amazon CloudWatch Events.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Rule" target="_top">AWS API Documentation</a>
  */
-public class Rule implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      */
     private String name;
@@ -40,13 +41,15 @@ public class Rule implements Serializable, Cloneable {
     private String arn;
     /**
      * <p>
-     * The event pattern of the rule.
+     * The event pattern of the rule. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String eventPattern;
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      */
     private String state;
@@ -58,26 +61,31 @@ public class Rule implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      */
     private String scheduleExpression;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for
-     * target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     */
+    private String managedBy;
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
+     *        The name of the rule.
      */
 
     public void setName(String name) {
@@ -86,10 +94,10 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
-     * @return The rule's name.
+     * @return The name of the rule.
      */
 
     public String getName() {
@@ -98,13 +106,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withName(String name) {
@@ -144,8 +151,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withArn(String arn) {
@@ -155,11 +161,15 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The event pattern of the rule.
+     * The event pattern of the rule. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern of the rule.
+     *        The event pattern of the rule. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -168,10 +178,14 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The event pattern of the rule.
+     * The event pattern of the rule. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
-     * @return The event pattern of the rule.
+     * @return The event pattern of the rule. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *         >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public String getEventPattern() {
@@ -180,13 +194,16 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The event pattern of the rule.
+     * The event pattern of the rule. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The event pattern of the rule. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withEventPattern(String eventPattern) {
@@ -196,11 +213,11 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @see RuleState
      */
 
@@ -210,10 +227,10 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
-     * @return The rule's state.
+     * @return The state of the rule.
      * @see RuleState
      */
 
@@ -223,13 +240,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */
 
@@ -240,32 +256,31 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @see RuleState
      */
 
     public void setState(RuleState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */
 
     public Rule withState(RuleState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -301,8 +316,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withDescription(String description) {
@@ -312,13 +326,11 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression. For example, "cron(0 20 * * ? *)",
-     *        "rate(5 minutes)".
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -327,12 +339,10 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
-     * @return The scheduling expression. For example, "cron(0 20 * * ? *)",
-     *         "rate(5 minutes)".
+     * @return The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      */
 
     public String getScheduleExpression() {
@@ -341,15 +351,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)",
-     * "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression. For example, "cron(0 20 * * ? *)",
-     *        "rate(5 minutes)".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withScheduleExpression(String scheduleExpression) {
@@ -359,13 +366,11 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for
-     * target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) associated with the role that is
-     *        used for target invocation.
+     *        The Amazon Resource Name (ARN) of the role that is used for target invocation.
      */
 
     public void setRoleArn(String roleArn) {
@@ -374,12 +379,10 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for
-     * target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) associated with the role that is
-     *         used for target invocation.
+     * @return The Amazon Resource Name (ARN) of the role that is used for target invocation.
      */
 
     public String getRoleArn() {
@@ -388,15 +391,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for
-     * target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) associated with the role that is
-     *        used for target invocation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the role that is used for target invocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Rule withRoleArn(String roleArn) {
@@ -405,8 +405,54 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     */
+
+    public void setManagedBy(String managedBy) {
+        this.managedBy = managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @return If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *         name of the service that created the rule.
+     */
+
+    public String getManagedBy() {
+        return this.managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withManagedBy(String managedBy) {
+        setManagedBy(managedBy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -417,19 +463,21 @@ public class Rule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getEventPattern() != null)
-            sb.append("EventPattern: " + getEventPattern() + ",");
+            sb.append("EventPattern: ").append(getEventPattern()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getManagedBy() != null)
+            sb.append("ManagedBy: ").append(getManagedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -446,40 +494,35 @@ public class Rule implements Serializable, Cloneable {
         Rule other = (Rule) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getEventPattern() == null ^ this.getEventPattern() == null)
             return false;
-        if (other.getEventPattern() != null
-                && other.getEventPattern().equals(this.getEventPattern()) == false)
+        if (other.getEventPattern() != null && other.getEventPattern().equals(this.getEventPattern()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getScheduleExpression() == null
-                ^ this.getScheduleExpression() == null)
+        if (other.getScheduleExpression() == null ^ this.getScheduleExpression() == null)
             return false;
-        if (other.getScheduleExpression() != null
-                && other.getScheduleExpression().equals(
-                        this.getScheduleExpression()) == false)
+        if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getManagedBy() == null ^ this.getManagedBy() == null)
+            return false;
+        if (other.getManagedBy() != null && other.getManagedBy().equals(this.getManagedBy()) == false)
             return false;
         return true;
     }
@@ -489,25 +532,14 @@ public class Rule implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEventPattern() == null) ? 0 : getEventPattern()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getScheduleExpression() == null) ? 0
-                        : getScheduleExpression().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getEventPattern() == null) ? 0 : getEventPattern().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getManagedBy() == null) ? 0 : getManagedBy().hashCode());
         return hashCode;
     }
 
@@ -516,9 +548,13 @@ public class Rule implements Serializable, Cloneable {
         try {
             return (Rule) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudwatchevents.model.transform.RuleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

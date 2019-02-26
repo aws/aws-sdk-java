@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
     private String bucketName;
 
     /** The name of the Amazon S3 region in which to create this bucket. */
+    @Deprecated
     private String region;
 
     /**
@@ -43,6 +44,8 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      * cannedAcl will be ignored.
      */
     private AccessControlList accessControlList;
+
+    private boolean objectLockEnabled;
 
     /**
      * Constructs a new {@link CreateBucketRequest},
@@ -132,8 +135,11 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      *            the client is configured against the US Standard endpoint
      *            (s3.amazonaws.com).
      *
+     * @deprecated Use regional client instead to create bucket in that region.
+     *
      * @see CreateBucketRequest#getRegion()
      */
+    @Deprecated
     public void setRegion(String region) {
         this.region = region;
     }
@@ -145,6 +151,7 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      *
      * @see CreateBucketRequest#setRegion(String)
      */
+    @Deprecated
     public String getRegion() {
         return region;
     }
@@ -215,4 +222,25 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public boolean getObjectLockEnabledForBucket() {
+        return objectLockEnabled;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public CreateBucketRequest withObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        this.objectLockEnabled = objectLockEnabled;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public void setObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        withObjectLockEnabledForBucket(objectLockEnabled);
+    }
 }

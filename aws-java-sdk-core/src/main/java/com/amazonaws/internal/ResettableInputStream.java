@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -24,9 +24,9 @@ import java.nio.channels.FileChannel;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.NotThreadSafe;
 
 /**
  * A mark-and-resettable input stream that can be used on files or file input
@@ -145,7 +145,7 @@ public class ResettableInputStream extends ReleasableInputStream {
         try {
             markPos = fileChannel.position();
         } catch (IOException e) {
-            throw new AmazonClientException("Failed to mark the file position", e);
+            throw new SdkClientException("Failed to mark the file position", e);
         }
         if (log.isTraceEnabled())
             log.trace("File input stream marked at position " + markPos);
@@ -209,7 +209,7 @@ public class ResettableInputStream extends ReleasableInputStream {
 
     /**
      * Convenient factory method to construct a new resettable input stream for
-     * the given file, converting any IOException into AmazonClientException.
+     * the given file, converting any IOException into SdkClientException.
      * <p>
      * Note the creation of a {@link ResettableInputStream} would entail
      * physically opening a file. If the opened file is meant to be closed only
@@ -229,7 +229,7 @@ public class ResettableInputStream extends ReleasableInputStream {
 
     /**
      * Convenient factory method to construct a new resettable input stream for
-     * the given file, converting any IOException into AmazonClientException
+     * the given file, converting any IOException into SdkClientException
      * with the given error message.
      * <p>
      * Note the creation of a {@link ResettableInputStream} would entail
@@ -250,15 +250,15 @@ public class ResettableInputStream extends ReleasableInputStream {
             return new ResettableInputStream(file);
         } catch (IOException e) {
             throw errmsg == null
-                ? new AmazonClientException(e)
-                : new AmazonClientException(errmsg, e);
+                ? new SdkClientException(e)
+                : new SdkClientException(errmsg, e);
         }
     }
 
     /**
      * Convenient factory method to construct a new resettable input stream for
      * the given file input stream, converting any IOException into
-     * AmazonClientException.
+     * SdkClientException.
      * <p>
      * Note the creation of a {@link ResettableInputStream} would entail
      * physically opening a file. If the opened file is meant to be closed only
@@ -280,7 +280,7 @@ public class ResettableInputStream extends ReleasableInputStream {
     /**
      * Convenient factory method to construct a new resettable input stream for
      * the given file input stream, converting any IOException into
-     * AmazonClientException with the given error message.
+     * SdkClientException with the given error message.
      * <p>
      * Note the creation of a {@link ResettableInputStream} would entail
      * physically opening a file. If the opened file is meant to be closed only
@@ -299,7 +299,7 @@ public class ResettableInputStream extends ReleasableInputStream {
         try {
             return new ResettableInputStream(fis);
         } catch (IOException e) {
-            throw new AmazonClientException(errmsg, e);
+            throw new SdkClientException(errmsg, e);
         }
     }
 }

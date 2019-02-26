@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the new provisioned throughput settings to be applied to a global
- * secondary index.
+ * Represents the new provisioned throughput settings to be applied to a global secondary index.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalSecondaryIndexAction"
+ *      target="_top">AWS API Documentation</a>
  */
-public class UpdateGlobalSecondaryIndexAction implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -33,7 +34,16 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * </p>
      */
     private String indexName;
-
+    /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     */
     private ProvisionedThroughput provisionedThroughput;
 
     /**
@@ -68,8 +78,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @param indexName
      *        The name of the global secondary index to be updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGlobalSecondaryIndexAction withIndexName(String indexName) {
@@ -78,16 +87,42 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
-    public void setProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *         <p>
+     *         For current minimum and maximum provisioned throughput values, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ProvisionedThroughput getProvisionedThroughput() {
@@ -95,20 +130,32 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
     }
 
     /**
+     * <p>
+     * Represents the provisioned throughput settings for the specified global secondary index.
+     * </p>
+     * <p>
+     * For current minimum and maximum provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * DynamoDB Developer Guide</i>.
+     * </p>
+     * 
      * @param provisionedThroughput
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Represents the provisioned throughput settings for the specified global secondary index.</p>
+     *        <p>
+     *        For current minimum and maximum provisioned throughput values, see <a
+     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        <i>Amazon DynamoDB Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateGlobalSecondaryIndexAction withProvisionedThroughput(
-            ProvisionedThroughput provisionedThroughput) {
+    public UpdateGlobalSecondaryIndexAction withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -119,9 +166,9 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName() + ",");
+            sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput());
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -138,15 +185,11 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         UpdateGlobalSecondaryIndexAction other = (UpdateGlobalSecondaryIndexAction) obj;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
-        if (other.getIndexName() != null
-                && other.getIndexName().equals(this.getIndexName()) == false)
+        if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
-        if (other.getProvisionedThroughput() == null
-                ^ this.getProvisionedThroughput() == null)
+        if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
-        if (other.getProvisionedThroughput() != null
-                && other.getProvisionedThroughput().equals(
-                        this.getProvisionedThroughput()) == false)
+        if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
         return true;
     }
@@ -156,12 +199,8 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getProvisionedThroughput() == null) ? 0
-                        : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         return hashCode;
     }
 
@@ -170,9 +209,13 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
         try {
             return (UpdateGlobalSecondaryIndexAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.UpdateGlobalSecondaryIndexActionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

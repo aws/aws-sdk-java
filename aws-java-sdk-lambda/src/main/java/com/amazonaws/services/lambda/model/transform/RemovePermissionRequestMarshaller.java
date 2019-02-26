@@ -1,105 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemovePermissionRequest Marshaller
+ * RemovePermissionRequestMarshaller
  */
-public class RemovePermissionRequestMarshaller implements
-        Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class RemovePermissionRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("StatementId").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("RevisionId").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final RemovePermissionRequestMarshaller instance = new RemovePermissionRequestMarshaller();
 
-    public RemovePermissionRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static RemovePermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemovePermissionRequest> marshall(
-            RemovePermissionRequest removePermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemovePermissionRequest removePermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removePermissionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(
-                removePermissionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
-
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{FunctionName}",
-                        (removePermissionRequest.getFunctionName() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(removePermissionRequest
-                                                .getFunctionName()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{StatementId}",
-                        (removePermissionRequest.getStatementId() != null) ? SdkHttpUtils
-                                .urlEncode(StringUtils
-                                        .fromString(removePermissionRequest
-                                                .getStatementId()), false) : "");
-        request.setResourcePath(uriResourcePath);
-
-        if (removePermissionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils
-                    .fromString(removePermissionRequest.getQualifier()));
+        try {
+            protocolMarshaller.marshall(removePermissionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getStatementId(), STATEMENTID_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getQualifier(), QUALIFIER_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getRevisionId(), REVISIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-        }
-
-        return request;
     }
 
 }

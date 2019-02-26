@@ -1,44 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the traffic policy for which
- * you want to update the comment.
+ * A complex type that contains information about the traffic policy that you want to update the comment for.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment" target="_top">AWS
+ *      API Documentation</a>
  */
-public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      */
     private Integer version;
@@ -51,13 +49,11 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you
-     *        want to update the comment.
+     *        The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      */
 
     public void setId(String id) {
@@ -66,12 +62,10 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
-     * @return The value of <code>Id</code> for the traffic policy for which you
-     *         want to update the comment.
+     * @return The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      */
 
     public String getId() {
@@ -80,15 +74,12 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to
-     * update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you
-     *        want to update the comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of <code>Id</code> for the traffic policy that you want to update the comment for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withId(String id) {
@@ -98,13 +89,11 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which
-     *        you want to update the comment.
+     *        The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      */
 
     public void setVersion(Integer version) {
@@ -113,12 +102,10 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
-     * @return The value of <code>Version</code> for the traffic policy for
-     *         which you want to update the comment.
+     * @return The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      */
 
     public Integer getVersion() {
@@ -127,15 +114,12 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you
-     * want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which
-     *        you want to update the comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The value of <code>Version</code> for the traffic policy that you want to update the comment for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withVersion(Integer version) {
@@ -175,8 +159,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * 
      * @param comment
      *        The new comment for the specified traffic policy and version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateTrafficPolicyCommentRequest withComment(String comment) {
@@ -185,8 +168,8 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -197,11 +180,11 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }
@@ -218,18 +201,15 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
         UpdateTrafficPolicyCommentRequest other = (UpdateTrafficPolicyCommentRequest) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
-        if (other.getVersion() != null
-                && other.getVersion().equals(this.getVersion()) == false)
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -239,12 +219,9 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 
@@ -252,4 +229,5 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
     public UpdateTrafficPolicyCommentRequest clone() {
         return (UpdateTrafficPolicyCommentRequest) super.clone();
     }
+
 }

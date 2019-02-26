@@ -1,114 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TerminateWorkflowExecutionRequest Marshaller
+ * TerminateWorkflowExecutionRequestMarshaller
  */
-public class TerminateWorkflowExecutionRequestMarshaller
-        implements
-        Marshaller<Request<TerminateWorkflowExecutionRequest>, TerminateWorkflowExecutionRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class TerminateWorkflowExecutionRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<String> WORKFLOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowId").build();
+    private static final MarshallingInfo<String> RUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runId").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
+    private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("details").build();
+    private static final MarshallingInfo<String> CHILDPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("childPolicy").build();
 
-    public TerminateWorkflowExecutionRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TerminateWorkflowExecutionRequestMarshaller instance = new TerminateWorkflowExecutionRequestMarshaller();
+
+    public static TerminateWorkflowExecutionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TerminateWorkflowExecutionRequest> marshall(
-            TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (terminateWorkflowExecutionRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<TerminateWorkflowExecutionRequest> request = new DefaultRequest<TerminateWorkflowExecutionRequest>(
-                terminateWorkflowExecutionRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target",
-                "SimpleWorkflowService.TerminateWorkflowExecution");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (terminateWorkflowExecutionRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(
-                        terminateWorkflowExecutionRequest.getDomain());
-            }
-            if (terminateWorkflowExecutionRequest.getWorkflowId() != null) {
-                jsonGenerator.writeFieldName("workflowId").writeValue(
-                        terminateWorkflowExecutionRequest.getWorkflowId());
-            }
-            if (terminateWorkflowExecutionRequest.getRunId() != null) {
-                jsonGenerator.writeFieldName("runId").writeValue(
-                        terminateWorkflowExecutionRequest.getRunId());
-            }
-            if (terminateWorkflowExecutionRequest.getReason() != null) {
-                jsonGenerator.writeFieldName("reason").writeValue(
-                        terminateWorkflowExecutionRequest.getReason());
-            }
-            if (terminateWorkflowExecutionRequest.getDetails() != null) {
-                jsonGenerator.writeFieldName("details").writeValue(
-                        terminateWorkflowExecutionRequest.getDetails());
-            }
-            if (terminateWorkflowExecutionRequest.getChildPolicy() != null) {
-                jsonGenerator.writeFieldName("childPolicy").writeValue(
-                        terminateWorkflowExecutionRequest.getChildPolicy());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getWorkflowId(), WORKFLOWID_BINDING);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getRunId(), RUNID_BINDING);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getDetails(), DETAILS_BINDING);
+            protocolMarshaller.marshall(terminateWorkflowExecutionRequest.getChildPolicy(), CHILDPOLICY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

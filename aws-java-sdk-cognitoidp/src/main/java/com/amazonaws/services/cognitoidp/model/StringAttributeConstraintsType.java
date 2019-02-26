@@ -1,50 +1,53 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of constraints associated with an attribute of the string type.
+ * The constraints associated with a string attribute.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType"
+ *      target="_top">AWS API Documentation</a>
  */
-public class StringAttributeConstraintsType implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StringAttributeConstraintsType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      */
     private String minLength;
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      */
     private String maxLength;
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
      * @param minLength
-     *        The minimum length of an attribute value of the string type.
+     *        The minimum length.
      */
 
     public void setMinLength(String minLength) {
@@ -53,10 +56,10 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
-     * @return The minimum length of an attribute value of the string type.
+     * @return The minimum length.
      */
 
     public String getMinLength() {
@@ -65,13 +68,12 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
      * @param minLength
-     *        The minimum length of an attribute value of the string type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minimum length.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StringAttributeConstraintsType withMinLength(String minLength) {
@@ -81,11 +83,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length of an attribute value of the string type.
+     *        The maximum length.
      */
 
     public void setMaxLength(String maxLength) {
@@ -94,10 +96,10 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
-     * @return The maximum length of an attribute value of the string type.
+     * @return The maximum length.
      */
 
     public String getMaxLength() {
@@ -106,13 +108,12 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length of an attribute value of the string type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum length.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StringAttributeConstraintsType withMaxLength(String maxLength) {
@@ -121,8 +122,8 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,9 +134,9 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinLength() != null)
-            sb.append("MinLength: " + getMinLength() + ",");
+            sb.append("MinLength: ").append(getMinLength()).append(",");
         if (getMaxLength() != null)
-            sb.append("MaxLength: " + getMaxLength());
+            sb.append("MaxLength: ").append(getMaxLength());
         sb.append("}");
         return sb.toString();
     }
@@ -152,13 +153,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         StringAttributeConstraintsType other = (StringAttributeConstraintsType) obj;
         if (other.getMinLength() == null ^ this.getMinLength() == null)
             return false;
-        if (other.getMinLength() != null
-                && other.getMinLength().equals(this.getMinLength()) == false)
+        if (other.getMinLength() != null && other.getMinLength().equals(this.getMinLength()) == false)
             return false;
         if (other.getMaxLength() == null ^ this.getMaxLength() == null)
             return false;
-        if (other.getMaxLength() != null
-                && other.getMaxLength().equals(this.getMaxLength()) == false)
+        if (other.getMaxLength() != null && other.getMaxLength().equals(this.getMaxLength()) == false)
             return false;
         return true;
     }
@@ -168,10 +167,8 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMinLength() == null) ? 0 : getMinLength().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxLength() == null) ? 0 : getMaxLength().hashCode());
+        hashCode = prime * hashCode + ((getMinLength() == null) ? 0 : getMinLength().hashCode());
+        hashCode = prime * hashCode + ((getMaxLength() == null) ? 0 : getMaxLength().hashCode());
         return hashCode;
     }
 
@@ -180,9 +177,13 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         try {
             return (StringAttributeConstraintsType) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.StringAttributeConstraintsTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

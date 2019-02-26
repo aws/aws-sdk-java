@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,19 +14,12 @@
  */
 package com.amazonaws.util;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.internal.EC2MetadataClient;
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,6 +27,16 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Utility class for retrieving Amazon EC2 instance metadata.<br>
@@ -43,6 +46,11 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
  * retrieve their content from the Amazon S3 bucket you specify at launch. To
  * add a new customer at any time, simply create a bucket for the customer, add
  * their content, and launch your AMI.<br>
+ *
+ * <p>
+ * You can disable the use of the EC2 Instance meta data service by either setting the
+ * {@link SDKGlobalConfiguration#AWS_EC2_METADATA_DISABLED_ENV_VAR} or
+ * {@link SDKGlobalConfiguration#AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY} to 'true'(not case sensitive).
  *
  * More information about Amazon EC2 Metadata
  *
@@ -54,14 +62,20 @@ public class EC2MetadataUtils {
 
     private static final String REGION = "region";
     private static final String INSTANCE_IDENTITY_DOCUMENT = "instance-identity/document";
+    private static final String INSTANCE_IDENTITY_SIGNATURE = "instance-identity/signature";
     private static final String EC2_METADATA_ROOT = "/latest/meta-data";
     private static final String EC2_USERDATA_ROOT = "/latest/user-data/";
     private static final String EC2_DYNAMICDATA_ROOT = "/latest/dynamic/";
 
+    /** Default endpoint for the Amazon EC2 Instance Metadata Service. */
+    private static final String EC2_METADATA_SERVICE_URL = "http://169.254.169.254";
+
+    /** Default resource path for credentials in the Amazon EC2 Instance Metadata Service. */
+    public static final String SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials/";
+
     private static final int DEFAULT_QUERY_RETRIES = 3;
     private static final int MINIMUM_RETRY_WAIT_TIME_MILLISECONDS = 250;
     private static Map<String, String> cache = new ConcurrentHashMap<String, String>();
-    private static EC2MetadataClient ec2MetadataClient = new EC2MetadataClient();
 
     private static final ObjectMapper mapper = new ObjectMapper();
     static {
@@ -232,6 +246,13 @@ public class EC2MetadataUtils {
                 EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_DOCUMENT));
     }
 
+    /**
+     * Get the signature of the instance.
+     */
+    public static String getInstanceSignature() {
+        return fetchData(EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_SIGNATURE);
+    }
+
     static InstanceInfo doGetInstanceInfo(String json) {
         if (null != json) {
             try {
@@ -282,20 +303,16 @@ public class EC2MetadataUtils {
     public static Map<String, IAMSecurityCredential> getIAMSecurityCredentials() {
         Map<String, IAMSecurityCredential> credentialsInfoMap = new HashMap<String, IAMSecurityCredential>();
 
-        List<String> credentials = getItems(EC2_METADATA_ROOT
-                + "/iam/security-credentials");
+        List<String> credentials = getItems(EC2_METADATA_ROOT + "/iam/security-credentials");
 
-        if (null != credentials) {
+        if (credentials != null) {
             for (String credential : credentials) {
-                String json = getData(EC2_METADATA_ROOT
-                        + "/iam/security-credentials/" + credential);
+                String json = getData(EC2_METADATA_ROOT + "/iam/security-credentials/" + credential);
                 try {
-                    IAMSecurityCredential credentialInfo = mapper
-                            .readValue(json, IAMSecurityCredential.class);
+                    IAMSecurityCredential credentialInfo = mapper.readValue(json, IAMSecurityCredential.class);
                     credentialsInfoMap.put(credential, credentialInfo);
                 } catch (Exception e) {
-                    log.warn("Unable to process the credential (" + credential
-                            + "). " + e.getMessage(), e);
+                    log.warn("Unable to process the credential (" + credential + "). " + e.getMessage(), e);
                 }
             }
         }
@@ -308,11 +325,12 @@ public class EC2MetadataUtils {
     public static Map<String, String> getBlockDeviceMapping() {
         Map<String, String> blockDeviceMapping = new HashMap<String, String>();
 
-        List<String> devices = getItems(EC2_METADATA_ROOT
-                + "/block-device-mapping");
-        for (String device : devices) {
-            blockDeviceMapping.put(device, getData(EC2_METADATA_ROOT
-                    + "/block-device-mapping/" + device));
+        List<String> devices = getItems(EC2_METADATA_ROOT + "/block-device-mapping");
+        if (devices != null) {
+            for (String device : devices) {
+                blockDeviceMapping.put(device, getData(EC2_METADATA_ROOT
+                                                       + "/block-device-mapping/" + device));
+            }
         }
         return blockDeviceMapping;
     }
@@ -323,13 +341,15 @@ public class EC2MetadataUtils {
     public static List<NetworkInterface> getNetworkInterfaces() {
         List<NetworkInterface> networkInterfaces = new LinkedList<NetworkInterface>();
 
-        List<String> macs = getItems(EC2_METADATA_ROOT
-                + "/network/interfaces/macs/");
-        for (String mac : macs) {
-            String key = mac.trim();
-            if (key.endsWith("/"))
-                key = key.substring(0, key.length() - 1);
-            networkInterfaces.add(new NetworkInterface(key));
+        List<String> macs = getItems(EC2_METADATA_ROOT + "/network/interfaces/macs/");
+        if (macs != null) {
+            for (String mac : macs) {
+                String key = mac.trim();
+                if (key.endsWith("/")) {
+                    key = key.substring(0, key.length() - 1);
+                }
+                networkInterfaces.add(new NetworkInterface(key));
+            }
         }
         return networkInterfaces;
     }
@@ -352,29 +372,39 @@ public class EC2MetadataUtils {
         return null;
     }
 
+    /**
+     * @param path Path to query.
+     * @return List of items for given path or null if path does not exist.
+     */
     public static List<String> getItems(String path) {
         return getItems(path, DEFAULT_QUERY_RETRIES, false);
     }
 
+    /**
+     * @param path  Path to query.
+     * @param tries Number of attempts to query EC2 metadata service for items.
+     * @return List of items for given path or null if path does not exist.
+     */
     public static List<String> getItems(String path, int tries) {
         return getItems(path, tries, false);
     }
 
     private static List<String> getItems(String path, int tries, boolean slurp) {
         if (tries == 0)
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to contact EC2 metadata service.");
 
         List<String> items;
         try {
-            String response = ec2MetadataClient.readResource(path);
+            String hostAddress = getHostAddressForEC2MetadataService();
+            String response = EC2CredentialsUtils.getInstance().readResource(new URI(hostAddress + path));
             if (slurp)
                 items = Collections.singletonList(response);
             else
                 items = Arrays.asList(response.split("\n"));
             return items;
         } catch (AmazonClientException ace) {
-            log.warn("Unable to retrieve the requested metadata.");
+            log.warn("Unable to retrieve the requested metadata (" + path + "). " + ace.getMessage(), ace);
             return null;
         } catch (Exception e) {
             // Retry on any other exceptions
@@ -401,6 +431,14 @@ public class EC2MetadataUtils {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * Returns the host address of the Amazon EC2 Instance Metadata Service.
+     */
+    public static String getHostAddressForEC2MetadataService() {
+        String host = System.getProperty(EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
+        return host != null ? host : EC2_METADATA_SERVICE_URL;
     }
 
     /**
@@ -555,7 +593,7 @@ public class EC2MetadataUtils {
     }
 
     /**
-     * All of the metada associated with a network interface on the instance.
+     * All of the metadata associated with a network interface on the instance.
      */
     public static class NetworkInterface {
         private String path;
@@ -689,31 +727,29 @@ public class EC2MetadataUtils {
             if (data.containsKey(key))
                 return data.get(key);
 
-            // Since the keys are variable, cache a list of which ones are
-            // available
-            // to prevent unnecessary trips to the service.
-            if (null == availableKeys)
-                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT
-                        + path);
+            // Since the keys are variable, cache a list of which ones are available to prevent unnecessary trips to the service.
+            if (null == availableKeys) {
+                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path);
+            }
 
-            if (availableKeys.contains(key)) {
-                data.put(key, EC2MetadataUtils.getData(EC2_METADATA_ROOT + path
-                        + key));
+            if (availableKeys != null && availableKeys.contains(key)) {
+                data.put(key, EC2MetadataUtils.getData(EC2_METADATA_ROOT + path + key));
                 return data.get(key);
-            } else
+            } else {
                 return null;
+            }
         }
 
         private List<String> getItems(String key) {
-            if (null == availableKeys)
-                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT
-                        + path);
+            if (null == availableKeys) {
+                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path);
+            }
 
-            if (availableKeys.contains(key))
-                return EC2MetadataUtils
-                        .getItems(EC2_METADATA_ROOT + path + key);
-            else
+            if (availableKeys != null && availableKeys.contains(key)) {
+                return EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path + key);
+            } else {
                 return new LinkedList<String>();
+            }
         }
     }
 }

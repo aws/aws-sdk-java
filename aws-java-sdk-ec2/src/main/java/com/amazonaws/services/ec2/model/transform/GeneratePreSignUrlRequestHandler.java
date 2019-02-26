@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -131,7 +131,7 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
 
         final Region region = RegionUtils.getRegion(regionName);
 
-        if (region == null || !region.isServiceSupported(serviceName)) {
+        if (region == null) {
             throw new AmazonClientException("{" + serviceName + ", " + regionName + "} was not "
                     + "found in region metadata. Update to latest version of SDK and try again.");
         }

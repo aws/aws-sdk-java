@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetRepositoryPolicyResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -74,8 +74,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @param registryId
      *        The registry ID associated with the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetRepositoryPolicyResult withRegistryId(String registryId) {
@@ -115,8 +114,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @param repositoryName
      *        The repository name associated with the request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetRepositoryPolicyResult withRepositoryName(String repositoryName) {
@@ -156,8 +154,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @param policyText
      *        The JSON repository policy text associated with the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetRepositoryPolicyResult withPolicyText(String policyText) {
@@ -166,8 +163,8 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,11 +175,11 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getPolicyText() != null)
-            sb.append("PolicyText: " + getPolicyText());
+            sb.append("PolicyText: ").append(getPolicyText());
         sb.append("}");
         return sb.toString();
     }
@@ -199,19 +196,15 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
         GetRepositoryPolicyResult other = (GetRepositoryPolicyResult) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getPolicyText() == null ^ this.getPolicyText() == null)
             return false;
-        if (other.getPolicyText() != null
-                && other.getPolicyText().equals(this.getPolicyText()) == false)
+        if (other.getPolicyText() != null && other.getPolicyText().equals(this.getPolicyText()) == false)
             return false;
         return true;
     }
@@ -221,14 +214,9 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyText() == null) ? 0 : getPolicyText().hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyText() == null) ? 0 : getPolicyText().hashCode());
         return hashCode;
     }
 
@@ -237,9 +225,8 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
         try {
             return (GetRepositoryPolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

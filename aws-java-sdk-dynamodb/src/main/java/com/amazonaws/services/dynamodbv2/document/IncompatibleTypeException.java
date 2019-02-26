@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.dynamodbv2.document;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Thrown upon incompatible type during data conversion.
  */
-public class IncompatibleTypeException extends AmazonClientException {
+public class IncompatibleTypeException extends SdkClientException {
     private static final long serialVersionUID = 1L;
 
     public IncompatibleTypeException(String message) {

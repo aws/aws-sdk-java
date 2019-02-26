@@ -21,6 +21,7 @@ import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
 import com.amazonaws.codegen.model.intermediate.VariableModel;
 import com.amazonaws.codegen.model.service.AuthType;
 import com.amazonaws.codegen.model.service.ErrorMap;
+import com.amazonaws.codegen.model.service.ErrorTrait;
 import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.Operation;
@@ -63,6 +64,9 @@ final class AddOperations {
             operationModel.setDeprecated(op.isDeprecated());
             operationModel.setDocumentation(op.getDocumentation());
             operationModel.setIsAuthenticated(isAuthenticated(op));
+            operationModel.setEndpointDiscovery(op.getEndpointdiscovery());
+            operationModel.setEndpointOperation(op.isEndpointoperation());
+            operationModel.setEndpointTrait(op.getEndpoint());
 
             final Input input = op.getInput();
             if (input != null) {
@@ -94,13 +98,16 @@ final class AddOperations {
             if (op.getErrors() != null) {
                 for (ErrorMap error : op.getErrors()) {
 
-                    String documentation =
+                    final String documentation =
                             error.getDocumentation() != null ? error.getDocumentation() :
                                     c2jShapes.get(error.getShape()).getDocumentation();
 
+                    final Integer httpStatusCode = getHttpStatusCode(error, c2jShapes.get(error.getShape()));
+
                     operationModel.addException(
                             new ExceptionModel(namingStrategy.getExceptionName(error.getShape()))
-                                    .withDocumentation(documentation));
+                                    .withDocumentation(documentation)
+                                    .withHttpStatusCode(httpStatusCode));
                 }
             }
 
@@ -113,8 +120,28 @@ final class AddOperations {
         return javaOperationModels;
     }
 
+    /**
+     * Get HTTP status code either from error trait on the operation reference or the error trait on the shape.
+     *
+     * @param error ErrorMap on operation reference.
+     * @param shape Error shape.
+     * @return HTTP status code or null if not present.
+     */
+    private Integer getHttpStatusCode(ErrorMap error, Shape shape) {
+        final Integer httpStatusCode = getHttpStatusCode(error.getErrorTrait());
+        return httpStatusCode == null ? getHttpStatusCode(shape.getErrorTrait()) : httpStatusCode;
+    }
+
+    /**
+     * @param errorTrait Error trait.
+     * @return HTTP status code from trait or null if not present.
+     */
+    private Integer getHttpStatusCode(ErrorTrait errorTrait) {
+        return errorTrait == null ? null : errorTrait.getHttpStatusCode();
+    }
+
     private static boolean isAuthenticated(Operation op) {
-        return op.getAuthType() == null || op.getAuthType() != AuthType.NONE;
+        return op.getAuthType() == null || !op.getAuthType().equals(AuthType.NONE);
     }
 
     private static String getOperationDocumentation(final Output output, final Shape outputShape) {
@@ -194,6 +221,6 @@ final class AddOperations {
         if (outputShape.getMembers().keySet().size() != 1) return output.getShape();
         Member wrappedMember = outputShape.getMembers().values().toArray(new Member[0])[0];
         Shape wrappedResult = shapes.get(wrappedMember.getShape());
-        return wrappedResult.isWrapper() ? wrappedMember.getShape() : output.getShape();
+        return wrappedResult != null && wrappedResult.isWrapper() ? wrappedMember.getShape() : output.getShape();
     }
 }

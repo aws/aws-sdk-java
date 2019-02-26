@@ -1,32 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RegisterContainerInstanceResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RegisterContainerInstanceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     */
     private ContainerInstance containerInstance;
 
     /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance that was registered.
      */
 
     public void setContainerInstance(ContainerInstance containerInstance) {
@@ -34,7 +44,11 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
     }
 
     /**
-     * @return
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
+     * @return The container instance that was registered.
      */
 
     public ContainerInstance getContainerInstance() {
@@ -42,20 +56,23 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
     }
 
     /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
      * @param containerInstance
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The container instance that was registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterContainerInstanceResult withContainerInstance(
-            ContainerInstance containerInstance) {
+    public RegisterContainerInstanceResult withContainerInstance(ContainerInstance containerInstance) {
         setContainerInstance(containerInstance);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -66,7 +83,7 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance());
+            sb.append("ContainerInstance: ").append(getContainerInstance());
         sb.append("}");
         return sb.toString();
     }
@@ -81,12 +98,9 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
         if (obj instanceof RegisterContainerInstanceResult == false)
             return false;
         RegisterContainerInstanceResult other = (RegisterContainerInstanceResult) obj;
-        if (other.getContainerInstance() == null
-                ^ this.getContainerInstance() == null)
+        if (other.getContainerInstance() == null ^ this.getContainerInstance() == null)
             return false;
-        if (other.getContainerInstance() != null
-                && other.getContainerInstance().equals(
-                        this.getContainerInstance()) == false)
+        if (other.getContainerInstance() != null && other.getContainerInstance().equals(this.getContainerInstance()) == false)
             return false;
         return true;
     }
@@ -96,10 +110,7 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getContainerInstance() == null) ? 0
-                        : getContainerInstance().hashCode());
+        hashCode = prime * hashCode + ((getContainerInstance() == null) ? 0 : getContainerInstance().hashCode());
         return hashCode;
     }
 
@@ -108,9 +119,8 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
         try {
             return (RegisterContainerInstanceResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

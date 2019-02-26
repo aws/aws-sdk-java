@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress"
+ *      target="_top">AWS API Documentation</a>
  */
-public class RevokeClusterSecurityGroupIngressRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -34,29 +34,24 @@ public class RevokeClusterSecurityGroupIngressRequest extends
     private String clusterSecurityGroupName;
     /**
      * <p>
-     * The IP range for which to revoke access. This range must be a valid
-     * Classless Inter-Domain Routing (CIDR) block of IP addresses. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
+     * The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block
+     * of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * </p>
      */
     private String cIDRIP;
     /**
      * <p>
-     * The name of the EC2 Security Group whose access is to be revoked. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     * specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided.
      * </p>
      */
     private String eC2SecurityGroupName;
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is
-     * not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
@@ -70,8 +65,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends
      * </p>
      * 
      * @param clusterSecurityGroupName
-     *        The name of the security Group from which to revoke the ingress
-     *        rule.
+     *        The name of the security Group from which to revoke the ingress rule.
      */
 
     public void setClusterSecurityGroupName(String clusterSecurityGroupName) {
@@ -83,8 +77,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends
      * The name of the security Group from which to revoke the ingress rule.
      * </p>
      * 
-     * @return The name of the security Group from which to revoke the ingress
-     *         rule.
+     * @return The name of the security Group from which to revoke the ingress rule.
      */
 
     public String getClusterSecurityGroupName() {
@@ -97,31 +90,25 @@ public class RevokeClusterSecurityGroupIngressRequest extends
      * </p>
      * 
      * @param clusterSecurityGroupName
-     *        The name of the security Group from which to revoke the ingress
-     *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the security Group from which to revoke the ingress rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RevokeClusterSecurityGroupIngressRequest withClusterSecurityGroupName(
-            String clusterSecurityGroupName) {
+    public RevokeClusterSecurityGroupIngressRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
         setClusterSecurityGroupName(clusterSecurityGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The IP range for which to revoke access. This range must be a valid
-     * Classless Inter-Domain Routing (CIDR) block of IP addresses. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
+     * The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block
+     * of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * </p>
      * 
      * @param cIDRIP
-     *        The IP range for which to revoke access. This range must be a
-     *        valid Classless Inter-Domain Routing (CIDR) block of IP addresses.
-     *        If <code>CIDRIP</code> is specified,
-     *        <code>EC2SecurityGroupName</code> and
+     *        The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR)
+     *        block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      *        <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
 
@@ -131,16 +118,13 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The IP range for which to revoke access. This range must be a valid
-     * Classless Inter-Domain Routing (CIDR) block of IP addresses. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
+     * The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block
+     * of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * </p>
      * 
-     * @return The IP range for which to revoke access. This range must be a
-     *         valid Classless Inter-Domain Routing (CIDR) block of IP
-     *         addresses. If <code>CIDRIP</code> is specified,
-     *         <code>EC2SecurityGroupName</code> and
+     * @return The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR)
+     *         block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      *         <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
 
@@ -150,20 +134,16 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The IP range for which to revoke access. This range must be a valid
-     * Classless Inter-Domain Routing (CIDR) block of IP addresses. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
+     * The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block
+     * of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * </p>
      * 
      * @param cIDRIP
-     *        The IP range for which to revoke access. This range must be a
-     *        valid Classless Inter-Domain Routing (CIDR) block of IP addresses.
-     *        If <code>CIDRIP</code> is specified,
-     *        <code>EC2SecurityGroupName</code> and
+     *        The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR)
+     *        block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and
      *        <code>EC2SecurityGroupOwnerId</code> cannot be provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RevokeClusterSecurityGroupIngressRequest withCIDRIP(String cIDRIP) {
@@ -173,17 +153,14 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The name of the EC2 Security Group whose access is to be revoked. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     * specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided.
      * </p>
      * 
      * @param eC2SecurityGroupName
-     *        The name of the EC2 Security Group whose access is to be revoked.
-     *        If <code>EC2SecurityGroupName</code> is specified,
-     *        <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *        <code>CIDRIP</code> cannot be provided.
+     *        The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     *        specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be
+     *        provided.
      */
 
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -192,16 +169,13 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The name of the EC2 Security Group whose access is to be revoked. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     * specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided.
      * </p>
      * 
-     * @return The name of the EC2 Security Group whose access is to be revoked.
-     *         If <code>EC2SecurityGroupName</code> is specified,
-     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @return The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     *         specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be
+     *         provided.
      */
 
     public String getEC2SecurityGroupName() {
@@ -210,46 +184,37 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The name of the EC2 Security Group whose access is to be revoked. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     * specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided.
      * </p>
      * 
      * @param eC2SecurityGroupName
-     *        The name of the EC2 Security Group whose access is to be revoked.
-     *        If <code>EC2SecurityGroupName</code> is specified,
-     *        <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *        <code>CIDRIP</code> cannot be provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is
+     *        specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be
+     *        provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RevokeClusterSecurityGroupIngressRequest withEC2SecurityGroupName(
-            String eC2SecurityGroupName) {
+    public RevokeClusterSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
         setEC2SecurityGroupName(eC2SecurityGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is
-     * not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS account number of the owner of the security group
-     *        specified in the <code>EC2SecurityGroupName</code> parameter. The
-     *        AWS access key ID is not an acceptable value. If
-     *        <code>EC2SecurityGroupOwnerId</code> is specified,
-     *        <code>EC2SecurityGroupName</code> must also be provided. and
-     *        <code>CIDRIP</code> cannot be provided. </p>
+     *        The AWS account number of the owner of the security group specified in the
+     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     *        <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
+     *        provided. and <code>CIDRIP</code> cannot be provided. </p>
      *        <p>
      *        Example: <code>111122223333</code>
      */
@@ -260,22 +225,18 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is
-     * not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
-     * @return The AWS account number of the owner of the security group
-     *         specified in the <code>EC2SecurityGroupName</code> parameter. The
-     *         AWS access key ID is not an acceptable value. If
-     *         <code>EC2SecurityGroupOwnerId</code> is specified,
-     *         <code>EC2SecurityGroupName</code> must also be provided. and
-     *         <code>CIDRIP</code> cannot be provided. </p>
+     * @return The AWS account number of the owner of the security group specified in the
+     *         <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     *         <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
+     *         provided. and <code>CIDRIP</code> cannot be provided. </p>
      *         <p>
      *         Example: <code>111122223333</code>
      */
@@ -286,38 +247,32 @@ public class RevokeClusterSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is
-     * not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS account number of the owner of the security group
-     *        specified in the <code>EC2SecurityGroupName</code> parameter. The
-     *        AWS access key ID is not an acceptable value. If
-     *        <code>EC2SecurityGroupOwnerId</code> is specified,
-     *        <code>EC2SecurityGroupName</code> must also be provided. and
-     *        <code>CIDRIP</code> cannot be provided. </p>
+     *        The AWS account number of the owner of the security group specified in the
+     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     *        <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
+     *        provided. and <code>CIDRIP</code> cannot be provided. </p>
      *        <p>
      *        Example: <code>111122223333</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RevokeClusterSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(
-            String eC2SecurityGroupOwnerId) {
+    public RevokeClusterSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         setEC2SecurityGroupOwnerId(eC2SecurityGroupOwnerId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -328,16 +283,13 @@ public class RevokeClusterSecurityGroupIngressRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: "
-                    + getClusterSecurityGroupName() + ",");
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName()).append(",");
         if (getCIDRIP() != null)
-            sb.append("CIDRIP: " + getCIDRIP() + ",");
+            sb.append("CIDRIP: ").append(getCIDRIP()).append(",");
         if (getEC2SecurityGroupName() != null)
-            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName()
-                    + ",");
+            sb.append("EC2SecurityGroupName: ").append(getEC2SecurityGroupName()).append(",");
         if (getEC2SecurityGroupOwnerId() != null)
-            sb.append("EC2SecurityGroupOwnerId: "
-                    + getEC2SecurityGroupOwnerId());
+            sb.append("EC2SecurityGroupOwnerId: ").append(getEC2SecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -352,31 +304,21 @@ public class RevokeClusterSecurityGroupIngressRequest extends
         if (obj instanceof RevokeClusterSecurityGroupIngressRequest == false)
             return false;
         RevokeClusterSecurityGroupIngressRequest other = (RevokeClusterSecurityGroupIngressRequest) obj;
-        if (other.getClusterSecurityGroupName() == null
-                ^ this.getClusterSecurityGroupName() == null)
+        if (other.getClusterSecurityGroupName() == null ^ this.getClusterSecurityGroupName() == null)
             return false;
-        if (other.getClusterSecurityGroupName() != null
-                && other.getClusterSecurityGroupName().equals(
-                        this.getClusterSecurityGroupName()) == false)
+        if (other.getClusterSecurityGroupName() != null && other.getClusterSecurityGroupName().equals(this.getClusterSecurityGroupName()) == false)
             return false;
         if (other.getCIDRIP() == null ^ this.getCIDRIP() == null)
             return false;
-        if (other.getCIDRIP() != null
-                && other.getCIDRIP().equals(this.getCIDRIP()) == false)
+        if (other.getCIDRIP() != null && other.getCIDRIP().equals(this.getCIDRIP()) == false)
             return false;
-        if (other.getEC2SecurityGroupName() == null
-                ^ this.getEC2SecurityGroupName() == null)
+        if (other.getEC2SecurityGroupName() == null ^ this.getEC2SecurityGroupName() == null)
             return false;
-        if (other.getEC2SecurityGroupName() != null
-                && other.getEC2SecurityGroupName().equals(
-                        this.getEC2SecurityGroupName()) == false)
+        if (other.getEC2SecurityGroupName() != null && other.getEC2SecurityGroupName().equals(this.getEC2SecurityGroupName()) == false)
             return false;
-        if (other.getEC2SecurityGroupOwnerId() == null
-                ^ this.getEC2SecurityGroupOwnerId() == null)
+        if (other.getEC2SecurityGroupOwnerId() == null ^ this.getEC2SecurityGroupOwnerId() == null)
             return false;
-        if (other.getEC2SecurityGroupOwnerId() != null
-                && other.getEC2SecurityGroupOwnerId().equals(
-                        this.getEC2SecurityGroupOwnerId()) == false)
+        if (other.getEC2SecurityGroupOwnerId() != null && other.getEC2SecurityGroupOwnerId().equals(this.getEC2SecurityGroupOwnerId()) == false)
             return false;
         return true;
     }
@@ -386,20 +328,10 @@ public class RevokeClusterSecurityGroupIngressRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterSecurityGroupName() == null) ? 0
-                        : getClusterSecurityGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getCIDRIP() == null) ? 0 : getCIDRIP().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEC2SecurityGroupName() == null) ? 0
-                        : getEC2SecurityGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEC2SecurityGroupOwnerId() == null) ? 0
-                        : getEC2SecurityGroupOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getClusterSecurityGroupName() == null) ? 0 : getClusterSecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCIDRIP() == null) ? 0 : getCIDRIP().hashCode());
+        hashCode = prime * hashCode + ((getEC2SecurityGroupName() == null) ? 0 : getEC2SecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getEC2SecurityGroupOwnerId() == null) ? 0 : getEC2SecurityGroupOwnerId().hashCode());
         return hashCode;
     }
 
@@ -407,4 +339,5 @@ public class RevokeClusterSecurityGroupIngressRequest extends
     public RevokeClusterSecurityGroupIngressRequest clone() {
         return (RevokeClusterSecurityGroupIngressRequest) super.clone();
     }
+
 }

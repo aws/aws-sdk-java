@@ -1,30 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes the properties of an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescription"
+ *      target="_top">AWS API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationDescription implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     */
+    private String applicationArn;
     /**
      * <p>
      * The name of the application.
@@ -57,11 +64,56 @@ public class ApplicationDescription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> versions;
     /**
      * <p>
-     * The names of the configuration templates associated with this
-     * application.
+     * The names of the configuration templates associated with this application.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> configurationTemplates;
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     */
+    private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     */
+
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the application.
+     */
+
+    public String getApplicationArn() {
+        return this.applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDescription withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -95,8 +147,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @param applicationName
      *        The name of the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDescription withApplicationName(String applicationName) {
@@ -136,8 +187,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @param description
      *        User-defined description of the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDescription withDescription(String description) {
@@ -177,8 +227,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @param dateCreated
      *        The date when the application was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDescription withDateCreated(java.util.Date dateCreated) {
@@ -218,8 +267,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @param dateUpdated
      *        The date when the application was last modified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDescription withDateUpdated(java.util.Date dateUpdated) {
@@ -257,8 +305,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
             return;
         }
 
-        this.versions = new com.amazonaws.internal.SdkInternalList<String>(
-                versions);
+        this.versions = new com.amazonaws.internal.SdkInternalList<String>(versions);
     }
 
     /**
@@ -266,22 +313,19 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * The names of the versions for this application.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVersions(java.util.Collection)} or
-     * {@link #withVersions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVersions(java.util.Collection)} or {@link #withVersions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param versions
      *        The names of the versions for this application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDescription withVersions(String... versions) {
         if (this.versions == null) {
-            setVersions(new com.amazonaws.internal.SdkInternalList<String>(
-                    versions.length));
+            setVersions(new com.amazonaws.internal.SdkInternalList<String>(versions.length));
         }
         for (String ele : versions) {
             this.versions.add(ele);
@@ -296,24 +340,20 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @param versions
      *        The names of the versions for this application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationDescription withVersions(
-            java.util.Collection<String> versions) {
+    public ApplicationDescription withVersions(java.util.Collection<String> versions) {
         setVersions(versions);
         return this;
     }
 
     /**
      * <p>
-     * The names of the configuration templates associated with this
-     * application.
+     * The names of the configuration templates associated with this application.
      * </p>
      * 
-     * @return The names of the configuration templates associated with this
-     *         application.
+     * @return The names of the configuration templates associated with this application.
      */
 
     public java.util.List<String> getConfigurationTemplates() {
@@ -325,50 +365,40 @@ public class ApplicationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration templates associated with this
-     * application.
+     * The names of the configuration templates associated with this application.
      * </p>
      * 
      * @param configurationTemplates
-     *        The names of the configuration templates associated with this
-     *        application.
+     *        The names of the configuration templates associated with this application.
      */
 
-    public void setConfigurationTemplates(
-            java.util.Collection<String> configurationTemplates) {
+    public void setConfigurationTemplates(java.util.Collection<String> configurationTemplates) {
         if (configurationTemplates == null) {
             this.configurationTemplates = null;
             return;
         }
 
-        this.configurationTemplates = new com.amazonaws.internal.SdkInternalList<String>(
-                configurationTemplates);
+        this.configurationTemplates = new com.amazonaws.internal.SdkInternalList<String>(configurationTemplates);
     }
 
     /**
      * <p>
-     * The names of the configuration templates associated with this
-     * application.
+     * The names of the configuration templates associated with this application.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigurationTemplates(java.util.Collection)} or
-     * {@link #withConfigurationTemplates(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurationTemplates(java.util.Collection)} or
+     * {@link #withConfigurationTemplates(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param configurationTemplates
-     *        The names of the configuration templates associated with this
-     *        application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the configuration templates associated with this application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationDescription withConfigurationTemplates(
-            String... configurationTemplates) {
+    public ApplicationDescription withConfigurationTemplates(String... configurationTemplates) {
         if (this.configurationTemplates == null) {
-            setConfigurationTemplates(new com.amazonaws.internal.SdkInternalList<String>(
-                    configurationTemplates.length));
+            setConfigurationTemplates(new com.amazonaws.internal.SdkInternalList<String>(configurationTemplates.length));
         }
         for (String ele : configurationTemplates) {
             this.configurationTemplates.add(ele);
@@ -378,26 +408,62 @@ public class ApplicationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the configuration templates associated with this
-     * application.
+     * The names of the configuration templates associated with this application.
      * </p>
      * 
      * @param configurationTemplates
-     *        The names of the configuration templates associated with this
-     *        application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the configuration templates associated with this application.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ApplicationDescription withConfigurationTemplates(
-            java.util.Collection<String> configurationTemplates) {
+    public ApplicationDescription withConfigurationTemplates(java.util.Collection<String> configurationTemplates) {
         setConfigurationTemplates(configurationTemplates);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        The lifecycle settings for the application.
+     */
+
+    public void setResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        this.resourceLifecycleConfig = resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @return The lifecycle settings for the application.
+     */
+
+    public ApplicationResourceLifecycleConfig getResourceLifecycleConfig() {
+        return this.resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        The lifecycle settings for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDescription withResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        setResourceLifecycleConfig(resourceLifecycleConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -407,18 +473,22 @@ public class ApplicationDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDateCreated() != null)
-            sb.append("DateCreated: " + getDateCreated() + ",");
+            sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated() + ",");
+            sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getVersions() != null)
-            sb.append("Versions: " + getVersions() + ",");
+            sb.append("Versions: ").append(getVersions()).append(",");
         if (getConfigurationTemplates() != null)
-            sb.append("ConfigurationTemplates: " + getConfigurationTemplates());
+            sb.append("ConfigurationTemplates: ").append(getConfigurationTemplates()).append(",");
+        if (getResourceLifecycleConfig() != null)
+            sb.append("ResourceLifecycleConfig: ").append(getResourceLifecycleConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -433,38 +503,37 @@ public class ApplicationDescription implements Serializable, Cloneable {
         if (obj instanceof ApplicationDescription == false)
             return false;
         ApplicationDescription other = (ApplicationDescription) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
+            return false;
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
+            return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getDateCreated() == null ^ this.getDateCreated() == null)
             return false;
-        if (other.getDateCreated() != null
-                && other.getDateCreated().equals(this.getDateCreated()) == false)
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false)
             return false;
         if (other.getDateUpdated() == null ^ this.getDateUpdated() == null)
             return false;
-        if (other.getDateUpdated() != null
-                && other.getDateUpdated().equals(this.getDateUpdated()) == false)
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false)
             return false;
         if (other.getVersions() == null ^ this.getVersions() == null)
             return false;
-        if (other.getVersions() != null
-                && other.getVersions().equals(this.getVersions()) == false)
+        if (other.getVersions() != null && other.getVersions().equals(this.getVersions()) == false)
             return false;
-        if (other.getConfigurationTemplates() == null
-                ^ this.getConfigurationTemplates() == null)
+        if (other.getConfigurationTemplates() == null ^ this.getConfigurationTemplates() == null)
             return false;
-        if (other.getConfigurationTemplates() != null
-                && other.getConfigurationTemplates().equals(
-                        this.getConfigurationTemplates()) == false)
+        if (other.getConfigurationTemplates() != null && other.getConfigurationTemplates().equals(this.getConfigurationTemplates()) == false)
+            return false;
+        if (other.getResourceLifecycleConfig() == null ^ this.getResourceLifecycleConfig() == null)
+            return false;
+        if (other.getResourceLifecycleConfig() != null && other.getResourceLifecycleConfig().equals(this.getResourceLifecycleConfig()) == false)
             return false;
         return true;
     }
@@ -474,25 +543,14 @@ public class ApplicationDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
-        hashCode = prime * hashCode
-                + ((getVersions() == null) ? 0 : getVersions().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConfigurationTemplates() == null) ? 0
-                        : getConfigurationTemplates().hashCode());
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
+        hashCode = prime * hashCode + ((getVersions() == null) ? 0 : getVersions().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationTemplates() == null) ? 0 : getConfigurationTemplates().hashCode());
+        hashCode = prime * hashCode + ((getResourceLifecycleConfig() == null) ? 0 : getResourceLifecycleConfig().hashCode());
         return hashCode;
     }
 
@@ -501,9 +559,8 @@ public class ApplicationDescription implements Serializable, Cloneable {
         try {
             return (ApplicationDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

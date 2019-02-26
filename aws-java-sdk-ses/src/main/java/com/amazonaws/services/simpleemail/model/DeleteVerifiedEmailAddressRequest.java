@@ -1,29 +1,33 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Represents a request to delete an email address from the list of email addresses you have attempted to verify under
+ * your AWS account.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteVerifiedEmailAddressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +42,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param emailAddress
-     *        An email address to be removed from the list of verified
-     *        addresses.
+     *        An email address to be removed from the list of verified addresses.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -51,8 +54,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      * An email address to be removed from the list of verified addresses.
      * </p>
      * 
-     * @return An email address to be removed from the list of verified
-     *         addresses.
+     * @return An email address to be removed from the list of verified addresses.
      */
 
     public String getEmailAddress() {
@@ -65,21 +67,18 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param emailAddress
-     *        An email address to be removed from the list of verified
-     *        addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An email address to be removed from the list of verified addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteVerifiedEmailAddressRequest withEmailAddress(
-            String emailAddress) {
+    public DeleteVerifiedEmailAddressRequest withEmailAddress(String emailAddress) {
         setEmailAddress(emailAddress);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -90,7 +89,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: " + getEmailAddress());
+            sb.append("EmailAddress: ").append(getEmailAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -107,8 +106,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
         DeleteVerifiedEmailAddressRequest other = (DeleteVerifiedEmailAddressRequest) obj;
         if (other.getEmailAddress() == null ^ this.getEmailAddress() == null)
             return false;
-        if (other.getEmailAddress() != null
-                && other.getEmailAddress().equals(this.getEmailAddress()) == false)
+        if (other.getEmailAddress() != null && other.getEmailAddress().equals(this.getEmailAddress()) == false)
             return false;
         return true;
     }
@@ -118,10 +116,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEmailAddress() == null) ? 0 : getEmailAddress()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
         return hashCode;
     }
 
@@ -129,4 +124,5 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
     public DeleteVerifiedEmailAddressRequest clone() {
         return (DeleteVerifiedEmailAddressRequest) super.clone();
     }
+
 }

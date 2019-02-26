@@ -1,56 +1,73 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * The result of the <code>CreateSnapshotCopyGrant</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
-     * <p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String snapshotCopyGrantName;
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      */
     private String kmsKeyId;
@@ -63,36 +80,70 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
-     * <p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in
-     *        the region for the AWS account.</p>
-     *        <p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      */
 
     public void setSnapshotCopyGrantName(String snapshotCopyGrantName) {
@@ -101,36 +152,69 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
-     * <p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the snapshot copy grant. This name must be unique in
-     *         the region for the AWS account.</p>
-     *         <p>
+     * @return The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>Alphabetic characters must be lowercase.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for all clusters within an AWS account.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Alphabetic characters must be lowercase.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all clusters within an AWS account.
+     *         </p>
+     *         </li>
      */
 
     public String getSnapshotCopyGrantName() {
@@ -139,57 +223,87 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the
-     * region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
      * </p>
-     * <p>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in
-     *        the region for the AWS account.</p>
-     *        <p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSnapshotCopyGrantRequest withSnapshotCopyGrantName(
-            String snapshotCopyGrantName) {
+    public CreateSnapshotCopyGrantRequest withSnapshotCopyGrantName(String snapshotCopyGrantName) {
         setSnapshotCopyGrantName(snapshotCopyGrantName);
         return this;
     }
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) to which to
-     *        grant Amazon Redshift permission. If no key is specified, the
-     *        default key is used.
+     *        The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no
+     *        key is specified, the default key is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -198,14 +312,12 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
-     * @return The unique identifier of the customer master key (CMK) to which
-     *         to grant Amazon Redshift permission. If no key is specified, the
-     *         default key is used.
+     * @return The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If
+     *         no key is specified, the default key is used.
      */
 
     public String getKmsKeyId() {
@@ -214,17 +326,14 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) to which to grant
-     * Amazon Redshift permission. If no key is specified, the default key is
-     * used.
+     * The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is
+     * specified, the default key is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) to which to
-     *        grant Amazon Redshift permission. If no key is specified, the
-     *        default key is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no
+     *        key is specified, the default key is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotCopyGrantRequest withKmsKeyId(String kmsKeyId) {
@@ -270,16 +379,14 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSnapshotCopyGrantRequest withTags(Tag... tags) {
@@ -299,19 +406,17 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSnapshotCopyGrantRequest withTags(
-            java.util.Collection<Tag> tags) {
+    public CreateSnapshotCopyGrantRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -322,12 +427,11 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName()
-                    + ",");
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -342,22 +446,17 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
         if (obj instanceof CreateSnapshotCopyGrantRequest == false)
             return false;
         CreateSnapshotCopyGrantRequest other = (CreateSnapshotCopyGrantRequest) obj;
-        if (other.getSnapshotCopyGrantName() == null
-                ^ this.getSnapshotCopyGrantName() == null)
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null)
             return false;
-        if (other.getSnapshotCopyGrantName() != null
-                && other.getSnapshotCopyGrantName().equals(
-                        this.getSnapshotCopyGrantName()) == false)
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
-        if (other.getKmsKeyId() != null
-                && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -367,14 +466,9 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrantName() == null) ? 0
-                        : getSnapshotCopyGrantName().hashCode());
-        hashCode = prime * hashCode
-                + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -382,4 +476,5 @@ public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
     public CreateSnapshotCopyGrantRequest clone() {
         return (CreateSnapshotCopyGrantRequest) super.clone();
     }
+
 }

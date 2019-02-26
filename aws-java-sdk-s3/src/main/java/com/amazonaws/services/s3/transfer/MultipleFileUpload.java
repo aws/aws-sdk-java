@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.util.Collection;
 
 
 /**
- * Multiple file download of an entire virtual directory.
+ * Multiple file upload of an entire virtual directory.
  */
 public interface  MultipleFileUpload extends Transfer {
 

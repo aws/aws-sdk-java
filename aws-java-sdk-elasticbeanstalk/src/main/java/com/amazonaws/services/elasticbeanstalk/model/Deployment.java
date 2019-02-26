@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Information about an application version deployment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Deployment" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Deployment implements Serializable, Cloneable {
 
     /**
@@ -33,8 +34,8 @@ public class Deployment implements Serializable, Cloneable {
     private String versionLabel;
     /**
      * <p>
-     * The ID of the deployment. This number increases by one each time that you
-     * deploy source code or change instance configuration settings.
+     * The ID of the deployment. This number increases by one each time that you deploy source code or change instance
+     * configuration settings.
      * </p>
      */
     private Long deploymentId;
@@ -43,15 +44,27 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
@@ -91,8 +104,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @param versionLabel
      *        The version label of the application version in the deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withVersionLabel(String versionLabel) {
@@ -102,14 +114,13 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the deployment. This number increases by one each time that you
-     * deploy source code or change instance configuration settings.
+     * The ID of the deployment. This number increases by one each time that you deploy source code or change instance
+     * configuration settings.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the deployment. This number increases by one each time
-     *        that you deploy source code or change instance configuration
-     *        settings.
+     *        The ID of the deployment. This number increases by one each time that you deploy source code or change
+     *        instance configuration settings.
      */
 
     public void setDeploymentId(Long deploymentId) {
@@ -118,13 +129,12 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the deployment. This number increases by one each time that you
-     * deploy source code or change instance configuration settings.
+     * The ID of the deployment. This number increases by one each time that you deploy source code or change instance
+     * configuration settings.
      * </p>
      * 
-     * @return The ID of the deployment. This number increases by one each time
-     *         that you deploy source code or change instance configuration
-     *         settings.
+     * @return The ID of the deployment. This number increases by one each time that you deploy source code or change
+     *         instance configuration settings.
      */
 
     public Long getDeploymentId() {
@@ -133,16 +143,14 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the deployment. This number increases by one each time that you
-     * deploy source code or change instance configuration settings.
+     * The ID of the deployment. This number increases by one each time that you deploy source code or change instance
+     * configuration settings.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the deployment. This number increases by one each time
-     *        that you deploy source code or change instance configuration
-     *        settings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the deployment. This number increases by one each time that you deploy source code or change
+     *        instance configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withDeploymentId(Long deploymentId) {
@@ -155,17 +163,41 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the deployment:</p>
      *        <ul>
-     *        <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *        <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *        <li> <code>Failed</code> : The deployment failed.</li>
+     *        <li>
+     *        <p>
+     *        <code>In Progress</code> : The deployment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deployed</code> : The deployment succeeded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> : The deployment failed.
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -177,16 +209,40 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the deployment:</p>
      *         <ul>
-     *         <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *         <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *         <li> <code>Failed</code> : The deployment failed.</li>
+     *         <li>
+     *         <p>
+     *         <code>In Progress</code> : The deployment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deployed</code> : The deployment succeeded.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> : The deployment failed.
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -198,19 +254,42 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the deployment:</p>
      *        <ul>
-     *        <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *        <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *        <li> <code>Failed</code> : The deployment failed.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>In Progress</code> : The deployment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deployed</code> : The deployment succeeded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> : The deployment failed.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withStatus(String status) {
@@ -220,15 +299,14 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
      * @param deploymentTime
-     *        For in-progress deployments, the time that the deloyment
-     *        started.</p>
+     *        For in-progress deployments, the time that the deployment started.</p>
      *        <p>
      *        For completed deployments, the time that the deployment ended.
      */
@@ -239,14 +317,13 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
-     * @return For in-progress deployments, the time that the deloyment
-     *         started.</p>
+     * @return For in-progress deployments, the time that the deployment started.</p>
      *         <p>
      *         For completed deployments, the time that the deployment ended.
      */
@@ -257,19 +334,17 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
      * @param deploymentTime
-     *        For in-progress deployments, the time that the deloyment
-     *        started.</p>
+     *        For in-progress deployments, the time that the deployment started.</p>
      *        <p>
      *        For completed deployments, the time that the deployment ended.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withDeploymentTime(java.util.Date deploymentTime) {
@@ -278,8 +353,8 @@ public class Deployment implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -290,13 +365,13 @@ public class Deployment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDeploymentTime() != null)
-            sb.append("DeploymentTime: " + getDeploymentTime());
+            sb.append("DeploymentTime: ").append(getDeploymentTime());
         sb.append("}");
         return sb.toString();
     }
@@ -313,24 +388,19 @@ public class Deployment implements Serializable, Cloneable {
         Deployment other = (Deployment) obj;
         if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
             return false;
-        if (other.getVersionLabel() != null
-                && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
             return false;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getDeploymentTime() == null
-                ^ this.getDeploymentTime() == null)
+        if (other.getDeploymentTime() == null ^ this.getDeploymentTime() == null)
             return false;
-        if (other.getDeploymentTime() != null
-                && other.getDeploymentTime().equals(this.getDeploymentTime()) == false)
+        if (other.getDeploymentTime() != null && other.getDeploymentTime().equals(this.getDeploymentTime()) == false)
             return false;
         return true;
     }
@@ -340,20 +410,10 @@ public class Deployment implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVersionLabel() == null) ? 0 : getVersionLabel()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentTime() == null) ? 0 : getDeploymentTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentTime() == null) ? 0 : getDeploymentTime().hashCode());
         return hashCode;
     }
 
@@ -362,9 +422,8 @@ public class Deployment implements Serializable, Cloneable {
         try {
             return (Deployment) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

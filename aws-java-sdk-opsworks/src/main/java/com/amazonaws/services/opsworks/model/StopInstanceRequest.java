@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance" target="_top">AWS API
+ *      Documentation</a>
  */
-public class StopInstanceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,6 +31,12 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -64,8 +70,7 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param instanceId
      *        The instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StopInstanceRequest withInstanceId(String instanceId) {
@@ -74,8 +79,60 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @param force
+     *        Specifies whether to force an instance to stop.
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @return Specifies whether to force an instance to stop.
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @param force
+     *        Specifies whether to force an instance to stop.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopInstanceRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @return Specifies whether to force an instance to stop.
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -86,7 +143,9 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -103,8 +162,11 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
         StopInstanceRequest other = (StopInstanceRequest) obj;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -114,8 +176,8 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 
@@ -123,4 +185,5 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements
     public StopInstanceRequest clone() {
         return (StopInstanceRequest) super.clone();
     }
+
 }

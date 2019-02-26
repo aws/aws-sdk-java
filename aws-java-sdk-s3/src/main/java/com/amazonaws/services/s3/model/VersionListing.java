@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -404,8 +404,8 @@ public class VersionListing implements Serializable {
      * is complete, indicating if additional calls to Amazon S3 are needed to obtain
      * complete version listing results.
      *
-     * @return The value <code>true</code> if this version listing is complete, indicating
-     *         additional calls to Amazon S3 to Amazon S3 are needed to obtain
+     * @return The value <code>true</code> if this version listing is <b>not complete<b>, indicating
+     *         additional calls to Amazon S3 are needed to obtain
      *         complete version listing results. Returns the value <code>false</code> if otherwise.
      */
     public boolean isTruncated() {

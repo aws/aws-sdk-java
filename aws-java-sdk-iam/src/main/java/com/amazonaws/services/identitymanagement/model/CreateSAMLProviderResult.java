@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the response to a successful <a>CreateSAMLProvider</a> request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateSAMLProviderResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateSAMLProviderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -38,8 +39,7 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the new SAML provider resource
-     *        in IAM.
+     *        The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      */
 
     public void setSAMLProviderArn(String sAMLProviderArn) {
@@ -51,8 +51,7 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the new SAML provider resource
-     *         in IAM.
+     * @return The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      */
 
     public String getSAMLProviderArn() {
@@ -65,10 +64,8 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the new SAML provider resource
-     *        in IAM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSAMLProviderResult withSAMLProviderArn(String sAMLProviderArn) {
@@ -77,8 +74,8 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -89,7 +86,7 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLProviderArn() != null)
-            sb.append("SAMLProviderArn: " + getSAMLProviderArn());
+            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn());
         sb.append("}");
         return sb.toString();
     }
@@ -104,11 +101,9 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
         if (obj instanceof CreateSAMLProviderResult == false)
             return false;
         CreateSAMLProviderResult other = (CreateSAMLProviderResult) obj;
-        if (other.getSAMLProviderArn() == null
-                ^ this.getSAMLProviderArn() == null)
+        if (other.getSAMLProviderArn() == null ^ this.getSAMLProviderArn() == null)
             return false;
-        if (other.getSAMLProviderArn() != null
-                && other.getSAMLProviderArn().equals(this.getSAMLProviderArn()) == false)
+        if (other.getSAMLProviderArn() != null && other.getSAMLProviderArn().equals(this.getSAMLProviderArn()) == false)
             return false;
         return true;
     }
@@ -118,10 +113,7 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSAMLProviderArn() == null) ? 0 : getSAMLProviderArn()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSAMLProviderArn() == null) ? 0 : getSAMLProviderArn().hashCode());
         return hashCode;
     }
 
@@ -130,9 +122,8 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
         try {
             return (CreateSAMLProviderResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

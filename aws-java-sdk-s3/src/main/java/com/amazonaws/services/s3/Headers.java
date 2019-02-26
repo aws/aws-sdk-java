@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -219,4 +219,27 @@ public interface Headers {
     /** S3 response header for a multipart object containing the number of parts in the object. */
     public static final String S3_PARTS_COUNT = "x-amz-mp-parts-count";
 
+    /** S3 request header for PUT object with a tag set */
+    public static final String S3_TAGGING = "x-amz-tagging";
+
+    /** S3 response header the number of tags on an object */
+    public static final String S3_TAGGING_COUNT = "x-amz-tagging-count";
+
+    public static final String TAGGING_DIRECTIVE = "x-amz-tagging-directive";
+
+    public static final String REMOVE_SELF_BUCKET_ACCESS = "x-amz-confirm-remove-self-bucket-access";
+
+    public static final String S3_RESTORE_OUTPUT_PATH = "x-amz-restore-output-path";
+
+    public static final String OBJECT_LOCK_MODE = "x-amz-object-lock-mode";
+
+    public static final String OBJECT_LOCK_RETAIN_UNTIL_DATE = "x-amz-object-lock-retain-until-date";
+
+    public static final String OBJECT_LOCK_LEGAL_HOLD_STATUS = "x-amz-object-lock-legal-hold";
+
+    public static final String OBJECT_LOCK_TOKEN = "x-amz-bucket-object-lock-token";
+
+    public static final String OBJECT_LOCK_ENABLED_FOR_BUCKET = "x-amz-bucket-object-lock-enabled";
+
+    public static final String BYPASS_GOVERNANCE_RETENTION = "x-amz-bypass-governance-retention";
 }

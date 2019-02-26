@@ -15,8 +15,7 @@
 
 package com.amazonaws.codegen.emitters;
 
-import java.util.Map;
-import java.util.HashMap;
+import com.amazonaws.codegen.internal.Constants;
 
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.ToolFactory;
@@ -26,13 +25,14 @@ import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.text.edits.TextEdit;
 
-import com.amazonaws.codegen.internal.Constants;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Formats the generated java source code. Uses Eclipse JDT core plugin from the Eclipse SDK.
  */
 @SuppressWarnings("unchecked")
-public class JavaCodeFormatter {
+public class JavaCodeFormatter implements ContentProcessor {
 
     private final CodeFormatter codeFormatter;
 
@@ -41,10 +41,9 @@ public class JavaCodeFormatter {
     static {
         DEFAULT_FORMATTER_OPTIONS = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
 
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
-                JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_6);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
         DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR,
                 JavaCore.SPACE);
         DEFAULT_FORMATTER_OPTIONS.put(
@@ -60,13 +59,19 @@ public class JavaCodeFormatter {
                 DefaultCodeFormatterConstants.createAlignmentValue(false,
                         DefaultCodeFormatterConstants.WRAP_COMPACT,
                         DefaultCodeFormatterConstants.INDENT_DEFAULT));
+        // Formats custom file headers if provided
+        DEFAULT_FORMATTER_OPTIONS
+                .put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_FORMAT_HEADER,
+                        DefaultCodeFormatterConstants.TRUE);
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_LINE_SPLIT, "160");
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_LINE_LENGTH, "120");
     }
 
     /**
      * Creates a JavaCodeFormatter using the default formatter options.
      */
     public JavaCodeFormatter() {
-        this(new HashMap<String, Object>());
+        this(new HashMap<>());
     }
 
     /**
@@ -76,20 +81,16 @@ public class JavaCodeFormatter {
      * @param overrideOptions user provided options to apply on top of defaults
      */
     public JavaCodeFormatter(final Map<String, Object> overrideOptions) {
-        Map formatterOptions = new HashMap<String, Object>(DEFAULT_FORMATTER_OPTIONS);
+        Map formatterOptions = new HashMap<>(DEFAULT_FORMATTER_OPTIONS);
         if (overrideOptions != null) {
             formatterOptions.putAll(overrideOptions);
         }
 
         this.codeFormatter = ToolFactory.createCodeFormatter(formatterOptions,
                 ToolFactory.M_FORMAT_EXISTING);
-        if (codeFormatter == null) {
-            throw new RuntimeException(
-                    "Unable to create code formatter to format the generated code.");
-        }
     }
 
-    public String format(String contents) {
+    public String apply(String contents) {
         final TextEdit edit = codeFormatter.format(
                 CodeFormatter.K_COMPILATION_UNIT
                         | CodeFormatter.F_INCLUDE_COMMENTS, contents, 0,

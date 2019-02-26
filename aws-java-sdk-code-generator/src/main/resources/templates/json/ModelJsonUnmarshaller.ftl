@@ -1,11 +1,10 @@
-<@LicenseCommentBlockMacro.content />
-
-package ${metadata.packageName}.model.transform;
+${fileHeader}
+package ${transformPackage};
 
 import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
 import java.nio.ByteBuffer;
+import javax.annotation.Generated;
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -17,6 +16,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ${shape.shapeName} JSON Unmarshaller
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.shapeName}, JsonUnmarshallerContext> {
 
     public ${shape.shapeName} unmarshall(JsonUnmarshallerContext context) throws Exception {
@@ -28,10 +28,11 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
         <#if memberModel.http.isHeader() >
             if (context.getHeader("${memberModel.http.unmarshallLocationName}") != null) {
                 context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
-                <#if memberModel.variable.simpleType == "Date">
-                    ${shape.variable.variableName}.set${memberModel.name}(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                 <#-- TODO: verify date marshalling/unmarshalling behavior with ion service, if we ever support one -->
+                <#if memberModel.variable.simpleType == "Date" && !metadata.ionProtocol && !metadata.cborProtocol>
+                    ${shape.variable.variableName}.${memberModel.setterMethodName}(DateJsonUnmarshallerFactory.getInstance("${memberModel.variable.timestampFormat}").unmarshall(context));
                 <#else>
-                    ${shape.variable.variableName}.set${memberModel.name}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
+                    ${shape.variable.variableName}.${memberModel.setterMethodName}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
                 </#if>
             }
         </#if>
@@ -42,7 +43,7 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
 <#if shape.hasStatusCodeMember >
     <#list shape.members as memberModel>
         <#if memberModel.http.isStatusCode() >
-        ${shape.variable.variableName}.set${memberModel.name}(context.getHttpResponse().getStatusCode());
+        ${shape.variable.variableName}.${memberModel.setterMethodName}(context.getHttpResponse().getStatusCode());
         </#if>
     </#list>
 </#if>
@@ -50,12 +51,12 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
 <#if shape.hasPayloadMember>
     <#assign explicitPayloadMember=shape.payloadMember />
     <#if explicitPayloadMember.http.isStreaming>
-        ${shape.variable.variableName}.set${explicitPayloadMember.name}(context.getHttpResponse().getContent());
+        ${shape.variable.variableName}.${explicitPayloadMember.setterMethodName}(context.getHttpResponse().getContent());
     <#elseif explicitPayloadMember.variable.variableType == "java.nio.ByteBuffer">
         java.io.InputStream is = context.getHttpResponse().getContent();
         if(is != null) {
             try {
-                ${shape.variable.variableName}.set${explicitPayloadMember.name}(java.nio.ByteBuffer.wrap(com.amazonaws.util.IOUtils.toByteArray(is)));
+                ${shape.variable.variableName}.${explicitPayloadMember.setterMethodName}(java.nio.ByteBuffer.wrap(com.amazonaws.util.IOUtils.toByteArray(is)));
             } finally {
                 com.amazonaws.util.IOUtils.closeQuietly(is, null);
             }

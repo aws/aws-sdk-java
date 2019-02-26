@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Represents the metadata of a device offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Offering" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Offering implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -88,8 +91,7 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param id
      *        The ID that corresponds to a device offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Offering withId(String id) {
@@ -129,8 +131,7 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param description
      *        A string describing the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Offering withDescription(String description) {
@@ -172,8 +173,7 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of offering (e.g., "RECURRING") for a device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingType
      */
 
@@ -193,7 +193,7 @@ public class Offering implements Serializable, Cloneable {
      */
 
     public void setType(OfferingType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -203,13 +203,12 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of offering (e.g., "RECURRING") for a device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingType
      */
 
     public Offering withType(OfferingType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -247,8 +246,7 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param platform
      *        The platform of the device (e.g., ANDROID or IOS).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */
 
@@ -268,7 +266,7 @@ public class Offering implements Serializable, Cloneable {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -278,13 +276,12 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param platform
      *        The platform of the device (e.g., ANDROID or IOS).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */
 
     public Offering withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -309,15 +306,13 @@ public class Offering implements Serializable, Cloneable {
      *        Specifies whether there are recurring charges for the offering.
      */
 
-    public void setRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
             this.recurringCharges = null;
             return;
         }
 
-        this.recurringCharges = new java.util.ArrayList<RecurringCharge>(
-                recurringCharges);
+        this.recurringCharges = new java.util.ArrayList<RecurringCharge>(recurringCharges);
     }
 
     /**
@@ -325,22 +320,19 @@ public class Offering implements Serializable, Cloneable {
      * Specifies whether there are recurring charges for the offering.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRecurringCharges(java.util.Collection)} or
-     * {@link #withRecurringCharges(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param recurringCharges
      *        Specifies whether there are recurring charges for the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Offering withRecurringCharges(RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
-            setRecurringCharges(new java.util.ArrayList<RecurringCharge>(
-                    recurringCharges.length));
+            setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
         }
         for (RecurringCharge ele : recurringCharges) {
             this.recurringCharges.add(ele);
@@ -355,19 +347,17 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param recurringCharges
      *        Specifies whether there are recurring charges for the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Offering withRecurringCharges(
-            java.util.Collection<RecurringCharge> recurringCharges) {
+    public Offering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -378,15 +368,15 @@ public class Offering implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges());
         sb.append("}");
         return sb.toString();
     }
@@ -403,30 +393,23 @@ public class Offering implements Serializable, Cloneable {
         Offering other = (Offering) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
-        if (other.getRecurringCharges() == null
-                ^ this.getRecurringCharges() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getRecurringCharges() != null
-                && other.getRecurringCharges().equals(
-                        this.getRecurringCharges()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
         return true;
     }
@@ -436,19 +419,11 @@ public class Offering implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         return hashCode;
     }
 
@@ -457,9 +432,13 @@ public class Offering implements Serializable, Cloneable {
         try {
             return (Offering) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.OfferingMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

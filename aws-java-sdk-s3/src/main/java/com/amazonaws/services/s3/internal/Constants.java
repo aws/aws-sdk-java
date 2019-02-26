@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -33,6 +34,10 @@ public class Constants {
     public static final String S3_EXTERNAL_1_HOSTNAME = "s3-external-1.amazonaws.com";
     /** Service hostname for accessing accelerated S3 buckets */
     public static final String S3_ACCELERATE_HOSTNAME = "s3-accelerate.amazonaws.com";
+    public static final String S3_ACCELERATE_DUALSTACK_HOSTNAME = "s3-accelerate.dualstack.amazonaws.com";
+
+    /** Dualstack qualifier for S3 */
+    public static final String S3_DUALSTACK_QUALIFIER = "dualstack";
 
     /** Service display name for Amazon S3 (not to be used in SigV4 signing) */
     public static final String S3_SERVICE_DISPLAY_NAME = "Amazon S3";

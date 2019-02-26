@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes a registered Amazon ECS cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EcsCluster" target="_top">AWS API
+ *      Documentation</a>
  */
-public class EcsCluster implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EcsCluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -82,8 +85,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @param ecsClusterArn
      *        The cluster's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EcsCluster withEcsClusterArn(String ecsClusterArn) {
@@ -123,8 +125,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @param ecsClusterName
      *        The cluster name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EcsCluster withEcsClusterName(String ecsClusterName) {
@@ -164,8 +165,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EcsCluster withStackId(String stackId) {
@@ -205,8 +205,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @param registeredAt
      *        The time and date that the cluster was registered with the stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EcsCluster withRegisteredAt(String registeredAt) {
@@ -215,8 +214,8 @@ public class EcsCluster implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -227,13 +226,13 @@ public class EcsCluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getEcsClusterName() != null)
-            sb.append("EcsClusterName: " + getEcsClusterName() + ",");
+            sb.append("EcsClusterName: ").append(getEcsClusterName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRegisteredAt() != null)
-            sb.append("RegisteredAt: " + getRegisteredAt());
+            sb.append("RegisteredAt: ").append(getRegisteredAt());
         sb.append("}");
         return sb.toString();
     }
@@ -250,24 +249,19 @@ public class EcsCluster implements Serializable, Cloneable {
         EcsCluster other = (EcsCluster) obj;
         if (other.getEcsClusterArn() == null ^ this.getEcsClusterArn() == null)
             return false;
-        if (other.getEcsClusterArn() != null
-                && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false)
+        if (other.getEcsClusterArn() != null && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false)
             return false;
-        if (other.getEcsClusterName() == null
-                ^ this.getEcsClusterName() == null)
+        if (other.getEcsClusterName() == null ^ this.getEcsClusterName() == null)
             return false;
-        if (other.getEcsClusterName() != null
-                && other.getEcsClusterName().equals(this.getEcsClusterName()) == false)
+        if (other.getEcsClusterName() != null && other.getEcsClusterName().equals(this.getEcsClusterName()) == false)
             return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getRegisteredAt() == null ^ this.getRegisteredAt() == null)
             return false;
-        if (other.getRegisteredAt() != null
-                && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
+        if (other.getRegisteredAt() != null && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
             return false;
         return true;
     }
@@ -277,20 +271,10 @@ public class EcsCluster implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEcsClusterName() == null) ? 0 : getEcsClusterName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisteredAt() == null) ? 0 : getRegisteredAt()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getEcsClusterName() == null) ? 0 : getEcsClusterName().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         return hashCode;
     }
 
@@ -299,9 +283,13 @@ public class EcsCluster implements Serializable, Cloneable {
         try {
             return (EcsCluster) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.EcsClusterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,91 +1,95 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log group name for which log streams are to be listed.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * Will only return log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * The prefix to match.
+     * </p>
+     * <p>
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      */
     private String logStreamNamePrefix;
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      */
     private String orderBy;
     /**
      * <p>
-     * If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending
-     * order.
+     * If the value is true, results are returned in descending order. If the value is to false, results are returned in
+     * ascending order. The default value is false.
      * </p>
      */
     private Boolean descending;
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      */
     private Integer limit;
 
     /**
-     * Default constructor for DescribeLogStreamsRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for DescribeLogStreamsRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public DescribeLogStreamsRequest() {
     }
 
     /**
-     * Constructs a new DescribeLogStreamsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new DescribeLogStreamsRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The log group name for which log streams are to be listed.
+     *        The name of the log group.
      */
     public DescribeLogStreamsRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -93,11 +97,11 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The log group name for which log streams are to be listed.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The log group name for which log streams are to be listed.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -106,10 +110,10 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The log group name for which log streams are to be listed.
+     * The name of the log group.
      * </p>
      * 
-     * @return The log group name for which log streams are to be listed.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -118,13 +122,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The log group name for which log streams are to be listed.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The log group name for which log streams are to be listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsRequest withLogGroupName(String logGroupName) {
@@ -134,14 +137,16 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Will only return log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * The prefix to match.
+     * </p>
+     * <p>
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
      * @param logStreamNamePrefix
-     *        Will only return log streams that match the provided
-     *        logStreamNamePrefix. If you don't specify a value, no prefix
-     *        filter is applied.
+     *        The prefix to match.</p>
+     *        <p>
+     *        If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      */
 
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
@@ -150,13 +155,15 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Will only return log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * The prefix to match.
+     * </p>
+     * <p>
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
-     * @return Will only return log streams that match the provided
-     *         logStreamNamePrefix. If you don't specify a value, no prefix
-     *         filter is applied.
+     * @return The prefix to match.</p>
+     *         <p>
+     *         If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      */
 
     public String getLogStreamNamePrefix() {
@@ -165,38 +172,52 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Will only return log streams that match the provided logStreamNamePrefix.
-     * If you don't specify a value, no prefix filter is applied.
+     * The prefix to match.
+     * </p>
+     * <p>
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
      * @param logStreamNamePrefix
-     *        Will only return log streams that match the provided
-     *        logStreamNamePrefix. If you don't specify a value, no prefix
-     *        filter is applied.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The prefix to match.</p>
+     *        <p>
+     *        If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLogStreamsRequest withLogStreamNamePrefix(
-            String logStreamNamePrefix) {
+    public DescribeLogStreamsRequest withLogStreamNamePrefix(String logStreamNamePrefix) {
         setLogStreamNamePrefix(logStreamNamePrefix);
         return this;
     }
 
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      * 
      * @param orderBy
-     *        Specifies what to order the returned log streams by. Valid
-     *        arguments are 'LogStreamName' or 'LastEventTime'. If you don't
-     *        specify a value, results are ordered by LogStreamName. If
-     *        'LastEventTime' is chosen, the request cannot also contain a
-     *        logStreamNamePrefix.
+     *        If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     *        <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     *        <code>LogStreamName</code>.</p>
+     *        <p>
+     *        If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     *        </p>
+     *        <p>
+     *        lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs.
+     *        This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp
+     *        updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but
+     *        may take longer in some rare situations.
      * @see OrderBy
      */
 
@@ -206,17 +227,32 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      * 
-     * @return Specifies what to order the returned log streams by. Valid
-     *         arguments are 'LogStreamName' or 'LastEventTime'. If you don't
-     *         specify a value, results are ordered by LogStreamName. If
-     *         'LastEventTime' is chosen, the request cannot also contain a
-     *         logStreamNamePrefix.
+     * @return If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     *         <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     *         <code>LogStreamName</code>.</p>
+     *         <p>
+     *         If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code>
+     *         parameter.
+     *         </p>
+     *         <p>
+     *         lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs.
+     *         This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp
+     *         updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but
+     *         may take longer in some rare situations.
      * @see OrderBy
      */
 
@@ -226,20 +262,33 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      * 
      * @param orderBy
-     *        Specifies what to order the returned log streams by. Valid
-     *        arguments are 'LogStreamName' or 'LastEventTime'. If you don't
-     *        specify a value, results are ordered by LogStreamName. If
-     *        'LastEventTime' is chosen, the request cannot also contain a
-     *        logStreamNamePrefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     *        <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     *        <code>LogStreamName</code>.</p>
+     *        <p>
+     *        If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     *        </p>
+     *        <p>
+     *        lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs.
+     *        This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp
+     *        updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but
+     *        may take longer in some rare situations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
 
@@ -250,60 +299,85 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      * 
      * @param orderBy
-     *        Specifies what to order the returned log streams by. Valid
-     *        arguments are 'LogStreamName' or 'LastEventTime'. If you don't
-     *        specify a value, results are ordered by LogStreamName. If
-     *        'LastEventTime' is chosen, the request cannot also contain a
-     *        logStreamNamePrefix.
+     *        If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     *        <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     *        <code>LogStreamName</code>.</p>
+     *        <p>
+     *        If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     *        </p>
+     *        <p>
+     *        lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs.
+     *        This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp
+     *        updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but
+     *        may take longer in some rare situations.
      * @see OrderBy
      */
 
     public void setOrderBy(OrderBy orderBy) {
-        this.orderBy = orderBy.toString();
+        withOrderBy(orderBy);
     }
 
     /**
      * <p>
-     * Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results
-     * are ordered by LogStreamName. If 'LastEventTime' is chosen, the request
-     * cannot also contain a logStreamNamePrefix.
+     * If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     * <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     * <code>LogStreamName</code>.
+     * </p>
+     * <p>
+     * If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     * </p>
+     * <p>
+     * lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on
+     * an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in
+     * some rare situations.
      * </p>
      * 
      * @param orderBy
-     *        Specifies what to order the returned log streams by. Valid
-     *        arguments are 'LogStreamName' or 'LastEventTime'. If you don't
-     *        specify a value, results are ordered by LogStreamName. If
-     *        'LastEventTime' is chosen, the request cannot also contain a
-     *        logStreamNamePrefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is
+     *        <code>LastEventTime</code>, the results are ordered by the event time. The default value is
+     *        <code>LogStreamName</code>.</p>
+     *        <p>
+     *        If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.
+     *        </p>
+     *        <p>
+     *        lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs.
+     *        This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp
+     *        updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but
+     *        may take longer in some rare situations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
 
     public DescribeLogStreamsRequest withOrderBy(OrderBy orderBy) {
-        setOrderBy(orderBy);
+        this.orderBy = orderBy.toString();
         return this;
     }
 
     /**
      * <p>
-     * If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending
-     * order.
+     * If the value is true, results are returned in descending order. If the value is to false, results are returned in
+     * ascending order. The default value is false.
      * </p>
      * 
      * @param descending
-     *        If set to true, results are returned in descending order. If you
-     *        don't specify a value or set it to false, results are returned in
-     *        ascending order.
+     *        If the value is true, results are returned in descending order. If the value is to false, results are
+     *        returned in ascending order. The default value is false.
      */
 
     public void setDescending(Boolean descending) {
@@ -312,14 +386,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending
-     * order.
+     * If the value is true, results are returned in descending order. If the value is to false, results are returned in
+     * ascending order. The default value is false.
      * </p>
      * 
-     * @return If set to true, results are returned in descending order. If you
-     *         don't specify a value or set it to false, results are returned in
-     *         ascending order.
+     * @return If the value is true, results are returned in descending order. If the value is to false, results are
+     *         returned in ascending order. The default value is false.
      */
 
     public Boolean getDescending() {
@@ -328,17 +400,14 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending
-     * order.
+     * If the value is true, results are returned in descending order. If the value is to false, results are returned in
+     * ascending order. The default value is false.
      * </p>
      * 
      * @param descending
-     *        If set to true, results are returned in descending order. If you
-     *        don't specify a value or set it to false, results are returned in
-     *        ascending order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value is true, results are returned in descending order. If the value is to false, results are
+     *        returned in ascending order. The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsRequest withDescending(Boolean descending) {
@@ -348,14 +417,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending
-     * order.
+     * If the value is true, results are returned in descending order. If the value is to false, results are returned in
+     * ascending order. The default value is false.
      * </p>
      * 
-     * @return If set to true, results are returned in descending order. If you
-     *         don't specify a value or set it to false, results are returned in
-     *         ascending order.
+     * @return If the value is true, results are returned in descending order. If the value is to false, results are
+     *         returned in ascending order. The default value is false.
      */
 
     public Boolean isDescending() {
@@ -364,15 +431,11 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogStreams</code> request.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -381,14 +444,10 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return A string token used for pagination that points to the next page
-     *         of results. It must be a value obtained from the response of the
-     *         previous <code class="code">DescribeLogStreams</code> request.
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -397,17 +456,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogStreams</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsRequest withNextToken(String nextToken) {
@@ -417,13 +471,11 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public void setLimit(Integer limit) {
@@ -432,12 +484,10 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
-     * @return The maximum number of items returned in the response. If you
-     *         don't specify a value, the request would return up to 50 items.
+     * @return The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public Integer getLimit() {
@@ -446,15 +496,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsRequest withLimit(Integer limit) {
@@ -463,8 +510,8 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -475,17 +522,17 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamNamePrefix() != null)
-            sb.append("LogStreamNamePrefix: " + getLogStreamNamePrefix() + ",");
+            sb.append("LogStreamNamePrefix: ").append(getLogStreamNamePrefix()).append(",");
         if (getOrderBy() != null)
-            sb.append("OrderBy: " + getOrderBy() + ",");
+            sb.append("OrderBy: ").append(getOrderBy()).append(",");
         if (getDescending() != null)
-            sb.append("Descending: " + getDescending() + ",");
+            sb.append("Descending: ").append(getDescending()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -502,35 +549,27 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
         DescribeLogStreamsRequest other = (DescribeLogStreamsRequest) obj;
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
-        if (other.getLogGroupName() != null
-                && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
-        if (other.getLogStreamNamePrefix() == null
-                ^ this.getLogStreamNamePrefix() == null)
+        if (other.getLogStreamNamePrefix() == null ^ this.getLogStreamNamePrefix() == null)
             return false;
-        if (other.getLogStreamNamePrefix() != null
-                && other.getLogStreamNamePrefix().equals(
-                        this.getLogStreamNamePrefix()) == false)
+        if (other.getLogStreamNamePrefix() != null && other.getLogStreamNamePrefix().equals(this.getLogStreamNamePrefix()) == false)
             return false;
         if (other.getOrderBy() == null ^ this.getOrderBy() == null)
             return false;
-        if (other.getOrderBy() != null
-                && other.getOrderBy().equals(this.getOrderBy()) == false)
+        if (other.getOrderBy() != null && other.getOrderBy().equals(this.getOrderBy()) == false)
             return false;
         if (other.getDescending() == null ^ this.getDescending() == null)
             return false;
-        if (other.getDescending() != null
-                && other.getDescending().equals(this.getDescending()) == false)
+        if (other.getDescending() != null && other.getDescending().equals(this.getDescending()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -540,22 +579,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLogGroupName() == null) ? 0 : getLogGroupName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLogStreamNamePrefix() == null) ? 0
-                        : getLogStreamNamePrefix().hashCode());
-        hashCode = prime * hashCode
-                + ((getOrderBy() == null) ? 0 : getOrderBy().hashCode());
-        hashCode = prime * hashCode
-                + ((getDescending() == null) ? 0 : getDescending().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getOrderBy() == null) ? 0 : getOrderBy().hashCode());
+        hashCode = prime * hashCode + ((getDescending() == null) ? 0 : getDescending().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -563,4 +592,5 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
     public DescribeLogStreamsRequest clone() {
         return (DescribeLogStreamsRequest) super.clone();
     }
+
 }

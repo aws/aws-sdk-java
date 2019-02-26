@@ -1,31 +1,31 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * A parameter that has a different value for each cache node type it is applied
- * to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache node
- * type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i>
- * type.
+ * A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a
+ * <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a
+ * <code>cache.m1.small</code> type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificParameter"
+ *      target="_top">AWS API Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
@@ -60,9 +60,8 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      */
     private Boolean isModifiable;
@@ -74,19 +73,16 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
     private String minimumEngineVersion;
     /**
      * <p>
-     * A list of cache node types and their corresponding values for this
-     * parameter.
+     * A list of cache node types and their corresponding values for this parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues;
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      */
     private String changeType;
@@ -123,8 +119,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * 
      * @param parameterName
      *        The name of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withParameterName(String parameterName) {
@@ -164,8 +159,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * 
      * @param description
      *        A description of the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withDescription(String description) {
@@ -205,8 +199,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * 
      * @param source
      *        The source of the parameter value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withSource(String source) {
@@ -246,8 +239,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * 
      * @param dataType
      *        The valid data type for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withDataType(String dataType) {
@@ -287,8 +279,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * 
      * @param allowedValues
      *        The valid range of values for the parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withAllowedValues(String allowedValues) {
@@ -298,15 +289,13 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -315,14 +304,12 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean getIsModifiable() {
@@ -331,17 +318,14 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
      * @param isModifiable
-     *        Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *        the parameter can be modified. Some parameters have security or
-     *        operational implications that prevent them from being changed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *        parameters have security or operational implications that prevent them from being changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CacheNodeTypeSpecificParameter withIsModifiable(Boolean isModifiable) {
@@ -351,14 +335,12 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
-     * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters
+     * have security or operational implications that prevent them from being changed.
      * </p>
      * 
-     * @return Indicates whether (<code>true</code>) or not (<code>false</code>)
-     *         the parameter can be modified. Some parameters have security or
-     *         operational implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some
+     *         parameters have security or operational implications that prevent them from being changed.
      */
 
     public Boolean isModifiable() {
@@ -371,8 +353,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param minimumEngineVersion
-     *        The earliest cache engine version to which the parameter can
-     *        apply.
+     *        The earliest cache engine version to which the parameter can apply.
      */
 
     public void setMinimumEngineVersion(String minimumEngineVersion) {
@@ -384,8 +365,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * The earliest cache engine version to which the parameter can apply.
      * </p>
      * 
-     * @return The earliest cache engine version to which the parameter can
-     *         apply.
+     * @return The earliest cache engine version to which the parameter can apply.
      */
 
     public String getMinimumEngineVersion() {
@@ -398,26 +378,21 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * </p>
      * 
      * @param minimumEngineVersion
-     *        The earliest cache engine version to which the parameter can
-     *        apply.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The earliest cache engine version to which the parameter can apply.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheNodeTypeSpecificParameter withMinimumEngineVersion(
-            String minimumEngineVersion) {
+    public CacheNodeTypeSpecificParameter withMinimumEngineVersion(String minimumEngineVersion) {
         setMinimumEngineVersion(minimumEngineVersion);
         return this;
     }
 
     /**
      * <p>
-     * A list of cache node types and their corresponding values for this
-     * parameter.
+     * A list of cache node types and their corresponding values for this parameter.
      * </p>
      * 
-     * @return A list of cache node types and their corresponding values for
-     *         this parameter.
+     * @return A list of cache node types and their corresponding values for this parameter.
      */
 
     public java.util.List<CacheNodeTypeSpecificValue> getCacheNodeTypeSpecificValues() {
@@ -429,50 +404,40 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node types and their corresponding values for this
-     * parameter.
+     * A list of cache node types and their corresponding values for this parameter.
      * </p>
      * 
      * @param cacheNodeTypeSpecificValues
-     *        A list of cache node types and their corresponding values for this
-     *        parameter.
+     *        A list of cache node types and their corresponding values for this parameter.
      */
 
-    public void setCacheNodeTypeSpecificValues(
-            java.util.Collection<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues) {
+    public void setCacheNodeTypeSpecificValues(java.util.Collection<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues) {
         if (cacheNodeTypeSpecificValues == null) {
             this.cacheNodeTypeSpecificValues = null;
             return;
         }
 
-        this.cacheNodeTypeSpecificValues = new com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>(
-                cacheNodeTypeSpecificValues);
+        this.cacheNodeTypeSpecificValues = new com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues);
     }
 
     /**
      * <p>
-     * A list of cache node types and their corresponding values for this
-     * parameter.
+     * A list of cache node types and their corresponding values for this parameter.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCacheNodeTypeSpecificValues(java.util.Collection)}
-     * or {@link #withCacheNodeTypeSpecificValues(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheNodeTypeSpecificValues(java.util.Collection)} or
+     * {@link #withCacheNodeTypeSpecificValues(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param cacheNodeTypeSpecificValues
-     *        A list of cache node types and their corresponding values for this
-     *        parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of cache node types and their corresponding values for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheNodeTypeSpecificParameter withCacheNodeTypeSpecificValues(
-            CacheNodeTypeSpecificValue... cacheNodeTypeSpecificValues) {
+    public CacheNodeTypeSpecificParameter withCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValue... cacheNodeTypeSpecificValues) {
         if (this.cacheNodeTypeSpecificValues == null) {
-            setCacheNodeTypeSpecificValues(new com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>(
-                    cacheNodeTypeSpecificValues.length));
+            setCacheNodeTypeSpecificValues(new com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues.length));
         }
         for (CacheNodeTypeSpecificValue ele : cacheNodeTypeSpecificValues) {
             this.cacheNodeTypeSpecificValues.add(ele);
@@ -482,40 +447,33 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node types and their corresponding values for this
-     * parameter.
+     * A list of cache node types and their corresponding values for this parameter.
      * </p>
      * 
      * @param cacheNodeTypeSpecificValues
-     *        A list of cache node types and their corresponding values for this
-     *        parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of cache node types and their corresponding values for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CacheNodeTypeSpecificParameter withCacheNodeTypeSpecificValues(
-            java.util.Collection<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues) {
+    public CacheNodeTypeSpecificParameter withCacheNodeTypeSpecificValues(java.util.Collection<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues) {
         setCacheNodeTypeSpecificValues(cacheNodeTypeSpecificValues);
         return this;
     }
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
      * @see ChangeType
      */
 
@@ -525,20 +483,17 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
-     * @return ChangeType indicates whether a change to the parameter will be
-     *         applied immediately or requires a reboot for the change to be
-     *         applied. You can force a reboot or wait until the next
-     *         maintenance window's reboot. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *         >Rebooting a Cluster</a>.
+     * @return Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *         be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     *         Cluster</a>.
      * @see ChangeType
      */
 
@@ -548,23 +503,19 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
 
@@ -575,58 +526,51 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
      * @see ChangeType
      */
 
     public void setChangeType(ChangeType changeType) {
-        this.changeType = changeType.toString();
+        withChangeType(changeType);
     }
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can
-     * force a reboot or wait until the next maintenance window's reboot. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     * >Rebooting a Cluster</a>.
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be
-     *        applied immediately or requires a reboot for the change to be
-     *        applied. You can force a reboot or wait until the next maintenance
-     *        window's reboot. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
-     *        >Rebooting a Cluster</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
+     *        Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
 
     public CacheNodeTypeSpecificParameter withChangeType(ChangeType changeType) {
-        setChangeType(changeType);
+        this.changeType = changeType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -637,25 +581,23 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterName() != null)
-            sb.append("ParameterName: " + getParameterName() + ",");
+            sb.append("ParameterName: ").append(getParameterName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues() + ",");
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: " + getIsModifiable() + ",");
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
         if (getMinimumEngineVersion() != null)
-            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion()
-                    + ",");
+            sb.append("MinimumEngineVersion: ").append(getMinimumEngineVersion()).append(",");
         if (getCacheNodeTypeSpecificValues() != null)
-            sb.append("CacheNodeTypeSpecificValues: "
-                    + getCacheNodeTypeSpecificValues() + ",");
+            sb.append("CacheNodeTypeSpecificValues: ").append(getCacheNodeTypeSpecificValues()).append(",");
         if (getChangeType() != null)
-            sb.append("ChangeType: " + getChangeType());
+            sb.append("ChangeType: ").append(getChangeType());
         sb.append("}");
         return sb.toString();
     }
@@ -672,52 +614,39 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
         CacheNodeTypeSpecificParameter other = (CacheNodeTypeSpecificParameter) obj;
         if (other.getParameterName() == null ^ this.getParameterName() == null)
             return false;
-        if (other.getParameterName() != null
-                && other.getParameterName().equals(this.getParameterName()) == false)
+        if (other.getParameterName() != null && other.getParameterName().equals(this.getParameterName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
-        if (other.getSource() != null
-                && other.getSource().equals(this.getSource()) == false)
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
-        if (other.getDataType() != null
-                && other.getDataType().equals(this.getDataType()) == false)
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
         if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
             return false;
-        if (other.getAllowedValues() != null
-                && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
             return false;
         if (other.getIsModifiable() == null ^ this.getIsModifiable() == null)
             return false;
-        if (other.getIsModifiable() != null
-                && other.getIsModifiable().equals(this.getIsModifiable()) == false)
+        if (other.getIsModifiable() != null && other.getIsModifiable().equals(this.getIsModifiable()) == false)
             return false;
-        if (other.getMinimumEngineVersion() == null
-                ^ this.getMinimumEngineVersion() == null)
+        if (other.getMinimumEngineVersion() == null ^ this.getMinimumEngineVersion() == null)
             return false;
-        if (other.getMinimumEngineVersion() != null
-                && other.getMinimumEngineVersion().equals(
-                        this.getMinimumEngineVersion()) == false)
+        if (other.getMinimumEngineVersion() != null && other.getMinimumEngineVersion().equals(this.getMinimumEngineVersion()) == false)
             return false;
-        if (other.getCacheNodeTypeSpecificValues() == null
-                ^ this.getCacheNodeTypeSpecificValues() == null)
+        if (other.getCacheNodeTypeSpecificValues() == null ^ this.getCacheNodeTypeSpecificValues() == null)
             return false;
-        if (other.getCacheNodeTypeSpecificValues() != null
-                && other.getCacheNodeTypeSpecificValues().equals(
-                        this.getCacheNodeTypeSpecificValues()) == false)
+        if (other.getCacheNodeTypeSpecificValues() != null && other.getCacheNodeTypeSpecificValues().equals(this.getCacheNodeTypeSpecificValues()) == false)
             return false;
         if (other.getChangeType() == null ^ this.getChangeType() == null)
             return false;
-        if (other.getChangeType() != null
-                && other.getChangeType().equals(this.getChangeType()) == false)
+        if (other.getChangeType() != null && other.getChangeType().equals(this.getChangeType()) == false)
             return false;
         return true;
     }
@@ -727,35 +656,15 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getParameterName() == null) ? 0 : getParameterName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode
-                + ((getDataType() == null) ? 0 : getDataType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowedValues() == null) ? 0 : getAllowedValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsModifiable() == null) ? 0 : getIsModifiable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMinimumEngineVersion() == null) ? 0
-                        : getMinimumEngineVersion().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheNodeTypeSpecificValues() == null) ? 0
-                        : getCacheNodeTypeSpecificValues().hashCode());
-        hashCode = prime * hashCode
-                + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
+        hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
+        hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
+        hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeTypeSpecificValues() == null) ? 0 : getCacheNodeTypeSpecificValues().hashCode());
+        hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         return hashCode;
     }
 
@@ -764,9 +673,8 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
         try {
             return (CacheNodeTypeSpecificParameter) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

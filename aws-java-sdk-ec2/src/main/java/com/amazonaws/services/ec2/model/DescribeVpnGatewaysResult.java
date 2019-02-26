@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeVpnGateways.
  * </p>
  */
-public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeVpnGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +62,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
             return;
         }
 
-        this.vpnGateways = new com.amazonaws.internal.SdkInternalList<VpnGateway>(
-                vpnGateways);
+        this.vpnGateways = new com.amazonaws.internal.SdkInternalList<VpnGateway>(vpnGateways);
     }
 
     /**
@@ -71,22 +70,19 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * Information about one or more virtual private gateways.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVpnGateways(java.util.Collection)} or
-     * {@link #withVpnGateways(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpnGateways(java.util.Collection)} or {@link #withVpnGateways(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param vpnGateways
      *        Information about one or more virtual private gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeVpnGatewaysResult withVpnGateways(VpnGateway... vpnGateways) {
         if (this.vpnGateways == null) {
-            setVpnGateways(new com.amazonaws.internal.SdkInternalList<VpnGateway>(
-                    vpnGateways.length));
+            setVpnGateways(new com.amazonaws.internal.SdkInternalList<VpnGateway>(vpnGateways.length));
         }
         for (VpnGateway ele : vpnGateways) {
             this.vpnGateways.add(ele);
@@ -101,19 +97,17 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * 
      * @param vpnGateways
      *        Information about one or more virtual private gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVpnGatewaysResult withVpnGateways(
-            java.util.Collection<VpnGateway> vpnGateways) {
+    public DescribeVpnGatewaysResult withVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
         setVpnGateways(vpnGateways);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,7 +118,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnGateways() != null)
-            sb.append("VpnGateways: " + getVpnGateways());
+            sb.append("VpnGateways: ").append(getVpnGateways());
         sb.append("}");
         return sb.toString();
     }
@@ -141,8 +135,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
         DescribeVpnGatewaysResult other = (DescribeVpnGatewaysResult) obj;
         if (other.getVpnGateways() == null ^ this.getVpnGateways() == null)
             return false;
-        if (other.getVpnGateways() != null
-                && other.getVpnGateways().equals(this.getVpnGateways()) == false)
+        if (other.getVpnGateways() != null && other.getVpnGateways().equals(this.getVpnGateways()) == false)
             return false;
         return true;
     }
@@ -152,9 +145,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVpnGateways() == null) ? 0 : getVpnGateways().hashCode());
+        hashCode = prime * hashCode + ((getVpnGateways() == null) ? 0 : getVpnGateways().hashCode());
         return hashCode;
     }
 
@@ -163,9 +154,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
         try {
             return (DescribeVpnGatewaysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

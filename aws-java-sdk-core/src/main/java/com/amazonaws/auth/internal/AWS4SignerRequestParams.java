@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth.internal;
 
+import com.amazonaws.auth.SdkClock;
 import java.util.Date;
 
 import com.amazonaws.SignableRequest;
@@ -72,6 +73,18 @@ public final class AWS4SignerRequestParams {
     public AWS4SignerRequestParams(SignableRequest<?> request,
             Date signingDateOverride, String regionNameOverride,
             String serviceName, String signingAlgorithm) {
+        this(request, signingDateOverride, regionNameOverride,
+                serviceName, signingAlgorithm, null);
+    }
+
+    /**
+     * Generates an instance of AWS4signerRequestParams that holds the
+     * parameters used for computing a AWS 4 signature for a request
+     */
+    public AWS4SignerRequestParams(SignableRequest<?> request,
+                                   Date signingDateOverride, String regionNameOverride,
+                                   String serviceName, String signingAlgorithm,
+                                   String endpointPrefix) {
         if (request == null) {
             throw new IllegalArgumentException("Request cannot be null");
         }
@@ -85,9 +98,10 @@ public final class AWS4SignerRequestParams {
         this.formattedSigningDate = AWS4SignerUtils
                 .formatDateStamp(signingDateTimeMilli);
         this.serviceName = serviceName;
-        this.regionName = regionNameOverride != null ? regionNameOverride
-                : AwsHostNameUtils.parseRegionName(request.getEndpoint()
-                        .getHost(), this.serviceName);
+
+        this.regionName = regionNameOverride != null
+                ? regionNameOverride : resolveRegion(endpointPrefix, this.serviceName);
+
         this.scope = generateScope(request, formattedSigningDate, this.serviceName,
                 regionName);
         this.formattedSigningDateTime = AWS4SignerUtils
@@ -95,11 +109,24 @@ public final class AWS4SignerRequestParams {
         this.signingAlgorithm = signingAlgorithm;
     }
 
+    /*
+     * Ideally, we should be using endpoint prefix to parse the region from host.
+     *
+     * Previously we were using service signing name to parse region. It is possible that
+     * endpoint prefix is null if customers are still using older clients. So using
+     * service signing name as alternative will prevent any behavior breaking change.
+     */
+    private String resolveRegion(String endpointPrefix, String serviceSigningName) {
+
+        return AwsHostNameUtils.parseRegionName(request.getEndpoint().getHost(),
+                endpointPrefix != null ? endpointPrefix : serviceSigningName);
+    }
+
     /**
      * Returns the signing date from the request.
      */
     private final long getSigningDate(SignableRequest<?> request) {
-        return System.currentTimeMillis() - request.getTimeOffset() * 1000L;
+        return SdkClock.Instance.get().currentTimeMillis() - request.getTimeOffset() * 1000L;
     }
 
     /**

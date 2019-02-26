@@ -1,0 +1,235 @@
+/*
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.databasemigrationservice.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/EventCategoryGroup" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EventCategoryGroup implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The type of AWS DMS resource that generates events.
+     * </p>
+     * <p>
+     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * </p>
+     */
+    private String sourceType;
+    /**
+     * <p>
+     * A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * </p>
+     */
+    private java.util.List<String> eventCategories;
+
+    /**
+     * <p>
+     * The type of AWS DMS resource that generates events.
+     * </p>
+     * <p>
+     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of AWS DMS resource that generates events. </p>
+     *        <p>
+     *        Valid values: replication-instance | replication-server | security-group | migration-task
+     */
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of AWS DMS resource that generates events.
+     * </p>
+     * <p>
+     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * </p>
+     * 
+     * @return The type of AWS DMS resource that generates events. </p>
+     *         <p>
+     *         Valid values: replication-instance | replication-server | security-group | migration-task
+     */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The type of AWS DMS resource that generates events.
+     * </p>
+     * <p>
+     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * </p>
+     * 
+     * @param sourceType
+     *        The type of AWS DMS resource that generates events. </p>
+     *        <p>
+     *        Valid values: replication-instance | replication-server | security-group | migration-task
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventCategoryGroup withSourceType(String sourceType) {
+        setSourceType(sourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * </p>
+     * 
+     * @return A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     */
+
+    public java.util.List<String> getEventCategories() {
+        return eventCategories;
+    }
+
+    /**
+     * <p>
+     * A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     */
+
+    public void setEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+            return;
+        }
+
+        this.eventCategories = new java.util.ArrayList<String>(eventCategories);
+    }
+
+    /**
+     * <p>
+     * A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventCategories(java.util.Collection)} or {@link #withEventCategories(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventCategoryGroup withEventCategories(String... eventCategories) {
+        if (this.eventCategories == null) {
+            setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
+        }
+        for (String ele : eventCategories) {
+            this.eventCategories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of event categories for a <code>SourceType</code> that you want to subscribe to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventCategoryGroup withEventCategories(java.util.Collection<String> eventCategories) {
+        setEventCategories(eventCategories);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getSourceType() != null)
+            sb.append("SourceType: ").append(getSourceType()).append(",");
+        if (getEventCategories() != null)
+            sb.append("EventCategories: ").append(getEventCategories());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof EventCategoryGroup == false)
+            return false;
+        EventCategoryGroup other = (EventCategoryGroup) obj;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null)
+            return false;
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public EventCategoryGroup clone() {
+        try {
+            return (EventCategoryGroup) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.databasemigrationservice.model.transform.EventCategoryGroupMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

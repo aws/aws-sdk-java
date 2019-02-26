@@ -1,83 +1,43 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a disk image volume.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DiskImageVolumeDescription" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DiskImageVolumeDescription implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     */
-    private Long size;
     /**
      * <p>
      * The volume identifier.
      * </p>
      */
     private String id;
-
     /**
      * <p>
      * The size of the volume, in GiB.
      * </p>
-     * 
-     * @param size
-     *        The size of the volume, in GiB.
      */
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * 
-     * @return The size of the volume, in GiB.
-     */
-
-    public Long getSize() {
-        return this.size;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * 
-     * @param size
-     *        The size of the volume, in GiB.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DiskImageVolumeDescription withSize(Long size) {
-        setSize(size);
-        return this;
-    }
+    private Long size;
 
     /**
      * <p>
@@ -111,8 +71,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * 
      * @param id
      *        The volume identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DiskImageVolumeDescription withId(String id) {
@@ -121,8 +80,48 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * 
+     * @param size
+     *        The size of the volume, in GiB.
+     */
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * 
+     * @return The size of the volume, in GiB.
+     */
+
+    public Long getSize() {
+        return this.size;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * 
+     * @param size
+     *        The size of the volume, in GiB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImageVolumeDescription withSize(Long size) {
+        setSize(size);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -132,10 +131,10 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getSize() != null)
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }
@@ -150,15 +149,13 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
         if (obj instanceof DiskImageVolumeDescription == false)
             return false;
         DiskImageVolumeDescription other = (DiskImageVolumeDescription) obj;
-        if (other.getSize() == null ^ this.getSize() == null)
-            return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getSize() == null ^ this.getSize() == null)
+            return false;
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         return true;
     }
@@ -168,10 +165,8 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         return hashCode;
     }
 
@@ -180,9 +175,8 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
         try {
             return (DiskImageVolumeDescription) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

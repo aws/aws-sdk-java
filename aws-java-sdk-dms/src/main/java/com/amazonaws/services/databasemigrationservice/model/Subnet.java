@@ -1,27 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Subnet" target="_top">AWS API Documentation</a>
  */
-public class Subnet implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Subnet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -74,8 +76,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param subnetIdentifier
      *        The subnet identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
@@ -92,8 +93,7 @@ public class Subnet implements Serializable, Cloneable {
      *        The Availability Zone of the subnet.
      */
 
-    public void setSubnetAvailabilityZone(
-            AvailabilityZone subnetAvailabilityZone) {
+    public void setSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
     }
 
@@ -116,12 +116,10 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param subnetAvailabilityZone
      *        The Availability Zone of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Subnet withSubnetAvailabilityZone(
-            AvailabilityZone subnetAvailabilityZone) {
+    public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         setSubnetAvailabilityZone(subnetAvailabilityZone);
         return this;
     }
@@ -158,8 +156,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @param subnetStatus
      *        The status of the subnet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Subnet withSubnetStatus(String subnetStatus) {
@@ -168,8 +165,8 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,12 +177,11 @@ public class Subnet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetIdentifier() != null)
-            sb.append("SubnetIdentifier: " + getSubnetIdentifier() + ",");
+            sb.append("SubnetIdentifier: ").append(getSubnetIdentifier()).append(",");
         if (getSubnetAvailabilityZone() != null)
-            sb.append("SubnetAvailabilityZone: " + getSubnetAvailabilityZone()
-                    + ",");
+            sb.append("SubnetAvailabilityZone: ").append(getSubnetAvailabilityZone()).append(",");
         if (getSubnetStatus() != null)
-            sb.append("SubnetStatus: " + getSubnetStatus());
+            sb.append("SubnetStatus: ").append(getSubnetStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -200,24 +196,17 @@ public class Subnet implements Serializable, Cloneable {
         if (obj instanceof Subnet == false)
             return false;
         Subnet other = (Subnet) obj;
-        if (other.getSubnetIdentifier() == null
-                ^ this.getSubnetIdentifier() == null)
+        if (other.getSubnetIdentifier() == null ^ this.getSubnetIdentifier() == null)
             return false;
-        if (other.getSubnetIdentifier() != null
-                && other.getSubnetIdentifier().equals(
-                        this.getSubnetIdentifier()) == false)
+        if (other.getSubnetIdentifier() != null && other.getSubnetIdentifier().equals(this.getSubnetIdentifier()) == false)
             return false;
-        if (other.getSubnetAvailabilityZone() == null
-                ^ this.getSubnetAvailabilityZone() == null)
+        if (other.getSubnetAvailabilityZone() == null ^ this.getSubnetAvailabilityZone() == null)
             return false;
-        if (other.getSubnetAvailabilityZone() != null
-                && other.getSubnetAvailabilityZone().equals(
-                        this.getSubnetAvailabilityZone()) == false)
+        if (other.getSubnetAvailabilityZone() != null && other.getSubnetAvailabilityZone().equals(this.getSubnetAvailabilityZone()) == false)
             return false;
         if (other.getSubnetStatus() == null ^ this.getSubnetStatus() == null)
             return false;
-        if (other.getSubnetStatus() != null
-                && other.getSubnetStatus().equals(this.getSubnetStatus()) == false)
+        if (other.getSubnetStatus() != null && other.getSubnetStatus().equals(this.getSubnetStatus()) == false)
             return false;
         return true;
     }
@@ -227,18 +216,9 @@ public class Subnet implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSubnetIdentifier() == null) ? 0 : getSubnetIdentifier()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubnetAvailabilityZone() == null) ? 0
-                        : getSubnetAvailabilityZone().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubnetStatus() == null) ? 0 : getSubnetStatus()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getSubnetIdentifier() == null) ? 0 : getSubnetIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSubnetAvailabilityZone() == null) ? 0 : getSubnetAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getSubnetStatus() == null) ? 0 : getSubnetStatus().hashCode());
         return hashCode;
     }
 
@@ -247,9 +227,13 @@ public class Subnet implements Serializable, Cloneable {
         try {
             return (Subnet) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.databasemigrationservice.model.transform.SubnetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

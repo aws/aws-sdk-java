@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.TimingInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
+import com.amazonaws.annotation.ThreadSafe;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -64,7 +64,7 @@ public class PredefinedMetricTransformer {
      */
     public List<MetricDatum> toMetricData(MetricType metricType, Request<?> request, Response<?> response) {
         if (metricType instanceof Field) {
-            // Predefined metrics across all aws http clients
+            // Predefined metrics across all AWS http clients
             Field predefined = (Field) metricType;
             switch(predefined) {
                 case HttpClientRetryCount:
@@ -72,13 +72,14 @@ public class PredefinedMetricTransformer {
                 case HttpClientPoolLeasedCount:
                 case HttpClientPoolPendingCount:
                     return metricOfCount(predefined, request, response);
-                case RequestCount:  // intentionally fall thru to reuse the same routine as RetryCount
+                case RequestCount:  // intentionally fall through to reuse the same routine as RetryCount
                 case RetryCount:
                     return metricOfRequestOrRetryCount(predefined, request, response);
+                case ThrottledRetryCount: // drop through
                 case RetryCapacityConsumed:
                     return counterMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);
-                case ResponseProcessingTime: // drop thru
-                case RequestSigningTime: // drop thru
+                case ResponseProcessingTime: // drop through
+                case RequestSigningTime: // drop through
                     return latencyMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);
                 case ClientExecuteTime:
                     return latencyOfClientExecuteTime(request, response);
@@ -135,7 +136,7 @@ public class PredefinedMetricTransformer {
         }
         int requestCount = counter.intValue();
         if (requestCount < 1) {
-            LogFactory.getLog(getClass()).warn(
+            LogFactory.getLog(getClass()).debug(
                 "request count must be at least one");
             return Collections.emptyList();
         }
@@ -283,7 +284,7 @@ public class PredefinedMetricTransformer {
         }
         int count = counter.intValue();
         if (count < 1) {
-            LogFactory.getLog(getClass()).warn("Count must be at least one");
+            LogFactory.getLog(getClass()).debug("Count must be at least one");
             return Collections.emptyList();
         }
         final List<MetricDatum> result = new ArrayList<MetricDatum>();

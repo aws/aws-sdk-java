@@ -1,121 +1,67 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CompleteMultipartUploadRequest Marshaller
+ * CompleteMultipartUploadRequestMarshaller
  */
-public class CompleteMultipartUploadRequestMarshaller
-        implements
-        Marshaller<Request<CompleteMultipartUploadRequest>, CompleteMultipartUploadRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CompleteMultipartUploadRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> UPLOADID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("uploadId").build();
+    private static final MarshallingInfo<String> ARCHIVESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-archive-size").build();
+    private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-sha256-tree-hash").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final CompleteMultipartUploadRequestMarshaller instance = new CompleteMultipartUploadRequestMarshaller();
 
-    public CompleteMultipartUploadRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static CompleteMultipartUploadRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CompleteMultipartUploadRequest> marshall(
-            CompleteMultipartUploadRequest completeMultipartUploadRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (completeMultipartUploadRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CompleteMultipartUploadRequest> request = new DefaultRequest<CompleteMultipartUploadRequest>(
-                completeMultipartUploadRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (completeMultipartUploadRequest.getArchiveSize() != null) {
-            request.addHeader("x-amz-archive-size",
-                    StringUtils.fromString(completeMultipartUploadRequest
-                            .getArchiveSize()));
+        try {
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getUploadId(), UPLOADID_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getArchiveSize(), ARCHIVESIZE_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getChecksum(), CHECKSUM_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (completeMultipartUploadRequest.getChecksum() != null) {
-            request.addHeader("x-amz-sha256-tree-hash", StringUtils
-                    .fromString(completeMultipartUploadRequest.getChecksum()));
-        }
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
-
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (completeMultipartUploadRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(completeMultipartUploadRequest
-                                                .getAccountId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (completeMultipartUploadRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(completeMultipartUploadRequest
-                                                .getVaultName()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{uploadId}",
-                        (completeMultipartUploadRequest.getUploadId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(completeMultipartUploadRequest
-                                                .getUploadId()), false)
-                                : "");
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-        }
-
-        return request;
     }
 
 }

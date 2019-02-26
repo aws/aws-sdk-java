@@ -1,6 +1,7 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package com.amazonaws.auth.policy.actions;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.auth.policy.Action;
 
@@ -9,7 +10,7 @@ import com.amazonaws.auth.policy.Action;
 /**
  * The available AWS access control policy actions for ${serviceAbbreviation}.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
  public enum ${serviceName}Actions implements Action {
 
     /** Represents any action executed on ${serviceAbbreviation}. */
@@ -17,6 +18,9 @@ import com.amazonaws.auth.policy.Action;
 
     <#list operations as operation>
         /** Action for the ${operation} operation. */
+        ${operation}("${actionPrefix}:${operation}"),
+    </#list>
+    <#list additionalOperations as operation>
         ${operation}("${actionPrefix}:${operation}"),
     </#list>
 

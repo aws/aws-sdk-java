@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,16 +64,11 @@ public class MetricAdmin implements MetricAdminMBean {
     }
     @Override
     public String getRegion() {
-        Regions region = AwsSdkMetrics.getRegion();
-        return region == null ? null : region.getName();
+        return AwsSdkMetrics.getRegionName();
     }
     @Override
     public void setRegion(String region) {
-        if (region == null || region.isEmpty())
-            AwsSdkMetrics.setRegion(null);
-        else {
-            AwsSdkMetrics.setRegion(Regions.fromName(region));
-        }
+        AwsSdkMetrics.setRegion(region);
     }
     @Override
     public Integer getMetricQueueSize() {
@@ -82,7 +77,7 @@ public class MetricAdmin implements MetricAdminMBean {
     @Override
     public void setMetricQueueSize(Integer metricQueueSize) {
         AwsSdkMetrics.setMetricQueueSize(metricQueueSize);
-        
+
     }
     @Override
     public Integer getQueuePollTimeoutMilli() {
@@ -128,9 +123,9 @@ public class MetricAdmin implements MetricAdminMBean {
     }
     @Override
     public String getCredentialFile() {
-        return AwsSdkMetrics.getCredentailFile();
+        return AwsSdkMetrics.getCredentialFile();
     }
-    
+
     @Override
     public void setCredentialFile(String filepath)
             throws FileNotFoundException, IOException {

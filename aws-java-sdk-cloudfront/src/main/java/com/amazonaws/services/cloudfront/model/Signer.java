@@ -1,54 +1,91 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
- * A complex type that lists the AWS accounts that were included in the
- * TrustedSigners complex type, as well as their active CloudFront key pair IDs,
- * if any.
+ * <p>
+ * A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as
+ * well as their active CloudFront key pair IDs, if any.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Signer" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Signer implements Serializable, Cloneable {
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution
-     * can created signed URLs, or an AWS account number. Omit the dashes in the
-     * account number.
+     * <p>
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS account number.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String awsAccountNumber;
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that
-     * are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
      */
     private KeyPairIds keyPairIds;
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution
-     * can created signed URLs, or an AWS account number. Omit the dashes in the
-     * account number.
+     * <p>
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS account number.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param awsAccountNumber
-     *        Specifies an AWS account that can create signed URLs. Values:
-     *        self, which indicates that the AWS account that was used to create
-     *        the distribution can created signed URLs, or an AWS account
-     *        number. Omit the dashes in the account number.
+     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
+     *        distribution. Valid values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>self</code>, which is the AWS account used to create the distribution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An AWS account number.
+     *        </p>
+     *        </li>
      */
 
     public void setAwsAccountNumber(String awsAccountNumber) {
@@ -56,15 +93,36 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution
-     * can created signed URLs, or an AWS account number. Omit the dashes in the
-     * account number.
+     * <p>
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS account number.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specifies an AWS account that can create signed URLs. Values:
-     *         self, which indicates that the AWS account that was used to
-     *         create the distribution can created signed URLs, or an AWS
-     *         account number. Omit the dashes in the account number.
+     * @return An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
+     *         distribution. Valid values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>self</code>, which is the AWS account used to create the distribution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An AWS account number.
+     *         </p>
+     *         </li>
      */
 
     public String getAwsAccountNumber() {
@@ -72,18 +130,38 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies an AWS account that can create signed URLs. Values: self, which
-     * indicates that the AWS account that was used to create the distribution
-     * can created signed URLs, or an AWS account number. Omit the dashes in the
-     * account number.
+     * <p>
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS account number.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param awsAccountNumber
-     *        Specifies an AWS account that can create signed URLs. Values:
-     *        self, which indicates that the AWS account that was used to create
-     *        the distribution can created signed URLs, or an AWS account
-     *        number. Omit the dashes in the account number.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
+     *        distribution. Valid values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>self</code>, which is the AWS account used to create the distribution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An AWS account number.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Signer withAwsAccountNumber(String awsAccountNumber) {
@@ -92,12 +170,14 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that
-     * are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
      * 
      * @param keyPairIds
-     *        A complex type that lists the active CloudFront key pairs, if any,
-     *        that are associated with AwsAccountNumber.
+     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     *        <code>AwsAccountNumber</code>.
      */
 
     public void setKeyPairIds(KeyPairIds keyPairIds) {
@@ -105,11 +185,13 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that
-     * are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
      * 
-     * @return A complex type that lists the active CloudFront key pairs, if
-     *         any, that are associated with AwsAccountNumber.
+     * @return A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     *         <code>AwsAccountNumber</code>.
      */
 
     public KeyPairIds getKeyPairIds() {
@@ -117,14 +199,15 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that
-     * are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
      * 
      * @param keyPairIds
-     *        A complex type that lists the active CloudFront key pairs, if any,
-     *        that are associated with AwsAccountNumber.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     *        <code>AwsAccountNumber</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Signer withKeyPairIds(KeyPairIds keyPairIds) {
@@ -133,8 +216,8 @@ public class Signer implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -145,9 +228,9 @@ public class Signer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAwsAccountNumber() != null)
-            sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");
+            sb.append("AwsAccountNumber: ").append(getAwsAccountNumber()).append(",");
         if (getKeyPairIds() != null)
-            sb.append("KeyPairIds: " + getKeyPairIds());
+            sb.append("KeyPairIds: ").append(getKeyPairIds());
         sb.append("}");
         return sb.toString();
     }
@@ -162,17 +245,13 @@ public class Signer implements Serializable, Cloneable {
         if (obj instanceof Signer == false)
             return false;
         Signer other = (Signer) obj;
-        if (other.getAwsAccountNumber() == null
-                ^ this.getAwsAccountNumber() == null)
+        if (other.getAwsAccountNumber() == null ^ this.getAwsAccountNumber() == null)
             return false;
-        if (other.getAwsAccountNumber() != null
-                && other.getAwsAccountNumber().equals(
-                        this.getAwsAccountNumber()) == false)
+        if (other.getAwsAccountNumber() != null && other.getAwsAccountNumber().equals(this.getAwsAccountNumber()) == false)
             return false;
         if (other.getKeyPairIds() == null ^ this.getKeyPairIds() == null)
             return false;
-        if (other.getKeyPairIds() != null
-                && other.getKeyPairIds().equals(this.getKeyPairIds()) == false)
+        if (other.getKeyPairIds() != null && other.getKeyPairIds().equals(this.getKeyPairIds()) == false)
             return false;
         return true;
     }
@@ -182,12 +261,8 @@ public class Signer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAwsAccountNumber() == null) ? 0 : getAwsAccountNumber()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getKeyPairIds() == null) ? 0 : getKeyPairIds().hashCode());
+        hashCode = prime * hashCode + ((getAwsAccountNumber() == null) ? 0 : getAwsAccountNumber().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairIds() == null) ? 0 : getKeyPairIds().hashCode());
         return hashCode;
     }
 
@@ -196,9 +271,8 @@ public class Signer implements Serializable, Cloneable {
         try {
             return (Signer) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

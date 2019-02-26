@@ -1,108 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAssessmentRunAgentsRequest Marshaller
+ * ListAssessmentRunAgentsRequestMarshaller
  */
-public class ListAssessmentRunAgentsRequestMarshaller
-        implements
-        Marshaller<Request<ListAssessmentRunAgentsRequest>, ListAssessmentRunAgentsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ListAssessmentRunAgentsRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTRUNARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunArn").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
-    public ListAssessmentRunAgentsRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAssessmentRunAgentsRequestMarshaller instance = new ListAssessmentRunAgentsRequestMarshaller();
+
+    public static ListAssessmentRunAgentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAssessmentRunAgentsRequest> marshall(
-            ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAssessmentRunAgentsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<ListAssessmentRunAgentsRequest> request = new DefaultRequest<ListAssessmentRunAgentsRequest>(
-                listAssessmentRunAgentsRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target",
-                "InspectorService.ListAssessmentRunAgents");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listAssessmentRunAgentsRequest.getAssessmentRunArn() != null) {
-                jsonGenerator.writeFieldName("assessmentRunArn").writeValue(
-                        listAssessmentRunAgentsRequest.getAssessmentRunArn());
-            }
-            if (listAssessmentRunAgentsRequest.getFilter() != null) {
-                jsonGenerator.writeFieldName("filter");
-                AgentFilterJsonMarshaller.getInstance().marshall(
-                        listAssessmentRunAgentsRequest.getFilter(),
-                        jsonGenerator);
-            }
-            if (listAssessmentRunAgentsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        listAssessmentRunAgentsRequest.getNextToken());
-            }
-            if (listAssessmentRunAgentsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(
-                        listAssessmentRunAgentsRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listAssessmentRunAgentsRequest.getAssessmentRunArn(), ASSESSMENTRUNARN_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunAgentsRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunAgentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunAgentsRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

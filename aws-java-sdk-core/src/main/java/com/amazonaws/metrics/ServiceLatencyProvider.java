@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,12 +15,12 @@
 package com.amazonaws.metrics;
 
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.util.TimingInfo;
 
 /**
- * Latency metric information provider.
+ * ApiCallLatency metric information provider.
  */
 @NotThreadSafe
 public class ServiceLatencyProvider {

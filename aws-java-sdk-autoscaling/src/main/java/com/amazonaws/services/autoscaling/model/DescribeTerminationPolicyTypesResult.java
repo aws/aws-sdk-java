@@ -1,53 +1,55 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeTerminationPolicyTypesResult implements Serializable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (
-     * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
-     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicyTypes;
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (
-     * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
-     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
-     * @return The termination policies supported by Auto Scaling (
-     *         <code>OldestInstance</code>,
-     *         <code>OldestLaunchConfiguration</code>,
-     *         <code>NewestInstance</code>,
-     *         <code>ClosestToNextInstanceHour</code>, and <code>Default</code>
-     *         ).
+     * @return The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     *         <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
+     *         <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *         <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *         <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *         <a>MixedInstancesPolicy</a>.
      */
 
     public java.util.List<String> getTerminationPolicyTypes() {
@@ -59,60 +61,58 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (
-     * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
-     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (
-     *        <code>OldestInstance</code>,
-     *        <code>OldestLaunchConfiguration</code>,
-     *        <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
      */
 
-    public void setTerminationPolicyTypes(
-            java.util.Collection<String> terminationPolicyTypes) {
+    public void setTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {
         if (terminationPolicyTypes == null) {
             this.terminationPolicyTypes = null;
             return;
         }
 
-        this.terminationPolicyTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                terminationPolicyTypes);
+        this.terminationPolicyTypes = new com.amazonaws.internal.SdkInternalList<String>(terminationPolicyTypes);
     }
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (
-     * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
-     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTerminationPolicyTypes(java.util.Collection)} or
-     * {@link #withTerminationPolicyTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTerminationPolicyTypes(java.util.Collection)} or
+     * {@link #withTerminationPolicyTypes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (
-     *        <code>OldestInstance</code>,
-     *        <code>OldestLaunchConfiguration</code>,
-     *        <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(
-            String... terminationPolicyTypes) {
+    public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(String... terminationPolicyTypes) {
         if (this.terminationPolicyTypes == null) {
-            setTerminationPolicyTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    terminationPolicyTypes.length));
+            setTerminationPolicyTypes(new com.amazonaws.internal.SdkInternalList<String>(terminationPolicyTypes.length));
         }
         for (String ele : terminationPolicyTypes) {
             this.terminationPolicyTypes.add(ele);
@@ -122,31 +122,31 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (
-     * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
-     * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (
-     *        <code>OldestInstance</code>,
-     *        <code>OldestLaunchConfiguration</code>,
-     *        <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(
-            java.util.Collection<String> terminationPolicyTypes) {
+    public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {
         setTerminationPolicyTypes(terminationPolicyTypes);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -157,7 +157,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerminationPolicyTypes() != null)
-            sb.append("TerminationPolicyTypes: " + getTerminationPolicyTypes());
+            sb.append("TerminationPolicyTypes: ").append(getTerminationPolicyTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -172,12 +172,9 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
         if (obj instanceof DescribeTerminationPolicyTypesResult == false)
             return false;
         DescribeTerminationPolicyTypesResult other = (DescribeTerminationPolicyTypesResult) obj;
-        if (other.getTerminationPolicyTypes() == null
-                ^ this.getTerminationPolicyTypes() == null)
+        if (other.getTerminationPolicyTypes() == null ^ this.getTerminationPolicyTypes() == null)
             return false;
-        if (other.getTerminationPolicyTypes() != null
-                && other.getTerminationPolicyTypes().equals(
-                        this.getTerminationPolicyTypes()) == false)
+        if (other.getTerminationPolicyTypes() != null && other.getTerminationPolicyTypes().equals(this.getTerminationPolicyTypes()) == false)
             return false;
         return true;
     }
@@ -187,10 +184,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getTerminationPolicyTypes() == null) ? 0
-                        : getTerminationPolicyTypes().hashCode());
+        hashCode = prime * hashCode + ((getTerminationPolicyTypes() == null) ? 0 : getTerminationPolicyTypes().hashCode());
         return hashCode;
     }
 
@@ -199,9 +193,8 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
         try {
             return (DescribeTerminationPolicyTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,54 +1,54 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the AWS Config rules for which you want details. If you do
-     * not specify any names, AWS Config returns details for all your rules.
+     * The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns
+     * details for all your rules.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> configRuleNames;
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The names of the AWS Config rules for which you want details. If you do
-     * not specify any names, AWS Config returns details for all your rules.
+     * The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns
+     * details for all your rules.
      * </p>
      * 
-     * @return The names of the AWS Config rules for which you want details. If
-     *         you do not specify any names, AWS Config returns details for all
-     *         your rules.
+     * @return The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config
+     *         returns details for all your rules.
      */
 
     public java.util.List<String> getConfigRuleNames() {
@@ -60,14 +60,13 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the AWS Config rules for which you want details. If you do
-     * not specify any names, AWS Config returns details for all your rules.
+     * The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns
+     * details for all your rules.
      * </p>
      * 
      * @param configRuleNames
-     *        The names of the AWS Config rules for which you want details. If
-     *        you do not specify any names, AWS Config returns details for all
-     *        your rules.
+     *        The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config
+     *        returns details for all your rules.
      */
 
     public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
@@ -76,35 +75,29 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.configRuleNames = new com.amazonaws.internal.SdkInternalList<String>(
-                configRuleNames);
+        this.configRuleNames = new com.amazonaws.internal.SdkInternalList<String>(configRuleNames);
     }
 
     /**
      * <p>
-     * The names of the AWS Config rules for which you want details. If you do
-     * not specify any names, AWS Config returns details for all your rules.
+     * The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns
+     * details for all your rules.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setConfigRuleNames(java.util.Collection)} or
-     * {@link #withConfigRuleNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigRuleNames(java.util.Collection)} or {@link #withConfigRuleNames(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param configRuleNames
-     *        The names of the AWS Config rules for which you want details. If
-     *        you do not specify any names, AWS Config returns details for all
-     *        your rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config
+     *        returns details for all your rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigRulesRequest withConfigRuleNames(
-            String... configRuleNames) {
+    public DescribeConfigRulesRequest withConfigRuleNames(String... configRuleNames) {
         if (this.configRuleNames == null) {
-            setConfigRuleNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    configRuleNames.length));
+            setConfigRuleNames(new com.amazonaws.internal.SdkInternalList<String>(configRuleNames.length));
         }
         for (String ele : configRuleNames) {
             this.configRuleNames.add(ele);
@@ -114,33 +107,30 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the AWS Config rules for which you want details. If you do
-     * not specify any names, AWS Config returns details for all your rules.
+     * The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns
+     * details for all your rules.
      * </p>
      * 
      * @param configRuleNames
-     *        The names of the AWS Config rules for which you want details. If
-     *        you do not specify any names, AWS Config returns details for all
-     *        your rules.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config
+     *        returns details for all your rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeConfigRulesRequest withConfigRuleNames(
-            java.util.Collection<String> configRuleNames) {
+    public DescribeConfigRulesRequest withConfigRuleNames(java.util.Collection<String> configRuleNames) {
         setConfigRuleNames(configRuleNames);
         return this;
     }
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -149,13 +139,12 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The <code>nextToken</code> string returned on a previous page
-     *         that you use to get the next page of results in a paginated
-     *         response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -164,15 +153,14 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeConfigRulesRequest withNextToken(String nextToken) {
@@ -181,8 +169,8 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -193,9 +181,9 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames() + ",");
+            sb.append("ConfigRuleNames: ").append(getConfigRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -210,16 +198,13 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeConfigRulesRequest == false)
             return false;
         DescribeConfigRulesRequest other = (DescribeConfigRulesRequest) obj;
-        if (other.getConfigRuleNames() == null
-                ^ this.getConfigRuleNames() == null)
+        if (other.getConfigRuleNames() == null ^ this.getConfigRuleNames() == null)
             return false;
-        if (other.getConfigRuleNames() != null
-                && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false)
+        if (other.getConfigRuleNames() != null && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -229,12 +214,8 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -242,4 +223,5 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
     public DescribeConfigRulesRequest clone() {
         return (DescribeConfigRulesRequest) super.clone();
     }
+
 }

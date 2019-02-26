@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a create deployment operation.
+ * Represents the input of a CreateDeployment operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -48,14 +48,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     private RevisionLocation revision;
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be
-     * used as the default. If the deployment group does not have a deployment
-     * configuration associated with it, then CodeDeployDefault.OneAtATime will
-     * be used by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      */
     private String deploymentConfigName;
@@ -67,29 +64,72 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to an instance to fail, the deployment to that
-     * instance will not be considered to have failed at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     * fail, the deployment to that instance is considered to have failed at that point and continues on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to an instance, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     * fail to an instance, the deployment to that instance stops, and the deployment to that instance is considered to
+     * have failed.
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     */
+    private TargetInstances targetInstances;
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a deployment is created.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that are not running the latest application
+     * revision.
+     * </p>
+     */
+    private Boolean updateOutdatedInstancesOnly;
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String fileExistsBehavior;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the
-     *        applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -98,12 +138,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the
-     *         applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -112,15 +150,12 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable
-     * IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the
-     *        applicable IAM user or AWS account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withApplicationName(String applicationName) {
@@ -160,12 +195,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param deploymentGroupName
      *        The name of the deployment group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withDeploymentGroupName(
-            String deploymentGroupName) {
+    public CreateDeploymentRequest withDeploymentGroupName(String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
         return this;
     }
@@ -202,8 +235,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param revision
      *        The type and location of the revision to deploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withRevision(RevisionLocation revision) {
@@ -213,24 +245,19 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be
-     * used as the default. If the deployment group does not have a deployment
-     * configuration associated with it, then CodeDeployDefault.OneAtATime will
-     * be used by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the
-     *        applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *        <p>
-     *        If not specified, the value configured in the deployment group
-     *        will be used as the default. If the deployment group does not have
-     *        a deployment configuration associated with it, then
-     *        CodeDeployDefault.OneAtATime will be used by default.
+     *        If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *        group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by
+     *        default.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -239,23 +266,18 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be
-     * used as the default. If the deployment group does not have a deployment
-     * configuration associated with it, then CodeDeployDefault.OneAtATime will
-     * be used by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the
-     *         applicable IAM user or AWS account.</p>
+     * @return The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *         <p>
-     *         If not specified, the value configured in the deployment group
-     *         will be used as the default. If the deployment group does not
-     *         have a deployment configuration associated with it, then
-     *         CodeDeployDefault.OneAtATime will be used by default.
+     *         If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *         group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used
+     *         by default.
      */
 
     public String getDeploymentConfigName() {
@@ -264,30 +286,23 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be
-     * used as the default. If the deployment group does not have a deployment
-     * configuration associated with it, then CodeDeployDefault.OneAtATime will
-     * be used by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the
-     *        applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *        <p>
-     *        If not specified, the value configured in the deployment group
-     *        will be used as the default. If the deployment group does not have
-     *        a deployment configuration associated with it, then
-     *        CodeDeployDefault.OneAtATime will be used by default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *        group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by
+     *        default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withDeploymentConfigName(
-            String deploymentConfigName) {
+    public CreateDeploymentRequest withDeploymentConfigName(String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
         return this;
     }
@@ -324,8 +339,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A comment about the deployment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withDescription(String description) {
@@ -335,60 +349,49 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to an instance to fail, the deployment to that
-     * instance will not be considered to have failed at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     * fail, the deployment to that instance is considered to have failed at that point and continues on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to an instance, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     * fail to an instance, the deployment to that instance stops, and the deployment to that instance is considered to
+     * have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If set to true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to an instance to fail, the deployment
-     *        to that instance will not be considered to have failed at that
-     *        point and will continue on to the BeforeInstall deployment
-     *        lifecycle event.</p>
+     *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     *        instance to fail, the deployment to that instance is considered to have failed at that point and continues
+     *        on to the BeforeInstall deployment lifecycle event. </p>
      *        <p>
-     *        If set to false or not specified, then if the deployment causes
-     *        the ApplicationStop deployment lifecycle event to fail to an
-     *        instance, the deployment to that instance will stop, and the
-     *        deployment to that instance will be considered to have failed.
+     *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
+     *        event to fail to an instance, the deployment to that instance stops, and the deployment to that instance
+     *        is considered to have failed.
      */
 
-    public void setIgnoreApplicationStopFailures(
-            Boolean ignoreApplicationStopFailures) {
+    public void setIgnoreApplicationStopFailures(Boolean ignoreApplicationStopFailures) {
         this.ignoreApplicationStopFailures = ignoreApplicationStopFailures;
     }
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to an instance to fail, the deployment to that
-     * instance will not be considered to have failed at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     * fail, the deployment to that instance is considered to have failed at that point and continues on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to an instance, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     * fail to an instance, the deployment to that instance stops, and the deployment to that instance is considered to
+     * have failed.
      * </p>
      * 
-     * @return If set to true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to an instance to fail, the deployment
-     *         to that instance will not be considered to have failed at that
-     *         point and will continue on to the BeforeInstall deployment
-     *         lifecycle event.</p>
+     * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     *         instance to fail, the deployment to that instance is considered to have failed at that point and
+     *         continues on to the BeforeInstall deployment lifecycle event. </p>
      *         <p>
-     *         If set to false or not specified, then if the deployment causes
-     *         the ApplicationStop deployment lifecycle event to fail to an
-     *         instance, the deployment to that instance will stop, and the
-     *         deployment to that instance will be considered to have failed.
+     *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
+     *         event to fail to an instance, the deployment to that instance stops, and the deployment to that instance
+     *         is considered to have failed.
      */
 
     public Boolean getIgnoreApplicationStopFailures() {
@@ -397,63 +400,51 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to an instance to fail, the deployment to that
-     * instance will not be considered to have failed at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     * fail, the deployment to that instance is considered to have failed at that point and continues on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to an instance, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     * fail to an instance, the deployment to that instance stops, and the deployment to that instance is considered to
+     * have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If set to true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to an instance to fail, the deployment
-     *        to that instance will not be considered to have failed at that
-     *        point and will continue on to the BeforeInstall deployment
-     *        lifecycle event.</p>
+     *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     *        instance to fail, the deployment to that instance is considered to have failed at that point and continues
+     *        on to the BeforeInstall deployment lifecycle event. </p>
      *        <p>
-     *        If set to false or not specified, then if the deployment causes
-     *        the ApplicationStop deployment lifecycle event to fail to an
-     *        instance, the deployment to that instance will stop, and the
-     *        deployment to that instance will be considered to have failed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
+     *        event to fail to an instance, the deployment to that instance stops, and the deployment to that instance
+     *        is considered to have failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withIgnoreApplicationStopFailures(
-            Boolean ignoreApplicationStopFailures) {
+    public CreateDeploymentRequest withIgnoreApplicationStopFailures(Boolean ignoreApplicationStopFailures) {
         setIgnoreApplicationStopFailures(ignoreApplicationStopFailures);
         return this;
     }
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to an instance to fail, the deployment to that
-     * instance will not be considered to have failed at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
+     * fail, the deployment to that instance is considered to have failed at that point and continues on to the
+     * BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to an instance, the
-     * deployment to that instance will stop, and the deployment to that
-     * instance will be considered to have failed.
+     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
+     * fail to an instance, the deployment to that instance stops, and the deployment to that instance is considered to
+     * have failed.
      * </p>
      * 
-     * @return If set to true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to an instance to fail, the deployment
-     *         to that instance will not be considered to have failed at that
-     *         point and will continue on to the BeforeInstall deployment
-     *         lifecycle event.</p>
+     * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
+     *         instance to fail, the deployment to that instance is considered to have failed at that point and
+     *         continues on to the BeforeInstall deployment lifecycle event. </p>
      *         <p>
-     *         If set to false or not specified, then if the deployment causes
-     *         the ApplicationStop deployment lifecycle event to fail to an
-     *         instance, the deployment to that instance will stop, and the
-     *         deployment to that instance will be considered to have failed.
+     *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
+     *         event to fail to an instance, the deployment to that instance stops, and the deployment to that instance
+     *         is considered to have failed.
      */
 
     public Boolean isIgnoreApplicationStopFailures() {
@@ -461,8 +452,436 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that belong to the replacement environment in a blue/green deployment.
+     */
+
+    public void setTargetInstances(TargetInstances targetInstances) {
+        this.targetInstances = targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @return Information about the instances that belong to the replacement environment in a blue/green deployment.
+     */
+
+    public TargetInstances getTargetInstances() {
+        return this.targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withTargetInstances(TargetInstances targetInstances) {
+        setTargetInstances(targetInstances);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a deployment is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added when a deployment is created.
+     */
+
+    public void setAutoRollbackConfiguration(AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a deployment is created.
+     * </p>
+     * 
+     * @return Configuration information for an automatic rollback that is added when a deployment is created.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a deployment is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added when a deployment is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withAutoRollbackConfiguration(AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that are not running the latest application
+     * revision.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether to deploy to all instances or only to instances that are not running the latest
+     *        application revision.
+     */
+
+    public void setUpdateOutdatedInstancesOnly(Boolean updateOutdatedInstancesOnly) {
+        this.updateOutdatedInstancesOnly = updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that are not running the latest application
+     * revision.
+     * </p>
+     * 
+     * @return Indicates whether to deploy to all instances or only to instances that are not running the latest
+     *         application revision.
+     */
+
+    public Boolean getUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that are not running the latest application
+     * revision.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether to deploy to all instances or only to instances that are not running the latest
+     *        application revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withUpdateOutdatedInstancesOnly(Boolean updateOutdatedInstancesOnly) {
+        setUpdateOutdatedInstancesOnly(updateOutdatedInstancesOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that are not running the latest application
+     * revision.
+     * </p>
+     * 
+     * @return Indicates whether to deploy to all instances or only to instances that are not running the latest
+     *         application revision.
+     */
+
+    public Boolean isUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(String fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *         weren't part of the previous successful deployment.</p>
+     *         <p>
+     *         The fileExistsBehavior parameter takes any of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *         version already on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *         </p>
+     *         </li>
+     * @see FileExistsBehavior
+     */
+
+    public String getFileExistsBehavior() {
+        return this.fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(String fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        withFileExistsBehavior(fileExistsBehavior);
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -473,19 +892,25 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupName() != null)
-            sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
+            sb.append("DeploymentGroupName: ").append(getDeploymentGroupName()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName()
-                    + ",");
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getIgnoreApplicationStopFailures() != null)
-            sb.append("IgnoreApplicationStopFailures: "
-                    + getIgnoreApplicationStopFailures());
+            sb.append("IgnoreApplicationStopFailures: ").append(getIgnoreApplicationStopFailures()).append(",");
+        if (getTargetInstances() != null)
+            sb.append("TargetInstances: ").append(getTargetInstances()).append(",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
+        if (getUpdateOutdatedInstancesOnly() != null)
+            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly()).append(",");
+        if (getFileExistsBehavior() != null)
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -500,42 +925,46 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         if (obj instanceof CreateDeploymentRequest == false)
             return false;
         CreateDeploymentRequest other = (CreateDeploymentRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getDeploymentGroupName() == null
-                ^ this.getDeploymentGroupName() == null)
+        if (other.getDeploymentGroupName() == null ^ this.getDeploymentGroupName() == null)
             return false;
-        if (other.getDeploymentGroupName() != null
-                && other.getDeploymentGroupName().equals(
-                        this.getDeploymentGroupName()) == false)
+        if (other.getDeploymentGroupName() != null && other.getDeploymentGroupName().equals(this.getDeploymentGroupName()) == false)
             return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
-        if (other.getRevision() != null
-                && other.getRevision().equals(this.getRevision()) == false)
+        if (other.getRevision() != null && other.getRevision().equals(this.getRevision()) == false)
             return false;
-        if (other.getDeploymentConfigName() == null
-                ^ this.getDeploymentConfigName() == null)
+        if (other.getDeploymentConfigName() == null ^ this.getDeploymentConfigName() == null)
             return false;
-        if (other.getDeploymentConfigName() != null
-                && other.getDeploymentConfigName().equals(
-                        this.getDeploymentConfigName()) == false)
+        if (other.getDeploymentConfigName() != null && other.getDeploymentConfigName().equals(this.getDeploymentConfigName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getIgnoreApplicationStopFailures() == null
-                ^ this.getIgnoreApplicationStopFailures() == null)
+        if (other.getIgnoreApplicationStopFailures() == null ^ this.getIgnoreApplicationStopFailures() == null)
             return false;
         if (other.getIgnoreApplicationStopFailures() != null
-                && other.getIgnoreApplicationStopFailures().equals(
-                        this.getIgnoreApplicationStopFailures()) == false)
+                && other.getIgnoreApplicationStopFailures().equals(this.getIgnoreApplicationStopFailures()) == false)
+            return false;
+        if (other.getTargetInstances() == null ^ this.getTargetInstances() == null)
+            return false;
+        if (other.getTargetInstances() != null && other.getTargetInstances().equals(this.getTargetInstances()) == false)
+            return false;
+        if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() == null ^ this.getUpdateOutdatedInstancesOnly() == null)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() != null && other.getUpdateOutdatedInstancesOnly().equals(this.getUpdateOutdatedInstancesOnly()) == false)
+            return false;
+        if (other.getFileExistsBehavior() == null ^ this.getFileExistsBehavior() == null)
+            return false;
+        if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
             return false;
         return true;
     }
@@ -545,27 +974,16 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentGroupName() == null) ? 0
-                        : getDeploymentGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRevision() == null) ? 0 : getRevision().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentConfigName() == null) ? 0
-                        : getDeploymentConfigName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIgnoreApplicationStopFailures() == null) ? 0
-                        : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode());
+        hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIgnoreApplicationStopFailures() == null) ? 0 : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime * hashCode + ((getTargetInstances() == null) ? 0 : getTargetInstances().hashCode());
+        hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
+        hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
         return hashCode;
     }
 
@@ -573,4 +991,5 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     public CreateDeploymentRequest clone() {
         return (CreateDeploymentRequest) super.clone();
     }
+
 }

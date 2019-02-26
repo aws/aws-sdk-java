@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -39,7 +40,6 @@ import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 
 /**
  * An S3 Link that works with {@link DynamoDBMapper}.
@@ -109,7 +109,7 @@ public class S3Link {
         this(s3cc, new ID(bucketName, key));
     }
 
-    S3Link(S3ClientCache s3cc, Region region, String bucketName, String key) {
+    S3Link(S3ClientCache s3cc, String region, String bucketName, String key) {
         this(s3cc, new ID(region, bucketName, key));
     }
 
@@ -133,8 +133,27 @@ public class S3Link {
         return id.getBucket();
     }
 
+    /**
+     * Returns the S3 region in {@link Region} format.
+     * <p>
+     *     Do not use this method if {@link S3Link} is created with a region not in {@link Region} enum.
+     *     Use {@link #getRegion()} instead.
+     * </p>
+     *
+     * @return S3 region.
+     */
     public Region getS3Region() {
-        return Region.fromValue(id.getRegionId());
+        return Region.fromValue(getRegion());
+    }
+
+    /**
+     * Returns the S3 region as string.
+     *
+     * @return region provided when creating the S3Link object.
+     *         If no region is provided during S3Link creation, returns us-east-1.
+     */
+    public String getRegion() {
+       return id.getRegionId() == null ? "us-east-1" : id.getRegionId();
     }
 
     /**
@@ -155,11 +174,11 @@ public class S3Link {
     }
 
     public AmazonS3 getAmazonS3Client() {
-        return s3cc.getClient(getS3Region());
+        return s3cc.getClient(getRegion());
     }
 
     public TransferManager getTransferManager() {
-        return s3cc.getTransferManager(getS3Region());
+        return s3cc.getTransferManager(getRegion());
     }
 
     /**
@@ -357,7 +376,7 @@ public class S3Link {
             }
         } catch (IOException ioe) {
             objectContent.abort();
-            throw new AmazonClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
+            throw new SdkClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
         } finally {
             try { objectContent.close(); } catch (IOException ioe) {}
         }
@@ -385,7 +404,7 @@ public class S3Link {
         ID(String bucketName, String key) {
             this.s3 = new S3(bucketName, key);
         }
-        ID(Region region, String bucketName, String key) {
+        ID(String region, String bucketName, String key) {
             this.s3 = new S3(region, bucketName, key);
         }
         ID(S3 s3) {
@@ -456,22 +475,16 @@ public class S3Link {
         /**
          * Constructs a new {@link S3} with all the required parameters.
          *
+         * @param region
+         *            The region where the S3 object is stored.
          * @param bucket
          *            The name of the bucket containing the desired object.
          * @param key
          *            The key in the specified bucket under which the object is
          *            stored.
          */
-        S3(Region region, String bucket, String key) {
-            if ( region == null ) {
-                if ( BucketNameUtils.isDNSBucketName(bucket) ) {
-                    this.regionId = Region.US_Standard.getFirstRegionId();
-                } else {
-                    throw new IllegalArgumentException("Region must be specified for bucket that cannot be addressed using virtual host style");
-                }
-            } else {
-                this.regionId = region.getFirstRegionId();
-            }
+        S3(String region, String bucket, String key) {
+            this.regionId = region;
             this.bucket = bucket;
             this.key = key;
         }
@@ -501,4 +514,61 @@ public class S3Link {
             return regionId;
         }
     }
+
+    /**
+     * {@link S3Link} factory.
+     */
+    public static final class Factory implements DynamoDBTypeConverter<String,S3Link> {
+        static final Factory DEFAULT = new Factory((S3ClientCache)null);
+
+        public static final Factory of(final AWSCredentialsProvider provider) {
+            return provider == null ? DEFAULT : new Factory(new S3ClientCache(provider));
+        }
+
+        private final S3ClientCache s3cc;
+
+        public Factory(final S3ClientCache s3cc) {
+            this.s3cc = s3cc;
+        }
+
+        public S3Link createS3Link(Region s3region, String bucketName, String key) {
+            return createS3Link(convertRegionToString(s3region, bucketName), bucketName, key);
+        }
+
+        public S3Link createS3Link(String s3region, String bucketName, String key) {
+            if (getS3ClientCache() == null) {
+                throw new IllegalStateException("Mapper must be constructed with S3 AWS Credentials to create S3Link");
+            }
+            return new S3Link(getS3ClientCache(), s3region, bucketName, key);
+        }
+
+        public S3ClientCache getS3ClientCache() {
+            return this.s3cc;
+        }
+
+        @Override
+        public String convert(final S3Link o) {
+            return o.getBucketName() == null || o.getKey() == null ? null : o.toJson();
+        }
+
+        @Override
+        public S3Link unconvert(final String o) {
+            return S3Link.fromJson(getS3ClientCache(), o);
+        }
+    }
+
+    private static String convertRegionToString(Region region, String bucketName) {
+        String regionAsString;
+        if (region == null) {
+            if (BucketNameUtils.isDNSBucketName(bucketName)) {
+                regionAsString = Region.US_Standard.getFirstRegionId();
+            } else {
+                throw new IllegalArgumentException("Region must be specified for bucket that cannot be addressed using virtual host style");
+            }
+        } else {
+            regionAsString = region.getFirstRegionId();
+        }
+        return regionAsString;
+    }
+
 }

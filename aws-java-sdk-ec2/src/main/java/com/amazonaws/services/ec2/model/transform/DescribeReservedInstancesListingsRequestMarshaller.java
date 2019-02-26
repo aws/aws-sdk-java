@@ -1,98 +1,81 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DescribeReservedInstancesListingsRequest Marshaller
  */
 
-public class DescribeReservedInstancesListingsRequestMarshaller
-        implements
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeReservedInstancesListingsRequestMarshaller implements
         Marshaller<Request<DescribeReservedInstancesListingsRequest>, DescribeReservedInstancesListingsRequest> {
 
-    public Request<DescribeReservedInstancesListingsRequest> marshall(
-            DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest) {
+    public Request<DescribeReservedInstancesListingsRequest> marshall(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest) {
 
         if (describeReservedInstancesListingsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeReservedInstancesListingsRequest> request = new DefaultRequest<DescribeReservedInstancesListingsRequest>(
                 describeReservedInstancesListingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesListings");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
-            request.addParameter("ReservedInstancesId", StringUtils
-                    .fromString(describeReservedInstancesListingsRequest
-                            .getReservedInstancesId()));
-        }
-
-        if (describeReservedInstancesListingsRequest
-                .getReservedInstancesListingId() != null) {
-            request.addParameter("ReservedInstancesListingId", StringUtils
-                    .fromString(describeReservedInstancesListingsRequest
-                            .getReservedInstancesListingId()));
-        }
-
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesListingsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesListingsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesListingsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeReservedInstancesListingsRequestFiltersList.isEmpty() || !describeReservedInstancesListingsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeReservedInstancesListingsRequestFiltersListValue : describeReservedInstancesListingsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters." + filtersListIndex
-                            + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                if (describeReservedInstancesListingsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeReservedInstancesListingsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesListingsRequestFiltersListValue
                         .getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filters." + filtersListIndex
-                                    + ".Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }
                 }
                 filtersListIndex++;
             }
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
+            request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesListingId() != null) {
+            request.addParameter("ReservedInstancesListingId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesListingId()));
         }
 
         return request;

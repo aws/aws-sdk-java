@@ -122,6 +122,9 @@
         }
     ]
   },
+  "baseExceptionClass": {
+    "mainTemplate" : "/templates/common/base-exception-class.ftl"
+  },
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },
@@ -136,14 +139,11 @@
   },
   "commonChildTemplates" : [
     {
-      "location" : "/macros/common/LicenseCommentBlock.ftl",
-      "importAsNamespace" : "LicenseCommentBlockMacro"
-    }, {
       "location" : "/macros/common/VariableDeclarationMacro.ftl",
       "importAsNamespace" : "VariableDeclarationMacro"
     }, {
-      "location" : "/macros/common/AdditionalAnnotationsForField.ftl",
-      "importAsNamespace" : "AdditionalAnnotationsForField"
+      "location" : "/macros/common/AdditionalAnnotationsForAccessors.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForAccessors"
     }, {
       "location" : "/macros/common/OverrideMethodsMacro.ftl",
       "importAsNamespace" : "OverrideMethodsMacro"

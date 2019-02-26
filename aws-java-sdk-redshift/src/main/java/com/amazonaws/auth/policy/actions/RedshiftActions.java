@@ -1,37 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.auth.policy.actions;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon Redshift.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RedshiftActions implements Action {
 
     /** Represents any action executed on Amazon Redshift. */
     AllRedshiftActions("redshift:*"),
 
+    /** Action for the AcceptReservedNodeExchange operation. */
+    AcceptReservedNodeExchange("redshift:AcceptReservedNodeExchange"),
     /** Action for the AuthorizeClusterSecurityGroupIngress operation. */
-    AuthorizeClusterSecurityGroupIngress(
-            "redshift:AuthorizeClusterSecurityGroupIngress"),
+    AuthorizeClusterSecurityGroupIngress("redshift:AuthorizeClusterSecurityGroupIngress"),
     /** Action for the AuthorizeSnapshotAccess operation. */
     AuthorizeSnapshotAccess("redshift:AuthorizeSnapshotAccess"),
+    /** Action for the BatchDeleteClusterSnapshots operation. */
+    BatchDeleteClusterSnapshots("redshift:BatchDeleteClusterSnapshots"),
+    /** Action for the BatchModifyClusterSnapshots operation. */
+    BatchModifyClusterSnapshots("redshift:BatchModifyClusterSnapshots"),
+    /** Action for the CancelResize operation. */
+    CancelResize("redshift:CancelResize"),
     /** Action for the CopyClusterSnapshot operation. */
     CopyClusterSnapshot("redshift:CopyClusterSnapshot"),
     /** Action for the CreateCluster operation. */
@@ -52,6 +57,8 @@ public enum RedshiftActions implements Action {
     CreateHsmConfiguration("redshift:CreateHsmConfiguration"),
     /** Action for the CreateSnapshotCopyGrant operation. */
     CreateSnapshotCopyGrant("redshift:CreateSnapshotCopyGrant"),
+    /** Action for the CreateSnapshotSchedule operation. */
+    CreateSnapshotSchedule("redshift:CreateSnapshotSchedule"),
     /** Action for the CreateTags operation. */
     CreateTags("redshift:CreateTags"),
     /** Action for the DeleteCluster operation. */
@@ -72,8 +79,14 @@ public enum RedshiftActions implements Action {
     DeleteHsmConfiguration("redshift:DeleteHsmConfiguration"),
     /** Action for the DeleteSnapshotCopyGrant operation. */
     DeleteSnapshotCopyGrant("redshift:DeleteSnapshotCopyGrant"),
+    /** Action for the DeleteSnapshotSchedule operation. */
+    DeleteSnapshotSchedule("redshift:DeleteSnapshotSchedule"),
     /** Action for the DeleteTags operation. */
     DeleteTags("redshift:DeleteTags"),
+    /** Action for the DescribeAccountAttributes operation. */
+    DescribeAccountAttributes("redshift:DescribeAccountAttributes"),
+    /** Action for the DescribeClusterDbRevisions operation. */
+    DescribeClusterDbRevisions("redshift:DescribeClusterDbRevisions"),
     /** Action for the DescribeClusterParameterGroups operation. */
     DescribeClusterParameterGroups("redshift:DescribeClusterParameterGroups"),
     /** Action for the DescribeClusterParameters operation. */
@@ -84,13 +97,14 @@ public enum RedshiftActions implements Action {
     DescribeClusterSnapshots("redshift:DescribeClusterSnapshots"),
     /** Action for the DescribeClusterSubnetGroups operation. */
     DescribeClusterSubnetGroups("redshift:DescribeClusterSubnetGroups"),
+    /** Action for the DescribeClusterTracks operation. */
+    DescribeClusterTracks("redshift:DescribeClusterTracks"),
     /** Action for the DescribeClusterVersions operation. */
     DescribeClusterVersions("redshift:DescribeClusterVersions"),
     /** Action for the DescribeClusters operation. */
     DescribeClusters("redshift:DescribeClusters"),
     /** Action for the DescribeDefaultClusterParameters operation. */
-    DescribeDefaultClusterParameters(
-            "redshift:DescribeDefaultClusterParameters"),
+    DescribeDefaultClusterParameters("redshift:DescribeDefaultClusterParameters"),
     /** Action for the DescribeEventCategories operation. */
     DescribeEventCategories("redshift:DescribeEventCategories"),
     /** Action for the DescribeEventSubscriptions operation. */
@@ -113,6 +127,10 @@ public enum RedshiftActions implements Action {
     DescribeResize("redshift:DescribeResize"),
     /** Action for the DescribeSnapshotCopyGrants operation. */
     DescribeSnapshotCopyGrants("redshift:DescribeSnapshotCopyGrants"),
+    /** Action for the DescribeSnapshotSchedules operation. */
+    DescribeSnapshotSchedules("redshift:DescribeSnapshotSchedules"),
+    /** Action for the DescribeStorage operation. */
+    DescribeStorage("redshift:DescribeStorage"),
     /** Action for the DescribeTableRestoreStatus operation. */
     DescribeTableRestoreStatus("redshift:DescribeTableRestoreStatus"),
     /** Action for the DescribeTags operation. */
@@ -125,32 +143,46 @@ public enum RedshiftActions implements Action {
     EnableLogging("redshift:EnableLogging"),
     /** Action for the EnableSnapshotCopy operation. */
     EnableSnapshotCopy("redshift:EnableSnapshotCopy"),
+    /** Action for the GetClusterCredentials operation. */
+    GetClusterCredentials("redshift:GetClusterCredentials"),
+    /** Action for the GetReservedNodeExchangeOfferings operation. */
+    GetReservedNodeExchangeOfferings("redshift:GetReservedNodeExchangeOfferings"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("redshift:ModifyCluster"),
+    /** Action for the ModifyClusterDbRevision operation. */
+    ModifyClusterDbRevision("redshift:ModifyClusterDbRevision"),
     /** Action for the ModifyClusterIamRoles operation. */
     ModifyClusterIamRoles("redshift:ModifyClusterIamRoles"),
+    /** Action for the ModifyClusterMaintenance operation. */
+    ModifyClusterMaintenance("redshift:ModifyClusterMaintenance"),
     /** Action for the ModifyClusterParameterGroup operation. */
     ModifyClusterParameterGroup("redshift:ModifyClusterParameterGroup"),
+    /** Action for the ModifyClusterSnapshot operation. */
+    ModifyClusterSnapshot("redshift:ModifyClusterSnapshot"),
+    /** Action for the ModifyClusterSnapshotSchedule operation. */
+    ModifyClusterSnapshotSchedule("redshift:ModifyClusterSnapshotSchedule"),
     /** Action for the ModifyClusterSubnetGroup operation. */
     ModifyClusterSubnetGroup("redshift:ModifyClusterSubnetGroup"),
     /** Action for the ModifyEventSubscription operation. */
     ModifyEventSubscription("redshift:ModifyEventSubscription"),
     /** Action for the ModifySnapshotCopyRetentionPeriod operation. */
-    ModifySnapshotCopyRetentionPeriod(
-            "redshift:ModifySnapshotCopyRetentionPeriod"),
+    ModifySnapshotCopyRetentionPeriod("redshift:ModifySnapshotCopyRetentionPeriod"),
+    /** Action for the ModifySnapshotSchedule operation. */
+    ModifySnapshotSchedule("redshift:ModifySnapshotSchedule"),
     /** Action for the PurchaseReservedNodeOffering operation. */
     PurchaseReservedNodeOffering("redshift:PurchaseReservedNodeOffering"),
     /** Action for the RebootCluster operation. */
     RebootCluster("redshift:RebootCluster"),
     /** Action for the ResetClusterParameterGroup operation. */
     ResetClusterParameterGroup("redshift:ResetClusterParameterGroup"),
+    /** Action for the ResizeCluster operation. */
+    ResizeCluster("redshift:ResizeCluster"),
     /** Action for the RestoreFromClusterSnapshot operation. */
     RestoreFromClusterSnapshot("redshift:RestoreFromClusterSnapshot"),
     /** Action for the RestoreTableFromClusterSnapshot operation. */
     RestoreTableFromClusterSnapshot("redshift:RestoreTableFromClusterSnapshot"),
     /** Action for the RevokeClusterSecurityGroupIngress operation. */
-    RevokeClusterSecurityGroupIngress(
-            "redshift:RevokeClusterSecurityGroupIngress"),
+    RevokeClusterSecurityGroupIngress("redshift:RevokeClusterSecurityGroupIngress"),
     /** Action for the RevokeSnapshotAccess operation. */
     RevokeSnapshotAccess("redshift:RevokeSnapshotAccess"),
     /** Action for the RotateEncryptionKey operation. */

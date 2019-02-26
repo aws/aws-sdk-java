@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Returns the objects or data listed below if successful. Otherwise, returns an
- * error.
+ * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListPublicKeysResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListPublicKeysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,8 +56,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * 
      * @return Contains an array of PublicKey objects.</p> <note>
      *         <p>
-     *         The returned public keys may have validity time ranges that
-     *         overlap.
+     *         The returned public keys may have validity time ranges that overlap.
      *         </p>
      */
 
@@ -81,8 +80,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * @param publicKeyList
      *        Contains an array of PublicKey objects.</p> <note>
      *        <p>
-     *        The returned public keys may have validity time ranges that
-     *        overlap.
+     *        The returned public keys may have validity time ranges that overlap.
      *        </p>
      */
 
@@ -92,8 +90,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
             return;
         }
 
-        this.publicKeyList = new com.amazonaws.internal.SdkInternalList<PublicKey>(
-                publicKeyList);
+        this.publicKeyList = new com.amazonaws.internal.SdkInternalList<PublicKey>(publicKeyList);
     }
 
     /**
@@ -106,26 +103,22 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPublicKeyList(java.util.Collection)} or
-     * {@link #withPublicKeyList(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublicKeyList(java.util.Collection)} or {@link #withPublicKeyList(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param publicKeyList
      *        Contains an array of PublicKey objects.</p> <note>
      *        <p>
-     *        The returned public keys may have validity time ranges that
-     *        overlap.
+     *        The returned public keys may have validity time ranges that overlap.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPublicKeysResult withPublicKeyList(PublicKey... publicKeyList) {
         if (this.publicKeyList == null) {
-            setPublicKeyList(new com.amazonaws.internal.SdkInternalList<PublicKey>(
-                    publicKeyList.length));
+            setPublicKeyList(new com.amazonaws.internal.SdkInternalList<PublicKey>(publicKeyList.length));
         }
         for (PublicKey ele : publicKeyList) {
             this.publicKeyList.add(ele);
@@ -146,15 +139,12 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * @param publicKeyList
      *        Contains an array of PublicKey objects.</p> <note>
      *        <p>
-     *        The returned public keys may have validity time ranges that
-     *        overlap.
+     *        The returned public keys may have validity time ranges that overlap.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListPublicKeysResult withPublicKeyList(
-            java.util.Collection<PublicKey> publicKeyList) {
+    public ListPublicKeysResult withPublicKeyList(java.util.Collection<PublicKey> publicKeyList) {
         setPublicKeyList(publicKeyList);
         return this;
     }
@@ -191,8 +181,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * 
      * @param nextToken
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPublicKeysResult withNextToken(String nextToken) {
@@ -201,8 +190,8 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -213,9 +202,9 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicKeyList() != null)
-            sb.append("PublicKeyList: " + getPublicKeyList() + ",");
+            sb.append("PublicKeyList: ").append(getPublicKeyList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -232,13 +221,11 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
         ListPublicKeysResult other = (ListPublicKeysResult) obj;
         if (other.getPublicKeyList() == null ^ this.getPublicKeyList() == null)
             return false;
-        if (other.getPublicKeyList() != null
-                && other.getPublicKeyList().equals(this.getPublicKeyList()) == false)
+        if (other.getPublicKeyList() != null && other.getPublicKeyList().equals(this.getPublicKeyList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -248,12 +235,8 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPublicKeyList() == null) ? 0 : getPublicKeyList()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPublicKeyList() == null) ? 0 : getPublicKeyList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -262,9 +245,8 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
         try {
             return (ListPublicKeysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

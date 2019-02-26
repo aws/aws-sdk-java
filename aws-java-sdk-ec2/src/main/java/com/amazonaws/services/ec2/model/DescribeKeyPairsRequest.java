@@ -1,44 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeKeyPairs.
- * </p>
+ * 
  */
-public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable,
-        DryRunSupportedRequest<DescribeKeyPairsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeKeyPairsRequest> {
 
-    /**
-     * <p>
-     * One or more key pair names.
-     * </p>
-     * <p>
-     * Default: Describes all your key pairs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> keyNames;
     /**
      * <p>
      * One or more filters.
@@ -57,7 +43,6 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more key pair names.
@@ -65,97 +50,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * <p>
      * Default: Describes all your key pairs.
      * </p>
-     * 
-     * @return One or more key pair names.</p>
-     *         <p>
-     *         Default: Describes all your key pairs.
      */
-
-    public java.util.List<String> getKeyNames() {
-        if (keyNames == null) {
-            keyNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return keyNames;
-    }
-
-    /**
-     * <p>
-     * One or more key pair names.
-     * </p>
-     * <p>
-     * Default: Describes all your key pairs.
-     * </p>
-     * 
-     * @param keyNames
-     *        One or more key pair names.</p>
-     *        <p>
-     *        Default: Describes all your key pairs.
-     */
-
-    public void setKeyNames(java.util.Collection<String> keyNames) {
-        if (keyNames == null) {
-            this.keyNames = null;
-            return;
-        }
-
-        this.keyNames = new com.amazonaws.internal.SdkInternalList<String>(
-                keyNames);
-    }
-
-    /**
-     * <p>
-     * One or more key pair names.
-     * </p>
-     * <p>
-     * Default: Describes all your key pairs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setKeyNames(java.util.Collection)} or
-     * {@link #withKeyNames(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param keyNames
-     *        One or more key pair names.</p>
-     *        <p>
-     *        Default: Describes all your key pairs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
-        if (this.keyNames == null) {
-            setKeyNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    keyNames.length));
-        }
-        for (String ele : keyNames) {
-            this.keyNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more key pair names.
-     * </p>
-     * <p>
-     * Default: Describes all your key pairs.
-     * </p>
-     * 
-     * @param keyNames
-     *        One or more key pair names.</p>
-     *        <p>
-     *        Default: Describes all your key pairs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeKeyPairsRequest withKeyNames(
-            java.util.Collection<String> keyNames) {
-        setKeyNames(keyNames);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> keyNames;
 
     /**
      * <p>
@@ -233,8 +129,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
-                filters);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
@@ -254,10 +149,9 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or
-     * {@link #withFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param filters
@@ -273,14 +167,12 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *        <code>key-name</code> - The name of the key pair.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeKeyPairsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
-                    filters.length));
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
         for (Filter ele : filters) {
             this.filters.add(ele);
@@ -318,32 +210,121 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *        <code>key-name</code> - The name of the key pair.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeKeyPairsRequest withFilters(
-            java.util.Collection<Filter> filters) {
+    public DescribeKeyPairsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * <p>
+     * One or more key pair names.
+     * </p>
+     * <p>
+     * Default: Describes all your key pairs.
+     * </p>
+     * 
+     * @return One or more key pair names.</p>
+     *         <p>
+     *         Default: Describes all your key pairs.
+     */
+
+    public java.util.List<String> getKeyNames() {
+        if (keyNames == null) {
+            keyNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return keyNames;
+    }
+
+    /**
+     * <p>
+     * One or more key pair names.
+     * </p>
+     * <p>
+     * Default: Describes all your key pairs.
+     * </p>
+     * 
+     * @param keyNames
+     *        One or more key pair names.</p>
+     *        <p>
+     *        Default: Describes all your key pairs.
+     */
+
+    public void setKeyNames(java.util.Collection<String> keyNames) {
+        if (keyNames == null) {
+            this.keyNames = null;
+            return;
+        }
+
+        this.keyNames = new com.amazonaws.internal.SdkInternalList<String>(keyNames);
+    }
+
+    /**
+     * <p>
+     * One or more key pair names.
+     * </p>
+     * <p>
+     * Default: Describes all your key pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeyNames(java.util.Collection)} or {@link #withKeyNames(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param keyNames
+     *        One or more key pair names.</p>
+     *        <p>
+     *        Default: Describes all your key pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
+        if (this.keyNames == null) {
+            setKeyNames(new com.amazonaws.internal.SdkInternalList<String>(keyNames.length));
+        }
+        for (String ele : keyNames) {
+            this.keyNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more key pair names.
+     * </p>
+     * <p>
+     * Default: Describes all your key pairs.
+     * </p>
+     * 
+     * @param keyNames
+     *        One or more key pair names.</p>
+     *        <p>
+     *        Default: Describes all your key pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeKeyPairsRequest withKeyNames(java.util.Collection<String> keyNames) {
+        setKeyNames(keyNames);
+        return this;
+    }
+
+    /**
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeKeyPairsRequest> getDryRunRequest() {
-        Request<DescribeKeyPairsRequest> request = new DescribeKeyPairsRequestMarshaller()
-                .marshall(this);
+        Request<DescribeKeyPairsRequest> request = new DescribeKeyPairsRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -353,10 +334,10 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyNames() != null)
-            sb.append("KeyNames: " + getKeyNames() + ",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getKeyNames() != null)
+            sb.append("KeyNames: ").append(getKeyNames());
         sb.append("}");
         return sb.toString();
     }
@@ -371,15 +352,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
         if (obj instanceof DescribeKeyPairsRequest == false)
             return false;
         DescribeKeyPairsRequest other = (DescribeKeyPairsRequest) obj;
-        if (other.getKeyNames() == null ^ this.getKeyNames() == null)
-            return false;
-        if (other.getKeyNames() != null
-                && other.getKeyNames().equals(this.getKeyNames()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getFilters() != null
-                && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getKeyNames() == null ^ this.getKeyNames() == null)
+            return false;
+        if (other.getKeyNames() != null && other.getKeyNames().equals(this.getKeyNames()) == false)
             return false;
         return true;
     }
@@ -389,10 +368,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getKeyNames() == null) ? 0 : getKeyNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getKeyNames() == null) ? 0 : getKeyNames().hashCode());
         return hashCode;
     }
 

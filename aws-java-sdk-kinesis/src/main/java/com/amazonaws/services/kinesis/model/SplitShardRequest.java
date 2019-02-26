@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for <code>SplitShard</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard" target="_top">AWS API
+ *      Documentation</a>
  */
-public class SplitShardRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SplitShardRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,14 +42,11 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
     private String shardToSplit;
     /**
      * <p>
-     * A hash key value for the starting hash key of one of the child shards
-     * created by the split. The hash key range for a given shard constitutes a
-     * set of ordered contiguous positive integers. The value for
-     * <code>NewStartingHashKey</code> must be in the range of hash keys being
-     * mapped into the shard. The <code>NewStartingHashKey</code> hash key value
-     * and all higher hash key values in hash key range are distributed to one
-     * of the child shards. All the lower hash key values in the range are
-     * distributed to the other child shard.
+     * A hash key value for the starting hash key of one of the child shards created by the split. The hash key range
+     * for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     * <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed
+     * to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.
      * </p>
      */
     private String newStartingHashKey;
@@ -85,8 +83,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * 
      * @param streamName
      *        The name of the stream for the shard split.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SplitShardRequest withStreamName(String streamName) {
@@ -126,8 +123,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * 
      * @param shardToSplit
      *        The shard ID of the shard to split.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SplitShardRequest withShardToSplit(String shardToSplit) {
@@ -137,26 +133,20 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A hash key value for the starting hash key of one of the child shards
-     * created by the split. The hash key range for a given shard constitutes a
-     * set of ordered contiguous positive integers. The value for
-     * <code>NewStartingHashKey</code> must be in the range of hash keys being
-     * mapped into the shard. The <code>NewStartingHashKey</code> hash key value
-     * and all higher hash key values in hash key range are distributed to one
-     * of the child shards. All the lower hash key values in the range are
-     * distributed to the other child shard.
+     * A hash key value for the starting hash key of one of the child shards created by the split. The hash key range
+     * for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     * <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed
+     * to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.
      * </p>
      * 
      * @param newStartingHashKey
-     *        A hash key value for the starting hash key of one of the child
-     *        shards created by the split. The hash key range for a given shard
-     *        constitutes a set of ordered contiguous positive integers. The
-     *        value for <code>NewStartingHashKey</code> must be in the range of
-     *        hash keys being mapped into the shard. The
-     *        <code>NewStartingHashKey</code> hash key value and all higher hash
-     *        key values in hash key range are distributed to one of the child
-     *        shards. All the lower hash key values in the range are distributed
-     *        to the other child shard.
+     *        A hash key value for the starting hash key of one of the child shards created by the split. The hash key
+     *        range for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     *        <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     *        <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are
+     *        distributed to one of the child shards. All the lower hash key values in the range are distributed to the
+     *        other child shard.
      */
 
     public void setNewStartingHashKey(String newStartingHashKey) {
@@ -165,25 +155,19 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A hash key value for the starting hash key of one of the child shards
-     * created by the split. The hash key range for a given shard constitutes a
-     * set of ordered contiguous positive integers. The value for
-     * <code>NewStartingHashKey</code> must be in the range of hash keys being
-     * mapped into the shard. The <code>NewStartingHashKey</code> hash key value
-     * and all higher hash key values in hash key range are distributed to one
-     * of the child shards. All the lower hash key values in the range are
-     * distributed to the other child shard.
+     * A hash key value for the starting hash key of one of the child shards created by the split. The hash key range
+     * for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     * <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed
+     * to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.
      * </p>
      * 
-     * @return A hash key value for the starting hash key of one of the child
-     *         shards created by the split. The hash key range for a given shard
-     *         constitutes a set of ordered contiguous positive integers. The
-     *         value for <code>NewStartingHashKey</code> must be in the range of
-     *         hash keys being mapped into the shard. The
-     *         <code>NewStartingHashKey</code> hash key value and all higher
-     *         hash key values in hash key range are distributed to one of the
-     *         child shards. All the lower hash key values in the range are
-     *         distributed to the other child shard.
+     * @return A hash key value for the starting hash key of one of the child shards created by the split. The hash key
+     *         range for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     *         <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     *         <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are
+     *         distributed to one of the child shards. All the lower hash key values in the range are distributed to the
+     *         other child shard.
      */
 
     public String getNewStartingHashKey() {
@@ -192,28 +176,21 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A hash key value for the starting hash key of one of the child shards
-     * created by the split. The hash key range for a given shard constitutes a
-     * set of ordered contiguous positive integers. The value for
-     * <code>NewStartingHashKey</code> must be in the range of hash keys being
-     * mapped into the shard. The <code>NewStartingHashKey</code> hash key value
-     * and all higher hash key values in hash key range are distributed to one
-     * of the child shards. All the lower hash key values in the range are
-     * distributed to the other child shard.
+     * A hash key value for the starting hash key of one of the child shards created by the split. The hash key range
+     * for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     * <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed
+     * to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.
      * </p>
      * 
      * @param newStartingHashKey
-     *        A hash key value for the starting hash key of one of the child
-     *        shards created by the split. The hash key range for a given shard
-     *        constitutes a set of ordered contiguous positive integers. The
-     *        value for <code>NewStartingHashKey</code> must be in the range of
-     *        hash keys being mapped into the shard. The
-     *        <code>NewStartingHashKey</code> hash key value and all higher hash
-     *        key values in hash key range are distributed to one of the child
-     *        shards. All the lower hash key values in the range are distributed
-     *        to the other child shard.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A hash key value for the starting hash key of one of the child shards created by the split. The hash key
+     *        range for a given shard constitutes a set of ordered contiguous positive integers. The value for
+     *        <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The
+     *        <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are
+     *        distributed to one of the child shards. All the lower hash key values in the range are distributed to the
+     *        other child shard.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SplitShardRequest withNewStartingHashKey(String newStartingHashKey) {
@@ -222,8 +199,8 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -234,11 +211,11 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardToSplit() != null)
-            sb.append("ShardToSplit: " + getShardToSplit() + ",");
+            sb.append("ShardToSplit: ").append(getShardToSplit()).append(",");
         if (getNewStartingHashKey() != null)
-            sb.append("NewStartingHashKey: " + getNewStartingHashKey());
+            sb.append("NewStartingHashKey: ").append(getNewStartingHashKey());
         sb.append("}");
         return sb.toString();
     }
@@ -255,20 +232,15 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
         SplitShardRequest other = (SplitShardRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
         if (other.getShardToSplit() == null ^ this.getShardToSplit() == null)
             return false;
-        if (other.getShardToSplit() != null
-                && other.getShardToSplit().equals(this.getShardToSplit()) == false)
+        if (other.getShardToSplit() != null && other.getShardToSplit().equals(this.getShardToSplit()) == false)
             return false;
-        if (other.getNewStartingHashKey() == null
-                ^ this.getNewStartingHashKey() == null)
+        if (other.getNewStartingHashKey() == null ^ this.getNewStartingHashKey() == null)
             return false;
-        if (other.getNewStartingHashKey() != null
-                && other.getNewStartingHashKey().equals(
-                        this.getNewStartingHashKey()) == false)
+        if (other.getNewStartingHashKey() != null && other.getNewStartingHashKey().equals(this.getNewStartingHashKey()) == false)
             return false;
         return true;
     }
@@ -278,16 +250,9 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getShardToSplit() == null) ? 0 : getShardToSplit()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewStartingHashKey() == null) ? 0
-                        : getNewStartingHashKey().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getShardToSplit() == null) ? 0 : getShardToSplit().hashCode());
+        hashCode = prime * hashCode + ((getNewStartingHashKey() == null) ? 0 : getNewStartingHashKey().hashCode());
         return hashCode;
     }
 
@@ -295,4 +260,5 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
     public SplitShardRequest clone() {
         return (SplitShardRequest) super.clone();
     }
+
 }

@@ -1,42 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
+
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * EnvironmentDescription StAX Unmarshaller
  */
-public class EnvironmentDescriptionStaxUnmarshaller implements
-        Unmarshaller<EnvironmentDescription, StaxUnmarshallerContext> {
 
-    public EnvironmentDescription unmarshall(StaxUnmarshallerContext context)
-            throws Exception {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<EnvironmentDescription, StaxUnmarshallerContext> {
+
+    public EnvironmentDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
         EnvironmentDescription environmentDescription = new EnvironmentDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -52,128 +46,109 @@ public class EnvironmentDescriptionStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("EnvironmentName", targetDepth)) {
-                    environmentDescription
-                            .setEnvironmentName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setEnvironmentName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EnvironmentId", targetDepth)) {
-                    environmentDescription
-                            .setEnvironmentId(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setEnvironmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ApplicationName", targetDepth)) {
-                    environmentDescription
-                            .setApplicationName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("VersionLabel", targetDepth)) {
-                    environmentDescription
-                            .setVersionLabel(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setVersionLabel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SolutionStackName", targetDepth)) {
-                    environmentDescription
-                            .setSolutionStackName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setSolutionStackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    environmentDescription.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("TemplateName", targetDepth)) {
-                    environmentDescription
-                            .setTemplateName(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Description", targetDepth)) {
-                    environmentDescription
-                            .setDescription(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EndpointURL", targetDepth)) {
-                    environmentDescription
-                            .setEndpointURL(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setEndpointURL(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CNAME", targetDepth)) {
-                    environmentDescription.setCNAME(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    environmentDescription.setCNAME(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    environmentDescription.setDateCreated(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    environmentDescription.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    environmentDescription.setDateUpdated(DateStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    environmentDescription.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Status", targetDepth)) {
-                    environmentDescription.setStatus(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    environmentDescription.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("AbortableOperationInProgress",
-                        targetDepth)) {
-                    environmentDescription
-                            .setAbortableOperationInProgress(BooleanStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("AbortableOperationInProgress", targetDepth)) {
+                    environmentDescription.setAbortableOperationInProgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Health", targetDepth)) {
-                    environmentDescription.setHealth(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
+                    environmentDescription.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("HealthStatus", targetDepth)) {
-                    environmentDescription
-                            .setHealthStatus(StringStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setHealthStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Resources", targetDepth)) {
-                    environmentDescription
-                            .setResources(EnvironmentResourcesDescriptionStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setResources(EnvironmentResourcesDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Tier", targetDepth)) {
-                    environmentDescription
-                            .setTier(EnvironmentTierStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    environmentDescription.setTier(EnvironmentTierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("EnvironmentLinks/member",
-                        targetDepth)) {
-                    environmentDescription
-                            .withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    environmentDescription.withEnvironmentLinks(new ArrayList<EnvironmentLink>());
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentLinks/member", targetDepth)) {
+                    environmentDescription.withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    environmentDescription.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return environmentDescription;

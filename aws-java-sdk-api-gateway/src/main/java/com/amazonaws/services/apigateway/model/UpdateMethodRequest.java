@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,42 +22,41 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an existing <a>Method</a> resource.
  * </p>
  */
-public class UpdateMethodRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and in the order specified in this list.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -68,10 +65,10 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -80,13 +77,12 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMethodRequest withRestApiId(String restApiId) {
@@ -96,11 +92,11 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -109,10 +105,10 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -121,13 +117,12 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMethodRequest withResourceId(String resourceId) {
@@ -137,11 +132,11 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb that identifies the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -150,10 +145,10 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb that identifies the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -162,13 +157,12 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb that identifies the <a>Method</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMethodRequest withHttpMethod(String httpMethod) {
@@ -178,13 +172,11 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and in the order specified in this list.
      * </p>
      * 
-     * @return A list of operations describing the updates to apply to the
-     *         specified resource. The patches are applied in the order
-     *         specified in the list.
+     * @return A list of update operations to be applied to the specified resource and in the order specified in this
+     *         list.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -193,52 +185,42 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified resource and in the order specified in this
+     *        list.
      */
 
-    public void setPatchOperations(
-            java.util.Collection<PatchOperation> patchOperations) {
+    public void setPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
             this.patchOperations = null;
             return;
         }
 
-        this.patchOperations = new java.util.ArrayList<PatchOperation>(
-                patchOperations);
+        this.patchOperations = new java.util.ArrayList<PatchOperation>(patchOperations);
     }
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and in the order specified in this list.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPatchOperations(java.util.Collection)} or
-     * {@link #withPatchOperations(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPatchOperations(java.util.Collection)} or {@link #withPatchOperations(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of update operations to be applied to the specified resource and in the order specified in this
+     *        list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateMethodRequest withPatchOperations(
-            PatchOperation... patchOperations) {
+    public UpdateMethodRequest withPatchOperations(PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
-            setPatchOperations(new java.util.ArrayList<PatchOperation>(
-                    patchOperations.length));
+            setPatchOperations(new java.util.ArrayList<PatchOperation>(patchOperations.length));
         }
         for (PatchOperation ele : patchOperations) {
             this.patchOperations.add(ele);
@@ -248,27 +230,23 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of update operations to be applied to the specified resource and in the order specified in this
+     *        list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateMethodRequest withPatchOperations(
-            java.util.Collection<PatchOperation> patchOperations) {
+    public UpdateMethodRequest withPatchOperations(java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -279,13 +257,13 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }
@@ -302,24 +280,19 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
         UpdateMethodRequest other = (UpdateMethodRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
             return false;
-        if (other.getHttpMethod() != null
-                && other.getHttpMethod().equals(this.getHttpMethod()) == false)
+        if (other.getHttpMethod() != null && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
-        if (other.getPatchOperations() == null
-                ^ this.getPatchOperations() == null)
+        if (other.getPatchOperations() == null ^ this.getPatchOperations() == null)
             return false;
-        if (other.getPatchOperations() != null
-                && other.getPatchOperations().equals(this.getPatchOperations()) == false)
+        if (other.getPatchOperations() != null && other.getPatchOperations().equals(this.getPatchOperations()) == false)
             return false;
         return true;
     }
@@ -329,16 +302,10 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPatchOperations() == null) ? 0 : getPatchOperations()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
+        hashCode = prime * hashCode + ((getPatchOperations() == null) ? 0 : getPatchOperations().hashCode());
         return hashCode;
     }
 
@@ -346,4 +313,5 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
     public UpdateMethodRequest clone() {
         return (UpdateMethodRequest) super.clone();
     }
+
 }

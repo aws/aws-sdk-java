@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,9 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricCollector;
-import com.amazonaws.regions.Regions;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.services.cloudwatch.AmazonCloudWatch;
 
 /**
  * The default AWS SDK metric collector factory.  This class is instantiated
@@ -36,7 +38,7 @@ public class DefaultMetricCollectorFactory
     @Override
     public MetricCollector getInstance() {
         AWSCredentialsProvider provider = AwsSdkMetrics.getCredentialProvider();
-        Regions region = AwsSdkMetrics.getRegion();
+        Region region = RegionUtils.getRegion(AwsSdkMetrics.getRegionName());
         Integer qSize = AwsSdkMetrics.getMetricQueueSize();
         Long timeoutMilli = AwsSdkMetrics.getQueuePollTimeoutMilli();
         CloudWatchMetricConfig config = new CloudWatchMetricConfig();
@@ -44,7 +46,7 @@ public class DefaultMetricCollectorFactory
         if (provider != null)
             config.setCredentialsProvider(provider);
         if (region != null) {
-            String endPoint = "monitoring." + region.getName() + ".amazonaws.com";
+            String endPoint = region.getServiceEndpoint(AmazonCloudWatch.ENDPOINT_PREFIX);
             config.setCloudWatchEndPoint(endPoint);
         }
         if (qSize != null)

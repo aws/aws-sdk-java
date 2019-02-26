@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ public class QueueBufferConfig {
     private int maxBatchSize;
 
     /** Updated as the service now supports messages of size max 256 KiB. */
-    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024 - 1;
+    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024;
 
     /**
      * The maximum time (milliseconds) a send batch is held open for additional outbound requests.
@@ -109,6 +109,15 @@ public class QueueBufferConfig {
 
     public static final int LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT = 20;
 
+    /**
+     * Option to configure flushOnShutdown. Enabling this option will flush the pending requests in the
+     * {@link SendQueueBuffer} during shutdown.
+     * <p>
+     * The default value is false which indicates flushOnShutdown is disabled.
+     * </p>
+     */
+    private boolean flushOnShutdown = false;
+
     public QueueBufferConfig(long maxBatchOpenMs, int maxInflightOutboundBatches, int maxInflightReceiveBatches,
             int maxDoneReceiveBatches, boolean paramLongPoll, long maxBatchSizeBytes, int visibilityTimeout,
             int longPollTimeout, int maxBatch) {
@@ -141,6 +150,7 @@ public class QueueBufferConfig {
         maxInflightOutboundBatches = other.maxInflightOutboundBatches;
         maxInflightReceiveBatches = other.maxInflightReceiveBatches;
         visibilityTimeoutSeconds = other.visibilityTimeoutSeconds;
+        flushOnShutdown = other.flushOnShutdown;
     }
 
     @Override
@@ -426,6 +436,41 @@ public class QueueBufferConfig {
      */
     public QueueBufferConfig withMaxBatchSize(int maxBatchSize) {
         setMaxBatchSize(maxBatchSize);
+        return this;
+    }
+
+    /**
+     * Returns the flushOnShutdown value. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @return true if flushOnShutdown is enabled, otherwise false.
+     */
+    public boolean isFlushOnShutdown() {
+        return flushOnShutdown;
+    }
+
+    /**
+     * Sets the flushOnShutdown option. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @param flushOnShutdown boolean value to configure flushOnShutdown.
+     */
+    public void setFlushOnShutdown(boolean flushOnShutdown) {
+        this.flushOnShutdown = flushOnShutdown;
+    }
+
+    /**
+     * Sets the flushOnShutdown option. The default value is false which indicates flushOnShutdown is disabled.
+     *
+     * Enabling this option will flush the pending requests in the {@link SendQueueBuffer} during shutdown.
+     *
+     * @param flushOnShutdown boolean value to configure flushOnShutdown.
+     * @return This object for method chaining.
+     */
+    public QueueBufferConfig withFlushOnShutdown(boolean flushOnShutdown) {
+        setFlushOnShutdown(flushOnShutdown);
         return this;
     }
 

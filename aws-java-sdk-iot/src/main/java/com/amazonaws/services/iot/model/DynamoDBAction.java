@@ -1,41 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes an action to write to a DynamoDB table.
  * </p>
  * <p>
- * The <code>tableName</code>, <code>hashKeyField</code>, and
- * <code>rangeKeyField</code> values must match the values used when you created
- * the table.
+ * The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values
+ * used when you created the table.
  * </p>
  * <p>
- * The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a
- * substitution template syntax. These templates provide data at runtime. The
- * syntax is as follows: ${<i>sql-expression</i>}.
+ * The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These
+ * templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.
  * </p>
  * <p>
- * You can specify any valid expression in a WHERE or SELECT clause, including
- * JSON properties, comparisons, calculations, and functions. For example, the
- * following field uses the third level of the topic:
+ * You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons,
+ * calculations, and functions. For example, the following field uses the third level of the topic:
  * </p>
  * <p>
  * <code>"hashKeyValue": "${topic(3)}"</code>
@@ -47,7 +43,8 @@ import java.io.Serializable;
  * <code>"rangeKeyValue": "${timestamp()}"</code>
  * </p>
  */
-public class DynamoDBAction implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -61,6 +58,14 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The type of operation to be performed. This follows the substitution template, so it can be
+     * <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     * <code>UPDATE</code>, or <code>DELETE</code>.
+     * </p>
+     */
+    private String operation;
     /**
      * <p>
      * The hash key name.
@@ -136,8 +141,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param tableName
      *        The name of the DynamoDB table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withTableName(String tableName) {
@@ -177,12 +181,63 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param roleArn
      *        The ARN of the IAM role that grants access to the DynamoDB table.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of operation to be performed. This follows the substitution template, so it can be
+     * <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     * <code>UPDATE</code>, or <code>DELETE</code>.
+     * </p>
+     * 
+     * @param operation
+     *        The type of operation to be performed. This follows the substitution template, so it can be
+     *        <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     *        <code>UPDATE</code>, or <code>DELETE</code>.
+     */
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    /**
+     * <p>
+     * The type of operation to be performed. This follows the substitution template, so it can be
+     * <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     * <code>UPDATE</code>, or <code>DELETE</code>.
+     * </p>
+     * 
+     * @return The type of operation to be performed. This follows the substitution template, so it can be
+     *         <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     *         <code>UPDATE</code>, or <code>DELETE</code>.
+     */
+
+    public String getOperation() {
+        return this.operation;
+    }
+
+    /**
+     * <p>
+     * The type of operation to be performed. This follows the substitution template, so it can be
+     * <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     * <code>UPDATE</code>, or <code>DELETE</code>.
+     * </p>
+     * 
+     * @param operation
+     *        The type of operation to be performed. This follows the substitution template, so it can be
+     *        <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>,
+     *        <code>UPDATE</code>, or <code>DELETE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamoDBAction withOperation(String operation) {
+        setOperation(operation);
         return this;
     }
 
@@ -218,8 +273,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param hashKeyField
      *        The hash key name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withHashKeyField(String hashKeyField) {
@@ -259,8 +313,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param hashKeyValue
      *        The hash key value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withHashKeyValue(String hashKeyValue) {
@@ -302,8 +355,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param hashKeyType
      *        The hash key type. Valid values are "STRING" or "NUMBER"
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DynamoKeyType
      */
 
@@ -323,7 +375,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      */
 
     public void setHashKeyType(DynamoKeyType hashKeyType) {
-        this.hashKeyType = hashKeyType.toString();
+        withHashKeyType(hashKeyType);
     }
 
     /**
@@ -333,13 +385,12 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param hashKeyType
      *        The hash key type. Valid values are "STRING" or "NUMBER"
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DynamoKeyType
      */
 
     public DynamoDBAction withHashKeyType(DynamoKeyType hashKeyType) {
-        setHashKeyType(hashKeyType);
+        this.hashKeyType = hashKeyType.toString();
         return this;
     }
 
@@ -375,8 +426,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param rangeKeyField
      *        The range key name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withRangeKeyField(String rangeKeyField) {
@@ -416,8 +466,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param rangeKeyValue
      *        The range key value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withRangeKeyValue(String rangeKeyValue) {
@@ -459,8 +508,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param rangeKeyType
      *        The range key type. Valid values are "STRING" or "NUMBER"
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DynamoKeyType
      */
 
@@ -480,7 +528,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      */
 
     public void setRangeKeyType(DynamoKeyType rangeKeyType) {
-        this.rangeKeyType = rangeKeyType.toString();
+        withRangeKeyType(rangeKeyType);
     }
 
     /**
@@ -490,13 +538,12 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param rangeKeyType
      *        The range key type. Valid values are "STRING" or "NUMBER"
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DynamoKeyType
      */
 
     public DynamoDBAction withRangeKeyType(DynamoKeyType rangeKeyType) {
-        setRangeKeyType(rangeKeyType);
+        this.rangeKeyType = rangeKeyType.toString();
         return this;
     }
 
@@ -532,8 +579,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @param payloadField
      *        The action payload. This name can be customized.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DynamoDBAction withPayloadField(String payloadField) {
@@ -542,8 +588,8 @@ public class DynamoDBAction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -554,23 +600,25 @@ public class DynamoDBAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getOperation() != null)
+            sb.append("Operation: ").append(getOperation()).append(",");
         if (getHashKeyField() != null)
-            sb.append("HashKeyField: " + getHashKeyField() + ",");
+            sb.append("HashKeyField: ").append(getHashKeyField()).append(",");
         if (getHashKeyValue() != null)
-            sb.append("HashKeyValue: " + getHashKeyValue() + ",");
+            sb.append("HashKeyValue: ").append(getHashKeyValue()).append(",");
         if (getHashKeyType() != null)
-            sb.append("HashKeyType: " + getHashKeyType() + ",");
+            sb.append("HashKeyType: ").append(getHashKeyType()).append(",");
         if (getRangeKeyField() != null)
-            sb.append("RangeKeyField: " + getRangeKeyField() + ",");
+            sb.append("RangeKeyField: ").append(getRangeKeyField()).append(",");
         if (getRangeKeyValue() != null)
-            sb.append("RangeKeyValue: " + getRangeKeyValue() + ",");
+            sb.append("RangeKeyValue: ").append(getRangeKeyValue()).append(",");
         if (getRangeKeyType() != null)
-            sb.append("RangeKeyType: " + getRangeKeyType() + ",");
+            sb.append("RangeKeyType: ").append(getRangeKeyType()).append(",");
         if (getPayloadField() != null)
-            sb.append("PayloadField: " + getPayloadField());
+            sb.append("PayloadField: ").append(getPayloadField());
         sb.append("}");
         return sb.toString();
     }
@@ -587,48 +635,43 @@ public class DynamoDBAction implements Serializable, Cloneable {
         DynamoDBAction other = (DynamoDBAction) obj;
         if (other.getTableName() == null ^ this.getTableName() == null)
             return false;
-        if (other.getTableName() != null
-                && other.getTableName().equals(this.getTableName()) == false)
+        if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
-        if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getOperation() == null ^ this.getOperation() == null)
+            return false;
+        if (other.getOperation() != null && other.getOperation().equals(this.getOperation()) == false)
             return false;
         if (other.getHashKeyField() == null ^ this.getHashKeyField() == null)
             return false;
-        if (other.getHashKeyField() != null
-                && other.getHashKeyField().equals(this.getHashKeyField()) == false)
+        if (other.getHashKeyField() != null && other.getHashKeyField().equals(this.getHashKeyField()) == false)
             return false;
         if (other.getHashKeyValue() == null ^ this.getHashKeyValue() == null)
             return false;
-        if (other.getHashKeyValue() != null
-                && other.getHashKeyValue().equals(this.getHashKeyValue()) == false)
+        if (other.getHashKeyValue() != null && other.getHashKeyValue().equals(this.getHashKeyValue()) == false)
             return false;
         if (other.getHashKeyType() == null ^ this.getHashKeyType() == null)
             return false;
-        if (other.getHashKeyType() != null
-                && other.getHashKeyType().equals(this.getHashKeyType()) == false)
+        if (other.getHashKeyType() != null && other.getHashKeyType().equals(this.getHashKeyType()) == false)
             return false;
         if (other.getRangeKeyField() == null ^ this.getRangeKeyField() == null)
             return false;
-        if (other.getRangeKeyField() != null
-                && other.getRangeKeyField().equals(this.getRangeKeyField()) == false)
+        if (other.getRangeKeyField() != null && other.getRangeKeyField().equals(this.getRangeKeyField()) == false)
             return false;
         if (other.getRangeKeyValue() == null ^ this.getRangeKeyValue() == null)
             return false;
-        if (other.getRangeKeyValue() != null
-                && other.getRangeKeyValue().equals(this.getRangeKeyValue()) == false)
+        if (other.getRangeKeyValue() != null && other.getRangeKeyValue().equals(this.getRangeKeyValue()) == false)
             return false;
         if (other.getRangeKeyType() == null ^ this.getRangeKeyType() == null)
             return false;
-        if (other.getRangeKeyType() != null
-                && other.getRangeKeyType().equals(this.getRangeKeyType()) == false)
+        if (other.getRangeKeyType() != null && other.getRangeKeyType().equals(this.getRangeKeyType()) == false)
             return false;
         if (other.getPayloadField() == null ^ this.getPayloadField() == null)
             return false;
-        if (other.getPayloadField() != null
-                && other.getPayloadField().equals(this.getPayloadField()) == false)
+        if (other.getPayloadField() != null && other.getPayloadField().equals(this.getPayloadField()) == false)
             return false;
         return true;
     }
@@ -638,37 +681,16 @@ public class DynamoDBAction implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTableName() == null) ? 0 : getTableName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHashKeyField() == null) ? 0 : getHashKeyField()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHashKeyValue() == null) ? 0 : getHashKeyValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHashKeyType() == null) ? 0 : getHashKeyType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRangeKeyField() == null) ? 0 : getRangeKeyField()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRangeKeyValue() == null) ? 0 : getRangeKeyValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRangeKeyType() == null) ? 0 : getRangeKeyType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPayloadField() == null) ? 0 : getPayloadField()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getOperation() == null) ? 0 : getOperation().hashCode());
+        hashCode = prime * hashCode + ((getHashKeyField() == null) ? 0 : getHashKeyField().hashCode());
+        hashCode = prime * hashCode + ((getHashKeyValue() == null) ? 0 : getHashKeyValue().hashCode());
+        hashCode = prime * hashCode + ((getHashKeyType() == null) ? 0 : getHashKeyType().hashCode());
+        hashCode = prime * hashCode + ((getRangeKeyField() == null) ? 0 : getRangeKeyField().hashCode());
+        hashCode = prime * hashCode + ((getRangeKeyValue() == null) ? 0 : getRangeKeyValue().hashCode());
+        hashCode = prime * hashCode + ((getRangeKeyType() == null) ? 0 : getRangeKeyType().hashCode());
+        hashCode = prime * hashCode + ((getPayloadField() == null) ? 0 : getPayloadField().hashCode());
         return hashCode;
     }
 
@@ -677,9 +699,13 @@ public class DynamoDBAction implements Serializable, Cloneable {
         try {
             return (DynamoDBAction) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.DynamoDBActionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

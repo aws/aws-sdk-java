@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DeleteReplicationSubnetGroupRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteReplicationSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,8 +42,7 @@ public class DeleteReplicationSubnetGroupRequest extends
      *        The subnet group name of the replication instance.
      */
 
-    public void setReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public void setReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         this.replicationSubnetGroupIdentifier = replicationSubnetGroupIdentifier;
     }
 
@@ -65,19 +65,17 @@ public class DeleteReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupIdentifier
      *        The subnet group name of the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(
-            String replicationSubnetGroupIdentifier) {
+    public DeleteReplicationSubnetGroupRequest withReplicationSubnetGroupIdentifier(String replicationSubnetGroupIdentifier) {
         setReplicationSubnetGroupIdentifier(replicationSubnetGroupIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,8 +86,7 @@ public class DeleteReplicationSubnetGroupRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: "
-                    + getReplicationSubnetGroupIdentifier());
+            sb.append("ReplicationSubnetGroupIdentifier: ").append(getReplicationSubnetGroupIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -104,12 +101,10 @@ public class DeleteReplicationSubnetGroupRequest extends
         if (obj instanceof DeleteReplicationSubnetGroupRequest == false)
             return false;
         DeleteReplicationSubnetGroupRequest other = (DeleteReplicationSubnetGroupRequest) obj;
-        if (other.getReplicationSubnetGroupIdentifier() == null
-                ^ this.getReplicationSubnetGroupIdentifier() == null)
+        if (other.getReplicationSubnetGroupIdentifier() == null ^ this.getReplicationSubnetGroupIdentifier() == null)
             return false;
         if (other.getReplicationSubnetGroupIdentifier() != null
-                && other.getReplicationSubnetGroupIdentifier().equals(
-                        this.getReplicationSubnetGroupIdentifier()) == false)
+                && other.getReplicationSubnetGroupIdentifier().equals(this.getReplicationSubnetGroupIdentifier()) == false)
             return false;
         return true;
     }
@@ -119,10 +114,7 @@ public class DeleteReplicationSubnetGroupRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationSubnetGroupIdentifier() == null) ? 0
-                        : getReplicationSubnetGroupIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSubnetGroupIdentifier() == null) ? 0 : getReplicationSubnetGroupIdentifier().hashCode());
         return hashCode;
     }
 
@@ -130,4 +122,5 @@ public class DeleteReplicationSubnetGroupRequest extends
     public DeleteReplicationSubnetGroupRequest clone() {
         return (DeleteReplicationSubnetGroupRequest) super.clone();
     }
+
 }

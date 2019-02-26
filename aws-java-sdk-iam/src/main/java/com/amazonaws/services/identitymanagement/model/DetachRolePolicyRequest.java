@@ -1,40 +1,38 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DetachRolePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.
+     * The name (friendly name, not ARN) of the IAM role to detach the policy from.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String roleName;
@@ -43,34 +41,29 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
      * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.
+     * The name (friendly name, not ARN) of the IAM role to detach the policy from.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param roleName
-     *        The name (friendly name, not ARN) of the IAM role to detach the
-     *        policy from.</p>
+     *        The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setRoleName(String roleName) {
@@ -79,23 +72,19 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.
+     * The name (friendly name, not ARN) of the IAM role to detach the policy from.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
-     * @return The name (friendly name, not ARN) of the IAM role to detach the
-     *         policy from.</p>
+     * @return The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getRoleName() {
@@ -104,26 +93,21 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.
+     * The name (friendly name, not ARN) of the IAM role to detach the policy from.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param roleName
-     *        The name (friendly name, not ARN) of the IAM role to detach the
-     *        policy from.</p>
+     *        The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachRolePolicyRequest withRoleName(String roleName) {
@@ -136,20 +120,17 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
      * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy you want to
-     *        detach.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -161,19 +142,16 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
      * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM policy you want to
-     *         detach.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *         the <i>AWS General Reference</i>.
+     *         For more information about ARNs, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getPolicyArn() {
@@ -185,22 +163,18 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
      * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
      * </p>
      * <p>
-     * For more information about ARNs, see <a href=
-     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
-     * <i>AWS General Reference</i>.
+     * For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the IAM policy you want to
-     *        detach.</p>
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
-     *        the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about ARNs, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetachRolePolicyRequest withPolicyArn(String policyArn) {
@@ -209,8 +183,8 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -221,9 +195,9 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -240,13 +214,11 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
         DetachRolePolicyRequest other = (DetachRolePolicyRequest) obj;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
-        if (other.getRoleName() != null
-                && other.getRoleName().equals(this.getRoleName()) == false)
+        if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
         if (other.getPolicyArn() == null ^ this.getPolicyArn() == null)
             return false;
-        if (other.getPolicyArn() != null
-                && other.getPolicyArn().equals(this.getPolicyArn()) == false)
+        if (other.getPolicyArn() != null && other.getPolicyArn().equals(this.getPolicyArn()) == false)
             return false;
         return true;
     }
@@ -256,10 +228,8 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
         return hashCode;
     }
 
@@ -267,4 +237,5 @@ public class DetachRolePolicyRequest extends AmazonWebServiceRequest implements
     public DetachRolePolicyRequest clone() {
         return (DetachRolePolicyRequest) super.clone();
     }
+
 }

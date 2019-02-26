@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,10 @@ public abstract class AbstractTransfer implements Transfer {
     public AmazonClientException waitForException() throws InterruptedException {
         try {
 
+            /**
+             * Do not remove the while loop. We need this as the future returned by
+             * monitor.getFuture() is set two times during the upload and copy operations.
+             */
             while (!monitor.isDone()) {
                 monitor.getFuture().get();
             }
@@ -272,8 +276,13 @@ public abstract class AbstractTransfer implements Transfer {
      * @return The root exception that caused the specified ExecutionException.
      */
     protected AmazonClientException unwrapExecutionException(ExecutionException e) {
-        Throwable t = e.getCause();
-        if (t instanceof AmazonClientException) return (AmazonClientException)t;
+        Throwable t = e;
+        while (t.getCause() != null && t instanceof ExecutionException) {
+            t = t.getCause();
+        }
+        if (t instanceof AmazonClientException) {
+            return (AmazonClientException) t;
+        }
         return new AmazonClientException("Unable to complete transfer: " + t.getMessage(), t);
     }
 

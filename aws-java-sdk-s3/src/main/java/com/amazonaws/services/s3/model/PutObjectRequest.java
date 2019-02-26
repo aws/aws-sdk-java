@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
-import java.io.Serializable;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -166,8 +166,8 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
      */
     @Override
     public PutObjectRequest clone() {
-        return this.copyPutObjectBaseTo(new PutObjectRequest(
-            getBucketName(), getKey(), getFile()));
+        PutObjectRequest request = (PutObjectRequest) super.clone();
+        return this.copyPutObjectBaseTo(request);
     }
 
     @Override
@@ -236,6 +236,11 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
     @SuppressWarnings("unchecked")
     public PutObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
         return super.withSSECustomerKey(sseKey);
+    }
+
+    public PutObjectRequest withTagging(ObjectTagging tagSet) {
+        super.setTagging(tagSet);
+        return this;
     }
 
     @Deprecated

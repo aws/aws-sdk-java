@@ -25,7 +25,9 @@ public class ErrorTrait {
     @JsonProperty(value = "code")
     private String errorCode;
 
-    // TODO httpStatusCode and senderFault are also in this struct. Determine if they are needed
+    private Integer httpStatusCode;
+
+    // TODO senderFault are also in this struct. Determine if they are needed
 
     public String getErrorCode() {
         return errorCode;
@@ -35,4 +37,11 @@ public class ErrorTrait {
         this.errorCode = errorCode;
     }
 
+    public Integer getHttpStatusCode() {
+        return httpStatusCode;
+    }
+
+    public void setHttpStatusCode(Integer httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
+    }
 }

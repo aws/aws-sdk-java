@@ -1,0 +1,44 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "And": [
+            {
+              "Variable": "$.var",
+              "StringGreaterThanEquals": "value"
+            },
+            {
+              "Variable": "$.other-var",
+              "StringLessThanEquals": "foo"
+            },
+            {
+              "Or": [
+                {
+                  "Variable": "$.numeric",
+                  "NumericLessThan": 9000.1
+                },
+                {
+                  "Not": {
+                    "Variable": "$.numeric",
+                    "NumericGreaterThanEquals": 42
+                  }
+                }
+              ]
+            }
+          ],
+          "Next": "NextState"
+        }
+      ],
+      "Default": "DefaultState"
+    },
+    "NextState": {
+      "Type": "Succeed"
+    },
+    "DefaultState": {
+      "Type": "Succeed"
+    }
+  }
+}

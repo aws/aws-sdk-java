@@ -1,40 +1,35 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ResendValidationEmailRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by the
-     * <a>RequestCertificate</a> action as soon as the request is made. By
-     * default, using this parameter causes email to be sent to all top-level
-     * domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -43,21 +38,18 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     private String certificateArn;
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to
-     * be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The base validation domain that will act as the suffix of the email
-     * addresses that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code>
-     * value. For example, if you requested a certificate for
-     * <code>site.subdomain.example.com</code> and specify a
-     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS and the following five addresses:
+     * The base validation domain that will act as the suffix of the email addresses that are used to send the emails.
+     * This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
+     * example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a
+     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     * technical contact, and administrative contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -85,34 +77,24 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String validationDomain;
 
     /**
      * <p>
-     * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by the
-     * <a>RequestCertificate</a> action as soon as the request is made. By
-     * default, using this parameter causes email to be sent to all top-level
-     * domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the requested certificate. The
-     *        certificate ARN is generated and returned by the
-     *        <a>RequestCertificate</a> action as soon as the request is made.
-     *        By default, using this parameter causes email to be sent to all
-     *        top-level domains you specified in the certificate request. </p>
-     *        <p>
-     *        The ARN must be of the form:
-     *        </p>
+     *        String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
+     *        by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
+     *        causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be
+     *        of the form: </p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -123,27 +105,18 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by the
-     * <a>RequestCertificate</a> action as soon as the request is made. By
-     * default, using this parameter causes email to be sent to all top-level
-     * domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
-     * @return String that contains the ARN of the requested certificate. The
-     *         certificate ARN is generated and returned by the
-     *         <a>RequestCertificate</a> action as soon as the request is made.
-     *         By default, using this parameter causes email to be sent to all
-     *         top-level domains you specified in the certificate request. </p>
-     *         <p>
-     *         The ARN must be of the form:
-     *         </p>
+     * @return String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
+     *         by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
+     *         causes email to be sent to all top-level domains you specified in the certificate request. The ARN must
+     *         be of the form: </p>
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -154,32 +127,22 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by the
-     * <a>RequestCertificate</a> action as soon as the request is made. By
-     * default, using this parameter causes email to be sent to all top-level
-     * domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the requested certificate. The
-     *        certificate ARN is generated and returned by the
-     *        <a>RequestCertificate</a> action as soon as the request is made.
-     *        By default, using this parameter causes email to be sent to all
-     *        top-level domains you specified in the certificate request. </p>
-     *        <p>
-     *        The ARN must be of the form:
-     *        </p>
+     *        String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
+     *        by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
+     *        causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be
+     *        of the form: </p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResendValidationEmailRequest withCertificateArn(String certificateArn) {
@@ -189,13 +152,11 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to
-     * be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
      * @param domain
-     *        The Fully Qualified Domain Name (FQDN) of the certificate that
-     *        needs to be validated.
+     *        The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      */
 
     public void setDomain(String domain) {
@@ -204,12 +165,10 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to
-     * be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
-     * @return The Fully Qualified Domain Name (FQDN) of the certificate that
-     *         needs to be validated.
+     * @return The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      */
 
     public String getDomain() {
@@ -218,15 +177,12 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Fully Qualified Domain Name (FQDN) of the certificate that needs to
-     * be validated.
+     * The fully qualified domain name (FQDN) of the certificate that needs to be validated.
      * </p>
      * 
      * @param domain
-     *        The Fully Qualified Domain Name (FQDN) of the certificate that
-     *        needs to be validated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified domain name (FQDN) of the certificate that needs to be validated.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResendValidationEmailRequest withDomain(String domain) {
@@ -236,14 +192,12 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The base validation domain that will act as the suffix of the email
-     * addresses that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code>
-     * value. For example, if you requested a certificate for
-     * <code>site.subdomain.example.com</code> and specify a
-     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS and the following five addresses:
+     * The base validation domain that will act as the suffix of the email addresses that are used to send the emails.
+     * This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
+     * example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a
+     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     * technical contact, and administrative contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -271,18 +225,13 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
-     *        The base validation domain that will act as the suffix of the
-     *        email addresses that are used to send the emails. This must be the
-     *        same as the <code>Domain</code> value or a superdomain of the
-     *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>site.subdomain.example.com</code> and
-     *        specify a <b>ValidationDomain</b> of
-     *        <code>subdomain.example.com</code>, ACM sends email to the domain
-     *        registrant, technical contact, and administrative contact in WHOIS
-     *        and the following five addresses:
+     *        The base validation domain that will act as the suffix of the email addresses that are used to send the
+     *        emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code>
+     *        value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify
+     *        a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     *        technical contact, and administrative contact in WHOIS and the following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -309,7 +258,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setValidationDomain(String validationDomain) {
@@ -318,14 +266,12 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The base validation domain that will act as the suffix of the email
-     * addresses that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code>
-     * value. For example, if you requested a certificate for
-     * <code>site.subdomain.example.com</code> and specify a
-     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS and the following five addresses:
+     * The base validation domain that will act as the suffix of the email addresses that are used to send the emails.
+     * This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
+     * example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a
+     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     * technical contact, and administrative contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -353,17 +299,13 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
-     * @return The base validation domain that will act as the suffix of the
-     *         email addresses that are used to send the emails. This must be
-     *         the same as the <code>Domain</code> value or a superdomain of the
-     *         <code>Domain</code> value. For example, if you requested a
-     *         certificate for <code>site.subdomain.example.com</code> and
-     *         specify a <b>ValidationDomain</b> of
-     *         <code>subdomain.example.com</code>, ACM sends email to the domain
-     *         registrant, technical contact, and administrative contact in
-     *         WHOIS and the following five addresses:
+     * @return The base validation domain that will act as the suffix of the email addresses that are used to send the
+     *         emails. This must be the same as the <code>Domain</code> value or a superdomain of the
+     *         <code>Domain</code> value. For example, if you requested a certificate for
+     *         <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
+     *         <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and
+     *         administrative contact in WHOIS and the following five addresses:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -390,7 +332,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         webmaster@subdomain.example.com
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public String getValidationDomain() {
@@ -399,14 +340,12 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The base validation domain that will act as the suffix of the email
-     * addresses that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code>
-     * value. For example, if you requested a certificate for
-     * <code>site.subdomain.example.com</code> and specify a
-     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS and the following five addresses:
+     * The base validation domain that will act as the suffix of the email addresses that are used to send the emails.
+     * This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
+     * example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a
+     * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     * technical contact, and administrative contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -434,18 +373,13 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
-     *        The base validation domain that will act as the suffix of the
-     *        email addresses that are used to send the emails. This must be the
-     *        same as the <code>Domain</code> value or a superdomain of the
-     *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>site.subdomain.example.com</code> and
-     *        specify a <b>ValidationDomain</b> of
-     *        <code>subdomain.example.com</code>, ACM sends email to the domain
-     *        registrant, technical contact, and administrative contact in WHOIS
-     *        and the following five addresses:
+     *        The base validation domain that will act as the suffix of the email addresses that are used to send the
+     *        emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code>
+     *        value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify
+     *        a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
+     *        technical contact, and administrative contact in WHOIS and the following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -472,20 +406,17 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResendValidationEmailRequest withValidationDomain(
-            String validationDomain) {
+    public ResendValidationEmailRequest withValidationDomain(String validationDomain) {
         setValidationDomain(validationDomain);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -496,11 +427,11 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getValidationDomain() != null)
-            sb.append("ValidationDomain: " + getValidationDomain());
+            sb.append("ValidationDomain: ").append(getValidationDomain());
         sb.append("}");
         return sb.toString();
     }
@@ -515,23 +446,17 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
         if (obj instanceof ResendValidationEmailRequest == false)
             return false;
         ResendValidationEmailRequest other = (ResendValidationEmailRequest) obj;
-        if (other.getCertificateArn() == null
-                ^ this.getCertificateArn() == null)
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
             return false;
-        if (other.getCertificateArn() != null
-                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
-        if (other.getValidationDomain() == null
-                ^ this.getValidationDomain() == null)
+        if (other.getValidationDomain() == null ^ this.getValidationDomain() == null)
             return false;
-        if (other.getValidationDomain() != null
-                && other.getValidationDomain().equals(
-                        this.getValidationDomain()) == false)
+        if (other.getValidationDomain() != null && other.getValidationDomain().equals(this.getValidationDomain()) == false)
             return false;
         return true;
     }
@@ -541,16 +466,9 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getValidationDomain() == null) ? 0 : getValidationDomain()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getValidationDomain() == null) ? 0 : getValidationDomain().hashCode());
         return hashCode;
     }
 
@@ -558,4 +476,5 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     public ResendValidationEmailRequest clone() {
         return (ResendValidationEmailRequest) super.clone();
     }
+
 }

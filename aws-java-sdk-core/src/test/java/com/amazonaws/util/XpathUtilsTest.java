@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -37,17 +37,24 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * Unit tests for the XpathUtils class.
@@ -225,4 +232,23 @@ public class XpathUtilsTest {
 
         assertEquals(null, asByteBuffer("Foo/Empty", document, xpath));
     }
+
+    @Test
+    public void testFromDocumentDoesNotWriteToStderrWhenXmlInvalid() throws SAXException, IOException, ParserConfigurationException {
+        PrintStream err = System.err;
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        try {
+            PrintStream err2 = new PrintStream(bytes);
+            System.setErr(err2);
+            // invalid xml
+            XpathUtils.documentFrom("a");
+            Assert.fail();
+        } catch (SAXParseException e) {
+            //ensure nothing written to stderr
+            assertEquals(0, bytes.toByteArray().length);
+        } finally {
+            System.setErr(err);
+        }
+    }
+
 }

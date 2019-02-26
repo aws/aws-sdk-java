@@ -1,40 +1,47 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A complex type containing a resource and its associated tags.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceTagSet" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceTagSet implements Serializable, Cloneable {
 
     /**
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
@@ -54,20 +61,32 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -79,20 +98,31 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of the resource.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         - The resource type for health checks is <code>healthcheck</code>
-     *         .
+     *         The resource type for health checks is <code>healthcheck</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         - The resource type for hosted zones is <code>hostedzone</code>.
+     *         The resource type for hosted zones is <code>hostedzone</code>.
+     *         </p>
+     *         </li>
      * @see TagResourceType
      */
 
@@ -104,22 +134,33 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TagResourceType
      */
 
@@ -132,52 +173,75 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
     public void setResourceType(TagResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TagResourceType
      */
 
     public ResourceTagSet withResourceType(TagResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -213,8 +277,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * 
      * @param resourceId
      *        The ID for the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTagSet withResourceId(String resourceId) {
@@ -260,16 +323,14 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * The tags associated with the specified resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tags associated with the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTagSet withTags(Tag... tags) {
@@ -289,8 +350,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * 
      * @param tags
      *        The tags associated with the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTagSet withTags(java.util.Collection<Tag> tags) {
@@ -299,8 +359,8 @@ public class ResourceTagSet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -311,11 +371,11 @@ public class ResourceTagSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -332,18 +392,15 @@ public class ResourceTagSet implements Serializable, Cloneable {
         ResourceTagSet other = (ResourceTagSet) obj;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -353,14 +410,9 @@ public class ResourceTagSet implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -369,9 +421,8 @@ public class ResourceTagSet implements Serializable, Cloneable {
         try {
             return (ResourceTagSet) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

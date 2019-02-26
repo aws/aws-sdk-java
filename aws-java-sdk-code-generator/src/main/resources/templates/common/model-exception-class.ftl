@@ -1,12 +1,13 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model;
-import com.amazonaws.AmazonServiceException;
+
+import javax.annotation.Generated;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} extends AmazonServiceException {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ${shape.shapeName} extends ${baseClassFqcn} {
     private static final long serialVersionUID = 1L;
 
     <@VariableDeclarationMacro.content shape/>

@@ -1,62 +1,57 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Thumbnails for videos.
  * </p>
  */
-public class Thumbnails implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Thumbnails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of thumbnails, if any. Valid values are <code>jpg</code> and
-     * <code>png</code>.
+     * The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>.
      * </p>
      * <p>
-     * You specify whether you want Elastic Transcoder to create thumbnails when
-     * you create a job.
+     * You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      * </p>
      */
     private String format;
     /**
      * <p>
-     * The approximate number of seconds between thumbnails. Specify an integer
-     * value.
+     * The approximate number of seconds between thumbnails. Specify an integer value.
      * </p>
      */
     private String interval;
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
-     * The width and height of thumbnail files in pixels. Specify a value in the
-     * format <code><i>width</i></code> x <code><i>height</i></code> where both
-     * values are even integers. The values cannot exceed the width and height
+     * The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x
+     * <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height
      * that you specified in the <code>Video:Resolution</code> object.
      * </p>
      */
@@ -64,39 +59,35 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
      * The aspect ratio of thumbnails. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>,
-     * <code>16:9</code>
+     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve
-     * the aspect ratio of the video in the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the
+     * output file.
      * </p>
      */
     private String aspectRatio;
     /**
      * <p>
-     * The maximum width of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1920 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 4096.
+     * The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      * </p>
      */
     private String maxWidth;
     /**
      * <p>
-     * The maximum height of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1080 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 3072.
+     * The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      * </p>
      */
     private String maxHeight;
@@ -104,66 +95,73 @@ public class Thumbnails implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of thumbnails:
      * </p>
-     * <p>
      * <ul>
-     * <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail MaxWidth or MaxHeight settings
-     * without exceeding the other value.</li>
-     * <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail <code>MaxWidth</code> or
-     * <code>MaxHeight</code> settings and matches or exceeds the other value.
-     * Elastic Transcoder centers the image in thumbnails and then crops in the
-     * dimension (if any) that exceeds the maximum value.</li>
-     * <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails to
-     * match the values that you specified for thumbnail <code>MaxWidth</code>
-     * and <code>MaxHeight</code> settings. If the relative proportions of the
-     * input video and thumbnails are different, the thumbnails will be
-     * distorted.</li>
-     * <li> <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If
-     * either dimension of the input video exceeds the values that you specified
-     * for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings,
-     * Elastic Transcoder crops the thumbnails.</li>
-     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
-     * exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale thumbnails up.</li>
-     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does
-     * not scale thumbnails up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * MaxWidth or MaxHeight settings without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value. Elastic
+     * Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds the maximum
+     * value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     * thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the input
+     * video and thumbnails are different, the thumbnails will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video exceeds
+     * the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings, Elastic
+     * Transcoder crops the thumbnails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
+     * exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below
+     * either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String sizingPolicy;
     /**
      * <p>
-     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
-     * Transcoder may add black bars to the top and bottom and/or left and right
-     * sides of thumbnails to make the total size of the thumbnails match the
-     * values that you specified for thumbnail <code>MaxWidth</code> and
-     * <code>MaxHeight</code> settings.
+     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and
+     * bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that
+     * you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      * </p>
      */
     private String paddingPolicy;
 
     /**
      * <p>
-     * The format of thumbnails, if any. Valid values are <code>jpg</code> and
-     * <code>png</code>.
+     * The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>.
      * </p>
      * <p>
-     * You specify whether you want Elastic Transcoder to create thumbnails when
-     * you create a job.
+     * You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      * </p>
      * 
      * @param format
-     *        The format of thumbnails, if any. Valid values are
-     *        <code>jpg</code> and <code>png</code>. </p>
+     *        The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
      *        <p>
-     *        You specify whether you want Elastic Transcoder to create
-     *        thumbnails when you create a job.
+     *        You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      */
 
     public void setFormat(String format) {
@@ -172,19 +170,15 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The format of thumbnails, if any. Valid values are <code>jpg</code> and
-     * <code>png</code>.
+     * The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>.
      * </p>
      * <p>
-     * You specify whether you want Elastic Transcoder to create thumbnails when
-     * you create a job.
+     * You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      * </p>
      * 
-     * @return The format of thumbnails, if any. Valid values are
-     *         <code>jpg</code> and <code>png</code>. </p>
+     * @return The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
      *         <p>
-     *         You specify whether you want Elastic Transcoder to create
-     *         thumbnails when you create a job.
+     *         You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      */
 
     public String getFormat() {
@@ -193,22 +187,17 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The format of thumbnails, if any. Valid values are <code>jpg</code> and
-     * <code>png</code>.
+     * The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>.
      * </p>
      * <p>
-     * You specify whether you want Elastic Transcoder to create thumbnails when
-     * you create a job.
+     * You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
      * </p>
      * 
      * @param format
-     *        The format of thumbnails, if any. Valid values are
-     *        <code>jpg</code> and <code>png</code>. </p>
+     *        The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
      *        <p>
-     *        You specify whether you want Elastic Transcoder to create
-     *        thumbnails when you create a job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        You specify whether you want Elastic Transcoder to create thumbnails when you create a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withFormat(String format) {
@@ -218,13 +207,11 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate number of seconds between thumbnails. Specify an integer
-     * value.
+     * The approximate number of seconds between thumbnails. Specify an integer value.
      * </p>
      * 
      * @param interval
-     *        The approximate number of seconds between thumbnails. Specify an
-     *        integer value.
+     *        The approximate number of seconds between thumbnails. Specify an integer value.
      */
 
     public void setInterval(String interval) {
@@ -233,12 +220,10 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate number of seconds between thumbnails. Specify an integer
-     * value.
+     * The approximate number of seconds between thumbnails. Specify an integer value.
      * </p>
      * 
-     * @return The approximate number of seconds between thumbnails. Specify an
-     *         integer value.
+     * @return The approximate number of seconds between thumbnails. Specify an integer value.
      */
 
     public String getInterval() {
@@ -247,15 +232,12 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The approximate number of seconds between thumbnails. Specify an integer
-     * value.
+     * The approximate number of seconds between thumbnails. Specify an integer value.
      * </p>
      * 
      * @param interval
-     *        The approximate number of seconds between thumbnails. Specify an
-     *        integer value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The approximate number of seconds between thumbnails. Specify an integer value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withInterval(String interval) {
@@ -266,36 +248,30 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
-     * The width and height of thumbnail files in pixels. Specify a value in the
-     * format <code><i>width</i></code> x <code><i>height</i></code> where both
-     * values are even integers. The values cannot exceed the width and height
+     * The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x
+     * <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height
      * that you specified in the <code>Video:Resolution</code> object.
      * </p>
      * 
      * @param resolution
      *        <p>
-     *        To better control resolution and aspect ratio of thumbnails, we
-     *        recommend that you use the values <code>MaxWidth</code>,
-     *        <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *        <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *        <code>AspectRatio</code>. The two groups of settings are mutually
+     *        To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *        <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *        instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *        exclusive. Do not use them together.
      *        </p>
      *        </important>
      *        <p>
-     *        The width and height of thumbnail files in pixels. Specify a value
-     *        in the format <code><i>width</i></code> x
-     *        <code><i>height</i></code> where both values are even integers.
-     *        The values cannot exceed the width and height that you specified
-     *        in the <code>Video:Resolution</code> object.
+     *        The width and height of thumbnail files in pixels. Specify a value in the format
+     *        <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values
+     *        cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.
      */
 
     public void setResolution(String resolution) {
@@ -305,35 +281,29 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
-     * The width and height of thumbnail files in pixels. Specify a value in the
-     * format <code><i>width</i></code> x <code><i>height</i></code> where both
-     * values are even integers. The values cannot exceed the width and height
+     * The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x
+     * <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height
      * that you specified in the <code>Video:Resolution</code> object.
      * </p>
      * 
      * @return <p>
-     *         To better control resolution and aspect ratio of thumbnails, we
-     *         recommend that you use the values <code>MaxWidth</code>,
-     *         <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *         <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *         <code>AspectRatio</code>. The two groups of settings are mutually
+     *         To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *         <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *         instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *         exclusive. Do not use them together.
      *         </p>
      *         </important>
      *         <p>
-     *         The width and height of thumbnail files in pixels. Specify a
-     *         value in the format <code><i>width</i></code> x
-     *         <code><i>height</i></code> where both values are even integers.
-     *         The values cannot exceed the width and height that you specified
-     *         in the <code>Video:Resolution</code> object.
+     *         The width and height of thumbnail files in pixels. Specify a value in the format
+     *         <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The
+     *         values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.
      */
 
     public String getResolution() {
@@ -343,38 +313,31 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
-     * The width and height of thumbnail files in pixels. Specify a value in the
-     * format <code><i>width</i></code> x <code><i>height</i></code> where both
-     * values are even integers. The values cannot exceed the width and height
+     * The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x
+     * <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height
      * that you specified in the <code>Video:Resolution</code> object.
      * </p>
      * 
      * @param resolution
      *        <p>
-     *        To better control resolution and aspect ratio of thumbnails, we
-     *        recommend that you use the values <code>MaxWidth</code>,
-     *        <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *        <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *        <code>AspectRatio</code>. The two groups of settings are mutually
+     *        To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *        <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *        instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *        exclusive. Do not use them together.
      *        </p>
      *        </important>
      *        <p>
-     *        The width and height of thumbnail files in pixels. Specify a value
-     *        in the format <code><i>width</i></code> x
-     *        <code><i>height</i></code> where both values are even integers.
-     *        The values cannot exceed the width and height that you specified
-     *        in the <code>Video:Resolution</code> object.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The width and height of thumbnail files in pixels. Specify a value in the format
+     *        <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values
+     *        cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withResolution(String resolution) {
@@ -385,32 +348,28 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
      * The aspect ratio of thumbnails. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>,
-     * <code>16:9</code>
+     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve
-     * the aspect ratio of the video in the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the
+     * output file.
      * </p>
      * 
      * @param aspectRatio
      *        <p>
-     *        To better control resolution and aspect ratio of thumbnails, we
-     *        recommend that you use the values <code>MaxWidth</code>,
-     *        <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *        <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *        <code>AspectRatio</code>. The two groups of settings are mutually
+     *        To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *        <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *        instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *        exclusive. Do not use them together.
      *        </p>
      *        </important>
@@ -418,12 +377,11 @@ public class Thumbnails implements Serializable, Cloneable {
      *        The aspect ratio of thumbnails. Valid values include:
      *        </p>
      *        <p>
-     *        <code>auto</code>, <code>1:1</code>, <code>4:3</code>,
-     *        <code>3:2</code>, <code>16:9</code>
+     *        <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder tries to
-     *        preserve the aspect ratio of the video in the output file.
+     *        If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in
+     *        the output file.
      */
 
     public void setAspectRatio(String aspectRatio) {
@@ -433,31 +391,27 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
      * The aspect ratio of thumbnails. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>,
-     * <code>16:9</code>
+     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve
-     * the aspect ratio of the video in the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the
+     * output file.
      * </p>
      * 
      * @return <p>
-     *         To better control resolution and aspect ratio of thumbnails, we
-     *         recommend that you use the values <code>MaxWidth</code>,
-     *         <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *         <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *         <code>AspectRatio</code>. The two groups of settings are mutually
+     *         To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *         <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *         instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *         exclusive. Do not use them together.
      *         </p>
      *         </important>
@@ -465,12 +419,11 @@ public class Thumbnails implements Serializable, Cloneable {
      *         The aspect ratio of thumbnails. Valid values include:
      *         </p>
      *         <p>
-     *         <code>auto</code>, <code>1:1</code>, <code>4:3</code>,
-     *         <code>3:2</code>, <code>16:9</code>
+     *         <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      *         </p>
      *         <p>
-     *         If you specify <code>auto</code>, Elastic Transcoder tries to
-     *         preserve the aspect ratio of the video in the output file.
+     *         If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in
+     *         the output file.
      */
 
     public String getAspectRatio() {
@@ -480,32 +433,28 @@ public class Thumbnails implements Serializable, Cloneable {
     /**
      * <important>
      * <p>
-     * To better control resolution and aspect ratio of thumbnails, we recommend
-     * that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
-     * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
-     * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of
-     * settings are mutually exclusive. Do not use them together.
+     * To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     * <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead
+     * of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
+     * not use them together.
      * </p>
      * </important>
      * <p>
      * The aspect ratio of thumbnails. Valid values include:
      * </p>
      * <p>
-     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>,
-     * <code>16:9</code>
+     * <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      * </p>
      * <p>
-     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve
-     * the aspect ratio of the video in the output file.
+     * If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the
+     * output file.
      * </p>
      * 
      * @param aspectRatio
      *        <p>
-     *        To better control resolution and aspect ratio of thumbnails, we
-     *        recommend that you use the values <code>MaxWidth</code>,
-     *        <code>MaxHeight</code>, <code>SizingPolicy</code>, and
-     *        <code>PaddingPolicy</code> instead of <code>Resolution</code> and
-     *        <code>AspectRatio</code>. The two groups of settings are mutually
+     *        To better control resolution and aspect ratio of thumbnails, we recommend that you use the values
+     *        <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code>
+     *        instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually
      *        exclusive. Do not use them together.
      *        </p>
      *        </important>
@@ -513,14 +462,12 @@ public class Thumbnails implements Serializable, Cloneable {
      *        The aspect ratio of thumbnails. Valid values include:
      *        </p>
      *        <p>
-     *        <code>auto</code>, <code>1:1</code>, <code>4:3</code>,
-     *        <code>3:2</code>, <code>16:9</code>
+     *        <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
      *        </p>
      *        <p>
-     *        If you specify <code>auto</code>, Elastic Transcoder tries to
-     *        preserve the aspect ratio of the video in the output file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in
+     *        the output file.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withAspectRatio(String aspectRatio) {
@@ -530,16 +477,13 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum width of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1920 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 4096.
+     * The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      * </p>
      * 
      * @param maxWidth
-     *        The maximum width of thumbnails in pixels. If you specify auto,
-     *        Elastic Transcoder uses 1920 (Full HD) as the default value. If
-     *        you specify a numeric value, enter an even integer between 32 and
-     *        4096.
+     *        The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as
+     *        the default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      */
 
     public void setMaxWidth(String maxWidth) {
@@ -548,15 +492,12 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum width of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1920 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 4096.
+     * The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      * </p>
      * 
-     * @return The maximum width of thumbnails in pixels. If you specify auto,
-     *         Elastic Transcoder uses 1920 (Full HD) as the default value. If
-     *         you specify a numeric value, enter an even integer between 32 and
-     *         4096.
+     * @return The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as
+     *         the default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      */
 
     public String getMaxWidth() {
@@ -565,18 +506,14 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum width of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1920 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 4096.
+     * The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 4096.
      * </p>
      * 
      * @param maxWidth
-     *        The maximum width of thumbnails in pixels. If you specify auto,
-     *        Elastic Transcoder uses 1920 (Full HD) as the default value. If
-     *        you specify a numeric value, enter an even integer between 32 and
-     *        4096.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as
+     *        the default value. If you specify a numeric value, enter an even integer between 32 and 4096.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withMaxWidth(String maxWidth) {
@@ -586,16 +523,13 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum height of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1080 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 3072.
+     * The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      * </p>
      * 
      * @param maxHeight
-     *        The maximum height of thumbnails in pixels. If you specify auto,
-     *        Elastic Transcoder uses 1080 (Full HD) as the default value. If
-     *        you specify a numeric value, enter an even integer between 32 and
-     *        3072.
+     *        The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as
+     *        the default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      */
 
     public void setMaxHeight(String maxHeight) {
@@ -604,15 +538,12 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum height of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1080 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 3072.
+     * The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      * </p>
      * 
-     * @return The maximum height of thumbnails in pixels. If you specify auto,
-     *         Elastic Transcoder uses 1080 (Full HD) as the default value. If
-     *         you specify a numeric value, enter an even integer between 32 and
-     *         3072.
+     * @return The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD)
+     *         as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      */
 
     public String getMaxHeight() {
@@ -621,18 +552,14 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum height of thumbnails in pixels. If you specify auto, Elastic
-     * Transcoder uses 1080 (Full HD) as the default value. If you specify a
-     * numeric value, enter an even integer between 32 and 3072.
+     * The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the
+     * default value. If you specify a numeric value, enter an even integer between 32 and 3072.
      * </p>
      * 
      * @param maxHeight
-     *        The maximum height of thumbnails in pixels. If you specify auto,
-     *        Elastic Transcoder uses 1080 (Full HD) as the default value. If
-     *        you specify a numeric value, enter an even integer between 32 and
-     *        3072.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as
+     *        the default value. If you specify a numeric value, enter an even integer between 32 and 3072.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withMaxHeight(String maxHeight) {
@@ -644,75 +571,97 @@ public class Thumbnails implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of thumbnails:
      * </p>
-     * <p>
      * <ul>
-     * <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail MaxWidth or MaxHeight settings
-     * without exceeding the other value.</li>
-     * <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail <code>MaxWidth</code> or
-     * <code>MaxHeight</code> settings and matches or exceeds the other value.
-     * Elastic Transcoder centers the image in thumbnails and then crops in the
-     * dimension (if any) that exceeds the maximum value.</li>
-     * <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails to
-     * match the values that you specified for thumbnail <code>MaxWidth</code>
-     * and <code>MaxHeight</code> settings. If the relative proportions of the
-     * input video and thumbnails are different, the thumbnails will be
-     * distorted.</li>
-     * <li> <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If
-     * either dimension of the input video exceeds the values that you specified
-     * for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings,
-     * Elastic Transcoder crops the thumbnails.</li>
-     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
-     * exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale thumbnails up.</li>
-     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does
-     * not scale thumbnails up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * MaxWidth or MaxHeight settings without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value. Elastic
+     * Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds the maximum
+     * value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     * thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the input
+     * video and thumbnails are different, the thumbnails will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video exceeds
+     * the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings, Elastic
+     * Transcoder crops the thumbnails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
+     * exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below
+     * either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sizingPolicy
-     *        Specify one of the following values to control scaling of
-     *        thumbnails:</p>
-     *        <p>
+     *        Specify one of the following values to control scaling of thumbnails:</p>
      *        <ul>
-     *        <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they
-     *        match the value that you specified in thumbnail MaxWidth or
-     *        MaxHeight settings without exceeding the other value.</li>
-     *        <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so
-     *        they match the value that you specified in thumbnail
-     *        <code>MaxWidth</code> or <code>MaxHeight</code> settings and
-     *        matches or exceeds the other value. Elastic Transcoder centers the
-     *        image in thumbnails and then crops in the dimension (if any) that
-     *        exceeds the maximum value.</li>
-     *        <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails
-     *        to match the values that you specified for thumbnail
-     *        <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the
-     *        relative proportions of the input video and thumbnails are
-     *        different, the thumbnails will be distorted.</li>
-     *        <li> <code>Keep</code>: Elastic Transcoder does not scale
-     *        thumbnails. If either dimension of the input video exceeds the
-     *        values that you specified for thumbnail <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> settings, Elastic Transcoder crops the
-     *        thumbnails.</li>
-     *        <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails
-     *        down so that their dimensions match the values that you specified
-     *        for at least one of thumbnail <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without exceeding either value. If you
-     *        specify this option, Elastic Transcoder does not scale thumbnails
-     *        up.</li>
-     *        <li> <code>ShrinkToFill</code>: Elastic Transcoder scales
-     *        thumbnails down so that their dimensions match the values that you
-     *        specified for at least one of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without dropping below either value. If you
-     *        specify this option, Elastic Transcoder does not scale thumbnails
-     *        up.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *        thumbnail MaxWidth or MaxHeight settings without exceeding the other value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *        thumbnail <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value.
+     *        Elastic Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds
+     *        the maximum value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     *        thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the
+     *        input video and thumbnails are different, the thumbnails will be distorted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video
+     *        exceeds the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *        settings, Elastic Transcoder crops the thumbnails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *        values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *        without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails
+     *        up.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     *        </p>
+     *        </li>
      */
 
     public void setSizingPolicy(String sizingPolicy) {
@@ -723,74 +672,96 @@ public class Thumbnails implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of thumbnails:
      * </p>
-     * <p>
      * <ul>
-     * <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail MaxWidth or MaxHeight settings
-     * without exceeding the other value.</li>
-     * <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail <code>MaxWidth</code> or
-     * <code>MaxHeight</code> settings and matches or exceeds the other value.
-     * Elastic Transcoder centers the image in thumbnails and then crops in the
-     * dimension (if any) that exceeds the maximum value.</li>
-     * <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails to
-     * match the values that you specified for thumbnail <code>MaxWidth</code>
-     * and <code>MaxHeight</code> settings. If the relative proportions of the
-     * input video and thumbnails are different, the thumbnails will be
-     * distorted.</li>
-     * <li> <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If
-     * either dimension of the input video exceeds the values that you specified
-     * for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings,
-     * Elastic Transcoder crops the thumbnails.</li>
-     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
-     * exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale thumbnails up.</li>
-     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does
-     * not scale thumbnails up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * MaxWidth or MaxHeight settings without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value. Elastic
+     * Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds the maximum
+     * value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     * thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the input
+     * video and thumbnails are different, the thumbnails will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video exceeds
+     * the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings, Elastic
+     * Transcoder crops the thumbnails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
+     * exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below
+     * either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specify one of the following values to control scaling of
-     *         thumbnails:</p>
-     *         <p>
+     * @return Specify one of the following values to control scaling of thumbnails:</p>
      *         <ul>
-     *         <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so
-     *         they match the value that you specified in thumbnail MaxWidth or
-     *         MaxHeight settings without exceeding the other value.</li>
-     *         <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so
-     *         they match the value that you specified in thumbnail
-     *         <code>MaxWidth</code> or <code>MaxHeight</code> settings and
-     *         matches or exceeds the other value. Elastic Transcoder centers
-     *         the image in thumbnails and then crops in the dimension (if any)
-     *         that exceeds the maximum value.</li>
-     *         <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails
-     *         to match the values that you specified for thumbnail
-     *         <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the
-     *         relative proportions of the input video and thumbnails are
-     *         different, the thumbnails will be distorted.</li>
-     *         <li> <code>Keep</code>: Elastic Transcoder does not scale
-     *         thumbnails. If either dimension of the input video exceeds the
-     *         values that you specified for thumbnail <code>MaxWidth</code> and
-     *         <code>MaxHeight</code> settings, Elastic Transcoder crops the
-     *         thumbnails.</li>
-     *         <li> <code>ShrinkToFit</code>: Elastic Transcoder scales
-     *         thumbnails down so that their dimensions match the values that
-     *         you specified for at least one of thumbnail <code>MaxWidth</code>
-     *         and <code>MaxHeight</code> without exceeding either value. If you
-     *         specify this option, Elastic Transcoder does not scale thumbnails
-     *         up.</li>
-     *         <li> <code>ShrinkToFill</code>: Elastic Transcoder scales
-     *         thumbnails down so that their dimensions match the values that
-     *         you specified for at least one of <code>MaxWidth</code> and
-     *         <code>MaxHeight</code> without dropping below either value. If
-     *         you specify this option, Elastic Transcoder does not scale
-     *         thumbnails up.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *         thumbnail MaxWidth or MaxHeight settings without exceeding the other value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *         thumbnail <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other
+     *         value. Elastic Transcoder centers the image in thumbnails and then crops in the dimension (if any) that
+     *         exceeds the maximum value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     *         thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the
+     *         input video and thumbnails are different, the thumbnails will be distorted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video
+     *         exceeds the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *         settings, Elastic Transcoder crops the thumbnails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *         values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *         without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails
+     *         up.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *         values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *         dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     *         </p>
+     *         </li>
      */
 
     public String getSizingPolicy() {
@@ -801,77 +772,98 @@ public class Thumbnails implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of thumbnails:
      * </p>
-     * <p>
      * <ul>
-     * <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail MaxWidth or MaxHeight settings
-     * without exceeding the other value.</li>
-     * <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so they match
-     * the value that you specified in thumbnail <code>MaxWidth</code> or
-     * <code>MaxHeight</code> settings and matches or exceeds the other value.
-     * Elastic Transcoder centers the image in thumbnails and then crops in the
-     * dimension (if any) that exceeds the maximum value.</li>
-     * <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails to
-     * match the values that you specified for thumbnail <code>MaxWidth</code>
-     * and <code>MaxHeight</code> settings. If the relative proportions of the
-     * input video and thumbnails are different, the thumbnails will be
-     * distorted.</li>
-     * <li> <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If
-     * either dimension of the input video exceeds the values that you specified
-     * for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings,
-     * Elastic Transcoder crops the thumbnails.</li>
-     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
-     * exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale thumbnails up.</li>
-     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down
-     * so that their dimensions match the values that you specified for at least
-     * one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does
-     * not scale thumbnails up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * MaxWidth or MaxHeight settings without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail
+     * <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value. Elastic
+     * Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds the maximum
+     * value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     * thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the input
+     * video and thumbnails are different, the thumbnails will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video exceeds
+     * the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings, Elastic
+     * Transcoder crops the thumbnails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without
+     * exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below
+     * either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sizingPolicy
-     *        Specify one of the following values to control scaling of
-     *        thumbnails:</p>
-     *        <p>
+     *        Specify one of the following values to control scaling of thumbnails:</p>
      *        <ul>
-     *        <li> <code>Fit</code>: Elastic Transcoder scales thumbnails so they
-     *        match the value that you specified in thumbnail MaxWidth or
-     *        MaxHeight settings without exceeding the other value.</li>
-     *        <li> <code>Fill</code>: Elastic Transcoder scales thumbnails so
-     *        they match the value that you specified in thumbnail
-     *        <code>MaxWidth</code> or <code>MaxHeight</code> settings and
-     *        matches or exceeds the other value. Elastic Transcoder centers the
-     *        image in thumbnails and then crops in the dimension (if any) that
-     *        exceeds the maximum value.</li>
-     *        <li> <code>Stretch</code>: Elastic Transcoder stretches thumbnails
-     *        to match the values that you specified for thumbnail
-     *        <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the
-     *        relative proportions of the input video and thumbnails are
-     *        different, the thumbnails will be distorted.</li>
-     *        <li> <code>Keep</code>: Elastic Transcoder does not scale
-     *        thumbnails. If either dimension of the input video exceeds the
-     *        values that you specified for thumbnail <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> settings, Elastic Transcoder crops the
-     *        thumbnails.</li>
-     *        <li> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails
-     *        down so that their dimensions match the values that you specified
-     *        for at least one of thumbnail <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without exceeding either value. If you
-     *        specify this option, Elastic Transcoder does not scale thumbnails
-     *        up.</li>
-     *        <li> <code>ShrinkToFill</code>: Elastic Transcoder scales
-     *        thumbnails down so that their dimensions match the values that you
-     *        specified for at least one of <code>MaxWidth</code> and
-     *        <code>MaxHeight</code> without dropping below either value. If you
-     *        specify this option, Elastic Transcoder does not scale thumbnails
-     *        up.</li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *        thumbnail MaxWidth or MaxHeight settings without exceeding the other value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in
+     *        thumbnail <code>MaxWidth</code> or <code>MaxHeight</code> settings and matches or exceeds the other value.
+     *        Elastic Transcoder centers the image in thumbnails and then crops in the dimension (if any) that exceeds
+     *        the maximum value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values that you specified for
+     *        thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings. If the relative proportions of the
+     *        input video and thumbnails are different, the thumbnails will be distorted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension of the input video
+     *        exceeds the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *        settings, Elastic Transcoder crops the thumbnails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *        values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
+     *        without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails
+     *        up.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withSizingPolicy(String sizingPolicy) {
@@ -881,19 +873,15 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
-     * Transcoder may add black bars to the top and bottom and/or left and right
-     * sides of thumbnails to make the total size of the thumbnails match the
-     * values that you specified for thumbnail <code>MaxWidth</code> and
-     * <code>MaxHeight</code> settings.
+     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and
+     * bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that
+     * you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      * </p>
      * 
      * @param paddingPolicy
-     *        When you set <code>PaddingPolicy</code> to <code>Pad</code>,
-     *        Elastic Transcoder may add black bars to the top and bottom and/or
-     *        left and right sides of thumbnails to make the total size of the
-     *        thumbnails match the values that you specified for thumbnail
-     *        <code>MaxWidth</code> and <code>MaxHeight</code> settings.
+     *        When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the
+     *        top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match
+     *        the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      */
 
     public void setPaddingPolicy(String paddingPolicy) {
@@ -902,19 +890,14 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
-     * Transcoder may add black bars to the top and bottom and/or left and right
-     * sides of thumbnails to make the total size of the thumbnails match the
-     * values that you specified for thumbnail <code>MaxWidth</code> and
-     * <code>MaxHeight</code> settings.
+     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and
+     * bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that
+     * you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      * </p>
      * 
-     * @return When you set <code>PaddingPolicy</code> to <code>Pad</code>,
-     *         Elastic Transcoder may add black bars to the top and bottom
-     *         and/or left and right sides of thumbnails to make the total size
-     *         of the thumbnails match the values that you specified for
-     *         thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
-     *         settings.
+     * @return When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the
+     *         top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match
+     *         the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      */
 
     public String getPaddingPolicy() {
@@ -923,21 +906,16 @@ public class Thumbnails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
-     * Transcoder may add black bars to the top and bottom and/or left and right
-     * sides of thumbnails to make the total size of the thumbnails match the
-     * values that you specified for thumbnail <code>MaxWidth</code> and
-     * <code>MaxHeight</code> settings.
+     * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and
+     * bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that
+     * you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      * </p>
      * 
      * @param paddingPolicy
-     *        When you set <code>PaddingPolicy</code> to <code>Pad</code>,
-     *        Elastic Transcoder may add black bars to the top and bottom and/or
-     *        left and right sides of thumbnails to make the total size of the
-     *        thumbnails match the values that you specified for thumbnail
-     *        <code>MaxWidth</code> and <code>MaxHeight</code> settings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the
+     *        top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match
+     *        the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Thumbnails withPaddingPolicy(String paddingPolicy) {
@@ -946,8 +924,8 @@ public class Thumbnails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -958,21 +936,21 @@ public class Thumbnails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getInterval() != null)
-            sb.append("Interval: " + getInterval() + ",");
+            sb.append("Interval: ").append(getInterval()).append(",");
         if (getResolution() != null)
-            sb.append("Resolution: " + getResolution() + ",");
+            sb.append("Resolution: ").append(getResolution()).append(",");
         if (getAspectRatio() != null)
-            sb.append("AspectRatio: " + getAspectRatio() + ",");
+            sb.append("AspectRatio: ").append(getAspectRatio()).append(",");
         if (getMaxWidth() != null)
-            sb.append("MaxWidth: " + getMaxWidth() + ",");
+            sb.append("MaxWidth: ").append(getMaxWidth()).append(",");
         if (getMaxHeight() != null)
-            sb.append("MaxHeight: " + getMaxHeight() + ",");
+            sb.append("MaxHeight: ").append(getMaxHeight()).append(",");
         if (getSizingPolicy() != null)
-            sb.append("SizingPolicy: " + getSizingPolicy() + ",");
+            sb.append("SizingPolicy: ").append(getSizingPolicy()).append(",");
         if (getPaddingPolicy() != null)
-            sb.append("PaddingPolicy: " + getPaddingPolicy());
+            sb.append("PaddingPolicy: ").append(getPaddingPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -989,43 +967,35 @@ public class Thumbnails implements Serializable, Cloneable {
         Thumbnails other = (Thumbnails) obj;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getInterval() == null ^ this.getInterval() == null)
             return false;
-        if (other.getInterval() != null
-                && other.getInterval().equals(this.getInterval()) == false)
+        if (other.getInterval() != null && other.getInterval().equals(this.getInterval()) == false)
             return false;
         if (other.getResolution() == null ^ this.getResolution() == null)
             return false;
-        if (other.getResolution() != null
-                && other.getResolution().equals(this.getResolution()) == false)
+        if (other.getResolution() != null && other.getResolution().equals(this.getResolution()) == false)
             return false;
         if (other.getAspectRatio() == null ^ this.getAspectRatio() == null)
             return false;
-        if (other.getAspectRatio() != null
-                && other.getAspectRatio().equals(this.getAspectRatio()) == false)
+        if (other.getAspectRatio() != null && other.getAspectRatio().equals(this.getAspectRatio()) == false)
             return false;
         if (other.getMaxWidth() == null ^ this.getMaxWidth() == null)
             return false;
-        if (other.getMaxWidth() != null
-                && other.getMaxWidth().equals(this.getMaxWidth()) == false)
+        if (other.getMaxWidth() != null && other.getMaxWidth().equals(this.getMaxWidth()) == false)
             return false;
         if (other.getMaxHeight() == null ^ this.getMaxHeight() == null)
             return false;
-        if (other.getMaxHeight() != null
-                && other.getMaxHeight().equals(this.getMaxHeight()) == false)
+        if (other.getMaxHeight() != null && other.getMaxHeight().equals(this.getMaxHeight()) == false)
             return false;
         if (other.getSizingPolicy() == null ^ this.getSizingPolicy() == null)
             return false;
-        if (other.getSizingPolicy() != null
-                && other.getSizingPolicy().equals(this.getSizingPolicy()) == false)
+        if (other.getSizingPolicy() != null && other.getSizingPolicy().equals(this.getSizingPolicy()) == false)
             return false;
         if (other.getPaddingPolicy() == null ^ this.getPaddingPolicy() == null)
             return false;
-        if (other.getPaddingPolicy() != null
-                && other.getPaddingPolicy().equals(this.getPaddingPolicy()) == false)
+        if (other.getPaddingPolicy() != null && other.getPaddingPolicy().equals(this.getPaddingPolicy()) == false)
             return false;
         return true;
     }
@@ -1035,27 +1005,14 @@ public class Thumbnails implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getInterval() == null) ? 0 : getInterval().hashCode());
-        hashCode = prime * hashCode
-                + ((getResolution() == null) ? 0 : getResolution().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAspectRatio() == null) ? 0 : getAspectRatio().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxWidth() == null) ? 0 : getMaxWidth().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxHeight() == null) ? 0 : getMaxHeight().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSizingPolicy() == null) ? 0 : getSizingPolicy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPaddingPolicy() == null) ? 0 : getPaddingPolicy()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getInterval() == null) ? 0 : getInterval().hashCode());
+        hashCode = prime * hashCode + ((getResolution() == null) ? 0 : getResolution().hashCode());
+        hashCode = prime * hashCode + ((getAspectRatio() == null) ? 0 : getAspectRatio().hashCode());
+        hashCode = prime * hashCode + ((getMaxWidth() == null) ? 0 : getMaxWidth().hashCode());
+        hashCode = prime * hashCode + ((getMaxHeight() == null) ? 0 : getMaxHeight().hashCode());
+        hashCode = prime * hashCode + ((getSizingPolicy() == null) ? 0 : getSizingPolicy().hashCode());
+        hashCode = prime * hashCode + ((getPaddingPolicy() == null) ? 0 : getPaddingPolicy().hashCode());
         return hashCode;
     }
 
@@ -1064,9 +1021,13 @@ public class Thumbnails implements Serializable, Cloneable {
         try {
             return (Thumbnails) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elastictranscoder.model.transform.ThumbnailsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

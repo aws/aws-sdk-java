@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeCustomerGateways.
  * </p>
  */
-public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeCustomerGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -56,15 +56,13 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      *        Information about one or more customer gateways.
      */
 
-    public void setCustomerGateways(
-            java.util.Collection<CustomerGateway> customerGateways) {
+    public void setCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
         if (customerGateways == null) {
             this.customerGateways = null;
             return;
         }
 
-        this.customerGateways = new com.amazonaws.internal.SdkInternalList<CustomerGateway>(
-                customerGateways);
+        this.customerGateways = new com.amazonaws.internal.SdkInternalList<CustomerGateway>(customerGateways);
     }
 
     /**
@@ -72,23 +70,19 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * Information about one or more customer gateways.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCustomerGateways(java.util.Collection)} or
-     * {@link #withCustomerGateways(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomerGateways(java.util.Collection)} or {@link #withCustomerGateways(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param customerGateways
      *        Information about one or more customer gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCustomerGatewaysResult withCustomerGateways(
-            CustomerGateway... customerGateways) {
+    public DescribeCustomerGatewaysResult withCustomerGateways(CustomerGateway... customerGateways) {
         if (this.customerGateways == null) {
-            setCustomerGateways(new com.amazonaws.internal.SdkInternalList<CustomerGateway>(
-                    customerGateways.length));
+            setCustomerGateways(new com.amazonaws.internal.SdkInternalList<CustomerGateway>(customerGateways.length));
         }
         for (CustomerGateway ele : customerGateways) {
             this.customerGateways.add(ele);
@@ -103,19 +97,17 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * 
      * @param customerGateways
      *        Information about one or more customer gateways.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeCustomerGatewaysResult withCustomerGateways(
-            java.util.Collection<CustomerGateway> customerGateways) {
+    public DescribeCustomerGatewaysResult withCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
         setCustomerGateways(customerGateways);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -126,7 +118,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGateways() != null)
-            sb.append("CustomerGateways: " + getCustomerGateways());
+            sb.append("CustomerGateways: ").append(getCustomerGateways());
         sb.append("}");
         return sb.toString();
     }
@@ -141,12 +133,9 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
         if (obj instanceof DescribeCustomerGatewaysResult == false)
             return false;
         DescribeCustomerGatewaysResult other = (DescribeCustomerGatewaysResult) obj;
-        if (other.getCustomerGateways() == null
-                ^ this.getCustomerGateways() == null)
+        if (other.getCustomerGateways() == null ^ this.getCustomerGateways() == null)
             return false;
-        if (other.getCustomerGateways() != null
-                && other.getCustomerGateways().equals(
-                        this.getCustomerGateways()) == false)
+        if (other.getCustomerGateways() != null && other.getCustomerGateways().equals(this.getCustomerGateways()) == false)
             return false;
         return true;
     }
@@ -156,10 +145,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCustomerGateways() == null) ? 0 : getCustomerGateways()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCustomerGateways() == null) ? 0 : getCustomerGateways().hashCode());
         return hashCode;
     }
 
@@ -168,9 +154,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
         try {
             return (DescribeCustomerGatewaysResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

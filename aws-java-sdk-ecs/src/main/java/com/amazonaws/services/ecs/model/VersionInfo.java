@@ -1,30 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Docker and Amazon ECS container agent version information about a
- * container instance.
+ * The Docker and Amazon ECS container agent version information about a container instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VersionInfo" target="_top">AWS API
+ *      Documentation</a>
  */
-public class VersionInfo implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class VersionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,8 +37,7 @@ public class VersionInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Git commit hash for the Amazon ECS container agent build on the <a
-     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-
-     * agent </a> GitHub repository.
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      * </p>
      */
     private String agentHash;
@@ -79,8 +80,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * 
      * @param agentVersion
      *        The version number of the Amazon ECS container agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VersionInfo withAgentVersion(String agentVersion) {
@@ -91,15 +91,12 @@ public class VersionInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Git commit hash for the Amazon ECS container agent build on the <a
-     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-
-     * agent </a> GitHub repository.
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      * </p>
      * 
      * @param agentHash
-     *        The Git commit hash for the Amazon ECS container agent build on
-     *        the <a
-     *        href="https://github.com/aws/amazon-ecs-agent/commits/master"
-     *        >amazon-ecs-agent </a> GitHub repository.
+     *        The Git commit hash for the Amazon ECS container agent build on the <a
+     *        href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      */
 
     public void setAgentHash(String agentHash) {
@@ -109,14 +106,11 @@ public class VersionInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Git commit hash for the Amazon ECS container agent build on the <a
-     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-
-     * agent </a> GitHub repository.
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      * </p>
      * 
-     * @return The Git commit hash for the Amazon ECS container agent build on
-     *         the <a
-     *         href="https://github.com/aws/amazon-ecs-agent/commits/master"
-     *         >amazon-ecs-agent </a> GitHub repository.
+     * @return The Git commit hash for the Amazon ECS container agent build on the <a
+     *         href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      */
 
     public String getAgentHash() {
@@ -126,17 +120,13 @@ public class VersionInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Git commit hash for the Amazon ECS container agent build on the <a
-     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-
-     * agent </a> GitHub repository.
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
      * </p>
      * 
      * @param agentHash
-     *        The Git commit hash for the Amazon ECS container agent build on
-     *        the <a
-     *        href="https://github.com/aws/amazon-ecs-agent/commits/master"
-     *        >amazon-ecs-agent </a> GitHub repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Git commit hash for the Amazon ECS container agent build on the <a
+     *        href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VersionInfo withAgentHash(String agentHash) {
@@ -176,8 +166,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * 
      * @param dockerVersion
      *        The Docker version running on the container instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VersionInfo withDockerVersion(String dockerVersion) {
@@ -186,8 +175,8 @@ public class VersionInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -198,11 +187,11 @@ public class VersionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getAgentHash() != null)
-            sb.append("AgentHash: " + getAgentHash() + ",");
+            sb.append("AgentHash: ").append(getAgentHash()).append(",");
         if (getDockerVersion() != null)
-            sb.append("DockerVersion: " + getDockerVersion());
+            sb.append("DockerVersion: ").append(getDockerVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -219,18 +208,15 @@ public class VersionInfo implements Serializable, Cloneable {
         VersionInfo other = (VersionInfo) obj;
         if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
             return false;
-        if (other.getAgentVersion() != null
-                && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
             return false;
         if (other.getAgentHash() == null ^ this.getAgentHash() == null)
             return false;
-        if (other.getAgentHash() != null
-                && other.getAgentHash().equals(this.getAgentHash()) == false)
+        if (other.getAgentHash() != null && other.getAgentHash().equals(this.getAgentHash()) == false)
             return false;
         if (other.getDockerVersion() == null ^ this.getDockerVersion() == null)
             return false;
-        if (other.getDockerVersion() != null
-                && other.getDockerVersion().equals(this.getDockerVersion()) == false)
+        if (other.getDockerVersion() != null && other.getDockerVersion().equals(this.getDockerVersion()) == false)
             return false;
         return true;
     }
@@ -240,16 +226,9 @@ public class VersionInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAgentVersion() == null) ? 0 : getAgentVersion()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAgentHash() == null) ? 0 : getAgentHash().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDockerVersion() == null) ? 0 : getDockerVersion()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
+        hashCode = prime * hashCode + ((getAgentHash() == null) ? 0 : getAgentHash().hashCode());
+        hashCode = prime * hashCode + ((getDockerVersion() == null) ? 0 : getDockerVersion().hashCode());
         return hashCode;
     }
 
@@ -258,9 +237,13 @@ public class VersionInfo implements Serializable, Cloneable {
         try {
             return (VersionInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.VersionInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The disk container object for the import snapshot request.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotDiskContainer" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
@@ -36,15 +37,14 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code>
      * </p>
      */
     private String format;
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. It can either
-     * be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     * The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon
+     * S3 URL (s3://..).
      * </p>
      */
     private String url;
@@ -87,8 +87,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the disk image being imported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotDiskContainer withDescription(String description) {
@@ -101,15 +100,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> |
-     *        <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code>
      */
 
     public void setFormat(String format) {
@@ -121,14 +118,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code>
      * </p>
      * 
      * @return The format of the disk image being imported.</p>
      *         <p>
-     *         Valid values: <code>RAW</code> | <code>VHD</code> |
-     *         <code>VMDK</code> | <code>OVA</code>
+     *         Valid values: <code>VHD</code> | <code>VMDK</code>
      */
 
     public String getFormat() {
@@ -140,17 +135,14 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> |
-     * <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> |
-     *        <code>VMDK</code> | <code>OVA</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Valid values: <code>VHD</code> | <code>VMDK</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotDiskContainer withFormat(String format) {
@@ -160,13 +152,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. It can either
-     * be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     * The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon
+     * S3 URL (s3://..).
      * </p>
      * 
      * @param url
-     *        The URL to the Amazon S3-based disk image being imported. It can
-     *        either be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     *        The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an
+     *        Amazon S3 URL (s3://..).
      */
 
     public void setUrl(String url) {
@@ -175,12 +167,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. It can either
-     * be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     * The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon
+     * S3 URL (s3://..).
      * </p>
      * 
-     * @return The URL to the Amazon S3-based disk image being imported. It can
-     *         either be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     * @return The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an
+     *         Amazon S3 URL (s3://..).
      */
 
     public String getUrl() {
@@ -189,15 +181,14 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL to the Amazon S3-based disk image being imported. It can either
-     * be a https URL (https://..) or an Amazon S3 URL (s3://..).
+     * The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an Amazon
+     * S3 URL (s3://..).
      * </p>
      * 
      * @param url
-     *        The URL to the Amazon S3-based disk image being imported. It can
-     *        either be a https URL (https://..) or an Amazon S3 URL (s3://..).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The URL to the Amazon S3-based disk image being imported. It can either be a https URL (https://..) or an
+     *        Amazon S3 URL (s3://..).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotDiskContainer withUrl(String url) {
@@ -237,8 +228,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * 
      * @param userBucket
      *        The S3 bucket for the disk image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotDiskContainer withUserBucket(UserBucket userBucket) {
@@ -247,8 +237,8 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -259,13 +249,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getUserBucket() != null)
-            sb.append("UserBucket: " + getUserBucket());
+            sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");
         return sb.toString();
     }
@@ -282,23 +272,19 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         SnapshotDiskContainer other = (SnapshotDiskContainer) obj;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
-        if (other.getFormat() != null
-                && other.getFormat().equals(this.getFormat()) == false)
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
-        if (other.getUrl() != null
-                && other.getUrl().equals(this.getUrl()) == false)
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
         if (other.getUserBucket() == null ^ this.getUserBucket() == null)
             return false;
-        if (other.getUserBucket() != null
-                && other.getUserBucket().equals(this.getUserBucket()) == false)
+        if (other.getUserBucket() != null && other.getUserBucket().equals(this.getUserBucket()) == false)
             return false;
         return true;
     }
@@ -308,15 +294,10 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode
-                + ((getUrl() == null) ? 0 : getUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
         return hashCode;
     }
 
@@ -325,9 +306,8 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         try {
             return (SnapshotDiskContainer) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

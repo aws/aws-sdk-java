@@ -1,29 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeNetworkAcls.
- * </p>
+ * 
  */
-public class DescribeNetworkAclsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +60,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.networkAcls = new com.amazonaws.internal.SdkInternalList<NetworkAcl>(
-                networkAcls);
+        this.networkAcls = new com.amazonaws.internal.SdkInternalList<NetworkAcl>(networkAcls);
     }
 
     /**
@@ -71,22 +68,19 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * Information about one or more network ACLs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNetworkAcls(java.util.Collection)} or
-     * {@link #withNetworkAcls(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkAcls(java.util.Collection)} or {@link #withNetworkAcls(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param networkAcls
      *        Information about one or more network ACLs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
         if (this.networkAcls == null) {
-            setNetworkAcls(new com.amazonaws.internal.SdkInternalList<NetworkAcl>(
-                    networkAcls.length));
+            setNetworkAcls(new com.amazonaws.internal.SdkInternalList<NetworkAcl>(networkAcls.length));
         }
         for (NetworkAcl ele : networkAcls) {
             this.networkAcls.add(ele);
@@ -101,19 +95,17 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * 
      * @param networkAcls
      *        Information about one or more network ACLs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkAclsResult withNetworkAcls(
-            java.util.Collection<NetworkAcl> networkAcls) {
+    public DescribeNetworkAclsResult withNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
         setNetworkAcls(networkAcls);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,7 +116,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAcls() != null)
-            sb.append("NetworkAcls: " + getNetworkAcls());
+            sb.append("NetworkAcls: ").append(getNetworkAcls());
         sb.append("}");
         return sb.toString();
     }
@@ -141,8 +133,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
         DescribeNetworkAclsResult other = (DescribeNetworkAclsResult) obj;
         if (other.getNetworkAcls() == null ^ this.getNetworkAcls() == null)
             return false;
-        if (other.getNetworkAcls() != null
-                && other.getNetworkAcls().equals(this.getNetworkAcls()) == false)
+        if (other.getNetworkAcls() != null && other.getNetworkAcls().equals(this.getNetworkAcls()) == false)
             return false;
         return true;
     }
@@ -152,9 +143,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNetworkAcls() == null) ? 0 : getNetworkAcls().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAcls() == null) ? 0 : getNetworkAcls().hashCode());
         return hashCode;
     }
 
@@ -163,9 +152,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
         try {
             return (DescribeNetworkAclsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -15,7 +15,7 @@
 
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -29,15 +29,15 @@ import java.util.List;
  * Current implementations include {@link SdkStructuredPlainJsonFactory} and {@link
  * SdkStructuredCborFactory}
  */
-@SdkInternalApi
-interface SdkStructuredJsonFactory {
+@SdkProtectedApi
+public interface SdkStructuredJsonFactory {
 
     /**
      * Returns the {@link StructuredJsonGenerator} to be used for marshalling the request.
      *
-     * @param protocolVersion AWS JSON/CBOR protocol version.
+     * @param contentType Content type to send for requests.
      */
-    StructuredJsonGenerator createWriter(String protocolVersion);
+    StructuredJsonGenerator createWriter(String contentType);
 
     /**
      * Returns the response handler to be used for handling a successfull response.
@@ -45,7 +45,8 @@ interface SdkStructuredJsonFactory {
      * @param operationMetadata Additional context information about an operation to create the
      *                          appropriate response handler.
      */
-    <T> JsonResponseHandler<T> createResponseHandler(JsonOperationMetadata operationMetadata, Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller);
+    <T> JsonResponseHandler<T> createResponseHandler(JsonOperationMetadata operationMetadata,
+                                                     Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller);
 
     /**
      * Returns the error response handler for handling a error response.
@@ -54,4 +55,5 @@ interface SdkStructuredJsonFactory {
      */
     JsonErrorResponseHandler createErrorResponseHandler(
             List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName);
+
 }

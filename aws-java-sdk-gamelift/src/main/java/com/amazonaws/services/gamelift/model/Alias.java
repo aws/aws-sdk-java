@@ -1,74 +1,117 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Properties describing a fleet alias.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListAliases</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ResolveAlias</a>
+ * </p>
+ * </li>
+ * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Alias implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Alias implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet alias.
+     * Unique identifier for an alias; alias IDs are unique within a region.
      * </p>
      */
     private String aliasId;
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Unique identifier for an alias; alias ARNs are unique across all regions.
+     * </p>
+     */
+    private String aliasArn;
+    /**
+     * <p>
+     * Human-readable description of an alias.
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Alias configuration for the alias, including routing type and settings.
+     * </p>
+     */
     private RoutingStrategy routingStrategy;
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date lastUpdatedTime;
 
     /**
      * <p>
-     * Unique identifier for a fleet alias.
+     * Unique identifier for an alias; alias IDs are unique within a region.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias.
+     *        Unique identifier for an alias; alias IDs are unique within a region.
      */
 
     public void setAliasId(String aliasId) {
@@ -77,10 +120,10 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet alias.
+     * Unique identifier for an alias; alias IDs are unique within a region.
      * </p>
      * 
-     * @return Unique identifier for a fleet alias.
+     * @return Unique identifier for an alias; alias IDs are unique within a region.
      */
 
     public String getAliasId() {
@@ -89,13 +132,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet alias.
+     * Unique identifier for an alias; alias IDs are unique within a region.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for an alias; alias IDs are unique within a region.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withAliasId(String aliasId) {
@@ -105,13 +147,11 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this alias. Alias names do not
-     *        need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -120,12 +160,10 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this alias. Alias names do not
-     *         need to be unique.
+     * @return Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -134,15 +172,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this alias. Alias names do not
-     *        need to be unique.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withName(String name) {
@@ -152,11 +187,51 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Unique identifier for an alias; alias ARNs are unique across all regions.
+     * </p>
+     * 
+     * @param aliasArn
+     *        Unique identifier for an alias; alias ARNs are unique across all regions.
+     */
+
+    public void setAliasArn(String aliasArn) {
+        this.aliasArn = aliasArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an alias; alias ARNs are unique across all regions.
+     * </p>
+     * 
+     * @return Unique identifier for an alias; alias ARNs are unique across all regions.
+     */
+
+    public String getAliasArn() {
+        return this.aliasArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an alias; alias ARNs are unique across all regions.
+     * </p>
+     * 
+     * @param aliasArn
+     *        Unique identifier for an alias; alias ARNs are unique across all regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Alias withAliasArn(String aliasArn) {
+        setAliasArn(aliasArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Human-readable description of an alias.
      * </p>
      * 
      * @param description
-     *        Human-readable description of the alias.
+     *        Human-readable description of an alias.
      */
 
     public void setDescription(String description) {
@@ -165,10 +240,10 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      * 
-     * @return Human-readable description of the alias.
+     * @return Human-readable description of an alias.
      */
 
     public String getDescription() {
@@ -177,13 +252,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      * 
      * @param description
-     *        Human-readable description of the alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Human-readable description of an alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withDescription(String description) {
@@ -192,7 +266,12 @@ public class Alias implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Alias configuration for the alias, including routing type and settings.
+     * </p>
+     * 
      * @param routingStrategy
+     *        Alias configuration for the alias, including routing type and settings.
      */
 
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
@@ -200,7 +279,11 @@ public class Alias implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Alias configuration for the alias, including routing type and settings.
+     * </p>
+     * 
+     * @return Alias configuration for the alias, including routing type and settings.
      */
 
     public RoutingStrategy getRoutingStrategy() {
@@ -208,9 +291,13 @@ public class Alias implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Alias configuration for the alias, including routing type and settings.
+     * </p>
+     * 
      * @param routingStrategy
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Alias configuration for the alias, including routing type and settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withRoutingStrategy(RoutingStrategy routingStrategy) {
@@ -220,14 +307,13 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -236,13 +322,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since the Unix epoch
-     *         (Unix time).
+     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -251,16 +336,14 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withCreationTime(java.util.Date creationTime) {
@@ -270,15 +353,13 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp indicating when this object was last modified. Format
-     *        is an integer representing the number of seconds since the Unix
-     *        epoch (Unix time).
+     *        Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -287,14 +368,12 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this object was last modified. Format
-     *         is an integer representing the number of seconds since the Unix
-     *         epoch (Unix time).
+     * @return Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *         as milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -303,17 +382,14 @@ public class Alias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time as
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp indicating when this object was last modified. Format
-     *        is an integer representing the number of seconds since the Unix
-     *        epoch (Unix time).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Time stamp indicating when this data object was last modified. Format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Alias withLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -322,8 +398,8 @@ public class Alias implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -334,17 +410,19 @@ public class Alias implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId() + ",");
+            sb.append("AliasId: ").append(getAliasId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
+        if (getAliasArn() != null)
+            sb.append("AliasArn: ").append(getAliasArn()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoutingStrategy() != null)
-            sb.append("RoutingStrategy: " + getRoutingStrategy() + ",");
+            sb.append("RoutingStrategy: ").append(getRoutingStrategy()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: " + getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -361,35 +439,31 @@ public class Alias implements Serializable, Cloneable {
         Alias other = (Alias) obj;
         if (other.getAliasId() == null ^ this.getAliasId() == null)
             return false;
-        if (other.getAliasId() != null
-                && other.getAliasId().equals(this.getAliasId()) == false)
+        if (other.getAliasId() != null && other.getAliasId().equals(this.getAliasId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getAliasArn() == null ^ this.getAliasArn() == null)
+            return false;
+        if (other.getAliasArn() != null && other.getAliasArn().equals(this.getAliasArn()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getRoutingStrategy() == null
-                ^ this.getRoutingStrategy() == null)
+        if (other.getRoutingStrategy() == null ^ this.getRoutingStrategy() == null)
             return false;
-        if (other.getRoutingStrategy() != null
-                && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
+        if (other.getRoutingStrategy() != null && other.getRoutingStrategy().equals(this.getRoutingStrategy()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTime() != null
-                && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
-        if (other.getLastUpdatedTime() == null
-                ^ this.getLastUpdatedTime() == null)
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
             return false;
-        if (other.getLastUpdatedTime() != null
-                && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
         return true;
     }
@@ -399,25 +473,13 @@ public class Alias implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationTime() == null) ? 0 : getCreationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getAliasId() == null) ? 0 : getAliasId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingStrategy() == null) ? 0 : getRoutingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         return hashCode;
     }
 
@@ -426,9 +488,13 @@ public class Alias implements Serializable, Cloneable {
         try {
             return (Alias) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.AliasMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

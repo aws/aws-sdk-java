@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Represents information about the state of the stage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageState" target="_top">AWS API
+ *      Documentation</a>
  */
-public class StageState implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StageState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,6 +46,12 @@ public class StageState implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<ActionState> actionStates;
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and status.
+     * </p>
+     */
+    private StageExecution latestExecution;
 
     /**
      * <p>
@@ -76,8 +85,7 @@ public class StageState implements Serializable, Cloneable {
      * 
      * @param stageName
      *        The name of the stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StageState withStageName(String stageName) {
@@ -91,8 +99,7 @@ public class StageState implements Serializable, Cloneable {
      * </p>
      * 
      * @param inboundTransitionState
-     *        The state of the inbound transition, which is either enabled or
-     *        disabled.
+     *        The state of the inbound transition, which is either enabled or disabled.
      */
 
     public void setInboundTransitionState(TransitionState inboundTransitionState) {
@@ -104,8 +111,7 @@ public class StageState implements Serializable, Cloneable {
      * The state of the inbound transition, which is either enabled or disabled.
      * </p>
      * 
-     * @return The state of the inbound transition, which is either enabled or
-     *         disabled.
+     * @return The state of the inbound transition, which is either enabled or disabled.
      */
 
     public TransitionState getInboundTransitionState() {
@@ -118,14 +124,11 @@ public class StageState implements Serializable, Cloneable {
      * </p>
      * 
      * @param inboundTransitionState
-     *        The state of the inbound transition, which is either enabled or
-     *        disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The state of the inbound transition, which is either enabled or disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StageState withInboundTransitionState(
-            TransitionState inboundTransitionState) {
+    public StageState withInboundTransitionState(TransitionState inboundTransitionState) {
         setInboundTransitionState(inboundTransitionState);
         return this;
     }
@@ -165,22 +168,19 @@ public class StageState implements Serializable, Cloneable {
      * The state of the stage.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setActionStates(java.util.Collection)} or
-     * {@link #withActionStates(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActionStates(java.util.Collection)} or {@link #withActionStates(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param actionStates
      *        The state of the stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StageState withActionStates(ActionState... actionStates) {
         if (this.actionStates == null) {
-            setActionStates(new java.util.ArrayList<ActionState>(
-                    actionStates.length));
+            setActionStates(new java.util.ArrayList<ActionState>(actionStates.length));
         }
         for (ActionState ele : actionStates) {
             this.actionStates.add(ele);
@@ -195,19 +195,57 @@ public class StageState implements Serializable, Cloneable {
      * 
      * @param actionStates
      *        The state of the stage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StageState withActionStates(
-            java.util.Collection<ActionState> actionStates) {
+    public StageState withActionStates(java.util.Collection<ActionState> actionStates) {
         setActionStates(actionStates);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Information about the latest execution in the stage, including its ID and status.
+     * </p>
+     * 
+     * @param latestExecution
+     *        Information about the latest execution in the stage, including its ID and status.
+     */
+
+    public void setLatestExecution(StageExecution latestExecution) {
+        this.latestExecution = latestExecution;
+    }
+
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and status.
+     * </p>
+     * 
+     * @return Information about the latest execution in the stage, including its ID and status.
+     */
+
+    public StageExecution getLatestExecution() {
+        return this.latestExecution;
+    }
+
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and status.
+     * </p>
+     * 
+     * @param latestExecution
+     *        Information about the latest execution in the stage, including its ID and status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StageState withLatestExecution(StageExecution latestExecution) {
+        setLatestExecution(latestExecution);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -218,12 +256,13 @@ public class StageState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getInboundTransitionState() != null)
-            sb.append("InboundTransitionState: " + getInboundTransitionState()
-                    + ",");
+            sb.append("InboundTransitionState: ").append(getInboundTransitionState()).append(",");
         if (getActionStates() != null)
-            sb.append("ActionStates: " + getActionStates());
+            sb.append("ActionStates: ").append(getActionStates()).append(",");
+        if (getLatestExecution() != null)
+            sb.append("LatestExecution: ").append(getLatestExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -240,20 +279,19 @@ public class StageState implements Serializable, Cloneable {
         StageState other = (StageState) obj;
         if (other.getStageName() == null ^ this.getStageName() == null)
             return false;
-        if (other.getStageName() != null
-                && other.getStageName().equals(this.getStageName()) == false)
+        if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
-        if (other.getInboundTransitionState() == null
-                ^ this.getInboundTransitionState() == null)
+        if (other.getInboundTransitionState() == null ^ this.getInboundTransitionState() == null)
             return false;
-        if (other.getInboundTransitionState() != null
-                && other.getInboundTransitionState().equals(
-                        this.getInboundTransitionState()) == false)
+        if (other.getInboundTransitionState() != null && other.getInboundTransitionState().equals(this.getInboundTransitionState()) == false)
             return false;
         if (other.getActionStates() == null ^ this.getActionStates() == null)
             return false;
-        if (other.getActionStates() != null
-                && other.getActionStates().equals(this.getActionStates()) == false)
+        if (other.getActionStates() != null && other.getActionStates().equals(this.getActionStates()) == false)
+            return false;
+        if (other.getLatestExecution() == null ^ this.getLatestExecution() == null)
+            return false;
+        if (other.getLatestExecution() != null && other.getLatestExecution().equals(this.getLatestExecution()) == false)
             return false;
         return true;
     }
@@ -263,16 +301,10 @@ public class StageState implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStageName() == null) ? 0 : getStageName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInboundTransitionState() == null) ? 0
-                        : getInboundTransitionState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActionStates() == null) ? 0 : getActionStates()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getInboundTransitionState() == null) ? 0 : getInboundTransitionState().hashCode());
+        hashCode = prime * hashCode + ((getActionStates() == null) ? 0 : getActionStates().hashCode());
+        hashCode = prime * hashCode + ((getLatestExecution() == null) ? 0 : getLatestExecution().hashCode());
         return hashCode;
     }
 
@@ -281,9 +313,13 @@ public class StageState implements Serializable, Cloneable {
         try {
             return (StageState) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.StageStateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

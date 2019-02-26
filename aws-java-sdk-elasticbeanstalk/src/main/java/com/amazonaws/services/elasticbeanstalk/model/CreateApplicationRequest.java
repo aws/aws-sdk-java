@@ -1,40 +1,40 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Request to create an application.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CreateApplicationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the application.
      * </p>
      * <p>
-     * Constraint: This name must be unique within your account. If the
-     * specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.
+     * Constraint: This name must be unique within your account. If the specified name already exists, the action
+     * returns an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private String applicationName;
@@ -44,26 +44,30 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * versions.
+     * </p>
+     */
+    private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
 
     /**
-     * Default constructor for CreateApplicationRequest object. Callers should
-     * use the setter or fluent setter (with...) methods to initialize the
-     * object after creating it.
+     * Default constructor for CreateApplicationRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public CreateApplicationRequest() {
     }
 
     /**
-     * Constructs a new CreateApplicationRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new CreateApplicationRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param applicationName
      *        The name of the application.</p>
      *        <p>
-     *        Constraint: This name must be unique within your account. If the
-     *        specified name already exists, the action returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
+     *        returns an <code>InvalidParameterValue</code> error.
      */
     public CreateApplicationRequest(String applicationName) {
         setApplicationName(applicationName);
@@ -74,17 +78,15 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * The name of the application.
      * </p>
      * <p>
-     * Constraint: This name must be unique within your account. If the
-     * specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.
+     * Constraint: This name must be unique within your account. If the specified name already exists, the action
+     * returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param applicationName
      *        The name of the application.</p>
      *        <p>
-     *        Constraint: This name must be unique within your account. If the
-     *        specified name already exists, the action returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
+     *        returns an <code>InvalidParameterValue</code> error.
      */
 
     public void setApplicationName(String applicationName) {
@@ -96,16 +98,14 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * The name of the application.
      * </p>
      * <p>
-     * Constraint: This name must be unique within your account. If the
-     * specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.
+     * Constraint: This name must be unique within your account. If the specified name already exists, the action
+     * returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @return The name of the application.</p>
      *         <p>
-     *         Constraint: This name must be unique within your account. If the
-     *         specified name already exists, the action returns an
-     *         <code>InvalidParameterValue</code> error.
+     *         Constraint: This name must be unique within your account. If the specified name already exists, the
+     *         action returns an <code>InvalidParameterValue</code> error.
      */
 
     public String getApplicationName() {
@@ -117,19 +117,16 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * The name of the application.
      * </p>
      * <p>
-     * Constraint: This name must be unique within your account. If the
-     * specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.
+     * Constraint: This name must be unique within your account. If the specified name already exists, the action
+     * returns an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param applicationName
      *        The name of the application.</p>
      *        <p>
-     *        Constraint: This name must be unique within your account. If the
-     *        specified name already exists, the action returns an
-     *        <code>InvalidParameterValue</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
+     *        returns an <code>InvalidParameterValue</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateApplicationRequest withApplicationName(String applicationName) {
@@ -169,8 +166,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        Describes the application.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateApplicationRequest withDescription(String description) {
@@ -179,8 +175,54 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * versions.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        Specify an application resource lifecycle configuration to prevent your application from accumulating too
+     *        many versions.
+     */
+
+    public void setResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        this.resourceLifecycleConfig = resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * versions.
+     * </p>
+     * 
+     * @return Specify an application resource lifecycle configuration to prevent your application from accumulating too
+     *         many versions.
+     */
+
+    public ApplicationResourceLifecycleConfig getResourceLifecycleConfig() {
+        return this.resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * versions.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        Specify an application resource lifecycle configuration to prevent your application from accumulating too
+     *        many versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        setResourceLifecycleConfig(resourceLifecycleConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -191,9 +233,11 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getResourceLifecycleConfig() != null)
+            sb.append("ResourceLifecycleConfig: ").append(getResourceLifecycleConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -208,16 +252,17 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         if (obj instanceof CreateApplicationRequest == false)
             return false;
         CreateApplicationRequest other = (CreateApplicationRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getResourceLifecycleConfig() == null ^ this.getResourceLifecycleConfig() == null)
+            return false;
+        if (other.getResourceLifecycleConfig() != null && other.getResourceLifecycleConfig().equals(this.getResourceLifecycleConfig()) == false)
             return false;
         return true;
     }
@@ -227,13 +272,9 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getResourceLifecycleConfig() == null) ? 0 : getResourceLifecycleConfig().hashCode());
         return hashCode;
     }
 
@@ -241,4 +282,5 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
     public CreateApplicationRequest clone() {
         return (CreateApplicationRequest) super.clone();
     }
+
 }

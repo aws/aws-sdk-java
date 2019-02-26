@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
@@ -30,13 +27,31 @@ import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.s3.model.Region;
 
+import java.util.List;
+import java.util.Map;
+
 /**
- * Interface for DynamoDBMapper. See the standard implementation {@link DynamoDBMapper} for the
- * usage.
+ * Interface for DynamoDBMapper.
+ *
+ * <p>
+ * <b>Note:</b> Do not implement this interface, extend from {@link AbstractDynamoDBMapper} instead.
+ * </p>
  *
  * @see DynamoDBMapper
+ * @see AbstractDynamoDBMapper
  */
 public interface IDynamoDBMapper {
+    /**
+     * Get the table model for the class, using the default configuration.
+     *
+     * @see DynamoDBMapper#getTableModel(Class, DynamoDBMapperConfig)
+     */
+    <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz);
+
+    /**
+     * Get the table model for the class using the provided configuration override.
+     */
+    <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config);
 
     /**
      * Loads an object with the hash key given and a configuration override. This configuration
@@ -329,6 +344,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet);
 
@@ -345,6 +362,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet, DynamoDBMapperConfig config);
 
@@ -356,6 +375,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      * @see #batchLoad(List, DynamoDBMapperConfig)
      * @see #batchLoad(Map, DynamoDBMapperConfig)
      */
@@ -375,6 +396,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet, DynamoDBMapperConfig config);
 
@@ -639,6 +662,15 @@ public interface IDynamoDBMapper {
      *             if the mapper has not been constructed with the necessary S3 AWS credentials.
      */
     S3Link createS3Link(Region s3region, String bucketName, String key);
+
+    /**
+     * Creates an S3Link with the specified region, bucket name and key. This method requires the
+     * mapper to have been initialized with the necessary credentials for accessing S3.
+     *
+     * @throws IllegalStateException
+     *             if the mapper has not been constructed with the necessary S3 AWS credentials.
+     */
+    S3Link createS3Link(String s3region, String bucketName, String key);
 
     /**
      * Parse the given POJO class and return the CreateTableRequest for the DynamoDB table it

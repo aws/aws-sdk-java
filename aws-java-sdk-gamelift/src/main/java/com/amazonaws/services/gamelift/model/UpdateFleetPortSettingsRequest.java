@@ -1,35 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for a request action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings" target="_top">AWS
+ *      API Documentation</a>
  */
-public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update port settings for.
+     * Unique identifier for a fleet to update port settings for.
      * </p>
      */
     private String fleetId;
@@ -48,12 +49,11 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update port settings for.
+     * Unique identifier for a fleet to update port settings for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update port settings
-     *        for.
+     *        Unique identifier for a fleet to update port settings for.
      */
 
     public void setFleetId(String fleetId) {
@@ -62,11 +62,10 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update port settings for.
+     * Unique identifier for a fleet to update port settings for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to update port settings
-     *         for.
+     * @return Unique identifier for a fleet to update port settings for.
      */
 
     public String getFleetId() {
@@ -75,14 +74,12 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update port settings for.
+     * Unique identifier for a fleet to update port settings for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update port settings
-     *        for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for a fleet to update port settings for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetPortSettingsRequest withFleetId(String fleetId) {
@@ -111,15 +108,13 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      *        Collection of port settings to be added to the fleet record.
      */
 
-    public void setInboundPermissionAuthorizations(
-            java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
+    public void setInboundPermissionAuthorizations(java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
         if (inboundPermissionAuthorizations == null) {
             this.inboundPermissionAuthorizations = null;
             return;
         }
 
-        this.inboundPermissionAuthorizations = new java.util.ArrayList<IpPermission>(
-                inboundPermissionAuthorizations);
+        this.inboundPermissionAuthorizations = new java.util.ArrayList<IpPermission>(inboundPermissionAuthorizations);
     }
 
     /**
@@ -127,24 +122,19 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * Collection of port settings to be added to the fleet record.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInboundPermissionAuthorizations(java.util.Collection)} or
-     * {@link #withInboundPermissionAuthorizations(java.util.Collection)} if you
-     * want to override the existing values.
+     * {@link #withInboundPermissionAuthorizations(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param inboundPermissionAuthorizations
      *        Collection of port settings to be added to the fleet record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(
-            IpPermission... inboundPermissionAuthorizations) {
+    public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(IpPermission... inboundPermissionAuthorizations) {
         if (this.inboundPermissionAuthorizations == null) {
-            setInboundPermissionAuthorizations(new java.util.ArrayList<IpPermission>(
-                    inboundPermissionAuthorizations.length));
+            setInboundPermissionAuthorizations(new java.util.ArrayList<IpPermission>(inboundPermissionAuthorizations.length));
         }
         for (IpPermission ele : inboundPermissionAuthorizations) {
             this.inboundPermissionAuthorizations.add(ele);
@@ -159,12 +149,10 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * 
      * @param inboundPermissionAuthorizations
      *        Collection of port settings to be added to the fleet record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(
-            java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
+    public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
         setInboundPermissionAuthorizations(inboundPermissionAuthorizations);
         return this;
     }
@@ -190,15 +178,13 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      *        Collection of port settings to be removed from the fleet record.
      */
 
-    public void setInboundPermissionRevocations(
-            java.util.Collection<IpPermission> inboundPermissionRevocations) {
+    public void setInboundPermissionRevocations(java.util.Collection<IpPermission> inboundPermissionRevocations) {
         if (inboundPermissionRevocations == null) {
             this.inboundPermissionRevocations = null;
             return;
         }
 
-        this.inboundPermissionRevocations = new java.util.ArrayList<IpPermission>(
-                inboundPermissionRevocations);
+        this.inboundPermissionRevocations = new java.util.ArrayList<IpPermission>(inboundPermissionRevocations);
     }
 
     /**
@@ -206,23 +192,19 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * Collection of port settings to be removed from the fleet record.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInboundPermissionRevocations(java.util.Collection)}
-     * or {@link #withInboundPermissionRevocations(java.util.Collection)} if you
-     * want to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInboundPermissionRevocations(java.util.Collection)} or
+     * {@link #withInboundPermissionRevocations(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param inboundPermissionRevocations
      *        Collection of port settings to be removed from the fleet record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(
-            IpPermission... inboundPermissionRevocations) {
+    public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(IpPermission... inboundPermissionRevocations) {
         if (this.inboundPermissionRevocations == null) {
-            setInboundPermissionRevocations(new java.util.ArrayList<IpPermission>(
-                    inboundPermissionRevocations.length));
+            setInboundPermissionRevocations(new java.util.ArrayList<IpPermission>(inboundPermissionRevocations.length));
         }
         for (IpPermission ele : inboundPermissionRevocations) {
             this.inboundPermissionRevocations.add(ele);
@@ -237,19 +219,17 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * 
      * @param inboundPermissionRevocations
      *        Collection of port settings to be removed from the fleet record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(
-            java.util.Collection<IpPermission> inboundPermissionRevocations) {
+    public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(java.util.Collection<IpPermission> inboundPermissionRevocations) {
         setInboundPermissionRevocations(inboundPermissionRevocations);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -260,13 +240,11 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getInboundPermissionAuthorizations() != null)
-            sb.append("InboundPermissionAuthorizations: "
-                    + getInboundPermissionAuthorizations() + ",");
+            sb.append("InboundPermissionAuthorizations: ").append(getInboundPermissionAuthorizations()).append(",");
         if (getInboundPermissionRevocations() != null)
-            sb.append("InboundPermissionRevocations: "
-                    + getInboundPermissionRevocations());
+            sb.append("InboundPermissionRevocations: ").append(getInboundPermissionRevocations());
         sb.append("}");
         return sb.toString();
     }
@@ -283,22 +261,16 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
         UpdateFleetPortSettingsRequest other = (UpdateFleetPortSettingsRequest) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
-        if (other.getInboundPermissionAuthorizations() == null
-                ^ this.getInboundPermissionAuthorizations() == null)
+        if (other.getInboundPermissionAuthorizations() == null ^ this.getInboundPermissionAuthorizations() == null)
             return false;
         if (other.getInboundPermissionAuthorizations() != null
-                && other.getInboundPermissionAuthorizations().equals(
-                        this.getInboundPermissionAuthorizations()) == false)
+                && other.getInboundPermissionAuthorizations().equals(this.getInboundPermissionAuthorizations()) == false)
             return false;
-        if (other.getInboundPermissionRevocations() == null
-                ^ this.getInboundPermissionRevocations() == null)
+        if (other.getInboundPermissionRevocations() == null ^ this.getInboundPermissionRevocations() == null)
             return false;
-        if (other.getInboundPermissionRevocations() != null
-                && other.getInboundPermissionRevocations().equals(
-                        this.getInboundPermissionRevocations()) == false)
+        if (other.getInboundPermissionRevocations() != null && other.getInboundPermissionRevocations().equals(this.getInboundPermissionRevocations()) == false)
             return false;
         return true;
     }
@@ -308,16 +280,9 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInboundPermissionAuthorizations() == null) ? 0
-                        : getInboundPermissionAuthorizations().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInboundPermissionRevocations() == null) ? 0
-                        : getInboundPermissionRevocations().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getInboundPermissionAuthorizations() == null) ? 0 : getInboundPermissionAuthorizations().hashCode());
+        hashCode = prime * hashCode + ((getInboundPermissionRevocations() == null) ? 0 : getInboundPermissionRevocations().hashCode());
         return hashCode;
     }
 
@@ -325,4 +290,5 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
     public UpdateFleetPortSettingsRequest clone() {
         return (UpdateFleetPortSettingsRequest) super.clone();
     }
+
 }

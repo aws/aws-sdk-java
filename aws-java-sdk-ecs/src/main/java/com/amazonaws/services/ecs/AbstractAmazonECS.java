@@ -1,28 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.ecs;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
 
 /**
- * Abstract implementation of {@code AmazonECS}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonECS}. Convenient method forms pass through to the corresponding overload that
+ * takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonECS implements AmazonECS {
 
     protected AbstractAmazonECS() {
@@ -54,6 +54,16 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public DeleteAccountSettingResult deleteAccountSetting(DeleteAccountSettingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,20 +74,17 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public DeregisterContainerInstanceResult deregisterContainerInstance(
-            DeregisterContainerInstanceRequest request) {
+    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeregisterTaskDefinitionResult deregisterTaskDefinition(
-            DeregisterTaskDefinitionRequest request) {
+    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeClustersResult describeClusters(
-            DescribeClustersRequest request) {
+    public DescribeClustersResult describeClusters(DescribeClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,20 +94,17 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public DescribeContainerInstancesResult describeContainerInstances(
-            DescribeContainerInstancesRequest request) {
+    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeServicesResult describeServices(
-            DescribeServicesRequest request) {
+    public DescribeServicesResult describeServices(DescribeServicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeTaskDefinitionResult describeTaskDefinition(
-            DescribeTaskDefinitionRequest request) {
+    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,14 +114,23 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public DiscoverPollEndpointResult discoverPollEndpoint(
-            DiscoverPollEndpointRequest request) {
+    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DiscoverPollEndpointResult discoverPollEndpoint() {
         return discoverPollEndpoint(new DiscoverPollEndpointRequest());
+    }
+
+    @Override
+    public ListAccountSettingsResult listAccountSettings(ListAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAttributesResult listAttributes(ListAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -131,8 +144,7 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public ListContainerInstancesResult listContainerInstances(
-            ListContainerInstancesRequest request) {
+    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,8 +164,12 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(
-            ListTaskDefinitionFamiliesRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,8 +179,7 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public ListTaskDefinitionsResult listTaskDefinitions(
-            ListTaskDefinitionsRequest request) {
+    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,14 +199,27 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public RegisterContainerInstanceResult registerContainerInstance(
-            RegisterContainerInstanceRequest request) {
+    public PutAccountSettingResult putAccountSetting(PutAccountSettingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterTaskDefinitionResult registerTaskDefinition(
-            RegisterTaskDefinitionRequest request) {
+    public PutAccountSettingDefaultResult putAccountSettingDefault(PutAccountSettingDefaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -211,8 +239,7 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public SubmitContainerStateChangeResult submitContainerStateChange(
-            SubmitContainerStateChangeRequest request) {
+    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -222,14 +249,27 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public SubmitTaskStateChangeResult submitTaskStateChange(
-            SubmitTaskStateChangeRequest request) {
+    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateContainerAgentResult updateContainerAgent(
-            UpdateContainerAgentRequest request) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -244,8 +284,13 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonECSWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

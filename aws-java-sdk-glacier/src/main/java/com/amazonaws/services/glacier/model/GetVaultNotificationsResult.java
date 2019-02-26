@@ -1,29 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetVaultNotificationsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetVaultNotificationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,8 +39,7 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
      *        Returns the notification configuration set on the vault.
      */
 
-    public void setVaultNotificationConfig(
-            VaultNotificationConfig vaultNotificationConfig) {
+    public void setVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {
         this.vaultNotificationConfig = vaultNotificationConfig;
     }
 
@@ -65,19 +62,17 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
      * 
      * @param vaultNotificationConfig
      *        Returns the notification configuration set on the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetVaultNotificationsResult withVaultNotificationConfig(
-            VaultNotificationConfig vaultNotificationConfig) {
+    public GetVaultNotificationsResult withVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {
         setVaultNotificationConfig(vaultNotificationConfig);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,8 +83,7 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVaultNotificationConfig() != null)
-            sb.append("VaultNotificationConfig: "
-                    + getVaultNotificationConfig());
+            sb.append("VaultNotificationConfig: ").append(getVaultNotificationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -104,12 +98,9 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
         if (obj instanceof GetVaultNotificationsResult == false)
             return false;
         GetVaultNotificationsResult other = (GetVaultNotificationsResult) obj;
-        if (other.getVaultNotificationConfig() == null
-                ^ this.getVaultNotificationConfig() == null)
+        if (other.getVaultNotificationConfig() == null ^ this.getVaultNotificationConfig() == null)
             return false;
-        if (other.getVaultNotificationConfig() != null
-                && other.getVaultNotificationConfig().equals(
-                        this.getVaultNotificationConfig()) == false)
+        if (other.getVaultNotificationConfig() != null && other.getVaultNotificationConfig().equals(this.getVaultNotificationConfig()) == false)
             return false;
         return true;
     }
@@ -119,10 +110,7 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getVaultNotificationConfig() == null) ? 0
-                        : getVaultNotificationConfig().hashCode());
+        hashCode = prime * hashCode + ((getVaultNotificationConfig() == null) ? 0 : getVaultNotificationConfig().hashCode());
         return hashCode;
     }
 
@@ -131,9 +119,8 @@ public class GetVaultNotificationsResult implements Serializable, Cloneable {
         try {
             return (GetVaultNotificationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

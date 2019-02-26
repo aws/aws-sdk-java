@@ -1,58 +1,67 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecution</code>
- * decision.
+ * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
  * </p>
  * <p>
  * <b>Access Control</b>
  * </p>
  * <p>
- * You can use IAM policies to control this decision's access to Amazon SWF
- * resources as follows:
+ * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
  * </p>
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the
- * action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call
- * this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>
+ * <p>
+ * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use an <code>Action</code> element to allow or deny permission to call this action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You cannot use an IAM policy to constrain this action's parameters.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or
- * the parameter values fall outside the specified constraints, the action
- * fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href=
- * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
- * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+ * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
+ * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
+ * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalExternalWorkflowExecutionDecisionAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class SignalExternalWorkflowExecutionDecisionAttributes implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SignalExternalWorkflowExecutionDecisionAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to
-     * be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      */
     private String workflowId;
@@ -64,35 +73,31 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
     private String runId;
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution
-     * will use the signal name and input to process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      */
     private String signalName;
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target
-     * workflow execution will use the signal name and input data to process the
-     * signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      */
     private String input;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      */
     private String control;
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to
-     * be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
+     *        The <code>workflowId</code> of the workflow execution to be signaled.
      */
 
     public void setWorkflowId(String workflowId) {
@@ -101,11 +106,10 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to
-     * be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
-     * @return Required.</b> The <code>workflowId
+     * @return The <code>workflowId</code> of the workflow execution to be signaled.
      */
 
     public String getWorkflowId() {
@@ -114,18 +118,15 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to
-     * be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>workflowId</code> of the workflow execution to be signaled.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionDecisionAttributes withWorkflowId(
-            String workflowId) {
+    public SignalExternalWorkflowExecutionDecisionAttributes withWorkflowId(String workflowId) {
         setWorkflowId(workflowId);
         return this;
     }
@@ -162,24 +163,21 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
      * 
      * @param runId
      *        The <code>runId</code> of the workflow execution to be signaled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionDecisionAttributes withRunId(
-            String runId) {
+    public SignalExternalWorkflowExecutionDecisionAttributes withRunId(String runId) {
         setRunId(runId);
         return this;
     }
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution
-     * will use the signal name and input to process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
      * @param signalName
-     *        Required.
+     *        The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      */
 
     public void setSignalName(String signalName) {
@@ -188,11 +186,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution
-     * will use the signal name and input to process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
-     * @return Required.
+     * @return The name of the signal.The target workflow execution uses the signal name and input to process the
+     *         signal.
      */
 
     public String getSignalName() {
@@ -201,31 +199,28 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution
-     * will use the signal name and input to process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
      * @param signalName
-     *        Required.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the signal.The target workflow execution uses the signal name and input to process the signal.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionDecisionAttributes withSignalName(
-            String signalName) {
+    public SignalExternalWorkflowExecutionDecisionAttributes withSignalName(String signalName) {
         setSignalName(signalName);
         return this;
     }
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target
-     * workflow execution will use the signal name and input data to process the
-     * signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
      * @param input
-     *        Optional.
+     *        The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *        input data to process the signal.
      */
 
     public void setInput(String input) {
@@ -234,12 +229,12 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target
-     * workflow execution will use the signal name and input data to process the
-     * signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
-     * @return Optional.
+     * @return The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *         input data to process the signal.
      */
 
     public String getInput() {
@@ -248,31 +243,28 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target
-     * workflow execution will use the signal name and input data to process the
-     * signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
      * @param input
-     *        Optional.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *        input data to process the signal.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionDecisionAttributes withInput(
-            String input) {
+    public SignalExternalWorkflowExecutionDecisionAttributes withInput(String input) {
         setInput(input);
         return this;
     }
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public void setControl(String control) {
@@ -281,11 +273,10 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return The data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public String getControl() {
@@ -294,25 +285,22 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the
-     * decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data attached to the event that can be used by the decider in subsequent decision tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SignalExternalWorkflowExecutionDecisionAttributes withControl(
-            String control) {
+    public SignalExternalWorkflowExecutionDecisionAttributes withControl(String control) {
         setControl(control);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -323,15 +311,15 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId() + ",");
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getSignalName() != null)
-            sb.append("SignalName: " + getSignalName() + ",");
+            sb.append("SignalName: ").append(getSignalName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl());
+            sb.append("Control: ").append(getControl());
         sb.append("}");
         return sb.toString();
     }
@@ -348,28 +336,23 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
         SignalExternalWorkflowExecutionDecisionAttributes other = (SignalExternalWorkflowExecutionDecisionAttributes) obj;
         if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
             return false;
-        if (other.getWorkflowId() != null
-                && other.getWorkflowId().equals(this.getWorkflowId()) == false)
+        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false)
             return false;
         if (other.getRunId() == null ^ this.getRunId() == null)
             return false;
-        if (other.getRunId() != null
-                && other.getRunId().equals(this.getRunId()) == false)
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
             return false;
         if (other.getSignalName() == null ^ this.getSignalName() == null)
             return false;
-        if (other.getSignalName() != null
-                && other.getSignalName().equals(this.getSignalName()) == false)
+        if (other.getSignalName() != null && other.getSignalName().equals(this.getSignalName()) == false)
             return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
-        if (other.getInput() != null
-                && other.getInput().equals(this.getInput()) == false)
+        if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
         if (other.getControl() == null ^ this.getControl() == null)
             return false;
-        if (other.getControl() != null
-                && other.getControl().equals(this.getControl()) == false)
+        if (other.getControl() != null && other.getControl().equals(this.getControl()) == false)
             return false;
         return true;
     }
@@ -379,28 +362,27 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
-        hashCode = prime * hashCode
-                + ((getRunId() == null) ? 0 : getRunId().hashCode());
-        hashCode = prime * hashCode
-                + ((getSignalName() == null) ? 0 : getSignalName().hashCode());
-        hashCode = prime * hashCode
-                + ((getInput() == null) ? 0 : getInput().hashCode());
-        hashCode = prime * hashCode
-                + ((getControl() == null) ? 0 : getControl().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
+        hashCode = prime * hashCode + ((getSignalName() == null) ? 0 : getSignalName().hashCode());
+        hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getControl() == null) ? 0 : getControl().hashCode());
         return hashCode;
     }
 
     @Override
     public SignalExternalWorkflowExecutionDecisionAttributes clone() {
         try {
-            return (SignalExternalWorkflowExecutionDecisionAttributes) super
-                    .clone();
+            return (SignalExternalWorkflowExecutionDecisionAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.SignalExternalWorkflowExecutionDecisionAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

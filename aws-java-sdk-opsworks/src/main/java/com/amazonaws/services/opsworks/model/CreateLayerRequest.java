@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateLayerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +33,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     private String stackId;
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      */
     private String type;
@@ -46,48 +46,46 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short
-     * name, which is used internally by AWS OpsWorks and by Chef recipes. The
-     * short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are
-     * limited to the alphanumeric characters, '-', '_', and '.'.
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     * >Layer Reference</a>.
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      */
     private String shortname;
     /**
      * <p>
-     * One or more user-defined key-value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack attributes.
      * </p>
      * <p>
-     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute
-     * to the cluster's ARN.
+     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
      * <p>
-     * The ARN of an IAM profile to be used for the layer's EC2 instances. For
-     * more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     */
+    private CloudWatchLogsConfiguration cloudWatchLogsConfiguration;
+    /**
+     * <p>
+     * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String customInstanceProfileArn;
     /**
      * <p>
-     * A JSON-formatted string containing custom stack configuration and
-     * deployment attributes to be installed on the layer's instances. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
-     * of the AWS CLI.
+     * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
+     * layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      */
     private String customJson;
@@ -99,15 +97,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> customSecurityGroupIds;
     /**
      * <p>
-     * An array of <code>Package</code> objects that describes the layer
-     * packages.
+     * An array of <code>Package</code> objects that describes the layer packages.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> packages;
     /**
      * <p>
-     * A <code>VolumeConfigurations</code> object that describes the layer's
-     * Amazon EBS volumes.
+     * A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeConfiguration> volumeConfigurations;
@@ -119,46 +115,40 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     private Boolean enableAutoHealing;
     /**
      * <p>
-     * Whether to automatically assign an <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address</a> to the layer's instances. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
+     * the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      */
     private Boolean autoAssignElasticIps;
     /**
      * <p>
-     * For stacks that are running in a VPC, whether to automatically assign a
-     * public IP address to the layer's instances. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      */
     private Boolean autoAssignPublicIps;
     /**
      * <p>
-     * A <code>LayerCustomRecipes</code> object that specifies the layer custom
-     * recipes.
+     * A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      * </p>
      */
     private Recipes customRecipes;
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * To ensure that your instances have the latest security updates, we
-     * strongly recommend using the default value of <code>true</code>.
+     * To ensure that your instances have the latest security updates, we strongly recommend using the default value of
+     * <code>true</code>.
      * </p>
      * </note>
      */
@@ -171,9 +161,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     private Boolean useEbsOptimizedInstances;
     /**
      * <p>
-     * A <code>LifeCycleEventConfiguration</code> object that you can use to
-     * configure the Shutdown event to specify an execution timeout and enable
-     * or disable Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an
+     * execution timeout and enable or disable Elastic Load Balancer connection draining.
      * </p>
      */
     private LifecycleEventConfiguration lifecycleEventConfiguration;
@@ -210,8 +199,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param stackId
      *        The layer stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withStackId(String stackId) {
@@ -221,13 +209,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
-     *        The layer type. A stack cannot have more than one built-in layer
-     *        of the same type. It can have any number of custom layers.
+     *        The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number
+     *        of custom layers. Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
@@ -237,12 +225,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      * 
-     * @return The layer type. A stack cannot have more than one built-in layer
-     *         of the same type. It can have any number of custom layers.
+     * @return The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number
+     *         of custom layers. Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
@@ -252,15 +240,14 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
-     *        The layer type. A stack cannot have more than one built-in layer
-     *        of the same type. It can have any number of custom layers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number
+     *        of custom layers. Built-in layers are not available in Chef 12 stacks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LayerType
      */
 
@@ -271,36 +258,35 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
-     *        The layer type. A stack cannot have more than one built-in layer
-     *        of the same type. It can have any number of custom layers.
+     *        The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number
+     *        of custom layers. Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
     public void setType(LayerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of
+     * custom layers. Built-in layers are not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
-     *        The layer type. A stack cannot have more than one built-in layer
-     *        of the same type. It can have any number of custom layers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number
+     *        of custom layers. Built-in layers are not available in Chef 12 stacks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see LayerType
      */
 
     public CreateLayerRequest withType(LayerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -336,8 +322,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param name
      *        The layer name, which is used by the console.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withName(String name) {
@@ -347,31 +332,24 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short
-     * name, which is used internally by AWS OpsWorks and by Chef recipes. The
-     * short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are
-     * limited to the alphanumeric characters, '-', '_', and '.'.
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     * >Layer Reference</a>.
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
-     *        For custom layers only, use this parameter to specify the layer's
-     *        short name, which is used internally by AWS OpsWorks and by Chef
-     *        recipes. The short name is also used as the name for the directory
-     *        where your app files are installed. It can have a maximum of 200
-     *        characters, which are limited to the alphanumeric characters, '-',
-     *        '_', and '.'.</p>
+     *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
+     *        AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
+     *        your app files are installed. It can have a maximum of 200 characters, which are limited to the
+     *        alphanumeric characters, '-', '_', and '.'.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks. For
-     *        more information, see the <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     *        >Layer Reference</a>.
+     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
     public void setShortname(String shortname) {
@@ -380,30 +358,23 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short
-     * name, which is used internally by AWS OpsWorks and by Chef recipes. The
-     * short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are
-     * limited to the alphanumeric characters, '-', '_', and '.'.
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     * >Layer Reference</a>.
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
-     * @return For custom layers only, use this parameter to specify the layer's
-     *         short name, which is used internally by AWS OpsWorks and by Chef
-     *         recipes. The short name is also used as the name for the
-     *         directory where your app files are installed. It can have a
-     *         maximum of 200 characters, which are limited to the alphanumeric
-     *         characters, '-', '_', and '.'.</p>
+     * @return For custom layers only, use this parameter to specify the layer's short name, which is used internally by
+     *         AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
+     *         your app files are installed. It can have a maximum of 200 characters, which are limited to the
+     *         alphanumeric characters, '-', '_', and '.'.</p>
      *         <p>
-     *         The built-in layers' short names are defined by AWS OpsWorks. For
-     *         more information, see the <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     *         >Layer Reference</a>.
+     *         The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
     public String getShortname() {
@@ -412,33 +383,25 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short
-     * name, which is used internally by AWS OpsWorks and by Chef recipes. The
-     * short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are
-     * limited to the alphanumeric characters, '-', '_', and '.'.
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
+     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     * >Layer Reference</a>.
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
-     *        For custom layers only, use this parameter to specify the layer's
-     *        short name, which is used internally by AWS OpsWorks and by Chef
-     *        recipes. The short name is also used as the name for the directory
-     *        where your app files are installed. It can have a maximum of 200
-     *        characters, which are limited to the alphanumeric characters, '-',
-     *        '_', and '.'.</p>
+     *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
+     *        AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
+     *        your app files are installed. It can have a maximum of 200 characters, which are limited to the
+     *        alphanumeric characters, '-', '_', and '.'.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks. For
-     *        more information, see the <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
-     *        >Layer Reference</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withShortname(String shortname) {
@@ -448,19 +411,15 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more user-defined key-value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack attributes.
      * </p>
      * <p>
-     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute
-     * to the cluster's ARN.
+     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * </p>
      * 
-     * @return One or more user-defined key-value pairs to be added to the stack
-     *         attributes.</p>
+     * @return One or more user-defined key-value pairs to be added to the stack attributes.</p>
      *         <p>
-     *         To create a cluster layer, set the <code>EcsClusterArn</code>
-     *         attribute to the cluster's ARN.
+     *         To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -472,50 +431,38 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more user-defined key-value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack attributes.
      * </p>
      * <p>
-     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute
-     * to the cluster's ARN.
+     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * </p>
      * 
      * @param attributes
-     *        One or more user-defined key-value pairs to be added to the stack
-     *        attributes.</p>
+     *        One or more user-defined key-value pairs to be added to the stack attributes.</p>
      *        <p>
-     *        To create a cluster layer, set the <code>EcsClusterArn</code>
-     *        attribute to the cluster's ARN.
+     *        To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
-        this.attributes = attributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        attributes);
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
     }
 
     /**
      * <p>
-     * One or more user-defined key-value pairs to be added to the stack
-     * attributes.
+     * One or more user-defined key-value pairs to be added to the stack attributes.
      * </p>
      * <p>
-     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute
-     * to the cluster's ARN.
+     * To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
      * </p>
      * 
      * @param attributes
-     *        One or more user-defined key-value pairs to be added to the stack
-     *        attributes.</p>
+     *        One or more user-defined key-value pairs to be added to the stack attributes.</p>
      *        <p>
-     *        To create a cluster layer, set the <code>EcsClusterArn</code>
-     *        attribute to the cluster's ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withAttributes(
-            java.util.Map<String, String> attributes) {
+    public CreateLayerRequest withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
@@ -525,15 +472,15 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.attributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest clearAttributesEntries() {
@@ -543,17 +490,60 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of an IAM profile to be used for the layer's EC2 instances. For
-     * more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *        <a>CloudWatchLogsLogStream</a>.
+     */
+
+    public void setCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        this.cloudWatchLogsConfiguration = cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @return Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *         <a>CloudWatchLogsLogStream</a>.
+     */
+
+    public CloudWatchLogsConfiguration getCloudWatchLogsConfiguration() {
+        return this.cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *        <a>CloudWatchLogsLogStream</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLayerRequest withCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        setCloudWatchLogsConfiguration(cloudWatchLogsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
-     *        The ARN of an IAM profile to be used for the layer's EC2
-     *        instances. For more information about IAM ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
+     *        The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        Identifiers</a>.
      */
 
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
@@ -562,16 +552,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of an IAM profile to be used for the layer's EC2 instances. For
-     * more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
-     * @return The ARN of an IAM profile to be used for the layer's EC2
-     *         instances. For more information about IAM ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >Using Identifiers</a>.
+     * @return The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
+     *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         Identifiers</a>.
      */
 
     public String getCustomInstanceProfileArn() {
@@ -580,44 +567,35 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of an IAM profile to be used for the layer's EC2 instances. For
-     * more information about IAM ARNs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >Using Identifiers</a>.
+     * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
-     *        The ARN of an IAM profile to be used for the layer's EC2
-     *        instances. For more information about IAM ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >Using Identifiers</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        Identifiers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withCustomInstanceProfileArn(
-            String customInstanceProfileArn) {
+    public CreateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
         setCustomInstanceProfileArn(customInstanceProfileArn);
         return this;
     }
 
     /**
      * <p>
-     * A JSON-formatted string containing custom stack configuration and
-     * deployment attributes to be installed on the layer's instances. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
-     * of the AWS CLI.
+     * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
+     * layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
      * @param customJson
-     *        A JSON-formatted string containing custom stack configuration and
-     *        deployment attributes to be installed on the layer's instances.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *        > Using Custom JSON</a>. This feature is supported as of version
-     *        1.7.42 of the AWS CLI.
+     *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
+     *        the layer's instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      */
 
     public void setCustomJson(String customJson) {
@@ -626,20 +604,16 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A JSON-formatted string containing custom stack configuration and
-     * deployment attributes to be installed on the layer's instances. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
-     * of the AWS CLI.
+     * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
+     * layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
-     * @return A JSON-formatted string containing custom stack configuration and
-     *         deployment attributes to be installed on the layer's instances.
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *         > Using Custom JSON</a>. This feature is supported as of version
-     *         1.7.42 of the AWS CLI.
+     * @return A JSON-formatted string containing custom stack configuration and deployment attributes to be installed
+     *         on the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *         Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      */
 
     public String getCustomJson() {
@@ -648,23 +622,18 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A JSON-formatted string containing custom stack configuration and
-     * deployment attributes to be installed on the layer's instances. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     * > Using Custom JSON</a>. This feature is supported as of version 1.7.42
-     * of the AWS CLI.
+     * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
+     * layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
      * @param customJson
-     *        A JSON-formatted string containing custom stack configuration and
-     *        deployment attributes to be installed on the layer's instances.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
-     *        > Using Custom JSON</a>. This feature is supported as of version
-     *        1.7.42 of the AWS CLI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
+     *        the layer's instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withCustomJson(String customJson) {
@@ -696,15 +665,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        An array containing the layer custom security group IDs.
      */
 
-    public void setCustomSecurityGroupIds(
-            java.util.Collection<String> customSecurityGroupIds) {
+    public void setCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
             this.customSecurityGroupIds = null;
             return;
         }
 
-        this.customSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
-                customSecurityGroupIds);
+        this.customSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(customSecurityGroupIds);
     }
 
     /**
@@ -712,23 +679,19 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * An array containing the layer custom security group IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCustomSecurityGroupIds(java.util.Collection)} or
-     * {@link #withCustomSecurityGroupIds(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomSecurityGroupIds(java.util.Collection)} or
+     * {@link #withCustomSecurityGroupIds(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param customSecurityGroupIds
      *        An array containing the layer custom security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withCustomSecurityGroupIds(
-            String... customSecurityGroupIds) {
+    public CreateLayerRequest withCustomSecurityGroupIds(String... customSecurityGroupIds) {
         if (this.customSecurityGroupIds == null) {
-            setCustomSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    customSecurityGroupIds.length));
+            setCustomSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(customSecurityGroupIds.length));
         }
         for (String ele : customSecurityGroupIds) {
             this.customSecurityGroupIds.add(ele);
@@ -743,24 +706,20 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param customSecurityGroupIds
      *        An array containing the layer custom security group IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withCustomSecurityGroupIds(
-            java.util.Collection<String> customSecurityGroupIds) {
+    public CreateLayerRequest withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
         setCustomSecurityGroupIds(customSecurityGroupIds);
         return this;
     }
 
     /**
      * <p>
-     * An array of <code>Package</code> objects that describes the layer
-     * packages.
+     * An array of <code>Package</code> objects that describes the layer packages.
      * </p>
      * 
-     * @return An array of <code>Package</code> objects that describes the layer
-     *         packages.
+     * @return An array of <code>Package</code> objects that describes the layer packages.
      */
 
     public java.util.List<String> getPackages() {
@@ -772,13 +731,11 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Package</code> objects that describes the layer
-     * packages.
+     * An array of <code>Package</code> objects that describes the layer packages.
      * </p>
      * 
      * @param packages
-     *        An array of <code>Package</code> objects that describes the layer
-     *        packages.
+     *        An array of <code>Package</code> objects that describes the layer packages.
      */
 
     public void setPackages(java.util.Collection<String> packages) {
@@ -787,33 +744,27 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.packages = new com.amazonaws.internal.SdkInternalList<String>(
-                packages);
+        this.packages = new com.amazonaws.internal.SdkInternalList<String>(packages);
     }
 
     /**
      * <p>
-     * An array of <code>Package</code> objects that describes the layer
-     * packages.
+     * An array of <code>Package</code> objects that describes the layer packages.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPackages(java.util.Collection)} or
-     * {@link #withPackages(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPackages(java.util.Collection)} or {@link #withPackages(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param packages
-     *        An array of <code>Package</code> objects that describes the layer
-     *        packages.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Package</code> objects that describes the layer packages.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withPackages(String... packages) {
         if (this.packages == null) {
-            setPackages(new com.amazonaws.internal.SdkInternalList<String>(
-                    packages.length));
+            setPackages(new com.amazonaws.internal.SdkInternalList<String>(packages.length));
         }
         for (String ele : packages) {
             this.packages.add(ele);
@@ -823,15 +774,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Package</code> objects that describes the layer
-     * packages.
+     * An array of <code>Package</code> objects that describes the layer packages.
      * </p>
      * 
      * @param packages
-     *        An array of <code>Package</code> objects that describes the layer
-     *        packages.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An array of <code>Package</code> objects that describes the layer packages.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withPackages(java.util.Collection<String> packages) {
@@ -841,12 +789,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>VolumeConfigurations</code> object that describes the layer's
-     * Amazon EBS volumes.
+     * A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      * </p>
      * 
-     * @return A <code>VolumeConfigurations</code> object that describes the
-     *         layer's Amazon EBS volumes.
+     * @return A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      */
 
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
@@ -858,50 +804,40 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>VolumeConfigurations</code> object that describes the layer's
-     * Amazon EBS volumes.
+     * A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      * </p>
      * 
      * @param volumeConfigurations
-     *        A <code>VolumeConfigurations</code> object that describes the
-     *        layer's Amazon EBS volumes.
+     *        A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      */
 
-    public void setVolumeConfigurations(
-            java.util.Collection<VolumeConfiguration> volumeConfigurations) {
+    public void setVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
             this.volumeConfigurations = null;
             return;
         }
 
-        this.volumeConfigurations = new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>(
-                volumeConfigurations);
+        this.volumeConfigurations = new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>(volumeConfigurations);
     }
 
     /**
      * <p>
-     * A <code>VolumeConfigurations</code> object that describes the layer's
-     * Amazon EBS volumes.
+     * A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setVolumeConfigurations(java.util.Collection)} or
-     * {@link #withVolumeConfigurations(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeConfigurations(java.util.Collection)} or {@link #withVolumeConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param volumeConfigurations
-     *        A <code>VolumeConfigurations</code> object that describes the
-     *        layer's Amazon EBS volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withVolumeConfigurations(
-            VolumeConfiguration... volumeConfigurations) {
+    public CreateLayerRequest withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
         if (this.volumeConfigurations == null) {
-            setVolumeConfigurations(new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>(
-                    volumeConfigurations.length));
+            setVolumeConfigurations(new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>(volumeConfigurations.length));
         }
         for (VolumeConfiguration ele : volumeConfigurations) {
             this.volumeConfigurations.add(ele);
@@ -911,19 +847,15 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>VolumeConfigurations</code> object that describes the layer's
-     * Amazon EBS volumes.
+     * A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
      * </p>
      * 
      * @param volumeConfigurations
-     *        A <code>VolumeConfigurations</code> object that describes the
-     *        layer's Amazon EBS volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withVolumeConfigurations(
-            java.util.Collection<VolumeConfiguration> volumeConfigurations) {
+    public CreateLayerRequest withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         setVolumeConfigurations(volumeConfigurations);
         return this;
     }
@@ -960,8 +892,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param enableAutoHealing
      *        Whether to disable auto healing for the layer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
@@ -983,21 +914,19 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to automatically assign an <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address</a> to the layer's instances. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
+     * the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
-     *        Whether to automatically assign an <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *        >Elastic IP address</a> to the layer's instances. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *        >How to Edit a Layer</a>.
+     *        Whether to automatically assign an <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        address</a> to the layer's instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        Layer</a>.
      */
 
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
@@ -1006,20 +935,18 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to automatically assign an <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address</a> to the layer's instances. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
+     * the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
-     * @return Whether to automatically assign an <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *         >Elastic IP address</a> to the layer's instances. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *         >How to Edit a Layer</a>.
+     * @return Whether to automatically assign an <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         Layer</a>.
      */
 
     public Boolean getAutoAssignElasticIps() {
@@ -1028,47 +955,41 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to automatically assign an <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address</a> to the layer's instances. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
+     * the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
-     *        Whether to automatically assign an <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *        >Elastic IP address</a> to the layer's instances. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *        >How to Edit a Layer</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether to automatically assign an <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        address</a> to the layer's instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        Layer</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withAutoAssignElasticIps(
-            Boolean autoAssignElasticIps) {
+    public CreateLayerRequest withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         setAutoAssignElasticIps(autoAssignElasticIps);
         return this;
     }
 
     /**
      * <p>
-     * Whether to automatically assign an <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     * >Elastic IP address</a> to the layer's instances. For more information,
-     * see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
+     * the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
-     * @return Whether to automatically assign an <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
-     *         >Elastic IP address</a> to the layer's instances. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *         >How to Edit a Layer</a>.
+     * @return Whether to automatically assign an <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         Layer</a>.
      */
 
     public Boolean isAutoAssignElasticIps() {
@@ -1077,19 +998,17 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For stacks that are running in a VPC, whether to automatically assign a
-     * public IP address to the layer's instances. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
-     *        For stacks that are running in a VPC, whether to automatically
-     *        assign a public IP address to the layer's instances. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *        >How to Edit a Layer</a>.
+     *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     *        instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        Layer</a>.
      */
 
     public void setAutoAssignPublicIps(Boolean autoAssignPublicIps) {
@@ -1098,18 +1017,16 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For stacks that are running in a VPC, whether to automatically assign a
-     * public IP address to the layer's instances. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
-     * @return For stacks that are running in a VPC, whether to automatically
-     *         assign a public IP address to the layer's instances. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *         >How to Edit a Layer</a>.
+     * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     *         instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         Layer</a>.
      */
 
     public Boolean getAutoAssignPublicIps() {
@@ -1118,43 +1035,37 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For stacks that are running in a VPC, whether to automatically assign a
-     * public IP address to the layer's instances. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
-     *        For stacks that are running in a VPC, whether to automatically
-     *        assign a public IP address to the layer's instances. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *        >How to Edit a Layer</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     *        instances. For more information, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        Layer</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withAutoAssignPublicIps(
-            Boolean autoAssignPublicIps) {
+    public CreateLayerRequest withAutoAssignPublicIps(Boolean autoAssignPublicIps) {
         setAutoAssignPublicIps(autoAssignPublicIps);
         return this;
     }
 
     /**
      * <p>
-     * For stacks that are running in a VPC, whether to automatically assign a
-     * public IP address to the layer's instances. For more information, see <a
-     * href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     * >How to Edit a Layer</a>.
+     * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     * instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * Layer</a>.
      * </p>
      * 
-     * @return For stacks that are running in a VPC, whether to automatically
-     *         assign a public IP address to the layer's instances. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
-     *         >How to Edit a Layer</a>.
+     * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
+     *         instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         Layer</a>.
      */
 
     public Boolean isAutoAssignPublicIps() {
@@ -1163,13 +1074,11 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>LayerCustomRecipes</code> object that specifies the layer custom
-     * recipes.
+     * A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      * </p>
      * 
      * @param customRecipes
-     *        A <code>LayerCustomRecipes</code> object that specifies the layer
-     *        custom recipes.
+     *        A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      */
 
     public void setCustomRecipes(Recipes customRecipes) {
@@ -1178,12 +1087,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>LayerCustomRecipes</code> object that specifies the layer custom
-     * recipes.
+     * A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      * </p>
      * 
-     * @return A <code>LayerCustomRecipes</code> object that specifies the layer
-     *         custom recipes.
+     * @return A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      */
 
     public Recipes getCustomRecipes() {
@@ -1192,15 +1099,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>LayerCustomRecipes</code> object that specifies the layer custom
-     * recipes.
+     * A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
      * </p>
      * 
      * @param customRecipes
-     *        A <code>LayerCustomRecipes</code> object that specifies the layer
-     *        custom recipes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLayerRequest withCustomRecipes(Recipes customRecipes) {
@@ -1210,33 +1114,27 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * To ensure that your instances have the latest security updates, we
-     * strongly recommend using the default value of <code>true</code>.
+     * To ensure that your instances have the latest security updates, we strongly recommend using the default value of
+     * <code>true</code>.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. To control
-     *        when updates are installed, set this value to <code>false</code>.
-     *        You must then update your instances manually by using
-     *        <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *        then update your instances manually by using <a>CreateDeployment</a> to run the
+     *        <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *        <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        To ensure that your instances have the latest security updates, we
-     *        strongly recommend using the default value of <code>true</code>.
+     *        To ensure that your instances have the latest security updates, we strongly recommend using the default
+     *        value of <code>true</code>.
      *        </p>
      */
 
@@ -1246,33 +1144,26 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * To ensure that your instances have the latest security updates, we
-     * strongly recommend using the default value of <code>true</code>.
+     * To ensure that your instances have the latest security updates, we strongly recommend using the default value of
+     * <code>true</code>.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. To
-     *         control when updates are installed, set this value to
-     *         <code>false</code>. You must then update your instances manually
-     *         by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *         then update your instances manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         To ensure that your instances have the latest security updates,
-     *         we strongly recommend using the default value of
-     *         <code>true</code>.
+     *         To ensure that your instances have the latest security updates, we strongly recommend using the default
+     *         value of <code>true</code>.
      *         </p>
      */
 
@@ -1282,73 +1173,58 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * To ensure that your instances have the latest security updates, we
-     * strongly recommend using the default value of <code>true</code>.
+     * To ensure that your instances have the latest security updates, we strongly recommend using the default value of
+     * <code>true</code>.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
-     *        Whether to install operating system and package updates when the
-     *        instance boots. The default value is <code>true</code>. To control
-     *        when updates are installed, set this value to <code>false</code>.
-     *        You must then update your instances manually by using
-     *        <a>CreateDeployment</a> to run the
-     *        <code>update_dependencies</code> stack command or by manually
-     *        running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *        (Ubuntu) on the instances. </p> <note>
+     *        Whether to install operating system and package updates when the instance boots. The default value is
+     *        <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *        then update your instances manually by using <a>CreateDeployment</a> to run the
+     *        <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *        <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        To ensure that your instances have the latest security updates, we
-     *        strongly recommend using the default value of <code>true</code>.
+     *        To ensure that your instances have the latest security updates, we strongly recommend using the default
+     *        value of <code>true</code>.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withInstallUpdatesOnBoot(
-            Boolean installUpdatesOnBoot) {
+    public CreateLayerRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
         return this;
     }
 
     /**
      * <p>
-     * Whether to install operating system and package updates when the instance
-     * boots. The default value is <code>true</code>. To control when updates
-     * are installed, set this value to <code>false</code>. You must then update
-     * your instances manually by using <a>CreateDeployment</a> to run the
-     * <code>update_dependencies</code> stack command or by manually running
-     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances.
+     * Whether to install operating system and package updates when the instance boots. The default value is
+     * <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then
+     * update your instances manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * To ensure that your instances have the latest security updates, we
-     * strongly recommend using the default value of <code>true</code>.
+     * To ensure that your instances have the latest security updates, we strongly recommend using the default value of
+     * <code>true</code>.
      * </p>
      * </note>
      * 
-     * @return Whether to install operating system and package updates when the
-     *         instance boots. The default value is <code>true</code>. To
-     *         control when updates are installed, set this value to
-     *         <code>false</code>. You must then update your instances manually
-     *         by using <a>CreateDeployment</a> to run the
-     *         <code>update_dependencies</code> stack command or by manually
-     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-     *         (Ubuntu) on the instances. </p> <note>
+     * @return Whether to install operating system and package updates when the instance boots. The default value is
+     *         <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must
+     *         then update your instances manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         To ensure that your instances have the latest security updates,
-     *         we strongly recommend using the default value of
-     *         <code>true</code>.
+     *         To ensure that your instances have the latest security updates, we strongly recommend using the default
+     *         value of <code>true</code>.
      *         </p>
      */
 
@@ -1388,12 +1264,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param useEbsOptimizedInstances
      *        Whether to use Amazon EBS-optimized instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withUseEbsOptimizedInstances(
-            Boolean useEbsOptimizedInstances) {
+    public CreateLayerRequest withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
         setUseEbsOptimizedInstances(useEbsOptimizedInstances);
         return this;
     }
@@ -1412,33 +1286,27 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>LifeCycleEventConfiguration</code> object that you can use to
-     * configure the Shutdown event to specify an execution timeout and enable
-     * or disable Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an
+     * execution timeout and enable or disable Elastic Load Balancer connection draining.
      * </p>
      * 
      * @param lifecycleEventConfiguration
-     *        A <code>LifeCycleEventConfiguration</code> object that you can use
-     *        to configure the Shutdown event to specify an execution timeout
-     *        and enable or disable Elastic Load Balancer connection draining.
+     *        A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
+     *        specify an execution timeout and enable or disable Elastic Load Balancer connection draining.
      */
 
-    public void setLifecycleEventConfiguration(
-            LifecycleEventConfiguration lifecycleEventConfiguration) {
+    public void setLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
         this.lifecycleEventConfiguration = lifecycleEventConfiguration;
     }
 
     /**
      * <p>
-     * A <code>LifeCycleEventConfiguration</code> object that you can use to
-     * configure the Shutdown event to specify an execution timeout and enable
-     * or disable Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an
+     * execution timeout and enable or disable Elastic Load Balancer connection draining.
      * </p>
      * 
-     * @return A <code>LifeCycleEventConfiguration</code> object that you can
-     *         use to configure the Shutdown event to specify an execution
-     *         timeout and enable or disable Elastic Load Balancer connection
-     *         draining.
+     * @return A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
+     *         specify an execution timeout and enable or disable Elastic Load Balancer connection draining.
      */
 
     public LifecycleEventConfiguration getLifecycleEventConfiguration() {
@@ -1447,28 +1315,24 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>LifeCycleEventConfiguration</code> object that you can use to
-     * configure the Shutdown event to specify an execution timeout and enable
-     * or disable Elastic Load Balancer connection draining.
+     * A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an
+     * execution timeout and enable or disable Elastic Load Balancer connection draining.
      * </p>
      * 
      * @param lifecycleEventConfiguration
-     *        A <code>LifeCycleEventConfiguration</code> object that you can use
-     *        to configure the Shutdown event to specify an execution timeout
-     *        and enable or disable Elastic Load Balancer connection draining.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
+     *        specify an execution timeout and enable or disable Elastic Load Balancer connection draining.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLayerRequest withLifecycleEventConfiguration(
-            LifecycleEventConfiguration lifecycleEventConfiguration) {
+    public CreateLayerRequest withLifecycleEventConfiguration(LifecycleEventConfiguration lifecycleEventConfiguration) {
         setLifecycleEventConfiguration(lifecycleEventConfiguration);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1479,46 +1343,41 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getShortname() != null)
-            sb.append("Shortname: " + getShortname() + ",");
+            sb.append("Shortname: ").append(getShortname()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCloudWatchLogsConfiguration() != null)
+            sb.append("CloudWatchLogsConfiguration: ").append(getCloudWatchLogsConfiguration()).append(",");
         if (getCustomInstanceProfileArn() != null)
-            sb.append("CustomInstanceProfileArn: "
-                    + getCustomInstanceProfileArn() + ",");
+            sb.append("CustomInstanceProfileArn: ").append(getCustomInstanceProfileArn()).append(",");
         if (getCustomJson() != null)
-            sb.append("CustomJson: " + getCustomJson() + ",");
+            sb.append("CustomJson: ").append(getCustomJson()).append(",");
         if (getCustomSecurityGroupIds() != null)
-            sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds()
-                    + ",");
+            sb.append("CustomSecurityGroupIds: ").append(getCustomSecurityGroupIds()).append(",");
         if (getPackages() != null)
-            sb.append("Packages: " + getPackages() + ",");
+            sb.append("Packages: ").append(getPackages()).append(",");
         if (getVolumeConfigurations() != null)
-            sb.append("VolumeConfigurations: " + getVolumeConfigurations()
-                    + ",");
+            sb.append("VolumeConfigurations: ").append(getVolumeConfigurations()).append(",");
         if (getEnableAutoHealing() != null)
-            sb.append("EnableAutoHealing: " + getEnableAutoHealing() + ",");
+            sb.append("EnableAutoHealing: ").append(getEnableAutoHealing()).append(",");
         if (getAutoAssignElasticIps() != null)
-            sb.append("AutoAssignElasticIps: " + getAutoAssignElasticIps()
-                    + ",");
+            sb.append("AutoAssignElasticIps: ").append(getAutoAssignElasticIps()).append(",");
         if (getAutoAssignPublicIps() != null)
-            sb.append("AutoAssignPublicIps: " + getAutoAssignPublicIps() + ",");
+            sb.append("AutoAssignPublicIps: ").append(getAutoAssignPublicIps()).append(",");
         if (getCustomRecipes() != null)
-            sb.append("CustomRecipes: " + getCustomRecipes() + ",");
+            sb.append("CustomRecipes: ").append(getCustomRecipes()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot()
-                    + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getUseEbsOptimizedInstances() != null)
-            sb.append("UseEbsOptimizedInstances: "
-                    + getUseEbsOptimizedInstances() + ",");
+            sb.append("UseEbsOptimizedInstances: ").append(getUseEbsOptimizedInstances()).append(",");
         if (getLifecycleEventConfiguration() != null)
-            sb.append("LifecycleEventConfiguration: "
-                    + getLifecycleEventConfiguration());
+            sb.append("LifecycleEventConfiguration: ").append(getLifecycleEventConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1535,106 +1394,75 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
         CreateLayerRequest other = (CreateLayerRequest) obj;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getShortname() == null ^ this.getShortname() == null)
             return false;
-        if (other.getShortname() != null
-                && other.getShortname().equals(this.getShortname()) == false)
+        if (other.getShortname() != null && other.getShortname().equals(this.getShortname()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
-        if (other.getCustomInstanceProfileArn() == null
-                ^ this.getCustomInstanceProfileArn() == null)
+        if (other.getCloudWatchLogsConfiguration() == null ^ this.getCloudWatchLogsConfiguration() == null)
             return false;
-        if (other.getCustomInstanceProfileArn() != null
-                && other.getCustomInstanceProfileArn().equals(
-                        this.getCustomInstanceProfileArn()) == false)
+        if (other.getCloudWatchLogsConfiguration() != null && other.getCloudWatchLogsConfiguration().equals(this.getCloudWatchLogsConfiguration()) == false)
+            return false;
+        if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null)
+            return false;
+        if (other.getCustomInstanceProfileArn() != null && other.getCustomInstanceProfileArn().equals(this.getCustomInstanceProfileArn()) == false)
             return false;
         if (other.getCustomJson() == null ^ this.getCustomJson() == null)
             return false;
-        if (other.getCustomJson() != null
-                && other.getCustomJson().equals(this.getCustomJson()) == false)
+        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false)
             return false;
-        if (other.getCustomSecurityGroupIds() == null
-                ^ this.getCustomSecurityGroupIds() == null)
+        if (other.getCustomSecurityGroupIds() == null ^ this.getCustomSecurityGroupIds() == null)
             return false;
-        if (other.getCustomSecurityGroupIds() != null
-                && other.getCustomSecurityGroupIds().equals(
-                        this.getCustomSecurityGroupIds()) == false)
+        if (other.getCustomSecurityGroupIds() != null && other.getCustomSecurityGroupIds().equals(this.getCustomSecurityGroupIds()) == false)
             return false;
         if (other.getPackages() == null ^ this.getPackages() == null)
             return false;
-        if (other.getPackages() != null
-                && other.getPackages().equals(this.getPackages()) == false)
+        if (other.getPackages() != null && other.getPackages().equals(this.getPackages()) == false)
             return false;
-        if (other.getVolumeConfigurations() == null
-                ^ this.getVolumeConfigurations() == null)
+        if (other.getVolumeConfigurations() == null ^ this.getVolumeConfigurations() == null)
             return false;
-        if (other.getVolumeConfigurations() != null
-                && other.getVolumeConfigurations().equals(
-                        this.getVolumeConfigurations()) == false)
+        if (other.getVolumeConfigurations() != null && other.getVolumeConfigurations().equals(this.getVolumeConfigurations()) == false)
             return false;
-        if (other.getEnableAutoHealing() == null
-                ^ this.getEnableAutoHealing() == null)
+        if (other.getEnableAutoHealing() == null ^ this.getEnableAutoHealing() == null)
             return false;
-        if (other.getEnableAutoHealing() != null
-                && other.getEnableAutoHealing().equals(
-                        this.getEnableAutoHealing()) == false)
+        if (other.getEnableAutoHealing() != null && other.getEnableAutoHealing().equals(this.getEnableAutoHealing()) == false)
             return false;
-        if (other.getAutoAssignElasticIps() == null
-                ^ this.getAutoAssignElasticIps() == null)
+        if (other.getAutoAssignElasticIps() == null ^ this.getAutoAssignElasticIps() == null)
             return false;
-        if (other.getAutoAssignElasticIps() != null
-                && other.getAutoAssignElasticIps().equals(
-                        this.getAutoAssignElasticIps()) == false)
+        if (other.getAutoAssignElasticIps() != null && other.getAutoAssignElasticIps().equals(this.getAutoAssignElasticIps()) == false)
             return false;
-        if (other.getAutoAssignPublicIps() == null
-                ^ this.getAutoAssignPublicIps() == null)
+        if (other.getAutoAssignPublicIps() == null ^ this.getAutoAssignPublicIps() == null)
             return false;
-        if (other.getAutoAssignPublicIps() != null
-                && other.getAutoAssignPublicIps().equals(
-                        this.getAutoAssignPublicIps()) == false)
+        if (other.getAutoAssignPublicIps() != null && other.getAutoAssignPublicIps().equals(this.getAutoAssignPublicIps()) == false)
             return false;
         if (other.getCustomRecipes() == null ^ this.getCustomRecipes() == null)
             return false;
-        if (other.getCustomRecipes() != null
-                && other.getCustomRecipes().equals(this.getCustomRecipes()) == false)
+        if (other.getCustomRecipes() != null && other.getCustomRecipes().equals(this.getCustomRecipes()) == false)
             return false;
-        if (other.getInstallUpdatesOnBoot() == null
-                ^ this.getInstallUpdatesOnBoot() == null)
+        if (other.getInstallUpdatesOnBoot() == null ^ this.getInstallUpdatesOnBoot() == null)
             return false;
-        if (other.getInstallUpdatesOnBoot() != null
-                && other.getInstallUpdatesOnBoot().equals(
-                        this.getInstallUpdatesOnBoot()) == false)
+        if (other.getInstallUpdatesOnBoot() != null && other.getInstallUpdatesOnBoot().equals(this.getInstallUpdatesOnBoot()) == false)
             return false;
-        if (other.getUseEbsOptimizedInstances() == null
-                ^ this.getUseEbsOptimizedInstances() == null)
+        if (other.getUseEbsOptimizedInstances() == null ^ this.getUseEbsOptimizedInstances() == null)
             return false;
-        if (other.getUseEbsOptimizedInstances() != null
-                && other.getUseEbsOptimizedInstances().equals(
-                        this.getUseEbsOptimizedInstances()) == false)
+        if (other.getUseEbsOptimizedInstances() != null && other.getUseEbsOptimizedInstances().equals(this.getUseEbsOptimizedInstances()) == false)
             return false;
-        if (other.getLifecycleEventConfiguration() == null
-                ^ this.getLifecycleEventConfiguration() == null)
+        if (other.getLifecycleEventConfiguration() == null ^ this.getLifecycleEventConfiguration() == null)
             return false;
-        if (other.getLifecycleEventConfiguration() != null
-                && other.getLifecycleEventConfiguration().equals(
-                        this.getLifecycleEventConfiguration()) == false)
+        if (other.getLifecycleEventConfiguration() != null && other.getLifecycleEventConfiguration().equals(this.getLifecycleEventConfiguration()) == false)
             return false;
         return true;
     }
@@ -1644,60 +1472,24 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getShortname() == null) ? 0 : getShortname().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomInstanceProfileArn() == null) ? 0
-                        : getCustomInstanceProfileArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomSecurityGroupIds() == null) ? 0
-                        : getCustomSecurityGroupIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getPackages() == null) ? 0 : getPackages().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getVolumeConfigurations() == null) ? 0
-                        : getVolumeConfigurations().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnableAutoHealing() == null) ? 0
-                        : getEnableAutoHealing().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoAssignElasticIps() == null) ? 0
-                        : getAutoAssignElasticIps().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoAssignPublicIps() == null) ? 0
-                        : getAutoAssignPublicIps().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomRecipes() == null) ? 0 : getCustomRecipes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstallUpdatesOnBoot() == null) ? 0
-                        : getInstallUpdatesOnBoot().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUseEbsOptimizedInstances() == null) ? 0
-                        : getUseEbsOptimizedInstances().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLifecycleEventConfiguration() == null) ? 0
-                        : getLifecycleEventConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogsConfiguration() == null) ? 0 : getCloudWatchLogsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
+        hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getPackages() == null) ? 0 : getPackages().hashCode());
+        hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getEnableAutoHealing() == null) ? 0 : getEnableAutoHealing().hashCode());
+        hashCode = prime * hashCode + ((getAutoAssignElasticIps() == null) ? 0 : getAutoAssignElasticIps().hashCode());
+        hashCode = prime * hashCode + ((getAutoAssignPublicIps() == null) ? 0 : getAutoAssignPublicIps().hashCode());
+        hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode());
+        hashCode = prime * hashCode + ((getInstallUpdatesOnBoot() == null) ? 0 : getInstallUpdatesOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getUseEbsOptimizedInstances() == null) ? 0 : getUseEbsOptimizedInstances().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleEventConfiguration() == null) ? 0 : getLifecycleEventConfiguration().hashCode());
         return hashCode;
     }
 
@@ -1705,4 +1497,5 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     public CreateLayerRequest clone() {
         return (CreateLayerRequest) super.clone();
     }
+
 }

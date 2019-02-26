@@ -1,60 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Nameserver includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Nameserver" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Nameserver implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Nameserver implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Glue IP address of a name server entry. Glue IP addresses are required
-     * only when the name of the name server is a subdomain of the domain. For
-     * example, if your domain is example.com and the name server for the domain
-     * is ns.example.com, you need to specify the IP address for ns.example.com.
-     * </p>
-     * <p>
-     * Type: List of IP addresses.
+     * Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a
+     * subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+     * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> glueIps;
@@ -64,25 +54,13 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @param name
      *        The fully qualified host name of the name server.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Constraint: Maximum 255 characterss
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
+     *        Constraint: Maximum 255 characters
      */
 
     public void setName(String name) {
@@ -94,24 +72,12 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @return The fully qualified host name of the name server.</p>
      *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Constraint: Maximum 255 characterss
-     *         </p>
-     *         <p>
-     *         Parent: <code>Nameservers</code>
+     *         Constraint: Maximum 255 characters
      */
 
     public String getName() {
@@ -123,27 +89,14 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @param name
      *        The fully qualified host name of the name server.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Constraint: Maximum 255 characterss
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraint: Maximum 255 characters
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Nameserver withName(String name) {
@@ -153,35 +106,19 @@ public class Nameserver implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Glue IP address of a name server entry. Glue IP addresses are required
-     * only when the name of the name server is a subdomain of the domain. For
-     * example, if your domain is example.com and the name server for the domain
-     * is ns.example.com, you need to specify the IP address for ns.example.com.
-     * </p>
-     * <p>
-     * Type: List of IP addresses.
+     * Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a
+     * subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+     * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
      * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
-     * </p>
      * 
-     * @return Glue IP address of a name server entry. Glue IP addresses are
-     *         required only when the name of the name server is a subdomain of
-     *         the domain. For example, if your domain is example.com and the
-     *         name server for the domain is ns.example.com, you need to specify
-     *         the IP address for ns.example.com.</p>
+     * @return Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name
+     *         server is a subdomain of the domain. For example, if your domain is example.com and the name server for
+     *         the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *         <p>
-     *         Type: List of IP addresses.
-     *         </p>
-     *         <p>
-     *         Constraints: The list can contain only one IPv4 and one IPv6
-     *         address.
-     *         </p>
-     *         <p>
-     *         Parent: <code>Nameservers</code>
+     *         Constraints: The list can contain only one IPv4 and one IPv6 address.
      */
 
     public java.util.List<String> getGlueIps() {
@@ -193,36 +130,20 @@ public class Nameserver implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Glue IP address of a name server entry. Glue IP addresses are required
-     * only when the name of the name server is a subdomain of the domain. For
-     * example, if your domain is example.com and the name server for the domain
-     * is ns.example.com, you need to specify the IP address for ns.example.com.
-     * </p>
-     * <p>
-     * Type: List of IP addresses.
+     * Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a
+     * subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+     * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
      * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
-     * </p>
      * 
      * @param glueIps
-     *        Glue IP address of a name server entry. Glue IP addresses are
-     *        required only when the name of the name server is a subdomain of
-     *        the domain. For example, if your domain is example.com and the
-     *        name server for the domain is ns.example.com, you need to specify
-     *        the IP address for ns.example.com.</p>
+     *        Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name
+     *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
+     *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
-     *        Constraints: The list can contain only one IPv4 and one IPv6
-     *        address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
+     *        Constraints: The list can contain only one IPv4 and one IPv6 address.
      */
 
     public void setGlueIps(java.util.Collection<String> glueIps) {
@@ -231,56 +152,36 @@ public class Nameserver implements Serializable, Cloneable {
             return;
         }
 
-        this.glueIps = new com.amazonaws.internal.SdkInternalList<String>(
-                glueIps);
+        this.glueIps = new com.amazonaws.internal.SdkInternalList<String>(glueIps);
     }
 
     /**
      * <p>
-     * Glue IP address of a name server entry. Glue IP addresses are required
-     * only when the name of the name server is a subdomain of the domain. For
-     * example, if your domain is example.com and the name server for the domain
-     * is ns.example.com, you need to specify the IP address for ns.example.com.
-     * </p>
-     * <p>
-     * Type: List of IP addresses.
+     * Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a
+     * subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+     * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
      * </p>
      * <p>
-     * Parent: <code>Nameservers</code>
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGlueIps(java.util.Collection)} or
-     * {@link #withGlueIps(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGlueIps(java.util.Collection)} or {@link #withGlueIps(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param glueIps
-     *        Glue IP address of a name server entry. Glue IP addresses are
-     *        required only when the name of the name server is a subdomain of
-     *        the domain. For example, if your domain is example.com and the
-     *        name server for the domain is ns.example.com, you need to specify
-     *        the IP address for ns.example.com.</p>
+     *        Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name
+     *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
+     *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
-     *        Constraints: The list can contain only one IPv4 and one IPv6
-     *        address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: The list can contain only one IPv4 and one IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Nameserver withGlueIps(String... glueIps) {
         if (this.glueIps == null) {
-            setGlueIps(new com.amazonaws.internal.SdkInternalList<String>(
-                    glueIps.length));
+            setGlueIps(new com.amazonaws.internal.SdkInternalList<String>(glueIps.length));
         }
         for (String ele : glueIps) {
             this.glueIps.add(ele);
@@ -290,38 +191,21 @@ public class Nameserver implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Glue IP address of a name server entry. Glue IP addresses are required
-     * only when the name of the name server is a subdomain of the domain. For
-     * example, if your domain is example.com and the name server for the domain
-     * is ns.example.com, you need to specify the IP address for ns.example.com.
-     * </p>
-     * <p>
-     * Type: List of IP addresses.
+     * Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a
+     * subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+     * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
      * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
-     * </p>
      * 
      * @param glueIps
-     *        Glue IP address of a name server entry. Glue IP addresses are
-     *        required only when the name of the name server is a subdomain of
-     *        the domain. For example, if your domain is example.com and the
-     *        name server for the domain is ns.example.com, you need to specify
-     *        the IP address for ns.example.com.</p>
+     *        Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name
+     *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
+     *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
-     *        Constraints: The list can contain only one IPv4 and one IPv6
-     *        address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Constraints: The list can contain only one IPv4 and one IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Nameserver withGlueIps(java.util.Collection<String> glueIps) {
@@ -330,8 +214,8 @@ public class Nameserver implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -342,9 +226,9 @@ public class Nameserver implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGlueIps() != null)
-            sb.append("GlueIps: " + getGlueIps());
+            sb.append("GlueIps: ").append(getGlueIps());
         sb.append("}");
         return sb.toString();
     }
@@ -361,13 +245,11 @@ public class Nameserver implements Serializable, Cloneable {
         Nameserver other = (Nameserver) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getGlueIps() == null ^ this.getGlueIps() == null)
             return false;
-        if (other.getGlueIps() != null
-                && other.getGlueIps().equals(this.getGlueIps()) == false)
+        if (other.getGlueIps() != null && other.getGlueIps().equals(this.getGlueIps()) == false)
             return false;
         return true;
     }
@@ -377,10 +259,8 @@ public class Nameserver implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getGlueIps() == null) ? 0 : getGlueIps().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getGlueIps() == null) ? 0 : getGlueIps().hashCode());
         return hashCode;
     }
 
@@ -389,9 +269,13 @@ public class Nameserver implements Serializable, Cloneable {
         try {
             return (Nameserver) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.NameserverMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

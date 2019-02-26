@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListCommandsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListCommandsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +31,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Command> commands;
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
@@ -67,8 +66,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.commands = new com.amazonaws.internal.SdkInternalList<Command>(
-                commands);
+        this.commands = new com.amazonaws.internal.SdkInternalList<Command>(commands);
     }
 
     /**
@@ -76,22 +74,19 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * (Optional) The list of commands requested by the user.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setCommands(java.util.Collection)} or
-     * {@link #withCommands(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCommands(java.util.Collection)} or {@link #withCommands(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param commands
      *        (Optional) The list of commands requested by the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandsResult withCommands(Command... commands) {
         if (this.commands == null) {
-            setCommands(new com.amazonaws.internal.SdkInternalList<Command>(
-                    commands.length));
+            setCommands(new com.amazonaws.internal.SdkInternalList<Command>(commands.length));
         }
         for (Command ele : commands) {
             this.commands.add(ele);
@@ -106,25 +101,21 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * 
      * @param commands
      *        (Optional) The list of commands requested by the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListCommandsResult withCommands(
-            java.util.Collection<Command> commands) {
+    public ListCommandsResult withCommands(java.util.Collection<Command> commands) {
         setCommands(commands);
         return this;
     }
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        (Optional) The token for the next set of items to return. (You
-     *        received this token from a previous call.)
+     *        (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -133,12 +124,10 @@ public class ListCommandsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return (Optional) The token for the next set of items to return. (You
-     *         received this token from a previous call.)
+     * @return (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -147,15 +136,12 @@ public class ListCommandsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) The token for the next set of items to return. (You received
-     * this token from a previous call.)
+     * (Optional) The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        (Optional) The token for the next set of items to return. (You
-     *        received this token from a previous call.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCommandsResult withNextToken(String nextToken) {
@@ -164,8 +150,8 @@ public class ListCommandsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,9 +162,9 @@ public class ListCommandsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommands() != null)
-            sb.append("Commands: " + getCommands() + ",");
+            sb.append("Commands: ").append(getCommands()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -195,13 +181,11 @@ public class ListCommandsResult implements Serializable, Cloneable {
         ListCommandsResult other = (ListCommandsResult) obj;
         if (other.getCommands() == null ^ this.getCommands() == null)
             return false;
-        if (other.getCommands() != null
-                && other.getCommands().equals(this.getCommands()) == false)
+        if (other.getCommands() != null && other.getCommands().equals(this.getCommands()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -211,10 +195,8 @@ public class ListCommandsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCommands() == null) ? 0 : getCommands().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getCommands() == null) ? 0 : getCommands().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -223,9 +205,8 @@ public class ListCommandsResult implements Serializable, Cloneable {
         try {
             return (ListCommandsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

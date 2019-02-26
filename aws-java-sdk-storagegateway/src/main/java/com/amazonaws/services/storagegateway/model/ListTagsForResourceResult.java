@@ -1,41 +1,40 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * ListTagsForResourceOutput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource" target="_top">AWS
+ *      API Documentation</a>
  */
-public class ListTagsForResourceResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      */
     private String marker;
@@ -48,13 +47,11 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
+     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -63,12 +60,10 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
-     * @return he Amazon Resource Name (ARN) of the resource for which you want
-     *         to list tags.
+     * @return he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public String getResourceARN() {
@@ -77,15 +72,12 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.
+     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want
-     *        to list tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withResourceARN(String resourceARN) {
@@ -95,13 +87,11 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to stop
-     *        returning the list of tags.
+     *        An opaque string that indicates the position at which to stop returning the list of tags.
      */
 
     public void setMarker(String marker) {
@@ -110,12 +100,10 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to stop
-     *         returning the list of tags.
+     * @return An opaque string that indicates the position at which to stop returning the list of tags.
      */
 
     public String getMarker() {
@@ -124,15 +112,12 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to stop returning
-     * the list of tags.
+     * An opaque string that indicates the position at which to stop returning the list of tags.
      * </p>
      * 
      * @param marker
-     *        An opaque string that indicates the position at which to stop
-     *        returning the list of tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string that indicates the position at which to stop returning the list of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withMarker(String marker) {
@@ -178,16 +163,14 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * An array that contains the tags for the specified resource.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        An array that contains the tags for the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withTags(Tag... tags) {
@@ -207,8 +190,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * 
      * @param tags
      *        An array that contains the tags for the specified resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTagsForResourceResult withTags(java.util.Collection<Tag> tags) {
@@ -217,8 +199,8 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,11 +211,11 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN() + ",");
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -250,18 +232,15 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         ListTagsForResourceResult other = (ListTagsForResourceResult) obj;
         if (other.getResourceARN() == null ^ this.getResourceARN() == null)
             return false;
-        if (other.getResourceARN() != null
-                && other.getResourceARN().equals(this.getResourceARN()) == false)
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -271,13 +250,9 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -286,9 +261,8 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         try {
             return (ListTagsForResourceResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,34 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateHsmConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier to be assigned to the new Amazon Redshift HSM
-     * configuration.
+     * The identifier to be assigned to the new Amazon Redshift HSM configuration.
      * </p>
      */
     private String hsmConfigurationIdentifier;
@@ -40,15 +40,14 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      */
     private String hsmIpAddress;
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      */
     private String hsmPartitionName;
@@ -60,8 +59,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
     private String hsmPartitionPassword;
     /**
      * <p>
-     * The HSMs public certificate file. When using Cloud HSM, the file name is
-     * server.pem.
+     * The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      * </p>
      */
     private String hsmServerPublicCertificate;
@@ -74,13 +72,11 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier to be assigned to the new Amazon Redshift HSM
-     * configuration.
+     * The identifier to be assigned to the new Amazon Redshift HSM configuration.
      * </p>
      * 
      * @param hsmConfigurationIdentifier
-     *        The identifier to be assigned to the new Amazon Redshift HSM
-     *        configuration.
+     *        The identifier to be assigned to the new Amazon Redshift HSM configuration.
      */
 
     public void setHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -89,12 +85,10 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier to be assigned to the new Amazon Redshift HSM
-     * configuration.
+     * The identifier to be assigned to the new Amazon Redshift HSM configuration.
      * </p>
      * 
-     * @return The identifier to be assigned to the new Amazon Redshift HSM
-     *         configuration.
+     * @return The identifier to be assigned to the new Amazon Redshift HSM configuration.
      */
 
     public String getHsmConfigurationIdentifier() {
@@ -103,19 +97,15 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier to be assigned to the new Amazon Redshift HSM
-     * configuration.
+     * The identifier to be assigned to the new Amazon Redshift HSM configuration.
      * </p>
      * 
      * @param hsmConfigurationIdentifier
-     *        The identifier to be assigned to the new Amazon Redshift HSM
-     *        configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier to be assigned to the new Amazon Redshift HSM configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmConfigurationRequest withHsmConfigurationIdentifier(
-            String hsmConfigurationIdentifier) {
+    public CreateHsmConfigurationRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
         setHsmConfigurationIdentifier(hsmConfigurationIdentifier);
         return this;
     }
@@ -152,8 +142,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
      * 
      * @param description
      *        A text description of the HSM configuration to be created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateHsmConfigurationRequest withDescription(String description) {
@@ -163,13 +152,11 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
      * @param hsmIpAddress
-     *        The IP address that the Amazon Redshift cluster must use to access
-     *        the HSM.
+     *        The IP address that the Amazon Redshift cluster must use to access the HSM.
      */
 
     public void setHsmIpAddress(String hsmIpAddress) {
@@ -178,12 +165,10 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
-     * @return The IP address that the Amazon Redshift cluster must use to
-     *         access the HSM.
+     * @return The IP address that the Amazon Redshift cluster must use to access the HSM.
      */
 
     public String getHsmIpAddress() {
@@ -192,15 +177,12 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IP address that the Amazon Redshift cluster must use to access the
-     * HSM.
+     * The IP address that the Amazon Redshift cluster must use to access the HSM.
      * </p>
      * 
      * @param hsmIpAddress
-     *        The IP address that the Amazon Redshift cluster must use to access
-     *        the HSM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP address that the Amazon Redshift cluster must use to access the HSM.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateHsmConfigurationRequest withHsmIpAddress(String hsmIpAddress) {
@@ -210,13 +192,13 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
      * @param hsmPartitionName
-     *        The name of the partition in the HSM where the Amazon Redshift
-     *        clusters will store their database encryption keys.
+     *        The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *        encryption keys.
      */
 
     public void setHsmPartitionName(String hsmPartitionName) {
@@ -225,12 +207,12 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
-     * @return The name of the partition in the HSM where the Amazon Redshift
-     *         clusters will store their database encryption keys.
+     * @return The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *         encryption keys.
      */
 
     public String getHsmPartitionName() {
@@ -239,19 +221,17 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the partition in the HSM where the Amazon Redshift clusters
-     * will store their database encryption keys.
+     * The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption
+     * keys.
      * </p>
      * 
      * @param hsmPartitionName
-     *        The name of the partition in the HSM where the Amazon Redshift
-     *        clusters will store their database encryption keys.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the partition in the HSM where the Amazon Redshift clusters will store their database
+     *        encryption keys.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmConfigurationRequest withHsmPartitionName(
-            String hsmPartitionName) {
+    public CreateHsmConfigurationRequest withHsmPartitionName(String hsmPartitionName) {
         setHsmPartitionName(hsmPartitionName);
         return this;
     }
@@ -288,25 +268,21 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
      * 
      * @param hsmPartitionPassword
      *        The password required to access the HSM partition.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmConfigurationRequest withHsmPartitionPassword(
-            String hsmPartitionPassword) {
+    public CreateHsmConfigurationRequest withHsmPartitionPassword(String hsmPartitionPassword) {
         setHsmPartitionPassword(hsmPartitionPassword);
         return this;
     }
 
     /**
      * <p>
-     * The HSMs public certificate file. When using Cloud HSM, the file name is
-     * server.pem.
+     * The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      * </p>
      * 
      * @param hsmServerPublicCertificate
-     *        The HSMs public certificate file. When using Cloud HSM, the file
-     *        name is server.pem.
+     *        The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      */
 
     public void setHsmServerPublicCertificate(String hsmServerPublicCertificate) {
@@ -315,12 +291,10 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The HSMs public certificate file. When using Cloud HSM, the file name is
-     * server.pem.
+     * The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      * </p>
      * 
-     * @return The HSMs public certificate file. When using Cloud HSM, the file
-     *         name is server.pem.
+     * @return The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      */
 
     public String getHsmServerPublicCertificate() {
@@ -329,19 +303,15 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The HSMs public certificate file. When using Cloud HSM, the file name is
-     * server.pem.
+     * The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
      * </p>
      * 
      * @param hsmServerPublicCertificate
-     *        The HSMs public certificate file. When using Cloud HSM, the file
-     *        name is server.pem.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateHsmConfigurationRequest withHsmServerPublicCertificate(
-            String hsmServerPublicCertificate) {
+    public CreateHsmConfigurationRequest withHsmServerPublicCertificate(String hsmServerPublicCertificate) {
         setHsmServerPublicCertificate(hsmServerPublicCertificate);
         return this;
     }
@@ -384,16 +354,14 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
      * A list of tag instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateHsmConfigurationRequest withTags(Tag... tags) {
@@ -413,8 +381,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
      * 
      * @param tags
      *        A list of tag instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateHsmConfigurationRequest withTags(java.util.Collection<Tag> tags) {
@@ -423,8 +390,8 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -435,22 +402,19 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: "
-                    + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getHsmIpAddress() != null)
-            sb.append("HsmIpAddress: " + getHsmIpAddress() + ",");
+            sb.append("HsmIpAddress: ").append(getHsmIpAddress()).append(",");
         if (getHsmPartitionName() != null)
-            sb.append("HsmPartitionName: " + getHsmPartitionName() + ",");
+            sb.append("HsmPartitionName: ").append(getHsmPartitionName()).append(",");
         if (getHsmPartitionPassword() != null)
-            sb.append("HsmPartitionPassword: " + getHsmPartitionPassword()
-                    + ",");
+            sb.append("HsmPartitionPassword: ").append(getHsmPartitionPassword()).append(",");
         if (getHsmServerPublicCertificate() != null)
-            sb.append("HsmServerPublicCertificate: "
-                    + getHsmServerPublicCertificate() + ",");
+            sb.append("HsmServerPublicCertificate: ").append(getHsmServerPublicCertificate()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -465,48 +429,33 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
         if (obj instanceof CreateHsmConfigurationRequest == false)
             return false;
         CreateHsmConfigurationRequest other = (CreateHsmConfigurationRequest) obj;
-        if (other.getHsmConfigurationIdentifier() == null
-                ^ this.getHsmConfigurationIdentifier() == null)
+        if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null)
             return false;
-        if (other.getHsmConfigurationIdentifier() != null
-                && other.getHsmConfigurationIdentifier().equals(
-                        this.getHsmConfigurationIdentifier()) == false)
+        if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getHsmIpAddress() == null ^ this.getHsmIpAddress() == null)
             return false;
-        if (other.getHsmIpAddress() != null
-                && other.getHsmIpAddress().equals(this.getHsmIpAddress()) == false)
+        if (other.getHsmIpAddress() != null && other.getHsmIpAddress().equals(this.getHsmIpAddress()) == false)
             return false;
-        if (other.getHsmPartitionName() == null
-                ^ this.getHsmPartitionName() == null)
+        if (other.getHsmPartitionName() == null ^ this.getHsmPartitionName() == null)
             return false;
-        if (other.getHsmPartitionName() != null
-                && other.getHsmPartitionName().equals(
-                        this.getHsmPartitionName()) == false)
+        if (other.getHsmPartitionName() != null && other.getHsmPartitionName().equals(this.getHsmPartitionName()) == false)
             return false;
-        if (other.getHsmPartitionPassword() == null
-                ^ this.getHsmPartitionPassword() == null)
+        if (other.getHsmPartitionPassword() == null ^ this.getHsmPartitionPassword() == null)
             return false;
-        if (other.getHsmPartitionPassword() != null
-                && other.getHsmPartitionPassword().equals(
-                        this.getHsmPartitionPassword()) == false)
+        if (other.getHsmPartitionPassword() != null && other.getHsmPartitionPassword().equals(this.getHsmPartitionPassword()) == false)
             return false;
-        if (other.getHsmServerPublicCertificate() == null
-                ^ this.getHsmServerPublicCertificate() == null)
+        if (other.getHsmServerPublicCertificate() == null ^ this.getHsmServerPublicCertificate() == null)
             return false;
-        if (other.getHsmServerPublicCertificate() != null
-                && other.getHsmServerPublicCertificate().equals(
-                        this.getHsmServerPublicCertificate()) == false)
+        if (other.getHsmServerPublicCertificate() != null && other.getHsmServerPublicCertificate().equals(this.getHsmServerPublicCertificate()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -516,31 +465,13 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getHsmConfigurationIdentifier() == null) ? 0
-                        : getHsmConfigurationIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmIpAddress() == null) ? 0 : getHsmIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmPartitionPassword() == null) ? 0
-                        : getHsmPartitionPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHsmServerPublicCertificate() == null) ? 0
-                        : getHsmServerPublicCertificate().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHsmIpAddress() == null) ? 0 : getHsmIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getHsmPartitionName() == null) ? 0 : getHsmPartitionName().hashCode());
+        hashCode = prime * hashCode + ((getHsmPartitionPassword() == null) ? 0 : getHsmPartitionPassword().hashCode());
+        hashCode = prime * hashCode + ((getHsmServerPublicCertificate() == null) ? 0 : getHsmServerPublicCertificate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -548,4 +479,5 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
     public CreateHsmConfigurationRequest clone() {
         return (CreateHsmConfigurationRequest) super.clone();
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,4 +48,11 @@ public @interface DynamoDBAttribute {
      * should differ from the name used by the getter / setter.
      */
     String attributeName() default "";
+
+    /**
+     * Optional parameter when using {@link DynamoDBFlattened}; identifies
+     * the field/property name on the target class to map as the attribute.
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBFlattened
+     */
+    String mappedBy() default "";
 }

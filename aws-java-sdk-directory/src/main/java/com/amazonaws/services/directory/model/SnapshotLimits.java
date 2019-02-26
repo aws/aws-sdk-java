@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Contains manual snapshot limit information for a directory.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimits" target="_top">AWS API
+ *      Documentation</a>
  */
-public class SnapshotLimits implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SnapshotLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -76,8 +79,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @param manualSnapshotsLimit
      *        The maximum number of manual snapshots allowed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SnapshotLimits withManualSnapshotsLimit(Integer manualSnapshotsLimit) {
@@ -94,8 +96,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      *        The current number of manual snapshots of the directory.
      */
 
-    public void setManualSnapshotsCurrentCount(
-            Integer manualSnapshotsCurrentCount) {
+    public void setManualSnapshotsCurrentCount(Integer manualSnapshotsCurrentCount) {
         this.manualSnapshotsCurrentCount = manualSnapshotsCurrentCount;
     }
 
@@ -118,12 +119,10 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @param manualSnapshotsCurrentCount
      *        The current number of manual snapshots of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SnapshotLimits withManualSnapshotsCurrentCount(
-            Integer manualSnapshotsCurrentCount) {
+    public SnapshotLimits withManualSnapshotsCurrentCount(Integer manualSnapshotsCurrentCount) {
         setManualSnapshotsCurrentCount(manualSnapshotsCurrentCount);
         return this;
     }
@@ -137,8 +136,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      *        Indicates if the manual snapshot limit has been reached.
      */
 
-    public void setManualSnapshotsLimitReached(
-            Boolean manualSnapshotsLimitReached) {
+    public void setManualSnapshotsLimitReached(Boolean manualSnapshotsLimitReached) {
         this.manualSnapshotsLimitReached = manualSnapshotsLimitReached;
     }
 
@@ -161,12 +159,10 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @param manualSnapshotsLimitReached
      *        Indicates if the manual snapshot limit has been reached.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SnapshotLimits withManualSnapshotsLimitReached(
-            Boolean manualSnapshotsLimitReached) {
+    public SnapshotLimits withManualSnapshotsLimitReached(Boolean manualSnapshotsLimitReached) {
         setManualSnapshotsLimitReached(manualSnapshotsLimitReached);
         return this;
     }
@@ -184,8 +180,8 @@ public class SnapshotLimits implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -196,14 +192,11 @@ public class SnapshotLimits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManualSnapshotsLimit() != null)
-            sb.append("ManualSnapshotsLimit: " + getManualSnapshotsLimit()
-                    + ",");
+            sb.append("ManualSnapshotsLimit: ").append(getManualSnapshotsLimit()).append(",");
         if (getManualSnapshotsCurrentCount() != null)
-            sb.append("ManualSnapshotsCurrentCount: "
-                    + getManualSnapshotsCurrentCount() + ",");
+            sb.append("ManualSnapshotsCurrentCount: ").append(getManualSnapshotsCurrentCount()).append(",");
         if (getManualSnapshotsLimitReached() != null)
-            sb.append("ManualSnapshotsLimitReached: "
-                    + getManualSnapshotsLimitReached());
+            sb.append("ManualSnapshotsLimitReached: ").append(getManualSnapshotsLimitReached());
         sb.append("}");
         return sb.toString();
     }
@@ -218,26 +211,17 @@ public class SnapshotLimits implements Serializable, Cloneable {
         if (obj instanceof SnapshotLimits == false)
             return false;
         SnapshotLimits other = (SnapshotLimits) obj;
-        if (other.getManualSnapshotsLimit() == null
-                ^ this.getManualSnapshotsLimit() == null)
+        if (other.getManualSnapshotsLimit() == null ^ this.getManualSnapshotsLimit() == null)
             return false;
-        if (other.getManualSnapshotsLimit() != null
-                && other.getManualSnapshotsLimit().equals(
-                        this.getManualSnapshotsLimit()) == false)
+        if (other.getManualSnapshotsLimit() != null && other.getManualSnapshotsLimit().equals(this.getManualSnapshotsLimit()) == false)
             return false;
-        if (other.getManualSnapshotsCurrentCount() == null
-                ^ this.getManualSnapshotsCurrentCount() == null)
+        if (other.getManualSnapshotsCurrentCount() == null ^ this.getManualSnapshotsCurrentCount() == null)
             return false;
-        if (other.getManualSnapshotsCurrentCount() != null
-                && other.getManualSnapshotsCurrentCount().equals(
-                        this.getManualSnapshotsCurrentCount()) == false)
+        if (other.getManualSnapshotsCurrentCount() != null && other.getManualSnapshotsCurrentCount().equals(this.getManualSnapshotsCurrentCount()) == false)
             return false;
-        if (other.getManualSnapshotsLimitReached() == null
-                ^ this.getManualSnapshotsLimitReached() == null)
+        if (other.getManualSnapshotsLimitReached() == null ^ this.getManualSnapshotsLimitReached() == null)
             return false;
-        if (other.getManualSnapshotsLimitReached() != null
-                && other.getManualSnapshotsLimitReached().equals(
-                        this.getManualSnapshotsLimitReached()) == false)
+        if (other.getManualSnapshotsLimitReached() != null && other.getManualSnapshotsLimitReached().equals(this.getManualSnapshotsLimitReached()) == false)
             return false;
         return true;
     }
@@ -247,18 +231,9 @@ public class SnapshotLimits implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getManualSnapshotsLimit() == null) ? 0
-                        : getManualSnapshotsLimit().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getManualSnapshotsCurrentCount() == null) ? 0
-                        : getManualSnapshotsCurrentCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getManualSnapshotsLimitReached() == null) ? 0
-                        : getManualSnapshotsLimitReached().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotsLimit() == null) ? 0 : getManualSnapshotsLimit().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotsCurrentCount() == null) ? 0 : getManualSnapshotsCurrentCount().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotsLimitReached() == null) ? 0 : getManualSnapshotsLimitReached().hashCode());
         return hashCode;
     }
 
@@ -267,9 +242,13 @@ public class SnapshotLimits implements Serializable, Cloneable {
         try {
             return (SnapshotLimits) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directory.model.transform.SnapshotLimitsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

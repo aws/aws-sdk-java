@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public class CopyPartRequestFactory {
             .withLastByte(Long.valueOf(offset + partSize - 1))
             .withSourceSSECustomerKey(origReq.getSourceSSECustomerKey())
             .withDestinationSSECustomerKey(origReq.getDestinationSSECustomerKey())
+            .withRequesterPays(origReq.isRequesterPays())
             // other meta data
             .withMatchingETagConstraints(origReq.getMatchingETagConstraints())
             .withModifiedSinceConstraint(origReq.getModifiedSinceConstraint())

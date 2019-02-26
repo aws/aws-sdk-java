@@ -1,39 +1,38 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ResyncMFADeviceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of the user whose MFA device you want to resynchronize.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -42,10 +41,9 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * Serial number that uniquely identifies the MFA device.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String serialNumber;
@@ -69,34 +67,29 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
     private String authenticationCode2;
 
     /**
-     * Default constructor for ResyncMFADeviceRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for ResyncMFADeviceRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public ResyncMFADeviceRequest() {
     }
 
     /**
-     * Constructs a new ResyncMFADeviceRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new ResyncMFADeviceRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize any additional object members.
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to
-     *        resynchronize.</p>
+     *        The name of the user whose MFA device you want to resynchronize.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @param serialNumber
      *        Serial number that uniquely identifies the MFA device.
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @param authenticationCode1
      *        An authentication code emitted by the device.
      *        </p>
@@ -108,8 +101,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter is a sequence of six digits.
      */
-    public ResyncMFADeviceRequest(String userName, String serialNumber,
-            String authenticationCode1, String authenticationCode2) {
+    public ResyncMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
         setUserName(userName);
         setSerialNumber(serialNumber);
         setAuthenticationCode1(authenticationCode1);
@@ -121,20 +113,17 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * The name of the user whose MFA device you want to resynchronize.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to
-     *        resynchronize.</p>
+     *        The name of the user whose MFA device you want to resynchronize.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -146,19 +135,16 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * The name of the user whose MFA device you want to resynchronize.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
-     * @return The name of the user whose MFA device you want to
-     *         resynchronize.</p>
+     * @return The name of the user whose MFA device you want to resynchronize.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -170,22 +156,18 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * The name of the user whose MFA device you want to resynchronize.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to
-     *        resynchronize.</p>
+     *        The name of the user whose MFA device you want to resynchronize.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResyncMFADeviceRequest withUserName(String userName) {
@@ -198,19 +180,17 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * Serial number that uniquely identifies the MFA device.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serialNumber
      *        Serial number that uniquely identifies the MFA device.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -222,18 +202,16 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * Serial number that uniquely identifies the MFA device.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return Serial number that uniquely identifies the MFA device.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *         for this parameter is a string of characters consisting of upper
-     *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getSerialNumber() {
@@ -245,21 +223,18 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * Serial number that uniquely identifies the MFA device.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serialNumber
      *        Serial number that uniquely identifies the MFA device.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     *        for this parameter is a string of characters consisting of upper
-     *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResyncMFADeviceRequest withSerialNumber(String serialNumber) {
@@ -314,12 +289,10 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      *        An authentication code emitted by the device.</p>
      *        <p>
      *        The format for this parameter is a sequence of six digits.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResyncMFADeviceRequest withAuthenticationCode1(
-            String authenticationCode1) {
+    public ResyncMFADeviceRequest withAuthenticationCode1(String authenticationCode1) {
         setAuthenticationCode1(authenticationCode1);
         return this;
     }
@@ -371,19 +344,17 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
      *        The format for this parameter is a sequence of six digits.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResyncMFADeviceRequest withAuthenticationCode2(
-            String authenticationCode2) {
+    public ResyncMFADeviceRequest withAuthenticationCode2(String authenticationCode2) {
         setAuthenticationCode2(authenticationCode2);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -394,13 +365,13 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getAuthenticationCode1() != null)
-            sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");
+            sb.append("AuthenticationCode1: ").append(getAuthenticationCode1()).append(",");
         if (getAuthenticationCode2() != null)
-            sb.append("AuthenticationCode2: " + getAuthenticationCode2());
+            sb.append("AuthenticationCode2: ").append(getAuthenticationCode2());
         sb.append("}");
         return sb.toString();
     }
@@ -417,27 +388,19 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
         ResyncMFADeviceRequest other = (ResyncMFADeviceRequest) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getSerialNumber() == null ^ this.getSerialNumber() == null)
             return false;
-        if (other.getSerialNumber() != null
-                && other.getSerialNumber().equals(this.getSerialNumber()) == false)
+        if (other.getSerialNumber() != null && other.getSerialNumber().equals(this.getSerialNumber()) == false)
             return false;
-        if (other.getAuthenticationCode1() == null
-                ^ this.getAuthenticationCode1() == null)
+        if (other.getAuthenticationCode1() == null ^ this.getAuthenticationCode1() == null)
             return false;
-        if (other.getAuthenticationCode1() != null
-                && other.getAuthenticationCode1().equals(
-                        this.getAuthenticationCode1()) == false)
+        if (other.getAuthenticationCode1() != null && other.getAuthenticationCode1().equals(this.getAuthenticationCode1()) == false)
             return false;
-        if (other.getAuthenticationCode2() == null
-                ^ this.getAuthenticationCode2() == null)
+        if (other.getAuthenticationCode2() == null ^ this.getAuthenticationCode2() == null)
             return false;
-        if (other.getAuthenticationCode2() != null
-                && other.getAuthenticationCode2().equals(
-                        this.getAuthenticationCode2()) == false)
+        if (other.getAuthenticationCode2() != null && other.getAuthenticationCode2().equals(this.getAuthenticationCode2()) == false)
             return false;
         return true;
     }
@@ -447,20 +410,10 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSerialNumber() == null) ? 0 : getSerialNumber()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthenticationCode1() == null) ? 0
-                        : getAuthenticationCode1().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAuthenticationCode2() == null) ? 0
-                        : getAuthenticationCode2().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationCode1() == null) ? 0 : getAuthenticationCode1().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationCode2() == null) ? 0 : getAuthenticationCode2().hashCode());
         return hashCode;
     }
 
@@ -468,4 +421,5 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
     public ResyncMFADeviceRequest clone() {
         return (ResyncMFADeviceRequest) super.clone();
     }
+
 }

@@ -1,48 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AddPermissionResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      */
     private String statement;
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The
-     *        response returns the same as a string using a backslash ("\") as
-     *        an escape character in the JSON.
+     *        The permission statement that's added to the function policy.
      */
 
     public void setStatement(String statement) {
@@ -51,14 +45,10 @@ public class AddPermissionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
-     * @return The permission statement you specified in the request. The
-     *         response returns the same as a string using a backslash ("\") as
-     *         an escape character in the JSON.
+     * @return The permission statement that's added to the function policy.
      */
 
     public String getStatement() {
@@ -67,17 +57,12 @@ public class AddPermissionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response
-     * returns the same as a string using a backslash ("\") as an escape
-     * character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The
-     *        response returns the same as a string using a backslash ("\") as
-     *        an escape character in the JSON.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The permission statement that's added to the function policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddPermissionResult withStatement(String statement) {
@@ -86,8 +71,8 @@ public class AddPermissionResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -98,7 +83,7 @@ public class AddPermissionResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatement() != null)
-            sb.append("Statement: " + getStatement());
+            sb.append("Statement: ").append(getStatement());
         sb.append("}");
         return sb.toString();
     }
@@ -115,8 +100,7 @@ public class AddPermissionResult implements Serializable, Cloneable {
         AddPermissionResult other = (AddPermissionResult) obj;
         if (other.getStatement() == null ^ this.getStatement() == null)
             return false;
-        if (other.getStatement() != null
-                && other.getStatement().equals(this.getStatement()) == false)
+        if (other.getStatement() != null && other.getStatement().equals(this.getStatement()) == false)
             return false;
         return true;
     }
@@ -126,8 +110,7 @@ public class AddPermissionResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStatement() == null) ? 0 : getStatement().hashCode());
+        hashCode = prime * hashCode + ((getStatement() == null) ? 0 : getStatement().hashCode());
         return hashCode;
     }
 
@@ -136,9 +119,8 @@ public class AddPermissionResult implements Serializable, Cloneable {
         try {
             return (AddPermissionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

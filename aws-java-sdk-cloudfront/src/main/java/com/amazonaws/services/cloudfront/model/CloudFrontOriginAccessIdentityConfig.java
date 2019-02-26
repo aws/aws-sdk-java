@@ -1,107 +1,124 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
- * Origin access identity configuration.
+ * <p>
+ * Origin access identity configuration. Send a <code>GET</code> request to the
+ * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentityConfig"
+ *      target="_top">AWS API Documentation</a>
  */
-public class CloudFrontOriginAccessIdentityConfig implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CloudFrontOriginAccessIdentityConfig implements Serializable, Cloneable {
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the
-     * CloudFrontOriginAccessIdentityConfig object), a new origin access identity
-     * is created. If the CallerReference is a value you already sent in a
-     * previous request to create an identity, and the content of the
-     * CloudFrontOriginAccessIdentityConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create an identity but the content
-     * of the CloudFrontOriginAccessIdentityConfig is different from the original
-     * request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
-     * error.
+     * <p>
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of
+     * the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white
+     * space), the response includes the same information returned to the original request.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but
+     * the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request,
+     * CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
+     * </p>
      */
     private String callerReference;
-    /** Any comments you want to include about the origin access identity. */
+    /**
+     * <p>
+     * Any comments you want to include about the origin access identity.
+     * </p>
+     */
     private String comment;
 
     /**
-     * Default constructor for CloudFrontOriginAccessIdentityConfig object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for CloudFrontOriginAccessIdentityConfig object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize the object after creating it.
      */
     public CloudFrontOriginAccessIdentityConfig() {
     }
 
     /**
-     * Constructs a new CloudFrontOriginAccessIdentityConfig object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new CloudFrontOriginAccessIdentityConfig object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        CloudFrontOriginAccessIdentityConfig object), a new origin access
-     *        identity is created. If the CallerReference is a value you already
-     *        sent in a previous request to create an identity, and the content
-     *        of the CloudFrontOriginAccessIdentityConfig is identical to the
-     *        original request (ignoring white space), the response includes the
-     *        same information returned to the original request. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create an identity but the content of the
-     *        CloudFrontOriginAccessIdentityConfig is different from the
-     *        original request, CloudFront returns a
-     *        CloudFrontOriginAccessIdentityAlreadyExists error.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value already sent in a previous identity request, and the
+     *        content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request
+     *        (ignoring white space), the response includes the same information returned to the original request.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value you already sent in a previous request to create an
+     *        identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
+     *        original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      */
     public CloudFrontOriginAccessIdentityConfig(String callerReference) {
         setCallerReference(callerReference);
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the
-     * CloudFrontOriginAccessIdentityConfig object), a new origin access identity
-     * is created. If the CallerReference is a value you already sent in a
-     * previous request to create an identity, and the content of the
-     * CloudFrontOriginAccessIdentityConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create an identity but the content
-     * of the CloudFrontOriginAccessIdentityConfig is different from the original
-     * request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
-     * error.
+     * <p>
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of
+     * the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white
+     * space), the response includes the same information returned to the original request.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but
+     * the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request,
+     * CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
+     * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        CloudFrontOriginAccessIdentityConfig object), a new origin access
-     *        identity is created. If the CallerReference is a value you already
-     *        sent in a previous request to create an identity, and the content
-     *        of the CloudFrontOriginAccessIdentityConfig is identical to the
-     *        original request (ignoring white space), the response includes the
-     *        same information returned to the original request. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create an identity but the content of the
-     *        CloudFrontOriginAccessIdentityConfig is different from the
-     *        original request, CloudFront returns a
-     *        CloudFrontOriginAccessIdentityAlreadyExists error.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value already sent in a previous identity request, and the
+     *        content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request
+     *        (ignoring white space), the response includes the same information returned to the original request.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value you already sent in a previous request to create an
+     *        identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
+     *        original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      */
 
     public void setCallerReference(String callerReference) {
@@ -109,32 +126,38 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the
-     * CloudFrontOriginAccessIdentityConfig object), a new origin access identity
-     * is created. If the CallerReference is a value you already sent in a
-     * previous request to create an identity, and the content of the
-     * CloudFrontOriginAccessIdentityConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create an identity but the content
-     * of the CloudFrontOriginAccessIdentityConfig is different from the original
-     * request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
-     * error.
+     * <p>
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of
+     * the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white
+     * space), the response includes the same information returned to the original request.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but
+     * the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request,
+     * CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
+     * </p>
      * 
-     * @return A unique number that ensures the request can't be replayed. If
-     *         the CallerReference is new (no matter the content of the
-     *         CloudFrontOriginAccessIdentityConfig object), a new origin access
-     *         identity is created. If the CallerReference is a value you
-     *         already sent in a previous request to create an identity, and the
-     *         content of the CloudFrontOriginAccessIdentityConfig is identical
-     *         to the original request (ignoring white space), the response
-     *         includes the same information returned to the original request.
-     *         If the CallerReference is a value you already sent in a previous
-     *         request to create an identity but the content of the
-     *         CloudFrontOriginAccessIdentityConfig is different from the
-     *         original request, CloudFront returns a
-     *         CloudFrontOriginAccessIdentityAlreadyExists error.
+     * @return A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *         <p>
+     *         If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *         <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     *         </p>
+     *         <p>
+     *         If the <code>CallerReference</code> is a value already sent in a previous identity request, and the
+     *         content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request
+     *         (ignoring white space), the response includes the same information returned to the original request.
+     *         </p>
+     *         <p>
+     *         If the <code>CallerReference</code> is a value you already sent in a previous request to create an
+     *         identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
+     *         original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      */
 
     public String getCallerReference() {
@@ -142,45 +165,51 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
     }
 
     /**
-     * A unique number that ensures the request can't be replayed. If the
-     * CallerReference is new (no matter the content of the
-     * CloudFrontOriginAccessIdentityConfig object), a new origin access identity
-     * is created. If the CallerReference is a value you already sent in a
-     * previous request to create an identity, and the content of the
-     * CloudFrontOriginAccessIdentityConfig is identical to the original request
-     * (ignoring white space), the response includes the same information
-     * returned to the original request. If the CallerReference is a value you
-     * already sent in a previous request to create an identity but the content
-     * of the CloudFrontOriginAccessIdentityConfig is different from the original
-     * request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
-     * error.
+     * <p>
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of
+     * the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white
+     * space), the response includes the same information returned to the original request.
+     * </p>
+     * <p>
+     * If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but
+     * the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request,
+     * CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
+     * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed. If the
-     *        CallerReference is new (no matter the content of the
-     *        CloudFrontOriginAccessIdentityConfig object), a new origin access
-     *        identity is created. If the CallerReference is a value you already
-     *        sent in a previous request to create an identity, and the content
-     *        of the CloudFrontOriginAccessIdentityConfig is identical to the
-     *        original request (ignoring white space), the response includes the
-     *        same information returned to the original request. If the
-     *        CallerReference is a value you already sent in a previous request
-     *        to create an identity but the content of the
-     *        CloudFrontOriginAccessIdentityConfig is different from the
-     *        original request, CloudFront returns a
-     *        CloudFrontOriginAccessIdentityAlreadyExists error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value already sent in a previous identity request, and the
+     *        content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request
+     *        (ignoring white space), the response includes the same information returned to the original request.
+     *        </p>
+     *        <p>
+     *        If the <code>CallerReference</code> is a value you already sent in a previous request to create an
+     *        identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
+     *        original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CloudFrontOriginAccessIdentityConfig withCallerReference(
-            String callerReference) {
+    public CloudFrontOriginAccessIdentityConfig withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
     }
 
     /**
+     * <p>
      * Any comments you want to include about the origin access identity.
+     * </p>
      * 
      * @param comment
      *        Any comments you want to include about the origin access identity.
@@ -191,10 +220,11 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
     }
 
     /**
+     * <p>
      * Any comments you want to include about the origin access identity.
+     * </p>
      * 
-     * @return Any comments you want to include about the origin access
-     *         identity.
+     * @return Any comments you want to include about the origin access identity.
      */
 
     public String getComment() {
@@ -202,12 +232,13 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
     }
 
     /**
+     * <p>
      * Any comments you want to include about the origin access identity.
+     * </p>
      * 
      * @param comment
      *        Any comments you want to include about the origin access identity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CloudFrontOriginAccessIdentityConfig withComment(String comment) {
@@ -216,8 +247,8 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -228,9 +259,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }
@@ -245,16 +276,13 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
         if (obj instanceof CloudFrontOriginAccessIdentityConfig == false)
             return false;
         CloudFrontOriginAccessIdentityConfig other = (CloudFrontOriginAccessIdentityConfig) obj;
-        if (other.getCallerReference() == null
-                ^ this.getCallerReference() == null)
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null)
             return false;
-        if (other.getCallerReference() != null
-                && other.getCallerReference().equals(this.getCallerReference()) == false)
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         return true;
     }
@@ -264,12 +292,8 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCallerReference() == null) ? 0 : getCallerReference()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 
@@ -278,9 +302,8 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
         try {
             return (CloudFrontOriginAccessIdentityConfig) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

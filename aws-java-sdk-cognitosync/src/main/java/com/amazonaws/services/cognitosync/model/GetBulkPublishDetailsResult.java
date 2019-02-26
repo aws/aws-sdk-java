@@ -1,40 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * The output for the GetBulkPublishDetails operation.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetails" target="_top">AWS
+ *      API Documentation</a>
  */
-public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityPoolId;
     /** The date/time at which the last bulk publish was initiated. */
     private java.util.Date bulkPublishStartTime;
-    /**
-     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     * operation completed.
-     */
+    /** If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed. */
     private java.util.Date bulkPublishCompleteTime;
     /**
      * Status of the last bulk publish operation, valid values are:
@@ -45,29 +42,22 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      */
     private String bulkPublishStatus;
-    /**
-     * If BulkPublishStatus is FAILED this field will contain the error message
-     * that caused the bulk publish to fail.
-     */
+    /** If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail. */
     private String failureMessage;
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -76,12 +66,10 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -90,16 +78,13 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityPoolId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBulkPublishDetailsResult withIdentityPoolId(String identityPoolId) {
@@ -133,36 +118,29 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * 
      * @param bulkPublishStartTime
      *        The date/time at which the last bulk publish was initiated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetBulkPublishDetailsResult withBulkPublishStartTime(
-            java.util.Date bulkPublishStartTime) {
+    public GetBulkPublishDetailsResult withBulkPublishStartTime(java.util.Date bulkPublishStartTime) {
         setBulkPublishStartTime(bulkPublishStartTime);
         return this;
     }
 
     /**
-     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     * operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
      * 
      * @param bulkPublishCompleteTime
-     *        If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     *        operation completed.
+     *        If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
      */
 
-    public void setBulkPublishCompleteTime(
-            java.util.Date bulkPublishCompleteTime) {
+    public void setBulkPublishCompleteTime(java.util.Date bulkPublishCompleteTime) {
         this.bulkPublishCompleteTime = bulkPublishCompleteTime;
     }
 
     /**
-     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     * operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
      * 
-     * @return If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     *         operation completed.
+     * @return If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
      */
 
     public java.util.Date getBulkPublishCompleteTime() {
@@ -170,18 +148,14 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     * operation completed.
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
      * 
      * @param bulkPublishCompleteTime
-     *        If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
-     *        operation completed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetBulkPublishDetailsResult withBulkPublishCompleteTime(
-            java.util.Date bulkPublishCompleteTime) {
+    public GetBulkPublishDetailsResult withBulkPublishCompleteTime(java.util.Date bulkPublishCompleteTime) {
         setBulkPublishCompleteTime(bulkPublishCompleteTime);
         return this;
     }
@@ -195,30 +169,25 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      * 
      * @param bulkPublishStatus
      *        Status of the last bulk publish operation, valid values are:
      *        <p>
-     *        NOT_STARTED - No bulk publish has been requested for this identity
-     *        pool
+     *        NOT_STARTED - No bulk publish has been requested for this identity pool
      *        </p>
      *        <p>
      *        IN_PROGRESS - Data is being published to the configured stream
      *        </p>
      *        <p>
-     *        SUCCEEDED - All data for the identity pool has been published to
-     *        the configured stream
+     *        SUCCEEDED - All data for the identity pool has been published to the configured stream
      *        </p>
      *        <p>
-     *        FAILED - Some portion of the data has failed to publish, check
-     *        FailureMessage for the cause.
+     *        FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      *        </p>
      * @see BulkPublishStatus
      */
@@ -236,29 +205,24 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      * 
      * @return Status of the last bulk publish operation, valid values are:
      *         <p>
-     *         NOT_STARTED - No bulk publish has been requested for this
-     *         identity pool
+     *         NOT_STARTED - No bulk publish has been requested for this identity pool
      *         </p>
      *         <p>
      *         IN_PROGRESS - Data is being published to the configured stream
      *         </p>
      *         <p>
-     *         SUCCEEDED - All data for the identity pool has been published to
-     *         the configured stream
+     *         SUCCEEDED - All data for the identity pool has been published to the configured stream
      *         </p>
      *         <p>
-     *         FAILED - Some portion of the data has failed to publish, check
-     *         FailureMessage for the cause.
+     *         FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      *         </p>
      * @see BulkPublishStatus
      */
@@ -276,38 +240,31 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      * 
      * @param bulkPublishStatus
      *        Status of the last bulk publish operation, valid values are:
      *        <p>
-     *        NOT_STARTED - No bulk publish has been requested for this identity
-     *        pool
+     *        NOT_STARTED - No bulk publish has been requested for this identity pool
      *        </p>
      *        <p>
      *        IN_PROGRESS - Data is being published to the configured stream
      *        </p>
      *        <p>
-     *        SUCCEEDED - All data for the identity pool has been published to
-     *        the configured stream
+     *        SUCCEEDED - All data for the identity pool has been published to the configured stream
      *        </p>
      *        <p>
-     *        FAILED - Some portion of the data has failed to publish, check
-     *        FailureMessage for the cause.
+     *        FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BulkPublishStatus
      */
 
-    public GetBulkPublishDetailsResult withBulkPublishStatus(
-            String bulkPublishStatus) {
+    public GetBulkPublishDetailsResult withBulkPublishStatus(String bulkPublishStatus) {
         setBulkPublishStatus(bulkPublishStatus);
         return this;
     }
@@ -321,36 +278,31 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      * 
      * @param bulkPublishStatus
      *        Status of the last bulk publish operation, valid values are:
      *        <p>
-     *        NOT_STARTED - No bulk publish has been requested for this identity
-     *        pool
+     *        NOT_STARTED - No bulk publish has been requested for this identity pool
      *        </p>
      *        <p>
      *        IN_PROGRESS - Data is being published to the configured stream
      *        </p>
      *        <p>
-     *        SUCCEEDED - All data for the identity pool has been published to
-     *        the configured stream
+     *        SUCCEEDED - All data for the identity pool has been published to the configured stream
      *        </p>
      *        <p>
-     *        FAILED - Some portion of the data has failed to publish, check
-     *        FailureMessage for the cause.
+     *        FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      *        </p>
      * @see BulkPublishStatus
      */
 
     public void setBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
-        this.bulkPublishStatus = bulkPublishStatus.toString();
+        withBulkPublishStatus(bulkPublishStatus);
     }
 
     /**
@@ -362,49 +314,41 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * IN_PROGRESS - Data is being published to the configured stream
      * </p>
      * <p>
-     * SUCCEEDED - All data for the identity pool has been published to the
-     * configured stream
+     * SUCCEEDED - All data for the identity pool has been published to the configured stream
      * </p>
      * <p>
-     * FAILED - Some portion of the data has failed to publish, check
-     * FailureMessage for the cause.
+     * FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      * </p>
      * 
      * @param bulkPublishStatus
      *        Status of the last bulk publish operation, valid values are:
      *        <p>
-     *        NOT_STARTED - No bulk publish has been requested for this identity
-     *        pool
+     *        NOT_STARTED - No bulk publish has been requested for this identity pool
      *        </p>
      *        <p>
      *        IN_PROGRESS - Data is being published to the configured stream
      *        </p>
      *        <p>
-     *        SUCCEEDED - All data for the identity pool has been published to
-     *        the configured stream
+     *        SUCCEEDED - All data for the identity pool has been published to the configured stream
      *        </p>
      *        <p>
-     *        FAILED - Some portion of the data has failed to publish, check
-     *        FailureMessage for the cause.
+     *        FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see BulkPublishStatus
      */
 
-    public GetBulkPublishDetailsResult withBulkPublishStatus(
-            BulkPublishStatus bulkPublishStatus) {
-        setBulkPublishStatus(bulkPublishStatus);
+    public GetBulkPublishDetailsResult withBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
+        this.bulkPublishStatus = bulkPublishStatus.toString();
         return this;
     }
 
     /**
-     * If BulkPublishStatus is FAILED this field will contain the error message
-     * that caused the bulk publish to fail.
+     * If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
      * 
      * @param failureMessage
-     *        If BulkPublishStatus is FAILED this field will contain the error
-     *        message that caused the bulk publish to fail.
+     *        If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to
+     *        fail.
      */
 
     public void setFailureMessage(String failureMessage) {
@@ -412,11 +356,10 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If BulkPublishStatus is FAILED this field will contain the error message
-     * that caused the bulk publish to fail.
+     * If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
      * 
-     * @return If BulkPublishStatus is FAILED this field will contain the error
-     *         message that caused the bulk publish to fail.
+     * @return If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to
+     *         fail.
      */
 
     public String getFailureMessage() {
@@ -424,14 +367,12 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * If BulkPublishStatus is FAILED this field will contain the error message
-     * that caused the bulk publish to fail.
+     * If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
      * 
      * @param failureMessage
-     *        If BulkPublishStatus is FAILED this field will contain the error
-     *        message that caused the bulk publish to fail.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to
+     *        fail.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBulkPublishDetailsResult withFailureMessage(String failureMessage) {
@@ -440,8 +381,8 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -452,17 +393,15 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getBulkPublishStartTime() != null)
-            sb.append("BulkPublishStartTime: " + getBulkPublishStartTime()
-                    + ",");
+            sb.append("BulkPublishStartTime: ").append(getBulkPublishStartTime()).append(",");
         if (getBulkPublishCompleteTime() != null)
-            sb.append("BulkPublishCompleteTime: "
-                    + getBulkPublishCompleteTime() + ",");
+            sb.append("BulkPublishCompleteTime: ").append(getBulkPublishCompleteTime()).append(",");
         if (getBulkPublishStatus() != null)
-            sb.append("BulkPublishStatus: " + getBulkPublishStatus() + ",");
+            sb.append("BulkPublishStatus: ").append(getBulkPublishStatus()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -477,38 +416,25 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
         if (obj instanceof GetBulkPublishDetailsResult == false)
             return false;
         GetBulkPublishDetailsResult other = (GetBulkPublishDetailsResult) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
-        if (other.getBulkPublishStartTime() == null
-                ^ this.getBulkPublishStartTime() == null)
+        if (other.getBulkPublishStartTime() == null ^ this.getBulkPublishStartTime() == null)
             return false;
-        if (other.getBulkPublishStartTime() != null
-                && other.getBulkPublishStartTime().equals(
-                        this.getBulkPublishStartTime()) == false)
+        if (other.getBulkPublishStartTime() != null && other.getBulkPublishStartTime().equals(this.getBulkPublishStartTime()) == false)
             return false;
-        if (other.getBulkPublishCompleteTime() == null
-                ^ this.getBulkPublishCompleteTime() == null)
+        if (other.getBulkPublishCompleteTime() == null ^ this.getBulkPublishCompleteTime() == null)
             return false;
-        if (other.getBulkPublishCompleteTime() != null
-                && other.getBulkPublishCompleteTime().equals(
-                        this.getBulkPublishCompleteTime()) == false)
+        if (other.getBulkPublishCompleteTime() != null && other.getBulkPublishCompleteTime().equals(this.getBulkPublishCompleteTime()) == false)
             return false;
-        if (other.getBulkPublishStatus() == null
-                ^ this.getBulkPublishStatus() == null)
+        if (other.getBulkPublishStatus() == null ^ this.getBulkPublishStatus() == null)
             return false;
-        if (other.getBulkPublishStatus() != null
-                && other.getBulkPublishStatus().equals(
-                        this.getBulkPublishStatus()) == false)
+        if (other.getBulkPublishStatus() != null && other.getBulkPublishStatus().equals(this.getBulkPublishStatus()) == false)
             return false;
-        if (other.getFailureMessage() == null
-                ^ this.getFailureMessage() == null)
+        if (other.getFailureMessage() == null ^ this.getFailureMessage() == null)
             return false;
-        if (other.getFailureMessage() != null
-                && other.getFailureMessage().equals(this.getFailureMessage()) == false)
+        if (other.getFailureMessage() != null && other.getFailureMessage().equals(this.getFailureMessage()) == false)
             return false;
         return true;
     }
@@ -518,26 +444,11 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBulkPublishStartTime() == null) ? 0
-                        : getBulkPublishStartTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBulkPublishCompleteTime() == null) ? 0
-                        : getBulkPublishCompleteTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getBulkPublishStatus() == null) ? 0
-                        : getBulkPublishStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFailureMessage() == null) ? 0 : getFailureMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getBulkPublishStartTime() == null) ? 0 : getBulkPublishStartTime().hashCode());
+        hashCode = prime * hashCode + ((getBulkPublishCompleteTime() == null) ? 0 : getBulkPublishCompleteTime().hashCode());
+        hashCode = prime * hashCode + ((getBulkPublishStatus() == null) ? 0 : getBulkPublishStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
         return hashCode;
     }
 
@@ -546,9 +457,8 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
         try {
             return (GetBulkPublishDetailsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -15,12 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.customization.OperationModifier;
@@ -33,6 +27,12 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.codegen.model.service.ShapeTypes;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * This processor internally keeps track of all the result wrapper shapes it

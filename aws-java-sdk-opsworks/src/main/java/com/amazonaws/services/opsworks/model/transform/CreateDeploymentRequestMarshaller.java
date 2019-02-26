@@ -1,136 +1,74 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDeploymentRequest Marshaller
+ * CreateDeploymentRequestMarshaller
  */
-public class CreateDeploymentRequestMarshaller implements
-        Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateDeploymentRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<String> APPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AppId").build();
+    private static final MarshallingInfo<List> INSTANCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("InstanceIds").build();
+    private static final MarshallingInfo<List> LAYERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerIds").build();
+    private static final MarshallingInfo<StructuredPojo> COMMAND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Command").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Comment").build();
+    private static final MarshallingInfo<String> CUSTOMJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomJson").build();
 
-    public CreateDeploymentRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDeploymentRequestMarshaller instance = new CreateDeploymentRequestMarshaller();
+
+    public static CreateDeploymentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDeploymentRequest> marshall(
-            CreateDeploymentRequest createDeploymentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDeploymentRequest createDeploymentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDeploymentRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateDeploymentRequest> request = new DefaultRequest<CreateDeploymentRequest>(
-                createDeploymentRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.CreateDeployment");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDeploymentRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(
-                        createDeploymentRequest.getStackId());
-            }
-            if (createDeploymentRequest.getAppId() != null) {
-                jsonGenerator.writeFieldName("AppId").writeValue(
-                        createDeploymentRequest.getAppId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentRequest
-                    .getInstanceIds();
-            if (!instanceIdsList.isEmpty()
-                    || !instanceIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("InstanceIds");
-                jsonGenerator.writeStartArray();
-                for (String instanceIdsListValue : instanceIdsList) {
-                    if (instanceIdsListValue != null) {
-                        jsonGenerator.writeValue(instanceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentRequest
-                    .getLayerIds();
-            if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("LayerIds");
-                jsonGenerator.writeStartArray();
-                for (String layerIdsListValue : layerIdsList) {
-                    if (layerIdsListValue != null) {
-                        jsonGenerator.writeValue(layerIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createDeploymentRequest.getCommand() != null) {
-                jsonGenerator.writeFieldName("Command");
-                DeploymentCommandJsonMarshaller.getInstance().marshall(
-                        createDeploymentRequest.getCommand(), jsonGenerator);
-            }
-            if (createDeploymentRequest.getComment() != null) {
-                jsonGenerator.writeFieldName("Comment").writeValue(
-                        createDeploymentRequest.getComment());
-            }
-            if (createDeploymentRequest.getCustomJson() != null) {
-                jsonGenerator.writeFieldName("CustomJson").writeValue(
-                        createDeploymentRequest.getCustomJson());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDeploymentRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getAppId(), APPID_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getInstanceIds(), INSTANCEIDS_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getLayerIds(), LAYERIDS_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCommand(), COMMAND_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getCustomJson(), CUSTOMJSON_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

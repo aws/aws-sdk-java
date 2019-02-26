@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,7 @@
  */
 package com.amazonaws;
 
-import com.amazonaws.http.HttpMethodName;
-
 import java.io.InputStream;
-import java.net.URI;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Represents a sign-able request being sent to an Amazon Web Service, including the
@@ -33,7 +28,7 @@ import java.util.Map;
  *            The type of original, user facing request represented by this
  *            request.
  */
-public interface SignableRequest<T> {
+public interface SignableRequest<T> extends ImmutableRequest<T> {
 
     /**
      * Sets the specified header for this request.
@@ -46,20 +41,6 @@ public interface SignableRequest<T> {
     void addHeader(String name, String value);
 
     /**
-     * Returns a map of all the headers included in this request.
-     *
-     * @return A map of all the headers included in this request.
-     */
-    Map<String, String> getHeaders();
-
-    /**
-     * Returns the path to the resource being requested.
-     *
-     * @return The path to the resource being requested.
-     */
-    String getResourcePath();
-
-    /**
      * Adds the specified request parameter to this request.
      *
      * @param name
@@ -68,71 +49,6 @@ public interface SignableRequest<T> {
      *            The value of the request parameter.
      */
     void addParameter(String name, String value);
-
-    /**
-     * Returns a map of all parameters in this request.
-     *
-     * @return A map of all parameters in this request.
-     */
-    Map<String, List<String>> getParameters();
-
-    /**
-     * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which
-     * this request should be sent.
-     *
-     * @return The service endpoint to which this request should be sent.
-     */
-    URI getEndpoint();
-
-    /**
-     * Returns the HTTP method (GET, POST, etc) to use when sending this
-     * request.
-     *
-     * @return The HTTP method to use when sending this request.
-     */
-    HttpMethodName getHttpMethod();
-
-    /**
-     * Returns the optional value for time offset for this request.  This
-     * will be used by the signer to adjust for potential clock skew.
-     * Value is in seconds, positive values imply the current clock is "fast",
-     * negative values imply clock is slow.
-     *
-     * @return The optional value for time offset (in seconds) for this request.
-     */
-    int getTimeOffset();
-
-    /**
-     * Returns the optional stream containing the payload data to include for
-     * this request. Not all requests will contain payload data.
-     *
-     * @return The optional stream containing the payload data to include for
-     *         this request.
-     */
-    InputStream getContent();
-
-    /**
-     * Returns the optional raw stream containing the payload data to include
-     * for this request, with all progress stream wrappers. Not all requests
-     * contain payload data.
-     *
-     * @return The optional raw stream containing the payload data to include
-     *         for this request, with all progress stream wrappers removed.
-     */
-    InputStream getContentUnwrapped();
-
-    /**
-     * Returns the read limit info about the original request.
-     */
-    ReadLimitInfo getReadLimitInfo();
-
-    /**
-     * Returns the original, user facing request object which this internal
-     * request object is representing.
-     *
-     * @return an instance of request as an <code>Object</code>.
-     */
-    Object getOriginalRequestObject();
 
     /**
      * Sets the optional stream containing the payload data to include for this

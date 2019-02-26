@@ -1,90 +1,121 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetPolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Function name whose resource policy you want to retrieve.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify the function name (for example, <code>Thumbnail</code>)
-     * or you can specify Amazon Resource Name (ARN) of the function (for
-     * example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If
-     * you are using versioning, you can also provide a qualified function ARN
-     * (ARN that is qualified with function version or alias name as suffix).
-     * AWS Lambda also allows you to specify only the function name with the
-     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
-     * Note that the length constraint applies only to the ARN. If you specify
-     * only the function name, it is limited to 64 character in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function
-     * version or an alias name in which case this API will return all
-     * permissions associated with the specific qualified ARN. If you don't
-     * provide this parameter, the API will return permissions that apply to the
-     * unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      */
     private String qualifier;
 
     /**
      * <p>
-     * Function name whose resource policy you want to retrieve.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify the function name (for example, <code>Thumbnail</code>)
-     * or you can specify Amazon Resource Name (ARN) of the function (for
-     * example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If
-     * you are using versioning, you can also provide a qualified function ARN
-     * (ARN that is qualified with function version or alias name as suffix).
-     * AWS Lambda also allows you to specify only the function name with the
-     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
-     * Note that the length constraint applies only to the ARN. If you specify
-     * only the function name, it is limited to 64 character in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Function name whose resource policy you want to retrieve. </p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify the function name (for example,
-     *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     *        (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
-     *        ). If you are using versioning, you can also provide a qualified
-     *        function ARN (ARN that is qualified with function version or alias
-     *        name as suffix). AWS Lambda also allows you to specify only the
-     *        function name with the account ID qualifier (for example,
-     *        <code>account-id:Thumbnail</code>). Note that the length
-     *        constraint applies only to the ARN. If you specify only the
-     *        function name, it is limited to 64 character in length.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -93,34 +124,57 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Function name whose resource policy you want to retrieve.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify the function name (for example, <code>Thumbnail</code>)
-     * or you can specify Amazon Resource Name (ARN) of the function (for
-     * example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If
-     * you are using versioning, you can also provide a qualified function ARN
-     * (ARN that is qualified with function version or alias name as suffix).
-     * AWS Lambda also allows you to specify only the function name with the
-     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
-     * Note that the length constraint applies only to the ARN. If you specify
-     * only the function name, it is limited to 64 character in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return Function name whose resource policy you want to retrieve. </p>
+     * @return The name of the Lambda function, version, or alias.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify the function name (for example,
-     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     *         (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
-     *         ). If you are using versioning, you can also provide a qualified
-     *         function ARN (ARN that is qualified with function version or
-     *         alias name as suffix). AWS Lambda also allows you to specify only
-     *         the function name with the account ID qualifier (for example,
-     *         <code>account-id:Thumbnail</code>). Note that the length
-     *         constraint applies only to the ARN. If you specify only the
-     *         function name, it is limited to 64 character in length.
+     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *         full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -129,37 +183,59 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Function name whose resource policy you want to retrieve.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify the function name (for example, <code>Thumbnail</code>)
-     * or you can specify Amazon Resource Name (ARN) of the function (for
-     * example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If
-     * you are using versioning, you can also provide a qualified function ARN
-     * (ARN that is qualified with function version or alias name as suffix).
-     * AWS Lambda also allows you to specify only the function name with the
-     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
-     * Note that the length constraint applies only to the ARN. If you specify
-     * only the function name, it is limited to 64 character in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Function name whose resource policy you want to retrieve. </p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify the function name (for example,
-     *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     *        (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
-     *        ). If you are using versioning, you can also provide a qualified
-     *        function ARN (ARN that is qualified with function version or alias
-     *        name as suffix). AWS Lambda also allows you to specify only the
-     *        function name with the account ID qualifier (for example,
-     *        <code>account-id:Thumbnail</code>). Note that the length
-     *        constraint applies only to the ARN. If you specify only the
-     *        function name, it is limited to 64 character in length.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetPolicyRequest withFunctionName(String functionName) {
@@ -169,19 +245,11 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function
-     * version or an alias name in which case this API will return all
-     * permissions associated with the specific qualified ARN. If you don't
-     * provide this parameter, the API will return permissions that apply to the
-     * unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional query parameter to specify a
-     *        function version or an alias name in which case this API will
-     *        return all permissions associated with the specific qualified ARN.
-     *        If you don't provide this parameter, the API will return
-     *        permissions that apply to the unqualified function ARN.
+     *        Specify a version or alias to get the policy for that resource.
      */
 
     public void setQualifier(String qualifier) {
@@ -190,18 +258,10 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function
-     * version or an alias name in which case this API will return all
-     * permissions associated with the specific qualified ARN. If you don't
-     * provide this parameter, the API will return permissions that apply to the
-     * unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
-     * @return You can specify this optional query parameter to specify a
-     *         function version or an alias name in which case this API will
-     *         return all permissions associated with the specific qualified
-     *         ARN. If you don't provide this parameter, the API will return
-     *         permissions that apply to the unqualified function ARN.
+     * @return Specify a version or alias to get the policy for that resource.
      */
 
     public String getQualifier() {
@@ -210,21 +270,12 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function
-     * version or an alias name in which case this API will return all
-     * permissions associated with the specific qualified ARN. If you don't
-     * provide this parameter, the API will return permissions that apply to the
-     * unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional query parameter to specify a
-     *        function version or an alias name in which case this API will
-     *        return all permissions associated with the specific qualified ARN.
-     *        If you don't provide this parameter, the API will return
-     *        permissions that apply to the unqualified function ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specify a version or alias to get the policy for that resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetPolicyRequest withQualifier(String qualifier) {
@@ -233,8 +284,8 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -245,9 +296,9 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getQualifier() != null)
-            sb.append("Qualifier: " + getQualifier());
+            sb.append("Qualifier: ").append(getQualifier());
         sb.append("}");
         return sb.toString();
     }
@@ -264,13 +315,11 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
         GetPolicyRequest other = (GetPolicyRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getQualifier() == null ^ this.getQualifier() == null)
             return false;
-        if (other.getQualifier() != null
-                && other.getQualifier().equals(this.getQualifier()) == false)
+        if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false)
             return false;
         return true;
     }
@@ -280,12 +329,8 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getQualifier() == null) ? 0 : getQualifier().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode());
         return hashCode;
     }
 
@@ -293,4 +338,5 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
     public GetPolicyRequest clone() {
         return (GetPolicyRequest) super.clone();
     }
+
 }

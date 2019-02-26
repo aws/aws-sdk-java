@@ -1,28 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.directory;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AWSDirectoryService}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AWSDirectoryService}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     protected AbstractAWSDirectoryService() {
@@ -39,8 +38,27 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public ConnectDirectoryResult connectDirectory(
-            ConnectDirectoryRequest request) {
+    public AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,8 +73,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public CreateConditionalForwarderResult createConditionalForwarder(
-            CreateConditionalForwarderRequest request) {
+    public CreateConditionalForwarderResult createConditionalForwarder(CreateConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,8 +83,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public CreateMicrosoftADResult createMicrosoftAD(
-            CreateMicrosoftADRequest request) {
+    public CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,13 +103,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DeleteConditionalForwarderResult deleteConditionalForwarder(
-            DeleteConditionalForwarderRequest request) {
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(DeleteConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,20 +128,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DeregisterEventTopicResult deregisterEventTopic(
-            DeregisterEventTopicRequest request) {
+    public DeregisterEventTopicResult deregisterEventTopic(DeregisterEventTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeConditionalForwardersResult describeConditionalForwarders(
-            DescribeConditionalForwardersRequest request) {
+    public DescribeConditionalForwardersResult describeConditionalForwarders(DescribeConditionalForwardersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeDirectoriesResult describeDirectories(
-            DescribeDirectoriesRequest request) {
+    public DescribeDirectoriesResult describeDirectories(DescribeDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,14 +148,22 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public DescribeEventTopicsResult describeEventTopics(
-            DescribeEventTopicsRequest request) {
+    public DescribeDomainControllersResult describeDomainControllers(DescribeDomainControllersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeSnapshotsResult describeSnapshots(
-            DescribeSnapshotsRequest request) {
+    public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,8 +198,7 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public GetDirectoryLimitsResult getDirectoryLimits(
-            GetDirectoryLimitsRequest request) {
+    public GetDirectoryLimitsResult getDirectoryLimits(GetDirectoryLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,31 +208,92 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public GetSnapshotLimitsResult getSnapshotLimits(
-            GetSnapshotLimitsRequest request) {
+    public GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RegisterEventTopicResult registerEventTopic(
-            RegisterEventTopicRequest request) {
+    public ListIpRoutesResult listIpRoutes(ListIpRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RestoreFromSnapshotResult restoreFromSnapshot(
-            RestoreFromSnapshotRequest request) {
+    public ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateConditionalForwarderResult updateConditionalForwarder(
-            UpdateConditionalForwarderRequest request) {
+    public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterEventTopicResult registerEventTopic(RegisterEventTopicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ShareDirectoryResult shareDirectory(ShareDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNumberOfDomainControllersResult updateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateRadiusResult updateRadius(UpdateRadiusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTrustResult updateTrust(UpdateTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -218,8 +308,8 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

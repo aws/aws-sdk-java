@@ -1,49 +1,46 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Data retrieval policy.
  * </p>
  */
-public class DataRetrievalPolicy implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DataRetrievalPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The policy rule. Although this is a list type, currently there must be
-     * only one rule, which contains a Strategy field and optionally a
-     * BytesPerHour field.
+     * The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy
+     * field and optionally a BytesPerHour field.
      * </p>
      */
     private java.util.List<DataRetrievalRule> rules;
 
     /**
      * <p>
-     * The policy rule. Although this is a list type, currently there must be
-     * only one rule, which contains a Strategy field and optionally a
-     * BytesPerHour field.
+     * The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy
+     * field and optionally a BytesPerHour field.
      * </p>
      * 
-     * @return The policy rule. Although this is a list type, currently there
-     *         must be only one rule, which contains a Strategy field and
-     *         optionally a BytesPerHour field.
+     * @return The policy rule. Although this is a list type, currently there must be only one rule, which contains a
+     *         Strategy field and optionally a BytesPerHour field.
      */
 
     public java.util.List<DataRetrievalRule> getRules() {
@@ -52,15 +49,13 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy rule. Although this is a list type, currently there must be
-     * only one rule, which contains a Strategy field and optionally a
-     * BytesPerHour field.
+     * The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy
+     * field and optionally a BytesPerHour field.
      * </p>
      * 
      * @param rules
-     *        The policy rule. Although this is a list type, currently there
-     *        must be only one rule, which contains a Strategy field and
-     *        optionally a BytesPerHour field.
+     *        The policy rule. Although this is a list type, currently there must be only one rule, which contains a
+     *        Strategy field and optionally a BytesPerHour field.
      */
 
     public void setRules(java.util.Collection<DataRetrievalRule> rules) {
@@ -74,23 +69,19 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy rule. Although this is a list type, currently there must be
-     * only one rule, which contains a Strategy field and optionally a
-     * BytesPerHour field.
+     * The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy
+     * field and optionally a BytesPerHour field.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRules(java.util.Collection)} or
-     * {@link #withRules(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param rules
-     *        The policy rule. Although this is a list type, currently there
-     *        must be only one rule, which contains a Strategy field and
-     *        optionally a BytesPerHour field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The policy rule. Although this is a list type, currently there must be only one rule, which contains a
+     *        Strategy field and optionally a BytesPerHour field.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DataRetrievalPolicy withRules(DataRetrievalRule... rules) {
@@ -105,28 +96,24 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy rule. Although this is a list type, currently there must be
-     * only one rule, which contains a Strategy field and optionally a
-     * BytesPerHour field.
+     * The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy
+     * field and optionally a BytesPerHour field.
      * </p>
      * 
      * @param rules
-     *        The policy rule. Although this is a list type, currently there
-     *        must be only one rule, which contains a Strategy field and
-     *        optionally a BytesPerHour field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The policy rule. Although this is a list type, currently there must be only one rule, which contains a
+     *        Strategy field and optionally a BytesPerHour field.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DataRetrievalPolicy withRules(
-            java.util.Collection<DataRetrievalRule> rules) {
+    public DataRetrievalPolicy withRules(java.util.Collection<DataRetrievalRule> rules) {
         setRules(rules);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -137,7 +124,7 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRules() != null)
-            sb.append("Rules: " + getRules());
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }
@@ -154,8 +141,7 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
         DataRetrievalPolicy other = (DataRetrievalPolicy) obj;
         if (other.getRules() == null ^ this.getRules() == null)
             return false;
-        if (other.getRules() != null
-                && other.getRules().equals(this.getRules()) == false)
+        if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
         return true;
     }
@@ -165,8 +151,7 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         return hashCode;
     }
 
@@ -175,9 +160,13 @@ public class DataRetrievalPolicy implements Serializable, Cloneable {
         try {
             return (DataRetrievalPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.glacier.model.transform.DataRetrievalPolicyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

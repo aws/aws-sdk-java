@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 /**
  * A simple JSON marshaller that uses the Jackson JSON processor. It shares all limitations of that
  * library. For more information about Jackson, see: http://wiki.fasterxml.com/JacksonHome
+ *
+ * @deprecated Replaced by {@link DynamoDBTypeConvertedJson}
  */
+@Deprecated
 public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
 
     private static final ObjectMapper mapper = new ObjectMapper();

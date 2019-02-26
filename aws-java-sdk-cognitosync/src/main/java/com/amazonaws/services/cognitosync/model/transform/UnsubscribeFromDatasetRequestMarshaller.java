@@ -1,118 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitosync.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnsubscribeFromDatasetRequest Marshaller
+ * UnsubscribeFromDatasetRequestMarshaller
  */
-public class UnsubscribeFromDatasetRequestMarshaller
-        implements
-        Marshaller<Request<UnsubscribeFromDatasetRequest>, UnsubscribeFromDatasetRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class UnsubscribeFromDatasetRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<String> DATASETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DatasetName").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DeviceId").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final UnsubscribeFromDatasetRequestMarshaller instance = new UnsubscribeFromDatasetRequestMarshaller();
 
-    public UnsubscribeFromDatasetRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static UnsubscribeFromDatasetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UnsubscribeFromDatasetRequest> marshall(
-            UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (unsubscribeFromDatasetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UnsubscribeFromDatasetRequest> request = new DefaultRequest<UnsubscribeFromDatasetRequest>(
-                unsubscribeFromDatasetRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
-
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (unsubscribeFromDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(unsubscribeFromDatasetRequest
-                                                .getIdentityPoolId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityId}",
-                        (unsubscribeFromDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(unsubscribeFromDatasetRequest
-                                                .getIdentityId()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{DatasetName}",
-                        (unsubscribeFromDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(unsubscribeFromDatasetRequest
-                                                .getDatasetName()), false)
-                                : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{DeviceId}",
-                        (unsubscribeFromDatasetRequest.getDeviceId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils
-                                        .fromString(unsubscribeFromDatasetRequest
-                                                .getDeviceId()), false)
-                                : "");
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getDatasetName(), DATASETNAME_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getDeviceId(), DEVICEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

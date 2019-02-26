@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
@@ -96,16 +96,6 @@ class S3ObjectWrapper implements Closeable {
     }
 
     /**
-     * Returns true if this S3 object is an instruction file; false otherwise.
-     */
-    final boolean isInstructionFile() {
-        ObjectMetadata metadata = s3obj.getObjectMetadata();
-        Map<String, String> userMeta = metadata.getUserMetadata();
-        return userMeta != null
-            && userMeta.containsKey(Headers.CRYPTO_INSTRUCTION_FILE);
-    }
-
-    /**
      * Returns true if this S3 object has the encryption information stored
      * as user meta data; false otherwise.
      */
@@ -121,13 +111,13 @@ class S3ObjectWrapper implements Closeable {
     /**
      * Converts and return the underlying S3 object as a json string.
      * 
-     * @throws AmazonClientException if failed in JSON conversion.
+     * @throws SdkClientException if failed in JSON conversion.
      */
     String toJsonString() {
         try {
             return from(s3obj.getObjectContent());
         } catch (Exception e) {
-            throw new AmazonClientException("Error parsing JSON: " + e.getMessage());
+            throw new SdkClientException("Error parsing JSON: " + e.getMessage());
         }
     }
 

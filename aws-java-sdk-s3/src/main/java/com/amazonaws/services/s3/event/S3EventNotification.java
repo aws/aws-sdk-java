@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon Technologies, Inc.
+ * Copyright 2014-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.event;
 
 import java.util.List;
 
+import com.amazonaws.util.SdkHttpUtils;
 import org.joda.time.DateTime;
 
 import com.amazonaws.internal.DateTimeJsonSerializer;
@@ -47,7 +48,7 @@ public class S3EventNotification {
      * <p>
      * The function will try its best to parse input JSON string as best as it can.
      * It will not fail even if the JSON string contains unknown properties.
-     * The function will throw AmazonClientException if the input JSON string is
+     * The function will throw SdkClientException if the input JSON string is
      * not valid JSON.
      * </p>
      * @param json
@@ -126,6 +127,7 @@ public class S3EventNotification {
         private final Long size;
         private final String eTag;
         private final String versionId;
+        private final String sequencer;
 
         @Deprecated
         public S3ObjectEntity(
@@ -138,6 +140,17 @@ public class S3EventNotification {
             this.size = size == null ? null : size.longValue();
             this.eTag = eTag;
             this.versionId = versionId;
+            this.sequencer = null;
+        }
+
+        @Deprecated
+        public S3ObjectEntity(
+                String key,
+                Long size,
+                String eTag,
+                String versionId)
+        {
+            this(key, size, eTag, versionId, null);
         }
 
         @JsonCreator
@@ -145,16 +158,27 @@ public class S3EventNotification {
                 @JsonProperty(value = "key") String key,
                 @JsonProperty(value = "size") Long size,
                 @JsonProperty(value = "eTag") String eTag,
-                @JsonProperty(value = "versionId") String versionId)
+                @JsonProperty(value = "versionId") String versionId,
+                @JsonProperty(value = "sequencer") String sequencer)
         {
             this.key = key;
             this.size = size;
             this.eTag = eTag;
             this.versionId = versionId;
+            this.sequencer = sequencer;
         }
 
         public String getKey() {
             return key;
+        }
+
+        /**
+         * S3 URL encodes the key of the object involved in the event. This is
+         * a convenience method to automatically URL decode the key.
+         * @return The URL decoded object key.
+         */
+        public String getUrlDecodedKey() {
+            return SdkHttpUtils.urlDecode(getKey());
         }
 
         /**
@@ -177,6 +201,10 @@ public class S3EventNotification {
 
         public String getVersionId() {
             return versionId;
+        }
+
+        public String getSequencer() {
+            return sequencer;
         }
     }
 
@@ -258,6 +286,46 @@ public class S3EventNotification {
         }
     }
 
+    public static class GlacierEventDataEntity {
+        private final RestoreEventDataEntity restoreEventData;
+
+        @JsonCreator
+        public GlacierEventDataEntity(
+                @JsonProperty(value = "restoreEventData") RestoreEventDataEntity restoreEventData)
+        {
+            this.restoreEventData = restoreEventData;
+        }
+
+        public RestoreEventDataEntity getRestoreEventData() {
+            return restoreEventData;
+        }
+    }
+
+    public static class RestoreEventDataEntity {
+        private DateTime lifecycleRestorationExpiryTime;
+        private final String lifecycleRestoreStorageClass;
+
+        @JsonCreator
+        public RestoreEventDataEntity(
+                @JsonProperty("lifecycleRestorationExpiryTime") String lifecycleRestorationExpiryTime,
+                @JsonProperty("lifecycleRestoreStorageClass") String lifecycleRestoreStorageClass)
+        {
+            if (lifecycleRestorationExpiryTime != null) {
+                this.lifecycleRestorationExpiryTime = DateTime.parse(lifecycleRestorationExpiryTime);
+            }
+            this.lifecycleRestoreStorageClass = lifecycleRestoreStorageClass;
+        }
+
+        @JsonSerialize(using=DateTimeJsonSerializer.class)
+        public DateTime getLifecycleRestorationExpiryTime() {
+            return lifecycleRestorationExpiryTime;
+        }
+
+        public String getLifecycleRestoreStorageClass() {
+            return lifecycleRestoreStorageClass;
+        }
+    }
+
     public static class S3EventNotificationRecord {
 
         private final String awsRegion;
@@ -269,6 +337,31 @@ public class S3EventNotification {
         private final ResponseElementsEntity responseElements;
         private final S3Entity s3;
         private final UserIdentityEntity userIdentity;
+        private final GlacierEventDataEntity glacierEventData;
+
+        @Deprecated
+        public S3EventNotificationRecord(
+                String awsRegion,
+                String eventName,
+                String eventSource,
+                String eventTime,
+                String eventVersion,
+                RequestParametersEntity requestParameters,
+                ResponseElementsEntity responseElements,
+                S3Entity s3,
+                UserIdentityEntity userIdentity)
+        {
+            this(awsRegion,
+                 eventName,
+                 eventSource,
+                 eventTime,
+                 eventVersion,
+                 requestParameters,
+                 responseElements,
+                 s3,
+                 userIdentity,
+                 null);
+        }
 
         @JsonCreator
         public S3EventNotificationRecord(
@@ -280,7 +373,8 @@ public class S3EventNotification {
                 @JsonProperty(value = "requestParameters") RequestParametersEntity requestParameters,
                 @JsonProperty(value = "responseElements") ResponseElementsEntity responseElements,
                 @JsonProperty(value = "s3") S3Entity s3,
-                @JsonProperty(value = "userIdentity") UserIdentityEntity userIdentity)
+                @JsonProperty(value = "userIdentity") UserIdentityEntity userIdentity,
+                @JsonProperty(value = "glacierEventData") GlacierEventDataEntity glacierEventData)
         {
             this.awsRegion = awsRegion;
             this.eventName = eventName;
@@ -296,6 +390,7 @@ public class S3EventNotification {
             this.responseElements = responseElements;
             this.s3 = s3;
             this.userIdentity = userIdentity;
+            this.glacierEventData = glacierEventData;
         }
 
         public String getAwsRegion() {
@@ -333,6 +428,10 @@ public class S3EventNotification {
 
         public UserIdentityEntity getUserIdentity() {
             return userIdentity;
+        }
+
+        public GlacierEventDataEntity getGlacierEventData() {
+            return glacierEventData;
         }
     }
 }

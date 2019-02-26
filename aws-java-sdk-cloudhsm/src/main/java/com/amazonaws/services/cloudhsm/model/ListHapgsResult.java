@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListHapgsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListHapgsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +31,8 @@ public class ListHapgsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> hapgList;
     /**
      * <p>
-     * If not null, more results are available. Pass this value to
-     * <a>ListHapgs</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of
+     * items.
      * </p>
      */
     private String nextToken;
@@ -67,8 +67,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.hapgList = new com.amazonaws.internal.SdkInternalList<String>(
-                hapgList);
+        this.hapgList = new com.amazonaws.internal.SdkInternalList<String>(hapgList);
     }
 
     /**
@@ -76,22 +75,19 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * The list of high-availability partition groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setHapgList(java.util.Collection)} or
-     * {@link #withHapgList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param hapgList
      *        The list of high-availability partition groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHapgsResult withHapgList(String... hapgList) {
         if (this.hapgList == null) {
-            setHapgList(new com.amazonaws.internal.SdkInternalList<String>(
-                    hapgList.length));
+            setHapgList(new com.amazonaws.internal.SdkInternalList<String>(hapgList.length));
         }
         for (String ele : hapgList) {
             this.hapgList.add(ele);
@@ -106,8 +102,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * 
      * @param hapgList
      *        The list of high-availability partition groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHapgsResult withHapgList(java.util.Collection<String> hapgList) {
@@ -117,13 +112,13 @@ public class ListHapgsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to
-     * <a>ListHapgs</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value to
-     *        <a>ListHapgs</a> to retrieve the next set of items.
+     *        If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next
+     *        set of items.
      */
 
     public void setNextToken(String nextToken) {
@@ -132,12 +127,12 @@ public class ListHapgsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to
-     * <a>ListHapgs</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of
+     * items.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value to
-     *         <a>ListHapgs</a> to retrieve the next set of items.
+     * @return If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next
+     *         set of items.
      */
 
     public String getNextToken() {
@@ -146,15 +141,14 @@ public class ListHapgsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to
-     * <a>ListHapgs</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value to
-     *        <a>ListHapgs</a> to retrieve the next set of items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next
+     *        set of items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHapgsResult withNextToken(String nextToken) {
@@ -163,8 +157,8 @@ public class ListHapgsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -175,9 +169,9 @@ public class ListHapgsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHapgList() != null)
-            sb.append("HapgList: " + getHapgList() + ",");
+            sb.append("HapgList: ").append(getHapgList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -194,13 +188,11 @@ public class ListHapgsResult implements Serializable, Cloneable {
         ListHapgsResult other = (ListHapgsResult) obj;
         if (other.getHapgList() == null ^ this.getHapgList() == null)
             return false;
-        if (other.getHapgList() != null
-                && other.getHapgList().equals(this.getHapgList()) == false)
+        if (other.getHapgList() != null && other.getHapgList().equals(this.getHapgList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -210,10 +202,8 @@ public class ListHapgsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getHapgList() == null) ? 0 : getHapgList().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getHapgList() == null) ? 0 : getHapgList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -222,9 +212,8 @@ public class ListHapgsResult implements Serializable, Cloneable {
         try {
             return (ListHapgsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,34 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule"
+ *      target="_top">AWS API Documentation</a>
  */
-public class GetComplianceDetailsByConfigRuleRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS Config rule for which you want compliance
-     * information.
+     * The name of the AWS Config rule for which you want compliance information.
      * </p>
      */
     private String configRuleName;
@@ -37,36 +37,32 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name of the AWS Config rule for which you want compliance
-     * information.
+     * The name of the AWS Config rule for which you want compliance information.
      * </p>
      * 
      * @param configRuleName
-     *        The name of the AWS Config rule for which you want compliance
-     *        information.
+     *        The name of the AWS Config rule for which you want compliance information.
      */
 
     public void setConfigRuleName(String configRuleName) {
@@ -75,12 +71,10 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The name of the AWS Config rule for which you want compliance
-     * information.
+     * The name of the AWS Config rule for which you want compliance information.
      * </p>
      * 
-     * @return The name of the AWS Config rule for which you want compliance
-     *         information.
+     * @return The name of the AWS Config rule for which you want compliance information.
      */
 
     public String getConfigRuleName() {
@@ -89,19 +83,15 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The name of the AWS Config rule for which you want compliance
-     * information.
+     * The name of the AWS Config rule for which you want compliance information.
      * </p>
      * 
      * @param configRuleName
-     *        The name of the AWS Config rule for which you want compliance
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the AWS Config rule for which you want compliance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByConfigRuleRequest withConfigRuleName(
-            String configRuleName) {
+    public GetComplianceDetailsByConfigRuleRequest withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;
     }
@@ -111,14 +101,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @return Filters the results by compliance.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code>,
-     *         <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -134,15 +123,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -152,8 +139,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
             return;
         }
 
-        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes);
+        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes);
     }
 
     /**
@@ -161,31 +147,25 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComplianceTypes(java.util.Collection)} or
-     * {@link #withComplianceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceTypes(java.util.Collection)} or {@link #withComplianceTypes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
-            String... complianceTypes) {
+    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(String... complianceTypes) {
         if (this.complianceTypes == null) {
-            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    complianceTypes.length));
+            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length));
         }
         for (String ele : complianceTypes) {
             this.complianceTypes.add(ele);
@@ -198,22 +178,18 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
-            java.util.Collection<String> complianceTypes) {
+    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(java.util.Collection<String> complianceTypes) {
         setComplianceTypes(complianceTypes);
         return this;
     }
@@ -223,24 +199,19 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
-            ComplianceType... complianceTypes) {
-        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes.length);
+    public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(ComplianceType... complianceTypes) {
+        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length);
         for (ComplianceType value : complianceTypes) {
             complianceTypesCopy.add(value.toString());
         }
@@ -254,15 +225,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of evaluation results returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
+     *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -271,14 +240,12 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
-     * @return The maximum number of evaluation results returned on each page.
-     *         The default is 10. You cannot specify a limit greater than 100.
-     *         If you specify 0, AWS Config uses the default.
+     * @return The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *         number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -287,17 +254,14 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The
-     * default is 10. You cannot specify a limit greater than 100. If you
-     * specify 0, AWS Config uses the default.
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
+     * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of evaluation results returned on each page.
-     *        The default is 10. You cannot specify a limit greater than 100. If
-     *        you specify 0, AWS Config uses the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetComplianceDetailsByConfigRuleRequest withLimit(Integer limit) {
@@ -307,13 +271,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -322,13 +286,12 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The <code>nextToken</code> string returned on a previous page
-     *         that you use to get the next page of results in a paginated
-     *         response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -337,26 +300,24 @@ public class GetComplianceDetailsByConfigRuleRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByConfigRuleRequest withNextToken(
-            String nextToken) {
+    public GetComplianceDetailsByConfigRuleRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -367,13 +328,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName() + ",");
+            sb.append("ConfigRuleName: ").append(getConfigRuleName()).append(",");
         if (getComplianceTypes() != null)
-            sb.append("ComplianceTypes: " + getComplianceTypes() + ",");
+            sb.append("ComplianceTypes: ").append(getComplianceTypes()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -388,27 +349,21 @@ public class GetComplianceDetailsByConfigRuleRequest extends
         if (obj instanceof GetComplianceDetailsByConfigRuleRequest == false)
             return false;
         GetComplianceDetailsByConfigRuleRequest other = (GetComplianceDetailsByConfigRuleRequest) obj;
-        if (other.getConfigRuleName() == null
-                ^ this.getConfigRuleName() == null)
+        if (other.getConfigRuleName() == null ^ this.getConfigRuleName() == null)
             return false;
-        if (other.getConfigRuleName() != null
-                && other.getConfigRuleName().equals(this.getConfigRuleName()) == false)
+        if (other.getConfigRuleName() != null && other.getConfigRuleName().equals(this.getConfigRuleName()) == false)
             return false;
-        if (other.getComplianceTypes() == null
-                ^ this.getComplianceTypes() == null)
+        if (other.getComplianceTypes() == null ^ this.getComplianceTypes() == null)
             return false;
-        if (other.getComplianceTypes() != null
-                && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
+        if (other.getComplianceTypes() != null && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -418,18 +373,10 @@ public class GetComplianceDetailsByConfigRuleRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConfigRuleName() == null) ? 0 : getConfigRuleName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComplianceTypes() == null) ? 0 : getComplianceTypes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getConfigRuleName() == null) ? 0 : getConfigRuleName().hashCode());
+        hashCode = prime * hashCode + ((getComplianceTypes() == null) ? 0 : getComplianceTypes().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -437,4 +384,5 @@ public class GetComplianceDetailsByConfigRuleRequest extends
     public GetComplianceDetailsByConfigRuleRequest clone() {
         return (GetComplianceDetailsByConfigRuleRequest) super.clone();
     }
+
 }

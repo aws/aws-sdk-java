@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Information about an Auto Scaling group.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AutoScalingGroup" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AutoScalingGroup implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -70,8 +73,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param name
      *        The Auto Scaling group name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withName(String name) {
@@ -111,8 +113,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @param hook
      *        An Auto Scaling lifecycle event hook name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withHook(String hook) {
@@ -121,8 +122,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,9 +134,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getHook() != null)
-            sb.append("Hook: " + getHook());
+            sb.append("Hook: ").append(getHook());
         sb.append("}");
         return sb.toString();
     }
@@ -152,13 +153,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         AutoScalingGroup other = (AutoScalingGroup) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getHook() == null ^ this.getHook() == null)
             return false;
-        if (other.getHook() != null
-                && other.getHook().equals(this.getHook()) == false)
+        if (other.getHook() != null && other.getHook().equals(this.getHook()) == false)
             return false;
         return true;
     }
@@ -168,10 +167,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getHook() == null) ? 0 : getHook().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getHook() == null) ? 0 : getHook().hashCode());
         return hashCode;
     }
 
@@ -180,9 +177,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         try {
             return (AutoScalingGroup) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.AutoScalingGroupMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,47 +1,45 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DescribeRefreshSchemasStatusRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeRefreshSchemasStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String endpointArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -50,12 +48,10 @@ public class DescribeRefreshSchemasStatusRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getEndpointArn() {
@@ -64,26 +60,22 @@ public class DescribeRefreshSchemasStatusRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeRefreshSchemasStatusRequest withEndpointArn(
-            String endpointArn) {
+    public DescribeRefreshSchemasStatusRequest withEndpointArn(String endpointArn) {
         setEndpointArn(endpointArn);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -94,7 +86,7 @@ public class DescribeRefreshSchemasStatusRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn());
+            sb.append("EndpointArn: ").append(getEndpointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -111,8 +103,7 @@ public class DescribeRefreshSchemasStatusRequest extends
         DescribeRefreshSchemasStatusRequest other = (DescribeRefreshSchemasStatusRequest) obj;
         if (other.getEndpointArn() == null ^ this.getEndpointArn() == null)
             return false;
-        if (other.getEndpointArn() != null
-                && other.getEndpointArn().equals(this.getEndpointArn()) == false)
+        if (other.getEndpointArn() != null && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
         return true;
     }
@@ -122,9 +113,7 @@ public class DescribeRefreshSchemasStatusRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
         return hashCode;
     }
 
@@ -132,4 +121,5 @@ public class DescribeRefreshSchemasStatusRequest extends
     public DescribeRefreshSchemasStatusRequest clone() {
         return (DescribeRefreshSchemasStatusRequest) super.clone();
     }
+
 }

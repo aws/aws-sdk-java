@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iotdata.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeleteThingShadow operation.
  * </p>
  */
-public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteThingShadowRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -66,8 +64,7 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
      * 
      * @param thingName
      *        The name of the thing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteThingShadowRequest withThingName(String thingName) {
@@ -76,8 +73,8 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,7 +85,7 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName());
+            sb.append("ThingName: ").append(getThingName());
         sb.append("}");
         return sb.toString();
     }
@@ -105,8 +102,7 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
         DeleteThingShadowRequest other = (DeleteThingShadowRequest) obj;
         if (other.getThingName() == null ^ this.getThingName() == null)
             return false;
-        if (other.getThingName() != null
-                && other.getThingName().equals(this.getThingName()) == false)
+        if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
         return true;
     }
@@ -116,8 +112,7 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         return hashCode;
     }
 
@@ -125,4 +120,5 @@ public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
     public DeleteThingShadowRequest clone() {
         return (DeleteThingShadowRequest) super.clone();
     }
+
 }

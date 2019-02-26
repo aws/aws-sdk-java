@@ -1,41 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Provides options for retrieving a list of parts of an archive that have been
- * uploaded in a specific multipart upload.
+ * Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.
  * </p>
  */
-public class ListPartsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
@@ -53,35 +48,30 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
     private String uploadId;
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the part at
-     * which the listing of parts should begin. Get the marker value from the
-     * response of a previous List Parts response. You need only include the
-     * marker if you are continuing the pagination of results started in a
-     * previous List Parts request.
+     * An opaque string used for pagination. This value specifies the part at which the listing of parts should begin.
+     * Get the marker value from the response of a previous List Parts response. You need only include the marker if you
+     * are continuing the pagination of results started in a previous List Parts request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specifies the maximum number of parts returned in the response body. If
-     * this value is not specified, the List Parts operation returns up to 1,000
-     * uploads.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      */
     private String limit;
 
     /**
-     * Default constructor for ListPartsRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for ListPartsRequest object. Callers should use the setter or fluent setter (with...) methods
+     * to initialize the object after creating it.
      */
     public ListPartsRequest() {
     }
 
     /**
-     * Constructs a new ListPartsRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new ListPartsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param vaultName
      *        The name of the vault.
@@ -94,17 +84,14 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Constructs a new ListPartsRequest object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new ListPartsRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param uploadId
@@ -118,21 +105,17 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -141,21 +124,16 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
-     * @return The <code>AccountId</code> value is the AWS account ID of the
-     *         account that owns the vault. You can either specify an AWS
-     *         account ID or optionally a single apos<code>-</code>apos
-     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
-     *         associated with the credentials used to sign the request. If you
-     *         use an account ID, do not include any hyphens (apos-apos) in the
-     *         ID.
+     * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *         ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -164,23 +142,18 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used to
-     * sign the request. If you use an account ID, do not include any hyphens
-     * (apos-apos) in the ID.
+     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the
-     *        account that owns the vault. You can either specify an AWS account
-     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
-     *        which case Amazon Glacier uses the AWS account ID associated with
-     *        the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens (apos-apos) in the ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPartsRequest withAccountId(String accountId) {
@@ -220,8 +193,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
      * 
      * @param vaultName
      *        The name of the vault.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPartsRequest withVaultName(String vaultName) {
@@ -261,8 +233,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
      * 
      * @param uploadId
      *        The upload ID of the multipart upload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPartsRequest withUploadId(String uploadId) {
@@ -272,19 +243,15 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the part at
-     * which the listing of parts should begin. Get the marker value from the
-     * response of a previous List Parts response. You need only include the
-     * marker if you are continuing the pagination of results started in a
-     * previous List Parts request.
+     * An opaque string used for pagination. This value specifies the part at which the listing of parts should begin.
+     * Get the marker value from the response of a previous List Parts response. You need only include the marker if you
+     * are continuing the pagination of results started in a previous List Parts request.
      * </p>
      * 
      * @param marker
-     *        An opaque string used for pagination. This value specifies the
-     *        part at which the listing of parts should begin. Get the marker
-     *        value from the response of a previous List Parts response. You
-     *        need only include the marker if you are continuing the pagination
-     *        of results started in a previous List Parts request.
+     *        An opaque string used for pagination. This value specifies the part at which the listing of parts should
+     *        begin. Get the marker value from the response of a previous List Parts response. You need only include the
+     *        marker if you are continuing the pagination of results started in a previous List Parts request.
      */
 
     public void setMarker(String marker) {
@@ -293,18 +260,14 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the part at
-     * which the listing of parts should begin. Get the marker value from the
-     * response of a previous List Parts response. You need only include the
-     * marker if you are continuing the pagination of results started in a
-     * previous List Parts request.
+     * An opaque string used for pagination. This value specifies the part at which the listing of parts should begin.
+     * Get the marker value from the response of a previous List Parts response. You need only include the marker if you
+     * are continuing the pagination of results started in a previous List Parts request.
      * </p>
      * 
-     * @return An opaque string used for pagination. This value specifies the
-     *         part at which the listing of parts should begin. Get the marker
-     *         value from the response of a previous List Parts response. You
-     *         need only include the marker if you are continuing the pagination
-     *         of results started in a previous List Parts request.
+     * @return An opaque string used for pagination. This value specifies the part at which the listing of parts should
+     *         begin. Get the marker value from the response of a previous List Parts response. You need only include
+     *         the marker if you are continuing the pagination of results started in a previous List Parts request.
      */
 
     public String getMarker() {
@@ -313,21 +276,16 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An opaque string used for pagination. This value specifies the part at
-     * which the listing of parts should begin. Get the marker value from the
-     * response of a previous List Parts response. You need only include the
-     * marker if you are continuing the pagination of results started in a
-     * previous List Parts request.
+     * An opaque string used for pagination. This value specifies the part at which the listing of parts should begin.
+     * Get the marker value from the response of a previous List Parts response. You need only include the marker if you
+     * are continuing the pagination of results started in a previous List Parts request.
      * </p>
      * 
      * @param marker
-     *        An opaque string used for pagination. This value specifies the
-     *        part at which the listing of parts should begin. Get the marker
-     *        value from the response of a previous List Parts response. You
-     *        need only include the marker if you are continuing the pagination
-     *        of results started in a previous List Parts request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An opaque string used for pagination. This value specifies the part at which the listing of parts should
+     *        begin. Get the marker value from the response of a previous List Parts response. You need only include the
+     *        marker if you are continuing the pagination of results started in a previous List Parts request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPartsRequest withMarker(String marker) {
@@ -337,15 +295,13 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the maximum number of parts returned in the response body. If
-     * this value is not specified, the List Parts operation returns up to 1,000
-     * uploads.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        Specifies the maximum number of parts returned in the response
-     *        body. If this value is not specified, the List Parts operation
-     *        returns up to 1,000 uploads.
+     *        The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be
+     *        fewer than the specified limit, but the number of returned parts never exceeds the limit.
      */
 
     public void setLimit(String limit) {
@@ -354,14 +310,12 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the maximum number of parts returned in the response body. If
-     * this value is not specified, the List Parts operation returns up to 1,000
-     * uploads.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
-     * @return Specifies the maximum number of parts returned in the response
-     *         body. If this value is not specified, the List Parts operation
-     *         returns up to 1,000 uploads.
+     * @return The maximum number of parts to be returned. The default limit is 50. The number of parts returned might
+     *         be fewer than the specified limit, but the number of returned parts never exceeds the limit.
      */
 
     public String getLimit() {
@@ -370,17 +324,14 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the maximum number of parts returned in the response body. If
-     * this value is not specified, the List Parts operation returns up to 1,000
-     * uploads.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        Specifies the maximum number of parts returned in the response
-     *        body. If this value is not specified, the List Parts operation
-     *        returns up to 1,000 uploads.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be
+     *        fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListPartsRequest withLimit(String limit) {
@@ -389,8 +340,8 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -401,15 +352,15 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -426,28 +377,23 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
         ListPartsRequest other = (ListPartsRequest) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
         if (other.getVaultName() == null ^ this.getVaultName() == null)
             return false;
-        if (other.getVaultName() != null
-                && other.getVaultName().equals(this.getVaultName()) == false)
+        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false)
             return false;
         if (other.getUploadId() == null ^ this.getUploadId() == null)
             return false;
-        if (other.getUploadId() != null
-                && other.getUploadId().equals(this.getUploadId()) == false)
+        if (other.getUploadId() != null && other.getUploadId().equals(this.getUploadId()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -457,16 +403,11 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -474,4 +415,5 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements
     public ListPartsRequest clone() {
         return (ListPartsRequest) super.clone();
     }
+
 }

@@ -51,14 +51,13 @@ final class AddModelShapes extends AddShapes implements IntermediateModelShapePr
             final String shapeName = entry.getKey();
             final Shape shape = entry.getValue();
 
-            if (shapesToSkip.contains(shapeName)) {
-                continue;
-            }
-
             ShapeType shapeType = getModelShapeType(shape);
 
             if (shapeType != null) {
                 final String javaClassName = getNamingStrategy().getJavaClassName(shapeName);
+                if(shapesToSkip.contains(javaClassName)) {
+                    continue;
+                }
 
                 ShapeModel modelShape = generateShapeModel(javaClassName, shapeName);
                 modelShape.setType(shapeType);

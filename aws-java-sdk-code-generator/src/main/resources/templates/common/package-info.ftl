@@ -1,4 +1,4 @@
-<@LicenseCommentBlockMacro.content />
+${fileHeader}
 
 <#assign documentation = (metadata.documentation)!""/>
 

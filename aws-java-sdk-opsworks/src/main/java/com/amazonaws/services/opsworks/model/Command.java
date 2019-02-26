@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes a command.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Command" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Command implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -66,10 +69,26 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -90,16 +109,66 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -136,8 +205,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param commandId
      *        The command ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withCommandId(String commandId) {
@@ -177,8 +245,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the instance where the command was executed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withInstanceId(String instanceId) {
@@ -218,8 +285,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param deploymentId
      *        The command deployment ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withDeploymentId(String deploymentId) {
@@ -259,8 +325,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        Date and time when the command was run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withCreatedAt(String createdAt) {
@@ -300,8 +365,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param acknowledgedAt
      *        Date and time when the command was acknowledged.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withAcknowledgedAt(String acknowledgedAt) {
@@ -341,8 +405,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param completedAt
      *        Date when the command completed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withCompletedAt(String completedAt) {
@@ -355,19 +418,51 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The command status:</p>
      *        <ul>
-     *        <li>failed</li>
-     *        <li>successful</li>
-     *        <li>skipped</li>
-     *        <li>pending</li>
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        skipped
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pending
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -379,18 +474,50 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The command status:</p>
      *         <ul>
-     *         <li>failed</li>
-     *         <li>successful</li>
-     *         <li>skipped</li>
-     *         <li>pending</li>
+     *         <li>
+     *         <p>
+     *         failed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         successful
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         skipped
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pending
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -402,21 +529,52 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The command status:</p>
      *        <ul>
-     *        <li>failed</li>
-     *        <li>successful</li>
-     *        <li>skipped</li>
-     *        <li>pending</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        skipped
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pending
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withStatus(String status) {
@@ -456,8 +614,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param exitCode
      *        The command exit code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withExitCode(Integer exitCode) {
@@ -497,8 +654,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param logUrl
      *        The URL of the command log.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withLogUrl(String logUrl) {
@@ -511,31 +667,131 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The command type:</p>
      *        <ul>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>rollback</code></li>
-     *        <li> <code>start</code></li>
-     *        <li> <code>stop</code></li>
-     *        <li> <code>restart</code></li>
-     *        <li> <code>undeploy</code></li>
-     *        <li> <code>update_dependencies</code></li>
-     *        <li> <code>install_dependencies</code></li>
-     *        <li> <code>update_custom_cookbooks</code></li>
-     *        <li> <code>execute_recipes</code></li>
+     *        <li>
+     *        <p>
+     *        <code>configure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undeploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_custom_cookbooks</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_dependencies</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -547,30 +803,130 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The command type:</p>
      *         <ul>
-     *         <li> <code>deploy</code></li>
-     *         <li> <code>rollback</code></li>
-     *         <li> <code>start</code></li>
-     *         <li> <code>stop</code></li>
-     *         <li> <code>restart</code></li>
-     *         <li> <code>undeploy</code></li>
-     *         <li> <code>update_dependencies</code></li>
-     *         <li> <code>install_dependencies</code></li>
-     *         <li> <code>update_custom_cookbooks</code></li>
-     *         <li> <code>execute_recipes</code></li>
+     *         <li>
+     *         <p>
+     *         <code>configure</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>execute_recipes</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>install_dependencies</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>restart</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rollback</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>setup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stop</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>undeploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>update_custom_cookbooks</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>update_dependencies</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -582,33 +938,132 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The command type:</p>
      *        <ul>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>rollback</code></li>
-     *        <li> <code>start</code></li>
-     *        <li> <code>stop</code></li>
-     *        <li> <code>restart</code></li>
-     *        <li> <code>undeploy</code></li>
-     *        <li> <code>update_dependencies</code></li>
-     *        <li> <code>install_dependencies</code></li>
-     *        <li> <code>update_custom_cookbooks</code></li>
-     *        <li> <code>execute_recipes</code></li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>configure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undeploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_custom_cookbooks</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_dependencies</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withType(String type) {
@@ -617,8 +1072,8 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -629,25 +1084,25 @@ public class Command implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getAcknowledgedAt() != null)
-            sb.append("AcknowledgedAt: " + getAcknowledgedAt() + ",");
+            sb.append("AcknowledgedAt: ").append(getAcknowledgedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: " + getCompletedAt() + ",");
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getExitCode() != null)
-            sb.append("ExitCode: " + getExitCode() + ",");
+            sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getLogUrl() != null)
-            sb.append("LogUrl: " + getLogUrl() + ",");
+            sb.append("LogUrl: ").append(getLogUrl()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -664,54 +1119,43 @@ public class Command implements Serializable, Cloneable {
         Command other = (Command) obj;
         if (other.getCommandId() == null ^ this.getCommandId() == null)
             return false;
-        if (other.getCommandId() != null
-                && other.getCommandId().equals(this.getCommandId()) == false)
+        if (other.getCommandId() != null && other.getCommandId().equals(this.getCommandId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
-        if (other.getAcknowledgedAt() == null
-                ^ this.getAcknowledgedAt() == null)
+        if (other.getAcknowledgedAt() == null ^ this.getAcknowledgedAt() == null)
             return false;
-        if (other.getAcknowledgedAt() != null
-                && other.getAcknowledgedAt().equals(this.getAcknowledgedAt()) == false)
+        if (other.getAcknowledgedAt() != null && other.getAcknowledgedAt().equals(this.getAcknowledgedAt()) == false)
             return false;
         if (other.getCompletedAt() == null ^ this.getCompletedAt() == null)
             return false;
-        if (other.getCompletedAt() != null
-                && other.getCompletedAt().equals(this.getCompletedAt()) == false)
+        if (other.getCompletedAt() != null && other.getCompletedAt().equals(this.getCompletedAt()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getExitCode() == null ^ this.getExitCode() == null)
             return false;
-        if (other.getExitCode() != null
-                && other.getExitCode().equals(this.getExitCode()) == false)
+        if (other.getExitCode() != null && other.getExitCode().equals(this.getExitCode()) == false)
             return false;
         if (other.getLogUrl() == null ^ this.getLogUrl() == null)
             return false;
-        if (other.getLogUrl() != null
-                && other.getLogUrl().equals(this.getLogUrl()) == false)
+        if (other.getLogUrl() != null && other.getLogUrl().equals(this.getLogUrl()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getType() != null
-                && other.getType().equals(this.getType()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -721,31 +1165,16 @@ public class Command implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCommandId() == null) ? 0 : getCommandId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAcknowledgedAt() == null) ? 0 : getAcknowledgedAt()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getLogUrl() == null) ? 0 : getLogUrl().hashCode());
-        hashCode = prime * hashCode
-                + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCommandId() == null) ? 0 : getCommandId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getAcknowledgedAt() == null) ? 0 : getAcknowledgedAt().hashCode());
+        hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
+        hashCode = prime * hashCode + ((getLogUrl() == null) ? 0 : getLogUrl().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 
@@ -754,9 +1183,13 @@ public class Command implements Serializable, Cloneable {
         try {
             return (Command) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.CommandMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

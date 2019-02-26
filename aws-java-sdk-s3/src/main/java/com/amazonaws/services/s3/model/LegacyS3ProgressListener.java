@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class LegacyS3ProgressListener implements
     private ProgressEvent adaptToLegacyEvent(com.amazonaws.event.ProgressEvent event) {
         long bytes = event.getBytesTransferred();
         if (bytes != 0) {
-            return new ProgressEvent((int)bytes);
+            return new ProgressEvent(bytes);
         } else {
             return new ProgressEvent(event.getEventType());
         }

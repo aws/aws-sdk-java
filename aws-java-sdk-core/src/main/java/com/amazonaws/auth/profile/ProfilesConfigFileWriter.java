@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,9 +14,17 @@
  */
 package com.amazonaws.auth.profile;
 
+import com.amazonaws.SdkClientException;
+import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
+import com.amazonaws.auth.profile.internal.Profile;
+import com.amazonaws.auth.profile.internal.ProfileKeyConstants;
+import com.amazonaws.util.StringUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -29,14 +37,6 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
-import com.amazonaws.auth.profile.internal.Profile;
-import com.amazonaws.util.StringUtils;
 
 /**
  * The class for creating and modifying the credential profiles file.
@@ -62,7 +62,7 @@ public class ProfilesConfigFileWriter {
      */
     public static void dumpToFile(File destination, boolean overwrite, Profile... profiles) {
         if (destination.exists() && !overwrite) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "The destination file already exists. " +
                     "Set overwrite=true if you want to clobber the existing " +
                     "content and completely re-write the file.");
@@ -73,7 +73,7 @@ public class ProfilesConfigFileWriter {
             writer = new OutputStreamWriter(new FileOutputStream(destination, false), StringUtils.UTF8);
 
         } catch (IOException ioe) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to open the destination file.", ioe);
         }
 
@@ -180,7 +180,7 @@ public class ProfilesConfigFileWriter {
 
             } finally {
                 if (!stashed) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Failed to stash the existing credentials file " +
                             "before applying the changes.");
                 }
@@ -227,14 +227,14 @@ public class ProfilesConfigFileWriter {
                     restored = stashLocation.renameTo(destination);
                 } finally {
                     if (!restored) {
-                        throw new AmazonClientException(
+                        throw new SdkClientException(
                                 "Unable to restore the original credentials file. " +
                                 "File content stashed in " + stashLocation.getAbsolutePath());
                     }
                 }
             }
 
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to modify the credentials file. " +
                     "(The original file has been restored.)",
                     e);
@@ -431,10 +431,26 @@ public class ProfilesConfigFileWriter {
             try {
                 writer.flush();
             } catch (IOException ioe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to write to the target file to persist the profile credentials.",
                         ioe);
             }
+        }
+
+        /**
+         * ProfilesConfigFileWriter still deals with legacy {@link Profile} interface so it can only
+         * modify credential related properties. All other properties should be preserved when
+         * modifying profiles.
+         */
+        @Override
+        protected boolean isSupportedProperty(String propertyName) {
+            return ProfileKeyConstants.AWS_ACCESS_KEY_ID.equals(propertyName) ||
+                   ProfileKeyConstants.AWS_SECRET_ACCESS_KEY.equals(propertyName) ||
+                   ProfileKeyConstants.AWS_SESSION_TOKEN.equals(propertyName) ||
+                   ProfileKeyConstants.EXTERNAL_ID.equals(propertyName) ||
+                   ProfileKeyConstants.ROLE_ARN.equals(propertyName) ||
+                   ProfileKeyConstants.ROLE_SESSION_NAME.equals(propertyName) ||
+                   ProfileKeyConstants.SOURCE_PROFILE.equals(propertyName);
         }
 
         /* Private interface */
@@ -467,7 +483,7 @@ public class ProfilesConfigFileWriter {
             try {
                 writer.append(str);
             } catch (IOException ioe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to write to the target file to persist the profile credentials.",
                         ioe);
             }

@@ -1,54 +1,52 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a list deployment configurations operation.
+ * Represents the output of a ListDeploymentConfigs operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs" target="_top">AWS
+ *      API Documentation</a>
  */
-public class ListDeploymentConfigsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations
-     * such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentConfigsList;
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployment configurations
-     * call to return the next set of deployment configurations in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployment configurations call to return the next set of deployment configurations in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations
-     * such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
-     * @return A list of deployment configurations, including built-in
-     *         configurations such as CodeDeployDefault.OneAtATime.
+     * @return A list of deployment configurations, including built-in configurations such as
+     *         CodeDeployDefault.OneAtATime.
      */
 
     public java.util.List<String> getDeploymentConfigsList() {
@@ -60,50 +58,42 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations
-     * such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including built-in
-     *        configurations such as CodeDeployDefault.OneAtATime.
+     *        A list of deployment configurations, including built-in configurations such as
+     *        CodeDeployDefault.OneAtATime.
      */
 
-    public void setDeploymentConfigsList(
-            java.util.Collection<String> deploymentConfigsList) {
+    public void setDeploymentConfigsList(java.util.Collection<String> deploymentConfigsList) {
         if (deploymentConfigsList == null) {
             this.deploymentConfigsList = null;
             return;
         }
 
-        this.deploymentConfigsList = new com.amazonaws.internal.SdkInternalList<String>(
-                deploymentConfigsList);
+        this.deploymentConfigsList = new com.amazonaws.internal.SdkInternalList<String>(deploymentConfigsList);
     }
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations
-     * such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeploymentConfigsList(java.util.Collection)} or
-     * {@link #withDeploymentConfigsList(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeploymentConfigsList(java.util.Collection)} or
+     * {@link #withDeploymentConfigsList(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including built-in
-     *        configurations such as CodeDeployDefault.OneAtATime.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of deployment configurations, including built-in configurations such as
+     *        CodeDeployDefault.OneAtATime.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDeploymentConfigsResult withDeploymentConfigsList(
-            String... deploymentConfigsList) {
+    public ListDeploymentConfigsResult withDeploymentConfigsList(String... deploymentConfigsList) {
         if (this.deploymentConfigsList == null) {
-            setDeploymentConfigsList(new com.amazonaws.internal.SdkInternalList<String>(
-                    deploymentConfigsList.length));
+            setDeploymentConfigsList(new com.amazonaws.internal.SdkInternalList<String>(deploymentConfigsList.length));
         }
         for (String ele : deploymentConfigsList) {
             this.deploymentConfigsList.add(ele);
@@ -113,35 +103,30 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations
-     * such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including built-in
-     *        configurations such as CodeDeployDefault.OneAtATime.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of deployment configurations, including built-in configurations such as
+     *        CodeDeployDefault.OneAtATime.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDeploymentConfigsResult withDeploymentConfigsList(
-            java.util.Collection<String> deploymentConfigsList) {
+    public ListDeploymentConfigsResult withDeploymentConfigsList(java.util.Collection<String> deploymentConfigsList) {
         setDeploymentConfigsList(deploymentConfigsList);
         return this;
     }
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployment configurations
-     * call to return the next set of deployment configurations in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployment configurations call to return the next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier is
-     *        also returned. It can be used in a subsequent list deployment
-     *        configurations call to return the next set of deployment
-     *        configurations in the list.
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *        subsequent list deployment configurations call to return the next set of deployment configurations in the
+     *        list.
      */
 
     public void setNextToken(String nextToken) {
@@ -150,15 +135,13 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployment configurations
-     * call to return the next set of deployment configurations in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployment configurations call to return the next set of deployment configurations in the list.
      * </p>
      * 
-     * @return If a large amount of information is returned, an identifier is
-     *         also returned. It can be used in a subsequent list deployment
-     *         configurations call to return the next set of deployment
-     *         configurations in the list.
+     * @return If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *         subsequent list deployment configurations call to return the next set of deployment configurations in the
+     *         list.
      */
 
     public String getNextToken() {
@@ -167,18 +150,15 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployment configurations
-     * call to return the next set of deployment configurations in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployment configurations call to return the next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier is
-     *        also returned. It can be used in a subsequent list deployment
-     *        configurations call to return the next set of deployment
-     *        configurations in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *        subsequent list deployment configurations call to return the next set of deployment configurations in the
+     *        list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentConfigsResult withNextToken(String nextToken) {
@@ -187,8 +167,8 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -199,10 +179,9 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigsList() != null)
-            sb.append("DeploymentConfigsList: " + getDeploymentConfigsList()
-                    + ",");
+            sb.append("DeploymentConfigsList: ").append(getDeploymentConfigsList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -217,17 +196,13 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
         if (obj instanceof ListDeploymentConfigsResult == false)
             return false;
         ListDeploymentConfigsResult other = (ListDeploymentConfigsResult) obj;
-        if (other.getDeploymentConfigsList() == null
-                ^ this.getDeploymentConfigsList() == null)
+        if (other.getDeploymentConfigsList() == null ^ this.getDeploymentConfigsList() == null)
             return false;
-        if (other.getDeploymentConfigsList() != null
-                && other.getDeploymentConfigsList().equals(
-                        this.getDeploymentConfigsList()) == false)
+        if (other.getDeploymentConfigsList() != null && other.getDeploymentConfigsList().equals(this.getDeploymentConfigsList()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -237,12 +212,8 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentConfigsList() == null) ? 0
-                        : getDeploymentConfigsList().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfigsList() == null) ? 0 : getDeploymentConfigsList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -251,9 +222,8 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
         try {
             return (ListDeploymentConfigsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

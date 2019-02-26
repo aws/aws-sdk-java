@@ -1,45 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreatePublicVirtualInterface operation.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"
+ *      target="_top">AWS API Documentation</a>
  */
-public class CreatePublicVirtualInterfaceRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     */
     private String connectionId;
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      */
     private NewPublicVirtualInterface newPublicVirtualInterface;
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -47,7 +52,11 @@ public class CreatePublicVirtualInterfaceRequest extends
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
+     * @return The ID of the connection.
      */
 
     public String getConnectionId() {
@@ -55,49 +64,39 @@ public class CreatePublicVirtualInterfaceRequest extends
     }
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePublicVirtualInterfaceRequest withConnectionId(
-            String connectionId) {
+    public CreatePublicVirtualInterfaceRequest withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
     }
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterface
-     *        Detailed information for the public virtual interface to be
-     *        created.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the public virtual interface.
      */
 
-    public void setNewPublicVirtualInterface(
-            NewPublicVirtualInterface newPublicVirtualInterface) {
+    public void setNewPublicVirtualInterface(NewPublicVirtualInterface newPublicVirtualInterface) {
         this.newPublicVirtualInterface = newPublicVirtualInterface;
     }
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
-     * @return Detailed information for the public virtual interface to be
-     *         created.</p>
-     *         <p>
-     *         Default: None
+     * @return Information about the public virtual interface.
      */
 
     public NewPublicVirtualInterface getNewPublicVirtualInterface() {
@@ -106,30 +105,22 @@ public class CreatePublicVirtualInterfaceRequest extends
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterface
-     *        Detailed information for the public virtual interface to be
-     *        created.</p>
-     *        <p>
-     *        Default: None
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the public virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePublicVirtualInterfaceRequest withNewPublicVirtualInterface(
-            NewPublicVirtualInterface newPublicVirtualInterface) {
+    public CreatePublicVirtualInterfaceRequest withNewPublicVirtualInterface(NewPublicVirtualInterface newPublicVirtualInterface) {
         setNewPublicVirtualInterface(newPublicVirtualInterface);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -140,10 +131,9 @@ public class CreatePublicVirtualInterfaceRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getNewPublicVirtualInterface() != null)
-            sb.append("NewPublicVirtualInterface: "
-                    + getNewPublicVirtualInterface());
+            sb.append("NewPublicVirtualInterface: ").append(getNewPublicVirtualInterface());
         sb.append("}");
         return sb.toString();
     }
@@ -160,15 +150,11 @@ public class CreatePublicVirtualInterfaceRequest extends
         CreatePublicVirtualInterfaceRequest other = (CreatePublicVirtualInterfaceRequest) obj;
         if (other.getConnectionId() == null ^ this.getConnectionId() == null)
             return false;
-        if (other.getConnectionId() != null
-                && other.getConnectionId().equals(this.getConnectionId()) == false)
+        if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
-        if (other.getNewPublicVirtualInterface() == null
-                ^ this.getNewPublicVirtualInterface() == null)
+        if (other.getNewPublicVirtualInterface() == null ^ this.getNewPublicVirtualInterface() == null)
             return false;
-        if (other.getNewPublicVirtualInterface() != null
-                && other.getNewPublicVirtualInterface().equals(
-                        this.getNewPublicVirtualInterface()) == false)
+        if (other.getNewPublicVirtualInterface() != null && other.getNewPublicVirtualInterface().equals(this.getNewPublicVirtualInterface()) == false)
             return false;
         return true;
     }
@@ -178,14 +164,8 @@ public class CreatePublicVirtualInterfaceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConnectionId() == null) ? 0 : getConnectionId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNewPublicVirtualInterface() == null) ? 0
-                        : getNewPublicVirtualInterface().hashCode());
+        hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getNewPublicVirtualInterface() == null) ? 0 : getNewPublicVirtualInterface().hashCode());
         return hashCode;
     }
 
@@ -193,4 +173,5 @@ public class CreatePublicVirtualInterfaceRequest extends
     public CreatePublicVirtualInterfaceRequest clone() {
         return (CreatePublicVirtualInterfaceRequest) super.clone();
     }
+
 }

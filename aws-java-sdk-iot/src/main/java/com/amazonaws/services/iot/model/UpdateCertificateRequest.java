@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,12 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the UpdateCertificate operation.
  * </p>
  */
-public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      */
     private String certificateId;
@@ -38,24 +36,22 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      */
     private String newStatus;
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public void setCertificateId(String certificateId) {
@@ -64,10 +60,10 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
-     * @return The ID of the certificate.
+     * @return The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public String getCertificateId() {
@@ -76,13 +72,12 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateCertificateRequest withCertificateId(String certificateId) {
@@ -95,25 +90,21 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
-     *        an exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT. It is not intended for developer use.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown.
+     *        PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.
      *        </p>
      *        <p>
-     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-     *        should not be used.
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CertificateStatus
      */
 
@@ -126,24 +117,20 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
      * @return The new status.</p>
      *         <p>
-     *         <b>Note:</b> Setting the status to PENDING_TRANSFER will result
-     *         in an exception being thrown. PENDING_TRANSFER is a status used
-     *         internally by AWS IoT. It is not intended for developer use.
+     *         <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown.
+     *         PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.
      *         </p>
      *         <p>
-     *         <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-     *         should not be used.
+     *         <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CertificateStatus
      */
 
@@ -156,27 +143,22 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
-     *        an exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT. It is not intended for developer use.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown.
+     *        PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.
      *        </p>
      *        <p>
-     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-     *        should not be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
 
@@ -190,30 +172,26 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
-     *        an exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT. It is not intended for developer use.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown.
+     *        PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.
      *        </p>
      *        <p>
-     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-     *        should not be used.
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CertificateStatus
      */
 
     public void setNewStatus(CertificateStatus newStatus) {
-        this.newStatus = newStatus.toString();
+        withNewStatus(newStatus);
     }
 
     /**
@@ -221,38 +199,33 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
-     * exception being thrown. PENDING_TRANSFER is a status used internally by
-     * AWS IoT. It is not intended for developer use.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is
+     * a status used internally by AWS IoT. It is not intended for developer use.
      * </p>
      * <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
-     * not be used.
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
-     *        an exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT. It is not intended for developer use.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown.
+     *        PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.
      *        </p>
      *        <p>
-     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-     *        should not be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
 
     public UpdateCertificateRequest withNewStatus(CertificateStatus newStatus) {
-        setNewStatus(newStatus);
+        this.newStatus = newStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -263,9 +236,9 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getNewStatus() != null)
-            sb.append("NewStatus: " + getNewStatus());
+            sb.append("NewStatus: ").append(getNewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -282,13 +255,11 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
         UpdateCertificateRequest other = (UpdateCertificateRequest) obj;
         if (other.getCertificateId() == null ^ this.getCertificateId() == null)
             return false;
-        if (other.getCertificateId() != null
-                && other.getCertificateId().equals(this.getCertificateId()) == false)
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
         if (other.getNewStatus() == null ^ this.getNewStatus() == null)
             return false;
-        if (other.getNewStatus() != null
-                && other.getNewStatus().equals(this.getNewStatus()) == false)
+        if (other.getNewStatus() != null && other.getNewStatus().equals(this.getNewStatus()) == false)
             return false;
         return true;
     }
@@ -298,12 +269,8 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateId() == null) ? 0 : getCertificateId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNewStatus() == null) ? 0 : getNewStatus().hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getNewStatus() == null) ? 0 : getNewStatus().hashCode());
         return hashCode;
     }
 
@@ -311,4 +278,5 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
     public UpdateCertificateRequest clone() {
         return (UpdateCertificateRequest) super.clone();
     }
+
 }

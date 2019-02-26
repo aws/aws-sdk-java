@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,14 +22,14 @@ import java.util.Date;
 import java.util.TreeMap;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
 import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.util.DateUtils;
 
 /**
  * Represents the object metadata that is stored with Amazon S3. This includes custom
@@ -226,18 +226,18 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
-     * For internal use only. Gets a map of the raw metadata/headers
-     * for the associated object.
+     * Gets a map of the raw metadata/headers for the associated object.
      *
      * @return A map of the raw metadata/headers for the associated object.
      */
     public Map<String, Object> getRawMetadata() {
-        return Collections.unmodifiableMap(new TreeMap<String,Object>(metadata));
+        Map<String,Object> copy = new TreeMap<String,Object>(String.CASE_INSENSITIVE_ORDER);
+        copy.putAll(metadata);
+        return Collections.unmodifiableMap(copy);
     }
 
     /**
-     * For internal use only. Returns the raw value of the metadata/headers
-     * for the specified key.
+     * Returns the raw value of the metadata/headers for the specified key.
      */
     public Object getRawMetadataValue(String key) {
         return metadata.get(key);
@@ -249,8 +249,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * associated object.
      *
      * @return The date and time at which Amazon S3 last recorded a modification
-     *         to the associated object. Returns <code>null</code> if
-     *         the Last-Modified header hasn't been set.
+     *         to the associated object.
      */
     public Date getLastModified() {
         return cloneDate((Date)metadata.get(Headers.LAST_MODIFIED));
@@ -466,7 +465,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * @return The HTTP Content-Encoding header.
      * Returns <code>null</code> if it hasn't been set.
      *
-     * @see ObjectMetadata#setContentType(String)
+     * @see ObjectMetadata#setContentEncoding(String)
      */
     public String getContentEncoding() {
         return (String)metadata.get(Headers.CONTENT_ENCODING);
@@ -493,7 +492,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11"
      *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
      *
-     * @see ObjectMetadata#getContentType()
+     * @see ObjectMetadata#getContentEncoding()
      */
     public void setContentEncoding(String encoding) {
         metadata.put(Headers.CONTENT_ENCODING, encoding);
@@ -553,8 +552,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
-     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-     * S3.
+     * field sometimes (but not always) represents the hex encoded 128-bit MD5 digest as computed by Amazon
+     * S3. See the documentation at {@link #getETag()} for more information on what the ETag field represents.
      * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
@@ -586,8 +585,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
-     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-     * S3.
+     * field sometimes (but not always) represents the hex encoded 128-bit MD5 digest as computed by Amazon
+     * S3. See the documentation at {@link #getETag()} for more information on what the ETag field represents.
      * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
@@ -654,19 +653,25 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
-     * Gets the hex encoded 128-bit MD5 digest of the associated object
-     * according to RFC 1864. This data is used as an integrity check to verify
-     * that the data received by the caller is the same data that was sent by
-     * Amazon S3.
-     * <p>
-     * This field represents the hex encoded 128-bit MD5 digest of an object's
-     * content as calculated by Amazon S3. The ContentMD5 field represents the
-     * base64 encoded 128-bit MD5 digest as calculated on the caller's side.
-     * </p>
+     * The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.
+     * The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created
+     * and how it is encrypted as described below:
+     * <ul>
+     * <li>
+     * Objects created by the PUT Object, POST Object, or Copy operation, or through the AWS Management Console, and are encrypted
+     * by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.
+     * </li>
+     * <li>
+     * Objects created by the PUT Object, POST Object, or Copy operation, or through the AWS Management Console, and are encrypted
+     * by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.
+     * </li>
+     * <li>
+     * If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of
+     * the method of encryption.
+     * </li>
+     * </ul>
      *
-     * @return The hex encoded MD5 hash of the content for the associated object
-     *         as calculated by Amazon S3.
-     *         Returns <code>null</code> if it hasn't been set yet.
+     * @return The ETag of the object or <code>null</code>if it hasn't been set yet.
      */
     public String getETag() {
         return (String)metadata.get(Headers.ETAG);
@@ -786,11 +791,9 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
-     * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
-     * expiration
-     *
-     * @param expirationTimeRuleId
-     *            The rule ID for this object's expiration
+     * For internal use only. This will *not* set the object's expiration time
+     * rule id, and is only used to set the value in the object after receiving
+     * the value in a response from S3.
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
@@ -938,11 +941,44 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
             try {
                 range = new Long[] { Long.parseLong(tokens[1]), Long.parseLong(tokens[2]) };
             } catch (NumberFormatException nfe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to parse content range. Header 'Content-Range' has corrupted data" + nfe.getMessage(),
                         nfe);
             }
         }
         return range;
+    }
+
+    /**
+     * @return The replication status of the object if it is from a bucket that
+     * is the source or destination in a cross-region replication.
+     */
+    public String getReplicationStatus() {
+        return (String) metadata.get(Headers.OBJECT_REPLICATION_STATUS);
+    }
+
+    /**
+     * The Object Lock mode applied to this object.
+     */
+    public String getObjectLockMode() {
+        return (String) metadata.get(Headers.OBJECT_LOCK_MODE);
+    }
+
+    /**
+     * The date and time this object's Object Lock will expire.
+     */
+    public Date getObjectLockRetainUntilDate() {
+        String dateStr = (String) metadata.get(Headers.OBJECT_LOCK_RETAIN_UNTIL_DATE);
+        if (dateStr != null) {
+            return DateUtils.parseISO8601Date(dateStr);
+        }
+        return null;
+    }
+
+    /**
+     * The Legal Hold status of the specified object.
+     */
+    public String getObjectLockLegalHoldStatus() {
+        return (String) metadata.get(Headers.OBJECT_LOCK_LEGAL_HOLD_STATUS);
     }
 }

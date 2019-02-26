@@ -21,14 +21,22 @@ public class MetadataConfig {
 
     private String protocol;
 
-    private String jsonContentVersion;
+    private String contentType;
 
-    public String getProtocol() { return protocol; }
+    public String getProtocol() {
+        return protocol;
+    }
 
-    public void setProtocol(final String protocol) { this.protocol = protocol; }
+    public void setProtocol(final String protocol) {
+        this.protocol = protocol;
+    }
 
-    public String getJsonContentVersion() { return jsonContentVersion; }
+    public String getContentType() {
+        return contentType;
+    }
 
-    public void setJsonContentVersion(final String jsonContentVersion) { this.jsonContentVersion = jsonContentVersion; }
+    public void setContentType(final String contentType) {
+        this.contentType = contentType;
+    }
 
 }

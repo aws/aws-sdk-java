@@ -1,37 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Contains information about a user that a managed policy is attached to.
  * </p>
  * <p>
- * This data type is used as a response element in the
- * <a>ListEntitiesForPolicy</a> action.
+ * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
  * </p>
  * <p>
- * For more information about managed policies, refer to <a href=
- * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
- * >Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+ * For more information about managed policies, refer to <a
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
+ * Policies</a> in the <i>Using IAM</i> guide.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyUser" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PolicyUser implements Serializable, Cloneable {
 
     /**
@@ -42,10 +42,9 @@ public class PolicyUser implements Serializable, Cloneable {
     private String userName;
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      */
     private String userId;
@@ -82,8 +81,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * 
      * @param userName
      *        The name (friendly name, not ARN) identifying the user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyUser withUserName(String userName) {
@@ -93,17 +91,15 @@ public class PolicyUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param userId
-     *        The stable and unique string identifying the user. For more
-     *        information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     *        The stable and unique string identifying the user. For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        the <i>IAM User Guide</i>.
      */
 
     public void setUserId(String userId) {
@@ -112,16 +108,14 @@ public class PolicyUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The stable and unique string identifying the user. For more
-     *         information about IDs, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * @return The stable and unique string identifying the user. For more information about IDs, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *         the <i>IAM User Guide</i>.
      */
 
     public String getUserId() {
@@ -130,19 +124,16 @@ public class PolicyUser implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stable and unique string identifying the user. For more information
-     * about IDs, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * The stable and unique string identifying the user. For more information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param userId
-     *        The stable and unique string identifying the user. For more
-     *        information about IDs, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
-     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The stable and unique string identifying the user. For more information about IDs, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
+     *        the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PolicyUser withUserId(String userId) {
@@ -151,8 +142,8 @@ public class PolicyUser implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,9 +154,9 @@ public class PolicyUser implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId());
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -182,13 +173,11 @@ public class PolicyUser implements Serializable, Cloneable {
         PolicyUser other = (PolicyUser) obj;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
-        if (other.getUserName() != null
-                && other.getUserName().equals(this.getUserName()) == false)
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
-        if (other.getUserId() != null
-                && other.getUserId().equals(this.getUserId()) == false)
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         return true;
     }
@@ -198,10 +187,8 @@ public class PolicyUser implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        hashCode = prime * hashCode
-                + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 
@@ -210,9 +197,8 @@ public class PolicyUser implements Serializable, Cloneable {
         try {
             return (PolicyUser) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

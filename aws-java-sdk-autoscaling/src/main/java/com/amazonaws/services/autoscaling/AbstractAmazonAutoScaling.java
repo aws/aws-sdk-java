@@ -1,28 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.autoscaling;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 
 /**
- * Abstract implementation of {@code AmazonAutoScaling}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonAutoScaling}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     protected AbstractAmazonAutoScaling() {
@@ -44,8 +44,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public AttachLoadBalancersResult attachLoadBalancers(
-            AttachLoadBalancersRequest request) {
+    public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,50 +59,52 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public CompleteLifecycleActionResult completeLifecycleAction(
-            CompleteLifecycleActionRequest request) {
+    public BatchDeleteScheduledActionResult batchDeleteScheduledAction(BatchDeleteScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateAutoScalingGroupResult createAutoScalingGroup(
-            CreateAutoScalingGroupRequest request) {
+    public BatchPutScheduledUpdateGroupActionResult batchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLaunchConfigurationResult createLaunchConfiguration(
-            CreateLaunchConfigurationRequest request) {
+    public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateOrUpdateTagsResult createOrUpdateTags(
-            CreateOrUpdateTagsRequest request) {
+    public CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(
-            DeleteAutoScalingGroupRequest request) {
+    public CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(
-            DeleteLaunchConfigurationRequest request) {
+    public CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLifecycleHookResult deleteLifecycleHook(
-            DeleteLifecycleHookRequest request) {
+    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(
-            DeleteNotificationConfigurationRequest request) {
+    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,8 +114,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DeleteScheduledActionResult deleteScheduledAction(
-            DeleteScheduledActionRequest request) {
+    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,8 +124,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeAccountLimitsResult describeAccountLimits(
-            DescribeAccountLimitsRequest request) {
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,8 +134,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeAdjustmentTypesResult describeAdjustmentTypes(
-            DescribeAdjustmentTypesRequest request) {
+    public DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -141,8 +144,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeAutoScalingGroupsResult describeAutoScalingGroups(
-            DescribeAutoScalingGroupsRequest request) {
+    public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,8 +154,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeAutoScalingInstancesResult describeAutoScalingInstances(
-            DescribeAutoScalingInstancesRequest request) {
+    public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,8 +164,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
-            DescribeAutoScalingNotificationTypesRequest request) {
+    public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,8 +174,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeLaunchConfigurationsResult describeLaunchConfigurations(
-            DescribeLaunchConfigurationsRequest request) {
+    public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,8 +184,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(
-            DescribeLifecycleHookTypesRequest request) {
+    public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,20 +194,22 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeLifecycleHooksResult describeLifecycleHooks(
-            DescribeLifecycleHooksRequest request) {
+    public DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeLoadBalancersResult describeLoadBalancers(
-            DescribeLoadBalancersRequest request) {
+    public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(
-            DescribeMetricCollectionTypesRequest request) {
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,8 +219,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeNotificationConfigurationsResult describeNotificationConfigurations(
-            DescribeNotificationConfigurationsRequest request) {
+    public DescribeNotificationConfigurationsResult describeNotificationConfigurations(DescribeNotificationConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,8 +229,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribePoliciesResult describePolicies(
-            DescribePoliciesRequest request) {
+    public DescribePoliciesResult describePolicies(DescribePoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -241,8 +239,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeScalingActivitiesResult describeScalingActivities(
-            DescribeScalingActivitiesRequest request) {
+    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -252,8 +249,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeScalingProcessTypesResult describeScalingProcessTypes(
-            DescribeScalingProcessTypesRequest request) {
+    public DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -263,8 +259,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeScheduledActionsResult describeScheduledActions(
-            DescribeScheduledActionsRequest request) {
+    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -284,8 +279,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(
-            DescribeTerminationPolicyTypesRequest request) {
+    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -300,8 +294,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DetachLoadBalancersResult detachLoadBalancers(
-            DetachLoadBalancersRequest request) {
+    public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -311,14 +309,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public DisableMetricsCollectionResult disableMetricsCollection(
-            DisableMetricsCollectionRequest request) {
+    public DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public EnableMetricsCollectionResult enableMetricsCollection(
-            EnableMetricsCollectionRequest request) {
+    public EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -338,32 +334,27 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public PutLifecycleHookResult putLifecycleHook(
-            PutLifecycleHookRequest request) {
+    public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PutNotificationConfigurationResult putNotificationConfiguration(
-            PutNotificationConfigurationRequest request) {
+    public PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PutScalingPolicyResult putScalingPolicy(
-            PutScalingPolicyRequest request) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(
-            PutScheduledUpdateGroupActionRequest request) {
+    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(
-            RecordLifecycleActionHeartbeatRequest request) {
+    public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -373,38 +364,32 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public SetDesiredCapacityResult setDesiredCapacity(
-            SetDesiredCapacityRequest request) {
+    public SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetInstanceHealthResult setInstanceHealth(
-            SetInstanceHealthRequest request) {
+    public SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetInstanceProtectionResult setInstanceProtection(
-            SetInstanceProtectionRequest request) {
+    public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SuspendProcessesResult suspendProcesses(
-            SuspendProcessesRequest request) {
+    public SuspendProcessesResult suspendProcesses(SuspendProcessesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
-            TerminateInstanceInAutoScalingGroupRequest request) {
+    public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateAutoScalingGroupResult updateAutoScalingGroup(
-            UpdateAutoScalingGroupRequest request) {
+    public UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -414,8 +399,13 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonAutoScalingWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

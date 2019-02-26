@@ -1,108 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * InvokeRequest Marshaller
+ * InvokeRequestMarshaller
  */
-public class InvokeRequestMarshaller implements
-        Marshaller<Request<InvokeRequest>, InvokeRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class InvokeRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> INVOCATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amz-Invocation-Type").build();
+    private static final MarshallingInfo<String> LOGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("X-Amz-Log-Type").build();
+    private static final MarshallingInfo<String> CLIENTCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amz-Client-Context").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final InvokeRequestMarshaller instance = new InvokeRequestMarshaller();
 
-    public InvokeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static InvokeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<InvokeRequest> marshall(InvokeRequest invokeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(InvokeRequest invokeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (invokeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<InvokeRequest> request = new DefaultRequest<InvokeRequest>(
-                invokeRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (invokeRequest.getInvocationType() != null) {
-            request.addHeader("X-Amz-Invocation-Type",
-                    StringUtils.fromString(invokeRequest.getInvocationType()));
+        try {
+            protocolMarshaller.marshall(invokeRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(invokeRequest.getInvocationType(), INVOCATIONTYPE_BINDING);
+            protocolMarshaller.marshall(invokeRequest.getLogType(), LOGTYPE_BINDING);
+            protocolMarshaller.marshall(invokeRequest.getClientContext(), CLIENTCONTEXT_BINDING);
+            protocolMarshaller.marshall(invokeRequest.getPayload(), PAYLOAD_BINDING);
+            protocolMarshaller.marshall(invokeRequest.getQualifier(), QUALIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (invokeRequest.getLogType() != null) {
-            request.addHeader("X-Amz-Log-Type",
-                    StringUtils.fromString(invokeRequest.getLogType()));
-        }
-
-        if (invokeRequest.getClientContext() != null) {
-            request.addHeader("X-Amz-Client-Context",
-                    StringUtils.fromString(invokeRequest.getClientContext()));
-        }
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/invocations";
-
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (invokeRequest.getFunctionName() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(invokeRequest
-                                .getFunctionName()), false) : "");
-        request.setResourcePath(uriResourcePath);
-
-        if (invokeRequest.getQualifier() != null) {
-            request.addParameter("Qualifier",
-                    StringUtils.fromString(invokeRequest.getQualifier()));
-        }
-
-        request.setContent(BinaryUtils.toStream(invokeRequest.getPayload()));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-        }
-
-        return request;
     }
 
 }

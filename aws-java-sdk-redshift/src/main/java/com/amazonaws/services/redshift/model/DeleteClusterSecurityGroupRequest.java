@@ -1,30 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteClusterSecurityGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -65,19 +65,17 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @param clusterSecurityGroupName
      *        The name of the cluster security group to be deleted.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteClusterSecurityGroupRequest withClusterSecurityGroupName(
-            String clusterSecurityGroupName) {
+    public DeleteClusterSecurityGroupRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
         setClusterSecurityGroupName(clusterSecurityGroupName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,8 +86,7 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: "
-                    + getClusterSecurityGroupName());
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -104,12 +101,9 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
         if (obj instanceof DeleteClusterSecurityGroupRequest == false)
             return false;
         DeleteClusterSecurityGroupRequest other = (DeleteClusterSecurityGroupRequest) obj;
-        if (other.getClusterSecurityGroupName() == null
-                ^ this.getClusterSecurityGroupName() == null)
+        if (other.getClusterSecurityGroupName() == null ^ this.getClusterSecurityGroupName() == null)
             return false;
-        if (other.getClusterSecurityGroupName() != null
-                && other.getClusterSecurityGroupName().equals(
-                        this.getClusterSecurityGroupName()) == false)
+        if (other.getClusterSecurityGroupName() != null && other.getClusterSecurityGroupName().equals(this.getClusterSecurityGroupName()) == false)
             return false;
         return true;
     }
@@ -119,10 +113,7 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getClusterSecurityGroupName() == null) ? 0
-                        : getClusterSecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getClusterSecurityGroupName() == null) ? 0 : getClusterSecurityGroupName().hashCode());
         return hashCode;
     }
 
@@ -130,4 +121,5 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
     public DeleteClusterSecurityGroupRequest clone() {
         return (DeleteClusterSecurityGroupRequest) super.clone();
     }
+
 }

@@ -1,106 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateSnapshotScheduleRequest Marshaller
+ * UpdateSnapshotScheduleRequestMarshaller
  */
-public class UpdateSnapshotScheduleRequestMarshaller
-        implements
-        Marshaller<Request<UpdateSnapshotScheduleRequest>, UpdateSnapshotScheduleRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class UpdateSnapshotScheduleRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> VOLUMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeARN").build();
+    private static final MarshallingInfo<Integer> STARTAT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StartAt").build();
+    private static final MarshallingInfo<Integer> RECURRENCEINHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecurrenceInHours").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
-    public UpdateSnapshotScheduleRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateSnapshotScheduleRequestMarshaller instance = new UpdateSnapshotScheduleRequestMarshaller();
+
+    public static UpdateSnapshotScheduleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateSnapshotScheduleRequest> marshall(
-            UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateSnapshotScheduleRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<UpdateSnapshotScheduleRequest> request = new DefaultRequest<UpdateSnapshotScheduleRequest>(
-                updateSnapshotScheduleRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target",
-                "StorageGateway_20130630.UpdateSnapshotSchedule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateSnapshotScheduleRequest.getVolumeARN() != null) {
-                jsonGenerator.writeFieldName("VolumeARN").writeValue(
-                        updateSnapshotScheduleRequest.getVolumeARN());
-            }
-            if (updateSnapshotScheduleRequest.getStartAt() != null) {
-                jsonGenerator.writeFieldName("StartAt").writeValue(
-                        updateSnapshotScheduleRequest.getStartAt());
-            }
-            if (updateSnapshotScheduleRequest.getRecurrenceInHours() != null) {
-                jsonGenerator.writeFieldName("RecurrenceInHours").writeValue(
-                        updateSnapshotScheduleRequest.getRecurrenceInHours());
-            }
-            if (updateSnapshotScheduleRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        updateSnapshotScheduleRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getVolumeARN(), VOLUMEARN_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getStartAt(), STARTAT_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getRecurrenceInHours(), RECURRENCEINHOURS_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getDescription(), DESCRIPTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

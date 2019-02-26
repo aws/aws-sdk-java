@@ -1,48 +1,46 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API
+ *      Documentation</a>
  */
-public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that you are uploading
-     * layer parts to. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The name of the repository that you are uploading layer parts to.
+     * The name of the repository to which you are uploading layer parts.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-     * associate with the layer part upload.
+     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part upload.
      * </p>
      */
     private String uploadId;
@@ -67,15 +65,13 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that you are uploading
-     * layer parts to. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that you are
-     *        uploading layer parts to. If you do not specify a registry, the
-     *        default registry is assumed.
+     *        The AWS account ID associated with the registry to which you are uploading layer parts. If you do not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -84,14 +80,12 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that you are uploading
-     * layer parts to. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that you are
-     *         uploading layer parts to. If you do not specify a registry, the
-     *         default registry is assumed.
+     * @return The AWS account ID associated with the registry to which you are uploading layer parts. If you do not
+     *         specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -100,17 +94,14 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that you are uploading
-     * layer parts to. If you do not specify a registry, the default registry is
-     * assumed.
+     * The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a
+     * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that you are
-     *        uploading layer parts to. If you do not specify a registry, the
-     *        default registry is assumed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS account ID associated with the registry to which you are uploading layer parts. If you do not
+     *        specify a registry, the default registry is assumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadLayerPartRequest withRegistryId(String registryId) {
@@ -120,11 +111,11 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that you are uploading layer parts to.
+     * The name of the repository to which you are uploading layer parts.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that you are uploading layer parts to.
+     *        The name of the repository to which you are uploading layer parts.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -133,10 +124,10 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that you are uploading layer parts to.
+     * The name of the repository to which you are uploading layer parts.
      * </p>
      * 
-     * @return The name of the repository that you are uploading layer parts to.
+     * @return The name of the repository to which you are uploading layer parts.
      */
 
     public String getRepositoryName() {
@@ -145,13 +136,12 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that you are uploading layer parts to.
+     * The name of the repository to which you are uploading layer parts.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that you are uploading layer parts to.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository to which you are uploading layer parts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadLayerPartRequest withRepositoryName(String repositoryName) {
@@ -161,13 +151,12 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-     * associate with the layer part upload.
+     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part upload.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID from a previous <a>InitiateLayerUpload</a> operation
-     *        to associate with the layer part upload.
+     *        The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part
+     *        upload.
      */
 
     public void setUploadId(String uploadId) {
@@ -176,12 +165,11 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-     * associate with the layer part upload.
+     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part upload.
      * </p>
      * 
-     * @return The upload ID from a previous <a>InitiateLayerUpload</a>
-     *         operation to associate with the layer part upload.
+     * @return The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part
+     *         upload.
      */
 
     public String getUploadId() {
@@ -190,15 +178,13 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-     * associate with the layer part upload.
+     * The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part upload.
      * </p>
      * 
      * @param uploadId
-     *        The upload ID from a previous <a>InitiateLayerUpload</a> operation
-     *        to associate with the layer part upload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with the layer part
+     *        upload.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadLayerPartRequest withUploadId(String uploadId) {
@@ -238,8 +224,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @param partFirstByte
      *        The integer value of the first byte of the layer part.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadLayerPartRequest withPartFirstByte(Long partFirstByte) {
@@ -279,8 +264,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @param partLastByte
      *        The integer value of the last byte of the layer part.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UploadLayerPartRequest withPartLastByte(Long partLastByte) {
@@ -293,17 +277,14 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * The base64-encoded layer part payload.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending
-     * this request to AWS service by default. Users of the SDK should not
-     * perform Base64 encoding on this field.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
-     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
-     * content or position of the byte buffer will be seen by all objects that
-     * have a reference to this object. It is recommended to call
-     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
-     * reading from the buffer. This behavior will be changed in a future major
-     * version of the SDK.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param layerPartBlob
@@ -319,14 +300,11 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * The base64-encoded layer part payload.
      * </p>
      * <p>
-     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
-     * changes their {@code position}. We recommend using
-     * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
-     * of the buffer with an independent {@code position}, and calling
-     * {@code get} methods on this rather than directly on the returned
-     * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the {@code position}
-     * .
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
      * </p>
      * 
      * @return The base64-encoded layer part payload.
@@ -340,22 +318,30 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * <p>
      * The base64-encoded layer part payload.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param layerPartBlob
      *        The base64-encoded layer part payload.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UploadLayerPartRequest withLayerPartBlob(
-            java.nio.ByteBuffer layerPartBlob) {
+    public UploadLayerPartRequest withLayerPartBlob(java.nio.ByteBuffer layerPartBlob) {
         setLayerPartBlob(layerPartBlob);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -366,17 +352,17 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getPartFirstByte() != null)
-            sb.append("PartFirstByte: " + getPartFirstByte() + ",");
+            sb.append("PartFirstByte: ").append(getPartFirstByte()).append(",");
         if (getPartLastByte() != null)
-            sb.append("PartLastByte: " + getPartLastByte() + ",");
+            sb.append("PartLastByte: ").append(getPartLastByte()).append(",");
         if (getLayerPartBlob() != null)
-            sb.append("LayerPartBlob: " + getLayerPartBlob());
+            sb.append("LayerPartBlob: ").append(getLayerPartBlob());
         sb.append("}");
         return sb.toString();
     }
@@ -393,34 +379,27 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
         UploadLayerPartRequest other = (UploadLayerPartRequest) obj;
         if (other.getRegistryId() == null ^ this.getRegistryId() == null)
             return false;
-        if (other.getRegistryId() != null
-                && other.getRegistryId().equals(this.getRegistryId()) == false)
+        if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getUploadId() == null ^ this.getUploadId() == null)
             return false;
-        if (other.getUploadId() != null
-                && other.getUploadId().equals(this.getUploadId()) == false)
+        if (other.getUploadId() != null && other.getUploadId().equals(this.getUploadId()) == false)
             return false;
         if (other.getPartFirstByte() == null ^ this.getPartFirstByte() == null)
             return false;
-        if (other.getPartFirstByte() != null
-                && other.getPartFirstByte().equals(this.getPartFirstByte()) == false)
+        if (other.getPartFirstByte() != null && other.getPartFirstByte().equals(this.getPartFirstByte()) == false)
             return false;
         if (other.getPartLastByte() == null ^ this.getPartLastByte() == null)
             return false;
-        if (other.getPartLastByte() != null
-                && other.getPartLastByte().equals(this.getPartLastByte()) == false)
+        if (other.getPartLastByte() != null && other.getPartLastByte().equals(this.getPartLastByte()) == false)
             return false;
         if (other.getLayerPartBlob() == null ^ this.getLayerPartBlob() == null)
             return false;
-        if (other.getLayerPartBlob() != null
-                && other.getLayerPartBlob().equals(this.getLayerPartBlob()) == false)
+        if (other.getLayerPartBlob() != null && other.getLayerPartBlob().equals(this.getLayerPartBlob()) == false)
             return false;
         return true;
     }
@@ -430,26 +409,12 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartFirstByte() == null) ? 0 : getPartFirstByte()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPartLastByte() == null) ? 0 : getPartLastByte()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLayerPartBlob() == null) ? 0 : getLayerPartBlob()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getUploadId() == null) ? 0 : getUploadId().hashCode());
+        hashCode = prime * hashCode + ((getPartFirstByte() == null) ? 0 : getPartFirstByte().hashCode());
+        hashCode = prime * hashCode + ((getPartLastByte() == null) ? 0 : getPartLastByte().hashCode());
+        hashCode = prime * hashCode + ((getLayerPartBlob() == null) ? 0 : getLayerPartBlob().hashCode());
         return hashCode;
     }
 
@@ -457,4 +422,5 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
     public UploadLayerPartRequest clone() {
         return (UploadLayerPartRequest) super.clone();
     }
+
 }

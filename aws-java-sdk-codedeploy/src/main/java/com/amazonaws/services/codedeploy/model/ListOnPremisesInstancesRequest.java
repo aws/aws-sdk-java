@@ -1,57 +1,61 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a list on-premises instances operation.
+ * Represents the input of a ListOnPremisesInstances operation.
  * </p>
- * .
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances" target="_top">AWS
+ *      API Documentation</a>
  */
-public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      */
     private String registrationStatus;
     /**
      * <p>
-     * The on-premises instance tags that will be used to restrict the
-     * corresponding on-premises instance names returned.
+     * The on-premises instance tags that are used to restrict the on-premises instance names returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> tagFilters;
     /**
      * <p>
-     * An identifier returned from the previous list on-premises instances call.
-     * It can be used to return the next set of on-premises instances in the
-     * list.
+     * An identifier returned from the previous list on-premises instances call. It can be used to return the next set
+     * of on-premises instances in the list.
      * </p>
      */
     private String nextToken;
@@ -61,19 +65,31 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
@@ -86,18 +102,30 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The registration status of the on-premises instances:</p>
      *         <ul>
-     *         <li>Deregistered: Include deregistered on-premises instances in
-     *         the resulting list.</li>
-     *         <li>Registered: Include registered on-premises instances in the
-     *         resulting list.</li>
+     *         <li>
+     *         <p>
+     *         Deregistered: Include deregistered on-premises instances in the resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Registered: Include registered on-premises instances in the resulting list.
+     *         </p>
+     *         </li>
      * @see RegistrationStatus
      */
 
@@ -110,26 +138,36 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
 
-    public ListOnPremisesInstancesRequest withRegistrationStatus(
-            String registrationStatus) {
+    public ListOnPremisesInstancesRequest withRegistrationStatus(String registrationStatus) {
         setRegistrationStatus(registrationStatus);
         return this;
     }
@@ -139,24 +177,36 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -164,38 +214,46 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the resulting list.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
 
-    public ListOnPremisesInstancesRequest withRegistrationStatus(
-            RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+    public ListOnPremisesInstancesRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 
     /**
      * <p>
-     * The on-premises instance tags that will be used to restrict the
-     * corresponding on-premises instance names returned.
+     * The on-premises instance tags that are used to restrict the on-premises instance names returned.
      * </p>
      * 
-     * @return The on-premises instance tags that will be used to restrict the
-     *         corresponding on-premises instance names returned.
+     * @return The on-premises instance tags that are used to restrict the on-premises instance names returned.
      */
 
     public java.util.List<TagFilter> getTagFilters() {
@@ -207,13 +265,11 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags that will be used to restrict the
-     * corresponding on-premises instance names returned.
+     * The on-premises instance tags that are used to restrict the on-premises instance names returned.
      * </p>
      * 
      * @param tagFilters
-     *        The on-premises instance tags that will be used to restrict the
-     *        corresponding on-premises instance names returned.
+     *        The on-premises instance tags that are used to restrict the on-premises instance names returned.
      */
 
     public void setTagFilters(java.util.Collection<TagFilter> tagFilters) {
@@ -222,34 +278,27 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.tagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>(
-                tagFilters);
+        this.tagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>(tagFilters);
     }
 
     /**
      * <p>
-     * The on-premises instance tags that will be used to restrict the
-     * corresponding on-premises instance names returned.
+     * The on-premises instance tags that are used to restrict the on-premises instance names returned.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagFilters(java.util.Collection)} or
-     * {@link #withTagFilters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagFilters(java.util.Collection)} or {@link #withTagFilters(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param tagFilters
-     *        The on-premises instance tags that will be used to restrict the
-     *        corresponding on-premises instance names returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The on-premises instance tags that are used to restrict the on-premises instance names returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListOnPremisesInstancesRequest withTagFilters(
-            TagFilter... tagFilters) {
+    public ListOnPremisesInstancesRequest withTagFilters(TagFilter... tagFilters) {
         if (this.tagFilters == null) {
-            setTagFilters(new com.amazonaws.internal.SdkInternalList<TagFilter>(
-                    tagFilters.length));
+            setTagFilters(new com.amazonaws.internal.SdkInternalList<TagFilter>(tagFilters.length));
         }
         for (TagFilter ele : tagFilters) {
             this.tagFilters.add(ele);
@@ -259,34 +308,28 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags that will be used to restrict the
-     * corresponding on-premises instance names returned.
+     * The on-premises instance tags that are used to restrict the on-premises instance names returned.
      * </p>
      * 
      * @param tagFilters
-     *        The on-premises instance tags that will be used to restrict the
-     *        corresponding on-premises instance names returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The on-premises instance tags that are used to restrict the on-premises instance names returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListOnPremisesInstancesRequest withTagFilters(
-            java.util.Collection<TagFilter> tagFilters) {
+    public ListOnPremisesInstancesRequest withTagFilters(java.util.Collection<TagFilter> tagFilters) {
         setTagFilters(tagFilters);
         return this;
     }
 
     /**
      * <p>
-     * An identifier returned from the previous list on-premises instances call.
-     * It can be used to return the next set of on-premises instances in the
-     * list.
+     * An identifier returned from the previous list on-premises instances call. It can be used to return the next set
+     * of on-premises instances in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list on-premises
-     *        instances call. It can be used to return the next set of
-     *        on-premises instances in the list.
+     *        An identifier returned from the previous list on-premises instances call. It can be used to return the
+     *        next set of on-premises instances in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -295,14 +338,12 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier returned from the previous list on-premises instances call.
-     * It can be used to return the next set of on-premises instances in the
-     * list.
+     * An identifier returned from the previous list on-premises instances call. It can be used to return the next set
+     * of on-premises instances in the list.
      * </p>
      * 
-     * @return An identifier returned from the previous list on-premises
-     *         instances call. It can be used to return the next set of
-     *         on-premises instances in the list.
+     * @return An identifier returned from the previous list on-premises instances call. It can be used to return the
+     *         next set of on-premises instances in the list.
      */
 
     public String getNextToken() {
@@ -311,17 +352,14 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier returned from the previous list on-premises instances call.
-     * It can be used to return the next set of on-premises instances in the
-     * list.
+     * An identifier returned from the previous list on-premises instances call. It can be used to return the next set
+     * of on-premises instances in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list on-premises
-     *        instances call. It can be used to return the next set of
-     *        on-premises instances in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An identifier returned from the previous list on-premises instances call. It can be used to return the
+     *        next set of on-premises instances in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListOnPremisesInstancesRequest withNextToken(String nextToken) {
@@ -330,8 +368,8 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -342,11 +380,11 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistrationStatus() != null)
-            sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");
+            sb.append("RegistrationStatus: ").append(getRegistrationStatus()).append(",");
         if (getTagFilters() != null)
-            sb.append("TagFilters: " + getTagFilters() + ",");
+            sb.append("TagFilters: ").append(getTagFilters()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -361,22 +399,17 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
         if (obj instanceof ListOnPremisesInstancesRequest == false)
             return false;
         ListOnPremisesInstancesRequest other = (ListOnPremisesInstancesRequest) obj;
-        if (other.getRegistrationStatus() == null
-                ^ this.getRegistrationStatus() == null)
+        if (other.getRegistrationStatus() == null ^ this.getRegistrationStatus() == null)
             return false;
-        if (other.getRegistrationStatus() != null
-                && other.getRegistrationStatus().equals(
-                        this.getRegistrationStatus()) == false)
+        if (other.getRegistrationStatus() != null && other.getRegistrationStatus().equals(this.getRegistrationStatus()) == false)
             return false;
         if (other.getTagFilters() == null ^ this.getTagFilters() == null)
             return false;
-        if (other.getTagFilters() != null
-                && other.getTagFilters().equals(this.getTagFilters()) == false)
+        if (other.getTagFilters() != null && other.getTagFilters().equals(this.getTagFilters()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -386,14 +419,9 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRegistrationStatus() == null) ? 0
-                        : getRegistrationStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagFilters() == null) ? 0 : getTagFilters().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationStatus() == null) ? 0 : getRegistrationStatus().hashCode());
+        hashCode = prime * hashCode + ((getTagFilters() == null) ? 0 : getTagFilters().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -401,4 +429,5 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
     public ListOnPremisesInstancesRequest clone() {
         return (ListOnPremisesInstancesRequest) super.clone();
     }
+
 }

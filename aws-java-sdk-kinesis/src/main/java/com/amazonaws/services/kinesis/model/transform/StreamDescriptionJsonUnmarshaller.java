@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * StreamDescription JSON Unmarshaller
  */
-public class StreamDescriptionJsonUnmarshaller implements
-        Unmarshaller<StreamDescription, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDescription, JsonUnmarshallerContext> {
 
-    public StreamDescription unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public StreamDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         StreamDescription streamDescription = new StreamDescription();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class StreamDescriptionJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,47 +50,47 @@ public class StreamDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamARN(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    streamDescription.setStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setShards(new ListUnmarshaller<Shard>(
-                            ShardJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    streamDescription.setShards(new ListUnmarshaller<Shard>(ShardJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("HasMoreShards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setHasMoreShards(context.getUnmarshaller(
-                            Boolean.class).unmarshall(context));
+                    streamDescription.setHasMoreShards(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionPeriodHours", targetDepth)) {
                     context.nextToken();
-                    streamDescription
-                            .setRetentionPeriodHours(context.getUnmarshaller(
-                                    Integer.class).unmarshall(context));
+                    streamDescription.setRetentionPeriodHours(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("StreamCreationTimestamp", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setStreamCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();
-                    streamDescription
-                            .setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(
-                                    EnhancedMetricsJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    streamDescription.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("EncryptionType", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KeyId", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

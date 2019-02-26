@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask" target="_top">AWS API
+ *      Documentation</a>
  */
-public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -36,59 +36,54 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
     /**
      * <p>
-     * Identity of the decider making the request, which is recorded in the
-     * DecisionTaskStarted event in the workflow history. This enables
-     * diagnostic tracing when problems arise. The form of this identity is user
-     * defined.
+     * Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow
+     * history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
      * </p>
      */
     private String identity;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be
-     * used with <a>GetWorkflowExecutionHistory</a> to get the next page. You
-     * must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records.
-     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will
-     * not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      */
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      */
     private Integer maximumPageSize;
     /**
      * <p>
-     * When set to <code>true</code>, returns the events in reverse order. By
-     * default the results are returned in ascending order of the
-     * <code>eventTimestamp</code> of the events.
+     * When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     * ascending order of the <code>eventTimestamp</code> of the events.
      * </p>
      */
     private Boolean reverseOrder;
@@ -125,8 +120,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
      * 
      * @param domain
      *        The name of the domain containing the task lists to poll.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForDecisionTaskRequest withDomain(String domain) {
@@ -139,20 +133,18 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It
-     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     *        <code>|</code> (vertical bar), or any control characters
-     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *        literal string quotarnquot.
+     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -164,19 +156,17 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for decision tasks.</p>
      *         <p>
-     *         The specified string must not start or end with whitespace. It
-     *         must not contain a <code>:</code> (colon), <code>/</code>
-     *         (slash), <code>|</code> (vertical bar), or any control characters
-     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *         literal string quotarnquot.
+     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -188,22 +178,19 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not
-     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It
-     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     *        <code>|</code> (vertical bar), or any control characters
-     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
-     *        literal string quotarnquot.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForDecisionTaskRequest withTaskList(TaskList taskList) {
@@ -213,17 +200,14 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Identity of the decider making the request, which is recorded in the
-     * DecisionTaskStarted event in the workflow history. This enables
-     * diagnostic tracing when problems arise. The form of this identity is user
-     * defined.
+     * Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow
+     * history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
      * </p>
      * 
      * @param identity
-     *        Identity of the decider making the request, which is recorded in
-     *        the DecisionTaskStarted event in the workflow history. This
-     *        enables diagnostic tracing when problems arise. The form of this
-     *        identity is user defined.
+     *        Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the
+     *        workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user
+     *        defined.
      */
 
     public void setIdentity(String identity) {
@@ -232,16 +216,13 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Identity of the decider making the request, which is recorded in the
-     * DecisionTaskStarted event in the workflow history. This enables
-     * diagnostic tracing when problems arise. The form of this identity is user
-     * defined.
+     * Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow
+     * history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
      * </p>
      * 
-     * @return Identity of the decider making the request, which is recorded in
-     *         the DecisionTaskStarted event in the workflow history. This
-     *         enables diagnostic tracing when problems arise. The form of this
-     *         identity is user defined.
+     * @return Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the
+     *         workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user
+     *         defined.
      */
 
     public String getIdentity() {
@@ -250,19 +231,15 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Identity of the decider making the request, which is recorded in the
-     * DecisionTaskStarted event in the workflow history. This enables
-     * diagnostic tracing when problems arise. The form of this identity is user
-     * defined.
+     * Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow
+     * history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
      * </p>
      * 
      * @param identity
-     *        Identity of the decider making the request, which is recorded in
-     *        the DecisionTaskStarted event in the workflow history. This
-     *        enables diagnostic tracing when problems arise. The form of this
-     *        identity is user defined.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the
+     *        workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user
+     *        defined.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForDecisionTaskRequest withIdentity(String identity) {
@@ -272,38 +249,36 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be
-     * used with <a>GetWorkflowExecutionHistory</a> to get the next page. You
-     * must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records.
-     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will
-     * not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
-     *        <note>The <code>nextPageToken</code> returned by this action
-     *        cannot be used with <a>GetWorkflowExecutionHistory</a> to get the
-     *        next page. You must call <a>PollForDecisionTask</a> again (with
-     *        the <code>nextPageToken</code>) to retrieve the next page of
-     *        history records. Calling <a>PollForDecisionTask</a> with a
-     *        <code>nextPageToken</code> will not return a new decision task.
+     *        <note>
+     *        <p>
+     *        The <code>nextPageToken</code> returned by this action cannot be used with
+     *        <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
+     *        (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
+     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *        </p>
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -312,37 +287,35 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be
-     * used with <a>GetWorkflowExecutionHistory</a> to get the next page. You
-     * must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records.
-     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will
-     * not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call,
-     *         there are more results available. To retrieve the next page of
-     *         results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments
-     *         unchanged.</p>
+     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *         retrieve the next page of results, make the call again using the returned token in
+     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *         <p>
-     *         The configured <code>maximumPageSize</code> determines how many
-     *         results can be returned in a single call.
+     *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *         </p>
-     *         <note>The <code>nextPageToken</code> returned by this action
-     *         cannot be used with <a>GetWorkflowExecutionHistory</a> to get the
-     *         next page. You must call <a>PollForDecisionTask</a> again (with
-     *         the <code>nextPageToken</code>) to retrieve the next page of
-     *         history records. Calling <a>PollForDecisionTask</a> with a
-     *         <code>nextPageToken</code> will not return a new decision task.
+     *         <note>
+     *         <p>
+     *         The <code>nextPageToken</code> returned by this action cannot be used with
+     *         <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
+     *         (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
+     *         <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *         </p>
      */
 
     public String getNextPageToken() {
@@ -351,40 +324,37 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there
-     * are more results available. To retrieve the next page of results, make
-     * the call again using the returned token in <code>nextPageToken</code>.
-     * Keep all other arguments unchanged.
+     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
+     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
+     * other arguments unchanged.
      * </p>
      * <p>
-     * The configured <code>maximumPageSize</code> determines how many results
-     * can be returned in a single call.
+     * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be
-     * used with <a>GetWorkflowExecutionHistory</a> to get the next page. You
-     * must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records.
-     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will
-     * not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call,
-     *        there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
+     *        retrieve the next page of results, make the call again using the returned token in
+     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
      *        <p>
-     *        The configured <code>maximumPageSize</code> determines how many
-     *        results can be returned in a single call.
+     *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
-     *        <note>The <code>nextPageToken</code> returned by this action
-     *        cannot be used with <a>GetWorkflowExecutionHistory</a> to get the
-     *        next page. You must call <a>PollForDecisionTask</a> again (with
-     *        the <code>nextPageToken</code>) to retrieve the next page of
-     *        history records. Calling <a>PollForDecisionTask</a> with a
-     *        <code>nextPageToken</code> will not return a new decision task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <note>
+     *        <p>
+     *        The <code>nextPageToken</code> returned by this action cannot be used with
+     *        <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
+     *        (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
+     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForDecisionTaskRequest withNextPageToken(String nextPageToken) {
@@ -394,25 +364,22 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call.
-     *        <code>nextPageToken</code> can be used to obtain futher pages of
-     *        results. The default is 1000, which is the maximum allowed page
-     *        size. You can, however, specify a page size <i>smaller</i> than
-     *        the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned
-     *        per call may be fewer than the specified maximum.
+     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        specified maximum.
      */
 
     public void setMaximumPageSize(Integer maximumPageSize) {
@@ -421,24 +388,21 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call.
-     *         <code>nextPageToken</code> can be used to obtain futher pages of
-     *         results. The default is 1000, which is the maximum allowed page
-     *         size. You can, however, specify a page size <i>smaller</i> than
-     *         the maximum.</p>
+     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
+     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
+     *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
-     *         This is an upper limit only; the actual number of results
-     *         returned per call may be fewer than the specified maximum.
+     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *         specified maximum.
      */
 
     public Integer getMaximumPageSize() {
@@ -447,46 +411,39 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results.
-     * The default is 1000, which is the maximum allowed page size. You can,
-     * however, specify a page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per
-     * call may be fewer than the specified maximum.
+     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * maximum.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call.
-     *        <code>nextPageToken</code> can be used to obtain futher pages of
-     *        results. The default is 1000, which is the maximum allowed page
-     *        size. You can, however, specify a page size <i>smaller</i> than
-     *        the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned
-     *        per call may be fewer than the specified maximum.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        specified maximum.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PollForDecisionTaskRequest withMaximumPageSize(
-            Integer maximumPageSize) {
+    public PollForDecisionTaskRequest withMaximumPageSize(Integer maximumPageSize) {
         setMaximumPageSize(maximumPageSize);
         return this;
     }
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the events in reverse order. By
-     * default the results are returned in ascending order of the
-     * <code>eventTimestamp</code> of the events.
+     * When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     * ascending order of the <code>eventTimestamp</code> of the events.
      * </p>
      * 
      * @param reverseOrder
-     *        When set to <code>true</code>, returns the events in reverse
-     *        order. By default the results are returned in ascending order of
-     *        the <code>eventTimestamp</code> of the events.
+     *        When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     *        ascending order of the <code>eventTimestamp</code> of the events.
      */
 
     public void setReverseOrder(Boolean reverseOrder) {
@@ -495,14 +452,12 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the events in reverse order. By
-     * default the results are returned in ascending order of the
-     * <code>eventTimestamp</code> of the events.
+     * When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     * ascending order of the <code>eventTimestamp</code> of the events.
      * </p>
      * 
-     * @return When set to <code>true</code>, returns the events in reverse
-     *         order. By default the results are returned in ascending order of
-     *         the <code>eventTimestamp</code> of the events.
+     * @return When set to <code>true</code>, returns the events in reverse order. By default the results are returned
+     *         in ascending order of the <code>eventTimestamp</code> of the events.
      */
 
     public Boolean getReverseOrder() {
@@ -511,17 +466,14 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the events in reverse order. By
-     * default the results are returned in ascending order of the
-     * <code>eventTimestamp</code> of the events.
+     * When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     * ascending order of the <code>eventTimestamp</code> of the events.
      * </p>
      * 
      * @param reverseOrder
-     *        When set to <code>true</code>, returns the events in reverse
-     *        order. By default the results are returned in ascending order of
-     *        the <code>eventTimestamp</code> of the events.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     *        ascending order of the <code>eventTimestamp</code> of the events.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PollForDecisionTaskRequest withReverseOrder(Boolean reverseOrder) {
@@ -531,14 +483,12 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * When set to <code>true</code>, returns the events in reverse order. By
-     * default the results are returned in ascending order of the
-     * <code>eventTimestamp</code> of the events.
+     * When set to <code>true</code>, returns the events in reverse order. By default the results are returned in
+     * ascending order of the <code>eventTimestamp</code> of the events.
      * </p>
      * 
-     * @return When set to <code>true</code>, returns the events in reverse
-     *         order. By default the results are returned in ascending order of
-     *         the <code>eventTimestamp</code> of the events.
+     * @return When set to <code>true</code>, returns the events in reverse order. By default the results are returned
+     *         in ascending order of the <code>eventTimestamp</code> of the events.
      */
 
     public Boolean isReverseOrder() {
@@ -546,8 +496,8 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -558,17 +508,17 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getMaximumPageSize() != null)
-            sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
+            sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder());
+            sb.append("ReverseOrder: ").append(getReverseOrder());
         sb.append("}");
         return sb.toString();
     }
@@ -585,34 +535,27 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
         PollForDecisionTaskRequest other = (PollForDecisionTaskRequest) obj;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
-        if (other.getDomain() != null
-                && other.getDomain().equals(this.getDomain()) == false)
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getTaskList() == null ^ this.getTaskList() == null)
             return false;
-        if (other.getTaskList() != null
-                && other.getTaskList().equals(this.getTaskList()) == false)
+        if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false)
             return false;
         if (other.getIdentity() == null ^ this.getIdentity() == null)
             return false;
-        if (other.getIdentity() != null
-                && other.getIdentity().equals(this.getIdentity()) == false)
+        if (other.getIdentity() != null && other.getIdentity().equals(this.getIdentity()) == false)
             return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
-        if (other.getNextPageToken() != null
-                && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
-        if (other.getMaximumPageSize() == null
-                ^ this.getMaximumPageSize() == null)
+        if (other.getMaximumPageSize() == null ^ this.getMaximumPageSize() == null)
             return false;
-        if (other.getMaximumPageSize() != null
-                && other.getMaximumPageSize().equals(this.getMaximumPageSize()) == false)
+        if (other.getMaximumPageSize() != null && other.getMaximumPageSize().equals(this.getMaximumPageSize()) == false)
             return false;
         if (other.getReverseOrder() == null ^ this.getReverseOrder() == null)
             return false;
-        if (other.getReverseOrder() != null
-                && other.getReverseOrder().equals(this.getReverseOrder()) == false)
+        if (other.getReverseOrder() != null && other.getReverseOrder().equals(this.getReverseOrder()) == false)
             return false;
         return true;
     }
@@ -622,24 +565,12 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomain() == null) ? 0 : getDomain().hashCode());
-        hashCode = prime * hashCode
-                + ((getTaskList() == null) ? 0 : getTaskList().hashCode());
-        hashCode = prime * hashCode
-                + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextPageToken() == null) ? 0 : getNextPageToken()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaximumPageSize() == null) ? 0 : getMaximumPageSize()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReverseOrder() == null) ? 0 : getReverseOrder()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode());
+        hashCode = prime * hashCode + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
+        hashCode = prime * hashCode + ((getMaximumPageSize() == null) ? 0 : getMaximumPageSize().hashCode());
+        hashCode = prime * hashCode + ((getReverseOrder() == null) ? 0 : getReverseOrder().hashCode());
         return hashCode;
     }
 
@@ -647,4 +578,5 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest
     public PollForDecisionTaskRequest clone() {
         return (PollForDecisionTaskRequest) super.clone();
     }
+
 }

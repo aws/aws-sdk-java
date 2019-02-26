@@ -35,10 +35,10 @@ import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.ImmutableMapParameter;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Map;
 
@@ -50,12 +50,11 @@ class SdkStructuredCborFactory {
 
     private static final JsonFactory CBOR_FACTORY = new CBORFactory();
 
-    private static final String CONTENT_TYPE_CBOR_PREFIX = "application/x-amz-cbor-";
-
     /**
      * cbor unmarshallers for scalar types.
      */
-    private static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> CBOR_SCALAR_UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
+    private static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> CBOR_SCALAR_UNMARSHALLERS =
+            new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
             .put(String.class, StringCborUnmarshaller.getInstance())
             .put(Double.class, DoubleCborUnmarshaller.getInstance())
             .put(Integer.class, IntegerCborUnmarshaller.getInstance())
@@ -70,7 +69,8 @@ class SdkStructuredCborFactory {
             .put(Short.class, ShortCborUnmarshaller.getInstance()).build();
 
     public static final SdkStructuredJsonFactory SDK_CBOR_FACTORY = new SdkStructuredJsonFactoryImpl(
-            CONTENT_TYPE_CBOR_PREFIX, CBOR_FACTORY, CBOR_SCALAR_UNMARSHALLERS) {
+            CBOR_FACTORY, CBOR_SCALAR_UNMARSHALLERS,
+            Collections.<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>>emptyMap()) {
         @Override
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {

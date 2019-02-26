@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -55,7 +55,6 @@ import com.amazonaws.util.StringInputStream;
 public class RetryPolicyTestBase {
     
     protected static ClientConfiguration clientConfiguration = new ClientConfiguration();
-    protected static AmazonHttpClient testedClient = new AmazonHttpClient(clientConfiguration);
     protected static final AmazonWebServiceRequest originalRequest = new TestAmazonWebServiceRequest();
     protected static final HttpResponseHandler<AmazonServiceException> errorResponseHandler = new TestHttpResponseHandler();
  

@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,8 +26,8 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * Command JSON Unmarshaller
  */
-public class CommandJsonUnmarshaller implements
-        Unmarshaller<Command, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmarshallerContext> {
 
     public Command unmarshall(JsonUnmarshallerContext context) throws Exception {
         Command command = new Command();
@@ -44,8 +39,9 @@ public class CommandJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -54,58 +50,46 @@ public class CommandJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
                     context.nextToken();
-                    command.setCommandId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setCommandId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    command.setInstanceId(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeploymentId", targetDepth)) {
                     context.nextToken();
-                    command.setDeploymentId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    command.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    command.setCreatedAt(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AcknowledgedAt", targetDepth)) {
                     context.nextToken();
-                    command.setAcknowledgedAt(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    command.setAcknowledgedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
                     context.nextToken();
-                    command.setCompletedAt(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    command.setCompletedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    command.setStatus(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExitCode", targetDepth)) {
                     context.nextToken();
-                    command.setExitCode(context.getUnmarshaller(Integer.class)
-                            .unmarshall(context));
+                    command.setExitCode(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUrl", targetDepth)) {
                     context.nextToken();
-                    command.setLogUrl(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setLogUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    command.setType(context.getUnmarshaller(String.class)
-                            .unmarshall(context));
+                    command.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DeleteNotificationConfigurationRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteNotificationConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +33,7 @@ public class DeleteNotificationConfigurationRequest extends
     private String autoScalingGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      */
     private String topicARN;
@@ -71,25 +70,21 @@ public class DeleteNotificationConfigurationRequest extends
      * 
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteNotificationConfigurationRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DeleteNotificationConfigurationRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *        Service (SNS) topic.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public void setTopicARN(String topicARN) {
@@ -98,12 +93,10 @@ public class DeleteNotificationConfigurationRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public String getTopicARN() {
@@ -112,15 +105,12 @@ public class DeleteNotificationConfigurationRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *        Service (SNS) topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteNotificationConfigurationRequest withTopicARN(String topicARN) {
@@ -129,8 +119,8 @@ public class DeleteNotificationConfigurationRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -141,10 +131,9 @@ public class DeleteNotificationConfigurationRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getTopicARN() != null)
-            sb.append("TopicARN: " + getTopicARN());
+            sb.append("TopicARN: ").append(getTopicARN());
         sb.append("}");
         return sb.toString();
     }
@@ -159,17 +148,13 @@ public class DeleteNotificationConfigurationRequest extends
         if (obj instanceof DeleteNotificationConfigurationRequest == false)
             return false;
         DeleteNotificationConfigurationRequest other = (DeleteNotificationConfigurationRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
         if (other.getTopicARN() == null ^ this.getTopicARN() == null)
             return false;
-        if (other.getTopicARN() != null
-                && other.getTopicARN().equals(this.getTopicARN()) == false)
+        if (other.getTopicARN() != null && other.getTopicARN().equals(this.getTopicARN()) == false)
             return false;
         return true;
     }
@@ -179,12 +164,8 @@ public class DeleteNotificationConfigurationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime * hashCode
-                + ((getTopicARN() == null) ? 0 : getTopicARN().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTopicARN() == null) ? 0 : getTopicARN().hashCode());
         return hashCode;
     }
 
@@ -192,4 +173,5 @@ public class DeleteNotificationConfigurationRequest extends
     public DeleteNotificationConfigurationRequest clone() {
         return (DeleteNotificationConfigurationRequest) super.clone();
     }
+
 }

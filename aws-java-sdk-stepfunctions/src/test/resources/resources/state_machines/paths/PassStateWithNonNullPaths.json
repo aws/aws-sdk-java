@@ -1,0 +1,13 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Pass",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "Parameters": "foo",
+      "End": true
+    }
+  }
+}

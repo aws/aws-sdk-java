@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * This data type is used in the <a>AssessmentTemplateFilter</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DurationRange" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DurationRange implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DurationRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -33,8 +36,7 @@ public class DurationRange implements Serializable, Cloneable {
     private Integer minSeconds;
     /**
      * <p>
-     * The maximum value of the duration range. Must be less than or equal to
-     * 604800 seconds (1 week).
+     * The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      * </p>
      */
     private Integer maxSeconds;
@@ -45,8 +47,7 @@ public class DurationRange implements Serializable, Cloneable {
      * </p>
      * 
      * @param minSeconds
-     *        The minimum value of the duration range. Must be greater than
-     *        zero.
+     *        The minimum value of the duration range. Must be greater than zero.
      */
 
     public void setMinSeconds(Integer minSeconds) {
@@ -58,8 +59,7 @@ public class DurationRange implements Serializable, Cloneable {
      * The minimum value of the duration range. Must be greater than zero.
      * </p>
      * 
-     * @return The minimum value of the duration range. Must be greater than
-     *         zero.
+     * @return The minimum value of the duration range. Must be greater than zero.
      */
 
     public Integer getMinSeconds() {
@@ -72,10 +72,8 @@ public class DurationRange implements Serializable, Cloneable {
      * </p>
      * 
      * @param minSeconds
-     *        The minimum value of the duration range. Must be greater than
-     *        zero.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The minimum value of the duration range. Must be greater than zero.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DurationRange withMinSeconds(Integer minSeconds) {
@@ -85,13 +83,11 @@ public class DurationRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value of the duration range. Must be less than or equal to
-     * 604800 seconds (1 week).
+     * The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      * </p>
      * 
      * @param maxSeconds
-     *        The maximum value of the duration range. Must be less than or
-     *        equal to 604800 seconds (1 week).
+     *        The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      */
 
     public void setMaxSeconds(Integer maxSeconds) {
@@ -100,12 +96,10 @@ public class DurationRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value of the duration range. Must be less than or equal to
-     * 604800 seconds (1 week).
+     * The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      * </p>
      * 
-     * @return The maximum value of the duration range. Must be less than or
-     *         equal to 604800 seconds (1 week).
+     * @return The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      */
 
     public Integer getMaxSeconds() {
@@ -114,15 +108,12 @@ public class DurationRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum value of the duration range. Must be less than or equal to
-     * 604800 seconds (1 week).
+     * The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
      * </p>
      * 
      * @param maxSeconds
-     *        The maximum value of the duration range. Must be less than or
-     *        equal to 604800 seconds (1 week).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DurationRange withMaxSeconds(Integer maxSeconds) {
@@ -131,8 +122,8 @@ public class DurationRange implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,9 +134,9 @@ public class DurationRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinSeconds() != null)
-            sb.append("MinSeconds: " + getMinSeconds() + ",");
+            sb.append("MinSeconds: ").append(getMinSeconds()).append(",");
         if (getMaxSeconds() != null)
-            sb.append("MaxSeconds: " + getMaxSeconds());
+            sb.append("MaxSeconds: ").append(getMaxSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -162,13 +153,11 @@ public class DurationRange implements Serializable, Cloneable {
         DurationRange other = (DurationRange) obj;
         if (other.getMinSeconds() == null ^ this.getMinSeconds() == null)
             return false;
-        if (other.getMinSeconds() != null
-                && other.getMinSeconds().equals(this.getMinSeconds()) == false)
+        if (other.getMinSeconds() != null && other.getMinSeconds().equals(this.getMinSeconds()) == false)
             return false;
         if (other.getMaxSeconds() == null ^ this.getMaxSeconds() == null)
             return false;
-        if (other.getMaxSeconds() != null
-                && other.getMaxSeconds().equals(this.getMaxSeconds()) == false)
+        if (other.getMaxSeconds() != null && other.getMaxSeconds().equals(this.getMaxSeconds()) == false)
             return false;
         return true;
     }
@@ -178,10 +167,8 @@ public class DurationRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMinSeconds() == null) ? 0 : getMinSeconds().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxSeconds() == null) ? 0 : getMaxSeconds().hashCode());
+        hashCode = prime * hashCode + ((getMinSeconds() == null) ? 0 : getMinSeconds().hashCode());
+        hashCode = prime * hashCode + ((getMaxSeconds() == null) ? 0 : getMaxSeconds().hashCode());
         return hashCode;
     }
 
@@ -190,9 +177,13 @@ public class DurationRange implements Serializable, Cloneable {
         try {
             return (DurationRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.DurationRangeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

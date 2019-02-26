@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the request to update the user pool.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool" target="_top">AWS API
+ *      Documentation</a>
  */
-public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,15 +42,14 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * The AWS Lambda configuration information from the request to update the
-     * user pool.
+     * The AWS Lambda configuration information from the request to update the user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      */
     private java.util.List<String> autoVerifiedAttributes;
@@ -67,10 +67,16 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
     private String emailVerificationMessage;
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verification message.
      * </p>
      */
     private String emailVerificationSubject;
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     */
+    private VerificationMessageTemplateType verificationMessageTemplate;
     /**
      * <p>
      * The contents of the SMS authentication message.
@@ -82,16 +88,64 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      */
     private String mfaConfiguration;
+    /**
+     * <p>
+     * Device configuration.
+     * </p>
+     */
+    private DeviceConfigurationType deviceConfiguration;
+    /**
+     * <p>
+     * Email configuration.
+     * </p>
+     */
+    private EmailConfigurationType emailConfiguration;
+    /**
+     * <p>
+     * SMS configuration.
+     * </p>
+     */
+    private SmsConfigurationType smsConfiguration;
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     */
+    private java.util.Map<String, String> userPoolTags;
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
+     * </p>
+     */
+    private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     */
+    private UserPoolAddOnsType userPoolAddOns;
 
     /**
      * <p>
@@ -125,8 +179,7 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * 
      * @param userPoolId
      *        The user pool ID for the user pool you want to update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserPoolRequest withUserPoolId(String userPoolId) {
@@ -166,8 +219,7 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * 
      * @param policies
      *        A container with the policies you wish to update in a user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserPoolRequest withPolicies(UserPoolPolicyType policies) {
@@ -177,13 +229,11 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS Lambda configuration information from the request to update the
-     * user pool.
+     * The AWS Lambda configuration information from the request to update the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        The AWS Lambda configuration information from the request to
-     *        update the user pool.
+     *        The AWS Lambda configuration information from the request to update the user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -192,12 +242,10 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS Lambda configuration information from the request to update the
-     * user pool.
+     * The AWS Lambda configuration information from the request to update the user pool.
      * </p>
      * 
-     * @return The AWS Lambda configuration information from the request to
-     *         update the user pool.
+     * @return The AWS Lambda configuration information from the request to update the user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -206,15 +254,12 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS Lambda configuration information from the request to update the
-     * user pool.
+     * The AWS Lambda configuration information from the request to update the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        The AWS Lambda configuration information from the request to
-     *        update the user pool.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The AWS Lambda configuration information from the request to update the user pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserPoolRequest withLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -224,12 +269,12 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      * 
-     * @return The attributes that are automatically verified when the Amazon
-     *         Cognito service makes a request to update user pools.
+     * @return The attributes that are automatically verified when the Amazon Cognito service makes a request to update
+     *         user pools.
      * @see VerifiedAttributeType
      */
 
@@ -239,52 +284,46 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon
-     *        Cognito service makes a request to update user pools.
+     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
+     *        user pools.
      * @see VerifiedAttributeType
      */
 
-    public void setAutoVerifiedAttributes(
-            java.util.Collection<String> autoVerifiedAttributes) {
+    public void setAutoVerifiedAttributes(java.util.Collection<String> autoVerifiedAttributes) {
         if (autoVerifiedAttributes == null) {
             this.autoVerifiedAttributes = null;
             return;
         }
 
-        this.autoVerifiedAttributes = new java.util.ArrayList<String>(
-                autoVerifiedAttributes);
+        this.autoVerifiedAttributes = new java.util.ArrayList<String>(autoVerifiedAttributes);
     }
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAutoVerifiedAttributes(java.util.Collection)} or
-     * {@link #withAutoVerifiedAttributes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoVerifiedAttributes(java.util.Collection)} or
+     * {@link #withAutoVerifiedAttributes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon
-     *        Cognito service makes a request to update user pools.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
+     *        user pools.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UpdateUserPoolRequest withAutoVerifiedAttributes(
-            String... autoVerifiedAttributes) {
+    public UpdateUserPoolRequest withAutoVerifiedAttributes(String... autoVerifiedAttributes) {
         if (this.autoVerifiedAttributes == null) {
-            setAutoVerifiedAttributes(new java.util.ArrayList<String>(
-                    autoVerifiedAttributes.length));
+            setAutoVerifiedAttributes(new java.util.ArrayList<String>(autoVerifiedAttributes.length));
         }
         for (String ele : autoVerifiedAttributes) {
             this.autoVerifiedAttributes.add(ele);
@@ -294,42 +333,37 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon
-     *        Cognito service makes a request to update user pools.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
+     *        user pools.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UpdateUserPoolRequest withAutoVerifiedAttributes(
-            java.util.Collection<String> autoVerifiedAttributes) {
+    public UpdateUserPoolRequest withAutoVerifiedAttributes(java.util.Collection<String> autoVerifiedAttributes) {
         setAutoVerifiedAttributes(autoVerifiedAttributes);
         return this;
     }
 
     /**
      * <p>
-     * The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.
+     * The attributes that are automatically verified when the Amazon Cognito service makes a request to update user
+     * pools.
      * </p>
      * 
      * @param autoVerifiedAttributes
-     *        The attributes that are automatically verified when the Amazon
-     *        Cognito service makes a request to update user pools.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The attributes that are automatically verified when the Amazon Cognito service makes a request to update
+     *        user pools.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAttributeType
      */
 
-    public UpdateUserPoolRequest withAutoVerifiedAttributes(
-            VerifiedAttributeType... autoVerifiedAttributes) {
-        java.util.ArrayList<String> autoVerifiedAttributesCopy = new java.util.ArrayList<String>(
-                autoVerifiedAttributes.length);
+    public UpdateUserPoolRequest withAutoVerifiedAttributes(VerifiedAttributeType... autoVerifiedAttributes) {
+        java.util.ArrayList<String> autoVerifiedAttributesCopy = new java.util.ArrayList<String>(autoVerifiedAttributes.length);
         for (VerifiedAttributeType value : autoVerifiedAttributes) {
             autoVerifiedAttributesCopy.add(value.toString());
         }
@@ -373,12 +407,10 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * 
      * @param smsVerificationMessage
      *        A container with information about the SMS verification message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserPoolRequest withSmsVerificationMessage(
-            String smsVerificationMessage) {
+    public UpdateUserPoolRequest withSmsVerificationMessage(String smsVerificationMessage) {
         setSmsVerificationMessage(smsVerificationMessage);
         return this;
     }
@@ -415,23 +447,21 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * 
      * @param emailVerificationMessage
      *        The contents of the email verification message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserPoolRequest withEmailVerificationMessage(
-            String emailVerificationMessage) {
+    public UpdateUserPoolRequest withEmailVerificationMessage(String emailVerificationMessage) {
         setEmailVerificationMessage(emailVerificationMessage);
         return this;
     }
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message
+     *        The subject of the email verification message.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -440,10 +470,10 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verification message.
      * </p>
      * 
-     * @return The subject of the email verfication message
+     * @return The subject of the email verification message.
      */
 
     public String getEmailVerificationSubject() {
@@ -452,18 +482,56 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The subject of the email verification message.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserPoolRequest withEmailVerificationSubject(
-            String emailVerificationSubject) {
+    public UpdateUserPoolRequest withEmailVerificationSubject(String emailVerificationSubject) {
         setEmailVerificationSubject(emailVerificationSubject);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     */
+
+    public void setVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        this.verificationMessageTemplate = verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @return The template for verification messages.
+     */
+
+    public VerificationMessageTemplateType getVerificationMessageTemplate() {
+        return this.verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        setVerificationMessageTemplate(verificationMessageTemplate);
         return this;
     }
 
@@ -499,12 +567,10 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * 
      * @param smsAuthenticationMessage
      *        The contents of the SMS authentication message.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserPoolRequest withSmsAuthenticationMessage(
-            String smsAuthenticationMessage) {
+    public UpdateUserPoolRequest withSmsAuthenticationMessage(String smsAuthenticationMessage) {
         setSmsAuthenticationMessage(smsAuthenticationMessage);
         return this;
     }
@@ -514,25 +580,43 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
@@ -545,24 +629,42 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Can be one of the following values:</p>
      *         <ul>
-     *         <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *         specified during user registration.</li>
-     *         <li><code>ON</code> - MFA tokens are required for all user
-     *         registrations. You can only specify required when you are
-     *         initially creating a user pool.</li>
-     *         <li><code>OPTIONAL</code> - Users have the option when
-     *         registering to create an MFA token.</li>
+     *         <li>
+     *         <p>
+     *         <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *         you are initially creating a user pool.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *         </p>
+     *         </li>
      * @see UserPoolMfaType
      */
 
@@ -575,27 +677,44 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
 
@@ -609,30 +728,48 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        this.mfaConfiguration = mfaConfiguration.toString();
+        withMfaConfiguration(mfaConfiguration);
     }
 
     /**
@@ -640,39 +777,334 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be
-     * specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations.
-     * You can only specify required when you are initially creating a user
-     * pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to
-     * create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be
-     *        specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user
-     *        registrations. You can only specify required when you are
-     *        initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering
-     *        to create an MFA token.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
 
-    public UpdateUserPoolRequest withMfaConfiguration(
-            UserPoolMfaType mfaConfiguration) {
-        setMfaConfiguration(mfaConfiguration);
+    public UpdateUserPoolRequest withMfaConfiguration(UserPoolMfaType mfaConfiguration) {
+        this.mfaConfiguration = mfaConfiguration.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Device configuration.
+     */
+
+    public void setDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Device configuration.
+     * </p>
+     * 
+     * @return Device configuration.
+     */
+
+    public DeviceConfigurationType getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Device configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        Email configuration.
+     */
+
+    public void setEmailConfiguration(EmailConfigurationType emailConfiguration) {
+        this.emailConfiguration = emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * Email configuration.
+     * </p>
+     * 
+     * @return Email configuration.
+     */
+
+    public EmailConfigurationType getEmailConfiguration() {
+        return this.emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * Email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        Email configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withEmailConfiguration(EmailConfigurationType emailConfiguration) {
+        setEmailConfiguration(emailConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        SMS configuration.
+     */
+
+    public void setSmsConfiguration(SmsConfigurationType smsConfiguration) {
+        this.smsConfiguration = smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * SMS configuration.
+     * </p>
+     * 
+     * @return SMS configuration.
+     */
+
+    public SmsConfigurationType getSmsConfiguration() {
+        return this.smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        SMS configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withSmsConfiguration(SmsConfigurationType smsConfiguration) {
+        setSmsConfiguration(smsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @return The cost allocation tags for the user pool. For more information, see <a
+     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     */
+
+    public java.util.Map<String, String> getUserPoolTags() {
+        return userPoolTags;
+    }
+
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @param userPoolTags
+     *        The cost allocation tags for the user pool. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     */
+
+    public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
+        this.userPoolTags = userPoolTags;
+    }
+
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @param userPoolTags
+     *        The cost allocation tags for the user pool. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserPoolTags(java.util.Map<String, String> userPoolTags) {
+        setUserPoolTags(userPoolTags);
+        return this;
+    }
+
+    public UpdateUserPoolRequest addUserPoolTagsEntry(String key, String value) {
+        if (null == this.userPoolTags) {
+            this.userPoolTags = new java.util.HashMap<String, String>();
+        }
+        if (this.userPoolTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userPoolTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserPoolTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest clearUserPoolTagsEntries() {
+        this.userPoolTags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for <code>AdminCreateUser</code> requests.
+     */
+
+    public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        this.adminCreateUserConfig = adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
+     * </p>
+     * 
+     * @return The configuration for <code>AdminCreateUser</code> requests.
+     */
+
+    public AdminCreateUserConfigType getAdminCreateUserConfig() {
+        return this.adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for <code>AdminCreateUser</code> requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        setAdminCreateUserConfig(adminCreateUserConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     */
+
+    public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        this.userPoolAddOns = userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @return Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *         value "AUDIT".
+     */
+
+    public UserPoolAddOnsType getUserPoolAddOns() {
+        return this.userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        setUserPoolAddOns(userPoolAddOns);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -683,28 +1115,37 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getLambdaConfig() != null)
-            sb.append("LambdaConfig: " + getLambdaConfig() + ",");
+            sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getAutoVerifiedAttributes() != null)
-            sb.append("AutoVerifiedAttributes: " + getAutoVerifiedAttributes()
-                    + ",");
+            sb.append("AutoVerifiedAttributes: ").append(getAutoVerifiedAttributes()).append(",");
         if (getSmsVerificationMessage() != null)
-            sb.append("SmsVerificationMessage: " + getSmsVerificationMessage()
-                    + ",");
+            sb.append("SmsVerificationMessage: ").append(getSmsVerificationMessage()).append(",");
         if (getEmailVerificationMessage() != null)
-            sb.append("EmailVerificationMessage: "
-                    + getEmailVerificationMessage() + ",");
+            sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
-            sb.append("EmailVerificationSubject: "
-                    + getEmailVerificationSubject() + ",");
+            sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
+        if (getVerificationMessageTemplate() != null)
+            sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
-            sb.append("SmsAuthenticationMessage: "
-                    + getSmsAuthenticationMessage() + ",");
+            sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
-            sb.append("MfaConfiguration: " + getMfaConfiguration());
+            sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getEmailConfiguration() != null)
+            sb.append("EmailConfiguration: ").append(getEmailConfiguration()).append(",");
+        if (getSmsConfiguration() != null)
+            sb.append("SmsConfiguration: ").append(getSmsConfiguration()).append(",");
+        if (getUserPoolTags() != null)
+            sb.append("UserPoolTags: ").append(getUserPoolTags()).append(",");
+        if (getAdminCreateUserConfig() != null)
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
+        if (getUserPoolAddOns() != null)
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -721,60 +1162,67 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
         UpdateUserPoolRequest other = (UpdateUserPoolRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getPolicies() == null ^ this.getPolicies() == null)
             return false;
-        if (other.getPolicies() != null
-                && other.getPolicies().equals(this.getPolicies()) == false)
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
             return false;
         if (other.getLambdaConfig() == null ^ this.getLambdaConfig() == null)
             return false;
-        if (other.getLambdaConfig() != null
-                && other.getLambdaConfig().equals(this.getLambdaConfig()) == false)
+        if (other.getLambdaConfig() != null && other.getLambdaConfig().equals(this.getLambdaConfig()) == false)
             return false;
-        if (other.getAutoVerifiedAttributes() == null
-                ^ this.getAutoVerifiedAttributes() == null)
+        if (other.getAutoVerifiedAttributes() == null ^ this.getAutoVerifiedAttributes() == null)
             return false;
-        if (other.getAutoVerifiedAttributes() != null
-                && other.getAutoVerifiedAttributes().equals(
-                        this.getAutoVerifiedAttributes()) == false)
+        if (other.getAutoVerifiedAttributes() != null && other.getAutoVerifiedAttributes().equals(this.getAutoVerifiedAttributes()) == false)
             return false;
-        if (other.getSmsVerificationMessage() == null
-                ^ this.getSmsVerificationMessage() == null)
+        if (other.getSmsVerificationMessage() == null ^ this.getSmsVerificationMessage() == null)
             return false;
-        if (other.getSmsVerificationMessage() != null
-                && other.getSmsVerificationMessage().equals(
-                        this.getSmsVerificationMessage()) == false)
+        if (other.getSmsVerificationMessage() != null && other.getSmsVerificationMessage().equals(this.getSmsVerificationMessage()) == false)
             return false;
-        if (other.getEmailVerificationMessage() == null
-                ^ this.getEmailVerificationMessage() == null)
+        if (other.getEmailVerificationMessage() == null ^ this.getEmailVerificationMessage() == null)
             return false;
-        if (other.getEmailVerificationMessage() != null
-                && other.getEmailVerificationMessage().equals(
-                        this.getEmailVerificationMessage()) == false)
+        if (other.getEmailVerificationMessage() != null && other.getEmailVerificationMessage().equals(this.getEmailVerificationMessage()) == false)
             return false;
-        if (other.getEmailVerificationSubject() == null
-                ^ this.getEmailVerificationSubject() == null)
+        if (other.getEmailVerificationSubject() == null ^ this.getEmailVerificationSubject() == null)
             return false;
-        if (other.getEmailVerificationSubject() != null
-                && other.getEmailVerificationSubject().equals(
-                        this.getEmailVerificationSubject()) == false)
+        if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
             return false;
-        if (other.getSmsAuthenticationMessage() == null
-                ^ this.getSmsAuthenticationMessage() == null)
+        if (other.getVerificationMessageTemplate() == null ^ this.getVerificationMessageTemplate() == null)
             return false;
-        if (other.getSmsAuthenticationMessage() != null
-                && other.getSmsAuthenticationMessage().equals(
-                        this.getSmsAuthenticationMessage()) == false)
+        if (other.getVerificationMessageTemplate() != null && other.getVerificationMessageTemplate().equals(this.getVerificationMessageTemplate()) == false)
             return false;
-        if (other.getMfaConfiguration() == null
-                ^ this.getMfaConfiguration() == null)
+        if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
-        if (other.getMfaConfiguration() != null
-                && other.getMfaConfiguration().equals(
-                        this.getMfaConfiguration()) == false)
+        if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
+            return false;
+        if (other.getMfaConfiguration() == null ^ this.getMfaConfiguration() == null)
+            return false;
+        if (other.getMfaConfiguration() != null && other.getMfaConfiguration().equals(this.getMfaConfiguration()) == false)
+            return false;
+        if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
+            return false;
+        if (other.getEmailConfiguration() == null ^ this.getEmailConfiguration() == null)
+            return false;
+        if (other.getEmailConfiguration() != null && other.getEmailConfiguration().equals(this.getEmailConfiguration()) == false)
+            return false;
+        if (other.getSmsConfiguration() == null ^ this.getSmsConfiguration() == null)
+            return false;
+        if (other.getSmsConfiguration() != null && other.getSmsConfiguration().equals(this.getSmsConfiguration()) == false)
+            return false;
+        if (other.getUserPoolTags() == null ^ this.getUserPoolTags() == null)
+            return false;
+        if (other.getUserPoolTags() != null && other.getUserPoolTags().equals(this.getUserPoolTags()) == false)
+            return false;
+        if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
+            return false;
+        if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
+        if (other.getUserPoolAddOns() == null ^ this.getUserPoolAddOns() == null)
+            return false;
+        if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
             return false;
         return true;
     }
@@ -784,38 +1232,22 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLambdaConfig() == null) ? 0 : getLambdaConfig()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAutoVerifiedAttributes() == null) ? 0
-                        : getAutoVerifiedAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsVerificationMessage() == null) ? 0
-                        : getSmsVerificationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailVerificationMessage() == null) ? 0
-                        : getEmailVerificationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEmailVerificationSubject() == null) ? 0
-                        : getEmailVerificationSubject().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSmsAuthenticationMessage() == null) ? 0
-                        : getSmsAuthenticationMessage().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
+        hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
+        hashCode = prime * hashCode + ((getAutoVerifiedAttributes() == null) ? 0 : getAutoVerifiedAttributes().hashCode());
+        hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
+        hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
+        hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
+        hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
+        hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
+        hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         return hashCode;
     }
 
@@ -823,4 +1255,5 @@ public class UpdateUserPoolRequest extends AmazonWebServiceRequest implements
     public UpdateUserPoolRequest clone() {
         return (UpdateUserPoolRequest) super.clone();
     }
+
 }

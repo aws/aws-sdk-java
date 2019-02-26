@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -295,7 +295,7 @@ public class DynamoDBQueryExpression <T> {
      * @param rangeKeyConditions a map from key name to condition
      * 	        NOTE: The current DynamoDB service only allows up to one
      *          range key condition per query. Providing more than one
-     *          range key condition will result in an AmazonClientException.
+     *          range key condition will result in a SdkClientException.
      */
     public void setRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         this.rangeKeyConditions = rangeKeyConditions;
@@ -308,7 +308,7 @@ public class DynamoDBQueryExpression <T> {
      * @param rangeKeyConditions a map from key name to condition
      *         NOTE: The current DynamoDB service only allows up to one range
      *         key condition per query. Providing more than one range key
-     *         condition will result in an AmazonClientException.
+     *         condition will result in a SdkClientException.
      */
     public DynamoDBQueryExpression<T> withRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         setRangeKeyConditions(rangeKeyConditions);
@@ -549,25 +549,25 @@ public class DynamoDBQueryExpression <T> {
      * the range key is equal to <code>:rangeval</code>.</li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><</i> <code>:rangeval</code> - true if
+     * <code>rangeAttributeName</code> <i>&lt;</i> <code>:rangeval</code> - true if
      * the range key is less than <code>:rangeval</code>.</li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i><=</i> <code>:rangeval</code> - true
+     * <code>rangeAttributeName</code> <i>&lt;=</i> <code>:rangeval</code> - true
      * if the range key is less than or equal to <code>:rangeval</code>.</li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>></i> <code>:rangeval</code> - true if
+     * <code>rangeAttributeName</code> <i>&gt;</i> <code>:rangeval</code> - true if
      * the range key is greater than <code>:rangeval</code>.</li>
      * <li>
      * <p>
-     * <code>rangeAttributeName</code> <i>>= </i><code>:rangeval</code> - true
+     * <code>rangeAttributeName</code> <i>&gt;=</i><code>:rangeval</code> - true
      * if the range key is greater than or equal to <code>:rangeval</code>.</li>
      * <li>
      * <p>
      * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
-     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
+     * than or equal to <code>:rangeval1</code>, and less than or equal to
      * <code>:rangeval2</code>.</li>
      * <li>
      * <p>
@@ -664,7 +664,7 @@ public class DynamoDBQueryExpression <T> {
      *         <p>
      *         <code>rangeAttributeName</code> <i>BETWEEN</i>
      *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
-     *         if the range key is less than or greater than
+     *         if the range key is greater than or equal to
      *         <code>:rangeval1</code>, and less than or equal to
      *         <code>:rangeval2</code>.</li>
      *         <li>
@@ -763,8 +763,8 @@ public class DynamoDBQueryExpression <T> {
      * <li>
      * <p>
      * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
-     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
+     * than or equal to <code>:rangeval1</code>, and less than or equal to
      * <code>:rangeval2</code>.</li>
      * <li>
      * <p>

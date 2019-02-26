@@ -1,29 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Amazon Glacier job.
+ * Contains the description of an Amazon Glacier job.
  * </p>
  */
-public class DescribeJobResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,47 +31,46 @@ public class DescribeJobResult implements Serializable, Cloneable {
     private String jobId;
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      */
     private String jobDescription;
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      */
     private String action;
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for
-     * download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      */
     private String archiveId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive
-     * retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      */
     private String vaultARN;
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      */
     private String creationDate;
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      */
     private Boolean completed;
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      */
     private String statusCode;
@@ -85,98 +82,120 @@ public class DescribeJobResult implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive
-     * being requested for download. For the InventoryRetrieval job, the value
-     * is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      */
     private Long archiveSizeInBytes;
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory
-     * requested for download. For the ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      */
     private Long inventorySizeInBytes;
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives
-     * notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      */
     private String sNSTopic;
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job
-     * is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      */
     private String completionDate;
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the
-     * Initiate a Job request for an archive specified a tree-hash aligned
-     * range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is
-     * the same as the ArchiveSHA256TreeHash value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash
-     * aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and
-     * the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String sHA256TreeHash;
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      */
     private String archiveSHA256TreeHash;
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form
-     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in
-     * the archive retrieval, then the whole archive is retrieved and
-     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     * the archive minus 1. For inventory retrieval jobs this field is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      */
     private String retrievalByteRange;
+    /**
+     * <p>
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     */
+    private String tier;
     /**
      * <p>
      * Parameters used for range inventory retrieval.
      * </p>
      */
     private InventoryRetrievalJobDescription inventoryRetrievalParameters;
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     */
+    private String jobOutputPath;
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     */
+    private SelectParameters selectParameters;
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     */
+    private OutputLocation outputLocation;
 
     /**
      * <p>
@@ -210,8 +229,7 @@ public class DescribeJobResult implements Serializable, Cloneable {
      * 
      * @param jobId
      *        An opaque string that identifies an Amazon Glacier job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withJobId(String jobId) {
@@ -221,11 +239,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
      * @param jobDescription
-     *        The job description you provided when you initiated the job.
+     *        The job description provided when initiating the job.
      */
 
     public void setJobDescription(String jobDescription) {
@@ -234,10 +252,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
-     * @return The job description you provided when you initiated the job.
+     * @return The job description provided when initiating the job.
      */
 
     public String getJobDescription() {
@@ -246,13 +264,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
      * @param jobDescription
-     *        The job description you provided when you initiated the job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The job description provided when initiating the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withJobDescription(String jobDescription) {
@@ -262,11 +279,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @see ActionCode
      */
 
@@ -276,11 +295,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
-     * @return The job type. It is either ArchiveRetrieval or
-     *         InventoryRetrieval.
+     * @return The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *         <code>Select</code>.
      * @see ActionCode
      */
 
@@ -290,13 +310,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCode
      */
 
@@ -307,44 +328,45 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @see ActionCode
      */
 
     public void setAction(ActionCode action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCode
      */
 
     public DescribeJobResult withAction(ActionCode action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for
-     * download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
      * @param archiveId
-     *        For an ArchiveRetrieval job, this is the archive ID requested for
-     *        download. Otherwise, this field is null.
+     *        The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      */
 
     public void setArchiveId(String archiveId) {
@@ -353,12 +375,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for
-     * download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
-     * @return For an ArchiveRetrieval job, this is the archive ID requested for
-     *         download. Otherwise, this field is null.
+     * @return The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      */
 
     public String getArchiveId() {
@@ -367,15 +387,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for
-     * download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
      * @param archiveId
-     *        For an ArchiveRetrieval job, this is the archive ID requested for
-     *        download. Otherwise, this field is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withArchiveId(String archiveId) {
@@ -385,13 +402,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive
-     * retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault from which the archive
-     *        retrieval was requested.
+     *        The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      */
 
     public void setVaultARN(String vaultARN) {
@@ -400,12 +415,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive
-     * retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the vault from which the
-     *         archive retrieval was requested.
+     * @return The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      */
 
     public String getVaultARN() {
@@ -414,15 +427,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive
-     * retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault from which the archive
-     *        retrieval was requested.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withVaultARN(String vaultARN) {
@@ -432,13 +442,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the job was created. A string representation of
-     *        ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     *        The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *        example <code>"2012-03-20T17:03:43.221Z"</code>.
      */
 
     public void setCreationDate(String creationDate) {
@@ -447,12 +457,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
-     * @return The UTC date when the job was created. A string representation of
-     *         ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * @return The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *         example <code>"2012-03-20T17:03:43.221Z"</code>.
      */
 
     public String getCreationDate() {
@@ -461,15 +471,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO
-     * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the job was created. A string representation of
-     *        ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *        example <code>"2012-03-20T17:03:43.221Z"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withCreationDate(String creationDate) {
@@ -479,11 +488,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
      * @param completed
-     *        The job status. When a job is completed, you get the job's output.
+     *        The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public void setCompleted(Boolean completed) {
@@ -492,11 +501,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
-     * @return The job status. When a job is completed, you get the job's
-     *         output.
+     * @return The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public Boolean getCompleted() {
@@ -505,13 +513,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
      * @param completed
-     *        The job status. When a job is completed, you get the job's output.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withCompleted(Boolean completed) {
@@ -521,11 +528,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
-     * @return The job status. When a job is completed, you get the job's
-     *         output.
+     * @return The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public Boolean isCompleted() {
@@ -534,12 +540,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
      *        indicates the status of the job.
      * @see StatusCode
      */
@@ -550,11 +556,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
-     * @return The status code can be InProgress, Succeeded, or Failed, and
+     * @return The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
      *         indicates the status of the job.
      * @see StatusCode
      */
@@ -565,15 +571,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
      *        indicates the status of the job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusCode
      */
 
@@ -584,36 +589,35 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
      *        indicates the status of the job.
      * @see StatusCode
      */
 
     public void setStatusCode(StatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates
-     * the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
      *        indicates the status of the job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusCode
      */
 
     public DescribeJobResult withStatusCode(StatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 
@@ -649,8 +653,7 @@ public class DescribeJobResult implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        A friendly message that describes the job status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withStatusMessage(String statusMessage) {
@@ -660,15 +663,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive
-     * being requested for download. For the InventoryRetrieval job, the value
-     * is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
      * @param archiveSizeInBytes
-     *        For an ArchiveRetrieval job, this is the size in bytes of the
-     *        archive being requested for download. For the InventoryRetrieval
-     *        job, the value is null.
+     *        For an archive retrieval job, this value is the size in bytes of the archive being requested for download.
+     *        For an inventory retrieval or select job, this value is null.
      */
 
     public void setArchiveSizeInBytes(Long archiveSizeInBytes) {
@@ -677,14 +678,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive
-     * being requested for download. For the InventoryRetrieval job, the value
-     * is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
-     * @return For an ArchiveRetrieval job, this is the size in bytes of the
-     *         archive being requested for download. For the InventoryRetrieval
-     *         job, the value is null.
+     * @return For an archive retrieval job, this value is the size in bytes of the archive being requested for
+     *         download. For an inventory retrieval or select job, this value is null.
      */
 
     public Long getArchiveSizeInBytes() {
@@ -693,17 +692,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive
-     * being requested for download. For the InventoryRetrieval job, the value
-     * is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
      * @param archiveSizeInBytes
-     *        For an ArchiveRetrieval job, this is the size in bytes of the
-     *        archive being requested for download. For the InventoryRetrieval
-     *        job, the value is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For an archive retrieval job, this value is the size in bytes of the archive being requested for download.
+     *        For an inventory retrieval or select job, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withArchiveSizeInBytes(Long archiveSizeInBytes) {
@@ -713,14 +709,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory
-     * requested for download. For the ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
      * @param inventorySizeInBytes
-     *        For an InventoryRetrieval job, this is the size in bytes of the
-     *        inventory requested for download. For the ArchiveRetrieval job,
-     *        the value is null.
+     *        For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *        For an archive retrieval or select job, this value is null.
      */
 
     public void setInventorySizeInBytes(Long inventorySizeInBytes) {
@@ -729,13 +724,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory
-     * requested for download. For the ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
-     * @return For an InventoryRetrieval job, this is the size in bytes of the
-     *         inventory requested for download. For the ArchiveRetrieval job,
-     *         the value is null.
+     * @return For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *         For an archive retrieval or select job, this value is null.
      */
 
     public Long getInventorySizeInBytes() {
@@ -744,16 +738,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory
-     * requested for download. For the ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
      * @param inventorySizeInBytes
-     *        For an InventoryRetrieval job, this is the size in bytes of the
-     *        inventory requested for download. For the ArchiveRetrieval job,
-     *        the value is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *        For an archive retrieval or select job, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withInventorySizeInBytes(Long inventorySizeInBytes) {
@@ -763,13 +755,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives
-     * notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
      * @param sNSTopic
-     *        An Amazon Simple Notification Service (Amazon SNS) topic that
-     *        receives notification.
+     *        An Amazon SNS topic that receives notification.
      */
 
     public void setSNSTopic(String sNSTopic) {
@@ -778,12 +768,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives
-     * notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
-     * @return An Amazon Simple Notification Service (Amazon SNS) topic that
-     *         receives notification.
+     * @return An Amazon SNS topic that receives notification.
      */
 
     public String getSNSTopic() {
@@ -792,15 +780,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives
-     * notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
      * @param sNSTopic
-     *        An Amazon Simple Notification Service (Amazon SNS) topic that
-     *        receives notification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An Amazon SNS topic that receives notification.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withSNSTopic(String sNSTopic) {
@@ -810,13 +795,11 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job
-     * is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
      * @param completionDate
-     *        The UTC time that the archive retrieval request completed. While
-     *        the job is in progress, the value will be null.
+     *        The UTC time that the job request completed. While the job is in progress, the value is null.
      */
 
     public void setCompletionDate(String completionDate) {
@@ -825,12 +808,10 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job
-     * is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
-     * @return The UTC time that the archive retrieval request completed. While
-     *         the job is in progress, the value will be null.
+     * @return The UTC time that the job request completed. While the job is in progress, the value is null.
      */
 
     public String getCompletionDate() {
@@ -839,15 +820,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job
-     * is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
      * @param completionDate
-     *        The UTC time that the archive retrieval request completed. While
-     *        the job is in progress, the value will be null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The UTC time that the job request completed. While the job is in progress, the value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withCompletionDate(String completionDate) {
@@ -857,82 +835,85 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the
-     * Initiate a Job request for an archive specified a tree-hash aligned
-     * range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is
-     * the same as the ArchiveSHA256TreeHash value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash
-     * aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and
-     * the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param sHA256TreeHash
-     *        For an ArchiveRetrieval job, it is the checksum of the archive.
-     *        Otherwise, the value is null.</p>
+     *        For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *        null.</p>
      *        <p>
-     *        The SHA256 tree hash value for the requested range of an archive.
-     *        If the Initiate a Job request for an archive specified a tree-hash
-     *        aligned range, then this field returns a value.
+     *        The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     *        archive specified a tree-hash aligned range, then this field returns a value.
      *        </p>
      *        <p>
-     *        For the specific case when the whole archive is retrieved, this
-     *        value is the same as the ArchiveSHA256TreeHash value.
+     *        If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *        </p>
      *        <p>
-     *        This field is null in the following situations:
+     *        This field is null for the following:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archive retrieval jobs that specify a range that is not tree-hash
-     *        aligned.
+     *        Archive retrieval jobs that specify a range that is not tree-hash aligned
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archival jobs that specify a range that is equal to the whole
-     *        archive and the job status is InProgress.
+     *        Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *        <code>InProgress</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Inventory jobs.
+     *        Inventory jobs
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Select jobs
+     *        </p>
+     *        </li>
      */
 
     public void setSHA256TreeHash(String sHA256TreeHash) {
@@ -941,81 +922,84 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the
-     * Initiate a Job request for an archive specified a tree-hash aligned
-     * range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is
-     * the same as the ArchiveSHA256TreeHash value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash
-     * aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and
-     * the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
-     * @return For an ArchiveRetrieval job, it is the checksum of the archive.
-     *         Otherwise, the value is null.</p>
+     * @return For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *         null.</p>
      *         <p>
-     *         The SHA256 tree hash value for the requested range of an archive.
-     *         If the Initiate a Job request for an archive specified a
-     *         tree-hash aligned range, then this field returns a value.
+     *         The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for
+     *         an archive specified a tree-hash aligned range, then this field returns a value.
      *         </p>
      *         <p>
-     *         For the specific case when the whole archive is retrieved, this
-     *         value is the same as the ArchiveSHA256TreeHash value.
+     *         If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *         </p>
      *         <p>
-     *         This field is null in the following situations:
+     *         This field is null for the following:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Archive retrieval jobs that specify a range that is not tree-hash
-     *         aligned.
+     *         Archive retrieval jobs that specify a range that is not tree-hash aligned
      *         </p>
      *         </li>
      *         </ul>
      *         <ul>
      *         <li>
      *         <p>
-     *         Archival jobs that specify a range that is equal to the whole
-     *         archive and the job status is InProgress.
+     *         Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *         <code>InProgress</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <ul>
      *         <li>
      *         <p>
-     *         Inventory jobs.
+     *         Inventory jobs
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Select jobs
+     *         </p>
+     *         </li>
      */
 
     public String getSHA256TreeHash() {
@@ -1024,84 +1008,86 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive.
-     * Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the
-     * Initiate a Job request for an archive specified a tree-hash aligned
-     * range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is
-     * the same as the ArchiveSHA256TreeHash value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash
-     * aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and
-     * the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param sHA256TreeHash
-     *        For an ArchiveRetrieval job, it is the checksum of the archive.
-     *        Otherwise, the value is null.</p>
+     *        For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *        null.</p>
      *        <p>
-     *        The SHA256 tree hash value for the requested range of an archive.
-     *        If the Initiate a Job request for an archive specified a tree-hash
-     *        aligned range, then this field returns a value.
+     *        The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     *        archive specified a tree-hash aligned range, then this field returns a value.
      *        </p>
      *        <p>
-     *        For the specific case when the whole archive is retrieved, this
-     *        value is the same as the ArchiveSHA256TreeHash value.
+     *        If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *        </p>
      *        <p>
-     *        This field is null in the following situations:
+     *        This field is null for the following:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archive retrieval jobs that specify a range that is not tree-hash
-     *        aligned.
+     *        Archive retrieval jobs that specify a range that is not tree-hash aligned
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archival jobs that specify a range that is equal to the whole
-     *        archive and the job status is InProgress.
+     *        Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *        <code>InProgress</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Inventory jobs.
+     *        Inventory jobs
      *        </p>
      *        </li>
-     *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Select jobs
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withSHA256TreeHash(String sHA256TreeHash) {
@@ -1111,13 +1097,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
      * @param archiveSHA256TreeHash
-     *        The SHA256 tree hash of the entire archive for an archive
-     *        retrieval. For inventory retrieval jobs, this field is null.
+     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *        jobs, this field is null.
      */
 
     public void setArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
@@ -1126,12 +1112,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
-     * @return The SHA256 tree hash of the entire archive for an archive
-     *         retrieval. For inventory retrieval jobs, this field is null.
+     * @return The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *         jobs, this field is null.
      */
 
     public String getArchiveSHA256TreeHash() {
@@ -1140,39 +1126,34 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
      * @param archiveSHA256TreeHash
-     *        The SHA256 tree hash of the entire archive for an archive
-     *        retrieval. For inventory retrieval jobs, this field is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *        jobs, this field is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeJobResult withArchiveSHA256TreeHash(
-            String archiveSHA256TreeHash) {
+    public DescribeJobResult withArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
         setArchiveSHA256TreeHash(archiveSHA256TreeHash);
         return this;
     }
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form
-     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in
-     * the archive retrieval, then the whole archive is retrieved and
-     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     * the archive minus 1. For inventory retrieval jobs this field is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @param retrievalByteRange
-     *        The retrieved byte range for archive retrieval jobs in the form
-     *        "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was
-     *        specified in the archive retrieval, then the whole archive is
-     *        retrieved and <i>StartByteValue</i> equals 0 and
-     *        <i>EndByteValue</i> equals the size of the archive minus 1. For
-     *        inventory retrieval jobs this field is null.
+     *        The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>.
+     *        If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     *        <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
+     *        inventory retrieval or select jobs, this field is null.
      */
 
     public void setRetrievalByteRange(String retrievalByteRange) {
@@ -1181,19 +1162,16 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form
-     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in
-     * the archive retrieval, then the whole archive is retrieved and
-     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     * the archive minus 1. For inventory retrieval jobs this field is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @return The retrieved byte range for archive retrieval jobs in the form
-     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was
-     *         specified in the archive retrieval, then the whole archive is
-     *         retrieved and <i>StartByteValue</i> equals 0 and
-     *         <i>EndByteValue</i> equals the size of the archive minus 1. For
-     *         inventory retrieval jobs this field is null.
+     *         <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the
+     *         whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals
+     *         the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.
      */
 
     public String getRetrievalByteRange() {
@@ -1202,26 +1180,68 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form
-     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in
-     * the archive retrieval, then the whole archive is retrieved and
-     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     * the archive minus 1. For inventory retrieval jobs this field is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @param retrievalByteRange
-     *        The retrieved byte range for archive retrieval jobs in the form
-     *        "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was
-     *        specified in the archive retrieval, then the whole archive is
-     *        retrieved and <i>StartByteValue</i> equals 0 and
-     *        <i>EndByteValue</i> equals the size of the archive minus 1. For
-     *        inventory retrieval jobs this field is null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>.
+     *        If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     *        <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
+     *        inventory retrieval or select jobs, this field is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeJobResult withRetrievalByteRange(String retrievalByteRange) {
         setRetrievalByteRange(retrievalByteRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @param tier
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @return The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     *         <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @param tier
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
+     *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withTier(String tier) {
+        setTier(tier);
         return this;
     }
 
@@ -1234,8 +1254,7 @@ public class DescribeJobResult implements Serializable, Cloneable {
      *        Parameters used for range inventory retrieval.
      */
 
-    public void setInventoryRetrievalParameters(
-            InventoryRetrievalJobDescription inventoryRetrievalParameters) {
+    public void setInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {
         this.inventoryRetrievalParameters = inventoryRetrievalParameters;
     }
 
@@ -1258,19 +1277,137 @@ public class DescribeJobResult implements Serializable, Cloneable {
      * 
      * @param inventoryRetrievalParameters
      *        Parameters used for range inventory retrieval.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeJobResult withInventoryRetrievalParameters(
-            InventoryRetrievalJobDescription inventoryRetrievalParameters) {
+    public DescribeJobResult withInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {
         setInventoryRetrievalParameters(inventoryRetrievalParameters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        Contains the job output location.
+     */
+
+    public void setJobOutputPath(String jobOutputPath) {
+        this.jobOutputPath = jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @return Contains the job output location.
+     */
+
+    public String getJobOutputPath() {
+        return this.jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        Contains the job output location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withJobOutputPath(String jobOutputPath) {
+        setJobOutputPath(jobOutputPath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters used for a select.
+     */
+
+    public void setSelectParameters(SelectParameters selectParameters) {
+        this.selectParameters = selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @return Contains the parameters used for a select.
+     */
+
+    public SelectParameters getSelectParameters() {
+        return this.selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters used for a select.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withSelectParameters(SelectParameters selectParameters) {
+        setSelectParameters(selectParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains the location where the data from the select job is stored.
+     */
+
+    public void setOutputLocation(OutputLocation outputLocation) {
+        this.outputLocation = outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @return Contains the location where the data from the select job is stored.
+     */
+
+    public OutputLocation getOutputLocation() {
+        return this.outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains the location where the data from the select job is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withOutputLocation(OutputLocation outputLocation) {
+        setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1281,42 +1418,47 @@ public class DescribeJobResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobDescription() != null)
-            sb.append("JobDescription: " + getJobDescription() + ",");
+            sb.append("JobDescription: ").append(getJobDescription()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getArchiveId() != null)
-            sb.append("ArchiveId: " + getArchiveId() + ",");
+            sb.append("ArchiveId: ").append(getArchiveId()).append(",");
         if (getVaultARN() != null)
-            sb.append("VaultARN: " + getVaultARN() + ",");
+            sb.append("VaultARN: ").append(getVaultARN()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCompleted() != null)
-            sb.append("Completed: " + getCompleted() + ",");
+            sb.append("Completed: ").append(getCompleted()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getArchiveSizeInBytes() != null)
-            sb.append("ArchiveSizeInBytes: " + getArchiveSizeInBytes() + ",");
+            sb.append("ArchiveSizeInBytes: ").append(getArchiveSizeInBytes()).append(",");
         if (getInventorySizeInBytes() != null)
-            sb.append("InventorySizeInBytes: " + getInventorySizeInBytes()
-                    + ",");
+            sb.append("InventorySizeInBytes: ").append(getInventorySizeInBytes()).append(",");
         if (getSNSTopic() != null)
-            sb.append("SNSTopic: " + getSNSTopic() + ",");
+            sb.append("SNSTopic: ").append(getSNSTopic()).append(",");
         if (getCompletionDate() != null)
-            sb.append("CompletionDate: " + getCompletionDate() + ",");
+            sb.append("CompletionDate: ").append(getCompletionDate()).append(",");
         if (getSHA256TreeHash() != null)
-            sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ",");
+            sb.append("SHA256TreeHash: ").append(getSHA256TreeHash()).append(",");
         if (getArchiveSHA256TreeHash() != null)
-            sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash()
-                    + ",");
+            sb.append("ArchiveSHA256TreeHash: ").append(getArchiveSHA256TreeHash()).append(",");
         if (getRetrievalByteRange() != null)
-            sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+            sb.append("RetrievalByteRange: ").append(getRetrievalByteRange()).append(",");
+        if (getTier() != null)
+            sb.append("Tier: ").append(getTier()).append(",");
         if (getInventoryRetrievalParameters() != null)
-            sb.append("InventoryRetrievalParameters: "
-                    + getInventoryRetrievalParameters());
+            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters()).append(",");
+        if (getJobOutputPath() != null)
+            sb.append("JobOutputPath: ").append(getJobOutputPath()).append(",");
+        if (getSelectParameters() != null)
+            sb.append("SelectParameters: ").append(getSelectParameters()).append(",");
+        if (getOutputLocation() != null)
+            sb.append("OutputLocation: ").append(getOutputLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1333,101 +1475,87 @@ public class DescribeJobResult implements Serializable, Cloneable {
         DescribeJobResult other = (DescribeJobResult) obj;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
-        if (other.getJobId() != null
-                && other.getJobId().equals(this.getJobId()) == false)
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
-        if (other.getJobDescription() == null
-                ^ this.getJobDescription() == null)
+        if (other.getJobDescription() == null ^ this.getJobDescription() == null)
             return false;
-        if (other.getJobDescription() != null
-                && other.getJobDescription().equals(this.getJobDescription()) == false)
+        if (other.getJobDescription() != null && other.getJobDescription().equals(this.getJobDescription()) == false)
             return false;
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
-        if (other.getAction() != null
-                && other.getAction().equals(this.getAction()) == false)
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
         if (other.getArchiveId() == null ^ this.getArchiveId() == null)
             return false;
-        if (other.getArchiveId() != null
-                && other.getArchiveId().equals(this.getArchiveId()) == false)
+        if (other.getArchiveId() != null && other.getArchiveId().equals(this.getArchiveId()) == false)
             return false;
         if (other.getVaultARN() == null ^ this.getVaultARN() == null)
             return false;
-        if (other.getVaultARN() != null
-                && other.getVaultARN().equals(this.getVaultARN()) == false)
+        if (other.getVaultARN() != null && other.getVaultARN().equals(this.getVaultARN()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         if (other.getCompleted() == null ^ this.getCompleted() == null)
             return false;
-        if (other.getCompleted() != null
-                && other.getCompleted().equals(this.getCompleted()) == false)
+        if (other.getCompleted() != null && other.getCompleted().equals(this.getCompleted()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
-        if (other.getStatusCode() != null
-                && other.getStatusCode().equals(this.getStatusCode()) == false)
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getArchiveSizeInBytes() == null
-                ^ this.getArchiveSizeInBytes() == null)
+        if (other.getArchiveSizeInBytes() == null ^ this.getArchiveSizeInBytes() == null)
             return false;
-        if (other.getArchiveSizeInBytes() != null
-                && other.getArchiveSizeInBytes().equals(
-                        this.getArchiveSizeInBytes()) == false)
+        if (other.getArchiveSizeInBytes() != null && other.getArchiveSizeInBytes().equals(this.getArchiveSizeInBytes()) == false)
             return false;
-        if (other.getInventorySizeInBytes() == null
-                ^ this.getInventorySizeInBytes() == null)
+        if (other.getInventorySizeInBytes() == null ^ this.getInventorySizeInBytes() == null)
             return false;
-        if (other.getInventorySizeInBytes() != null
-                && other.getInventorySizeInBytes().equals(
-                        this.getInventorySizeInBytes()) == false)
+        if (other.getInventorySizeInBytes() != null && other.getInventorySizeInBytes().equals(this.getInventorySizeInBytes()) == false)
             return false;
         if (other.getSNSTopic() == null ^ this.getSNSTopic() == null)
             return false;
-        if (other.getSNSTopic() != null
-                && other.getSNSTopic().equals(this.getSNSTopic()) == false)
+        if (other.getSNSTopic() != null && other.getSNSTopic().equals(this.getSNSTopic()) == false)
             return false;
-        if (other.getCompletionDate() == null
-                ^ this.getCompletionDate() == null)
+        if (other.getCompletionDate() == null ^ this.getCompletionDate() == null)
             return false;
-        if (other.getCompletionDate() != null
-                && other.getCompletionDate().equals(this.getCompletionDate()) == false)
+        if (other.getCompletionDate() != null && other.getCompletionDate().equals(this.getCompletionDate()) == false)
             return false;
-        if (other.getSHA256TreeHash() == null
-                ^ this.getSHA256TreeHash() == null)
+        if (other.getSHA256TreeHash() == null ^ this.getSHA256TreeHash() == null)
             return false;
-        if (other.getSHA256TreeHash() != null
-                && other.getSHA256TreeHash().equals(this.getSHA256TreeHash()) == false)
+        if (other.getSHA256TreeHash() != null && other.getSHA256TreeHash().equals(this.getSHA256TreeHash()) == false)
             return false;
-        if (other.getArchiveSHA256TreeHash() == null
-                ^ this.getArchiveSHA256TreeHash() == null)
+        if (other.getArchiveSHA256TreeHash() == null ^ this.getArchiveSHA256TreeHash() == null)
             return false;
-        if (other.getArchiveSHA256TreeHash() != null
-                && other.getArchiveSHA256TreeHash().equals(
-                        this.getArchiveSHA256TreeHash()) == false)
+        if (other.getArchiveSHA256TreeHash() != null && other.getArchiveSHA256TreeHash().equals(this.getArchiveSHA256TreeHash()) == false)
             return false;
-        if (other.getRetrievalByteRange() == null
-                ^ this.getRetrievalByteRange() == null)
+        if (other.getRetrievalByteRange() == null ^ this.getRetrievalByteRange() == null)
             return false;
-        if (other.getRetrievalByteRange() != null
-                && other.getRetrievalByteRange().equals(
-                        this.getRetrievalByteRange()) == false)
+        if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false)
             return false;
-        if (other.getInventoryRetrievalParameters() == null
-                ^ this.getInventoryRetrievalParameters() == null)
+        if (other.getTier() == null ^ this.getTier() == null)
             return false;
-        if (other.getInventoryRetrievalParameters() != null
-                && other.getInventoryRetrievalParameters().equals(
-                        this.getInventoryRetrievalParameters()) == false)
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
+        if (other.getInventoryRetrievalParameters() == null ^ this.getInventoryRetrievalParameters() == null)
+            return false;
+        if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false)
+            return false;
+        if (other.getJobOutputPath() == null ^ this.getJobOutputPath() == null)
+            return false;
+        if (other.getJobOutputPath() != null && other.getJobOutputPath().equals(this.getJobOutputPath()) == false)
+            return false;
+        if (other.getSelectParameters() == null ^ this.getSelectParameters() == null)
+            return false;
+        if (other.getSelectParameters() != null && other.getSelectParameters().equals(this.getSelectParameters()) == false)
+            return false;
+        if (other.getOutputLocation() == null ^ this.getOutputLocation() == null)
+            return false;
+        if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
         return true;
     }
@@ -1437,60 +1565,27 @@ public class DescribeJobResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getJobDescription() == null) ? 0 : getJobDescription()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode
-                + ((getArchiveId() == null) ? 0 : getArchiveId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCompleted() == null) ? 0 : getCompleted().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchiveSizeInBytes() == null) ? 0
-                        : getArchiveSizeInBytes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInventorySizeInBytes() == null) ? 0
-                        : getInventorySizeInBytes().hashCode());
-        hashCode = prime * hashCode
-                + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompletionDate() == null) ? 0 : getCompletionDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchiveSHA256TreeHash() == null) ? 0
-                        : getArchiveSHA256TreeHash().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetrievalByteRange() == null) ? 0
-                        : getRetrievalByteRange().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInventoryRetrievalParameters() == null) ? 0
-                        : getInventoryRetrievalParameters().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobDescription() == null) ? 0 : getJobDescription().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getArchiveId() == null) ? 0 : getArchiveId().hashCode());
+        hashCode = prime * hashCode + ((getVaultARN() == null) ? 0 : getVaultARN().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCompleted() == null) ? 0 : getCompleted().hashCode());
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getArchiveSizeInBytes() == null) ? 0 : getArchiveSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getInventorySizeInBytes() == null) ? 0 : getInventorySizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode());
+        hashCode = prime * hashCode + ((getCompletionDate() == null) ? 0 : getCompletionDate().hashCode());
+        hashCode = prime * hashCode + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash().hashCode());
+        hashCode = prime * hashCode + ((getArchiveSHA256TreeHash() == null) ? 0 : getArchiveSHA256TreeHash().hashCode());
+        hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode());
+        hashCode = prime * hashCode + ((getJobOutputPath() == null) ? 0 : getJobOutputPath().hashCode());
+        hashCode = prime * hashCode + ((getSelectParameters() == null) ? 0 : getSelectParameters().hashCode());
+        hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         return hashCode;
     }
 
@@ -1499,9 +1594,8 @@ public class DescribeJobResult implements Serializable, Cloneable {
         try {
             return (DescribeJobResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

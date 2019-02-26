@@ -1,116 +1,76 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateStorediSCSIVolumeRequest Marshaller
+ * CreateStorediSCSIVolumeRequestMarshaller
  */
-public class CreateStorediSCSIVolumeRequestMarshaller
-        implements
-        Marshaller<Request<CreateStorediSCSIVolumeRequest>, CreateStorediSCSIVolumeRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateStorediSCSIVolumeRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<String> DISKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DiskId").build();
+    private static final MarshallingInfo<String> SNAPSHOTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotId").build();
+    private static final MarshallingInfo<Boolean> PRESERVEEXISTINGDATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreserveExistingData").build();
+    private static final MarshallingInfo<String> TARGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetName").build();
+    private static final MarshallingInfo<String> NETWORKINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkInterfaceId").build();
+    private static final MarshallingInfo<Boolean> KMSENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSEncrypted").build();
+    private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKey").build();
 
-    public CreateStorediSCSIVolumeRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateStorediSCSIVolumeRequestMarshaller instance = new CreateStorediSCSIVolumeRequestMarshaller();
+
+    public static CreateStorediSCSIVolumeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateStorediSCSIVolumeRequest> marshall(
-            CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createStorediSCSIVolumeRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateStorediSCSIVolumeRequest> request = new DefaultRequest<CreateStorediSCSIVolumeRequest>(
-                createStorediSCSIVolumeRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target",
-                "StorageGateway_20130630.CreateStorediSCSIVolume");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createStorediSCSIVolumeRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(
-                        createStorediSCSIVolumeRequest.getGatewayARN());
-            }
-            if (createStorediSCSIVolumeRequest.getDiskId() != null) {
-                jsonGenerator.writeFieldName("DiskId").writeValue(
-                        createStorediSCSIVolumeRequest.getDiskId());
-            }
-            if (createStorediSCSIVolumeRequest.getSnapshotId() != null) {
-                jsonGenerator.writeFieldName("SnapshotId").writeValue(
-                        createStorediSCSIVolumeRequest.getSnapshotId());
-            }
-            if (createStorediSCSIVolumeRequest.getPreserveExistingData() != null) {
-                jsonGenerator.writeFieldName("PreserveExistingData")
-                        .writeValue(
-                                createStorediSCSIVolumeRequest
-                                        .getPreserveExistingData());
-            }
-            if (createStorediSCSIVolumeRequest.getTargetName() != null) {
-                jsonGenerator.writeFieldName("TargetName").writeValue(
-                        createStorediSCSIVolumeRequest.getTargetName());
-            }
-            if (createStorediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
-                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
-                        createStorediSCSIVolumeRequest.getNetworkInterfaceId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getDiskId(), DISKID_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getSnapshotId(), SNAPSHOTID_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getPreserveExistingData(), PRESERVEEXISTINGDATA_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getTargetName(), TARGETNAME_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getNetworkInterfaceId(), NETWORKINTERFACEID_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
+            protocolMarshaller.marshall(createStorediSCSIVolumeRequest.getKMSKey(), KMSKEY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,31 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for <a>DescribeDeliveryStream</a>.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,16 +33,14 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     private String deliveryStreamName;
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can
-     * have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination
-     * information. Currently Firehose supports one destination per delivery
-     * stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      */
     private String exclusiveStartDestinationId;
@@ -81,25 +77,21 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * 
      * @param deliveryStreamName
      *        The name of the delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDeliveryStreamRequest withDeliveryStreamName(
-            String deliveryStreamName) {
+    public DescribeDeliveryStreamRequest withDeliveryStreamName(String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
         return this;
     }
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can
-     * have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
      * @param limit
-     *        The limit on the number of destinations to return. Currently, you
-     *        can have one destination per delivery stream.
+     *        The limit on the number of destinations to return. You can have one destination per delivery stream.
      */
 
     public void setLimit(Integer limit) {
@@ -108,12 +100,10 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can
-     * have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
-     * @return The limit on the number of destinations to return. Currently, you
-     *         can have one destination per delivery stream.
+     * @return The limit on the number of destinations to return. You can have one destination per delivery stream.
      */
 
     public Integer getLimit() {
@@ -122,15 +112,12 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can
-     * have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
      * @param limit
-     *        The limit on the number of destinations to return. Currently, you
-     *        can have one destination per delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The limit on the number of destinations to return. You can have one destination per delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDeliveryStreamRequest withLimit(Integer limit) {
@@ -140,32 +127,27 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination
-     * information. Currently Firehose supports one destination per delivery
-     * stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        Specifies the destination ID to start returning the destination
-     *        information. Currently Firehose supports one destination per
-     *        delivery stream.
+     *        The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *        one destination per delivery stream.
      */
 
-    public void setExclusiveStartDestinationId(
-            String exclusiveStartDestinationId) {
+    public void setExclusiveStartDestinationId(String exclusiveStartDestinationId) {
         this.exclusiveStartDestinationId = exclusiveStartDestinationId;
     }
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination
-     * information. Currently Firehose supports one destination per delivery
-     * stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
-     * @return Specifies the destination ID to start returning the destination
-     *         information. Currently Firehose supports one destination per
-     *         delivery stream.
+     * @return The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *         one destination per delivery stream.
      */
 
     public String getExclusiveStartDestinationId() {
@@ -174,28 +156,24 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination
-     * information. Currently Firehose supports one destination per delivery
-     * stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        Specifies the destination ID to start returning the destination
-     *        information. Currently Firehose supports one destination per
-     *        delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *        one destination per delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDeliveryStreamRequest withExclusiveStartDestinationId(
-            String exclusiveStartDestinationId) {
+    public DescribeDeliveryStreamRequest withExclusiveStartDestinationId(String exclusiveStartDestinationId) {
         setExclusiveStartDestinationId(exclusiveStartDestinationId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -206,12 +184,11 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartDestinationId() != null)
-            sb.append("ExclusiveStartDestinationId: "
-                    + getExclusiveStartDestinationId());
+            sb.append("ExclusiveStartDestinationId: ").append(getExclusiveStartDestinationId());
         sb.append("}");
         return sb.toString();
     }
@@ -226,24 +203,17 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeDeliveryStreamRequest == false)
             return false;
         DescribeDeliveryStreamRequest other = (DescribeDeliveryStreamRequest) obj;
-        if (other.getDeliveryStreamName() == null
-                ^ this.getDeliveryStreamName() == null)
+        if (other.getDeliveryStreamName() == null ^ this.getDeliveryStreamName() == null)
             return false;
-        if (other.getDeliveryStreamName() != null
-                && other.getDeliveryStreamName().equals(
-                        this.getDeliveryStreamName()) == false)
+        if (other.getDeliveryStreamName() != null && other.getDeliveryStreamName().equals(this.getDeliveryStreamName()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
-        if (other.getExclusiveStartDestinationId() == null
-                ^ this.getExclusiveStartDestinationId() == null)
+        if (other.getExclusiveStartDestinationId() == null ^ this.getExclusiveStartDestinationId() == null)
             return false;
-        if (other.getExclusiveStartDestinationId() != null
-                && other.getExclusiveStartDestinationId().equals(
-                        this.getExclusiveStartDestinationId()) == false)
+        if (other.getExclusiveStartDestinationId() != null && other.getExclusiveStartDestinationId().equals(this.getExclusiveStartDestinationId()) == false)
             return false;
         return true;
     }
@@ -253,16 +223,9 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeliveryStreamName() == null) ? 0
-                        : getDeliveryStreamName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExclusiveStartDestinationId() == null) ? 0
-                        : getExclusiveStartDestinationId().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getExclusiveStartDestinationId() == null) ? 0 : getExclusiveStartDestinationId().hashCode());
         return hashCode;
     }
 
@@ -270,4 +233,5 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     public DescribeDeliveryStreamRequest clone() {
         return (DescribeDeliveryStreamRequest) super.clone();
     }
+
 }

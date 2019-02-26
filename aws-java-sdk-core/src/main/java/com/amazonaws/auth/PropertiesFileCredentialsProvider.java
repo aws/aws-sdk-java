@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class PropertiesFileCredentialsProvider implements
         try {
             return new PropertiesCredentials(new File(this.credentialsFilePath));
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS credentials from the "
                             + credentialsFilePath + " file", e);
         }

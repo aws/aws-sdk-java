@@ -1,22 +1,21 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,8 +24,12 @@ import java.io.Serializable;
  * <p>
  * Note that this does not represent system-wide CPU usage.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CPU" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CPU implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CPU implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -42,8 +45,8 @@ public class CPU implements Serializable, Cloneable {
     private String architecture;
     /**
      * <p>
-     * The clock speed of the device's CPU, expressed in hertz (Hz). For
-     * example, a 1.2 GHz CPU is expressed as 1200000000.
+     * The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     * 1200000000.
      * </p>
      */
     private Double clock;
@@ -80,8 +83,7 @@ public class CPU implements Serializable, Cloneable {
      * 
      * @param frequency
      *        The CPU's frequency.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CPU withFrequency(String frequency) {
@@ -121,8 +123,7 @@ public class CPU implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The CPU's architecture, for example x86 or ARM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CPU withArchitecture(String architecture) {
@@ -132,13 +133,13 @@ public class CPU implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The clock speed of the device's CPU, expressed in hertz (Hz). For
-     * example, a 1.2 GHz CPU is expressed as 1200000000.
+     * The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     * 1200000000.
      * </p>
      * 
      * @param clock
-     *        The clock speed of the device's CPU, expressed in hertz (Hz). For
-     *        example, a 1.2 GHz CPU is expressed as 1200000000.
+     *        The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     *        1200000000.
      */
 
     public void setClock(Double clock) {
@@ -147,12 +148,12 @@ public class CPU implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The clock speed of the device's CPU, expressed in hertz (Hz). For
-     * example, a 1.2 GHz CPU is expressed as 1200000000.
+     * The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     * 1200000000.
      * </p>
      * 
-     * @return The clock speed of the device's CPU, expressed in hertz (Hz). For
-     *         example, a 1.2 GHz CPU is expressed as 1200000000.
+     * @return The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     *         1200000000.
      */
 
     public Double getClock() {
@@ -161,15 +162,14 @@ public class CPU implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The clock speed of the device's CPU, expressed in hertz (Hz). For
-     * example, a 1.2 GHz CPU is expressed as 1200000000.
+     * The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     * 1200000000.
      * </p>
      * 
      * @param clock
-     *        The clock speed of the device's CPU, expressed in hertz (Hz). For
-     *        example, a 1.2 GHz CPU is expressed as 1200000000.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as
+     *        1200000000.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CPU withClock(Double clock) {
@@ -178,8 +178,8 @@ public class CPU implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -190,11 +190,11 @@ public class CPU implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getClock() != null)
-            sb.append("Clock: " + getClock());
+            sb.append("Clock: ").append(getClock());
         sb.append("}");
         return sb.toString();
     }
@@ -211,18 +211,15 @@ public class CPU implements Serializable, Cloneable {
         CPU other = (CPU) obj;
         if (other.getFrequency() == null ^ this.getFrequency() == null)
             return false;
-        if (other.getFrequency() != null
-                && other.getFrequency().equals(this.getFrequency()) == false)
+        if (other.getFrequency() != null && other.getFrequency().equals(this.getFrequency()) == false)
             return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getArchitecture() != null
-                && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
         if (other.getClock() == null ^ this.getClock() == null)
             return false;
-        if (other.getClock() != null
-                && other.getClock().equals(this.getClock()) == false)
+        if (other.getClock() != null && other.getClock().equals(this.getClock()) == false)
             return false;
         return true;
     }
@@ -232,14 +229,9 @@ public class CPU implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFrequency() == null) ? 0 : getFrequency().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getArchitecture() == null) ? 0 : getArchitecture()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getClock() == null) ? 0 : getClock().hashCode());
+        hashCode = prime * hashCode + ((getFrequency() == null) ? 0 : getFrequency().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getClock() == null) ? 0 : getClock().hashCode());
         return hashCode;
     }
 
@@ -248,9 +240,13 @@ public class CPU implements Serializable, Cloneable {
         try {
             return (CPU) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.CPUMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

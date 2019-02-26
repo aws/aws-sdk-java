@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.SdkClientException;
+
 /**
  * S3 client configuration options such as the request access style.
  */
@@ -22,11 +24,15 @@ public class S3ClientOptions {
     /** The default setting for use of path-style access */
     public static final boolean DEFAULT_PATH_STYLE_ACCESS = false;
     /** The default setting for use of chunked encoding */
-    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = true;
+    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = false;
     /** The default setting for use of payload signing */
     public static final boolean DEFAULT_PAYLOAD_SIGNING_ENABLED = false;
     /** S3 accelerate is by default not enabled */
     public static final boolean DEFAULT_ACCELERATE_MODE_ENABLED = false;
+    /** S3 dualstack endpoint is by default not enabled */
+    public static final boolean DEFAULT_DUALSTACK_ENABLED = false;
+    /** By default, clients should be created with a region. */
+    public static final boolean DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED = false;
 
     /*
      * TODO: make it final after we remove the deprecated setters.
@@ -35,6 +41,8 @@ public class S3ClientOptions {
     private boolean chunkedEncodingDisabled;
     private final boolean accelerateModeEnabled;
     private final boolean payloadSigningEnabled;
+    private final boolean dualstackEnabled;
+    private final boolean forceGlobalBucketAccessEnabled;
 
     /**
      * @return a new S3ClientOptions builder.
@@ -50,12 +58,20 @@ public class S3ClientOptions {
         private boolean chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         private boolean accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
         private boolean payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
+        private boolean dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
+        private boolean forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
 
         private Builder() {}
 
         public S3ClientOptions build() {
-            return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled,
-                    accelerateModeEnabled, payloadSigningEnabled);
+            if (pathStyleAccess && accelerateModeEnabled) {
+                throw new SdkClientException("Both accelerate mode and path style access are being enabled either through "
+                                             + "S3ClientOptions or AmazonS3ClientBuilder. These options are mutually exclusive "
+                                             + "and cannot be enabled together. Please disable one of them");
+            }
+
+            return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled, accelerateModeEnabled,
+                                       payloadSigningEnabled, dualstackEnabled, forceGlobalBucketAccessEnabled);
         }
         /**
          * <p>
@@ -93,7 +109,7 @@ public class S3ClientOptions {
          * the bucket in advance.
          * </p>
          *
-         * @see {@link AmazonS3#setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)}
+         * @see AmazonS3#setBucketAccelerateConfiguration(com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest)
          */
         public Builder setAccelerateModeEnabled(boolean accelerateModeEnabled) {
             this.accelerateModeEnabled = accelerateModeEnabled;
@@ -146,6 +162,37 @@ public class S3ClientOptions {
             this.chunkedEncodingDisabled = true;
             return this;
         }
+
+        /**
+         * <p>
+         * Configures the client to use the dualstack endpoint for a region
+         * <p>
+         * S3 supports dualstack endpoints which return both IPv6 and IPv4 values.
+         * Use of these endpoints is optional.
+         * </p>
+         *
+         * @return this Builder instance that can be used for method chaining
+         */
+        public Builder enableDualstack() {
+            this.dualstackEnabled = true;
+            return this;
+        }
+
+        /**
+         * <p>
+         * Force-enable global bucket access on the S3 client. Any bucket-related operations invoked against a client
+         * with this option enabled will potentially be executed against other regions than the one configured in the
+         * client in order to succeed.
+         * </p>
+         *
+         * @see AmazonS3ClientBuilder#setForceGlobalBucketAccessEnabled(Boolean)
+         * @return this Builder instance that can be used for method chaining
+         */
+        public Builder enableForceGlobalBucketAccess()
+        {
+            this.forceGlobalBucketAccessEnabled = true;
+            return this;
+        }
     }
 
     /**
@@ -158,6 +205,8 @@ public class S3ClientOptions {
         this.chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         this.accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
         this.payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
+        this.dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
+        this.forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
     }
 
     /**
@@ -170,14 +219,18 @@ public class S3ClientOptions {
         this.chunkedEncodingDisabled = other.chunkedEncodingDisabled;
         this.accelerateModeEnabled = other.accelerateModeEnabled;
         this.payloadSigningEnabled = other.payloadSigningEnabled;
+        this.dualstackEnabled = other.dualstackEnabled;
+        this.forceGlobalBucketAccessEnabled = other.forceGlobalBucketAccessEnabled;
     }
 
     private S3ClientOptions(boolean pathStyleAccess, boolean chunkedEncodingDisabled, boolean accelerateModeEnabled,
-                            boolean payloadSigningEnabled) {
+                            boolean payloadSigningEnabled, boolean dualstackEnabled, boolean forceGlobalBucketAccessEnabled) {
         this.pathStyleAccess = pathStyleAccess;
         this.chunkedEncodingDisabled = chunkedEncodingDisabled;
         this.accelerateModeEnabled = accelerateModeEnabled;
         this.payloadSigningEnabled = payloadSigningEnabled;
+        this.dualstackEnabled = dualstackEnabled;
+        this.forceGlobalBucketAccessEnabled = forceGlobalBucketAccessEnabled;
     }
 
     /**
@@ -260,6 +313,28 @@ public class S3ClientOptions {
      */
     public boolean isPayloadSigningEnabled() {
         return payloadSigningEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns whether the client is configured to use dualstack mode for
+     * accessing S3.
+     * </p>
+     *
+     * @return True if the client will use the dualstack mode
+     */
+    public boolean isDualstackEnabled() {
+        return dualstackEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns whether the client should be configured with global bucket access enabled.
+     * </p>
+     * @see Builder#enableForceGlobalBucketAccess()
+     */
+    public boolean isForceGlobalBucketAccessEnabled() {
+        return this.forceGlobalBucketAccessEnabled;
     }
 
     /**

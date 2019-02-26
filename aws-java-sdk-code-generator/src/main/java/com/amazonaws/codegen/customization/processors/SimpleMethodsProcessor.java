@@ -15,10 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.config.customization.SimpleMethodFormsWrapper;
 import com.amazonaws.codegen.model.intermediate.ArgumentModel;
@@ -27,6 +23,10 @@ import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This processor adds the simple methods to each OperationModel from the customization config.
@@ -64,10 +64,12 @@ final class SimpleMethodsProcessor implements CodegenCustomizationProcessor {
             } else {
                 String inputShapeName = opModel.getInput().getSimpleType();
                 ShapeModel shape = shapeModels.get(inputShapeName);
-                List<List<String>> methodForms = methodFormsWrapper
-                        .getMethodForms();
+                List<List<String>> methodForms = methodFormsWrapper.getMethodForms();
+                List<Boolean> deprecatedForms = methodFormsWrapper.getDeprecated();
 
-                for (List<String> argumentList : methodForms) {
+                for (int i = 0; i < methodForms.size(); i++) {
+                    List<String> argumentList = methodForms.get(i);
+                    boolean deprecated = deprecatedForms != null ? deprecatedForms.get(i) : false;
                     List<ArgumentModel> simplifiedForm = new ArrayList<ArgumentModel>();
 
                     for (String argument : argumentList) {
@@ -80,7 +82,7 @@ final class SimpleMethodsProcessor implements CodegenCustomizationProcessor {
                         simplifiedForm.add(argModel);
                     }
 
-                    opModel.addSimpleMethodForm(simplifiedForm);
+                    opModel.addSimpleMethodForm(simplifiedForm, deprecated);
                 }
             }
         }

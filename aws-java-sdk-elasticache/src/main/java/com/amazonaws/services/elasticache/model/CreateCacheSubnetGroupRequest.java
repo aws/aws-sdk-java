@@ -1,40 +1,39 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>CreateCacheSubnetGroup</i> action.
+ * Represents the input of a <code>CreateCacheSubnetGroup</code> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * A name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
@@ -56,23 +55,19 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * A name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        A name for the cache subnet group. This value is stored as a
-     *        lowercase string.</p>
+     *        A name for the cache subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters
-     *        or hyphens.
+     *        Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *        </p>
      *        <p>
      *        Example: <code>mysubnetgroup</code>
@@ -84,22 +79,18 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * A name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
-     * @return A name for the cache subnet group. This value is stored as a
-     *         lowercase string.</p>
+     * @return A name for the cache subnet group. This value is stored as a lowercase string.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters or hyphens.
+     *         Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *         </p>
      *         <p>
      *         Example: <code>mysubnetgroup</code>
@@ -111,32 +102,26 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the cache subnet group. This value is stored as a lowercase
-     * string.
+     * A name for the cache subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters or
-     * hyphens.
+     * Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      * </p>
      * <p>
      * Example: <code>mysubnetgroup</code>
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        A name for the cache subnet group. This value is stored as a
-     *        lowercase string.</p>
+     *        A name for the cache subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters
-     *        or hyphens.
+     *        Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
      *        </p>
      *        <p>
      *        Example: <code>mysubnetgroup</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCacheSubnetGroupRequest withCacheSubnetGroupName(
-            String cacheSubnetGroupName) {
+    public CreateCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         setCacheSubnetGroupName(cacheSubnetGroupName);
         return this;
     }
@@ -150,8 +135,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
      *        A description for the cache subnet group.
      */
 
-    public void setCacheSubnetGroupDescription(
-            String cacheSubnetGroupDescription) {
+    public void setCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
     }
 
@@ -174,12 +158,10 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
      * 
      * @param cacheSubnetGroupDescription
      *        A description for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCacheSubnetGroupRequest withCacheSubnetGroupDescription(
-            String cacheSubnetGroupDescription) {
+    public CreateCacheSubnetGroupRequest withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         setCacheSubnetGroupDescription(cacheSubnetGroupDescription);
         return this;
     }
@@ -214,8 +196,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
@@ -223,22 +204,19 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
      * A list of VPC subnet IDs for the cache subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
      *        A list of VPC subnet IDs for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCacheSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -253,19 +231,17 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
      * 
      * @param subnetIds
      *        A list of VPC subnet IDs for the cache subnet group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateCacheSubnetGroupRequest withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public CreateCacheSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -276,13 +252,11 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName()
-                    + ",");
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName()).append(",");
         if (getCacheSubnetGroupDescription() != null)
-            sb.append("CacheSubnetGroupDescription: "
-                    + getCacheSubnetGroupDescription() + ",");
+            sb.append("CacheSubnetGroupDescription: ").append(getCacheSubnetGroupDescription()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }
@@ -297,24 +271,17 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
         if (obj instanceof CreateCacheSubnetGroupRequest == false)
             return false;
         CreateCacheSubnetGroupRequest other = (CreateCacheSubnetGroupRequest) obj;
-        if (other.getCacheSubnetGroupName() == null
-                ^ this.getCacheSubnetGroupName() == null)
+        if (other.getCacheSubnetGroupName() == null ^ this.getCacheSubnetGroupName() == null)
             return false;
-        if (other.getCacheSubnetGroupName() != null
-                && other.getCacheSubnetGroupName().equals(
-                        this.getCacheSubnetGroupName()) == false)
+        if (other.getCacheSubnetGroupName() != null && other.getCacheSubnetGroupName().equals(this.getCacheSubnetGroupName()) == false)
             return false;
-        if (other.getCacheSubnetGroupDescription() == null
-                ^ this.getCacheSubnetGroupDescription() == null)
+        if (other.getCacheSubnetGroupDescription() == null ^ this.getCacheSubnetGroupDescription() == null)
             return false;
-        if (other.getCacheSubnetGroupDescription() != null
-                && other.getCacheSubnetGroupDescription().equals(
-                        this.getCacheSubnetGroupDescription()) == false)
+        if (other.getCacheSubnetGroupDescription() != null && other.getCacheSubnetGroupDescription().equals(this.getCacheSubnetGroupDescription()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
         return true;
     }
@@ -324,16 +291,9 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheSubnetGroupName() == null) ? 0
-                        : getCacheSubnetGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCacheSubnetGroupDescription() == null) ? 0
-                        : getCacheSubnetGroupDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCacheSubnetGroupDescription() == null) ? 0 : getCacheSubnetGroupDescription().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         return hashCode;
     }
 
@@ -341,4 +301,5 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest
     public CreateCacheSubnetGroupRequest clone() {
         return (CreateCacheSubnetGroupRequest) super.clone();
     }
+
 }

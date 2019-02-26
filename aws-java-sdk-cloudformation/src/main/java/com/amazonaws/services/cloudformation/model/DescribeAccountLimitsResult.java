@@ -1,53 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The output for the <a>DescribeAccountLimits</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeAccountLimitsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAccountLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account limit structure that contain a list of AWS CloudFormation
-     * account limits and their values.
+     * An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountLimit> accountLimits;
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of limits. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page
+     * exists, this value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An account limit structure that contain a list of AWS CloudFormation
-     * account limits and their values.
+     * An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      * </p>
      * 
-     * @return An account limit structure that contain a list of AWS
-     *         CloudFormation account limits and their values.
+     * @return An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      */
 
     public java.util.List<AccountLimit> getAccountLimits() {
@@ -59,50 +57,40 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account limit structure that contain a list of AWS CloudFormation
-     * account limits and their values.
+     * An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      * </p>
      * 
      * @param accountLimits
-     *        An account limit structure that contain a list of AWS
-     *        CloudFormation account limits and their values.
+     *        An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      */
 
-    public void setAccountLimits(
-            java.util.Collection<AccountLimit> accountLimits) {
+    public void setAccountLimits(java.util.Collection<AccountLimit> accountLimits) {
         if (accountLimits == null) {
             this.accountLimits = null;
             return;
         }
 
-        this.accountLimits = new com.amazonaws.internal.SdkInternalList<AccountLimit>(
-                accountLimits);
+        this.accountLimits = new com.amazonaws.internal.SdkInternalList<AccountLimit>(accountLimits);
     }
 
     /**
      * <p>
-     * An account limit structure that contain a list of AWS CloudFormation
-     * account limits and their values.
+     * An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAccountLimits(java.util.Collection)} or
-     * {@link #withAccountLimits(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountLimits(java.util.Collection)} or {@link #withAccountLimits(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param accountLimits
-     *        An account limit structure that contain a list of AWS
-     *        CloudFormation account limits and their values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An account limit structure that contain a list of AWS CloudFormation account limits and their values.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withAccountLimits(
-            AccountLimit... accountLimits) {
+    public DescribeAccountLimitsResult withAccountLimits(AccountLimit... accountLimits) {
         if (this.accountLimits == null) {
-            setAccountLimits(new com.amazonaws.internal.SdkInternalList<AccountLimit>(
-                    accountLimits.length));
+            setAccountLimits(new com.amazonaws.internal.SdkInternalList<AccountLimit>(accountLimits.length));
         }
         for (AccountLimit ele : accountLimits) {
             this.accountLimits.add(ele);
@@ -112,33 +100,28 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An account limit structure that contain a list of AWS CloudFormation
-     * account limits and their values.
+     * An account limit structure that contain a list of AWS CloudFormation account limits and their values.
      * </p>
      * 
      * @param accountLimits
-     *        An account limit structure that contain a list of AWS
-     *        CloudFormation account limits and their values.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        An account limit structure that contain a list of AWS CloudFormation account limits and their values.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAccountLimitsResult withAccountLimits(
-            java.util.Collection<AccountLimit> accountLimits) {
+    public DescribeAccountLimitsResult withAccountLimits(java.util.Collection<AccountLimit> accountLimits) {
         setAccountLimits(accountLimits);
         return this;
     }
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of limits. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page
+     * exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of limits. If no additional page exists, this value is
-     *        null.
+     *        If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional
+     *        page exists, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -147,13 +130,12 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of limits. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page
+     * exists, this value is null.
      * </p>
      * 
-     * @return If the output exceeds 1 MB in size, a string that identifies the
-     *         next page of limits. If no additional page exists, this value is
-     *         null.
+     * @return If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional
+     *         page exists, this value is null.
      */
 
     public String getNextToken() {
@@ -162,16 +144,14 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of limits. If no additional page exists, this value is null.
+     * If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page
+     * exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of limits. If no additional page exists, this value is
-     *        null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional
+     *        page exists, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAccountLimitsResult withNextToken(String nextToken) {
@@ -180,8 +160,8 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -192,9 +172,9 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountLimits() != null)
-            sb.append("AccountLimits: " + getAccountLimits() + ",");
+            sb.append("AccountLimits: ").append(getAccountLimits()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -211,13 +191,11 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
         DescribeAccountLimitsResult other = (DescribeAccountLimitsResult) obj;
         if (other.getAccountLimits() == null ^ this.getAccountLimits() == null)
             return false;
-        if (other.getAccountLimits() != null
-                && other.getAccountLimits().equals(this.getAccountLimits()) == false)
+        if (other.getAccountLimits() != null && other.getAccountLimits().equals(this.getAccountLimits()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -227,12 +205,8 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAccountLimits() == null) ? 0 : getAccountLimits()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAccountLimits() == null) ? 0 : getAccountLimits().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -241,9 +215,8 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
         try {
             return (DescribeAccountLimitsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

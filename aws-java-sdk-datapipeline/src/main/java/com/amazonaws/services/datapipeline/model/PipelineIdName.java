@@ -1,34 +1,37 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Contains the name and identifier of a pipeline.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineIdName" target="_top">AWS API
+ *      Documentation</a>
  */
-public class PipelineIdName implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PipelineIdName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      */
     private String id;
@@ -41,13 +44,13 @@ public class PipelineIdName implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
      * @param id
-     *        The ID of the pipeline that was assigned by AWS Data Pipeline.
-     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     *        The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     *        <code>df-297EG78HU43EEXAMPLE</code>.
      */
 
     public void setId(String id) {
@@ -56,12 +59,12 @@ public class PipelineIdName implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
-     * @return The ID of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     *         <code>df-297EG78HU43EEXAMPLE</code>.
      */
 
     public String getId() {
@@ -70,15 +73,14 @@ public class PipelineIdName implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
-     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.
+     * The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     * <code>df-297EG78HU43EEXAMPLE</code>.
      * </p>
      * 
      * @param id
-     *        The ID of the pipeline that was assigned by AWS Data Pipeline.
-     *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form
+     *        <code>df-297EG78HU43EEXAMPLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineIdName withId(String id) {
@@ -118,8 +120,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineIdName withName(String name) {
@@ -128,8 +129,8 @@ public class PipelineIdName implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -140,9 +141,9 @@ public class PipelineIdName implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -159,13 +160,11 @@ public class PipelineIdName implements Serializable, Cloneable {
         PipelineIdName other = (PipelineIdName) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -175,10 +174,8 @@ public class PipelineIdName implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 
@@ -187,9 +184,13 @@ public class PipelineIdName implements Serializable, Cloneable {
         try {
             return (PipelineIdName) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.datapipeline.model.transform.PipelineIdNameMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

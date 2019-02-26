@@ -1,36 +1,45 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListDistributionsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDistributionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The DistributionList type. */
+    /**
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
+     */
     private DistributionList distributionList;
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
      * @param distributionList
-     *        The DistributionList type.
+     *        The <code>DistributionList</code> type.
      */
 
     public void setDistributionList(DistributionList distributionList) {
@@ -38,9 +47,11 @@ public class ListDistributionsResult implements Serializable, Cloneable {
     }
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
-     * @return The DistributionList type.
+     * @return The <code>DistributionList</code> type.
      */
 
     public DistributionList getDistributionList() {
@@ -48,23 +59,23 @@ public class ListDistributionsResult implements Serializable, Cloneable {
     }
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
      * @param distributionList
-     *        The DistributionList type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>DistributionList</code> type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDistributionsResult withDistributionList(
-            DistributionList distributionList) {
+    public ListDistributionsResult withDistributionList(DistributionList distributionList) {
         setDistributionList(distributionList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -75,7 +86,7 @@ public class ListDistributionsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionList() != null)
-            sb.append("DistributionList: " + getDistributionList());
+            sb.append("DistributionList: ").append(getDistributionList());
         sb.append("}");
         return sb.toString();
     }
@@ -90,12 +101,9 @@ public class ListDistributionsResult implements Serializable, Cloneable {
         if (obj instanceof ListDistributionsResult == false)
             return false;
         ListDistributionsResult other = (ListDistributionsResult) obj;
-        if (other.getDistributionList() == null
-                ^ this.getDistributionList() == null)
+        if (other.getDistributionList() == null ^ this.getDistributionList() == null)
             return false;
-        if (other.getDistributionList() != null
-                && other.getDistributionList().equals(
-                        this.getDistributionList()) == false)
+        if (other.getDistributionList() != null && other.getDistributionList().equals(this.getDistributionList()) == false)
             return false;
         return true;
     }
@@ -105,10 +113,7 @@ public class ListDistributionsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDistributionList() == null) ? 0 : getDistributionList()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDistributionList() == null) ? 0 : getDistributionList().hashCode());
         return hashCode;
     }
 
@@ -117,9 +122,8 @@ public class ListDistributionsResult implements Serializable, Cloneable {
         try {
             return (ListDistributionsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

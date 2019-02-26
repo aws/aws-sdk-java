@@ -1,28 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.glacier;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
 /**
- * Abstract implementation of {@code AmazonGlacier}. Convenient method forms
- * pass through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonGlacier}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonGlacier implements AmazonGlacier {
 
     protected AbstractAmazonGlacier() {
@@ -39,8 +39,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public AbortMultipartUploadResult abortMultipartUpload(
-            AbortMultipartUploadRequest request) {
+    public AbortMultipartUploadResult abortMultipartUpload(AbortMultipartUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,14 +54,12 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public CompleteMultipartUploadResult completeMultipartUpload(
-            CompleteMultipartUploadRequest request) {
+    public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CompleteVaultLockResult completeVaultLock(
-            CompleteVaultLockRequest request) {
+    public CompleteVaultLockResult completeVaultLock(CompleteVaultLockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,14 +79,12 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public DeleteVaultAccessPolicyResult deleteVaultAccessPolicy(
-            DeleteVaultAccessPolicyRequest request) {
+    public DeleteVaultAccessPolicyResult deleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteVaultNotificationsResult deleteVaultNotifications(
-            DeleteVaultNotificationsRequest request) {
+    public DeleteVaultNotificationsResult deleteVaultNotifications(DeleteVaultNotificationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,8 +99,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public GetDataRetrievalPolicyResult getDataRetrievalPolicy(
-            GetDataRetrievalPolicyRequest request) {
+    public GetDataRetrievalPolicyResult getDataRetrievalPolicy(GetDataRetrievalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,8 +109,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public GetVaultAccessPolicyResult getVaultAccessPolicy(
-            GetVaultAccessPolicyRequest request) {
+    public GetVaultAccessPolicyResult getVaultAccessPolicy(GetVaultAccessPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +119,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public GetVaultNotificationsResult getVaultNotifications(
-            GetVaultNotificationsRequest request) {
+    public GetVaultNotificationsResult getVaultNotifications(GetVaultNotificationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,14 +129,12 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public InitiateMultipartUploadResult initiateMultipartUpload(
-            InitiateMultipartUploadRequest request) {
+    public InitiateMultipartUploadResult initiateMultipartUpload(InitiateMultipartUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public InitiateVaultLockResult initiateVaultLock(
-            InitiateVaultLockRequest request) {
+    public InitiateVaultLockResult initiateVaultLock(InitiateVaultLockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,8 +144,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public ListMultipartUploadsResult listMultipartUploads(
-            ListMultipartUploadsRequest request) {
+    public ListMultipartUploadsResult listMultipartUploads(ListMultipartUploadsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,8 +154,12 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public ListTagsForVaultResult listTagsForVault(
-            ListTagsForVaultRequest request) {
+    public ListProvisionedCapacityResult listProvisionedCapacity(ListProvisionedCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForVaultResult listTagsForVault(ListTagsForVaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -176,26 +169,27 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public RemoveTagsFromVaultResult removeTagsFromVault(
-            RemoveTagsFromVaultRequest request) {
+    public PurchaseProvisionedCapacityResult purchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetDataRetrievalPolicyResult setDataRetrievalPolicy(
-            SetDataRetrievalPolicyRequest request) {
+    public RemoveTagsFromVaultResult removeTagsFromVault(RemoveTagsFromVaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetVaultAccessPolicyResult setVaultAccessPolicy(
-            SetVaultAccessPolicyRequest request) {
+    public SetDataRetrievalPolicyResult setDataRetrievalPolicy(SetDataRetrievalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetVaultNotificationsResult setVaultNotifications(
-            SetVaultNotificationsRequest request) {
+    public SetVaultAccessPolicyResult setVaultAccessPolicy(SetVaultAccessPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetVaultNotificationsResult setVaultNotifications(SetVaultNotificationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -205,8 +199,7 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public UploadMultipartPartResult uploadMultipartPart(
-            UploadMultipartPartRequest request) {
+    public UploadMultipartPartResult uploadMultipartPart(UploadMultipartPartRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -216,8 +209,13 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonGlacierWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +33,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     private String stackId;
     /**
      * <p>
-     * The app ID. This parameter is required for app deployments, but not for
-     * other deployment commands.
+     * The app ID. This parameter is required for app deployments, but not for other deployment commands.
      * </p>
      */
     private String appId;
@@ -52,8 +51,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> layerIds;
     /**
      * <p>
-     * A <code>DeploymentCommand</code> object that specifies the deployment
-     * command and any associated arguments.
+     * A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.
      * </p>
      */
     private DeploymentCommand command;
@@ -65,17 +63,16 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     private String comment;
     /**
      * <p>
-     * A string that contains user-defined, custom JSON. It is used to override
-     * the corresponding default stack configuration JSON values. The string
-     * should be in the following format and must escape characters such as '"':
+     * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * For more information about custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
+     * Stack Configuration Attributes</a>.
      * </p>
      */
     private String customJson;
@@ -112,8 +109,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withStackId(String stackId) {
@@ -123,13 +119,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The app ID. This parameter is required for app deployments, but not for
-     * other deployment commands.
+     * The app ID. This parameter is required for app deployments, but not for other deployment commands.
      * </p>
      * 
      * @param appId
-     *        The app ID. This parameter is required for app deployments, but
-     *        not for other deployment commands.
+     *        The app ID. This parameter is required for app deployments, but not for other deployment commands.
      */
 
     public void setAppId(String appId) {
@@ -138,12 +132,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The app ID. This parameter is required for app deployments, but not for
-     * other deployment commands.
+     * The app ID. This parameter is required for app deployments, but not for other deployment commands.
      * </p>
      * 
-     * @return The app ID. This parameter is required for app deployments, but
-     *         not for other deployment commands.
+     * @return The app ID. This parameter is required for app deployments, but not for other deployment commands.
      */
 
     public String getAppId() {
@@ -152,15 +144,12 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The app ID. This parameter is required for app deployments, but not for
-     * other deployment commands.
+     * The app ID. This parameter is required for app deployments, but not for other deployment commands.
      * </p>
      * 
      * @param appId
-     *        The app ID. This parameter is required for app deployments, but
-     *        not for other deployment commands.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The app ID. This parameter is required for app deployments, but not for other deployment commands.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withAppId(String appId) {
@@ -198,8 +187,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(
-                instanceIds);
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
     }
 
     /**
@@ -207,22 +195,19 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * The instance IDs for the deployment targets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstanceIds(java.util.Collection)} or
-     * {@link #withInstanceIds(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param instanceIds
      *        The instance IDs for the deployment targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
-            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    instanceIds.length));
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
         }
         for (String ele : instanceIds) {
             this.instanceIds.add(ele);
@@ -237,12 +222,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param instanceIds
      *        The instance IDs for the deployment targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withInstanceIds(
-            java.util.Collection<String> instanceIds) {
+    public CreateDeploymentRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;
     }
@@ -277,8 +260,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(
-                layerIds);
+        this.layerIds = new com.amazonaws.internal.SdkInternalList<String>(layerIds);
     }
 
     /**
@@ -286,22 +268,19 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * The layer IDs for the deployment targets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLayerIds(java.util.Collection)} or
-     * {@link #withLayerIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayerIds(java.util.Collection)} or {@link #withLayerIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param layerIds
      *        The layer IDs for the deployment targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
-            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    layerIds.length));
+            setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(layerIds.length));
         }
         for (String ele : layerIds) {
             this.layerIds.add(ele);
@@ -316,25 +295,22 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param layerIds
      *        The layer IDs for the deployment targets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDeploymentRequest withLayerIds(
-            java.util.Collection<String> layerIds) {
+    public CreateDeploymentRequest withLayerIds(java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);
         return this;
     }
 
     /**
      * <p>
-     * A <code>DeploymentCommand</code> object that specifies the deployment
-     * command and any associated arguments.
+     * A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.
      * </p>
      * 
      * @param command
-     *        A <code>DeploymentCommand</code> object that specifies the
-     *        deployment command and any associated arguments.
+     *        A <code>DeploymentCommand</code> object that specifies the deployment command and any associated
+     *        arguments.
      */
 
     public void setCommand(DeploymentCommand command) {
@@ -343,12 +319,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>DeploymentCommand</code> object that specifies the deployment
-     * command and any associated arguments.
+     * A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.
      * </p>
      * 
-     * @return A <code>DeploymentCommand</code> object that specifies the
-     *         deployment command and any associated arguments.
+     * @return A <code>DeploymentCommand</code> object that specifies the deployment command and any associated
+     *         arguments.
      */
 
     public DeploymentCommand getCommand() {
@@ -357,15 +332,13 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <code>DeploymentCommand</code> object that specifies the deployment
-     * command and any associated arguments.
+     * A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.
      * </p>
      * 
      * @param command
-     *        A <code>DeploymentCommand</code> object that specifies the
-     *        deployment command and any associated arguments.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <code>DeploymentCommand</code> object that specifies the deployment command and any associated
+     *        arguments.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withCommand(DeploymentCommand command) {
@@ -405,8 +378,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @param comment
      *        A user-defined comment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withComment(String comment) {
@@ -416,31 +388,28 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A string that contains user-defined, custom JSON. It is used to override
-     * the corresponding default stack configuration JSON values. The string
-     * should be in the following format and must escape characters such as '"':
+     * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * For more information about custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
+     * Stack Configuration Attributes</a>.
      * </p>
      * 
      * @param customJson
-     *        A string that contains user-defined, custom JSON. It is used to
-     *        override the corresponding default stack configuration JSON
-     *        values. The string should be in the following format and must
-     *        escape characters such as '"':</p>
+     *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     *        For more information about custom JSON, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        Modify the Stack Configuration Attributes</a>.
      */
 
     public void setCustomJson(String customJson) {
@@ -449,31 +418,27 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A string that contains user-defined, custom JSON. It is used to override
-     * the corresponding default stack configuration JSON values. The string
-     * should be in the following format and must escape characters such as '"':
+     * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * For more information about custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
+     * Stack Configuration Attributes</a>.
      * </p>
      * 
-     * @return A string that contains user-defined, custom JSON. It is used to
-     *         override the corresponding default stack configuration JSON
-     *         values. The string should be in the following format and must
-     *         escape characters such as '"':</p>
+     * @return A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     *         configuration JSON values. The string should be in the following format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
      *         <p>
-     *         For more information on custom JSON, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     *         >Use Custom JSON to Modify the Stack Configuration
-     *         Attributes</a>.
+     *         For more information about custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *         Modify the Stack Configuration Attributes</a>.
      */
 
     public String getCustomJson() {
@@ -482,33 +447,29 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A string that contains user-defined, custom JSON. It is used to override
-     * the corresponding default stack configuration JSON values. The string
-     * should be in the following format and must escape characters such as '"':
+     * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     * >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
+     * For more information about custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
+     * Stack Configuration Attributes</a>.
      * </p>
      * 
      * @param customJson
-     *        A string that contains user-defined, custom JSON. It is used to
-     *        override the corresponding default stack configuration JSON
-     *        values. The string should be in the following format and must
-     *        escape characters such as '"':</p>
+     *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
-     *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For more information about custom JSON, see <a
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        Modify the Stack Configuration Attributes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeploymentRequest withCustomJson(String customJson) {
@@ -517,8 +478,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -529,19 +490,19 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId() + ",");
+            sb.append("AppId: ").append(getAppId()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds() + ",");
+            sb.append("LayerIds: ").append(getLayerIds()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getCustomJson() != null)
-            sb.append("CustomJson: " + getCustomJson());
+            sb.append("CustomJson: ").append(getCustomJson());
         sb.append("}");
         return sb.toString();
     }
@@ -558,38 +519,31 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         CreateDeploymentRequest other = (CreateDeploymentRequest) obj;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getAppId() == null ^ this.getAppId() == null)
             return false;
-        if (other.getAppId() != null
-                && other.getAppId().equals(this.getAppId()) == false)
+        if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
-        if (other.getInstanceIds() != null
-                && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
         if (other.getLayerIds() == null ^ this.getLayerIds() == null)
             return false;
-        if (other.getLayerIds() != null
-                && other.getLayerIds().equals(this.getLayerIds()) == false)
+        if (other.getLayerIds() != null && other.getLayerIds().equals(this.getLayerIds()) == false)
             return false;
         if (other.getCommand() == null ^ this.getCommand() == null)
             return false;
-        if (other.getCommand() != null
-                && other.getCommand().equals(this.getCommand()) == false)
+        if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
-        if (other.getComment() != null
-                && other.getComment().equals(this.getComment()) == false)
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
         if (other.getCustomJson() == null ^ this.getCustomJson() == null)
             return false;
-        if (other.getCustomJson() != null
-                && other.getCustomJson().equals(this.getCustomJson()) == false)
+        if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false)
             return false;
         return true;
     }
@@ -599,21 +553,13 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getCommand() == null) ? 0 : getCommand().hashCode());
-        hashCode = prime * hashCode
-                + ((getComment() == null) ? 0 : getComment().hashCode());
-        hashCode = prime * hashCode
-                + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode());
+        hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
         return hashCode;
     }
 
@@ -621,4 +567,5 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     public CreateDeploymentRequest clone() {
         return (CreateDeploymentRequest) super.clone();
     }
+
 }

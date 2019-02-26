@@ -1,62 +1,140 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateAliasRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     */
+    private AliasRoutingConfiguration routingConfig;
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -65,11 +143,57 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return Name of the Lambda function for which you want to create an
-     *         alias.
+     * @return The name of the Lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -78,13 +202,59 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAliasRequest withFunctionName(String functionName) {
@@ -94,11 +264,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -107,10 +277,10 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
-     * @return Name for the alias you are creating.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -119,13 +289,12 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAliasRequest withName(String name) {
@@ -135,11 +304,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -148,10 +317,10 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Lambda function version for which you are creating the alias.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -160,13 +329,12 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The function version that the alias invokes.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAliasRequest withFunctionVersion(String functionVersion) {
@@ -176,11 +344,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -189,10 +357,10 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
-     * @return Description of the alias.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -201,13 +369,12 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A description of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAliasRequest withDescription(String description) {
@@ -216,8 +383,57 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     */
+
+    public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
+     */
+
+    public AliasRoutingConfiguration getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAliasRequest withRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -228,13 +444,15 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFunctionVersion() != null)
-            sb.append("FunctionVersion: " + getFunctionVersion() + ",");
+            sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -251,24 +469,23 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
         CreateAliasRequest other = (CreateAliasRequest) obj;
         if (other.getFunctionName() == null ^ this.getFunctionName() == null)
             return false;
-        if (other.getFunctionName() != null
-                && other.getFunctionName().equals(this.getFunctionName()) == false)
+        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getFunctionVersion() == null
-                ^ this.getFunctionVersion() == null)
+        if (other.getFunctionVersion() == null ^ this.getFunctionVersion() == null)
             return false;
-        if (other.getFunctionVersion() != null
-                && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
+        if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
             return false;
         return true;
     }
@@ -278,19 +495,11 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getFunctionName() == null) ? 0 : getFunctionName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFunctionVersion() == null) ? 0 : getFunctionVersion()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
         return hashCode;
     }
 
@@ -298,4 +507,5 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
     public CreateAliasRequest clone() {
         return (CreateAliasRequest) super.clone();
     }
+
 }

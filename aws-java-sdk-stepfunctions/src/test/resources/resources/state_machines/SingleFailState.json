@@ -1,0 +1,11 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Fail",
+      "Comment": "My fail state",
+      "Cause": "InternalError",
+      "Error": "java.lang.Exception"
+    }
+  }
+}

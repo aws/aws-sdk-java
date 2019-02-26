@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAutoScalingGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -31,8 +31,8 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
     private com.amazonaws.internal.SdkInternalList<AutoScalingGroup> autoScalingGroups;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      */
     private String nextToken;
@@ -61,15 +61,13 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      *        The groups.
      */
 
-    public void setAutoScalingGroups(
-            java.util.Collection<AutoScalingGroup> autoScalingGroups) {
+    public void setAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
             this.autoScalingGroups = null;
             return;
         }
 
-        this.autoScalingGroups = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>(
-                autoScalingGroups);
+        this.autoScalingGroups = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>(autoScalingGroups);
     }
 
     /**
@@ -77,23 +75,19 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * The groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAutoScalingGroups(java.util.Collection)} or
-     * {@link #withAutoScalingGroups(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoScalingGroups(java.util.Collection)} or {@link #withAutoScalingGroups(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param autoScalingGroups
      *        The groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingGroupsResult withAutoScalingGroups(
-            AutoScalingGroup... autoScalingGroups) {
+    public DescribeAutoScalingGroupsResult withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
-            setAutoScalingGroups(new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>(
-                    autoScalingGroups.length));
+            setAutoScalingGroups(new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>(autoScalingGroups.length));
         }
         for (AutoScalingGroup ele : autoScalingGroups) {
             this.autoScalingGroups.add(ele);
@@ -108,25 +102,23 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * 
      * @param autoScalingGroups
      *        The groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAutoScalingGroupsResult withAutoScalingGroups(
-            java.util.Collection<AutoScalingGroup> autoScalingGroups) {
+    public DescribeAutoScalingGroupsResult withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
         return this;
     }
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,12 +127,12 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
      */
 
     public String getNextToken() {
@@ -149,15 +141,14 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAutoScalingGroupsResult withNextToken(String nextToken) {
@@ -166,8 +157,8 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,9 +169,9 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroups() != null)
-            sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
+            sb.append("AutoScalingGroups: ").append(getAutoScalingGroups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -195,17 +186,13 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
         if (obj instanceof DescribeAutoScalingGroupsResult == false)
             return false;
         DescribeAutoScalingGroupsResult other = (DescribeAutoScalingGroupsResult) obj;
-        if (other.getAutoScalingGroups() == null
-                ^ this.getAutoScalingGroups() == null)
+        if (other.getAutoScalingGroups() == null ^ this.getAutoScalingGroups() == null)
             return false;
-        if (other.getAutoScalingGroups() != null
-                && other.getAutoScalingGroups().equals(
-                        this.getAutoScalingGroups()) == false)
+        if (other.getAutoScalingGroups() != null && other.getAutoScalingGroups().equals(this.getAutoScalingGroups()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -215,12 +202,8 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroups() == null) ? 0
-                        : getAutoScalingGroups().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -229,9 +212,8 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
         try {
             return (DescribeAutoScalingGroupsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

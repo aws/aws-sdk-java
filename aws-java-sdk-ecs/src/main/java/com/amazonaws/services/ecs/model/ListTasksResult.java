@@ -1,54 +1,49 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListTasksResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> taskArns;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListTasks</code> request. When the results of a
-     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value
-     * can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a
+     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
+     * of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
-     * @return The list of task Amazon Resource Name (ARN) entries for the
-     *         <code>ListTasks</code> request.
+     * @return The list of task ARN entries for the <code>ListTasks</code> request.
      */
 
     public java.util.List<String> getTaskArns() {
@@ -60,13 +55,11 @@ public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the
-     *        <code>ListTasks</code> request.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
      */
 
     public void setTaskArns(java.util.Collection<String> taskArns) {
@@ -75,33 +68,27 @@ public class ListTasksResult implements Serializable, Cloneable {
             return;
         }
 
-        this.taskArns = new com.amazonaws.internal.SdkInternalList<String>(
-                taskArns);
+        this.taskArns = new com.amazonaws.internal.SdkInternalList<String>(taskArns);
     }
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTaskArns(java.util.Collection)} or
-     * {@link #withTaskArns(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaskArns(java.util.Collection)} or {@link #withTaskArns(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the
-     *        <code>ListTasks</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTasksResult withTaskArns(String... taskArns) {
         if (this.taskArns == null) {
-            setTaskArns(new com.amazonaws.internal.SdkInternalList<String>(
-                    taskArns.length));
+            setTaskArns(new com.amazonaws.internal.SdkInternalList<String>(taskArns.length));
         }
         for (String ele : taskArns) {
             this.taskArns.add(ele);
@@ -111,15 +98,12 @@ public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the
-     * <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the
-     *        <code>ListTasks</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTasksResult withTaskArns(java.util.Collection<String> taskArns) {
@@ -129,20 +113,15 @@ public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListTasks</code> request. When the results of a
-     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value
-     * can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a
+     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
+     * of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future
-     *        <code>ListTasks</code> request. When the results of a
-     *        <code>ListTasks</code> request exceed <code>maxResults</code>,
-     *        this value can be used to retrieve the next page of results. This
-     *        value is <code>null</code> when there are no more results to
-     *        return.
+     *        The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results
+     *        of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     *        next page of results. This value is <code>null</code> when there are no more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -151,19 +130,14 @@ public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListTasks</code> request. When the results of a
-     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value
-     * can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a
+     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
+     * of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
-     * @return The <code>nextToken</code> value to include in a future
-     *         <code>ListTasks</code> request. When the results of a
-     *         <code>ListTasks</code> request exceed <code>maxResults</code>,
-     *         this value can be used to retrieve the next page of results. This
-     *         value is <code>null</code> when there are no more results to
-     *         return.
+     * @return The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results
+     *         of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve
+     *         the next page of results. This value is <code>null</code> when there are no more results to return.
      */
 
     public String getNextToken() {
@@ -172,22 +146,16 @@ public class ListTasksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future
-     * <code>ListTasks</code> request. When the results of a
-     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value
-     * can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a
+     * <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
+     * of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future
-     *        <code>ListTasks</code> request. When the results of a
-     *        <code>ListTasks</code> request exceed <code>maxResults</code>,
-     *        this value can be used to retrieve the next page of results. This
-     *        value is <code>null</code> when there are no more results to
-     *        return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results
+     *        of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     *        next page of results. This value is <code>null</code> when there are no more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListTasksResult withNextToken(String nextToken) {
@@ -196,8 +164,8 @@ public class ListTasksResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -208,9 +176,9 @@ public class ListTasksResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskArns() != null)
-            sb.append("TaskArns: " + getTaskArns() + ",");
+            sb.append("TaskArns: ").append(getTaskArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -227,13 +195,11 @@ public class ListTasksResult implements Serializable, Cloneable {
         ListTasksResult other = (ListTasksResult) obj;
         if (other.getTaskArns() == null ^ this.getTaskArns() == null)
             return false;
-        if (other.getTaskArns() != null
-                && other.getTaskArns().equals(this.getTaskArns()) == false)
+        if (other.getTaskArns() != null && other.getTaskArns().equals(this.getTaskArns()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -243,10 +209,8 @@ public class ListTasksResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskArns() == null) ? 0 : getTaskArns().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getTaskArns() == null) ? 0 : getTaskArns().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -255,9 +219,8 @@ public class ListTasksResult implements Serializable, Cloneable {
         try {
             return (ListTasksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

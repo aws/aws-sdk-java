@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.handlers;
+
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 /**
  * A type safe key used for setting and retrieving context in a {@link
@@ -41,6 +44,32 @@ package com.amazonaws.handlers;
  * </pre>
  */
 public class HandlerContextKey<T> {
+
+    /**
+     * The key under which the request credentials are set.
+     **/
+    public static final HandlerContextKey<AWSCredentials> AWS_CREDENTIALS = new HandlerContextKey<AWSCredentials>("AWSCredentials");
+
+    /**
+     * The region used to sign the request.
+     */
+    public static final HandlerContextKey<String> SIGNING_REGION = new HandlerContextKey<String>("SigningRegion");
+
+    /**
+     * The name of the operation for the request.
+     */
+    public static final HandlerContextKey<String> OPERATION_NAME = new HandlerContextKey<String>("OperationName");
+
+    /**
+     * The unique identifier for a service to which the request is being sent.
+     */
+    public static final HandlerContextKey<String> SERVICE_ID = new HandlerContextKey<String>("ServiceId");
+
+    /**
+     * Advanced client configuration. Contents will be service specific.
+     */
+    public static final HandlerContextKey<AdvancedConfig> ADVANCED_CONFIG = new HandlerContextKey<AdvancedConfig>("AdvancedConfig");
+
     private final String name;
 
     public HandlerContextKey(String name) {

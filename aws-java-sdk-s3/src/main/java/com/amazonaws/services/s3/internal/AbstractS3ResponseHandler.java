@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.http.HttpResponse;
@@ -126,12 +126,14 @@ public abstract class AbstractS3ResponseHandler<T>
                 try {
                     metadata.setHeader(key, Long.parseLong(header.getValue()));
                 } catch (NumberFormatException nfe) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Unable to parse content length. Header 'Content-Length' has corrupted data" + nfe.getMessage(), nfe);
                 }
             } else if (key.equalsIgnoreCase(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equalsIgnoreCase(Headers.EXPIRES)) {
+                // Set the raw header then try to parse it as a date
+                metadata.setHeader(Headers.EXPIRES, header.getValue());
                 try {
                     metadata.setHttpExpiresDate(DateUtils.parseRFC822Date(header.getValue()));
                 } catch (Exception pe) {
@@ -147,7 +149,7 @@ public abstract class AbstractS3ResponseHandler<T>
                 try {
                     metadata.setHeader(key, Integer.parseInt(header.getValue()));
                 } catch (NumberFormatException nfe) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Unable to parse part count. Header x-amz-mp-parts-count has corrupted data" + nfe.getMessage(), nfe);
                 }
             } else {

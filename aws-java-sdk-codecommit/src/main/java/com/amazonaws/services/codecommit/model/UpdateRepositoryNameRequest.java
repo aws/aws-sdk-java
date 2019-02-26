@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input of an update repository description operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName" target="_top">AWS
+ *      API Documentation</a>
  */
-public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -72,8 +73,7 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
      * 
      * @param oldName
      *        The existing name of the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRepositoryNameRequest withOldName(String oldName) {
@@ -113,8 +113,7 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
      * 
      * @param newName
      *        The new name for the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRepositoryNameRequest withNewName(String newName) {
@@ -123,8 +122,8 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,9 +134,9 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOldName() != null)
-            sb.append("OldName: " + getOldName() + ",");
+            sb.append("OldName: ").append(getOldName()).append(",");
         if (getNewName() != null)
-            sb.append("NewName: " + getNewName());
+            sb.append("NewName: ").append(getNewName());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +153,11 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
         UpdateRepositoryNameRequest other = (UpdateRepositoryNameRequest) obj;
         if (other.getOldName() == null ^ this.getOldName() == null)
             return false;
-        if (other.getOldName() != null
-                && other.getOldName().equals(this.getOldName()) == false)
+        if (other.getOldName() != null && other.getOldName().equals(this.getOldName()) == false)
             return false;
         if (other.getNewName() == null ^ this.getNewName() == null)
             return false;
-        if (other.getNewName() != null
-                && other.getNewName().equals(this.getNewName()) == false)
+        if (other.getNewName() != null && other.getNewName().equals(this.getNewName()) == false)
             return false;
         return true;
     }
@@ -170,10 +167,8 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOldName() == null) ? 0 : getOldName().hashCode());
-        hashCode = prime * hashCode
-                + ((getNewName() == null) ? 0 : getNewName().hashCode());
+        hashCode = prime * hashCode + ((getOldName() == null) ? 0 : getOldName().hashCode());
+        hashCode = prime * hashCode + ((getNewName() == null) ? 0 : getNewName().hashCode());
         return hashCode;
     }
 
@@ -181,4 +176,5 @@ public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
     public UpdateRepositoryNameRequest clone() {
         return (UpdateRepositoryNameRequest) super.clone();
     }
+
 }

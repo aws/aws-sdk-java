@@ -1,34 +1,43 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeDestinationsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeDestinationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The destinations.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Destination> destinations;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The destinations.
+     * </p>
+     * 
+     * @return The destinations.
      */
 
     public java.util.List<Destination> getDestinations() {
@@ -39,7 +48,12 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The destinations.
+     * </p>
+     * 
      * @param destinations
+     *        The destinations.
      */
 
     public void setDestinations(java.util.Collection<Destination> destinations) {
@@ -48,28 +62,27 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.destinations = new com.amazonaws.internal.SdkInternalList<Destination>(
-                destinations);
+        this.destinations = new com.amazonaws.internal.SdkInternalList<Destination>(destinations);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDestinations(java.util.Collection)} or
-     * {@link #withDestinations(java.util.Collection)} if you want to override
-     * the existing values.
+     * The destinations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinations(java.util.Collection)} or {@link #withDestinations(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param destinations
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDestinationsResult withDestinations(
-            Destination... destinations) {
+    public DescribeDestinationsResult withDestinations(Destination... destinations) {
         if (this.destinations == null) {
-            setDestinations(new com.amazonaws.internal.SdkInternalList<Destination>(
-                    destinations.length));
+            setDestinations(new com.amazonaws.internal.SdkInternalList<Destination>(destinations.length));
         }
         for (Destination ele : destinations) {
             this.destinations.add(ele);
@@ -78,13 +91,16 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The destinations.
+     * </p>
+     * 
      * @param destinations
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDestinationsResult withDestinations(
-            java.util.Collection<Destination> destinations) {
+    public DescribeDestinationsResult withDestinations(java.util.Collection<Destination> destinations) {
         setDestinations(destinations);
         return this;
     }
@@ -107,8 +123,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
 
     /**
      * @param nextToken
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDestinationsResult withNextToken(String nextToken) {
@@ -117,8 +132,8 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -129,9 +144,9 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinations() != null)
-            sb.append("Destinations: " + getDestinations() + ",");
+            sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +163,11 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
         DescribeDestinationsResult other = (DescribeDestinationsResult) obj;
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
-        if (other.getDestinations() != null
-                && other.getDestinations().equals(this.getDestinations()) == false)
+        if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -164,12 +177,8 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDestinations() == null) ? 0 : getDestinations()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -178,9 +187,8 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
         try {
             return (DescribeDestinationsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

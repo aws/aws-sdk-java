@@ -1,3 +1,3 @@
 <#macro content operationModel>
-    new ${operationModel.input.variableType}Marshaller(protocolFactory)
+    new ${operationModel.input.variableType}ProtocolMarshaller(protocolFactory)
 </#macro>

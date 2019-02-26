@@ -1,211 +1,120 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
 import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CloneStackRequest Marshaller
+ * CloneStackRequestMarshaller
  */
-public class CloneStackRequestMarshaller implements
-        Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CloneStackRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> SOURCESTACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceStackId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Region").build();
+    private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VpcId").build();
+    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
+    private static final MarshallingInfo<String> DEFAULTINSTANCEPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultInstanceProfileArn").build();
+    private static final MarshallingInfo<String> DEFAULTOS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DefaultOs").build();
+    private static final MarshallingInfo<String> HOSTNAMETHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HostnameTheme").build();
+    private static final MarshallingInfo<String> DEFAULTAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAvailabilityZone").build();
+    private static final MarshallingInfo<String> DEFAULTSUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubnetId").build();
+    private static final MarshallingInfo<String> CUSTOMJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomJson").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATIONMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationManager").build();
+    private static final MarshallingInfo<StructuredPojo> CHEFCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChefConfiguration").build();
+    private static final MarshallingInfo<Boolean> USECUSTOMCOOKBOOKS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseCustomCookbooks").build();
+    private static final MarshallingInfo<Boolean> USEOPSWORKSSECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseOpsworksSecurityGroups").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMCOOKBOOKSSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomCookbooksSource").build();
+    private static final MarshallingInfo<String> DEFAULTSSHKEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSshKeyName").build();
+    private static final MarshallingInfo<Boolean> CLONEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClonePermissions").build();
+    private static final MarshallingInfo<List> CLONEAPPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CloneAppIds").build();
+    private static final MarshallingInfo<String> DEFAULTROOTDEVICETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRootDeviceType").build();
+    private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentVersion").build();
 
-    public CloneStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CloneStackRequestMarshaller instance = new CloneStackRequestMarshaller();
+
+    public static CloneStackRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CloneStackRequest> marshall(
-            CloneStackRequest cloneStackRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CloneStackRequest cloneStackRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (cloneStackRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CloneStackRequest> request = new DefaultRequest<CloneStackRequest>(
-                cloneStackRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.CloneStack");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (cloneStackRequest.getSourceStackId() != null) {
-                jsonGenerator.writeFieldName("SourceStackId").writeValue(
-                        cloneStackRequest.getSourceStackId());
-            }
-            if (cloneStackRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        cloneStackRequest.getName());
-            }
-            if (cloneStackRequest.getRegion() != null) {
-                jsonGenerator.writeFieldName("Region").writeValue(
-                        cloneStackRequest.getRegion());
-            }
-            if (cloneStackRequest.getVpcId() != null) {
-                jsonGenerator.writeFieldName("VpcId").writeValue(
-                        cloneStackRequest.getVpcId());
-            }
-
-            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) cloneStackRequest
-                    .getAttributes();
-            if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Attributes");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> attributesMapValue : attributesMap
-                        .entrySet()) {
-                    if (attributesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(attributesMapValue
-                                .getKey());
-
-                        jsonGenerator.writeValue(attributesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (cloneStackRequest.getServiceRoleArn() != null) {
-                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(
-                        cloneStackRequest.getServiceRoleArn());
-            }
-            if (cloneStackRequest.getDefaultInstanceProfileArn() != null) {
-                jsonGenerator.writeFieldName("DefaultInstanceProfileArn")
-                        .writeValue(
-                                cloneStackRequest
-                                        .getDefaultInstanceProfileArn());
-            }
-            if (cloneStackRequest.getDefaultOs() != null) {
-                jsonGenerator.writeFieldName("DefaultOs").writeValue(
-                        cloneStackRequest.getDefaultOs());
-            }
-            if (cloneStackRequest.getHostnameTheme() != null) {
-                jsonGenerator.writeFieldName("HostnameTheme").writeValue(
-                        cloneStackRequest.getHostnameTheme());
-            }
-            if (cloneStackRequest.getDefaultAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("DefaultAvailabilityZone")
-                        .writeValue(
-                                cloneStackRequest.getDefaultAvailabilityZone());
-            }
-            if (cloneStackRequest.getDefaultSubnetId() != null) {
-                jsonGenerator.writeFieldName("DefaultSubnetId").writeValue(
-                        cloneStackRequest.getDefaultSubnetId());
-            }
-            if (cloneStackRequest.getCustomJson() != null) {
-                jsonGenerator.writeFieldName("CustomJson").writeValue(
-                        cloneStackRequest.getCustomJson());
-            }
-            if (cloneStackRequest.getConfigurationManager() != null) {
-                jsonGenerator.writeFieldName("ConfigurationManager");
-                StackConfigurationManagerJsonMarshaller.getInstance().marshall(
-                        cloneStackRequest.getConfigurationManager(),
-                        jsonGenerator);
-            }
-            if (cloneStackRequest.getChefConfiguration() != null) {
-                jsonGenerator.writeFieldName("ChefConfiguration");
-                ChefConfigurationJsonMarshaller.getInstance()
-                        .marshall(cloneStackRequest.getChefConfiguration(),
-                                jsonGenerator);
-            }
-            if (cloneStackRequest.getUseCustomCookbooks() != null) {
-                jsonGenerator.writeFieldName("UseCustomCookbooks").writeValue(
-                        cloneStackRequest.getUseCustomCookbooks());
-            }
-            if (cloneStackRequest.getUseOpsworksSecurityGroups() != null) {
-                jsonGenerator.writeFieldName("UseOpsworksSecurityGroups")
-                        .writeValue(
-                                cloneStackRequest
-                                        .getUseOpsworksSecurityGroups());
-            }
-            if (cloneStackRequest.getCustomCookbooksSource() != null) {
-                jsonGenerator.writeFieldName("CustomCookbooksSource");
-                SourceJsonMarshaller.getInstance().marshall(
-                        cloneStackRequest.getCustomCookbooksSource(),
-                        jsonGenerator);
-            }
-            if (cloneStackRequest.getDefaultSshKeyName() != null) {
-                jsonGenerator.writeFieldName("DefaultSshKeyName").writeValue(
-                        cloneStackRequest.getDefaultSshKeyName());
-            }
-            if (cloneStackRequest.getClonePermissions() != null) {
-                jsonGenerator.writeFieldName("ClonePermissions").writeValue(
-                        cloneStackRequest.getClonePermissions());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> cloneAppIdsList = (com.amazonaws.internal.SdkInternalList<String>) cloneStackRequest
-                    .getCloneAppIds();
-            if (!cloneAppIdsList.isEmpty()
-                    || !cloneAppIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("CloneAppIds");
-                jsonGenerator.writeStartArray();
-                for (String cloneAppIdsListValue : cloneAppIdsList) {
-                    if (cloneAppIdsListValue != null) {
-                        jsonGenerator.writeValue(cloneAppIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (cloneStackRequest.getDefaultRootDeviceType() != null) {
-                jsonGenerator.writeFieldName("DefaultRootDeviceType")
-                        .writeValue(
-                                cloneStackRequest.getDefaultRootDeviceType());
-            }
-            if (cloneStackRequest.getAgentVersion() != null) {
-                jsonGenerator.writeFieldName("AgentVersion").writeValue(
-                        cloneStackRequest.getAgentVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(cloneStackRequest.getSourceStackId(), SOURCESTACKID_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getRegion(), REGION_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getVpcId(), VPCID_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultInstanceProfileArn(), DEFAULTINSTANCEPROFILEARN_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultOs(), DEFAULTOS_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getHostnameTheme(), HOSTNAMETHEME_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultAvailabilityZone(), DEFAULTAVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultSubnetId(), DEFAULTSUBNETID_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getCustomJson(), CUSTOMJSON_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getConfigurationManager(), CONFIGURATIONMANAGER_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getChefConfiguration(), CHEFCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getUseCustomCookbooks(), USECUSTOMCOOKBOOKS_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getUseOpsworksSecurityGroups(), USEOPSWORKSSECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getCustomCookbooksSource(), CUSTOMCOOKBOOKSSOURCE_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultSshKeyName(), DEFAULTSSHKEYNAME_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getClonePermissions(), CLONEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getCloneAppIds(), CLONEAPPIDS_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getDefaultRootDeviceType(), DEFAULTROOTDEVICETYPE_BINDING);
+            protocolMarshaller.marshall(cloneStackRequest.getAgentVersion(), AGENTVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

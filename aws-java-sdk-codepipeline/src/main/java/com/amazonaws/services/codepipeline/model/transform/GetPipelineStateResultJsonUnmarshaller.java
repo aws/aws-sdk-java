@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * GetPipelineStateResult JSON Unmarshaller
  */
-public class GetPipelineStateResultJsonUnmarshaller implements
-        Unmarshaller<GetPipelineStateResult, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetPipelineStateResultJsonUnmarshaller implements Unmarshaller<GetPipelineStateResult, JsonUnmarshallerContext> {
 
-    public GetPipelineStateResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public GetPipelineStateResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetPipelineStateResult getPipelineStateResult = new GetPipelineStateResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class GetPipelineStateResultJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return getPipelineStateResult;
+        }
 
         while (true) {
             if (token == null)
@@ -55,36 +50,26 @@ public class GetPipelineStateResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineName", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setPipelineName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    getPipelineStateResult.setPipelineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineVersion", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult
-                            .setPipelineVersion(context.getUnmarshaller(
-                                    Integer.class).unmarshall(context));
+                    getPipelineStateResult.setPipelineVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stageStates", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult
-                            .setStageStates(new ListUnmarshaller<StageState>(
-                                    StageStateJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+                    getPipelineStateResult.setStageStates(new ListUnmarshaller<StageState>(StageStateJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setCreated(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    getPipelineStateResult.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updated", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setUpdated(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    getPipelineStateResult.setUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

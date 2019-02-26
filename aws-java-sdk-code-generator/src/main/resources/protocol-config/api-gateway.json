@@ -1,0 +1,131 @@
+{
+  "syncClient" : {
+    "mainTemplate" : "/templates/api-gateway/SyncClientClassBase.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/syncclientclass/json/AdditionalSyncClientFields.ftl",
+        "importAsNamespace" : "AdditionalSyncClientFieldsMacro"
+      }, {
+        "location" : "/macros/syncclientclass/json/ClientInitMethod.ftl",
+        "importAsNamespace" : "ClientInitMethodMacro"
+      }, {
+        "location" : "/macros/syncclientclass/api-gateway/ClientMethodForOperation.ftl",
+        "importAsNamespace" : "ClientMethodForOperation"
+      }, {
+        "location" : "/macros/syncclientclass/json/ClientInvokeMethodErrorResponseHandlerCreation.ftl",
+        "importAsNamespace" : "ClientInvokeMethodErrorResponseHandlerCreation"
+      }, {
+        "location" : "/macros/syncclientclass/json/ResponseHandlerCreation.ftl",
+        "importAsNamespace" : "ResponseHandlerCreation"
+      }, {
+        "location" : "/macros/syncclientclass/common/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace" : "ClientMethodForOperationWithSimpleForm"
+      }, {
+        "location" : "/macros/marshaller/json/RequestMarshallerCreation.ftl",
+        "importAsNamespace" : "RequestMarshallerCreation"
+      }
+    ]
+  },
+  "syncClientBuilder" : {
+    "mainTemplate" : "/templates/api-gateway/SyncClientBuilder.ftl"
+  },
+  "syncAbstractClass": {
+    "mainTemplate": "/templates/api-gateway/SyncClientAbstractClass.ftl",
+    "childTemplates": [
+      {
+        "location": "/macros/syncclientclass/common/ClientMethodForUnsupportedOperation.ftl",
+        "importAsNamespace": "ClientMethodForUnsupportedOperation"
+      }, {
+        "location": "/macros/syncclientclass/common/ClientMethodForOperationWithSimpleForm.ftl",
+        "importAsNamespace": "ClientMethodForOperationWithSimpleForm"
+      }
+    ]
+  },
+  "syncInterface": {
+    "mainTemplate" : "/templates/api-gateway/SyncClientInterface.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/syncclientinterface/InterfaceMethodForOperation.ftl",
+        "importAsNamespace" : "InterfaceMethodForOperationMacro"
+      }
+    ]
+  },
+  "requestClass": {
+    "mainTemplate" : "/templates/common/model-request-class.ftl"
+  },
+  "responseClass": {
+    "mainTemplate" : "/templates/common/model-class.ftl"
+  },
+  "modelClass": {
+    "mainTemplate" : "/templates/common/model-class.ftl"
+  },
+  "modelEnum": {
+    "mainTemplate" : "/templates/common/enum-class.ftl"
+  },
+  "modelUnmarshaller": {
+    "mainTemplate" : "/templates/json/ModelJsonUnmarshaller.ftl",
+    "childTemplates" : [
+        {
+          "location" : "/macros/unmarshaller/json/MemberUnmarshallerDeclaration.ftl",
+          "importAsNamespace" : "MemberUnmarshallerDeclarationMacro"
+        }, {
+          "location" : "/macros/unmarshaller/json/MemberUnmarshallerInvocation.ftl",
+          "importAsNamespace" : "MemberUnmarshallerInvocationMacro"
+        }, {
+          "location" : "/macros/unmarshaller/json/PayloadUnmarshaller.ftl",
+          "importAsNamespace" : "PayloadUnmarshallerMacro"
+        }
+    ]
+  },
+  "modelMarshaller": {
+    "mainTemplate" : "/templates/json/ModelMarshaller.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/marshaller/json/DefaultValueSupplierMacro.ftl",
+        "importAsNamespace" : "DefaultValueSupplierMacro"
+      }
+    ]
+  },
+  "requestMarshaller": {
+    "mainTemplate" : "/templates/json/RequestMarshaller.ftl"
+  },
+  "baseExceptionClass": {
+    "mainTemplate" : "/templates/api-gateway/base-exception-class.ftl"
+  },
+  "exceptionClass": {
+    "mainTemplate" : "/templates/common/model-exception-class.ftl"
+  },
+  "policyActionClass" : {
+    "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
+  },
+  "packageInfo" : {
+    "mainTemplate" : "/templates/common/package-info.ftl"
+  },
+  "commonChildTemplates" : [
+    {
+      "location" : "/macros/common/VariableDeclarationMacro.ftl",
+      "importAsNamespace" : "VariableDeclarationMacro"
+    }, {
+      "location" : "/macros/model/json/AdditionalAnnotationsForAccessors.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForAccessors"
+    }, {
+      "location" : "/macros/common/OverrideMethodsMacro.ftl",
+      "importAsNamespace" : "OverrideMethodsMacro"
+    }, {
+      "location" : "/macros/common/MethodDefinitionMacro.ftl",
+      "importAsNamespace" : "MethodDefinitionMacro"
+    }, {
+      "location" : "/macros/common/ConstructorDefinitionMacro.ftl",
+      "importAsNamespace" : "ConstructorDefinitionMacro"
+    }, {
+      "location" : "/macros/marshaller/common/RequiredParameterValidationFunctionMacro.ftl",
+      "importAsNamespace" : "RequiredParameterValidationFunctionMacro"
+    }, {
+      "location" : "/macros/marshaller/common/RequiredParameterValidationInvocationMacro.ftl",
+      "importAsNamespace" : "RequiredParameterValidationInvocationMacro"
+    }
+  ],
+  "customRequestSignerClass" : {
+    "mainTemplate" : "/templates/api-gateway/custom-request-signer-interface.ftl"
+  }
+}

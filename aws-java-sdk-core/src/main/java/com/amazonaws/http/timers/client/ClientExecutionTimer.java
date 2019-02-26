@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,14 @@ import com.amazonaws.http.timers.TimeoutThreadPoolBuilder;
  * spent executing request handlers, any HTTP request including retries, unmarshalling, etc.
  * Essentially all the time spent in {@link AmazonHttpClient}
  */
+// DO NOT override finalize(). The shutdown() method is called from AmazonHttpClient#shutdown()
+// which is called from it's finalize() method.  Since finalize methods can be be called in any
+// order and even concurrently, we need to rely on AmazonHttpClient to call our shutdown() method.
 @SdkInternalApi
 @ThreadSafe
 public class ClientExecutionTimer {
+
+    private static final String threadNamePrefix = "AwsSdkClientExecutionTimerThread";
 
     private volatile ScheduledThreadPoolExecutor executor;
 
@@ -59,7 +64,7 @@ public class ClientExecutionTimer {
      */
     private synchronized void initializeExecutor() {
         if (executor == null) {
-            executor = TimeoutThreadPoolBuilder.buildDefaultTimeoutThreadPool();
+            executor = TimeoutThreadPoolBuilder.buildDefaultTimeoutThreadPool(threadNamePrefix);
         }
     }
 

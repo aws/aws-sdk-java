@@ -1,72 +1,84 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * To retrieve a list of your reusable delegation sets, send a <code>GET</code>
- * request to the <code>/<i>Route 53 API version</i>/delegationset</code>
- * resource. The response to this request includes a <code>DelegationSets</code>
- * element with zero or more <code>DelegationSet</code> child elements. By
- * default, the list of reusable delegation sets is displayed on a single page.
- * You can control the length of the page that is displayed by using the
- * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
- * parameter to control the delegation set that the list begins with.
+ * A request to get a list of the reusable delegation sets that are associated with the current AWS account.
  * </p>
- * <note> Amazon Route 53 returns a maximum of 100 items. If you set
- * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
- * only the first 100.</note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets" target="_top">AWS
+ *      API Documentation</a>
  */
-public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListReusableDelegationSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable
+     * delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another
+     * request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * reusable delegation sets to get.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request.
+     * If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable
+     * delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another
+     * request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * reusable delegation sets to get.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code>
+     *        request. </p>
+     *        <p>
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you
+     *        submit another request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more reusable delegation sets to get.
      */
 
     public void setMarker(String marker) {
@@ -75,16 +87,30 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable
+     * delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another
+     * request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * reusable delegation sets to get.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code>
+     *         request. </p>
+     *         <p>
+     *         For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *         response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you
+     *         submit another request.
+     *         </p>
+     *         <p>
+     *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *         more reusable delegation sets to get.
      */
 
     public String getMarker() {
@@ -93,19 +119,32 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable
+     * delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another
+     * request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * reusable delegation sets to get.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code>
+     *        request. </p>
+     *        <p>
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you
+     *        submit another request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more reusable delegation sets to get.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListReusableDelegationSetsRequest withMarker(String marker) {
@@ -115,13 +154,14 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request.
+     * If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of reusable delegation sets to return
-     *        per page of results.
+     *        The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this
+     *        request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation
+     *        sets.
      */
 
     public void setMaxItems(String maxItems) {
@@ -130,12 +170,13 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request.
+     * If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
      * </p>
      * 
-     * @return Specify the maximum number of reusable delegation sets to return
-     *         per page of results.
+     * @return The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this
+     *         request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation
+     *         sets.
      */
 
     public String getMaxItems() {
@@ -144,15 +185,15 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request.
+     * If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of reusable delegation sets to return
-     *        per page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this
+     *        request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation
+     *        sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListReusableDelegationSetsRequest withMaxItems(String maxItems) {
@@ -161,8 +202,8 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -173,9 +214,9 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }
@@ -192,13 +233,11 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
         ListReusableDelegationSetsRequest other = (ListReusableDelegationSetsRequest) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -208,10 +247,8 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -219,4 +256,5 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
     public ListReusableDelegationSetsRequest clone() {
         return (ListReusableDelegationSetsRequest) super.clone();
     }
+
 }

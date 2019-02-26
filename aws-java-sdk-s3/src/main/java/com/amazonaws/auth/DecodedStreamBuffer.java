@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package com.amazonaws.auth;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 class DecodedStreamBuffer {
     private static final Log log = LogFactory.getLog(DecodedStreamBuffer.class);
@@ -73,7 +73,7 @@ class DecodedStreamBuffer {
 
     public void startReadBuffer() {
         if (bufferSizeOverflow) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "The input stream is not repeatable since the buffer size "
                             + maxBufferSize + " has been exceeded.");
         }

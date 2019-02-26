@@ -1,56 +1,54 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input of an update repository description operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription"
+ *      target="_top">AWS API Documentation</a>
  */
-public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateRepositoryDescriptionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the repository to set or change the comment or description
-     * for.
+     * The name of the repository to set or change the comment or description for.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.
+     * The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     * characters.
      * </p>
      */
     private String repositoryDescription;
 
     /**
      * <p>
-     * The name of the repository to set or change the comment or description
-     * for.
+     * The name of the repository to set or change the comment or description for.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the comment or
-     *        description for.
+     *        The name of the repository to set or change the comment or description for.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -59,12 +57,10 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the repository to set or change the comment or description
-     * for.
+     * The name of the repository to set or change the comment or description for.
      * </p>
      * 
-     * @return The name of the repository to set or change the comment or
-     *         description for.
+     * @return The name of the repository to set or change the comment or description for.
      */
 
     public String getRepositoryName() {
@@ -73,32 +69,28 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the repository to set or change the comment or description
-     * for.
+     * The name of the repository to set or change the comment or description for.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository to set or change the comment or
-     *        description for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository to set or change the comment or description for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateRepositoryDescriptionRequest withRepositoryName(
-            String repositoryName) {
+    public UpdateRepositoryDescriptionRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
     }
 
     /**
      * <p>
-     * The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.
+     * The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     * characters.
      * </p>
      * 
      * @param repositoryDescription
-     *        The new comment or description for the specified repository.
-     *        Repository descriptions are limited to 1,000 characters.
+     *        The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     *        characters.
      */
 
     public void setRepositoryDescription(String repositoryDescription) {
@@ -107,12 +99,12 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.
+     * The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     * characters.
      * </p>
      * 
-     * @return The new comment or description for the specified repository.
-     *         Repository descriptions are limited to 1,000 characters.
+     * @return The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     *         characters.
      */
 
     public String getRepositoryDescription() {
@@ -121,26 +113,24 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.
+     * The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     * characters.
      * </p>
      * 
      * @param repositoryDescription
-     *        The new comment or description for the specified repository.
-     *        Repository descriptions are limited to 1,000 characters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The new comment or description for the specified repository. Repository descriptions are limited to 1,000
+     *        characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateRepositoryDescriptionRequest withRepositoryDescription(
-            String repositoryDescription) {
+    public UpdateRepositoryDescriptionRequest withRepositoryDescription(String repositoryDescription) {
         setRepositoryDescription(repositoryDescription);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -151,9 +141,9 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryDescription() != null)
-            sb.append("RepositoryDescription: " + getRepositoryDescription());
+            sb.append("RepositoryDescription: ").append(getRepositoryDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -168,18 +158,13 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
         if (obj instanceof UpdateRepositoryDescriptionRequest == false)
             return false;
         UpdateRepositoryDescriptionRequest other = (UpdateRepositoryDescriptionRequest) obj;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
-        if (other.getRepositoryDescription() == null
-                ^ this.getRepositoryDescription() == null)
+        if (other.getRepositoryDescription() == null ^ this.getRepositoryDescription() == null)
             return false;
-        if (other.getRepositoryDescription() != null
-                && other.getRepositoryDescription().equals(
-                        this.getRepositoryDescription()) == false)
+        if (other.getRepositoryDescription() != null && other.getRepositoryDescription().equals(this.getRepositoryDescription()) == false)
             return false;
         return true;
     }
@@ -189,14 +174,8 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryDescription() == null) ? 0
-                        : getRepositoryDescription().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryDescription() == null) ? 0 : getRepositoryDescription().hashCode());
         return hashCode;
     }
 
@@ -204,4 +183,5 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
     public UpdateRepositoryDescriptionRequest clone() {
         return (UpdateRepositoryDescriptionRequest) super.clone();
     }
+
 }

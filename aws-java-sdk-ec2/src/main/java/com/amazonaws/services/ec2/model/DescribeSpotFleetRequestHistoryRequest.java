@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetRequestHistoryRequestMarshaller;
@@ -26,16 +24,10 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotFleetRequestHistor
  * Contains the parameters for DescribeSpotFleetRequestHistory.
  * </p>
  */
-public class DescribeSpotFleetRequestHistoryRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DescribeSpotFleetRequestHistoryRequest> {
 
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     */
-    private String spotFleetRequestId;
     /**
      * <p>
      * The type of events to describe. By default, all events are described.
@@ -44,11 +36,11 @@ public class DescribeSpotFleetRequestHistoryRequest extends
     private String eventType;
     /**
      * <p>
-     * The starting date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
-    private java.util.Date startTime;
+    private Integer maxResults;
     /**
      * <p>
      * The token for the next set of results.
@@ -57,55 +49,17 @@ public class DescribeSpotFleetRequestHistoryRequest extends
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      */
-    private Integer maxResults;
-
+    private String spotFleetRequestId;
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
      */
-
-    public void setSpotFleetRequestId(String spotFleetRequestId) {
-        this.spotFleetRequestId = spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @return The ID of the Spot fleet request.
-     */
-
-    public String getSpotFleetRequestId() {
-        return this.spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribeSpotFleetRequestHistoryRequest withSpotFleetRequestId(
-            String spotFleetRequestId) {
-        setSpotFleetRequestId(spotFleetRequestId);
-        return this;
-    }
+    private java.util.Date startTime;
 
     /**
      * <p>
@@ -113,8 +67,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
+     *        The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
@@ -127,8 +80,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * The type of events to describe. By default, all events are described.
      * </p>
      * 
-     * @return The type of events to describe. By default, all events are
-     *         described.
+     * @return The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
@@ -142,10 +94,8 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of events to describe. By default, all events are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
 
@@ -160,13 +110,12 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
+     *        The type of events to describe. By default, all events are described.
      * @see EventType
      */
 
     public void setEventType(EventType eventType) {
-        this.eventType = eventType.toString();
+        withEventType(eventType);
     }
 
     /**
@@ -175,67 +124,62 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * </p>
      * 
      * @param eventType
-     *        The type of events to describe. By default, all events are
-     *        described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of events to describe. By default, all events are described.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withEventType(
-            EventType eventType) {
-        setEventType(eventType);
+    public DescribeSpotFleetRequestHistoryRequest withEventType(EventType eventType) {
+        this.eventType = eventType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The starting date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
      */
 
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The starting date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The starting date and time for the events, in UTC format (for
-     *         example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *         value is 1000. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
-    public java.util.Date getStartTime() {
-        return this.startTime;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The starting date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @param startTime
-     *        The starting date and time for the events, in UTC format (for
-     *        example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withStartTime(
-            java.util.Date startTime) {
-        setStartTime(startTime);
+    public DescribeSpotFleetRequestHistoryRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -271,8 +215,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * 
      * @param nextToken
      *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSpotFleetRequestHistoryRequest withNextToken(String nextToken) {
@@ -282,80 +225,104 @@ public class DescribeSpotFleetRequestHistoryRequest extends
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     * @param spotFleetRequestId
+     *        The ID of the Spot Fleet request.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setSpotFleetRequestId(String spotFleetRequestId) {
+        this.spotFleetRequestId = spotFleetRequestId;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify
-     *         a value between 1 and 1000. The default value is 1000. To
-     *         retrieve the remaining results, make another call with the
-     *         returned <code>NextToken</code> value.
+     * @return The ID of the Spot Fleet request.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getSpotFleetRequestId() {
+        return this.spotFleetRequestId;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value
-     * between 1 and 1000. The default value is 1000. To retrieve the remaining
-     * results, make another call with the returned <code>NextToken</code>
-     * value.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify
-     *        a value between 1 and 1000. The default value is 1000. To retrieve
-     *        the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param spotFleetRequestId
+     *        The ID of the Spot Fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSpotFleetRequestHistoryRequest withMaxResults(
-            Integer maxResults) {
-        setMaxResults(maxResults);
+    public DescribeSpotFleetRequestHistoryRequest withSpotFleetRequestId(String spotFleetRequestId) {
+        setSpotFleetRequestId(spotFleetRequestId);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * <p>
+     * The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param startTime
+     *        The starting date and time for the events, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @return The starting date and time for the events, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param startTime
+     *        The starting date and time for the events, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestHistoryRequest withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<DescribeSpotFleetRequestHistoryRequest> getDryRunRequest() {
-        Request<DescribeSpotFleetRequestHistoryRequest> request = new DescribeSpotFleetRequestHistoryRequestMarshaller()
-                .marshall(this);
+        Request<DescribeSpotFleetRequestHistoryRequest> request = new DescribeSpotFleetRequestHistoryRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -365,16 +332,16 @@ public class DescribeSpotFleetRequestHistoryRequest extends
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
-        if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
-        if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getSpotFleetRequestId() != null)
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -389,32 +356,25 @@ public class DescribeSpotFleetRequestHistoryRequest extends
         if (obj instanceof DescribeSpotFleetRequestHistoryRequest == false)
             return false;
         DescribeSpotFleetRequestHistoryRequest other = (DescribeSpotFleetRequestHistoryRequest) obj;
-        if (other.getSpotFleetRequestId() == null
-                ^ this.getSpotFleetRequestId() == null)
-            return false;
-        if (other.getSpotFleetRequestId() != null
-                && other.getSpotFleetRequestId().equals(
-                        this.getSpotFleetRequestId()) == false)
-            return false;
         if (other.getEventType() == null ^ this.getEventType() == null)
             return false;
-        if (other.getEventType() != null
-                && other.getEventType().equals(this.getEventType()) == false)
-            return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
-            return false;
-        if (other.getStartTime() != null
-                && other.getStartTime().equals(this.getStartTime()) == false)
-            return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
+            return false;
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         return true;
     }
@@ -424,18 +384,11 @@ public class DescribeSpotFleetRequestHistoryRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSpotFleetRequestId() == null) ? 0
-                        : getSpotFleetRequestId().hashCode());
-        hashCode = prime * hashCode
-                + ((getEventType() == null) ? 0 : getEventType().hashCode());
-        hashCode = prime * hashCode
-                + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         return hashCode;
     }
 

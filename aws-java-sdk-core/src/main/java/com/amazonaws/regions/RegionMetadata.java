@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,9 +63,11 @@ public class RegionMetadata {
     /**
      * Returns a list of the regions that support the service given.
      *
-     * @param service the service abbreviation to search for
+     * @param service
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      * @return the list of regions with support for the given service
-     * @see ServiceAbbreviations
      */
     public List<Region> getRegionsForService(final String service) {
         return provider.getRegionsForService(service);

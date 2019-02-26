@@ -1,93 +1,77 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DescribeBundleTasksRequest Marshaller
  */
 
-public class DescribeBundleTasksRequestMarshaller
-        implements
-        Marshaller<Request<DescribeBundleTasksRequest>, DescribeBundleTasksRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<DescribeBundleTasksRequest>, DescribeBundleTasksRequest> {
 
-    public Request<DescribeBundleTasksRequest> marshall(
-            DescribeBundleTasksRequest describeBundleTasksRequest) {
+    public Request<DescribeBundleTasksRequest> marshall(DescribeBundleTasksRequest describeBundleTasksRequest) {
 
         if (describeBundleTasksRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeBundleTasksRequest> request = new DefaultRequest<DescribeBundleTasksRequest>(
-                describeBundleTasksRequest, "AmazonEC2");
+        Request<DescribeBundleTasksRequest> request = new DefaultRequest<DescribeBundleTasksRequest>(describeBundleTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeBundleTasks");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> bundleIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeBundleTasksRequest
+        com.amazonaws.internal.SdkInternalList<String> describeBundleTasksRequestBundleIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeBundleTasksRequest
                 .getBundleIds();
-        if (!bundleIdsList.isEmpty() || !bundleIdsList.isAutoConstruct()) {
+        if (!describeBundleTasksRequestBundleIdsList.isEmpty() || !describeBundleTasksRequestBundleIdsList.isAutoConstruct()) {
             int bundleIdsListIndex = 1;
 
-            for (String bundleIdsListValue : bundleIdsList) {
-                if (bundleIdsListValue != null) {
-                    request.addParameter("BundleId." + bundleIdsListIndex,
-                            StringUtils.fromString(bundleIdsListValue));
+            for (String describeBundleTasksRequestBundleIdsListValue : describeBundleTasksRequestBundleIdsList) {
+                if (describeBundleTasksRequestBundleIdsListValue != null) {
+                    request.addParameter("BundleId." + bundleIdsListIndex, StringUtils.fromString(describeBundleTasksRequestBundleIdsListValue));
                 }
                 bundleIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeBundleTasksRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeBundleTasksRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeBundleTasksRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeBundleTasksRequestFiltersList.isEmpty() || !describeBundleTasksRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeBundleTasksRequestFiltersListValue : describeBundleTasksRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter(
-                            "Filter." + filtersListIndex + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                if (describeBundleTasksRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeBundleTasksRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeBundleTasksRequestFiltersListValue
                         .getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex
-                                    + ".Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

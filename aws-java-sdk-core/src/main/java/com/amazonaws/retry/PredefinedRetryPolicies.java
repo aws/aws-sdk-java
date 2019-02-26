@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
-
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * This class includes a set of pre-defined retry policies, including default
@@ -41,8 +39,8 @@ public class PredefinedRetryPolicies {
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
 
     /**
-     * SDK default retry policy (except for AmazonDynamoDBClient,
-     * whose constructor will replace the DEFAULT with DYNAMODB_DEFAULT.)
+     * SDK default retry policy. Amazon DynamoDB has a custom retry policy that is used when no
+     * {@link ClientConfiguration} is provided.
      */
     public static final RetryPolicy DEFAULT;
 
@@ -70,18 +68,28 @@ public class PredefinedRetryPolicies {
     public static final RetryPolicy.RetryCondition DEFAULT_RETRY_CONDITION = new SDKDefaultRetryCondition();
 
     /**
-     * The SDK default back-off strategy, which increases exponentially up to a
-     * max amount of delay. It also applies a larger scale factor upon service
-     * throttling exception.
+     * The SDK default back-off strategy, which increases exponentially up to a max amount of delay. It also applies a larger
+     * scale factor upon service throttling exception.
      */
-    public static final RetryPolicy.BackoffStrategy DEFAULT_BACKOFF_STRATEGY = new SDKDefaultBackoffStrategy();
+    public static final RetryPolicy.BackoffStrategy DEFAULT_BACKOFF_STRATEGY =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy();
+
+    /**
+     * The SDK default back-off strategy, which increases exponentially up to a max amount of delay. It also applies a larger
+     * scale factor upon service throttling exception.
+     */
+    public static final V2CompatibleBackoffStrategy DEFAULT_BACKOFF_STRATEGY_V2 =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy();
 
     /**
      * The default back-off strategy for DynamoDB client, which increases
      * exponentially up to a max amount of delay. Compared to the SDK default
      * back-off strategy, it applies a smaller scale factor.
      */
-    public static final RetryPolicy.BackoffStrategy DYNAMODB_DEFAULT_BACKOFF_STRATEGY = new DynamoDBDefaultBackoffStrategy();
+    public static final RetryPolicy.BackoffStrategy DYNAMODB_DEFAULT_BACKOFF_STRATEGY =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy(PredefinedBackoffStrategies.DYNAMODB_DEFAULT_BASE_DELAY,
+                                                                      PredefinedBackoffStrategies.SDK_DEFAULT_THROTTLED_BASE_DELAY,
+                                                                      PredefinedBackoffStrategies.SDK_DEFAULT_MAX_BACKOFF_IN_MILLISECONDS);
 
     static {
         DEFAULT = getDefaultRetryPolicy();
@@ -187,48 +195,5 @@ public class PredefinedRetryPolicies {
             return false;
         }
 
-    }
-
-    /** A private class that implements the default back-off strategy. **/
-    private static class SDKDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
-
-        /** Base sleep time (milliseconds) for all exceptions. **/
-        private static final int BASE_DELAY = 100;
-
-        /** Maximum exponential back-off time before retrying a request */
-        private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
-
-        /** For generating a random scale factor **/
-        private final Random random = new Random();
-
-        /** {@inheritDoc} */
-        @Override
-        public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                               AmazonClientException exception,
-                                               int retriesAttempted) {
-            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
-                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
-        }
-    }
-
-    /** A private class that implements the default back-off strategy for DynamoDB client. **/
-    private static class DynamoDBDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
-
-        /** Base sleep time (milliseconds) **/
-        private static final int BASE_DELAY = 25;
-
-        /** Maximum exponential back-off time before retrying a request */
-        private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
-
-        /** For generating a random scale factor **/
-        private final Random random = new Random();
-
-        @Override
-        public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                               AmazonClientException exception,
-                                               int retriesAttempted) {
-            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
-                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
-        }
     }
 }

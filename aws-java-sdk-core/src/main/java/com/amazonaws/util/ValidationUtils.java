@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.util;
+
+import java.util.Collection;
 
 /**
  * Useful utilities to validate dependencies
@@ -49,5 +51,43 @@ public class ValidationUtils {
                 throw new IllegalArgumentException(messageIfNull);
             }
         }
+    }
+
+    /**
+     * Asserts that the given number is positive (non-negative and non-zero).
+     *
+     * @param num       Number to validate
+     * @param fieldName Field name to display in exception message if not positive.
+     * @return Number if positive.
+     */
+    public static int assertIsPositive(int num, String fieldName) {
+        if (num <= 0) {
+            throw new IllegalArgumentException(String.format("%s must be positive", fieldName));
+        }
+        return num;
+    }
+
+    public static <T extends Collection<?>> T assertNotEmpty(T collection, String fieldName) throws IllegalArgumentException{
+        assertNotNull(collection, fieldName);
+        if (collection.isEmpty()) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
+        }
+        return collection;
+    }
+
+    public static <T> T[] assertNotEmpty(T[] array, String fieldName) throws IllegalArgumentException {
+        assertNotNull(array, fieldName);
+        if (array.length == 0) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
+        }
+        return array;
+    }
+
+    public static String assertStringNotEmpty(String string, String fieldName) throws IllegalArgumentException {
+        assertNotNull(string, fieldName);
+        if (string.isEmpty()) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
+        }
+        return string;
     }
 }

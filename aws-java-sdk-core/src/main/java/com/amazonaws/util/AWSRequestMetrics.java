@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
 
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricType;
-import org.apache.http.annotation.NotThreadSafe;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +40,12 @@ import java.util.List;
 @NotThreadSafe
 public class AWSRequestMetrics {
     /**
+     *  If the class name is required for logging and metrics we should use this
+     *  constant version instead of the expensive function call.
+     */
+    public static final String SIMPLE_NAME = AWSRequestMetrics.class.getSimpleName();
+
+    /**
      * Predefined AWS SDK metric types general across all AWS clients. Client
      * specific predefined metrics like S3 or DynamoDB are defined in the client
      * specific packages.
@@ -47,6 +53,10 @@ public class AWSRequestMetrics {
     public enum Field implements RequestMetricType {
         AWSErrorCode,
         AWSRequestID,
+        /**
+         * The specific request subtype, such as PutItemRequest, PutObjectRequest, etc.
+         */
+        RequestType,
         BytesProcessed,
         /**
          * Total number of milliseconds taken for a request/response including
@@ -61,11 +71,6 @@ public class AWSRequestMetrics {
          * Used to count and preserve the throttle related exceptions.
          */
         ThrottleException,
-        // Comment out for now. Ref: CR2662349
-//        /**
-//         * Used to preserve the transient exceptions that lead to the retries.
-//         */
-//        RetryCause,
         /**
          * Number of milliseconds taken for a request/response round trip to AWS.
          */
@@ -92,6 +97,10 @@ public class AWSRequestMetrics {
          * Snapshot of currently consumed retry capacity.
          */
         RetryCapacityConsumed,
+        /**
+         * Number of retries that were not attempted due to retry throttling.
+         */
+        ThrottledRetryCount,
         /**
          * Number of retries of the underlying http client library in sending a
          * request to AWS.
@@ -139,8 +148,6 @@ public class AWSRequestMetrics {
          */
         HttpClientPoolPendingCount,
         RetryPauseTime,
-//      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 client library
-//      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 client library
         ServiceEndpoint,
         ServiceName,
         StatusCode, // The http status code

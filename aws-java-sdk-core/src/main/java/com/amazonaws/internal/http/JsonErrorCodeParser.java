@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,10 +17,12 @@ package com.amazonaws.internal.http;
 import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.http.HttpResponse;
+import com.amazonaws.protocol.json.JsonContent;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @SdkInternalApi
-public class JsonErrorCodeParser {
+public class JsonErrorCodeParser implements ErrorCodeParser {
 
     /**
      * Services using AWS JSON 1.1 protocol with HTTP binding send the error code information in the
@@ -43,12 +45,14 @@ public class JsonErrorCodeParser {
      *
      * @return Error Code of exceptional response or null if it can't be determined
      */
-    public String parseErrorCode(Map<String, String> httpHeaders, JsonNode jsonContents) {
-        String errorCodeFromHeader = parseErrorCodeFromHeader(httpHeaders);
+    public String parseErrorCode(HttpResponse response, JsonContent jsonContent) {
+        String errorCodeFromHeader = parseErrorCodeFromHeader(response.getHeaders());
         if (errorCodeFromHeader != null) {
             return errorCodeFromHeader;
+        } else if (jsonContent != null) {
+            return parseErrorCodeFromContents(jsonContent.getJsonNode());
         } else {
-            return parseErrorCodeFromContents(jsonContents);
+            return null;
         }
     }
 

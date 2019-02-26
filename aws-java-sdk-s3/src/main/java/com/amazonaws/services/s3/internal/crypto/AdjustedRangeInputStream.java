@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.internal.SdkInputStream;
+import com.amazonaws.util.IOUtils;
 
 /**
  * Reads only a specific range of bytes from the underlying input stream.
@@ -78,7 +79,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
     @Override
     public int read() throws IOException {
         abortIfNeeded();
-        int result = 0;
+        int result;
         // If there are no more available bytes, mark that we are at the end of the stream.
         if (this.virtualAvailable <= 0) {
             result = -1;
@@ -92,9 +93,10 @@ public class AdjustedRangeInputStream extends SdkInputStream {
             this.virtualAvailable--;
         } else {
             // If we are at the end of the stream, close it.
-            close();
             this.virtualAvailable = 0;
+            close();
         }
+
         return result;
     }
 
@@ -124,8 +126,8 @@ public class AdjustedRangeInputStream extends SdkInputStream {
             this.virtualAvailable -= numBytesRead;
         } else {
             // If we've reached the end of the stream, close it
-            close();
             this.virtualAvailable = 0;
+            close();
         }
         return numBytesRead;
     }
@@ -154,6 +156,17 @@ public class AdjustedRangeInputStream extends SdkInputStream {
         // If not already closed, then close the input stream.
         if(!this.closed) {
             this.closed = true;
+            // if the user read to the end of the virtual stream, then drain
+            // the wrapped stream so the HTTP client can keep this connection
+            // alive if possible.
+            // This should not have too much overhead since if we've reached the
+            // end of the virtual stream, there should be at most 31 bytes left
+            // (2 * JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE - 1) in the
+            // stream.
+            // See: S3CryptoModuleBase#getCipherBlockUpperBound
+             if (this.virtualAvailable == 0) {
+                 IOUtils.drainInputStream(decryptedContents);
+            }
             this.decryptedContents.close();
         }
         abortIfNeeded();

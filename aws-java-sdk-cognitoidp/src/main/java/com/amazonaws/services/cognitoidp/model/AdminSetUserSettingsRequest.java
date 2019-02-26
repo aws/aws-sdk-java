@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the request to set user settings as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings" target="_top">AWS
+ *      API Documentation</a>
  */
-public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to set the user's
-     * settings, such as MFA options.
+     * The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      * </p>
      */
     private String userPoolId;
@@ -49,13 +49,11 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to set the user's
-     * settings, such as MFA options.
+     * The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to set the
-     *        user's settings, such as MFA options.
+     *        The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -64,12 +62,10 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to set the user's
-     * settings, such as MFA options.
+     * The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      * </p>
      * 
-     * @return The user pool ID for the user pool where you want to set the
-     *         user's settings, such as MFA options.
+     * @return The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      */
 
     public String getUserPoolId() {
@@ -78,15 +74,12 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user pool ID for the user pool where you want to set the user's
-     * settings, such as MFA options.
+     * The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to set the
-     *        user's settings, such as MFA options.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool where you want to set the user's settings, such as MFA options.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminSetUserSettingsRequest withUserPoolId(String userPoolId) {
@@ -126,8 +119,7 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
      * 
      * @param username
      *        The user name of the user for whom you wish to set user settings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminSetUserSettingsRequest withUsername(String username) {
@@ -170,23 +162,19 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
      * Specifies the options for MFA (e.g., email or phone number).
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMFAOptions(java.util.Collection)} or
-     * {@link #withMFAOptions(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMFAOptions(java.util.Collection)} or {@link #withMFAOptions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminSetUserSettingsRequest withMFAOptions(
-            MFAOptionType... mFAOptions) {
+    public AdminSetUserSettingsRequest withMFAOptions(MFAOptionType... mFAOptions) {
         if (this.mFAOptions == null) {
-            setMFAOptions(new java.util.ArrayList<MFAOptionType>(
-                    mFAOptions.length));
+            setMFAOptions(new java.util.ArrayList<MFAOptionType>(mFAOptions.length));
         }
         for (MFAOptionType ele : mFAOptions) {
             this.mFAOptions.add(ele);
@@ -201,19 +189,17 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
      * 
      * @param mFAOptions
      *        Specifies the options for MFA (e.g., email or phone number).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AdminSetUserSettingsRequest withMFAOptions(
-            java.util.Collection<MFAOptionType> mFAOptions) {
+    public AdminSetUserSettingsRequest withMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
         setMFAOptions(mFAOptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -224,11 +210,11 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -245,18 +231,15 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
         AdminSetUserSettingsRequest other = (AdminSetUserSettingsRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         if (other.getMFAOptions() == null ^ this.getMFAOptions() == null)
             return false;
-        if (other.getMFAOptions() != null
-                && other.getMFAOptions().equals(this.getMFAOptions()) == false)
+        if (other.getMFAOptions() != null && other.getMFAOptions().equals(this.getMFAOptions()) == false)
             return false;
         return true;
     }
@@ -266,12 +249,9 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        hashCode = prime * hashCode
-                + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
         return hashCode;
     }
 
@@ -279,4 +259,5 @@ public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
     public AdminSetUserSettingsRequest clone() {
         return (AdminSetUserSettingsRequest) super.clone();
     }
+
 }

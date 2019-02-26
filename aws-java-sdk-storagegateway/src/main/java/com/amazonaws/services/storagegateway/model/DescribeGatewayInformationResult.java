@@ -1,37 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * A JSON object containing the following fields:
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeGatewayInformationResult implements Serializable,
-        Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This ID
-     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
-     * input for other operations.
+     * The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon
+     * Resource Name (ARN), which you use as input for other operations.
      * </p>
      */
     private String gatewayId;
@@ -55,8 +54,7 @@ public class DescribeGatewayInformationResult implements Serializable,
     private String gatewayState;
     /**
      * <p>
-     * A <a>NetworkInterface</a> array that contains descriptions of the gateway
-     * network interfaces.
+     * A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkInterface> gatewayNetworkInterfaces;
@@ -68,17 +66,15 @@ public class DescribeGatewayInformationResult implements Serializable,
     private String gatewayType;
     /**
      * <p>
-     * The date on which an update to the gateway is available. This date is in
-     * the time zone of the gateway. If the gateway is not available for an
-     * update this field is not returned in the response.
+     * The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the
+     * gateway is not available for an update this field is not returned in the response.
      * </p>
      */
     private String nextUpdateAvailabilityDate;
     /**
      * <p>
-     * The date on which the last software update was applied to the gateway. If
-     * the gateway has never been updated, this field does not return a value in
-     * the response.
+     * The date on which the last software update was applied to the gateway. If the gateway has never been updated,
+     * this field does not return a value in the response.
      * </p>
      */
     private String lastSoftwareUpdate;
@@ -101,8 +97,7 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withGatewayARN(String gatewayARN) {
@@ -112,15 +107,13 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This ID
-     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
-     * input for other operations.
+     * The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon
+     * Resource Name (ARN), which you use as input for other operations.
      * </p>
      * 
      * @param gatewayId
-     *        The unique identifier assigned to your gateway during activation.
-     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
-     *        which you use as input for other operations.
+     *        The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway
+     *        Amazon Resource Name (ARN), which you use as input for other operations.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -129,14 +122,12 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This ID
-     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
-     * input for other operations.
+     * The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon
+     * Resource Name (ARN), which you use as input for other operations.
      * </p>
      * 
-     * @return The unique identifier assigned to your gateway during activation.
-     *         This ID becomes part of the gateway Amazon Resource Name (ARN),
-     *         which you use as input for other operations.
+     * @return The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway
+     *         Amazon Resource Name (ARN), which you use as input for other operations.
      */
 
     public String getGatewayId() {
@@ -145,17 +136,14 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This ID
-     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
-     * input for other operations.
+     * The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon
+     * Resource Name (ARN), which you use as input for other operations.
      * </p>
      * 
      * @param gatewayId
-     *        The unique identifier assigned to your gateway during activation.
-     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
-     *        which you use as input for other operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway
+     *        Amazon Resource Name (ARN), which you use as input for other operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withGatewayId(String gatewayId) {
@@ -195,8 +183,7 @@ public class DescribeGatewayInformationResult implements Serializable,
      * 
      * @param gatewayName
      *        The name you configured for your gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withGatewayName(String gatewayName) {
@@ -236,12 +223,10 @@ public class DescribeGatewayInformationResult implements Serializable,
      * 
      * @param gatewayTimezone
      *        A value that indicates the time zone configured for the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeGatewayInformationResult withGatewayTimezone(
-            String gatewayTimezone) {
+    public DescribeGatewayInformationResult withGatewayTimezone(String gatewayTimezone) {
         setGatewayTimezone(gatewayTimezone);
         return this;
     }
@@ -278,8 +263,7 @@ public class DescribeGatewayInformationResult implements Serializable,
      * 
      * @param gatewayState
      *        A value that indicates the operating state of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withGatewayState(String gatewayState) {
@@ -289,12 +273,10 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * A <a>NetworkInterface</a> array that contains descriptions of the gateway
-     * network interfaces.
+     * A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      * </p>
      * 
-     * @return A <a>NetworkInterface</a> array that contains descriptions of the
-     *         gateway network interfaces.
+     * @return A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      */
 
     public java.util.List<NetworkInterface> getGatewayNetworkInterfaces() {
@@ -306,50 +288,40 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * A <a>NetworkInterface</a> array that contains descriptions of the gateway
-     * network interfaces.
+     * A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      * </p>
      * 
      * @param gatewayNetworkInterfaces
-     *        A <a>NetworkInterface</a> array that contains descriptions of the
-     *        gateway network interfaces.
+     *        A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      */
 
-    public void setGatewayNetworkInterfaces(
-            java.util.Collection<NetworkInterface> gatewayNetworkInterfaces) {
+    public void setGatewayNetworkInterfaces(java.util.Collection<NetworkInterface> gatewayNetworkInterfaces) {
         if (gatewayNetworkInterfaces == null) {
             this.gatewayNetworkInterfaces = null;
             return;
         }
 
-        this.gatewayNetworkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>(
-                gatewayNetworkInterfaces);
+        this.gatewayNetworkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>(gatewayNetworkInterfaces);
     }
 
     /**
      * <p>
-     * A <a>NetworkInterface</a> array that contains descriptions of the gateway
-     * network interfaces.
+     * A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setGatewayNetworkInterfaces(java.util.Collection)} or
-     * {@link #withGatewayNetworkInterfaces(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGatewayNetworkInterfaces(java.util.Collection)} or
+     * {@link #withGatewayNetworkInterfaces(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param gatewayNetworkInterfaces
-     *        A <a>NetworkInterface</a> array that contains descriptions of the
-     *        gateway network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeGatewayInformationResult withGatewayNetworkInterfaces(
-            NetworkInterface... gatewayNetworkInterfaces) {
+    public DescribeGatewayInformationResult withGatewayNetworkInterfaces(NetworkInterface... gatewayNetworkInterfaces) {
         if (this.gatewayNetworkInterfaces == null) {
-            setGatewayNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<NetworkInterface>(
-                    gatewayNetworkInterfaces.length));
+            setGatewayNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<NetworkInterface>(gatewayNetworkInterfaces.length));
         }
         for (NetworkInterface ele : gatewayNetworkInterfaces) {
             this.gatewayNetworkInterfaces.add(ele);
@@ -359,19 +331,15 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * A <a>NetworkInterface</a> array that contains descriptions of the gateway
-     * network interfaces.
+     * A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
      * </p>
      * 
      * @param gatewayNetworkInterfaces
-     *        A <a>NetworkInterface</a> array that contains descriptions of the
-     *        gateway network interfaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeGatewayInformationResult withGatewayNetworkInterfaces(
-            java.util.Collection<NetworkInterface> gatewayNetworkInterfaces) {
+    public DescribeGatewayInformationResult withGatewayNetworkInterfaces(java.util.Collection<NetworkInterface> gatewayNetworkInterfaces) {
         setGatewayNetworkInterfaces(gatewayNetworkInterfaces);
         return this;
     }
@@ -408,8 +376,7 @@ public class DescribeGatewayInformationResult implements Serializable,
      * 
      * @param gatewayType
      *        The type of the gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withGatewayType(String gatewayType) {
@@ -419,16 +386,13 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The date on which an update to the gateway is available. This date is in
-     * the time zone of the gateway. If the gateway is not available for an
-     * update this field is not returned in the response.
+     * The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the
+     * gateway is not available for an update this field is not returned in the response.
      * </p>
      * 
      * @param nextUpdateAvailabilityDate
-     *        The date on which an update to the gateway is available. This date
-     *        is in the time zone of the gateway. If the gateway is not
-     *        available for an update this field is not returned in the
-     *        response.
+     *        The date on which an update to the gateway is available. This date is in the time zone of the gateway. If
+     *        the gateway is not available for an update this field is not returned in the response.
      */
 
     public void setNextUpdateAvailabilityDate(String nextUpdateAvailabilityDate) {
@@ -437,15 +401,12 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The date on which an update to the gateway is available. This date is in
-     * the time zone of the gateway. If the gateway is not available for an
-     * update this field is not returned in the response.
+     * The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the
+     * gateway is not available for an update this field is not returned in the response.
      * </p>
      * 
-     * @return The date on which an update to the gateway is available. This
-     *         date is in the time zone of the gateway. If the gateway is not
-     *         available for an update this field is not returned in the
-     *         response.
+     * @return The date on which an update to the gateway is available. This date is in the time zone of the gateway. If
+     *         the gateway is not available for an update this field is not returned in the response.
      */
 
     public String getNextUpdateAvailabilityDate() {
@@ -454,37 +415,30 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The date on which an update to the gateway is available. This date is in
-     * the time zone of the gateway. If the gateway is not available for an
-     * update this field is not returned in the response.
+     * The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the
+     * gateway is not available for an update this field is not returned in the response.
      * </p>
      * 
      * @param nextUpdateAvailabilityDate
-     *        The date on which an update to the gateway is available. This date
-     *        is in the time zone of the gateway. If the gateway is not
-     *        available for an update this field is not returned in the
-     *        response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date on which an update to the gateway is available. This date is in the time zone of the gateway. If
+     *        the gateway is not available for an update this field is not returned in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeGatewayInformationResult withNextUpdateAvailabilityDate(
-            String nextUpdateAvailabilityDate) {
+    public DescribeGatewayInformationResult withNextUpdateAvailabilityDate(String nextUpdateAvailabilityDate) {
         setNextUpdateAvailabilityDate(nextUpdateAvailabilityDate);
         return this;
     }
 
     /**
      * <p>
-     * The date on which the last software update was applied to the gateway. If
-     * the gateway has never been updated, this field does not return a value in
-     * the response.
+     * The date on which the last software update was applied to the gateway. If the gateway has never been updated,
+     * this field does not return a value in the response.
      * </p>
      * 
      * @param lastSoftwareUpdate
-     *        The date on which the last software update was applied to the
-     *        gateway. If the gateway has never been updated, this field does
-     *        not return a value in the response.
+     *        The date on which the last software update was applied to the gateway. If the gateway has never been
+     *        updated, this field does not return a value in the response.
      */
 
     public void setLastSoftwareUpdate(String lastSoftwareUpdate) {
@@ -493,14 +447,12 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The date on which the last software update was applied to the gateway. If
-     * the gateway has never been updated, this field does not return a value in
-     * the response.
+     * The date on which the last software update was applied to the gateway. If the gateway has never been updated,
+     * this field does not return a value in the response.
      * </p>
      * 
-     * @return The date on which the last software update was applied to the
-     *         gateway. If the gateway has never been updated, this field does
-     *         not return a value in the response.
+     * @return The date on which the last software update was applied to the gateway. If the gateway has never been
+     *         updated, this field does not return a value in the response.
      */
 
     public String getLastSoftwareUpdate() {
@@ -509,28 +461,24 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The date on which the last software update was applied to the gateway. If
-     * the gateway has never been updated, this field does not return a value in
-     * the response.
+     * The date on which the last software update was applied to the gateway. If the gateway has never been updated,
+     * this field does not return a value in the response.
      * </p>
      * 
      * @param lastSoftwareUpdate
-     *        The date on which the last software update was applied to the
-     *        gateway. If the gateway has never been updated, this field does
-     *        not return a value in the response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date on which the last software update was applied to the gateway. If the gateway has never been
+     *        updated, this field does not return a value in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeGatewayInformationResult withLastSoftwareUpdate(
-            String lastSoftwareUpdate) {
+    public DescribeGatewayInformationResult withLastSoftwareUpdate(String lastSoftwareUpdate) {
         setLastSoftwareUpdate(lastSoftwareUpdate);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -541,25 +489,23 @@ public class DescribeGatewayInformationResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName() + ",");
+            sb.append("GatewayName: ").append(getGatewayName()).append(",");
         if (getGatewayTimezone() != null)
-            sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
+            sb.append("GatewayTimezone: ").append(getGatewayTimezone()).append(",");
         if (getGatewayState() != null)
-            sb.append("GatewayState: " + getGatewayState() + ",");
+            sb.append("GatewayState: ").append(getGatewayState()).append(",");
         if (getGatewayNetworkInterfaces() != null)
-            sb.append("GatewayNetworkInterfaces: "
-                    + getGatewayNetworkInterfaces() + ",");
+            sb.append("GatewayNetworkInterfaces: ").append(getGatewayNetworkInterfaces()).append(",");
         if (getGatewayType() != null)
-            sb.append("GatewayType: " + getGatewayType() + ",");
+            sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getNextUpdateAvailabilityDate() != null)
-            sb.append("NextUpdateAvailabilityDate: "
-                    + getNextUpdateAvailabilityDate() + ",");
+            sb.append("NextUpdateAvailabilityDate: ").append(getNextUpdateAvailabilityDate()).append(",");
         if (getLastSoftwareUpdate() != null)
-            sb.append("LastSoftwareUpdate: " + getLastSoftwareUpdate());
+            sb.append("LastSoftwareUpdate: ").append(getLastSoftwareUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -576,55 +522,39 @@ public class DescribeGatewayInformationResult implements Serializable,
         DescribeGatewayInformationResult other = (DescribeGatewayInformationResult) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
-        if (other.getGatewayId() != null
-                && other.getGatewayId().equals(this.getGatewayId()) == false)
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
             return false;
         if (other.getGatewayName() == null ^ this.getGatewayName() == null)
             return false;
-        if (other.getGatewayName() != null
-                && other.getGatewayName().equals(this.getGatewayName()) == false)
+        if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false)
             return false;
-        if (other.getGatewayTimezone() == null
-                ^ this.getGatewayTimezone() == null)
+        if (other.getGatewayTimezone() == null ^ this.getGatewayTimezone() == null)
             return false;
-        if (other.getGatewayTimezone() != null
-                && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false)
+        if (other.getGatewayTimezone() != null && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false)
             return false;
         if (other.getGatewayState() == null ^ this.getGatewayState() == null)
             return false;
-        if (other.getGatewayState() != null
-                && other.getGatewayState().equals(this.getGatewayState()) == false)
+        if (other.getGatewayState() != null && other.getGatewayState().equals(this.getGatewayState()) == false)
             return false;
-        if (other.getGatewayNetworkInterfaces() == null
-                ^ this.getGatewayNetworkInterfaces() == null)
+        if (other.getGatewayNetworkInterfaces() == null ^ this.getGatewayNetworkInterfaces() == null)
             return false;
-        if (other.getGatewayNetworkInterfaces() != null
-                && other.getGatewayNetworkInterfaces().equals(
-                        this.getGatewayNetworkInterfaces()) == false)
+        if (other.getGatewayNetworkInterfaces() != null && other.getGatewayNetworkInterfaces().equals(this.getGatewayNetworkInterfaces()) == false)
             return false;
         if (other.getGatewayType() == null ^ this.getGatewayType() == null)
             return false;
-        if (other.getGatewayType() != null
-                && other.getGatewayType().equals(this.getGatewayType()) == false)
+        if (other.getGatewayType() != null && other.getGatewayType().equals(this.getGatewayType()) == false)
             return false;
-        if (other.getNextUpdateAvailabilityDate() == null
-                ^ this.getNextUpdateAvailabilityDate() == null)
+        if (other.getNextUpdateAvailabilityDate() == null ^ this.getNextUpdateAvailabilityDate() == null)
             return false;
-        if (other.getNextUpdateAvailabilityDate() != null
-                && other.getNextUpdateAvailabilityDate().equals(
-                        this.getNextUpdateAvailabilityDate()) == false)
+        if (other.getNextUpdateAvailabilityDate() != null && other.getNextUpdateAvailabilityDate().equals(this.getNextUpdateAvailabilityDate()) == false)
             return false;
-        if (other.getLastSoftwareUpdate() == null
-                ^ this.getLastSoftwareUpdate() == null)
+        if (other.getLastSoftwareUpdate() == null ^ this.getLastSoftwareUpdate() == null)
             return false;
-        if (other.getLastSoftwareUpdate() != null
-                && other.getLastSoftwareUpdate().equals(
-                        this.getLastSoftwareUpdate()) == false)
+        if (other.getLastSoftwareUpdate() != null && other.getLastSoftwareUpdate().equals(this.getLastSoftwareUpdate()) == false)
             return false;
         return true;
     }
@@ -634,36 +564,15 @@ public class DescribeGatewayInformationResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime * hashCode
-                + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayState() == null) ? 0 : getGatewayState()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayNetworkInterfaces() == null) ? 0
-                        : getGatewayNetworkInterfaces().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNextUpdateAvailabilityDate() == null) ? 0
-                        : getNextUpdateAvailabilityDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastSoftwareUpdate() == null) ? 0
-                        : getLastSoftwareUpdate().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
+        hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode());
+        hashCode = prime * hashCode + ((getGatewayState() == null) ? 0 : getGatewayState().hashCode());
+        hashCode = prime * hashCode + ((getGatewayNetworkInterfaces() == null) ? 0 : getGatewayNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
+        hashCode = prime * hashCode + ((getNextUpdateAvailabilityDate() == null) ? 0 : getNextUpdateAvailabilityDate().hashCode());
+        hashCode = prime * hashCode + ((getLastSoftwareUpdate() == null) ? 0 : getLastSoftwareUpdate().hashCode());
         return hashCode;
     }
 
@@ -672,9 +581,8 @@ public class DescribeGatewayInformationResult implements Serializable,
         try {
             return (DescribeGatewayInformationResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

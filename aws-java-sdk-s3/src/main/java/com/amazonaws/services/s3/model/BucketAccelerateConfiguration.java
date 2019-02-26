@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 /**
  * Represents the accelerate configuration for a bucket.
  */
-public class BucketAccelerateConfiguration {
+public class BucketAccelerateConfiguration implements Serializable {
 
     /** The current accelerate configuration status */
     private String status;

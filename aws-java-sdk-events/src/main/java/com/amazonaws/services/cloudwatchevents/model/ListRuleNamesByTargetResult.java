@@ -1,49 +1,47 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>ListRuleNamesByTarget</a> operation.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      */
     private java.util.List<String> ruleNames;
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
-     * @return List of rules names that can invoke the given target.
+     * @return The names of the rules that can invoke the given target.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -52,11 +50,11 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
+     *        The names of the rules that can invoke the given target.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -70,19 +68,17 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRuleNames(java.util.Collection)} or
-     * {@link #withRuleNames(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleNames(java.util.Collection)} or {@link #withRuleNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the rules that can invoke the given target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRuleNamesByTargetResult withRuleNames(String... ruleNames) {
@@ -97,28 +93,27 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the rules that can invoke the given target.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListRuleNamesByTargetResult withRuleNames(
-            java.util.Collection<String> ruleNames) {
+    public ListRuleNamesByTargetResult withRuleNames(java.util.Collection<String> ruleNames) {
         setRuleNames(ruleNames);
         return this;
     }
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,10 +122,11 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
-     * @return Indicates that there are additional results to retrieve.
+     * @return Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *         null.
      */
 
     public String getNextToken() {
@@ -139,13 +135,13 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRuleNamesByTargetResult withNextToken(String nextToken) {
@@ -154,8 +150,8 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -166,9 +162,9 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleNames() != null)
-            sb.append("RuleNames: " + getRuleNames() + ",");
+            sb.append("RuleNames: ").append(getRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -185,13 +181,11 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
         ListRuleNamesByTargetResult other = (ListRuleNamesByTargetResult) obj;
         if (other.getRuleNames() == null ^ this.getRuleNames() == null)
             return false;
-        if (other.getRuleNames() != null
-                && other.getRuleNames().equals(this.getRuleNames()) == false)
+        if (other.getRuleNames() != null && other.getRuleNames().equals(this.getRuleNames()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -201,10 +195,8 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRuleNames() == null) ? 0 : getRuleNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRuleNames() == null) ? 0 : getRuleNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -213,9 +205,8 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
         try {
             return (ListRuleNamesByTargetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

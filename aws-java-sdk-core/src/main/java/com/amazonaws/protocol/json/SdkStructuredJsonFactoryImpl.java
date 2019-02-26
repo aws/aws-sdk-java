@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,10 +16,12 @@ package com.amazonaws.protocol.json;
 
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.http.ErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContext.UnmarshallerType;
 import com.amazonaws.transform.Unmarshaller;
 import com.fasterxml.jackson.core.JsonFactory;
 
@@ -33,21 +35,21 @@ import java.util.Map;
  */
 public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonFactory {
 
-    private final String contentTypePrefix;
     private final JsonFactory jsonFactory;
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers;
+    private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers;
 
-    public SdkStructuredJsonFactoryImpl(String contentTypePrefix, JsonFactory jsonFactory,
-                                        Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers) {
-        this.contentTypePrefix = contentTypePrefix;
+    public SdkStructuredJsonFactoryImpl(JsonFactory jsonFactory,
+                                        Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers,
+                                        Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers) {
         this.jsonFactory = jsonFactory;
         this.unmarshallers = unmarshallers;
+        this.customTypeMarshallers = customTypeMarshallers;
     }
 
     @Override
-    public StructuredJsonGenerator createWriter(final String protocolVersion) {
-
-        return createWriter(jsonFactory, contentTypePrefix + protocolVersion);
+    public StructuredJsonGenerator createWriter(String contentType) {
+        return createWriter(jsonFactory, contentType);
     }
 
     protected abstract StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
@@ -56,7 +58,7 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
     @Override
     public <T> JsonResponseHandler<T> createResponseHandler(JsonOperationMetadata operationMetadata,
                                                             Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller) {
-        return new JsonResponseHandler(responseUnmarshaller, unmarshallers, jsonFactory,
+        return new JsonResponseHandler(responseUnmarshaller, unmarshallers, customTypeMarshallers, jsonFactory,
                                        operationMetadata.isHasStreamingSuccessResponse(),
                                        operationMetadata.isPayloadJson());
     }
@@ -70,7 +72,8 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
                                             jsonFactory);
     }
 
-    private JsonErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
+    protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
         return new JsonErrorCodeParser(customErrorCodeFieldName);
     }
+
 }

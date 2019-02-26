@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * The relationship of the related resource to the main resource.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Relationship" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Relationship implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Relationship implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -84,8 +87,7 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The resource type of the related resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
 
@@ -105,7 +107,7 @@ public class Relationship implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -115,13 +117,12 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The resource type of the related resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
 
     public Relationship withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -131,8 +132,7 @@ public class Relationship implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceId
-     *        The ID of the related resource (for example,
-     *        <code>sg-xxxxxx</code>).
+     *        The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      */
 
     public void setResourceId(String resourceId) {
@@ -144,8 +144,7 @@ public class Relationship implements Serializable, Cloneable {
      * The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      * </p>
      * 
-     * @return The ID of the related resource (for example,
-     *         <code>sg-xxxxxx</code>).
+     * @return The ID of the related resource (for example, <code>sg-xxxxxx</code>).
      */
 
     public String getResourceId() {
@@ -158,10 +157,8 @@ public class Relationship implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceId
-     *        The ID of the related resource (for example,
-     *        <code>sg-xxxxxx</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Relationship withResourceId(String resourceId) {
@@ -201,8 +198,7 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @param resourceName
      *        The custom name of the related resource, if available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Relationship withResourceName(String resourceName) {
@@ -242,8 +238,7 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @param relationshipName
      *        The type of relationship with the related resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Relationship withRelationshipName(String relationshipName) {
@@ -252,8 +247,8 @@ public class Relationship implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -264,13 +259,13 @@ public class Relationship implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getRelationshipName() != null)
-            sb.append("RelationshipName: " + getRelationshipName());
+            sb.append("RelationshipName: ").append(getRelationshipName());
         sb.append("}");
         return sb.toString();
     }
@@ -287,25 +282,19 @@ public class Relationship implements Serializable, Cloneable {
         Relationship other = (Relationship) obj;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getResourceName() == null ^ this.getResourceName() == null)
             return false;
-        if (other.getResourceName() != null
-                && other.getResourceName().equals(this.getResourceName()) == false)
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
-        if (other.getRelationshipName() == null
-                ^ this.getRelationshipName() == null)
+        if (other.getRelationshipName() == null ^ this.getRelationshipName() == null)
             return false;
-        if (other.getRelationshipName() != null
-                && other.getRelationshipName().equals(
-                        this.getRelationshipName()) == false)
+        if (other.getRelationshipName() != null && other.getRelationshipName().equals(this.getRelationshipName()) == false)
             return false;
         return true;
     }
@@ -315,20 +304,10 @@ public class Relationship implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceName() == null) ? 0 : getResourceName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRelationshipName() == null) ? 0 : getRelationshipName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getRelationshipName() == null) ? 0 : getRelationshipName().hashCode());
         return hashCode;
     }
 
@@ -337,9 +316,13 @@ public class Relationship implements Serializable, Cloneable {
         try {
             return (Relationship) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.RelationshipMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

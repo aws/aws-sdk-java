@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -175,7 +175,6 @@ public class MultiFileOutputStream extends OutputStream implements OnFileDelete 
             filesCreated++;
             blockIfNecessary();
             final File file = getFile(filesCreated);
-            file.deleteOnExit();
             os = new FileOutputStream(file);
         }
         return os;

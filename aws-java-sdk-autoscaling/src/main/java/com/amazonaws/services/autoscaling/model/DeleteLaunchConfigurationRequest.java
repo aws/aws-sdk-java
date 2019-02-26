@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteLaunchConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,19 +64,17 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
      * 
      * @param launchConfigurationName
      *        The name of the launch configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteLaunchConfigurationRequest withLaunchConfigurationName(
-            String launchConfigurationName) {
+    public DeleteLaunchConfigurationRequest withLaunchConfigurationName(String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,8 +85,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: "
-                    + getLaunchConfigurationName());
+            sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName());
         sb.append("}");
         return sb.toString();
     }
@@ -103,12 +100,9 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
         if (obj instanceof DeleteLaunchConfigurationRequest == false)
             return false;
         DeleteLaunchConfigurationRequest other = (DeleteLaunchConfigurationRequest) obj;
-        if (other.getLaunchConfigurationName() == null
-                ^ this.getLaunchConfigurationName() == null)
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
-        if (other.getLaunchConfigurationName() != null
-                && other.getLaunchConfigurationName().equals(
-                        this.getLaunchConfigurationName()) == false)
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
         return true;
     }
@@ -118,10 +112,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLaunchConfigurationName() == null) ? 0
-                        : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
         return hashCode;
     }
 
@@ -129,4 +120,5 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
     public DeleteLaunchConfigurationRequest clone() {
         return (DeleteLaunchConfigurationRequest) super.clone();
     }
+
 }

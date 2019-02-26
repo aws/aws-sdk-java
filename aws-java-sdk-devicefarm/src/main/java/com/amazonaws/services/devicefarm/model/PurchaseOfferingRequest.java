@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents a request for a purchase offering.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering" target="_top">AWS API
+ *      Documentation</a>
  */
-public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -39,6 +40,12 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Integer quantity;
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     */
+    private String offeringPromotionId;
 
     /**
      * <p>
@@ -72,8 +79,7 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
      * 
      * @param offeringId
      *        The ID of the offering.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PurchaseOfferingRequest withOfferingId(String offeringId) {
@@ -87,8 +93,7 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param quantity
-     *        The number of device slots you wish to purchase in an offering
-     *        request.
+     *        The number of device slots you wish to purchase in an offering request.
      */
 
     public void setQuantity(Integer quantity) {
@@ -100,8 +105,7 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
      * The number of device slots you wish to purchase in an offering request.
      * </p>
      * 
-     * @return The number of device slots you wish to purchase in an offering
-     *         request.
+     * @return The number of device slots you wish to purchase in an offering request.
      */
 
     public Integer getQuantity() {
@@ -114,10 +118,8 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param quantity
-     *        The number of device slots you wish to purchase in an offering
-     *        request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The number of device slots you wish to purchase in an offering request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PurchaseOfferingRequest withQuantity(Integer quantity) {
@@ -126,8 +128,48 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID of the offering promotion to be applied to the purchase.
+     */
+
+    public void setOfferingPromotionId(String offeringPromotionId) {
+        this.offeringPromotionId = offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @return The ID of the offering promotion to be applied to the purchase.
+     */
+
+    public String getOfferingPromotionId() {
+        return this.offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID of the offering promotion to be applied to the purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseOfferingRequest withOfferingPromotionId(String offeringPromotionId) {
+        setOfferingPromotionId(offeringPromotionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -138,9 +180,11 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity());
+            sb.append("Quantity: ").append(getQuantity()).append(",");
+        if (getOfferingPromotionId() != null)
+            sb.append("OfferingPromotionId: ").append(getOfferingPromotionId());
         sb.append("}");
         return sb.toString();
     }
@@ -157,13 +201,15 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
         PurchaseOfferingRequest other = (PurchaseOfferingRequest) obj;
         if (other.getOfferingId() == null ^ this.getOfferingId() == null)
             return false;
-        if (other.getOfferingId() != null
-                && other.getOfferingId().equals(this.getOfferingId()) == false)
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         if (other.getQuantity() == null ^ this.getQuantity() == null)
             return false;
-        if (other.getQuantity() != null
-                && other.getQuantity().equals(this.getQuantity()) == false)
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
+            return false;
+        if (other.getOfferingPromotionId() == null ^ this.getOfferingPromotionId() == null)
+            return false;
+        if (other.getOfferingPromotionId() != null && other.getOfferingPromotionId().equals(this.getOfferingPromotionId()) == false)
             return false;
         return true;
     }
@@ -173,10 +219,9 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
-        hashCode = prime * hashCode
-                + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getOfferingPromotionId() == null) ? 0 : getOfferingPromotionId().hashCode());
         return hashCode;
     }
 
@@ -184,4 +229,5 @@ public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
     public PurchaseOfferingRequest clone() {
         return (PurchaseOfferingRequest) super.clone();
     }
+
 }

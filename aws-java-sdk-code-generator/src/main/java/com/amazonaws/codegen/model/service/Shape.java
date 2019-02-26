@@ -17,6 +17,7 @@ package com.amazonaws.codegen.model.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class Shape {
 
     private String type;
 
-    private Map<String, Member> members;
+    private Map<String, Member> members = Collections.emptyMap();
 
     private String documentation;
 
@@ -62,6 +63,10 @@ public class Shape {
     private boolean fault;
 
     private boolean deprecated;
+
+    private boolean sensitive;
+
+    private String timestampFormat;
 
     public boolean isFault() {
         return fault;
@@ -217,5 +222,21 @@ public class Shape {
 
     public void setDeprecated(boolean deprecated) {
         this.deprecated = deprecated;
+    }
+
+    public boolean isSensitive() {
+        return sensitive;
+    }
+
+    public void setSensitive(boolean sensitive) {
+        this.sensitive = sensitive;
+    }
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    public void setTimestampFormat(String timestampFormat) {
+        this.timestampFormat = timestampFormat;
     }
 }

@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * InstanceSummary JSON Unmarshaller
  */
-public class InstanceSummaryJsonUnmarshaller implements
-        Unmarshaller<InstanceSummary, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class InstanceSummaryJsonUnmarshaller implements Unmarshaller<InstanceSummary, JsonUnmarshallerContext> {
 
-    public InstanceSummary unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public InstanceSummary unmarshall(JsonUnmarshallerContext context) throws Exception {
         InstanceSummary instanceSummary = new InstanceSummary();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class InstanceSummaryJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,35 +50,30 @@ public class InstanceSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setDeploymentId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    instanceSummary.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceId", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setInstanceId(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    instanceSummary.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setStatus(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    instanceSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setLastUpdatedAt(context.getUnmarshaller(
-                            java.util.Date.class).unmarshall(context));
+                    instanceSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
-                    instanceSummary
-                            .setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(
-                                    LifecycleEventJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    instanceSummary.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    instanceSummary.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

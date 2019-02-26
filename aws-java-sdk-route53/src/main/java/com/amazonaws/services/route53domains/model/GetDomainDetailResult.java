@@ -1,36 +1,34 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * The GetDomainDetail response includes the following elements.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetDomainDetailResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
      * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String domainName;
@@ -38,17 +36,11 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Nameserver> nameservers;
     /**
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
-     * </p>
-     * <p>
-     * Type: Boolean
      * </p>
      */
     private Boolean autoRenew;
@@ -56,33 +48,11 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      */
     private ContactDetail adminContact;
     /**
      * <p>
      * Provides details about the domain registrant.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      */
     private ContactDetail registrantContact;
@@ -90,73 +60,46 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      */
     private ContactDetail techContact;
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      */
     private Boolean adminPrivacy;
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is
-     * concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
-     * ("who is") queries will return contact information for our registrar
-     * partner, Gandi, instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      */
     private Boolean registrantPrivacy;
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      */
     private Boolean techPrivacy;
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is
-     * <code>"GANDI SAS"</code>.
-     * </p>
-     * <p>
-     * Type: String
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      */
     private String registrarName;
     /**
      * <p>
-     * The fully qualified name of the WHOIS server that can answer the WHOIS
-     * query for the domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
      */
     private String whoIsServer;
@@ -164,29 +107,18 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String registrarUrl;
     /**
      * <p>
-     * Email address to contact to report incorrect contact information for a
-     * domain, to report that the domain is being used to send spam, to report
-     * that someone is cybersquatting on a domain name, or report some other
-     * type of abuse.
-     * </p>
-     * <p>
-     * Type: String
+     * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
+     * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
      */
     private String abuseContactEmail;
     /**
      * <p>
      * Phone number for reporting abuse.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String abuseContactPhone;
@@ -198,32 +130,29 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
     private String registryDomainId;
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date updatedDate;
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date
-     * format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      */
     private java.util.Date expirationDate;
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon
-     * Route 53 domains will have <code>"Amazon"</code> as the reseller.
-     * </p>
-     * <p>
-     * Type: String
+     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     * <code>"Amazon"</code> as the reseller.
      * </p>
      */
     private String reseller;
@@ -235,26 +164,18 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
     private String dnsSec;
     /**
      * <p>
-     * An array of domain name status codes, also known as Extensible
-     * Provisioning Protocol (EPP) status codes.
+     * An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.
      * </p>
      * <p>
-     * ICANN, the organization that maintains a central database of domain
-     * names, has developed a set of domain name status codes that tell you the
-     * status of a variety of operations on a domain name, for example,
-     * registering a domain name, transferring a domain name to another
-     * registrar, renewing the registration for a domain name, and so on. All
-     * registrars use this same set of status codes.
+     * ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+     * status codes that tell you the status of a variety of operations on a domain name, for example, registering a
+     * domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so
+     * on. All registrars use this same set of status codes.
      * </p>
      * <p>
-     * For a current list of domain name status codes and an explanation of what
-     * each code means, go to the <a href="https://www.icann.org/">ICANN
-     * website</a> and search for <code>epp status codes</code>. (Search on the
-     * ICANN website; web searches sometimes return an old version of the
-     * document.)
-     * </p>
-     * <p>
-     * Type: Array of String
+     * For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
+     * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> statusList;
@@ -263,14 +184,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of a domain.
      */
 
     public void setDomainName(String domainName) {
@@ -281,13 +197,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of a domain.
      */
 
     public String getDomainName() {
@@ -298,16 +209,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withDomainName(String domainName) {
@@ -319,13 +224,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The name of the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of the domain.
      */
 
     public java.util.List<Nameserver> getNameservers() {
@@ -339,14 +239,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain.
      */
 
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
@@ -355,8 +250,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
             return;
         }
 
-        this.nameservers = new com.amazonaws.internal.SdkInternalList<Nameserver>(
-                nameservers);
+        this.nameservers = new com.amazonaws.internal.SdkInternalList<Nameserver>(nameservers);
     }
 
     /**
@@ -364,27 +258,19 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * The name of the domain.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNameservers(java.util.Collection)} or
-     * {@link #withNameservers(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNameservers(java.util.Collection)} or {@link #withNameservers(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withNameservers(Nameserver... nameservers) {
         if (this.nameservers == null) {
-            setNameservers(new com.amazonaws.internal.SdkInternalList<Nameserver>(
-                    nameservers.length));
+            setNameservers(new com.amazonaws.internal.SdkInternalList<Nameserver>(nameservers.length));
         }
         for (Nameserver ele : nameservers) {
             this.nameservers.add(ele);
@@ -396,20 +282,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDomainDetailResult withNameservers(
-            java.util.Collection<Nameserver> nameservers) {
+    public GetDomainDetailResult withNameservers(java.util.Collection<Nameserver> nameservers) {
         setNameservers(nameservers);
         return this;
     }
@@ -418,15 +297,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param autoRenew
-     *        Specifies whether the domain registration is set to renew
-     *        automatically.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether the domain registration is set to renew automatically.
      */
 
     public void setAutoRenew(Boolean autoRenew) {
@@ -437,14 +310,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
-     * @return Specifies whether the domain registration is set to renew
-     *         automatically.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether the domain registration is set to renew automatically.
      */
 
     public Boolean getAutoRenew() {
@@ -455,17 +322,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param autoRenew
-     *        Specifies whether the domain registration is set to renew
-     *        automatically.</p>
-     *        <p>
-     *        Type: Boolean
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether the domain registration is set to renew automatically.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withAutoRenew(Boolean autoRenew) {
@@ -477,14 +337,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
-     * @return Specifies whether the domain registration is set to renew
-     *         automatically.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether the domain registration is set to renew automatically.
      */
 
     public Boolean isAutoRenew() {
@@ -495,31 +349,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param adminContact
-     *        Provides details about the domain administrative contact. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Provides details about the domain administrative contact.
      */
 
     public void setAdminContact(ContactDetail adminContact) {
@@ -530,30 +362,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain administrative contact. </p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain administrative contact.
      */
 
     public ContactDetail getAdminContact() {
@@ -564,33 +374,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param adminContact
-     *        Provides details about the domain administrative contact. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides details about the domain administrative contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withAdminContact(ContactDetail adminContact) {
@@ -602,31 +389,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param registrantContact
-     *        Provides details about the domain registrant. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Provides details about the domain registrant.
      */
 
     public void setRegistrantContact(ContactDetail registrantContact) {
@@ -637,30 +402,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain registrant. </p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain registrant.
      */
 
     public ContactDetail getRegistrantContact() {
@@ -671,37 +414,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param registrantContact
-     *        Provides details about the domain registrant. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides details about the domain registrant.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDomainDetailResult withRegistrantContact(
-            ContactDetail registrantContact) {
+    public GetDomainDetailResult withRegistrantContact(ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
         return this;
     }
@@ -710,31 +429,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param techContact
-     *        Provides details about the domain technical contact.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
+     *        Provides details about the domain technical contact.
      */
 
     public void setTechContact(ContactDetail techContact) {
@@ -745,30 +442,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain technical contact.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *         <code>LastName</code>, <code>ContactType</code>,
-     *         <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *         <code>CountryCode</code>, <code>ZipCode</code>,
-     *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain technical contact.
      */
 
     public ContactDetail getTechContact() {
@@ -779,33 +454,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>,
-     * <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>,
-     * <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     * <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     * <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param techContact
-     *        Provides details about the domain technical contact.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>,
-     *        <code>LastName</code>, <code>ContactType</code>,
-     *        <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *        <code>AddressLine2</code>, <code>City</code>, <code>State</code>,
-     *        <code>CountryCode</code>, <code>ZipCode</code>,
-     *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *        <code>ExtraParams</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Provides details about the domain technical contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withTechContact(ContactDetail techContact) {
@@ -815,23 +467,17 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
      * @param adminPrivacy
-     *        Specifies whether contact information for the admin contact is
-     *        concealed from WHOIS queries. If the value is <code>true</code>,
-     *        WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the admin contact.
      */
 
     public void setAdminPrivacy(Boolean adminPrivacy) {
@@ -840,22 +486,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the admin contact is
-     *         concealed from WHOIS queries. If the value is <code>true</code>,
-     *         WHOIS ("who is") queries will return contact information for our
-     *         registrar partner, Gandi, instead of the contact information that
-     *         you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the admin contact.
      */
 
     public Boolean getAdminPrivacy() {
@@ -864,25 +504,18 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
      * @param adminPrivacy
-     *        Specifies whether contact information for the admin contact is
-     *        concealed from WHOIS queries. If the value is <code>true</code>,
-     *        WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the admin contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withAdminPrivacy(Boolean adminPrivacy) {
@@ -892,22 +525,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the admin contact is
-     *         concealed from WHOIS queries. If the value is <code>true</code>,
-     *         WHOIS ("who is") queries will return contact information for our
-     *         registrar partner, Gandi, instead of the contact information that
-     *         you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the admin contact.
      */
 
     public Boolean isAdminPrivacy() {
@@ -916,23 +543,17 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is
-     * concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
-     * ("who is") queries will return contact information for our registrar
-     * partner, Gandi, instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
      * @param registrantPrivacy
-     *        Specifies whether contact information for the registrant contact
-     *        is concealed from WHOIS queries. If the value is <code>true</code>
-     *        , WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
@@ -941,22 +562,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is
-     * concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
-     * ("who is") queries will return contact information for our registrar
-     * partner, Gandi, instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
-     * @return Specifies whether contact information for the registrant contact
-     *         is concealed from WHOIS queries. If the value is
-     *         <code>true</code>, WHOIS ("who is") queries will return contact
-     *         information for our registrar partner, Gandi, instead of the
-     *         contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public Boolean getRegistrantPrivacy() {
@@ -965,25 +580,18 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is
-     * concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
-     * ("who is") queries will return contact information for our registrar
-     * partner, Gandi, instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
      * @param registrantPrivacy
-     *        Specifies whether contact information for the registrant contact
-     *        is concealed from WHOIS queries. If the value is <code>true</code>
-     *        , WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the registrant contact (domain owner).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withRegistrantPrivacy(Boolean registrantPrivacy) {
@@ -993,22 +601,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is
-     * concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
-     * ("who is") queries will return contact information for our registrar
-     * partner, Gandi, instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
-     * @return Specifies whether contact information for the registrant contact
-     *         is concealed from WHOIS queries. If the value is
-     *         <code>true</code>, WHOIS ("who is") queries will return contact
-     *         information for our registrar partner, Gandi, instead of the
-     *         contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public Boolean isRegistrantPrivacy() {
@@ -1017,23 +619,17 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
      * @param techPrivacy
-     *        Specifies whether contact information for the tech contact is
-     *        concealed from WHOIS queries. If the value is <code>true</code>,
-     *        WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the technical contact.
      */
 
     public void setTechPrivacy(Boolean techPrivacy) {
@@ -1042,22 +638,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the tech contact is
-     *         concealed from WHOIS queries. If the value is <code>true</code>,
-     *         WHOIS ("who is") queries will return contact information for our
-     *         registrar partner, Gandi, instead of the contact information that
-     *         you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the technical contact.
      */
 
     public Boolean getTechPrivacy() {
@@ -1066,25 +656,18 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
      * @param techPrivacy
-     *        Specifies whether contact information for the tech contact is
-     *        concealed from WHOIS queries. If the value is <code>true</code>,
-     *        WHOIS ("who is") queries will return contact information for our
-     *        registrar partner, Gandi, instead of the contact information that
-     *        you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the technical contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withTechPrivacy(Boolean techPrivacy) {
@@ -1094,22 +677,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is")
-     * queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the tech contact is
-     *         concealed from WHOIS queries. If the value is <code>true</code>,
-     *         WHOIS ("who is") queries will return contact information for our
-     *         registrar partner, Gandi, instead of the contact information that
-     *         you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the technical contact.
      */
 
     public Boolean isTechPrivacy() {
@@ -1118,20 +695,15 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is
-     * <code>"GANDI SAS"</code>.
-     * </p>
-     * <p>
-     * Type: String
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
      * @param registrarName
-     *        Name of the registrar of the domain as identified in the registry.
-     *        Amazon Route 53 domains are registered by registrar Gandi. The
-     *        value is <code>"GANDI SAS"</code>. </p>
-     *        <p>
-     *        Type: String
+     *        Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *        are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *        The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      */
 
     public void setRegistrarName(String registrarName) {
@@ -1140,19 +712,14 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is
-     * <code>"GANDI SAS"</code>.
-     * </p>
-     * <p>
-     * Type: String
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
-     * @return Name of the registrar of the domain as identified in the
-     *         registry. Amazon Route 53 domains are registered by registrar
-     *         Gandi. The value is <code>"GANDI SAS"</code>. </p>
-     *         <p>
-     *         Type: String
+     * @return Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *         are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *         The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      */
 
     public String getRegistrarName() {
@@ -1161,22 +728,16 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is
-     * <code>"GANDI SAS"</code>.
-     * </p>
-     * <p>
-     * Type: String
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
      * @param registrarName
-     *        Name of the registrar of the domain as identified in the registry.
-     *        Amazon Route 53 domains are registered by registrar Gandi. The
-     *        value is <code>"GANDI SAS"</code>. </p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *        are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *        The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withRegistrarName(String registrarName) {
@@ -1186,18 +747,11 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified name of the WHOIS server that can answer the WHOIS
-     * query for the domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
      * 
      * @param whoIsServer
-     *        The fully qualified name of the WHOIS server that can answer the
-     *        WHOIS query for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      */
 
     public void setWhoIsServer(String whoIsServer) {
@@ -1206,17 +760,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified name of the WHOIS server that can answer the WHOIS
-     * query for the domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
      * 
-     * @return The fully qualified name of the WHOIS server that can answer the
-     *         WHOIS query for the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      */
 
     public String getWhoIsServer() {
@@ -1225,20 +772,12 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified name of the WHOIS server that can answer the WHOIS
-     * query for the domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
      * 
      * @param whoIsServer
-     *        The fully qualified name of the WHOIS server that can answer the
-     *        WHOIS query for the domain.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withWhoIsServer(String whoIsServer) {
@@ -1250,14 +789,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarUrl
-     *        Web address of the registrar.</p>
-     *        <p>
-     *        Type: String
+     *        Web address of the registrar.
      */
 
     public void setRegistrarUrl(String registrarUrl) {
@@ -1268,13 +802,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Web address of the registrar.</p>
-     *         <p>
-     *         Type: String
+     * @return Web address of the registrar.
      */
 
     public String getRegistrarUrl() {
@@ -1285,16 +814,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarUrl
-     *        Web address of the registrar.</p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Web address of the registrar.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withRegistrarUrl(String registrarUrl) {
@@ -1304,22 +827,14 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Email address to contact to report incorrect contact information for a
-     * domain, to report that the domain is being used to send spam, to report
-     * that someone is cybersquatting on a domain name, or report some other
-     * type of abuse.
-     * </p>
-     * <p>
-     * Type: String
+     * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
+     * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
      * 
      * @param abuseContactEmail
-     *        Email address to contact to report incorrect contact information
-     *        for a domain, to report that the domain is being used to send
-     *        spam, to report that someone is cybersquatting on a domain name,
-     *        or report some other type of abuse. </p>
-     *        <p>
-     *        Type: String
+     *        Email address to contact to report incorrect contact information for a domain, to report that the domain
+     *        is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
+     *        other type of abuse.
      */
 
     public void setAbuseContactEmail(String abuseContactEmail) {
@@ -1328,21 +843,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Email address to contact to report incorrect contact information for a
-     * domain, to report that the domain is being used to send spam, to report
-     * that someone is cybersquatting on a domain name, or report some other
-     * type of abuse.
-     * </p>
-     * <p>
-     * Type: String
+     * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
+     * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
      * 
-     * @return Email address to contact to report incorrect contact information
-     *         for a domain, to report that the domain is being used to send
-     *         spam, to report that someone is cybersquatting on a domain name,
-     *         or report some other type of abuse. </p>
-     *         <p>
-     *         Type: String
+     * @return Email address to contact to report incorrect contact information for a domain, to report that the domain
+     *         is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
+     *         other type of abuse.
      */
 
     public String getAbuseContactEmail() {
@@ -1351,24 +858,15 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Email address to contact to report incorrect contact information for a
-     * domain, to report that the domain is being used to send spam, to report
-     * that someone is cybersquatting on a domain name, or report some other
-     * type of abuse.
-     * </p>
-     * <p>
-     * Type: String
+     * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
+     * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
      * 
      * @param abuseContactEmail
-     *        Email address to contact to report incorrect contact information
-     *        for a domain, to report that the domain is being used to send
-     *        spam, to report that someone is cybersquatting on a domain name,
-     *        or report some other type of abuse. </p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Email address to contact to report incorrect contact information for a domain, to report that the domain
+     *        is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
+     *        other type of abuse.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withAbuseContactEmail(String abuseContactEmail) {
@@ -1380,14 +878,9 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactPhone
-     *        Phone number for reporting abuse. </p>
-     *        <p>
-     *        Type: String
+     *        Phone number for reporting abuse.
      */
 
     public void setAbuseContactPhone(String abuseContactPhone) {
@@ -1398,13 +891,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Phone number for reporting abuse. </p>
-     *         <p>
-     *         Type: String
+     * @return Phone number for reporting abuse.
      */
 
     public String getAbuseContactPhone() {
@@ -1415,16 +903,10 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactPhone
-     *        Phone number for reporting abuse. </p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Phone number for reporting abuse.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withAbuseContactPhone(String abuseContactPhone) {
@@ -1464,8 +946,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * 
      * @param registryDomainId
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withRegistryDomainId(String registryDomainId) {
@@ -1475,13 +956,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
-     *        The date when the domain was created as found in the response to a
-     *        WHOIS query. The date format is Unix time.
+     *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -1490,12 +971,12 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
-     * @return The date when the domain was created as found in the response to
-     *         a WHOIS query. The date format is Unix time.
+     * @return The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *         Coordinated Universal time (UTC).
      */
 
     public java.util.Date getCreationDate() {
@@ -1504,15 +985,14 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
-     *        The date when the domain was created as found in the response to a
-     *        WHOIS query. The date format is Unix time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withCreationDate(java.util.Date creationDate) {
@@ -1522,13 +1002,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
-     *        The last updated date of the domain as found in the response to a
-     *        WHOIS query. The date format is Unix time.
+     *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      */
 
     public void setUpdatedDate(java.util.Date updatedDate) {
@@ -1537,12 +1017,12 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
-     * @return The last updated date of the domain as found in the response to a
-     *         WHOIS query. The date format is Unix time.
+     * @return The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *         Coordinated Universal time (UTC).
      */
 
     public java.util.Date getUpdatedDate() {
@@ -1551,15 +1031,14 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
-     *        The last updated date of the domain as found in the response to a
-     *        WHOIS query. The date format is Unix time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withUpdatedDate(java.util.Date updatedDate) {
@@ -1569,13 +1048,13 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date
-     * format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire.
-     *        The date format is Unix time.
+     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *        Universal time (UTC).
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -1584,12 +1063,12 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date
-     * format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
-     * @return The date when the registration for the domain is set to expire.
-     *         The date format is Unix time.
+     * @return The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *         Universal time (UTC).
      */
 
     public java.util.Date getExpirationDate() {
@@ -1598,38 +1077,30 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date
-     * format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire.
-     *        The date format is Unix time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *        Universal time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDomainDetailResult withExpirationDate(
-            java.util.Date expirationDate) {
+    public GetDomainDetailResult withExpirationDate(java.util.Date expirationDate) {
         setExpirationDate(expirationDate);
         return this;
     }
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon
-     * Route 53 domains will have <code>"Amazon"</code> as the reseller.
-     * </p>
-     * <p>
-     * Type: String
+     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     * <code>"Amazon"</code> as the reseller.
      * </p>
      * 
      * @param reseller
-     *        Reseller of the domain. Domains registered or transferred using
-     *        Amazon Route 53 domains will have <code>"Amazon"</code> as the
-     *        reseller. </p>
-     *        <p>
-     *        Type: String
+     *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     *        <code>"Amazon"</code> as the reseller.
      */
 
     public void setReseller(String reseller) {
@@ -1638,18 +1109,12 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon
-     * Route 53 domains will have <code>"Amazon"</code> as the reseller.
-     * </p>
-     * <p>
-     * Type: String
+     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     * <code>"Amazon"</code> as the reseller.
      * </p>
      * 
-     * @return Reseller of the domain. Domains registered or transferred using
-     *         Amazon Route 53 domains will have <code>"Amazon"</code> as the
-     *         reseller. </p>
-     *         <p>
-     *         Type: String
+     * @return Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     *         <code>"Amazon"</code> as the reseller.
      */
 
     public String getReseller() {
@@ -1658,21 +1123,14 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon
-     * Route 53 domains will have <code>"Amazon"</code> as the reseller.
-     * </p>
-     * <p>
-     * Type: String
+     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     * <code>"Amazon"</code> as the reseller.
      * </p>
      * 
      * @param reseller
-     *        Reseller of the domain. Domains registered or transferred using
-     *        Amazon Route 53 domains will have <code>"Amazon"</code> as the
-     *        reseller. </p>
-     *        <p>
-     *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     *        <code>"Amazon"</code> as the reseller.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withReseller(String reseller) {
@@ -1712,8 +1170,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * 
      * @param dnsSec
      *        Reserved for future use.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withDnsSec(String dnsSec) {
@@ -1723,48 +1180,32 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of domain name status codes, also known as Extensible
-     * Provisioning Protocol (EPP) status codes.
+     * An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.
      * </p>
      * <p>
-     * ICANN, the organization that maintains a central database of domain
-     * names, has developed a set of domain name status codes that tell you the
-     * status of a variety of operations on a domain name, for example,
-     * registering a domain name, transferring a domain name to another
-     * registrar, renewing the registration for a domain name, and so on. All
-     * registrars use this same set of status codes.
+     * ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+     * status codes that tell you the status of a variety of operations on a domain name, for example, registering a
+     * domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so
+     * on. All registrars use this same set of status codes.
      * </p>
      * <p>
-     * For a current list of domain name status codes and an explanation of what
-     * each code means, go to the <a href="https://www.icann.org/">ICANN
-     * website</a> and search for <code>epp status codes</code>. (Search on the
-     * ICANN website; web searches sometimes return an old version of the
-     * document.)
-     * </p>
-     * <p>
-     * Type: Array of String
+     * For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
+     * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      * 
-     * @return An array of domain name status codes, also known as Extensible
-     *         Provisioning Protocol (EPP) status codes.</p>
+     * @return An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
+     *         codes.</p>
      *         <p>
-     *         ICANN, the organization that maintains a central database of
-     *         domain names, has developed a set of domain name status codes
-     *         that tell you the status of a variety of operations on a domain
-     *         name, for example, registering a domain name, transferring a
-     *         domain name to another registrar, renewing the registration for a
-     *         domain name, and so on. All registrars use this same set of
-     *         status codes.
+     *         ICANN, the organization that maintains a central database of domain names, has developed a set of domain
+     *         name status codes that tell you the status of a variety of operations on a domain name, for example,
+     *         registering a domain name, transferring a domain name to another registrar, renewing the registration for
+     *         a domain name, and so on. All registrars use this same set of status codes.
      *         </p>
      *         <p>
-     *         For a current list of domain name status codes and an explanation
-     *         of what each code means, go to the <a
-     *         href="https://www.icann.org/">ICANN website</a> and search for
-     *         <code>epp status codes</code>. (Search on the ICANN website; web
-     *         searches sometimes return an old version of the document.)
-     *         </p>
-     *         <p>
-     *         Type: Array of String
+     *         For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     *         href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
+     *         the ICANN website; web searches sometimes return an old version of the document.)
      */
 
     public java.util.List<String> getStatusList() {
@@ -1776,48 +1217,33 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of domain name status codes, also known as Extensible
-     * Provisioning Protocol (EPP) status codes.
+     * An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.
      * </p>
      * <p>
-     * ICANN, the organization that maintains a central database of domain
-     * names, has developed a set of domain name status codes that tell you the
-     * status of a variety of operations on a domain name, for example,
-     * registering a domain name, transferring a domain name to another
-     * registrar, renewing the registration for a domain name, and so on. All
-     * registrars use this same set of status codes.
+     * ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+     * status codes that tell you the status of a variety of operations on a domain name, for example, registering a
+     * domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so
+     * on. All registrars use this same set of status codes.
      * </p>
      * <p>
-     * For a current list of domain name status codes and an explanation of what
-     * each code means, go to the <a href="https://www.icann.org/">ICANN
-     * website</a> and search for <code>epp status codes</code>. (Search on the
-     * ICANN website; web searches sometimes return an old version of the
-     * document.)
-     * </p>
-     * <p>
-     * Type: Array of String
+     * For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
+     * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      * 
      * @param statusList
-     *        An array of domain name status codes, also known as Extensible
-     *        Provisioning Protocol (EPP) status codes.</p>
+     *        An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
+     *        codes.</p>
      *        <p>
-     *        ICANN, the organization that maintains a central database of
-     *        domain names, has developed a set of domain name status codes that
-     *        tell you the status of a variety of operations on a domain name,
-     *        for example, registering a domain name, transferring a domain name
-     *        to another registrar, renewing the registration for a domain name,
-     *        and so on. All registrars use this same set of status codes.
+     *        ICANN, the organization that maintains a central database of domain names, has developed a set of domain
+     *        name status codes that tell you the status of a variety of operations on a domain name, for example,
+     *        registering a domain name, transferring a domain name to another registrar, renewing the registration for
+     *        a domain name, and so on. All registrars use this same set of status codes.
      *        </p>
      *        <p>
-     *        For a current list of domain name status codes and an explanation
-     *        of what each code means, go to the <a
-     *        href="https://www.icann.org/">ICANN website</a> and search for
-     *        <code>epp status codes</code>. (Search on the ICANN website; web
-     *        searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
+     *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
+     *        the ICANN website; web searches sometimes return an old version of the document.)
      */
 
     public void setStatusList(java.util.Collection<String> statusList) {
@@ -1826,68 +1252,49 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
             return;
         }
 
-        this.statusList = new com.amazonaws.internal.SdkInternalList<String>(
-                statusList);
+        this.statusList = new com.amazonaws.internal.SdkInternalList<String>(statusList);
     }
 
     /**
      * <p>
-     * An array of domain name status codes, also known as Extensible
-     * Provisioning Protocol (EPP) status codes.
+     * An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.
      * </p>
      * <p>
-     * ICANN, the organization that maintains a central database of domain
-     * names, has developed a set of domain name status codes that tell you the
-     * status of a variety of operations on a domain name, for example,
-     * registering a domain name, transferring a domain name to another
-     * registrar, renewing the registration for a domain name, and so on. All
-     * registrars use this same set of status codes.
+     * ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+     * status codes that tell you the status of a variety of operations on a domain name, for example, registering a
+     * domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so
+     * on. All registrars use this same set of status codes.
      * </p>
      * <p>
-     * For a current list of domain name status codes and an explanation of what
-     * each code means, go to the <a href="https://www.icann.org/">ICANN
-     * website</a> and search for <code>epp status codes</code>. (Search on the
-     * ICANN website; web searches sometimes return an old version of the
-     * document.)
+     * For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
+     * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      * <p>
-     * Type: Array of String
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStatusList(java.util.Collection)} or
-     * {@link #withStatusList(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatusList(java.util.Collection)} or {@link #withStatusList(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param statusList
-     *        An array of domain name status codes, also known as Extensible
-     *        Provisioning Protocol (EPP) status codes.</p>
+     *        An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
+     *        codes.</p>
      *        <p>
-     *        ICANN, the organization that maintains a central database of
-     *        domain names, has developed a set of domain name status codes that
-     *        tell you the status of a variety of operations on a domain name,
-     *        for example, registering a domain name, transferring a domain name
-     *        to another registrar, renewing the registration for a domain name,
-     *        and so on. All registrars use this same set of status codes.
+     *        ICANN, the organization that maintains a central database of domain names, has developed a set of domain
+     *        name status codes that tell you the status of a variety of operations on a domain name, for example,
+     *        registering a domain name, transferring a domain name to another registrar, renewing the registration for
+     *        a domain name, and so on. All registrars use this same set of status codes.
      *        </p>
      *        <p>
-     *        For a current list of domain name status codes and an explanation
-     *        of what each code means, go to the <a
-     *        href="https://www.icann.org/">ICANN website</a> and search for
-     *        <code>epp status codes</code>. (Search on the ICANN website; web
-     *        searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
+     *        the ICANN website; web searches sometimes return an old version of the document.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDomainDetailResult withStatusList(String... statusList) {
         if (this.statusList == null) {
-            setStatusList(new com.amazonaws.internal.SdkInternalList<String>(
-                    statusList.length));
+            setStatusList(new com.amazonaws.internal.SdkInternalList<String>(statusList.length));
         }
         for (String ele : statusList) {
             this.statusList.add(ele);
@@ -1897,61 +1304,44 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of domain name status codes, also known as Extensible
-     * Provisioning Protocol (EPP) status codes.
+     * An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.
      * </p>
      * <p>
-     * ICANN, the organization that maintains a central database of domain
-     * names, has developed a set of domain name status codes that tell you the
-     * status of a variety of operations on a domain name, for example,
-     * registering a domain name, transferring a domain name to another
-     * registrar, renewing the registration for a domain name, and so on. All
-     * registrars use this same set of status codes.
+     * ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+     * status codes that tell you the status of a variety of operations on a domain name, for example, registering a
+     * domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so
+     * on. All registrars use this same set of status codes.
      * </p>
      * <p>
-     * For a current list of domain name status codes and an explanation of what
-     * each code means, go to the <a href="https://www.icann.org/">ICANN
-     * website</a> and search for <code>epp status codes</code>. (Search on the
-     * ICANN website; web searches sometimes return an old version of the
-     * document.)
-     * </p>
-     * <p>
-     * Type: Array of String
+     * For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
+     * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      * 
      * @param statusList
-     *        An array of domain name status codes, also known as Extensible
-     *        Provisioning Protocol (EPP) status codes.</p>
+     *        An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
+     *        codes.</p>
      *        <p>
-     *        ICANN, the organization that maintains a central database of
-     *        domain names, has developed a set of domain name status codes that
-     *        tell you the status of a variety of operations on a domain name,
-     *        for example, registering a domain name, transferring a domain name
-     *        to another registrar, renewing the registration for a domain name,
-     *        and so on. All registrars use this same set of status codes.
+     *        ICANN, the organization that maintains a central database of domain names, has developed a set of domain
+     *        name status codes that tell you the status of a variety of operations on a domain name, for example,
+     *        registering a domain name, transferring a domain name to another registrar, renewing the registration for
+     *        a domain name, and so on. All registrars use this same set of status codes.
      *        </p>
      *        <p>
-     *        For a current list of domain name status codes and an explanation
-     *        of what each code means, go to the <a
-     *        href="https://www.icann.org/">ICANN website</a> and search for
-     *        <code>epp status codes</code>. (Search on the ICANN website; web
-     *        searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
+     *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
+     *        the ICANN website; web searches sometimes return an old version of the document.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetDomainDetailResult withStatusList(
-            java.util.Collection<String> statusList) {
+    public GetDomainDetailResult withStatusList(java.util.Collection<String> statusList) {
         setStatusList(statusList);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1962,47 +1352,47 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getNameservers() != null)
-            sb.append("Nameservers: " + getNameservers() + ",");
+            sb.append("Nameservers: ").append(getNameservers()).append(",");
         if (getAutoRenew() != null)
-            sb.append("AutoRenew: " + getAutoRenew() + ",");
+            sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: " + getAdminContact() + ",");
+            sb.append("AdminContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: " + getRegistrantContact() + ",");
+            sb.append("RegistrantContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: " + getTechContact() + ",");
+            sb.append("TechContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getAdminPrivacy() != null)
-            sb.append("AdminPrivacy: " + getAdminPrivacy() + ",");
+            sb.append("AdminPrivacy: ").append(getAdminPrivacy()).append(",");
         if (getRegistrantPrivacy() != null)
-            sb.append("RegistrantPrivacy: " + getRegistrantPrivacy() + ",");
+            sb.append("RegistrantPrivacy: ").append(getRegistrantPrivacy()).append(",");
         if (getTechPrivacy() != null)
-            sb.append("TechPrivacy: " + getTechPrivacy() + ",");
+            sb.append("TechPrivacy: ").append(getTechPrivacy()).append(",");
         if (getRegistrarName() != null)
-            sb.append("RegistrarName: " + getRegistrarName() + ",");
+            sb.append("RegistrarName: ").append(getRegistrarName()).append(",");
         if (getWhoIsServer() != null)
-            sb.append("WhoIsServer: " + getWhoIsServer() + ",");
+            sb.append("WhoIsServer: ").append(getWhoIsServer()).append(",");
         if (getRegistrarUrl() != null)
-            sb.append("RegistrarUrl: " + getRegistrarUrl() + ",");
+            sb.append("RegistrarUrl: ").append(getRegistrarUrl()).append(",");
         if (getAbuseContactEmail() != null)
-            sb.append("AbuseContactEmail: " + getAbuseContactEmail() + ",");
+            sb.append("AbuseContactEmail: ").append(getAbuseContactEmail()).append(",");
         if (getAbuseContactPhone() != null)
-            sb.append("AbuseContactPhone: " + getAbuseContactPhone() + ",");
+            sb.append("AbuseContactPhone: ").append(getAbuseContactPhone()).append(",");
         if (getRegistryDomainId() != null)
-            sb.append("RegistryDomainId: " + getRegistryDomainId() + ",");
+            sb.append("RegistryDomainId: ").append(getRegistryDomainId()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getUpdatedDate() != null)
-            sb.append("UpdatedDate: " + getUpdatedDate() + ",");
+            sb.append("UpdatedDate: ").append(getUpdatedDate()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate() + ",");
+            sb.append("ExpirationDate: ").append(getExpirationDate()).append(",");
         if (getReseller() != null)
-            sb.append("Reseller: " + getReseller() + ",");
+            sb.append("Reseller: ").append(getReseller()).append(",");
         if (getDnsSec() != null)
-            sb.append("DnsSec: " + getDnsSec() + ",");
+            sb.append("DnsSec: ").append(getDnsSec()).append(",");
         if (getStatusList() != null)
-            sb.append("StatusList: " + getStatusList());
+            sb.append("StatusList: ").append(getStatusList());
         sb.append("}");
         return sb.toString();
     }
@@ -2019,119 +1409,87 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
         GetDomainDetailResult other = (GetDomainDetailResult) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
         if (other.getNameservers() == null ^ this.getNameservers() == null)
             return false;
-        if (other.getNameservers() != null
-                && other.getNameservers().equals(this.getNameservers()) == false)
+        if (other.getNameservers() != null && other.getNameservers().equals(this.getNameservers()) == false)
             return false;
         if (other.getAutoRenew() == null ^ this.getAutoRenew() == null)
             return false;
-        if (other.getAutoRenew() != null
-                && other.getAutoRenew().equals(this.getAutoRenew()) == false)
+        if (other.getAutoRenew() != null && other.getAutoRenew().equals(this.getAutoRenew()) == false)
             return false;
         if (other.getAdminContact() == null ^ this.getAdminContact() == null)
             return false;
-        if (other.getAdminContact() != null
-                && other.getAdminContact().equals(this.getAdminContact()) == false)
+        if (other.getAdminContact() != null && other.getAdminContact().equals(this.getAdminContact()) == false)
             return false;
-        if (other.getRegistrantContact() == null
-                ^ this.getRegistrantContact() == null)
+        if (other.getRegistrantContact() == null ^ this.getRegistrantContact() == null)
             return false;
-        if (other.getRegistrantContact() != null
-                && other.getRegistrantContact().equals(
-                        this.getRegistrantContact()) == false)
+        if (other.getRegistrantContact() != null && other.getRegistrantContact().equals(this.getRegistrantContact()) == false)
             return false;
         if (other.getTechContact() == null ^ this.getTechContact() == null)
             return false;
-        if (other.getTechContact() != null
-                && other.getTechContact().equals(this.getTechContact()) == false)
+        if (other.getTechContact() != null && other.getTechContact().equals(this.getTechContact()) == false)
             return false;
         if (other.getAdminPrivacy() == null ^ this.getAdminPrivacy() == null)
             return false;
-        if (other.getAdminPrivacy() != null
-                && other.getAdminPrivacy().equals(this.getAdminPrivacy()) == false)
+        if (other.getAdminPrivacy() != null && other.getAdminPrivacy().equals(this.getAdminPrivacy()) == false)
             return false;
-        if (other.getRegistrantPrivacy() == null
-                ^ this.getRegistrantPrivacy() == null)
+        if (other.getRegistrantPrivacy() == null ^ this.getRegistrantPrivacy() == null)
             return false;
-        if (other.getRegistrantPrivacy() != null
-                && other.getRegistrantPrivacy().equals(
-                        this.getRegistrantPrivacy()) == false)
+        if (other.getRegistrantPrivacy() != null && other.getRegistrantPrivacy().equals(this.getRegistrantPrivacy()) == false)
             return false;
         if (other.getTechPrivacy() == null ^ this.getTechPrivacy() == null)
             return false;
-        if (other.getTechPrivacy() != null
-                && other.getTechPrivacy().equals(this.getTechPrivacy()) == false)
+        if (other.getTechPrivacy() != null && other.getTechPrivacy().equals(this.getTechPrivacy()) == false)
             return false;
         if (other.getRegistrarName() == null ^ this.getRegistrarName() == null)
             return false;
-        if (other.getRegistrarName() != null
-                && other.getRegistrarName().equals(this.getRegistrarName()) == false)
+        if (other.getRegistrarName() != null && other.getRegistrarName().equals(this.getRegistrarName()) == false)
             return false;
         if (other.getWhoIsServer() == null ^ this.getWhoIsServer() == null)
             return false;
-        if (other.getWhoIsServer() != null
-                && other.getWhoIsServer().equals(this.getWhoIsServer()) == false)
+        if (other.getWhoIsServer() != null && other.getWhoIsServer().equals(this.getWhoIsServer()) == false)
             return false;
         if (other.getRegistrarUrl() == null ^ this.getRegistrarUrl() == null)
             return false;
-        if (other.getRegistrarUrl() != null
-                && other.getRegistrarUrl().equals(this.getRegistrarUrl()) == false)
+        if (other.getRegistrarUrl() != null && other.getRegistrarUrl().equals(this.getRegistrarUrl()) == false)
             return false;
-        if (other.getAbuseContactEmail() == null
-                ^ this.getAbuseContactEmail() == null)
+        if (other.getAbuseContactEmail() == null ^ this.getAbuseContactEmail() == null)
             return false;
-        if (other.getAbuseContactEmail() != null
-                && other.getAbuseContactEmail().equals(
-                        this.getAbuseContactEmail()) == false)
+        if (other.getAbuseContactEmail() != null && other.getAbuseContactEmail().equals(this.getAbuseContactEmail()) == false)
             return false;
-        if (other.getAbuseContactPhone() == null
-                ^ this.getAbuseContactPhone() == null)
+        if (other.getAbuseContactPhone() == null ^ this.getAbuseContactPhone() == null)
             return false;
-        if (other.getAbuseContactPhone() != null
-                && other.getAbuseContactPhone().equals(
-                        this.getAbuseContactPhone()) == false)
+        if (other.getAbuseContactPhone() != null && other.getAbuseContactPhone().equals(this.getAbuseContactPhone()) == false)
             return false;
-        if (other.getRegistryDomainId() == null
-                ^ this.getRegistryDomainId() == null)
+        if (other.getRegistryDomainId() == null ^ this.getRegistryDomainId() == null)
             return false;
-        if (other.getRegistryDomainId() != null
-                && other.getRegistryDomainId().equals(
-                        this.getRegistryDomainId()) == false)
+        if (other.getRegistryDomainId() != null && other.getRegistryDomainId().equals(this.getRegistryDomainId()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         if (other.getUpdatedDate() == null ^ this.getUpdatedDate() == null)
             return false;
-        if (other.getUpdatedDate() != null
-                && other.getUpdatedDate().equals(this.getUpdatedDate()) == false)
+        if (other.getUpdatedDate() != null && other.getUpdatedDate().equals(this.getUpdatedDate()) == false)
             return false;
-        if (other.getExpirationDate() == null
-                ^ this.getExpirationDate() == null)
+        if (other.getExpirationDate() == null ^ this.getExpirationDate() == null)
             return false;
-        if (other.getExpirationDate() != null
-                && other.getExpirationDate().equals(this.getExpirationDate()) == false)
+        if (other.getExpirationDate() != null && other.getExpirationDate().equals(this.getExpirationDate()) == false)
             return false;
         if (other.getReseller() == null ^ this.getReseller() == null)
             return false;
-        if (other.getReseller() != null
-                && other.getReseller().equals(this.getReseller()) == false)
+        if (other.getReseller() != null && other.getReseller().equals(this.getReseller()) == false)
             return false;
         if (other.getDnsSec() == null ^ this.getDnsSec() == null)
             return false;
-        if (other.getDnsSec() != null
-                && other.getDnsSec().equals(this.getDnsSec()) == false)
+        if (other.getDnsSec() != null && other.getDnsSec().equals(this.getDnsSec()) == false)
             return false;
         if (other.getStatusList() == null ^ this.getStatusList() == null)
             return false;
-        if (other.getStatusList() != null
-                && other.getStatusList().equals(this.getStatusList()) == false)
+        if (other.getStatusList() != null && other.getStatusList().equals(this.getStatusList()) == false)
             return false;
         return true;
     }
@@ -2141,75 +1499,27 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNameservers() == null) ? 0 : getNameservers().hashCode());
-        hashCode = prime * hashCode
-                + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdminContact() == null) ? 0 : getAdminContact()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrantContact() == null) ? 0
-                        : getRegistrantContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTechContact() == null) ? 0 : getTechContact().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAdminPrivacy() == null) ? 0 : getAdminPrivacy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrantPrivacy() == null) ? 0
-                        : getRegistrantPrivacy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTechPrivacy() == null) ? 0 : getTechPrivacy().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrarName() == null) ? 0 : getRegistrarName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWhoIsServer() == null) ? 0 : getWhoIsServer().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrarUrl() == null) ? 0 : getRegistrarUrl()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAbuseContactEmail() == null) ? 0
-                        : getAbuseContactEmail().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAbuseContactPhone() == null) ? 0
-                        : getAbuseContactPhone().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistryDomainId() == null) ? 0 : getRegistryDomainId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUpdatedDate() == null) ? 0 : getUpdatedDate().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationDate() == null) ? 0 : getExpirationDate()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getReseller() == null) ? 0 : getReseller().hashCode());
-        hashCode = prime * hashCode
-                + ((getDnsSec() == null) ? 0 : getDnsSec().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusList() == null) ? 0 : getStatusList().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getNameservers() == null) ? 0 : getNameservers().hashCode());
+        hashCode = prime * hashCode + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
+        hashCode = prime * hashCode + ((getAdminContact() == null) ? 0 : getAdminContact().hashCode());
+        hashCode = prime * hashCode + ((getRegistrantContact() == null) ? 0 : getRegistrantContact().hashCode());
+        hashCode = prime * hashCode + ((getTechContact() == null) ? 0 : getTechContact().hashCode());
+        hashCode = prime * hashCode + ((getAdminPrivacy() == null) ? 0 : getAdminPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getRegistrantPrivacy() == null) ? 0 : getRegistrantPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getTechPrivacy() == null) ? 0 : getTechPrivacy().hashCode());
+        hashCode = prime * hashCode + ((getRegistrarName() == null) ? 0 : getRegistrarName().hashCode());
+        hashCode = prime * hashCode + ((getWhoIsServer() == null) ? 0 : getWhoIsServer().hashCode());
+        hashCode = prime * hashCode + ((getRegistrarUrl() == null) ? 0 : getRegistrarUrl().hashCode());
+        hashCode = prime * hashCode + ((getAbuseContactEmail() == null) ? 0 : getAbuseContactEmail().hashCode());
+        hashCode = prime * hashCode + ((getAbuseContactPhone() == null) ? 0 : getAbuseContactPhone().hashCode());
+        hashCode = prime * hashCode + ((getRegistryDomainId() == null) ? 0 : getRegistryDomainId().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedDate() == null) ? 0 : getUpdatedDate().hashCode());
+        hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
+        hashCode = prime * hashCode + ((getReseller() == null) ? 0 : getReseller().hashCode());
+        hashCode = prime * hashCode + ((getDnsSec() == null) ? 0 : getDnsSec().hashCode());
+        hashCode = prime * hashCode + ((getStatusList() == null) ? 0 : getStatusList().hashCode());
         return hashCode;
     }
 
@@ -2218,9 +1528,8 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
         try {
             return (GetDomainDetailResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

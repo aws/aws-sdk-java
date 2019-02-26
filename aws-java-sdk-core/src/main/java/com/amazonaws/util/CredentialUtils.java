@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,6 +19,7 @@
 package com.amazonaws.util;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.RequestConfig;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 
@@ -34,8 +35,18 @@ public class CredentialUtils {
             AmazonWebServiceRequest req,
             AWSCredentialsProvider base) {
 
-        if (req != null && req.getRequestCredentials() != null) {
-            return new StaticCredentialsProvider(req.getRequestCredentials());
+        if (req != null && req.getRequestCredentialsProvider() != null) {
+            return req.getRequestCredentialsProvider();
+        }
+        return base;
+    }
+
+    public static AWSCredentialsProvider getCredentialsProvider(
+            RequestConfig requestConfig,
+            AWSCredentialsProvider base) {
+
+        if (requestConfig.getCredentialsProvider() != null) {
+            return requestConfig.getCredentialsProvider();
         }
         return base;
     }

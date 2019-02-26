@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package com.amazonaws.protocol.json;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 
+import java.util.List;
+
 /**
  * Contains various metadata needed to create an appropriate {@link com.amazonaws.http.JsonErrorResponseHandler}
  * for the client.
@@ -31,12 +33,26 @@ public class JsonErrorResponseMetadata {
      */
     private String customErrorCodeFieldName;
 
+    /**
+     * Error shapes scoped to a specific operation.
+     */
+    private List<JsonErrorShapeMetadata> errorShapes;
+
     public String getCustomErrorCodeFieldName() {
         return customErrorCodeFieldName;
     }
 
     public JsonErrorResponseMetadata withCustomErrorCodeFieldName(String errorCodeFieldName) {
         this.customErrorCodeFieldName = errorCodeFieldName;
+        return this;
+    }
+
+    public List<JsonErrorShapeMetadata> getErrorShapes() {
+        return errorShapes;
+    }
+
+    public JsonErrorResponseMetadata withErrorShapes(List<JsonErrorShapeMetadata> errorShapes) {
+        this.errorShapes = errorShapes;
         return this;
     }
 }

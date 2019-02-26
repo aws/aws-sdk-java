@@ -3,7 +3,7 @@
 
 <#if shape.members??>
     <#list shape.members as member>
-        <#local getMember = getterFunctionPrefix + ".get" + member.name />
+        <#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
         <#local marshallLocationName = member.http.marshallLocationName />
 
         <#if member.http.additionalMarshallingPath?has_content>
@@ -27,7 +27,7 @@
             <#local listMemberType = listModel.memberType/>
             <#local memberVariableName = member.name?uncap_first/>
             <#local listIndex = memberVariableName  + "ListIndex"/>
-            <#local listVariable = memberVariableName + "List"/>
+            <#local listVariable = shape.variable.variableName + memberVariableName?cap_first + "List"/>
             <#local loopVariable = listVariable + "Value"/>
 
             <#if customConfig.useAutoConstructList>

@@ -1,35 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
-/**
- * 
- */
-public class AddTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs to use to create tags. If you specify a key without
-     * specifying a value, Amazon ML creates a tag with the specified key and a
-     * value of null.
+     * The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a
+     * tag with the specified key and a value of null.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -48,14 +42,12 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The key-value pairs to use to create tags. If you specify a key without
-     * specifying a value, Amazon ML creates a tag with the specified key and a
-     * value of null.
+     * The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a
+     * tag with the specified key and a value of null.
      * </p>
      * 
-     * @return The key-value pairs to use to create tags. If you specify a key
-     *         without specifying a value, Amazon ML creates a tag with the
-     *         specified key and a value of null.
+     * @return The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML
+     *         creates a tag with the specified key and a value of null.
      */
 
     public java.util.List<Tag> getTags() {
@@ -67,15 +59,13 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The key-value pairs to use to create tags. If you specify a key without
-     * specifying a value, Amazon ML creates a tag with the specified key and a
-     * value of null.
+     * The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a
+     * tag with the specified key and a value of null.
      * </p>
      * 
      * @param tags
-     *        The key-value pairs to use to create tags. If you specify a key
-     *        without specifying a value, Amazon ML creates a tag with the
-     *        specified key and a value of null.
+     *        The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML
+     *        creates a tag with the specified key and a value of null.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -89,23 +79,19 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The key-value pairs to use to create tags. If you specify a key without
-     * specifying a value, Amazon ML creates a tag with the specified key and a
-     * value of null.
+     * The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a
+     * tag with the specified key and a value of null.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        The key-value pairs to use to create tags. If you specify a key
-     *        without specifying a value, Amazon ML creates a tag with the
-     *        specified key and a value of null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML
+     *        creates a tag with the specified key and a value of null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTags(Tag... tags) {
@@ -120,17 +106,14 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The key-value pairs to use to create tags. If you specify a key without
-     * specifying a value, Amazon ML creates a tag with the specified key and a
-     * value of null.
+     * The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a
+     * tag with the specified key and a value of null.
      * </p>
      * 
      * @param tags
-     *        The key-value pairs to use to create tags. If you specify a key
-     *        without specifying a value, Amazon ML creates a tag with the
-     *        specified key and a value of null.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML
+     *        creates a tag with the specified key and a value of null.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {
@@ -144,8 +127,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param resourceId
-     *        The ID of the ML object to tag. For example,
-     *        <code>exampleModelId</code>.
+     *        The ID of the ML object to tag. For example, <code>exampleModelId</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -157,8 +139,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * The ID of the ML object to tag. For example, <code>exampleModelId</code>.
      * </p>
      * 
-     * @return The ID of the ML object to tag. For example,
-     *         <code>exampleModelId</code>.
+     * @return The ID of the ML object to tag. For example, <code>exampleModelId</code>.
      */
 
     public String getResourceId() {
@@ -171,10 +152,8 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param resourceId
-     *        The ID of the ML object to tag. For example,
-     *        <code>exampleModelId</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the ML object to tag. For example, <code>exampleModelId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsRequest withResourceId(String resourceId) {
@@ -216,8 +195,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @param resourceType
      *        The type of the ML object to tag.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaggableResourceType
      */
 
@@ -237,7 +215,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -247,19 +225,18 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @param resourceType
      *        The type of the ML object to tag.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaggableResourceType
      */
 
     public AddTagsRequest withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -270,11 +247,11 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType());
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -291,18 +268,15 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
         AddTagsRequest other = (AddTagsRequest) obj;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         return true;
     }
@@ -312,14 +286,9 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 
@@ -327,4 +296,5 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
     public AddTagsRequest clone() {
         return (AddTagsRequest) super.clone();
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,26 +14,18 @@
  */
 package com.amazonaws.partitions;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.partitions.model.Partition;
-import com.amazonaws.partitions.model.Partitions;
-import com.amazonaws.regions.RegionMetadata;
-import com.amazonaws.regions.RegionUtils;
-import com.amazonaws.util.IOUtils;
-import com.amazonaws.util.json.Jackson;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.partitions.model.Partitions;
+import com.amazonaws.regions.RegionMetadata;
+import com.amazonaws.util.IOUtils;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Loads all the partition files into memory.
@@ -56,7 +48,11 @@ public class PartitionsLoader {
     /**
      * Jackson object mapper that is used for parsing the partition files.
      */
-    private static final ObjectMapper mapper = Jackson.getObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper()
+            .disable(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS)
+            .disable(MapperFeature.ALLOW_FINAL_FIELDS_AS_MUTATORS)
+            .enable(JsonParser.Feature.ALLOW_COMMENTS)
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
     /**
      * classloader to to be used for loading the partitions.
@@ -83,7 +79,7 @@ public class PartitionsLoader {
         } else {
             stream = classLoader.getResourceAsStream(PARTITIONS_RESOURCE_PATH);
             if (stream == null) {
-                throw new AmazonClientException("Unable to load parition metadata from " + PARTITIONS_RESOURCE_PATH);
+                throw new SdkClientException("Unable to load partition metadata from " + PARTITIONS_RESOURCE_PATH);
             }
             return new PartitionMetadataProvider(loadPartitionFromStream(stream, PARTITIONS_RESOURCE_PATH).getPartitions());
         }
@@ -96,7 +92,7 @@ public class PartitionsLoader {
             return mapper.readValue(stream, Partitions.class);
 
         } catch (IOException e) {
-            throw new AmazonClientException("Error while loading partitions " +
+            throw new SdkClientException("Error while loading partitions " +
                     "file from " + location, e);
         } finally {
             IOUtils.closeQuietly(stream, null);

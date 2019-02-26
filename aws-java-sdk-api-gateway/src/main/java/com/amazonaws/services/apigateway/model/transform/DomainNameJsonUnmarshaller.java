@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * DomainName JSON Unmarshaller
  */
-public class DomainNameJsonUnmarshaller implements
-        Unmarshaller<DomainName, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, JsonUnmarshallerContext> {
 
-    public DomainName unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public DomainName unmarshall(JsonUnmarshallerContext context) throws Exception {
         DomainName domainName = new DomainName();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class DomainNameJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,31 +50,50 @@ public class DomainNameJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainName", targetDepth)) {
                     context.nextToken();
-                    domainName.setDomainName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    domainName.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
                     context.nextToken();
-                    domainName.setCertificateName(context.getUnmarshaller(
-                            String.class).unmarshall(context));
+                    domainName.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("certificateUploadDate", targetDepth)) {
+                if (context.testExpression("certificateArn", targetDepth)) {
                     context.nextToken();
-                    domainName.setCertificateUploadDate(context
-                            .getUnmarshaller(java.util.Date.class).unmarshall(
-                                    context));
+                    domainName.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("distributionDomainName",
-                        targetDepth)) {
+                if (context.testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
-                    domainName.setDistributionDomainName(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    domainName.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("regionalDomainName", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateName", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("distributionDomainName", targetDepth)) {
+                    context.nextToken();
+                    domainName.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("distributionHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainName.setDistributionHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    context.nextToken();
+                    domainName.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

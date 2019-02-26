@@ -1,0 +1,23 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Parallel",
+      "InputPath": null,
+      "OutputPath": null,
+      "ResultPath": null,
+      "Parameters": null,
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "BranchState",
+          "States": {
+            "BranchState": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

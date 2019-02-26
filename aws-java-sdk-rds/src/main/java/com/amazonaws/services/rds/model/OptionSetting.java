@@ -1,31 +1,31 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Option settings are the actual settings being applied or configured for that
- * option. It is used when you modify an option group or describe option groups.
- * For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called
+ * Option settings are the actual settings being applied or configured for that option. It is used when you modify an
+ * option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called
  * SQLNET.ENCRYPTION_SERVER that can have several different values.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionSetting" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OptionSetting implements Serializable, Cloneable {
 
     /**
@@ -72,8 +72,7 @@ public class OptionSetting implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be
-     * modified from the default.
+     * A Boolean value that, when true, indicates the option setting can be modified from the default.
      * </p>
      */
     private Boolean isModifiable;
@@ -116,8 +115,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the option that has settings that you can set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withName(String name) {
@@ -157,8 +155,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param value
      *        The current value of the option setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withValue(String value) {
@@ -198,8 +195,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param defaultValue
      *        The default value of the option setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withDefaultValue(String defaultValue) {
@@ -239,8 +235,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the option setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withDescription(String description) {
@@ -280,8 +275,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param applyType
      *        The DB engine specific parameter type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withApplyType(String applyType) {
@@ -321,8 +315,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param dataType
      *        The data type of the option setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withDataType(String dataType) {
@@ -362,8 +355,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param allowedValues
      *        The allowed values of the option setting.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withAllowedValues(String allowedValues) {
@@ -373,13 +365,11 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be
-     * modified from the default.
+     * A Boolean value that, when true, indicates the option setting can be modified from the default.
      * </p>
      * 
      * @param isModifiable
-     *        A Boolean value that, when true, indicates the option setting can
-     *        be modified from the default.
+     *        A Boolean value that, when true, indicates the option setting can be modified from the default.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -388,12 +378,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be
-     * modified from the default.
+     * A Boolean value that, when true, indicates the option setting can be modified from the default.
      * </p>
      * 
-     * @return A Boolean value that, when true, indicates the option setting can
-     *         be modified from the default.
+     * @return A Boolean value that, when true, indicates the option setting can be modified from the default.
      */
 
     public Boolean getIsModifiable() {
@@ -402,15 +390,12 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be
-     * modified from the default.
+     * A Boolean value that, when true, indicates the option setting can be modified from the default.
      * </p>
      * 
      * @param isModifiable
-     *        A Boolean value that, when true, indicates the option setting can
-     *        be modified from the default.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withIsModifiable(Boolean isModifiable) {
@@ -420,12 +405,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be
-     * modified from the default.
+     * A Boolean value that, when true, indicates the option setting can be modified from the default.
      * </p>
      * 
-     * @return A Boolean value that, when true, indicates the option setting can
-     *         be modified from the default.
+     * @return A Boolean value that, when true, indicates the option setting can be modified from the default.
      */
 
     public Boolean isModifiable() {
@@ -464,8 +447,7 @@ public class OptionSetting implements Serializable, Cloneable {
      * 
      * @param isCollection
      *        Indicates if the option setting is part of a collection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionSetting withIsCollection(Boolean isCollection) {
@@ -486,8 +468,8 @@ public class OptionSetting implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -498,23 +480,23 @@ public class OptionSetting implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getApplyType() != null)
-            sb.append("ApplyType: " + getApplyType() + ",");
+            sb.append("ApplyType: ").append(getApplyType()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues() + ",");
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: " + getIsModifiable() + ",");
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
         if (getIsCollection() != null)
-            sb.append("IsCollection: " + getIsCollection());
+            sb.append("IsCollection: ").append(getIsCollection());
         sb.append("}");
         return sb.toString();
     }
@@ -531,48 +513,39 @@ public class OptionSetting implements Serializable, Cloneable {
         OptionSetting other = (OptionSetting) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null
-                && other.getValue().equals(this.getValue()) == false)
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getApplyType() == null ^ this.getApplyType() == null)
             return false;
-        if (other.getApplyType() != null
-                && other.getApplyType().equals(this.getApplyType()) == false)
+        if (other.getApplyType() != null && other.getApplyType().equals(this.getApplyType()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
-        if (other.getDataType() != null
-                && other.getDataType().equals(this.getDataType()) == false)
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
         if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
             return false;
-        if (other.getAllowedValues() != null
-                && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
             return false;
         if (other.getIsModifiable() == null ^ this.getIsModifiable() == null)
             return false;
-        if (other.getIsModifiable() != null
-                && other.getIsModifiable().equals(this.getIsModifiable()) == false)
+        if (other.getIsModifiable() != null && other.getIsModifiable().equals(this.getIsModifiable()) == false)
             return false;
         if (other.getIsCollection() == null ^ this.getIsCollection() == null)
             return false;
-        if (other.getIsCollection() != null
-                && other.getIsCollection().equals(this.getIsCollection()) == false)
+        if (other.getIsCollection() != null && other.getIsCollection().equals(this.getIsCollection()) == false)
             return false;
         return true;
     }
@@ -582,33 +555,15 @@ public class OptionSetting implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getValue() == null) ? 0 : getValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getApplyType() == null) ? 0 : getApplyType().hashCode());
-        hashCode = prime * hashCode
-                + ((getDataType() == null) ? 0 : getDataType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAllowedValues() == null) ? 0 : getAllowedValues()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsModifiable() == null) ? 0 : getIsModifiable()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIsCollection() == null) ? 0 : getIsCollection()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getApplyType() == null) ? 0 : getApplyType().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
+        hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
+        hashCode = prime * hashCode + ((getIsCollection() == null) ? 0 : getIsCollection().hashCode());
         return hashCode;
     }
 
@@ -617,9 +572,8 @@ public class OptionSetting implements Serializable, Cloneable {
         try {
             return (OptionSetting) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

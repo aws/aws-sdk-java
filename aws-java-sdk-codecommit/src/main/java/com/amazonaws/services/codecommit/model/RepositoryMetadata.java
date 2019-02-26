@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Information about a repository.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryMetadata" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RepositoryMetadata implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RepositoryMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -118,8 +121,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param accountId
      *        The ID of the AWS account associated with the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withAccountId(String accountId) {
@@ -159,8 +161,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param repositoryId
      *        The ID of the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withRepositoryId(String repositoryId) {
@@ -200,8 +201,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param repositoryName
      *        The repository's name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withRepositoryName(String repositoryName) {
@@ -241,12 +241,10 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param repositoryDescription
      *        A comment or description about the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RepositoryMetadata withRepositoryDescription(
-            String repositoryDescription) {
+    public RepositoryMetadata withRepositoryDescription(String repositoryDescription) {
         setRepositoryDescription(repositoryDescription);
         return this;
     }
@@ -283,8 +281,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param defaultBranch
      *        The repository's default branch name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withDefaultBranch(String defaultBranch) {
@@ -298,8 +295,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date and time the repository was last modified, in timestamp
-     *        format.
+     *        The date and time the repository was last modified, in timestamp format.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -311,8 +307,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * The date and time the repository was last modified, in timestamp format.
      * </p>
      * 
-     * @return The date and time the repository was last modified, in timestamp
-     *         format.
+     * @return The date and time the repository was last modified, in timestamp format.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -325,14 +320,11 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date and time the repository was last modified, in timestamp
-     *        format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The date and time the repository was last modified, in timestamp format.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RepositoryMetadata withLastModifiedDate(
-            java.util.Date lastModifiedDate) {
+    public RepositoryMetadata withLastModifiedDate(java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
         return this;
     }
@@ -355,8 +347,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * The date and time the repository was created, in timestamp format.
      * </p>
      * 
-     * @return The date and time the repository was created, in timestamp
-     *         format.
+     * @return The date and time the repository was created, in timestamp format.
      */
 
     public java.util.Date getCreationDate() {
@@ -370,8 +361,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        The date and time the repository was created, in timestamp format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withCreationDate(java.util.Date creationDate) {
@@ -411,8 +401,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param cloneUrlHttp
      *        The URL to use for cloning the repository over HTTPS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withCloneUrlHttp(String cloneUrlHttp) {
@@ -452,8 +441,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param cloneUrlSsh
      *        The URL to use for cloning the repository over SSH.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withCloneUrlSsh(String cloneUrlSsh) {
@@ -493,8 +481,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the repository.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RepositoryMetadata withArn(String arn) {
@@ -503,8 +490,8 @@ public class RepositoryMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -515,26 +502,25 @@ public class RepositoryMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getRepositoryId() != null)
-            sb.append("RepositoryId: " + getRepositoryId() + ",");
+            sb.append("RepositoryId: ").append(getRepositoryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryDescription() != null)
-            sb.append("RepositoryDescription: " + getRepositoryDescription()
-                    + ",");
+            sb.append("RepositoryDescription: ").append(getRepositoryDescription()).append(",");
         if (getDefaultBranch() != null)
-            sb.append("DefaultBranch: " + getDefaultBranch() + ",");
+            sb.append("DefaultBranch: ").append(getDefaultBranch()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCloneUrlHttp() != null)
-            sb.append("CloneUrlHttp: " + getCloneUrlHttp() + ",");
+            sb.append("CloneUrlHttp: ").append(getCloneUrlHttp()).append(",");
         if (getCloneUrlSsh() != null)
-            sb.append("CloneUrlSsh: " + getCloneUrlSsh() + ",");
+            sb.append("CloneUrlSsh: ").append(getCloneUrlSsh()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn());
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -551,58 +537,43 @@ public class RepositoryMetadata implements Serializable, Cloneable {
         RepositoryMetadata other = (RepositoryMetadata) obj;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
-        if (other.getAccountId() != null
-                && other.getAccountId().equals(this.getAccountId()) == false)
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
         if (other.getRepositoryId() == null ^ this.getRepositoryId() == null)
             return false;
-        if (other.getRepositoryId() != null
-                && other.getRepositoryId().equals(this.getRepositoryId()) == false)
+        if (other.getRepositoryId() != null && other.getRepositoryId().equals(this.getRepositoryId()) == false)
             return false;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
-        if (other.getRepositoryDescription() == null
-                ^ this.getRepositoryDescription() == null)
+        if (other.getRepositoryDescription() == null ^ this.getRepositoryDescription() == null)
             return false;
-        if (other.getRepositoryDescription() != null
-                && other.getRepositoryDescription().equals(
-                        this.getRepositoryDescription()) == false)
+        if (other.getRepositoryDescription() != null && other.getRepositoryDescription().equals(this.getRepositoryDescription()) == false)
             return false;
         if (other.getDefaultBranch() == null ^ this.getDefaultBranch() == null)
             return false;
-        if (other.getDefaultBranch() != null
-                && other.getDefaultBranch().equals(this.getDefaultBranch()) == false)
+        if (other.getDefaultBranch() != null && other.getDefaultBranch().equals(this.getDefaultBranch()) == false)
             return false;
-        if (other.getLastModifiedDate() == null
-                ^ this.getLastModifiedDate() == null)
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
             return false;
-        if (other.getLastModifiedDate() != null
-                && other.getLastModifiedDate().equals(
-                        this.getLastModifiedDate()) == false)
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
         if (other.getCloneUrlHttp() == null ^ this.getCloneUrlHttp() == null)
             return false;
-        if (other.getCloneUrlHttp() != null
-                && other.getCloneUrlHttp().equals(this.getCloneUrlHttp()) == false)
+        if (other.getCloneUrlHttp() != null && other.getCloneUrlHttp().equals(this.getCloneUrlHttp()) == false)
             return false;
         if (other.getCloneUrlSsh() == null ^ this.getCloneUrlSsh() == null)
             return false;
-        if (other.getCloneUrlSsh() != null
-                && other.getCloneUrlSsh().equals(this.getCloneUrlSsh()) == false)
+        if (other.getCloneUrlSsh() != null && other.getCloneUrlSsh().equals(this.getCloneUrlSsh()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -612,41 +583,16 @@ public class RepositoryMetadata implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryId() == null) ? 0 : getRepositoryId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryDescription() == null) ? 0
-                        : getRepositoryDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDefaultBranch() == null) ? 0 : getDefaultBranch()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloneUrlHttp() == null) ? 0 : getCloneUrlHttp()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCloneUrlSsh() == null) ? 0 : getCloneUrlSsh().hashCode());
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryId() == null) ? 0 : getRepositoryId().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryDescription() == null) ? 0 : getRepositoryDescription().hashCode());
+        hashCode = prime * hashCode + ((getDefaultBranch() == null) ? 0 : getDefaultBranch().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCloneUrlHttp() == null) ? 0 : getCloneUrlHttp().hashCode());
+        hashCode = prime * hashCode + ((getCloneUrlSsh() == null) ? 0 : getCloneUrlSsh().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 
@@ -655,9 +601,13 @@ public class RepositoryMetadata implements Serializable, Cloneable {
         try {
             return (RepositoryMetadata) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codecommit.model.transform.RepositoryMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

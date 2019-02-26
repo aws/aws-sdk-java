@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -40,12 +40,11 @@ import java.util.Random;
 public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
 
     private static final Random random = new Random();
-    
+    private AmazonHttpClient testedClient;
+
     @Before
     public void resetClientConfiguration() {
         clientConfiguration = new ClientConfiguration();
-        testedClient = new AmazonHttpClient(clientConfiguration);
-        injectMockHttpClient(testedClient, new ReturnServiceErrorHttpClient(500, "fake 500 service error"));
     }
 
     /**
@@ -132,15 +131,18 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
     /**
      * Verifies the request is actually retried for the expected times.
      */
-    private static void testActualRetries(int expectedRetryAttempts) {
+    private void testActualRetries(int expectedRetryAttempts) {
+        testedClient = new AmazonHttpClient(clientConfiguration);
+        injectMockHttpClient(testedClient, new ReturnServiceErrorHttpClient(500, "fake 500 service error"));
         // The ExecutionContext should collect the expected RequestCount
         ExecutionContext context = new ExecutionContext(true);
 
         try {
-            testedClient.execute(getSampleRequestWithRepeatableContent(originalRequest),
-                                 new NullResponseHandler(),
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(getSampleRequestWithRepeatableContent(originalRequest))
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonServiceException is expected.");
         } catch (AmazonServiceException ase) {}
 

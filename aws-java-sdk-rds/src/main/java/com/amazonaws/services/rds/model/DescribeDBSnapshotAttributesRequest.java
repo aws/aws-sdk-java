@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p/>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DescribeDBSnapshotAttributesRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeDBSnapshotAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -50,8 +51,7 @@ public class DescribeDBSnapshotAttributesRequest extends
      * The identifier for the DB snapshot to describe the attributes for.
      * </p>
      * 
-     * @return The identifier for the DB snapshot to describe the attributes
-     *         for.
+     * @return The identifier for the DB snapshot to describe the attributes for.
      */
 
     public String getDBSnapshotIdentifier() {
@@ -65,19 +65,17 @@ public class DescribeDBSnapshotAttributesRequest extends
      * 
      * @param dBSnapshotIdentifier
      *        The identifier for the DB snapshot to describe the attributes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeDBSnapshotAttributesRequest withDBSnapshotIdentifier(
-            String dBSnapshotIdentifier) {
+    public DescribeDBSnapshotAttributesRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,7 +86,7 @@ public class DescribeDBSnapshotAttributesRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null)
-            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier());
+            sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -103,12 +101,9 @@ public class DescribeDBSnapshotAttributesRequest extends
         if (obj instanceof DescribeDBSnapshotAttributesRequest == false)
             return false;
         DescribeDBSnapshotAttributesRequest other = (DescribeDBSnapshotAttributesRequest) obj;
-        if (other.getDBSnapshotIdentifier() == null
-                ^ this.getDBSnapshotIdentifier() == null)
+        if (other.getDBSnapshotIdentifier() == null ^ this.getDBSnapshotIdentifier() == null)
             return false;
-        if (other.getDBSnapshotIdentifier() != null
-                && other.getDBSnapshotIdentifier().equals(
-                        this.getDBSnapshotIdentifier()) == false)
+        if (other.getDBSnapshotIdentifier() != null && other.getDBSnapshotIdentifier().equals(this.getDBSnapshotIdentifier()) == false)
             return false;
         return true;
     }
@@ -118,10 +113,7 @@ public class DescribeDBSnapshotAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDBSnapshotIdentifier() == null) ? 0
-                        : getDBSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDBSnapshotIdentifier() == null) ? 0 : getDBSnapshotIdentifier().hashCode());
         return hashCode;
     }
 
@@ -129,4 +121,5 @@ public class DescribeDBSnapshotAttributesRequest extends
     public DescribeDBSnapshotAttributesRequest clone() {
         return (DescribeDBSnapshotAttributesRequest) super.clone();
     }
+
 }

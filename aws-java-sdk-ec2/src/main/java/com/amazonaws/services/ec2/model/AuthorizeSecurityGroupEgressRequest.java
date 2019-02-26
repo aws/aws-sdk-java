@@ -1,33 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AuthorizeSecurityGroupEgress.
- * </p>
+ * 
  */
-public class AuthorizeSecurityGroupEgressRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<AuthorizeSecurityGroupEgressRequest> {
 
     /**
@@ -38,57 +34,47 @@ public class AuthorizeSecurityGroupEgressRequest extends
     private String groupId;
     /**
      * <p>
-     * The name of a destination security group. To authorize outbound access to
-     * a destination security group, we recommend that you use a set of IP
-     * permissions instead.
+     * One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in
+     * the same set of permissions.
      * </p>
      */
-    private String sourceSecurityGroupName;
+    private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
-     * The AWS account number for a destination security group. To authorize
-     * outbound access to a destination security group, we recommend that you
-     * use a set of IP permissions instead.
-     * </p>
-     */
-    private String sourceSecurityGroupOwnerId;
-    /**
-     * <p>
-     * The IP protocol name or number. We recommend that you specify the
-     * protocol in a set of IP permissions instead.
-     * </p>
-     */
-    private String ipProtocol;
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     */
-    private Integer fromPort;
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     */
-    private Integer toPort;
-    /**
-     * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range
-     * in a set of IP permissions instead.
+     * Not supported. Use a set of IP permissions to specify the CIDR.
      * </p>
      */
     private String cidrIp;
     /**
      * <p>
-     * A set of IP permissions. You can't specify a destination security group
-     * and a CIDR IP address range.
+     * Not supported. Use a set of IP permissions to specify the port.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
+    private Integer fromPort;
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the protocol name or number.
+     * </p>
+     */
+    private String ipProtocol;
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     */
+    private Integer toPort;
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     */
+    private String sourceSecurityGroupName;
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     */
+    private String sourceSecurityGroupOwnerId;
 
     /**
      * <p>
@@ -122,8 +108,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * 
      * @param groupId
      *        The ID of the security group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AuthorizeSecurityGroupEgressRequest withGroupId(String groupId) {
@@ -133,320 +118,12 @@ public class AuthorizeSecurityGroupEgressRequest extends
 
     /**
      * <p>
-     * The name of a destination security group. To authorize outbound access to
-     * a destination security group, we recommend that you use a set of IP
-     * permissions instead.
+     * One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in
+     * the same set of permissions.
      * </p>
      * 
-     * @param sourceSecurityGroupName
-     *        The name of a destination security group. To authorize outbound
-     *        access to a destination security group, we recommend that you use
-     *        a set of IP permissions instead.
-     */
-
-    public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
-        this.sourceSecurityGroupName = sourceSecurityGroupName;
-    }
-
-    /**
-     * <p>
-     * The name of a destination security group. To authorize outbound access to
-     * a destination security group, we recommend that you use a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @return The name of a destination security group. To authorize outbound
-     *         access to a destination security group, we recommend that you use
-     *         a set of IP permissions instead.
-     */
-
-    public String getSourceSecurityGroupName() {
-        return this.sourceSecurityGroupName;
-    }
-
-    /**
-     * <p>
-     * The name of a destination security group. To authorize outbound access to
-     * a destination security group, we recommend that you use a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @param sourceSecurityGroupName
-     *        The name of a destination security group. To authorize outbound
-     *        access to a destination security group, we recommend that you use
-     *        a set of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupName(
-            String sourceSecurityGroupName) {
-        setSourceSecurityGroupName(sourceSecurityGroupName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The AWS account number for a destination security group. To authorize
-     * outbound access to a destination security group, we recommend that you
-     * use a set of IP permissions instead.
-     * </p>
-     * 
-     * @param sourceSecurityGroupOwnerId
-     *        The AWS account number for a destination security group. To
-     *        authorize outbound access to a destination security group, we
-     *        recommend that you use a set of IP permissions instead.
-     */
-
-    public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
-        this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
-    }
-
-    /**
-     * <p>
-     * The AWS account number for a destination security group. To authorize
-     * outbound access to a destination security group, we recommend that you
-     * use a set of IP permissions instead.
-     * </p>
-     * 
-     * @return The AWS account number for a destination security group. To
-     *         authorize outbound access to a destination security group, we
-     *         recommend that you use a set of IP permissions instead.
-     */
-
-    public String getSourceSecurityGroupOwnerId() {
-        return this.sourceSecurityGroupOwnerId;
-    }
-
-    /**
-     * <p>
-     * The AWS account number for a destination security group. To authorize
-     * outbound access to a destination security group, we recommend that you
-     * use a set of IP permissions instead.
-     * </p>
-     * 
-     * @param sourceSecurityGroupOwnerId
-     *        The AWS account number for a destination security group. To
-     *        authorize outbound access to a destination security group, we
-     *        recommend that you use a set of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(
-            String sourceSecurityGroupOwnerId) {
-        setSourceSecurityGroupOwnerId(sourceSecurityGroupOwnerId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IP protocol name or number. We recommend that you specify the
-     * protocol in a set of IP permissions instead.
-     * </p>
-     * 
-     * @param ipProtocol
-     *        The IP protocol name or number. We recommend that you specify the
-     *        protocol in a set of IP permissions instead.
-     */
-
-    public void setIpProtocol(String ipProtocol) {
-        this.ipProtocol = ipProtocol;
-    }
-
-    /**
-     * <p>
-     * The IP protocol name or number. We recommend that you specify the
-     * protocol in a set of IP permissions instead.
-     * </p>
-     * 
-     * @return The IP protocol name or number. We recommend that you specify the
-     *         protocol in a set of IP permissions instead.
-     */
-
-    public String getIpProtocol() {
-        return this.ipProtocol;
-    }
-
-    /**
-     * <p>
-     * The IP protocol name or number. We recommend that you specify the
-     * protocol in a set of IP permissions instead.
-     * </p>
-     * 
-     * @param ipProtocol
-     *        The IP protocol name or number. We recommend that you specify the
-     *        protocol in a set of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
-        setIpProtocol(ipProtocol);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP
-     *        type number. We recommend that you specify the port range in a set
-     *        of IP permissions instead.
-     */
-
-    public void setFromPort(Integer fromPort) {
-        this.fromPort = fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @return The start of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. We recommend that you specify the port range in a
-     *         set of IP permissions instead.
-     */
-
-    public Integer getFromPort() {
-        return this.fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP
-     *        type number. We recommend that you specify the port range in a set
-     *        of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
-        setFromPort(fromPort);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP
-     *        type number. We recommend that you specify the port range in a set
-     *        of IP permissions instead.
-     */
-
-    public void setToPort(Integer toPort) {
-        this.toPort = toPort;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @return The end of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. We recommend that you specify the port range in a
-     *         set of IP permissions instead.
-     */
-
-    public Integer getToPort() {
-        return this.toPort;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP type
-     * number. We recommend that you specify the port range in a set of IP
-     * permissions instead.
-     * </p>
-     * 
-     * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP
-     *        type number. We recommend that you specify the port range in a set
-     *        of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withToPort(Integer toPort) {
-        setToPort(toPort);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range
-     * in a set of IP permissions instead.
-     * </p>
-     * 
-     * @param cidrIp
-     *        The CIDR IP address range. We recommend that you specify the CIDR
-     *        range in a set of IP permissions instead.
-     */
-
-    public void setCidrIp(String cidrIp) {
-        this.cidrIp = cidrIp;
-    }
-
-    /**
-     * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range
-     * in a set of IP permissions instead.
-     * </p>
-     * 
-     * @return The CIDR IP address range. We recommend that you specify the CIDR
-     *         range in a set of IP permissions instead.
-     */
-
-    public String getCidrIp() {
-        return this.cidrIp;
-    }
-
-    /**
-     * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range
-     * in a set of IP permissions instead.
-     * </p>
-     * 
-     * @param cidrIp
-     *        The CIDR IP address range. We recommend that you specify the CIDR
-     *        range in a set of IP permissions instead.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
-        setCidrIp(cidrIp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A set of IP permissions. You can't specify a destination security group
-     * and a CIDR IP address range.
-     * </p>
-     * 
-     * @return A set of IP permissions. You can't specify a destination security
-     *         group and a CIDR IP address range.
+     * @return One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address
+     *         range in the same set of permissions.
      */
 
     public java.util.List<IpPermission> getIpPermissions() {
@@ -458,50 +135,44 @@ public class AuthorizeSecurityGroupEgressRequest extends
 
     /**
      * <p>
-     * A set of IP permissions. You can't specify a destination security group
-     * and a CIDR IP address range.
+     * One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in
+     * the same set of permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        A set of IP permissions. You can't specify a destination security
-     *        group and a CIDR IP address range.
+     *        One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address
+     *        range in the same set of permissions.
      */
 
-    public void setIpPermissions(
-            java.util.Collection<IpPermission> ipPermissions) {
+    public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
             this.ipPermissions = null;
             return;
         }
 
-        this.ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>(
-                ipPermissions);
+        this.ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions);
     }
 
     /**
      * <p>
-     * A set of IP permissions. You can't specify a destination security group
-     * and a CIDR IP address range.
+     * One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in
+     * the same set of permissions.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setIpPermissions(java.util.Collection)} or
-     * {@link #withIpPermissions(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpPermissions(java.util.Collection)} or {@link #withIpPermissions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param ipPermissions
-     *        A set of IP permissions. You can't specify a destination security
-     *        group and a CIDR IP address range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address
+     *        range in the same set of permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AuthorizeSecurityGroupEgressRequest withIpPermissions(
-            IpPermission... ipPermissions) {
+    public AuthorizeSecurityGroupEgressRequest withIpPermissions(IpPermission... ipPermissions) {
         if (this.ipPermissions == null) {
-            setIpPermissions(new com.amazonaws.internal.SdkInternalList<IpPermission>(
-                    ipPermissions.length));
+            setIpPermissions(new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions.length));
         }
         for (IpPermission ele : ipPermissions) {
             this.ipPermissions.add(ele);
@@ -511,39 +182,275 @@ public class AuthorizeSecurityGroupEgressRequest extends
 
     /**
      * <p>
-     * A set of IP permissions. You can't specify a destination security group
-     * and a CIDR IP address range.
+     * One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in
+     * the same set of permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        A set of IP permissions. You can't specify a destination security
-     *        group and a CIDR IP address range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        One or more sets of IP permissions. You can't specify a destination security group and a CIDR IP address
+     *        range in the same set of permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AuthorizeSecurityGroupEgressRequest withIpPermissions(
-            java.util.Collection<IpPermission> ipPermissions) {
+    public AuthorizeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the CIDR.
+     * </p>
+     * 
+     * @param cidrIp
+     *        Not supported. Use a set of IP permissions to specify the CIDR.
+     */
+
+    public void setCidrIp(String cidrIp) {
+        this.cidrIp = cidrIp;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the CIDR.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify the CIDR.
+     */
+
+    public String getCidrIp() {
+        return this.cidrIp;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the CIDR.
+     * </p>
+     * 
+     * @param cidrIp
+     *        Not supported. Use a set of IP permissions to specify the CIDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
+        setCidrIp(cidrIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @param fromPort
+     *        Not supported. Use a set of IP permissions to specify the port.
+     */
+
+    public void setFromPort(Integer fromPort) {
+        this.fromPort = fromPort;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify the port.
+     */
+
+    public Integer getFromPort() {
+        return this.fromPort;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @param fromPort
+     *        Not supported. Use a set of IP permissions to specify the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
+        setFromPort(fromPort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the protocol name or number.
+     * </p>
+     * 
+     * @param ipProtocol
+     *        Not supported. Use a set of IP permissions to specify the protocol name or number.
+     */
+
+    public void setIpProtocol(String ipProtocol) {
+        this.ipProtocol = ipProtocol;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the protocol name or number.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify the protocol name or number.
+     */
+
+    public String getIpProtocol() {
+        return this.ipProtocol;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the protocol name or number.
+     * </p>
+     * 
+     * @param ipProtocol
+     *        Not supported. Use a set of IP permissions to specify the protocol name or number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
+        setIpProtocol(ipProtocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @param toPort
+     *        Not supported. Use a set of IP permissions to specify the port.
+     */
+
+    public void setToPort(Integer toPort) {
+        this.toPort = toPort;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify the port.
+     */
+
+    public Integer getToPort() {
+        return this.toPort;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify the port.
+     * </p>
+     * 
+     * @param toPort
+     *        Not supported. Use a set of IP permissions to specify the port.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withToPort(Integer toPort) {
+        setToPort(toPort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @param sourceSecurityGroupName
+     *        Not supported. Use a set of IP permissions to specify a destination security group.
+     */
+
+    public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
+        this.sourceSecurityGroupName = sourceSecurityGroupName;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify a destination security group.
+     */
+
+    public String getSourceSecurityGroupName() {
+        return this.sourceSecurityGroupName;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @param sourceSecurityGroupName
+     *        Not supported. Use a set of IP permissions to specify a destination security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
+        setSourceSecurityGroupName(sourceSecurityGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @param sourceSecurityGroupOwnerId
+     *        Not supported. Use a set of IP permissions to specify a destination security group.
+     */
+
+    public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
+        this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @return Not supported. Use a set of IP permissions to specify a destination security group.
+     */
+
+    public String getSourceSecurityGroupOwnerId() {
+        return this.sourceSecurityGroupOwnerId;
+    }
+
+    /**
+     * <p>
+     * Not supported. Use a set of IP permissions to specify a destination security group.
+     * </p>
+     * 
+     * @param sourceSecurityGroupOwnerId
+     *        Not supported. Use a set of IP permissions to specify a destination security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
+        setSourceSecurityGroupOwnerId(sourceSecurityGroupOwnerId);
+        return this;
+    }
+
+    /**
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<AuthorizeSecurityGroupEgressRequest> getDryRunRequest() {
-        Request<AuthorizeSecurityGroupEgressRequest> request = new AuthorizeSecurityGroupEgressRequestMarshaller()
-                .marshall(this);
+        Request<AuthorizeSecurityGroupEgressRequest> request = new AuthorizeSecurityGroupEgressRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -554,23 +461,21 @@ public class AuthorizeSecurityGroupEgressRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
-        if (getSourceSecurityGroupName() != null)
-            sb.append("SourceSecurityGroupName: "
-                    + getSourceSecurityGroupName() + ",");
-        if (getSourceSecurityGroupOwnerId() != null)
-            sb.append("SourceSecurityGroupOwnerId: "
-                    + getSourceSecurityGroupOwnerId() + ",");
-        if (getIpProtocol() != null)
-            sb.append("IpProtocol: " + getIpProtocol() + ",");
-        if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
-        if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
-        if (getCidrIp() != null)
-            sb.append("CidrIp: " + getCidrIp() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getIpPermissions() != null)
-            sb.append("IpPermissions: " + getIpPermissions());
+            sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
+        if (getCidrIp() != null)
+            sb.append("CidrIp: ").append(getCidrIp()).append(",");
+        if (getFromPort() != null)
+            sb.append("FromPort: ").append(getFromPort()).append(",");
+        if (getIpProtocol() != null)
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
+        if (getToPort() != null)
+            sb.append("ToPort: ").append(getToPort()).append(",");
+        if (getSourceSecurityGroupName() != null)
+            sb.append("SourceSecurityGroupName: ").append(getSourceSecurityGroupName()).append(",");
+        if (getSourceSecurityGroupOwnerId() != null)
+            sb.append("SourceSecurityGroupOwnerId: ").append(getSourceSecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -587,47 +492,35 @@ public class AuthorizeSecurityGroupEgressRequest extends
         AuthorizeSecurityGroupEgressRequest other = (AuthorizeSecurityGroupEgressRequest) obj;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
-        if (other.getGroupId() != null
-                && other.getGroupId().equals(this.getGroupId()) == false)
-            return false;
-        if (other.getSourceSecurityGroupName() == null
-                ^ this.getSourceSecurityGroupName() == null)
-            return false;
-        if (other.getSourceSecurityGroupName() != null
-                && other.getSourceSecurityGroupName().equals(
-                        this.getSourceSecurityGroupName()) == false)
-            return false;
-        if (other.getSourceSecurityGroupOwnerId() == null
-                ^ this.getSourceSecurityGroupOwnerId() == null)
-            return false;
-        if (other.getSourceSecurityGroupOwnerId() != null
-                && other.getSourceSecurityGroupOwnerId().equals(
-                        this.getSourceSecurityGroupOwnerId()) == false)
-            return false;
-        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
-            return false;
-        if (other.getIpProtocol() != null
-                && other.getIpProtocol().equals(this.getIpProtocol()) == false)
-            return false;
-        if (other.getFromPort() == null ^ this.getFromPort() == null)
-            return false;
-        if (other.getFromPort() != null
-                && other.getFromPort().equals(this.getFromPort()) == false)
-            return false;
-        if (other.getToPort() == null ^ this.getToPort() == null)
-            return false;
-        if (other.getToPort() != null
-                && other.getToPort().equals(this.getToPort()) == false)
-            return false;
-        if (other.getCidrIp() == null ^ this.getCidrIp() == null)
-            return false;
-        if (other.getCidrIp() != null
-                && other.getCidrIp().equals(this.getCidrIp()) == false)
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
             return false;
         if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
             return false;
-        if (other.getIpPermissions() != null
-                && other.getIpPermissions().equals(this.getIpPermissions()) == false)
+        if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
+            return false;
+        if (other.getCidrIp() == null ^ this.getCidrIp() == null)
+            return false;
+        if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false)
+            return false;
+        if (other.getFromPort() == null ^ this.getFromPort() == null)
+            return false;
+        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false)
+            return false;
+        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
+            return false;
+        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false)
+            return false;
+        if (other.getToPort() == null ^ this.getToPort() == null)
+            return false;
+        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
+            return false;
+        if (other.getSourceSecurityGroupName() == null ^ this.getSourceSecurityGroupName() == null)
+            return false;
+        if (other.getSourceSecurityGroupName() != null && other.getSourceSecurityGroupName().equals(this.getSourceSecurityGroupName()) == false)
+            return false;
+        if (other.getSourceSecurityGroupOwnerId() == null ^ this.getSourceSecurityGroupOwnerId() == null)
+            return false;
+        if (other.getSourceSecurityGroupOwnerId() != null && other.getSourceSecurityGroupOwnerId().equals(this.getSourceSecurityGroupOwnerId()) == false)
             return false;
         return true;
     }
@@ -637,28 +530,14 @@ public class AuthorizeSecurityGroupEgressRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceSecurityGroupName() == null) ? 0
-                        : getSourceSecurityGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceSecurityGroupOwnerId() == null) ? 0
-                        : getSourceSecurityGroupOwnerId().hashCode());
-        hashCode = prime * hashCode
-                + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
-        hashCode = prime * hashCode
-                + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getToPort() == null) ? 0 : getToPort().hashCode());
-        hashCode = prime * hashCode
-                + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIpPermissions() == null) ? 0 : getIpPermissions()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
+        hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
+        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
+        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
+        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
+        hashCode = prime * hashCode + ((getSourceSecurityGroupName() == null) ? 0 : getSourceSecurityGroupName().hashCode());
+        hashCode = prime * hashCode + ((getSourceSecurityGroupOwnerId() == null) ? 0 : getSourceSecurityGroupOwnerId().hashCode());
         return hashCode;
     }
 

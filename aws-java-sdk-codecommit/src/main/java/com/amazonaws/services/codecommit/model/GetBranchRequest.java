@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input of a get branch operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetBranchRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the repository that contains the branch for which you want to
-     * retrieve information.
+     * The name of the repository that contains the branch for which you want to retrieve information.
      * </p>
      */
     private String repositoryName;
@@ -43,13 +43,11 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that contains the branch for which you want to
-     * retrieve information.
+     * The name of the repository that contains the branch for which you want to retrieve information.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that contains the branch for which you
-     *        want to retrieve information.
+     *        The name of the repository that contains the branch for which you want to retrieve information.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -58,12 +56,10 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that contains the branch for which you want to
-     * retrieve information.
+     * The name of the repository that contains the branch for which you want to retrieve information.
      * </p>
      * 
-     * @return The name of the repository that contains the branch for which you
-     *         want to retrieve information.
+     * @return The name of the repository that contains the branch for which you want to retrieve information.
      */
 
     public String getRepositoryName() {
@@ -72,15 +68,12 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the repository that contains the branch for which you want to
-     * retrieve information.
+     * The name of the repository that contains the branch for which you want to retrieve information.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository that contains the branch for which you
-     *        want to retrieve information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the repository that contains the branch for which you want to retrieve information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBranchRequest withRepositoryName(String repositoryName) {
@@ -106,8 +99,7 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
      * The name of the branch for which you want to retrieve information.
      * </p>
      * 
-     * @return The name of the branch for which you want to retrieve
-     *         information.
+     * @return The name of the branch for which you want to retrieve information.
      */
 
     public String getBranchName() {
@@ -121,8 +113,7 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
      * 
      * @param branchName
      *        The name of the branch for which you want to retrieve information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBranchRequest withBranchName(String branchName) {
@@ -131,8 +122,8 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,9 +134,9 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getBranchName() != null)
-            sb.append("BranchName: " + getBranchName());
+            sb.append("BranchName: ").append(getBranchName());
         sb.append("}");
         return sb.toString();
     }
@@ -160,16 +151,13 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
         if (obj instanceof GetBranchRequest == false)
             return false;
         GetBranchRequest other = (GetBranchRequest) obj;
-        if (other.getRepositoryName() == null
-                ^ this.getRepositoryName() == null)
+        if (other.getRepositoryName() == null ^ this.getRepositoryName() == null)
             return false;
-        if (other.getRepositoryName() != null
-                && other.getRepositoryName().equals(this.getRepositoryName()) == false)
+        if (other.getRepositoryName() != null && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
         if (other.getBranchName() == null ^ this.getBranchName() == null)
             return false;
-        if (other.getBranchName() != null
-                && other.getBranchName().equals(this.getBranchName()) == false)
+        if (other.getBranchName() != null && other.getBranchName().equals(this.getBranchName()) == false)
             return false;
         return true;
     }
@@ -179,12 +167,8 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRepositoryName() == null) ? 0 : getRepositoryName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getBranchName() == null) ? 0 : getBranchName().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getBranchName() == null) ? 0 : getBranchName().hashCode());
         return hashCode;
     }
 
@@ -192,4 +176,5 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
     public GetBranchRequest clone() {
         return (GetBranchRequest) super.clone();
     }
+
 }

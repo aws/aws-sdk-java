@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,15 @@ import java.lang.annotation.Target;
 
 /**
  * Annotation for marking a property as an optimistic locking version attribute.
- * Applied to the getter method or the class field for the class's version
+ *
+ * <p>Applied to the getter method or the class field for the class's version
  * property. If the annotation is applied directly to the class field, the
  * corresponding getter and setter must be declared in the same class.
- * <p>
- * Only nullable, integral numeric types (e.g. Integer, Long) can be used as
+ *
+ * <p>Alternately, the meta-annotation {@link DynamoDBVersioned} may be used
+ * to annotate a custom annotation, or directly to the field/getter.</p>
+ *
+ * <p>Only nullable, integral numeric types (e.g. Integer, Long) can be used as
  * version properties. On a save() operation, the {@link DynamoDBMapper} will
  * attempt to increment the version property and assert that the service's value
  * matches the client's. New objects will be assigned a version of 1 when saved.
@@ -34,14 +38,19 @@ import java.lang.annotation.Target;
  * version checks are performed</b>, as required by the
  * {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
  * API.
+ *
+ * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBVersioned
  */
 @DynamoDB
+@DynamoDBVersioned
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBVersionAttribute {
+
     /**
      * Optional parameter when the name of the attribute as stored in DynamoDB
      * should differ from the name used by the getter / setter.
      */
     String attributeName() default "";
+
 }

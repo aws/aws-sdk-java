@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -50,6 +50,26 @@ public class RegionsTest {
         unknown.setRegion(region);
         Assert.assertEquals("https://unknownservice.region.example.com",
                             unknown.getEndpoint());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameNull_throwsIllegalArgumentException() {
+        Regions.fromName(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameEmpty_throwsIllegalArgumentException() {
+        Regions.fromName("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameInvalid_throwsIllegalArgumentException() {
+        Regions.fromName("northpole");
+    }
+
+    @Test
+    public void fromName_whenRegionNameIsValid_returnsCorrectValue() {
+        Assert.assertEquals(Regions.EU_CENTRAL_1, Regions.fromName("eu-central-1"));
     }
 
     private static class AmazonServiceClient extends AmazonWebServiceClient {

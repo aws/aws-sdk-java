@@ -1,44 +1,45 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents the returned data in response to a request action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreatePlayerSessionResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      */
     private PlayerSession playerSession;
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
+     *        Object that describes the newly created player session record.
      */
 
     public void setPlayerSession(PlayerSession playerSession) {
@@ -47,10 +48,10 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
-     * @return Object containing the newly created player session record.
+     * @return Object that describes the newly created player session record.
      */
 
     public PlayerSession getPlayerSession() {
@@ -59,24 +60,22 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Object that describes the newly created player session record.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlayerSessionResult withPlayerSession(
-            PlayerSession playerSession) {
+    public CreatePlayerSessionResult withPlayerSession(PlayerSession playerSession) {
         setPlayerSession(playerSession);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +86,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerSession() != null)
-            sb.append("PlayerSession: " + getPlayerSession());
+            sb.append("PlayerSession: ").append(getPlayerSession());
         sb.append("}");
         return sb.toString();
     }
@@ -104,8 +103,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
         CreatePlayerSessionResult other = (CreatePlayerSessionResult) obj;
         if (other.getPlayerSession() == null ^ this.getPlayerSession() == null)
             return false;
-        if (other.getPlayerSession() != null
-                && other.getPlayerSession().equals(this.getPlayerSession()) == false)
+        if (other.getPlayerSession() != null && other.getPlayerSession().equals(this.getPlayerSession()) == false)
             return false;
         return true;
     }
@@ -115,10 +113,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPlayerSession() == null) ? 0 : getPlayerSession()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPlayerSession() == null) ? 0 : getPlayerSession().hashCode());
         return hashCode;
     }
 
@@ -127,9 +122,8 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
         try {
             return (CreatePlayerSessionResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

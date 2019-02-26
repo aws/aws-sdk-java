@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,15 +21,18 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenRequest;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenResult;
-
+import java.io.Closeable;
 import java.util.concurrent.Callable;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to create
  * temporary, short-lived sessions to use for authentication.
+ *
+ * This credentials provider uses a background thread to refresh credentials. This background thread can be shut down via the
+ * {@link #close()} method when the credentials provider is no longer used.
  */
 @ThreadSafe
-public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvider {
+public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvider, Closeable {
 
     /**
      * Default duration for started sessions
@@ -178,5 +181,12 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
         return new SessionCredentialsHolder(sessionTokenResult.getCredentials());
     }
 
-
+    /**
+     * Shut down this credentials provider, shutting down the thread that performs asynchronous credential refreshing. This
+     * should not be invoked if the credentials provider is still in use by an AWS client.
+     */
+    @Override
+    public void close() {
+        refreshableTask.close();
+    }
 }

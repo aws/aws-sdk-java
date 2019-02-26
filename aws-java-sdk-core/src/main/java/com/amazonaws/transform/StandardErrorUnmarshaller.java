@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.annotation.SdkProtectedApi;
 
 /**
  * Error unmarshaller that knows how to interpret a standard AWS error message
@@ -31,6 +32,7 @@ import com.amazonaws.AmazonServiceException.ErrorType;
  *
  * @see LegacyErrorUnmarshaller
  */
+@SdkProtectedApi
 public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
 
     /**
@@ -48,7 +50,7 @@ public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
      *            The class of AmazonServiceException to create and populate
      *            when unmarshalling the error message.
      */
-    protected StandardErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
+    public StandardErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
         super(exceptionClass);
     }
 

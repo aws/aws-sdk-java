@@ -16,18 +16,28 @@ package com.amazonaws.http.apache.client.impl;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.ProxyAuthenticationMethod;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.http.settings.HttpClientSettings;
-import com.amazonaws.http.request.HttpRequestFactory;
 import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
+import com.amazonaws.http.apache.request.impl.HttpGetWithBody;
+import com.amazonaws.http.request.HttpRequestFactory;
+import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.StringInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
+import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
 import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
@@ -36,12 +46,6 @@ import org.hamcrest.Matchers;
 import org.hamcrest.core.StringContains;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 public class ApacheDefaultHttpRequestFactoryTest {
 
@@ -122,8 +126,7 @@ public class ApacheDefaultHttpRequestFactoryTest {
     @Test
     public void get_request_returns_correct_apache_requests() throws IOException, URISyntaxException {
         final Request<Object> request = newDefaultRequest(HttpMethodName.GET);
-        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGet
-                .class));
+        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGetWithBody.class));
     }
 
     @Test
@@ -168,6 +171,46 @@ public class ApacheDefaultHttpRequestFactoryTest {
         assertContentTypeContains(testContentype,
                 requestBase.getHeaders(CONTENT_TYPE));
 
+    }
+
+    @Test
+    public void request_has_no_proxy_config_when_proxy_disabled() throws Exception {
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertThat(requestBase.getConfig().getProxyPreferredAuthSchemes(), Matchers.nullValue());
+    }
+
+    @Test
+    public void request_has_no_proxy_config_when_proxy_auth_disabled() throws Exception {
+        List<ProxyAuthenticationMethod> authMethods = Collections.singletonList(ProxyAuthenticationMethod.BASIC);
+        ClientConfiguration configuration = new ClientConfiguration().withProxyHost("localhost")
+                                                                     .withProxyPort(80)
+                                                                     .withProxyAuthenticationMethods(authMethods);
+        HttpClientSettings settings = HttpClientSettings.adapt(configuration);
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertThat(requestBase.getConfig().getProxyPreferredAuthSchemes(), Matchers.nullValue());
+    }
+
+    @Test
+    public void request_has_proxy_config_when_proxy_auth_enabled() throws Exception {
+        List<ProxyAuthenticationMethod> authMethods = Arrays.asList(ProxyAuthenticationMethod.BASIC,
+                                                                    ProxyAuthenticationMethod.DIGEST,
+                                                                    ProxyAuthenticationMethod.KERBEROS,
+                                                                    ProxyAuthenticationMethod.NTLM,
+                                                                    ProxyAuthenticationMethod.SPNEGO);
+        List<String> expectedAuthMethods = Arrays.asList(AuthSchemes.BASIC,
+                                                         AuthSchemes.DIGEST,
+                                                         AuthSchemes.KERBEROS,
+                                                         AuthSchemes.NTLM,
+                                                         AuthSchemes.SPNEGO);
+
+        ClientConfiguration configuration = new ClientConfiguration().withProxyHost("localhost")
+                                                                     .withProxyPort(80)
+                                                                     .withProxyUsername("user")
+                                                                     .withProxyPassword("password")
+                                                                     .withProxyAuthenticationMethods(authMethods);
+        HttpClientSettings settings = HttpClientSettings.adapt(configuration);
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertEquals(expectedAuthMethods, requestBase.getConfig().getProxyPreferredAuthSchemes());
     }
 
     private void assertContentTypeContains(String expected, Header[]

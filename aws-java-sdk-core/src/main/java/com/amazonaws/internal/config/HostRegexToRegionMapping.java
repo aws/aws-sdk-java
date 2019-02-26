@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import com.amazonaws.annotation.Immutable;
 @Immutable
 public class HostRegexToRegionMapping {
 
-    private final String hostNameRegex;
     private final String regionName;
+    private final Pattern hostNameRegexPattern;
 
     public HostRegexToRegionMapping(
             String hostNameRegex, String regionName) {
@@ -33,7 +33,7 @@ public class HostRegexToRegionMapping {
                     "hostNameRegex must be non-empty");
         }
         try {
-            Pattern.compile(hostNameRegex);
+            this.hostNameRegexPattern = Pattern.compile(hostNameRegex);
         } catch (PatternSyntaxException e) {
             throw new IllegalArgumentException(
                     "Invalid HostRegexToRegionMapping configuration: " +
@@ -45,15 +45,14 @@ public class HostRegexToRegionMapping {
                     "Invalid HostRegexToRegionMapping configuration: " +
                     "regionName must be non-empty");
         }
-        this.hostNameRegex = hostNameRegex;
         this.regionName = regionName;
-    }
-
-    public String getHostNameRegex() {
-        return hostNameRegex;
     }
 
     public String getRegionName() {
         return regionName;
+    }
+    
+    public boolean isHostNameMatching(String hostname) {
+    	return hostNameRegexPattern.matcher(hostname).matches();
     }
 }

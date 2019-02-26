@@ -1,24 +1,23 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
+
+import javax.annotation.Generated;
 
 /**
  * 
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EC2InstanceType {
 
     T2Micro("t2.micro"),
@@ -40,6 +39,12 @@ public enum EC2InstanceType {
     R32xlarge("r3.2xlarge"),
     R34xlarge("r3.4xlarge"),
     R38xlarge("r3.8xlarge"),
+    R4Large("r4.large"),
+    R4Xlarge("r4.xlarge"),
+    R42xlarge("r4.2xlarge"),
+    R44xlarge("r4.4xlarge"),
+    R48xlarge("r4.8xlarge"),
+    R416xlarge("r4.16xlarge"),
     M3Medium("m3.medium"),
     M3Large("m3.large"),
     M3Xlarge("m3.xlarge"),
@@ -67,6 +72,9 @@ public enum EC2InstanceType {
      * @param value
      *        real value
      * @return EC2InstanceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static EC2InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
@@ -79,7 +87,6 @@ public enum EC2InstanceType {
             }
         }
 
-        throw new IllegalArgumentException("Cannot create enum from " + value
-                + " value!");
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
     }
 }

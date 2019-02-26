@@ -1,100 +1,174 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to get a geo
- * location.
+ * A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation
+ * resource record sets.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * Amazon Route 53 supports the following continent codes:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
-     * <code>EU</code> | <code>OC</code> | <code>NA</code> | <code>SA</code>
+     * <b>AF</b>: Africa
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Constraint: Specifying <code>ContinentCode</code> with either
-     * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <b>AN</b>: Antarctica
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AS</b>: Asia
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EU</b>: Europe
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>OC</b>: Oceania
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NA</b>: North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>SA</b>: South America
+     * </p>
+     * </li>
+     * </ul>
      */
     private String continentCode;
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      */
     private String subdivisionCode;
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * Amazon Route 53 supports the following continent codes:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
-     * <code>EU</code> | <code>OC</code> | <code>NA</code> | <code>SA</code>
+     * <b>AF</b>: Africa
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Constraint: Specifying <code>ContinentCode</code> with either
-     * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <b>AN</b>: Antarctica
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AS</b>: Asia
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EU</b>: Europe
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>OC</b>: Oceania
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NA</b>: North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>SA</b>: South America
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.</p>
+     *        Amazon Route 53 supports the following continent codes:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
-     *        | <code>EU</code> | <code>OC</code> | <code>NA</code> |
-     *        <code>SA</code>
+     *        <b>AF</b>: Africa
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Constraint: Specifying <code>ContinentCode</code> with either
-     *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        <b>AN</b>: Antarctica
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AS</b>: Asia
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>EU</b>: Europe
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>OC</b>: Oceania
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NA</b>: North America
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>SA</b>: South America
+     *        </p>
+     *        </li>
      */
 
     public void setContinentCode(String continentCode) {
@@ -103,30 +177,83 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * Amazon Route 53 supports the following continent codes:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
-     * <code>EU</code> | <code>OC</code> | <code>NA</code> | <code>SA</code>
+     * <b>AF</b>: Africa
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Constraint: Specifying <code>ContinentCode</code> with either
-     * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <b>AN</b>: Antarctica
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AS</b>: Asia
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EU</b>: Europe
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>OC</b>: Oceania
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NA</b>: North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>SA</b>: South America
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The code for a continent geo location. Note: only continent
-     *         locations have a continent code.</p>
+     * @return Amazon Route 53 supports the following continent codes:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
-     *         | <code>EU</code> | <code>OC</code> | <code>NA</code> |
-     *         <code>SA</code>
+     *         <b>AF</b>: Africa
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Constraint: Specifying <code>ContinentCode</code> with either
-     *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *         an <a>InvalidInput</a> error.
+     *         <b>AN</b>: Antarctica
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AS</b>: Asia
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>EU</b>: Europe
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>OC</b>: Oceania
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>NA</b>: North America
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>SA</b>: South America
+     *         </p>
+     *         </li>
      */
 
     public String getContinentCode() {
@@ -135,33 +262,85 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * Amazon Route 53 supports the following continent codes:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
-     * <code>EU</code> | <code>OC</code> | <code>NA</code> | <code>SA</code>
+     * <b>AF</b>: Africa
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Constraint: Specifying <code>ContinentCode</code> with either
-     * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <b>AN</b>: Antarctica
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AS</b>: Asia
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EU</b>: Europe
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>OC</b>: Oceania
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NA</b>: North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>SA</b>: South America
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.</p>
+     *        Amazon Route 53 supports the following continent codes:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
-     *        | <code>EU</code> | <code>OC</code> | <code>NA</code> |
-     *        <code>SA</code>
+     *        <b>AF</b>: Africa
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Constraint: Specifying <code>ContinentCode</code> with either
-     *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>AN</b>: Antarctica
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AS</b>: Asia
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>EU</b>: Europe
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>OC</b>: Oceania
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NA</b>: North America
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>SA</b>: South America
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withContinentCode(String continentCode) {
@@ -171,23 +350,13 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
+     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
     public void setCountryCode(String countryCode) {
@@ -196,22 +365,12 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
-     * @return The code for a country geo location. The default location uses
-     *         '*' for the country code and will match all locations that are
-     *         not matched by a geo location.</p>
-     *         <p>
-     *         The default geo location uses a <code>*</code> for the country
-     *         code. All other country codes follow the ISO 3166 two-character
-     *         code.
+     * @return Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
     public String getCountryCode() {
@@ -220,25 +379,14 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withCountryCode(String countryCode) {
@@ -248,21 +396,17 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.</p>
-     *        <p>
-     *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *        support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *        specify <code>countrycode</code>.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -271,20 +415,16 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
-     * @return The code for a country's subdivision (e.g., a province of
-     *         Canada). A subdivision code is only valid with the appropriate
-     *         country code.</p>
-     *         <p>
-     *         Constraint: Specifying <code>SubdivisionCode</code> without
-     *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * @return Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *         support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *         specify <code>countrycode</code>.
      */
 
     public String getSubdivisionCode() {
@@ -293,23 +433,18 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.</p>
-     *        <p>
-     *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *        support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *        specify <code>countrycode</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetGeoLocationRequest withSubdivisionCode(String subdivisionCode) {
@@ -318,8 +453,8 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -330,11 +465,11 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContinentCode() != null)
-            sb.append("ContinentCode: " + getContinentCode() + ",");
+            sb.append("ContinentCode: ").append(getContinentCode()).append(",");
         if (getCountryCode() != null)
-            sb.append("CountryCode: " + getCountryCode() + ",");
+            sb.append("CountryCode: ").append(getCountryCode()).append(",");
         if (getSubdivisionCode() != null)
-            sb.append("SubdivisionCode: " + getSubdivisionCode());
+            sb.append("SubdivisionCode: ").append(getSubdivisionCode());
         sb.append("}");
         return sb.toString();
     }
@@ -351,19 +486,15 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
         GetGeoLocationRequest other = (GetGeoLocationRequest) obj;
         if (other.getContinentCode() == null ^ this.getContinentCode() == null)
             return false;
-        if (other.getContinentCode() != null
-                && other.getContinentCode().equals(this.getContinentCode()) == false)
+        if (other.getContinentCode() != null && other.getContinentCode().equals(this.getContinentCode()) == false)
             return false;
         if (other.getCountryCode() == null ^ this.getCountryCode() == null)
             return false;
-        if (other.getCountryCode() != null
-                && other.getCountryCode().equals(this.getCountryCode()) == false)
+        if (other.getCountryCode() != null && other.getCountryCode().equals(this.getCountryCode()) == false)
             return false;
-        if (other.getSubdivisionCode() == null
-                ^ this.getSubdivisionCode() == null)
+        if (other.getSubdivisionCode() == null ^ this.getSubdivisionCode() == null)
             return false;
-        if (other.getSubdivisionCode() != null
-                && other.getSubdivisionCode().equals(this.getSubdivisionCode()) == false)
+        if (other.getSubdivisionCode() != null && other.getSubdivisionCode().equals(this.getSubdivisionCode()) == false)
             return false;
         return true;
     }
@@ -373,17 +504,9 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getContinentCode() == null) ? 0 : getContinentCode()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSubdivisionCode() == null) ? 0 : getSubdivisionCode()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getContinentCode() == null) ? 0 : getContinentCode().hashCode());
+        hashCode = prime * hashCode + ((getCountryCode() == null) ? 0 : getCountryCode().hashCode());
+        hashCode = prime * hashCode + ((getSubdivisionCode() == null) ? 0 : getSubdivisionCode().hashCode());
         return hashCode;
     }
 
@@ -391,4 +514,5 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
     public GetGeoLocationRequest clone() {
         return (GetGeoLocationRequest) super.clone();
     }
+
 }

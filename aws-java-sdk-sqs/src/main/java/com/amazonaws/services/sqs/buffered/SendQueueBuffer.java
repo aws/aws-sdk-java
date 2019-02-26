@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import com.amazonaws.services.sqs.model.SendMessageBatchResult;
 import com.amazonaws.services.sqs.model.SendMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
+import com.amazonaws.services.sqs.internal.RequestCopyUtils;
 
 /**
  * This class is responsible for buffering outgoing SQS requests, i.e. requests to send a message,
@@ -476,7 +477,7 @@ public class SendQueueBuffer {
         @Override
         protected boolean isOkToAdd(SendMessageRequest request) {
             return (requests.size() < config.getMaxBatchSize())
-                    && ((request.getMessageBody().getBytes().length + batchSizeBytes) < config.getMaxBatchSizeBytes());
+                    && ((request.getMessageBody().getBytes().length + batchSizeBytes) <= config.getMaxBatchSizeBytes());
         }
 
         @Override
@@ -502,10 +503,8 @@ public class SendQueueBuffer {
 
             List<SendMessageBatchRequestEntry> entries = new ArrayList<SendMessageBatchRequestEntry>(requests.size());
             for (int i = 0, n = requests.size(); i < n; i++) {
-                entries.add(new SendMessageBatchRequestEntry().withId(Integer.toString(i))
-                        .withMessageBody(requests.get(i).getMessageBody())
-                        .withDelaySeconds(requests.get(i).getDelaySeconds())
-                        .withMessageAttributes(requests.get(i).getMessageAttributes()));
+                entries.add(RequestCopyUtils.createSendMessageBatchRequestEntryFrom(Integer.toString(i),
+                        requests.get(i)));
             }
             batchRequest.setEntries(entries);
 

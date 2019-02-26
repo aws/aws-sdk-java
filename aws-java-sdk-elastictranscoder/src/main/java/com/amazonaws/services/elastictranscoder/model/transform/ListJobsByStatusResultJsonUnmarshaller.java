@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * ListJobsByStatusResult JSON Unmarshaller
  */
-public class ListJobsByStatusResultJsonUnmarshaller implements
-        Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListJobsByStatusResultJsonUnmarshaller implements Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> {
 
-    public ListJobsByStatusResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public ListJobsByStatusResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListJobsByStatusResult listJobsByStatusResult = new ListJobsByStatusResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class ListJobsByStatusResultJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return listJobsByStatusResult;
+        }
 
         while (true) {
             if (token == null)
@@ -55,19 +50,14 @@ public class ListJobsByStatusResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jobs", targetDepth)) {
                     context.nextToken();
-                    listJobsByStatusResult.setJobs(new ListUnmarshaller<Job>(
-                            JobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    listJobsByStatusResult.setJobs(new ListUnmarshaller<Job>(JobJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();
-                    listJobsByStatusResult.setNextPageToken(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    listJobsByStatusResult.setNextPageToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

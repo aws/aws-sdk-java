@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the request to delete a user as an administrator.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,8 +47,7 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to delete the
-     *        user.
+     *        The user pool ID for the user pool where you want to delete the user.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -59,8 +59,7 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
      * The user pool ID for the user pool where you want to delete the user.
      * </p>
      * 
-     * @return The user pool ID for the user pool where you want to delete the
-     *         user.
+     * @return The user pool ID for the user pool where you want to delete the user.
      */
 
     public String getUserPoolId() {
@@ -73,10 +72,8 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID for the user pool where you want to delete the
-     *        user.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user pool ID for the user pool where you want to delete the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminDeleteUserRequest withUserPoolId(String userPoolId) {
@@ -116,8 +113,7 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
      * 
      * @param username
      *        The user name of the user you wish to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminDeleteUserRequest withUsername(String username) {
@@ -126,8 +122,8 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -138,9 +134,9 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -157,13 +153,11 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
         AdminDeleteUserRequest other = (AdminDeleteUserRequest) obj;
         if (other.getUserPoolId() == null ^ this.getUserPoolId() == null)
             return false;
-        if (other.getUserPoolId() != null
-                && other.getUserPoolId().equals(this.getUserPoolId()) == false)
+        if (other.getUserPoolId() != null && other.getUserPoolId().equals(this.getUserPoolId()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
-        if (other.getUsername() != null
-                && other.getUsername().equals(this.getUsername()) == false)
+        if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
         return true;
     }
@@ -173,10 +167,8 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
-        hashCode = prime * hashCode
-                + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolId() == null) ? 0 : getUserPoolId().hashCode());
+        hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;
     }
 
@@ -184,4 +176,5 @@ public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
     public AdminDeleteUserRequest clone() {
         return (AdminDeleteUserRequest) super.clone();
     }
+
 }

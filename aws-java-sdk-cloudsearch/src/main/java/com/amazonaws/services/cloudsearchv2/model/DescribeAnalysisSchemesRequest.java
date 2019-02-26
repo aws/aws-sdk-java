@@ -1,36 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the
- * <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of
- * the domain you want to describe. To limit the response to particular analysis
- * schemes, specify the names of the analysis schemes you want to describe. To
- * show the active configuration and exclude any pending changes, set the
+ * Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the
+ * domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis
+ * schemes you want to describe. To show the active configuration and exclude any pending changes, set the
  * <code>Deployed</code> option to <code>true</code>.
  * </p>
  */
-public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAnalysisSchemesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -46,9 +42,8 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> analysisSchemeNames;
     /**
      * <p>
-     * Whether to display the deployed configuration (<code>true</code>) or
-     * include any pending changes (<code>false</code>). Defaults to
-     * <code>false</code>.
+     * Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     * <code>false</code>). Defaults to <code>false</code>.
      * </p>
      */
     private Boolean deployed;
@@ -85,8 +80,7 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
      * 
      * @param domainName
      *        The name of the domain you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAnalysisSchemesRequest withDomainName(String domainName) {
@@ -118,15 +112,13 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
      *        The analysis schemes you want to describe.
      */
 
-    public void setAnalysisSchemeNames(
-            java.util.Collection<String> analysisSchemeNames) {
+    public void setAnalysisSchemeNames(java.util.Collection<String> analysisSchemeNames) {
         if (analysisSchemeNames == null) {
             this.analysisSchemeNames = null;
             return;
         }
 
-        this.analysisSchemeNames = new com.amazonaws.internal.SdkInternalList<String>(
-                analysisSchemeNames);
+        this.analysisSchemeNames = new com.amazonaws.internal.SdkInternalList<String>(analysisSchemeNames);
     }
 
     /**
@@ -134,23 +126,19 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
      * The analysis schemes you want to describe.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAnalysisSchemeNames(java.util.Collection)} or
-     * {@link #withAnalysisSchemeNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnalysisSchemeNames(java.util.Collection)} or {@link #withAnalysisSchemeNames(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
      * @param analysisSchemeNames
      *        The analysis schemes you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(
-            String... analysisSchemeNames) {
+    public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(String... analysisSchemeNames) {
         if (this.analysisSchemeNames == null) {
-            setAnalysisSchemeNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    analysisSchemeNames.length));
+            setAnalysisSchemeNames(new com.amazonaws.internal.SdkInternalList<String>(analysisSchemeNames.length));
         }
         for (String ele : analysisSchemeNames) {
             this.analysisSchemeNames.add(ele);
@@ -165,27 +153,23 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
      * 
      * @param analysisSchemeNames
      *        The analysis schemes you want to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(
-            java.util.Collection<String> analysisSchemeNames) {
+    public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(java.util.Collection<String> analysisSchemeNames) {
         setAnalysisSchemeNames(analysisSchemeNames);
         return this;
     }
 
     /**
      * <p>
-     * Whether to display the deployed configuration (<code>true</code>) or
-     * include any pending changes (<code>false</code>). Defaults to
-     * <code>false</code>.
+     * Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     * <code>false</code>). Defaults to <code>false</code>.
      * </p>
      * 
      * @param deployed
-     *        Whether to display the deployed configuration (<code>true</code>)
-     *        or include any pending changes (<code>false</code>). Defaults to
-     *        <code>false</code>.
+     *        Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     *        <code>false</code>). Defaults to <code>false</code>.
      */
 
     public void setDeployed(Boolean deployed) {
@@ -194,14 +178,12 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether to display the deployed configuration (<code>true</code>) or
-     * include any pending changes (<code>false</code>). Defaults to
-     * <code>false</code>.
+     * Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     * <code>false</code>). Defaults to <code>false</code>.
      * </p>
      * 
-     * @return Whether to display the deployed configuration (<code>true</code>)
-     *         or include any pending changes (<code>false</code>). Defaults to
-     *         <code>false</code>.
+     * @return Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     *         <code>false</code>). Defaults to <code>false</code>.
      */
 
     public Boolean getDeployed() {
@@ -210,17 +192,14 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether to display the deployed configuration (<code>true</code>) or
-     * include any pending changes (<code>false</code>). Defaults to
-     * <code>false</code>.
+     * Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     * <code>false</code>). Defaults to <code>false</code>.
      * </p>
      * 
      * @param deployed
-     *        Whether to display the deployed configuration (<code>true</code>)
-     *        or include any pending changes (<code>false</code>). Defaults to
-     *        <code>false</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     *        <code>false</code>). Defaults to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAnalysisSchemesRequest withDeployed(Boolean deployed) {
@@ -230,14 +209,12 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether to display the deployed configuration (<code>true</code>) or
-     * include any pending changes (<code>false</code>). Defaults to
-     * <code>false</code>.
+     * Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     * <code>false</code>). Defaults to <code>false</code>.
      * </p>
      * 
-     * @return Whether to display the deployed configuration (<code>true</code>)
-     *         or include any pending changes (<code>false</code>). Defaults to
-     *         <code>false</code>.
+     * @return Whether to display the deployed configuration (<code>true</code>) or include any pending changes (
+     *         <code>false</code>). Defaults to <code>false</code>.
      */
 
     public Boolean isDeployed() {
@@ -245,8 +222,8 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -257,11 +234,11 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAnalysisSchemeNames() != null)
-            sb.append("AnalysisSchemeNames: " + getAnalysisSchemeNames() + ",");
+            sb.append("AnalysisSchemeNames: ").append(getAnalysisSchemeNames()).append(",");
         if (getDeployed() != null)
-            sb.append("Deployed: " + getDeployed());
+            sb.append("Deployed: ").append(getDeployed());
         sb.append("}");
         return sb.toString();
     }
@@ -278,20 +255,15 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
         DescribeAnalysisSchemesRequest other = (DescribeAnalysisSchemesRequest) obj;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
-        if (other.getDomainName() != null
-                && other.getDomainName().equals(this.getDomainName()) == false)
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
-        if (other.getAnalysisSchemeNames() == null
-                ^ this.getAnalysisSchemeNames() == null)
+        if (other.getAnalysisSchemeNames() == null ^ this.getAnalysisSchemeNames() == null)
             return false;
-        if (other.getAnalysisSchemeNames() != null
-                && other.getAnalysisSchemeNames().equals(
-                        this.getAnalysisSchemeNames()) == false)
+        if (other.getAnalysisSchemeNames() != null && other.getAnalysisSchemeNames().equals(this.getAnalysisSchemeNames()) == false)
             return false;
         if (other.getDeployed() == null ^ this.getDeployed() == null)
             return false;
-        if (other.getDeployed() != null
-                && other.getDeployed().equals(this.getDeployed()) == false)
+        if (other.getDeployed() != null && other.getDeployed().equals(this.getDeployed()) == false)
             return false;
         return true;
     }
@@ -301,14 +273,9 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAnalysisSchemeNames() == null) ? 0
-                        : getAnalysisSchemeNames().hashCode());
-        hashCode = prime * hashCode
-                + ((getDeployed() == null) ? 0 : getDeployed().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisSchemeNames() == null) ? 0 : getAnalysisSchemeNames().hashCode());
+        hashCode = prime * hashCode + ((getDeployed() == null) ? 0 : getDeployed().hashCode());
         return hashCode;
     }
 
@@ -316,4 +283,5 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest
     public DescribeAnalysisSchemesRequest clone() {
         return (DescribeAnalysisSchemesRequest) super.clone();
     }
+
 }

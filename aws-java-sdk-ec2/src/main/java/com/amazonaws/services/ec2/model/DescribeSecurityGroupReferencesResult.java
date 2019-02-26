@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * 
  */
-public class DescribeSecurityGroupReferencesResult implements Serializable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSecurityGroupReferencesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
     /**
@@ -55,15 +55,13 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
      *        Information about the VPCs with the referencing security groups.
      */
 
-    public void setSecurityGroupReferenceSet(
-            java.util.Collection<SecurityGroupReference> securityGroupReferenceSet) {
+    public void setSecurityGroupReferenceSet(java.util.Collection<SecurityGroupReference> securityGroupReferenceSet) {
         if (securityGroupReferenceSet == null) {
             this.securityGroupReferenceSet = null;
             return;
         }
 
-        this.securityGroupReferenceSet = new com.amazonaws.internal.SdkInternalList<SecurityGroupReference>(
-                securityGroupReferenceSet);
+        this.securityGroupReferenceSet = new com.amazonaws.internal.SdkInternalList<SecurityGroupReference>(securityGroupReferenceSet);
     }
 
     /**
@@ -71,23 +69,19 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
      * Information about the VPCs with the referencing security groups.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupReferenceSet(java.util.Collection)} or
-     * {@link #withSecurityGroupReferenceSet(java.util.Collection)} if you want
-     * to override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupReferenceSet(java.util.Collection)} or
+     * {@link #withSecurityGroupReferenceSet(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param securityGroupReferenceSet
      *        Information about the VPCs with the referencing security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSecurityGroupReferencesResult withSecurityGroupReferenceSet(
-            SecurityGroupReference... securityGroupReferenceSet) {
+    public DescribeSecurityGroupReferencesResult withSecurityGroupReferenceSet(SecurityGroupReference... securityGroupReferenceSet) {
         if (this.securityGroupReferenceSet == null) {
-            setSecurityGroupReferenceSet(new com.amazonaws.internal.SdkInternalList<SecurityGroupReference>(
-                    securityGroupReferenceSet.length));
+            setSecurityGroupReferenceSet(new com.amazonaws.internal.SdkInternalList<SecurityGroupReference>(securityGroupReferenceSet.length));
         }
         for (SecurityGroupReference ele : securityGroupReferenceSet) {
             this.securityGroupReferenceSet.add(ele);
@@ -102,19 +96,17 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
      * 
      * @param securityGroupReferenceSet
      *        Information about the VPCs with the referencing security groups.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSecurityGroupReferencesResult withSecurityGroupReferenceSet(
-            java.util.Collection<SecurityGroupReference> securityGroupReferenceSet) {
+    public DescribeSecurityGroupReferencesResult withSecurityGroupReferenceSet(java.util.Collection<SecurityGroupReference> securityGroupReferenceSet) {
         setSecurityGroupReferenceSet(securityGroupReferenceSet);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -125,8 +117,7 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroupReferenceSet() != null)
-            sb.append("SecurityGroupReferenceSet: "
-                    + getSecurityGroupReferenceSet());
+            sb.append("SecurityGroupReferenceSet: ").append(getSecurityGroupReferenceSet());
         sb.append("}");
         return sb.toString();
     }
@@ -141,12 +132,9 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
         if (obj instanceof DescribeSecurityGroupReferencesResult == false)
             return false;
         DescribeSecurityGroupReferencesResult other = (DescribeSecurityGroupReferencesResult) obj;
-        if (other.getSecurityGroupReferenceSet() == null
-                ^ this.getSecurityGroupReferenceSet() == null)
+        if (other.getSecurityGroupReferenceSet() == null ^ this.getSecurityGroupReferenceSet() == null)
             return false;
-        if (other.getSecurityGroupReferenceSet() != null
-                && other.getSecurityGroupReferenceSet().equals(
-                        this.getSecurityGroupReferenceSet()) == false)
+        if (other.getSecurityGroupReferenceSet() != null && other.getSecurityGroupReferenceSet().equals(this.getSecurityGroupReferenceSet()) == false)
             return false;
         return true;
     }
@@ -156,10 +144,7 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSecurityGroupReferenceSet() == null) ? 0
-                        : getSecurityGroupReferenceSet().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupReferenceSet() == null) ? 0 : getSecurityGroupReferenceSet().hashCode());
         return hashCode;
     }
 
@@ -168,9 +153,7 @@ public class DescribeSecurityGroupReferencesResult implements Serializable,
         try {
             return (DescribeSecurityGroupReferencesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

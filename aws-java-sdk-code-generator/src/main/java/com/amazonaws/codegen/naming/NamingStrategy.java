@@ -15,8 +15,7 @@
 package com.amazonaws.codegen.naming;
 
 /**
- * Strategy to name various Java constructs based on the naming in the model and potentially
- * customizations.
+ * Strategy to name various Java constructs based on the naming in the model and potentially customizations.
  */
 public interface NamingStrategy {
 
@@ -40,8 +39,7 @@ public interface NamingStrategy {
     String getResponseClassName(String operationName);
 
     /**
-     * @param name Some contextual name to derive variable name from (i.e. member name, java class
-     *             name, etc).
+     * @param name Some contextual name to derive variable name from (i.e. member name, java class name, etc).
      * @return Appropriate name to use for a Java variable or field.
      */
     String getVariableName(String name);
@@ -54,8 +52,31 @@ public interface NamingStrategy {
 
     /**
      * @param shapeName Name of structure used to derive Java class name.
-     * @return Appropriate name to use for a Java class for an arbitrary (not a request, response,
-     * error) structure.
+     * @return Appropriate name to use for a Java class for an arbitrary (not a request, response, error) structure.
      */
     String getJavaClassName(String shapeName);
+
+    /**
+     * @param shapeName Name of an authorizer shape used to derive the authorizer name
+     * @return Appropriate name to use for a Java class for an Authorizer
+     */
+    String getAuthorizerClassName(String shapeName);
+
+    /**
+     * @param memberName Member name to name getter for.
+     * @return Name of the getter method for a model class member.
+     */
+    String getGetterMethodName(String memberName);
+
+    /**
+     * @param memberName Member name to name setter for.
+     * @return Name of the setter method for a model class member.
+     */
+    String getSetterMethodName(String memberName);
+
+    /**
+     * @param memberName Member name to name fluent setter for.
+     * @return Appropriate name to use for fluent setter method (i.e. withFoo) for a model class member.
+     */
+    String getFluentSetterMethodName(String memberName);
 }

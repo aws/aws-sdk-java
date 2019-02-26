@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,66 +14,47 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.internal.CredentialsEndpointProvider;
+import com.amazonaws.internal.EC2CredentialsUtils;
+import com.amazonaws.util.EC2MetadataUtils;
+import java.io.Closeable;
 import java.io.IOException;
-import java.util.Date;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
+import java.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.internal.EC2MetadataClient;
-import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.json.Jackson;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
-
 /**
- * Credentials provider implementation that loads credentials from the Amazon
- * EC2 Instance Metadata Service.
+ * Credentials provider implementation that loads credentials from the Amazon EC2 Instance Metadata Service.
+ *
+ * <p>When using {@link InstanceProfileCredentialsProvider} with asynchronous refreshing it is
+ * <b>strongly</b> recommended to explicitly call {@link #close()} to release the async thread.</p>
  */
-public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider {
+public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider, Closeable {
 
     private static final Log LOG = LogFactory.getLog(InstanceProfileCredentialsProvider.class);
-
-    /**
-     * The threshold after the last attempt to load credentials (in
-     * milliseconds) at which credentials are attempted to be refreshed.
-     */
-    private static final int REFRESH_THRESHOLD = 1000 * 60 * 60;
-
-    /**
-     * The threshold before credentials expire (in milliseconds) at which
-     * this class will attempt to load new credentials.
-     */
-    private static final int EXPIRATION_THRESHOLD = 1000 * 60 * 15;
-
-    /** The name of the Json Object that contains the access key.*/
-    private static final String ACCESS_KEY_ID = "AccessKeyId";
-
-    /** The name of the Json Object that contains the secret access key.*/
-    private static final String SECRET_ACCESS_KEY = "SecretAccessKey";
-
-    /** The name of the Json Object that contains the token.*/
-    private static final String TOKEN = "Token";
 
     /**
      * The wait time, after which the background thread initiates a refresh to
      * load latest credentials if needed.
      */
-    private static final int ASYNC_REFRESH_INTERVAL_TIME_MINUTES= 1;
+    private static final int ASYNC_REFRESH_INTERVAL_TIME_MINUTES = 1;
 
+    /**
+     * The default InstanceProfileCredentialsProvider that can be shared by
+     * multiple CredentialsProvider instance threads to shrink the amount of
+     * requests to EC2 metadata service.
+     */
+    private static final InstanceProfileCredentialsProvider INSTANCE = new InstanceProfileCredentialsProvider();
 
-    /** The current instance profile credentials */
-    protected volatile AWSCredentials credentials;
-
-    /** The expiration for the current instance profile credentials */
-    protected volatile Date credentialsExpiration;
-
-    /** The time of the last attempt to check for new credentials */
-    protected volatile Date lastInstanceProfileCheck;
+    private final EC2CredentialsFetcher credentialsFetcher;
 
     /**
      * The executor service used for refreshing the credentials in the
@@ -81,6 +62,12 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     private volatile ScheduledExecutorService executor;
 
+    private volatile boolean shouldRefresh = false;
+
+    /**
+     * @deprecated for the singleton method {@link #getInstance()}.
+     */
+    @Deprecated
     public InstanceProfileCredentialsProvider() {
         this(false);
     }
@@ -90,172 +77,130 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      * refreshCredentialsAsync is set to true, otherwise the credentials will be
      * refreshed from the instance metadata service synchronously,
      *
+     * <p>It is <b>strongly</b> recommended to reuse instances of this credentials provider, especially
+     * when async refreshing is used since a background thread is created.</p>
+     *
      * @param refreshCredentialsAsync
      *            true if credentials needs to be refreshed asynchronously else
      *            false.
      */
     public InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync) {
-        if (refreshCredentialsAsync) {
-            executor = Executors.newScheduledThreadPool(1);
-            executor.scheduleWithFixedDelay(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        getCredentials();
-                    } catch (AmazonClientException ace) {
-                        handleError(ace);
-                    } catch (RuntimeException re) {
-                        handleError(re);
-                    } catch (Error e) {
-                        handleError(e);
+        this(refreshCredentialsAsync, true);
+    }
+
+    /**
+     * Spins up a new thread to refresh the credentials asynchronously.
+     *
+     * <p>It is <b>strongly</b> recommended to reuse instances of this credentials provider, especially
+     * when async refreshing is used since a background thread is created.</p>
+     *
+     * @param eagerlyRefreshCredentialsAsync
+     *            when set to false will not attempt to refresh credentials asynchronously
+     *            until after a call has been made to {@link #getCredentials()} - ensures that
+     *            {@link EC2CredentialsFetcher#getCredentials()} is only hit when this CredentialProvider is actually required
+     */
+    public static InstanceProfileCredentialsProvider createAsyncRefreshingProvider(final boolean eagerlyRefreshCredentialsAsync) {
+        return new InstanceProfileCredentialsProvider(true, eagerlyRefreshCredentialsAsync);
+    }
+
+    private InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync, final boolean eagerlyRefreshCredentialsAsync) {
+
+        credentialsFetcher = new EC2CredentialsFetcher(new InstanceMetadataCredentialsEndpointProvider());
+
+        if (!SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            if (refreshCredentialsAsync) {
+                executor = Executors.newScheduledThreadPool(1, new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        Thread t = Executors.defaultThreadFactory().newThread(r);
+                        t.setName("instance-profile-credentials-refresh");
+                        t.setDaemon(true);
+                        return t;
                     }
-                }
-            }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+                });
+                executor.scheduleWithFixedDelay(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (shouldRefresh) credentialsFetcher.getCredentials();
+                        } catch (AmazonClientException ace) {
+                            handleError(ace);
+                        } catch (RuntimeException re) {
+                            handleError(re);
+                        }
+                    }
+                }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+            }
         }
+    }
+
+    /**
+     * Returns a singleton {@link InstanceProfileCredentialsProvider} that does not refresh credentials asynchronously.
+     *
+     * <p>
+     * See {@link #InstanceProfileCredentialsProvider(boolean)} or {@link #createAsyncRefreshingProvider(boolean)} for
+     * asynchronous credentials refreshing.
+     * </p>
+     */
+    public static InstanceProfileCredentialsProvider getInstance() {
+        return INSTANCE;
     }
 
     private void handleError(Throwable t) {
-        credentials = null;
+        refresh();
         LOG.error(t.getMessage(), t);
-    }
-
-    public AWSCredentials getCredentials() {
-        if (needsToLoadCredentials())
-            loadCredentials();
-        if (expired()) {
-            throw new AmazonClientException(
-                    "The credentials received from the Amazon EC2 metadata service have expired");
-        }
-        return credentials;
-    }
-
-    public void refresh() {
-        credentials = null;
-    }
-
-    protected boolean needsToLoadCredentials() {
-        if (credentials == null) return true;
-
-        if (credentialsExpiration != null) {
-            if (isWithinExpirationThreshold()) return true;
-        }
-
-        if (lastInstanceProfileCheck != null) {
-            if (isPastRefreshThreshold()) return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Returns true if the current credentials are within the expiration
-     * threshold, and therefore, should be refreshed.
-     */
-    private boolean isWithinExpirationThreshold() {
-        return (credentialsExpiration.getTime() - System.currentTimeMillis()) < EXPIRATION_THRESHOLD;
-    }
-
-    /**
-     * Returns true if the last attempt to refresh credentials is beyond the
-     * refresh threshold, and therefore the credentials should attempt to be
-     * refreshed.
-     */
-    private boolean isPastRefreshThreshold() {
-        return (System.currentTimeMillis() - lastInstanceProfileCheck.getTime()) > REFRESH_THRESHOLD;
-    }
-
-    private boolean expired() {
-        if (credentialsExpiration != null) {
-            if (credentialsExpiration.getTime() < System.currentTimeMillis()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private synchronized void loadCredentials() {
-        if (!needsToLoadCredentials()) return;
-
-        JsonNode accessKey;
-        JsonNode secretKey;
-        JsonNode node;
-        JsonNode token;
-        try {
-            lastInstanceProfileCheck = new Date();
-            String credentialsResponse = new EC2MetadataClient()
-                    .getDefaultCredentials();
-
-            node = Jackson.jsonNodeOf(credentialsResponse);
-            accessKey = node.get(ACCESS_KEY_ID);
-            secretKey = node.get(SECRET_ACCESS_KEY);
-            token = node.get(TOKEN);
-
-            if (null == accessKey || null == secretKey) {
-                throw new AmazonClientException("Unable to load credentials.");
-            }
-
-            if (null != token) {
-                credentials = new BasicSessionCredentials(accessKey.asText(),
-                        secretKey.asText(), token.asText());
-            } else {
-                credentials = new BasicAWSCredentials(accessKey.asText(),
-                        secretKey.asText());
-            }
-
-            JsonNode expirationJsonNode = node.get("Expiration");
-            if (null != expirationJsonNode) {
-                /*
-                 * TODO: The expiration string comes in a different format
-                 * than what we deal with in other parts of the SDK, so we
-                 * have to convert it to the ISO8601 syntax we expect.
-                 */
-                String expiration = expirationJsonNode.asText();
-                expiration = expiration.replaceAll("\\+0000$", "Z");
-
-                try {
-                    credentialsExpiration = DateUtils.parseISO8601Date(expiration);
-                } catch(Exception ex) {
-                    handleError("Unable to parse credentials expiration date from Amazon EC2 metadata service", ex);
-                }
-            }
-        } catch (JsonMappingException e) {
-            handleError("Unable to parse credentials from Amazon EC2 metadata service", e);
-        } catch (IOException e) {
-            handleError("Unable to load credentials from Amazon EC2 metadata service", e);
-        }
-    }
-
-    /**
-     * Handles reporting or throwing an error encountered while requesting
-     * credentials from the Amazon EC2 Instance Metadata Service. The Instance
-     * Metadata Service could be briefly unavailable for a number of reasons, so
-     * we need to gracefully handle falling back to valid credentials if they're
-     * available, and only throw exceptions if we really can't recover.
-     *
-     * @param errorMessage
-     *            A human readable description of the error.
-     * @param e
-     *            The error that occurred.
-     */
-    private void handleError(String errorMessage, Exception e) {
-        // If we don't have any valid credentials to fall back on, then throw an exception
-        if (credentials == null || expired())
-            throw new AmazonClientException(errorMessage, e);
-
-        // Otherwise, just log the error and continuing using the current credentials
-        LOG.debug(errorMessage, e);
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName();
     }
 
     @Override
     protected void finalize() throws Throwable {
         if (executor != null) {
             executor.shutdownNow();
+        }
+    }
+
+
+    /**
+     * {@inheritDoc}
+     *
+     * @throws AmazonClientException if {@link SDKGlobalConfiguration#isEc2MetadataDisabled()} is true
+     */
+    @Override
+    public AWSCredentials getCredentials() {
+        if (SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            throw new AmazonClientException("AWS_EC2_METADATA_DISABLED is set to true, not loading credentials from EC2 Instance "
+                                         + "Metadata service");
+        }
+        AWSCredentials creds = credentialsFetcher.getCredentials();
+        shouldRefresh = true;
+        return creds;
+    }
+
+    @Override
+    public void refresh() {
+        if (credentialsFetcher != null) {
+            credentialsFetcher.refresh();
+        }
+    }
+
+    @Override
+    public void close() throws IOException {
+        if (executor != null) {
+            executor.shutdownNow();
+            executor = null;
+        }
+    }
+
+    private static class InstanceMetadataCredentialsEndpointProvider extends CredentialsEndpointProvider {
+        @Override
+        public URI getCredentialsEndpoint() throws URISyntaxException, IOException {
+            String host = EC2MetadataUtils.getHostAddressForEC2MetadataService();
+
+            String securityCredentialsList = EC2CredentialsUtils.getInstance().readResource(new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE));
+            String[] securityCredentials = securityCredentialsList.trim().split("\n");
+            if (securityCredentials.length == 0) {
+                throw new SdkClientException("Unable to load credentials path");
+            }
+
+            return new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE + securityCredentials[0]);
         }
     }
 }

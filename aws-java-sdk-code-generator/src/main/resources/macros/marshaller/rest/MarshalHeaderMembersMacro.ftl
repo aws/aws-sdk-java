@@ -3,7 +3,7 @@
 <#if shape.members?has_content>
     <#list shape.members as member>
     <#if member.http.isHeader() >
-        <#local getMember = getterFunctionPrefix + ".get" + member.name />
+        <#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
 
         <#if member.list>
             if (${getMember}() != null && !(${getMember}().isEmpty())) {

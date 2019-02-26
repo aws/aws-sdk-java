@@ -1,77 +1,90 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * To retrieve a list of your hosted zones, send a <code>GET</code> request to
- * the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
- * response to this request includes a <code>HostedZones</code> element with
- * zero or more <code>HostedZone</code> child elements. By default, the list of
- * hosted zones is displayed on a single page. You can control the length of the
- * page that is displayed by using the <code>MaxItems</code> parameter. You can
- * use the <code>Marker</code> parameter to control the hosted zone that the
- * list begins with. For more information about listing hosted zones, see <a
- * href=
- * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
- * >Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53
- * Developer Guide</i>.
+ * A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account.
  * </p>
- * <note> Amazon Route 53 returns a maximum of 100 items. If you set
- * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
- * only the first 100.</note>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return
+     * if you submit another request.
      * </p>
      */
     private String maxItems;
-
+    /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     */
     private String delegationSetId;
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+     *        <p>
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *        request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more hosted zones to get.
      */
 
     public void setMarker(String marker) {
@@ -80,16 +93,28 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+     *         <p>
+     *         For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *         response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *         request.
+     *         </p>
+     *         <p>
+     *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *         more hosted zones to get.
      */
 
     public String getMarker() {
@@ -98,19 +123,30 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
+     * </p>
+     * <p>
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+     *        <p>
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *        request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more hosted zones to get.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesRequest withMarker(String marker) {
@@ -120,12 +156,17 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return
+     * if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of hosted zones to return per page of
-     *        results.
+     *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *        than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *        <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone
+     *        that Route 53 will return if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -134,11 +175,16 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return
+     * if you submit another request.
      * </p>
      * 
-     * @return Specify the maximum number of hosted zones to return per page of
-     *         results.
+     * @return (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *         than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *         <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted
+     *         zone that Route 53 will return if you submit another request.
      */
 
     public String getMaxItems() {
@@ -147,14 +193,18 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return
+     * if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of hosted zones to return per page of
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *        than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *        <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone
+     *        that Route 53 will return if you submit another request.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesRequest withMaxItems(String maxItems) {
@@ -163,7 +213,14 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
      * @param delegationSetId
+     *        If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *        with a reusable delegation set, specify the ID of that reusable delegation set.
      */
 
     public void setDelegationSetId(String delegationSetId) {
@@ -171,7 +228,13 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
+     * @return If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *         with a reusable delegation set, specify the ID of that reusable delegation set.
      */
 
     public String getDelegationSetId() {
@@ -179,9 +242,15 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
      * @param delegationSetId
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *        with a reusable delegation set, specify the ID of that reusable delegation set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesRequest withDelegationSetId(String delegationSetId) {
@@ -190,8 +259,8 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -202,11 +271,11 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getDelegationSetId() != null)
-            sb.append("DelegationSetId: " + getDelegationSetId());
+            sb.append("DelegationSetId: ").append(getDelegationSetId());
         sb.append("}");
         return sb.toString();
     }
@@ -223,19 +292,15 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
         ListHostedZonesRequest other = (ListHostedZonesRequest) obj;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
-        if (other.getDelegationSetId() == null
-                ^ this.getDelegationSetId() == null)
+        if (other.getDelegationSetId() == null ^ this.getDelegationSetId() == null)
             return false;
-        if (other.getDelegationSetId() != null
-                && other.getDelegationSetId().equals(this.getDelegationSetId()) == false)
+        if (other.getDelegationSetId() != null && other.getDelegationSetId().equals(this.getDelegationSetId()) == false)
             return false;
         return true;
     }
@@ -245,14 +310,9 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDelegationSetId() == null) ? 0 : getDelegationSetId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getDelegationSetId() == null) ? 0 : getDelegationSetId().hashCode());
         return hashCode;
     }
 
@@ -260,4 +320,5 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     public ListHostedZonesRequest clone() {
         return (ListHostedZonesRequest) super.clone();
     }
+
 }

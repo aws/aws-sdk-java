@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for the ListCACertificates operation.
  * </p>
  */
-public class ListCACertificatesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -78,8 +76,7 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
      * 
      * @param pageSize
      *        The result page size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCACertificatesRequest withPageSize(Integer pageSize) {
@@ -119,8 +116,7 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
      * 
      * @param marker
      *        The marker for the next set of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCACertificatesRequest withMarker(String marker) {
@@ -160,8 +156,7 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
      * 
      * @param ascendingOrder
      *        Determines the order of the results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCACertificatesRequest withAscendingOrder(Boolean ascendingOrder) {
@@ -182,8 +177,8 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -194,11 +189,11 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getAscendingOrder() != null)
-            sb.append("AscendingOrder: " + getAscendingOrder());
+            sb.append("AscendingOrder: ").append(getAscendingOrder());
         sb.append("}");
         return sb.toString();
     }
@@ -215,19 +210,15 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
         ListCACertificatesRequest other = (ListCACertificatesRequest) obj;
         if (other.getPageSize() == null ^ this.getPageSize() == null)
             return false;
-        if (other.getPageSize() != null
-                && other.getPageSize().equals(this.getPageSize()) == false)
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
-        if (other.getAscendingOrder() == null
-                ^ this.getAscendingOrder() == null)
+        if (other.getAscendingOrder() == null ^ this.getAscendingOrder() == null)
             return false;
-        if (other.getAscendingOrder() != null
-                && other.getAscendingOrder().equals(this.getAscendingOrder()) == false)
+        if (other.getAscendingOrder() != null && other.getAscendingOrder().equals(this.getAscendingOrder()) == false)
             return false;
         return true;
     }
@@ -237,14 +228,9 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAscendingOrder() == null) ? 0 : getAscendingOrder()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getAscendingOrder() == null) ? 0 : getAscendingOrder().hashCode());
         return hashCode;
     }
 
@@ -252,4 +238,5 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     public ListCACertificatesRequest clone() {
         return (ListCACertificatesRequest) super.clone();
     }
+
 }

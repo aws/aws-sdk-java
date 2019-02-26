@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,23 +34,33 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String replicationTaskIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String sourceEndpointArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      */
     private String targetEndpointArn;
@@ -67,22 +78,65 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
     private String migrationType;
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      */
     private String tableMappings;
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      */
     private String replicationTaskSettings;
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      * </p>
      */
     private java.util.Date cdcStartTime;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     */
+    private String cdcStartPosition;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     */
+    private String cdcStopPosition;
     /**
      * <p>
      * Tags to be added to the replication instance.
@@ -98,9 +152,21 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param replicationTaskIdentifier
@@ -109,9 +175,21 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setReplicationTaskIdentifier(String replicationTaskIdentifier) {
@@ -126,9 +204,21 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The replication task identifier.</p>
@@ -136,10 +226,21 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getReplicationTaskIdentifier() {
@@ -154,9 +255,21 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param replicationTaskIdentifier
@@ -165,28 +278,36 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withReplicationTaskIdentifier(
-            String replicationTaskIdentifier) {
+    public CreateReplicationTaskRequest withReplicationTaskIdentifier(String replicationTaskIdentifier) {
         setReplicationTaskIdentifier(replicationTaskIdentifier);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param sourceEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setSourceEndpointArn(String sourceEndpointArn) {
@@ -195,12 +316,10 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getSourceEndpointArn() {
@@ -209,32 +328,26 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param sourceEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withSourceEndpointArn(
-            String sourceEndpointArn) {
+    public CreateReplicationTaskRequest withSourceEndpointArn(String sourceEndpointArn) {
         setSourceEndpointArn(sourceEndpointArn);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param targetEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public void setTargetEndpointArn(String targetEndpointArn) {
@@ -243,12 +356,10 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies
-     *         the endpoint.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      */
 
     public String getTargetEndpointArn() {
@@ -257,19 +368,15 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param targetEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the
-     *        endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withTargetEndpointArn(
-            String targetEndpointArn) {
+    public CreateReplicationTaskRequest withTargetEndpointArn(String targetEndpointArn) {
         setTargetEndpointArn(targetEndpointArn);
         return this;
     }
@@ -306,12 +413,10 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * 
      * @param replicationInstanceArn
      *        The Amazon Resource Name (ARN) of the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withReplicationInstanceArn(
-            String replicationInstanceArn) {
+    public CreateReplicationTaskRequest withReplicationInstanceArn(String replicationInstanceArn) {
         setReplicationInstanceArn(replicationInstanceArn);
         return this;
     }
@@ -350,8 +455,7 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * 
      * @param migrationType
      *        The migration type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
 
@@ -371,7 +475,7 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      */
 
     public void setMigrationType(MigrationTypeValue migrationType) {
-        this.migrationType = migrationType.toString();
+        withMigrationType(migrationType);
     }
 
     /**
@@ -381,24 +485,30 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * 
      * @param migrationType
      *        The migration type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
 
-    public CreateReplicationTaskRequest withMigrationType(
-            MigrationTypeValue migrationType) {
-        setMigrationType(migrationType);
+    public CreateReplicationTaskRequest withMigrationType(MigrationTypeValue migrationType) {
+        this.migrationType = migrationType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
-     *        The path of the JSON file that contains the table mappings.
+     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *        value.</p>
+     *        <p>
+     *        For example, --table-mappings file://mappingfile.json
      */
 
     public void setTableMappings(String tableMappings) {
@@ -407,10 +517,18 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
-     * @return The path of the JSON file that contains the table mappings.
+     * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *         Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *         value.</p>
+     *         <p>
+     *         For example, --table-mappings file://mappingfile.json
      */
 
     public String getTableMappings() {
@@ -419,13 +537,20 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
-     *        The path of the JSON file that contains the table mappings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *        value.</p>
+     *        <p>
+     *        For example, --table-mappings file://mappingfile.json
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationTaskRequest withTableMappings(String tableMappings) {
@@ -435,11 +560,15 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings.
+     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *        Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public void setReplicationTaskSettings(String replicationTaskSettings) {
@@ -448,10 +577,14 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
-     * @return Settings for the task, such as target metadata settings.
+     * @return Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *         Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public String getReplicationTaskSettings() {
@@ -460,28 +593,38 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *        Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withReplicationTaskSettings(
-            String replicationTaskSettings) {
+    public CreateReplicationTaskRequest withReplicationTaskSettings(String replicationTaskSettings) {
         setReplicationTaskSettings(replicationTaskSettings);
         return this;
     }
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      * </p>
      * 
      * @param cdcStartTime
-     *        The start time for the Change Data Capture (CDC) operation.
+     *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      */
 
     public void setCdcStartTime(java.util.Date cdcStartTime) {
@@ -490,10 +633,18 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      * </p>
      * 
-     * @return The start time for the Change Data Capture (CDC) operation.
+     * @return Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *         CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *         error.</p>
+     *         <p>
+     *         Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      */
 
     public java.util.Date getCdcStartTime() {
@@ -502,18 +653,227 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      * </p>
      * 
      * @param cdcStartTime
-     *        The start time for the Change Data Capture (CDC) operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReplicationTaskRequest withCdcStartTime(
-            java.util.Date cdcStartTime) {
+    public CreateReplicationTaskRequest withCdcStartTime(java.util.Date cdcStartTime) {
         setCdcStartTime(cdcStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public void setCdcStartPosition(String cdcStartPosition) {
+        this.cdcStartPosition = cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *         CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *         error.</p>
+     *         <p>
+     *         The value can be in date, checkpoint, or LSN/SCN format.
+     *         </p>
+     *         <p>
+     *         Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *         </p>
+     *         <p>
+     *         Checkpoint Example: --cdc-start-position
+     *         "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *         </p>
+     *         <p>
+     *         LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public String getCdcStartPosition() {
+        return this.cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationTaskRequest withCdcStartPosition(String cdcStartPosition) {
+        setCdcStartPosition(cdcStartPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public void setCdcStopPosition(String cdcStopPosition) {
+        this.cdcStopPosition = cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
+     *         time or commit time.</p>
+     *         <p>
+     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         </p>
+     *         <p>
+     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public String getCdcStopPosition() {
+        return this.cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationTaskRequest withCdcStopPosition(String cdcStopPosition) {
+        setCdcStopPosition(cdcStopPosition);
         return this;
     }
 
@@ -552,16 +912,14 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * Tags to be added to the replication instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Tags to be added to the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationTaskRequest withTags(Tag... tags) {
@@ -581,8 +939,7 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
      * 
      * @param tags
      *        Tags to be added to the replication instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationTaskRequest withTags(java.util.Collection<Tag> tags) {
@@ -591,8 +948,8 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -603,26 +960,27 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskIdentifier() != null)
-            sb.append("ReplicationTaskIdentifier: "
-                    + getReplicationTaskIdentifier() + ",");
+            sb.append("ReplicationTaskIdentifier: ").append(getReplicationTaskIdentifier()).append(",");
         if (getSourceEndpointArn() != null)
-            sb.append("SourceEndpointArn: " + getSourceEndpointArn() + ",");
+            sb.append("SourceEndpointArn: ").append(getSourceEndpointArn()).append(",");
         if (getTargetEndpointArn() != null)
-            sb.append("TargetEndpointArn: " + getTargetEndpointArn() + ",");
+            sb.append("TargetEndpointArn: ").append(getTargetEndpointArn()).append(",");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn()
-                    + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getMigrationType() != null)
-            sb.append("MigrationType: " + getMigrationType() + ",");
+            sb.append("MigrationType: ").append(getMigrationType()).append(",");
         if (getTableMappings() != null)
-            sb.append("TableMappings: " + getTableMappings() + ",");
+            sb.append("TableMappings: ").append(getTableMappings()).append(",");
         if (getReplicationTaskSettings() != null)
-            sb.append("ReplicationTaskSettings: "
-                    + getReplicationTaskSettings() + ",");
+            sb.append("ReplicationTaskSettings: ").append(getReplicationTaskSettings()).append(",");
         if (getCdcStartTime() != null)
-            sb.append("CdcStartTime: " + getCdcStartTime() + ",");
+            sb.append("CdcStartTime: ").append(getCdcStartTime()).append(",");
+        if (getCdcStartPosition() != null)
+            sb.append("CdcStartPosition: ").append(getCdcStartPosition()).append(",");
+        if (getCdcStopPosition() != null)
+            sb.append("CdcStopPosition: ").append(getCdcStopPosition()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -637,60 +995,49 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
         if (obj instanceof CreateReplicationTaskRequest == false)
             return false;
         CreateReplicationTaskRequest other = (CreateReplicationTaskRequest) obj;
-        if (other.getReplicationTaskIdentifier() == null
-                ^ this.getReplicationTaskIdentifier() == null)
+        if (other.getReplicationTaskIdentifier() == null ^ this.getReplicationTaskIdentifier() == null)
             return false;
-        if (other.getReplicationTaskIdentifier() != null
-                && other.getReplicationTaskIdentifier().equals(
-                        this.getReplicationTaskIdentifier()) == false)
+        if (other.getReplicationTaskIdentifier() != null && other.getReplicationTaskIdentifier().equals(this.getReplicationTaskIdentifier()) == false)
             return false;
-        if (other.getSourceEndpointArn() == null
-                ^ this.getSourceEndpointArn() == null)
+        if (other.getSourceEndpointArn() == null ^ this.getSourceEndpointArn() == null)
             return false;
-        if (other.getSourceEndpointArn() != null
-                && other.getSourceEndpointArn().equals(
-                        this.getSourceEndpointArn()) == false)
+        if (other.getSourceEndpointArn() != null && other.getSourceEndpointArn().equals(this.getSourceEndpointArn()) == false)
             return false;
-        if (other.getTargetEndpointArn() == null
-                ^ this.getTargetEndpointArn() == null)
+        if (other.getTargetEndpointArn() == null ^ this.getTargetEndpointArn() == null)
             return false;
-        if (other.getTargetEndpointArn() != null
-                && other.getTargetEndpointArn().equals(
-                        this.getTargetEndpointArn()) == false)
+        if (other.getTargetEndpointArn() != null && other.getTargetEndpointArn().equals(this.getTargetEndpointArn()) == false)
             return false;
-        if (other.getReplicationInstanceArn() == null
-                ^ this.getReplicationInstanceArn() == null)
+        if (other.getReplicationInstanceArn() == null ^ this.getReplicationInstanceArn() == null)
             return false;
-        if (other.getReplicationInstanceArn() != null
-                && other.getReplicationInstanceArn().equals(
-                        this.getReplicationInstanceArn()) == false)
+        if (other.getReplicationInstanceArn() != null && other.getReplicationInstanceArn().equals(this.getReplicationInstanceArn()) == false)
             return false;
         if (other.getMigrationType() == null ^ this.getMigrationType() == null)
             return false;
-        if (other.getMigrationType() != null
-                && other.getMigrationType().equals(this.getMigrationType()) == false)
+        if (other.getMigrationType() != null && other.getMigrationType().equals(this.getMigrationType()) == false)
             return false;
         if (other.getTableMappings() == null ^ this.getTableMappings() == null)
             return false;
-        if (other.getTableMappings() != null
-                && other.getTableMappings().equals(this.getTableMappings()) == false)
+        if (other.getTableMappings() != null && other.getTableMappings().equals(this.getTableMappings()) == false)
             return false;
-        if (other.getReplicationTaskSettings() == null
-                ^ this.getReplicationTaskSettings() == null)
+        if (other.getReplicationTaskSettings() == null ^ this.getReplicationTaskSettings() == null)
             return false;
-        if (other.getReplicationTaskSettings() != null
-                && other.getReplicationTaskSettings().equals(
-                        this.getReplicationTaskSettings()) == false)
+        if (other.getReplicationTaskSettings() != null && other.getReplicationTaskSettings().equals(this.getReplicationTaskSettings()) == false)
             return false;
         if (other.getCdcStartTime() == null ^ this.getCdcStartTime() == null)
             return false;
-        if (other.getCdcStartTime() != null
-                && other.getCdcStartTime().equals(this.getCdcStartTime()) == false)
+        if (other.getCdcStartTime() != null && other.getCdcStartTime().equals(this.getCdcStartTime()) == false)
+            return false;
+        if (other.getCdcStartPosition() == null ^ this.getCdcStartPosition() == null)
+            return false;
+        if (other.getCdcStartPosition() != null && other.getCdcStartPosition().equals(this.getCdcStartPosition()) == false)
+            return false;
+        if (other.getCdcStopPosition() == null ^ this.getCdcStopPosition() == null)
+            return false;
+        if (other.getCdcStopPosition() != null && other.getCdcStopPosition().equals(this.getCdcStopPosition()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -700,40 +1047,17 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getReplicationTaskIdentifier() == null) ? 0
-                        : getReplicationTaskIdentifier().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceEndpointArn() == null) ? 0
-                        : getSourceEndpointArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTargetEndpointArn() == null) ? 0
-                        : getTargetEndpointArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationInstanceArn() == null) ? 0
-                        : getReplicationInstanceArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMigrationType() == null) ? 0 : getMigrationType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTableMappings() == null) ? 0 : getTableMappings()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReplicationTaskSettings() == null) ? 0
-                        : getReplicationTaskSettings().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCdcStartTime() == null) ? 0 : getCdcStartTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getReplicationTaskIdentifier() == null) ? 0 : getReplicationTaskIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceEndpointArn() == null) ? 0 : getSourceEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getTargetEndpointArn() == null) ? 0 : getTargetEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceArn() == null) ? 0 : getReplicationInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getMigrationType() == null) ? 0 : getMigrationType().hashCode());
+        hashCode = prime * hashCode + ((getTableMappings() == null) ? 0 : getTableMappings().hashCode());
+        hashCode = prime * hashCode + ((getReplicationTaskSettings() == null) ? 0 : getReplicationTaskSettings().hashCode());
+        hashCode = prime * hashCode + ((getCdcStartTime() == null) ? 0 : getCdcStartTime().hashCode());
+        hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
+        hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -741,4 +1065,5 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
     public CreateReplicationTaskRequest clone() {
         return (CreateReplicationTaskRequest) super.clone();
     }
+
 }

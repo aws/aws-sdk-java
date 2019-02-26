@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Combines the execution state and configuration of a step.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepDetail" target="_top">AWS API
+ *      Documentation</a>
  */
-public class StepDetail implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StepDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -39,25 +42,22 @@ public class StepDetail implements Serializable, Cloneable {
     private StepExecutionStatusDetail executionStatusDetail;
 
     /**
-     * Default constructor for StepDetail object. Callers should use the setter
-     * or fluent setter (with...) methods to initialize the object after
-     * creating it.
+     * Default constructor for StepDetail object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize the object after creating it.
      */
     public StepDetail() {
     }
 
     /**
-     * Constructs a new StepDetail object. Callers should use the setter or
-     * fluent setter (with...) methods to initialize any additional object
-     * members.
+     * Constructs a new StepDetail object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param stepConfig
      *        The step configuration.
      * @param executionStatusDetail
      *        The description of the step status.
      */
-    public StepDetail(StepConfig stepConfig,
-            StepExecutionStatusDetail executionStatusDetail) {
+    public StepDetail(StepConfig stepConfig, StepExecutionStatusDetail executionStatusDetail) {
         setStepConfig(stepConfig);
         setExecutionStatusDetail(executionStatusDetail);
     }
@@ -94,8 +94,7 @@ public class StepDetail implements Serializable, Cloneable {
      * 
      * @param stepConfig
      *        The step configuration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StepDetail withStepConfig(StepConfig stepConfig) {
@@ -112,8 +111,7 @@ public class StepDetail implements Serializable, Cloneable {
      *        The description of the step status.
      */
 
-    public void setExecutionStatusDetail(
-            StepExecutionStatusDetail executionStatusDetail) {
+    public void setExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
     }
 
@@ -136,19 +134,17 @@ public class StepDetail implements Serializable, Cloneable {
      * 
      * @param executionStatusDetail
      *        The description of the step status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StepDetail withExecutionStatusDetail(
-            StepExecutionStatusDetail executionStatusDetail) {
+    public StepDetail withExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {
         setExecutionStatusDetail(executionStatusDetail);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -159,9 +155,9 @@ public class StepDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStepConfig() != null)
-            sb.append("StepConfig: " + getStepConfig() + ",");
+            sb.append("StepConfig: ").append(getStepConfig()).append(",");
         if (getExecutionStatusDetail() != null)
-            sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail());
+            sb.append("ExecutionStatusDetail: ").append(getExecutionStatusDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -178,15 +174,11 @@ public class StepDetail implements Serializable, Cloneable {
         StepDetail other = (StepDetail) obj;
         if (other.getStepConfig() == null ^ this.getStepConfig() == null)
             return false;
-        if (other.getStepConfig() != null
-                && other.getStepConfig().equals(this.getStepConfig()) == false)
+        if (other.getStepConfig() != null && other.getStepConfig().equals(this.getStepConfig()) == false)
             return false;
-        if (other.getExecutionStatusDetail() == null
-                ^ this.getExecutionStatusDetail() == null)
+        if (other.getExecutionStatusDetail() == null ^ this.getExecutionStatusDetail() == null)
             return false;
-        if (other.getExecutionStatusDetail() != null
-                && other.getExecutionStatusDetail().equals(
-                        this.getExecutionStatusDetail()) == false)
+        if (other.getExecutionStatusDetail() != null && other.getExecutionStatusDetail().equals(this.getExecutionStatusDetail()) == false)
             return false;
         return true;
     }
@@ -196,12 +188,8 @@ public class StepDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStepConfig() == null) ? 0 : getStepConfig().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExecutionStatusDetail() == null) ? 0
-                        : getExecutionStatusDetail().hashCode());
+        hashCode = prime * hashCode + ((getStepConfig() == null) ? 0 : getStepConfig().hashCode());
+        hashCode = prime * hashCode + ((getExecutionStatusDetail() == null) ? 0 : getExecutionStatusDetail().hashCode());
         return hashCode;
     }
 
@@ -210,9 +198,13 @@ public class StepDetail implements Serializable, Cloneable {
         try {
             return (StepDetail) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.StepDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

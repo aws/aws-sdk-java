@@ -1,34 +1,43 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeExportTasksResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The export tasks.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<ExportTask> exportTasks;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
+     * @return The export tasks.
      */
 
     public java.util.List<ExportTask> getExportTasks() {
@@ -39,7 +48,12 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
      * @param exportTasks
+     *        The export tasks.
      */
 
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
@@ -48,27 +62,27 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
             return;
         }
 
-        this.exportTasks = new com.amazonaws.internal.SdkInternalList<ExportTask>(
-                exportTasks);
+        this.exportTasks = new com.amazonaws.internal.SdkInternalList<ExportTask>(exportTasks);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setExportTasks(java.util.Collection)} or
-     * {@link #withExportTasks(java.util.Collection)} if you want to override
-     * the existing values.
+     * The export tasks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExportTasks(java.util.Collection)} or {@link #withExportTasks(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param exportTasks
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The export tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksResult withExportTasks(ExportTask... exportTasks) {
         if (this.exportTasks == null) {
-            setExportTasks(new com.amazonaws.internal.SdkInternalList<ExportTask>(
-                    exportTasks.length));
+            setExportTasks(new com.amazonaws.internal.SdkInternalList<ExportTask>(exportTasks.length));
         }
         for (ExportTask ele : exportTasks) {
             this.exportTasks.add(ele);
@@ -77,13 +91,16 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
      * @param exportTasks
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The export tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeExportTasksResult withExportTasks(
-            java.util.Collection<ExportTask> exportTasks) {
+    public DescribeExportTasksResult withExportTasks(java.util.Collection<ExportTask> exportTasks) {
         setExportTasks(exportTasks);
         return this;
     }
@@ -106,8 +123,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
 
     /**
      * @param nextToken
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksResult withNextToken(String nextToken) {
@@ -116,8 +132,8 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -128,9 +144,9 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTasks() != null)
-            sb.append("ExportTasks: " + getExportTasks() + ",");
+            sb.append("ExportTasks: ").append(getExportTasks()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -147,13 +163,11 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
         DescribeExportTasksResult other = (DescribeExportTasksResult) obj;
         if (other.getExportTasks() == null ^ this.getExportTasks() == null)
             return false;
-        if (other.getExportTasks() != null
-                && other.getExportTasks().equals(this.getExportTasks()) == false)
+        if (other.getExportTasks() != null && other.getExportTasks().equals(this.getExportTasks()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -163,11 +177,8 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getExportTasks() == null) ? 0 : getExportTasks().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getExportTasks() == null) ? 0 : getExportTasks().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -176,9 +187,8 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
         try {
             return (DescribeExportTasksResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

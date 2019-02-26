@@ -1,30 +1,28 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>UpdateScalingParameters</code> request. Contains the
- * status of the newly-configured scaling parameters.
+ * The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling
+ * parameters.
  * </p>
  */
-public class UpdateScalingParametersResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateScalingParametersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private ScalingParametersStatus scalingParameters;
 
@@ -46,19 +44,17 @@ public class UpdateScalingParametersResult implements Serializable, Cloneable {
 
     /**
      * @param scalingParameters
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateScalingParametersResult withScalingParameters(
-            ScalingParametersStatus scalingParameters) {
+    public UpdateScalingParametersResult withScalingParameters(ScalingParametersStatus scalingParameters) {
         setScalingParameters(scalingParameters);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -69,7 +65,7 @@ public class UpdateScalingParametersResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScalingParameters() != null)
-            sb.append("ScalingParameters: " + getScalingParameters());
+            sb.append("ScalingParameters: ").append(getScalingParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -84,12 +80,9 @@ public class UpdateScalingParametersResult implements Serializable, Cloneable {
         if (obj instanceof UpdateScalingParametersResult == false)
             return false;
         UpdateScalingParametersResult other = (UpdateScalingParametersResult) obj;
-        if (other.getScalingParameters() == null
-                ^ this.getScalingParameters() == null)
+        if (other.getScalingParameters() == null ^ this.getScalingParameters() == null)
             return false;
-        if (other.getScalingParameters() != null
-                && other.getScalingParameters().equals(
-                        this.getScalingParameters()) == false)
+        if (other.getScalingParameters() != null && other.getScalingParameters().equals(this.getScalingParameters()) == false)
             return false;
         return true;
     }
@@ -99,10 +92,7 @@ public class UpdateScalingParametersResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getScalingParameters() == null) ? 0
-                        : getScalingParameters().hashCode());
+        hashCode = prime * hashCode + ((getScalingParameters() == null) ? 0 : getScalingParameters().hashCode());
         return hashCode;
     }
 
@@ -111,9 +101,8 @@ public class UpdateScalingParametersResult implements Serializable, Cloneable {
         try {
             return (UpdateScalingParametersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

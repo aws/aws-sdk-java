@@ -1,244 +1,105 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
 import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * QueryRequest Marshaller
+ * QueryRequestMarshaller
  */
-public class QueryRequestMarshaller implements
-        Marshaller<Request<QueryRequest>, QueryRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class QueryRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<String> INDEXNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IndexName").build();
+    private static final MarshallingInfo<String> SELECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Select").build();
+    private static final MarshallingInfo<List> ATTRIBUTESTOGET_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributesToGet").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<Boolean> CONSISTENTREAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsistentRead").build();
+    private static final MarshallingInfo<Map> KEYCONDITIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyConditions").build();
+    private static final MarshallingInfo<Map> QUERYFILTER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueryFilter").build();
+    private static final MarshallingInfo<String> CONDITIONALOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalOperator").build();
+    private static final MarshallingInfo<Boolean> SCANINDEXFORWARD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScanIndexForward").build();
+    private static final MarshallingInfo<Map> EXCLUSIVESTARTKEY_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartKey").build();
+    private static final MarshallingInfo<String> RETURNCONSUMEDCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnConsumedCapacity").build();
+    private static final MarshallingInfo<String> PROJECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectionExpression").build();
+    private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<String> KEYCONDITIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyConditionExpression").build();
+    private static final MarshallingInfo<Map> EXPRESSIONATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeNames").build();
+    private static final MarshallingInfo<Map> EXPRESSIONATTRIBUTEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeValues").build();
 
-    public QueryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final QueryRequestMarshaller instance = new QueryRequestMarshaller();
+
+    public static QueryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<QueryRequest> marshall(QueryRequest queryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(QueryRequest queryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (queryRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<QueryRequest> request = new DefaultRequest<QueryRequest>(
-                queryRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.Query");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (queryRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(
-                        queryRequest.getTableName());
-            }
-            if (queryRequest.getIndexName() != null) {
-                jsonGenerator.writeFieldName("IndexName").writeValue(
-                        queryRequest.getIndexName());
-            }
-            if (queryRequest.getSelect() != null) {
-                jsonGenerator.writeFieldName("Select").writeValue(
-                        queryRequest.getSelect());
-            }
-
-            java.util.List<String> attributesToGetList = queryRequest
-                    .getAttributesToGet();
-            if (attributesToGetList != null) {
-                jsonGenerator.writeFieldName("AttributesToGet");
-                jsonGenerator.writeStartArray();
-                for (String attributesToGetListValue : attributesToGetList) {
-                    if (attributesToGetListValue != null) {
-                        jsonGenerator.writeValue(attributesToGetListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (queryRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(
-                        queryRequest.getLimit());
-            }
-            if (queryRequest.getConsistentRead() != null) {
-                jsonGenerator.writeFieldName("ConsistentRead").writeValue(
-                        queryRequest.getConsistentRead());
-            }
-
-            java.util.Map<String, Condition> keyConditionsMap = queryRequest
-                    .getKeyConditions();
-            if (keyConditionsMap != null) {
-                jsonGenerator.writeFieldName("KeyConditions");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, Condition> keyConditionsMapValue : keyConditionsMap
-                        .entrySet()) {
-                    if (keyConditionsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(keyConditionsMapValue
-                                .getKey());
-
-                        ConditionJsonMarshaller.getInstance()
-                                .marshall(keyConditionsMapValue.getValue(),
-                                        jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, Condition> queryFilterMap = queryRequest
-                    .getQueryFilter();
-            if (queryFilterMap != null) {
-                jsonGenerator.writeFieldName("QueryFilter");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, Condition> queryFilterMapValue : queryFilterMap
-                        .entrySet()) {
-                    if (queryFilterMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(queryFilterMapValue
-                                .getKey());
-
-                        ConditionJsonMarshaller.getInstance().marshall(
-                                queryFilterMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (queryRequest.getConditionalOperator() != null) {
-                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(
-                        queryRequest.getConditionalOperator());
-            }
-            if (queryRequest.getScanIndexForward() != null) {
-                jsonGenerator.writeFieldName("ScanIndexForward").writeValue(
-                        queryRequest.getScanIndexForward());
-            }
-
-            java.util.Map<String, AttributeValue> exclusiveStartKeyMap = queryRequest
-                    .getExclusiveStartKey();
-            if (exclusiveStartKeyMap != null) {
-                jsonGenerator.writeFieldName("ExclusiveStartKey");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, AttributeValue> exclusiveStartKeyMapValue : exclusiveStartKeyMap
-                        .entrySet()) {
-                    if (exclusiveStartKeyMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(exclusiveStartKeyMapValue
-                                .getKey());
-
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                exclusiveStartKeyMapValue.getValue(),
-                                jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (queryRequest.getReturnConsumedCapacity() != null) {
-                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
-                        .writeValue(queryRequest.getReturnConsumedCapacity());
-            }
-            if (queryRequest.getProjectionExpression() != null) {
-                jsonGenerator.writeFieldName("ProjectionExpression")
-                        .writeValue(queryRequest.getProjectionExpression());
-            }
-            if (queryRequest.getFilterExpression() != null) {
-                jsonGenerator.writeFieldName("FilterExpression").writeValue(
-                        queryRequest.getFilterExpression());
-            }
-            if (queryRequest.getKeyConditionExpression() != null) {
-                jsonGenerator.writeFieldName("KeyConditionExpression")
-                        .writeValue(queryRequest.getKeyConditionExpression());
-            }
-
-            java.util.Map<String, String> expressionAttributeNamesMap = queryRequest
-                    .getExpressionAttributeNames();
-            if (expressionAttributeNamesMap != null) {
-                jsonGenerator.writeFieldName("ExpressionAttributeNames");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
-                        .entrySet()) {
-                    if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(expressionAttributeNamesMapValue
-                                        .getKey());
-
-                        jsonGenerator
-                                .writeValue(expressionAttributeNamesMapValue
-                                        .getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, AttributeValue> expressionAttributeValuesMap = queryRequest
-                    .getExpressionAttributeValues();
-            if (expressionAttributeValuesMap != null) {
-                jsonGenerator.writeFieldName("ExpressionAttributeValues");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap
-                        .entrySet()) {
-                    if (expressionAttributeValuesMapValue.getValue() != null) {
-                        jsonGenerator
-                                .writeFieldName(expressionAttributeValuesMapValue
-                                        .getKey());
-
-                        AttributeValueJsonMarshaller.getInstance().marshall(
-                                expressionAttributeValuesMapValue.getValue(),
-                                jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(queryRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(queryRequest.getIndexName(), INDEXNAME_BINDING);
+            protocolMarshaller.marshall(queryRequest.getSelect(), SELECT_BINDING);
+            protocolMarshaller.marshall(queryRequest.getAttributesToGet(), ATTRIBUTESTOGET_BINDING);
+            protocolMarshaller.marshall(queryRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(queryRequest.getConsistentRead(), CONSISTENTREAD_BINDING);
+            protocolMarshaller.marshall(queryRequest.getKeyConditions(), KEYCONDITIONS_BINDING);
+            protocolMarshaller.marshall(queryRequest.getQueryFilter(), QUERYFILTER_BINDING);
+            protocolMarshaller.marshall(queryRequest.getConditionalOperator(), CONDITIONALOPERATOR_BINDING);
+            protocolMarshaller.marshall(queryRequest.getScanIndexForward(), SCANINDEXFORWARD_BINDING);
+            protocolMarshaller.marshall(queryRequest.getExclusiveStartKey(), EXCLUSIVESTARTKEY_BINDING);
+            protocolMarshaller.marshall(queryRequest.getReturnConsumedCapacity(), RETURNCONSUMEDCAPACITY_BINDING);
+            protocolMarshaller.marshall(queryRequest.getProjectionExpression(), PROJECTIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(queryRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(queryRequest.getKeyConditionExpression(), KEYCONDITIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(queryRequest.getExpressionAttributeNames(), EXPRESSIONATTRIBUTENAMES_BINDING);
+            protocolMarshaller.marshall(queryRequest.getExpressionAttributeValues(), EXPRESSIONATTRIBUTEVALUES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

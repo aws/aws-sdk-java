@@ -1,101 +1,96 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DescribeSpotInstanceRequestsRequest Marshaller
  */
 
-public class DescribeSpotInstanceRequestsRequestMarshaller
-        implements
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSpotInstanceRequestsRequestMarshaller implements
         Marshaller<Request<DescribeSpotInstanceRequestsRequest>, DescribeSpotInstanceRequestsRequest> {
 
-    public Request<DescribeSpotInstanceRequestsRequest> marshall(
-            DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) {
+    public Request<DescribeSpotInstanceRequestsRequest> marshall(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) {
 
         if (describeSpotInstanceRequestsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(
-                describeSpotInstanceRequestsRequest, "AmazonEC2");
+        Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(describeSpotInstanceRequestsRequest,
+                "AmazonEC2");
         request.addParameter("Action", "DescribeSpotInstanceRequests");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
-                .getSpotInstanceRequestIds();
-        if (!spotInstanceRequestIdsList.isEmpty()
-                || !spotInstanceRequestIdsList.isAutoConstruct()) {
-            int spotInstanceRequestIdsListIndex = 1;
-
-            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
-                if (spotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId."
-                            + spotInstanceRequestIdsListIndex, StringUtils
-                            .fromString(spotInstanceRequestIdsListValue));
-                }
-                spotInstanceRequestIdsListIndex++;
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeSpotInstanceRequestsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeSpotInstanceRequestsRequestFiltersList.isEmpty() || !describeSpotInstanceRequestsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeSpotInstanceRequestsRequestFiltersListValue : describeSpotInstanceRequestsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter(
-                            "Filter." + filtersListIndex + ".Name",
-                            StringUtils.fromString(filtersListValue.getName()));
+                if (describeSpotInstanceRequestsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequestFiltersListValue
                         .getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex
-                                    + ".Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
+                .getSpotInstanceRequestIds();
+        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
+                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
+            int spotInstanceRequestIdsListIndex = 1;
+
+            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
+                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
+                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
+                }
+                spotInstanceRequestIdsListIndex++;
+            }
+        }
+
+        if (describeSpotInstanceRequestsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotInstanceRequestsRequest.getNextToken()));
+        }
+
+        if (describeSpotInstanceRequestsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotInstanceRequestsRequest.getMaxResults()));
         }
 
         return request;

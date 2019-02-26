@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -141,7 +141,7 @@ public class ProfilesConfigFileWriterTest {
      */
     @Test
     public void testModifyAndInsertProfile_WithComments() throws IOException, URISyntaxException {
-        File credWithComments = CredentialProfilesTest.loadFile("ProfilesWithComments.tst");
+        File credWithComments = ProfileResourceLoader.profilesWithComments().asFile();
         File tmpFile = copyToTempFile(credWithComments);
 
         String originalContent = FileUtils.readFileToString(tmpFile);

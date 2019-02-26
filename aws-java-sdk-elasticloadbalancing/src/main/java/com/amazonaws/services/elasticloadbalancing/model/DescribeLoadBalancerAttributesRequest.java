@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for DescribeLoadBalancerAttributes.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeLoadBalancerAttributesRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeLoadBalancerAttributesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,19 +67,17 @@ public class DescribeLoadBalancerAttributesRequest extends
      * 
      * @param loadBalancerName
      *        The name of the load balancer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoadBalancerAttributesRequest withLoadBalancerName(
-            String loadBalancerName) {
+    public DescribeLoadBalancerAttributesRequest withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +88,7 @@ public class DescribeLoadBalancerAttributesRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName());
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName());
         sb.append("}");
         return sb.toString();
     }
@@ -102,12 +103,9 @@ public class DescribeLoadBalancerAttributesRequest extends
         if (obj instanceof DescribeLoadBalancerAttributesRequest == false)
             return false;
         DescribeLoadBalancerAttributesRequest other = (DescribeLoadBalancerAttributesRequest) obj;
-        if (other.getLoadBalancerName() == null
-                ^ this.getLoadBalancerName() == null)
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
-        if (other.getLoadBalancerName() != null
-                && other.getLoadBalancerName().equals(
-                        this.getLoadBalancerName()) == false)
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false)
             return false;
         return true;
     }
@@ -117,10 +115,7 @@ public class DescribeLoadBalancerAttributesRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
         return hashCode;
     }
 
@@ -128,4 +123,5 @@ public class DescribeLoadBalancerAttributesRequest extends
     public DescribeLoadBalancerAttributesRequest clone() {
         return (DescribeLoadBalancerAttributesRequest) super.clone();
     }
+
 }

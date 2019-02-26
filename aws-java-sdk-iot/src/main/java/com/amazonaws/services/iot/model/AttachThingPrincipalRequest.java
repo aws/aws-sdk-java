@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the AttachThingPrincipal operation.
  * </p>
  */
-public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AttachThingPrincipalRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,7 +33,7 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
     private String thingName;
     /**
      * <p>
-     * The principal (certificate or other credential).
+     * The principal, such as a certificate or other credential.
      * </p>
      */
     private String principal;
@@ -72,8 +70,7 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
      * 
      * @param thingName
      *        The name of the thing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachThingPrincipalRequest withThingName(String thingName) {
@@ -83,11 +80,11 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal (certificate or other credential).
+     * The principal, such as a certificate or other credential.
      * </p>
      * 
      * @param principal
-     *        The principal (certificate or other credential).
+     *        The principal, such as a certificate or other credential.
      */
 
     public void setPrincipal(String principal) {
@@ -96,10 +93,10 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal (certificate or other credential).
+     * The principal, such as a certificate or other credential.
      * </p>
      * 
-     * @return The principal (certificate or other credential).
+     * @return The principal, such as a certificate or other credential.
      */
 
     public String getPrincipal() {
@@ -108,13 +105,12 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal (certificate or other credential).
+     * The principal, such as a certificate or other credential.
      * </p>
      * 
      * @param principal
-     *        The principal (certificate or other credential).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The principal, such as a certificate or other credential.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachThingPrincipalRequest withPrincipal(String principal) {
@@ -123,8 +119,8 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,9 +131,9 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: " + getPrincipal());
+            sb.append("Principal: ").append(getPrincipal());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +150,11 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
         AttachThingPrincipalRequest other = (AttachThingPrincipalRequest) obj;
         if (other.getThingName() == null ^ this.getThingName() == null)
             return false;
-        if (other.getThingName() != null
-                && other.getThingName().equals(this.getThingName()) == false)
+        if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
         if (other.getPrincipal() == null ^ this.getPrincipal() == null)
             return false;
-        if (other.getPrincipal() != null
-                && other.getPrincipal().equals(this.getPrincipal()) == false)
+        if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
             return false;
         return true;
     }
@@ -170,10 +164,8 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getThingName() == null) ? 0 : getThingName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
+        hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
         return hashCode;
     }
 
@@ -181,4 +173,5 @@ public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
     public AttachThingPrincipalRequest clone() {
         return (AttachThingPrincipalRequest) super.clone();
     }
+
 }

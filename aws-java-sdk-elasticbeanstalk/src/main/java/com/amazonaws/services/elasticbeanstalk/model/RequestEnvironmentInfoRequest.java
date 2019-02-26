@@ -1,45 +1,44 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to retrieve logs from an environment and store them in your Elastic
- * Beanstalk storage bucket.
+ * Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo"
+ *      target="_top">AWS API Documentation</a>
  */
-public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
      * The ID of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      */
     private String environmentId;
@@ -48,13 +47,12 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The name of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      */
     private String environmentName;
@@ -66,17 +64,15 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
     private String infoType;
 
     /**
-     * Default constructor for RequestEnvironmentInfoRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * the object after creating it.
+     * Default constructor for RequestEnvironmentInfoRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize the object after creating it.
      */
     public RequestEnvironmentInfoRequest() {
     }
 
     /**
-     * Constructs a new RequestEnvironmentInfoRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new RequestEnvironmentInfoRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param infoType
      *        The type of information to request.
@@ -86,9 +82,8 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Constructs a new RequestEnvironmentInfoRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize any
-     * additional object members.
+     * Constructs a new RequestEnvironmentInfoRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize any additional object members.
      * 
      * @param infoType
      *        The type of information to request.
@@ -102,26 +97,23 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The ID of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentId
      *        The ID of the environment of the requested data.</p>
      *        <p>
-     *        If no such environment is found,
-     *        <code>RequestEnvironmentInfo</code> returns an
+     *        If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentName, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
+     *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -133,25 +125,22 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The ID of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @return The ID of the environment of the requested data.</p>
      *         <p>
-     *         If no such environment is found,
-     *         <code>RequestEnvironmentInfo</code> returns an
+     *         If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *         <code>InvalidParameterValue</code> error.
      *         </p>
      *         <p>
-     *         Condition: You must specify either this or an EnvironmentName, or
-     *         both. If you do not specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     *         Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public String getEnvironmentId() {
@@ -163,28 +152,24 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The ID of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentName, or both.
-     * If you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentId
      *        The ID of the environment of the requested data.</p>
      *        <p>
-     *        If no such environment is found,
-     *        <code>RequestEnvironmentInfo</code> returns an
+     *        If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentName, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RequestEnvironmentInfoRequest withEnvironmentId(String environmentId) {
@@ -197,26 +182,23 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The name of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentName
      *        The name of the environment of the requested data.</p>
      *        <p>
-     *        If no such environment is found,
-     *        <code>RequestEnvironmentInfo</code> returns an
+     *        If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentId, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
+     *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -228,25 +210,22 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The name of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @return The name of the environment of the requested data.</p>
      *         <p>
-     *         If no such environment is found,
-     *         <code>RequestEnvironmentInfo</code> returns an
+     *         If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *         <code>InvalidParameterValue</code> error.
      *         </p>
      *         <p>
-     *         Condition: You must specify either this or an EnvironmentId, or
-     *         both. If you do not specify either, AWS Elastic Beanstalk returns
-     *         <code>MissingRequiredParameter</code> error.
+     *         Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
      */
 
     public String getEnvironmentName() {
@@ -258,32 +237,27 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * The name of the environment of the requested data.
      * </p>
      * <p>
-     * If no such environment is found, <code>RequestEnvironmentInfo</code>
-     * returns an <code>InvalidParameterValue</code> error.
+     * If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
+     * <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Condition: You must specify either this or an EnvironmentId, or both. If
-     * you do not specify either, AWS Elastic Beanstalk returns
-     * <code>MissingRequiredParameter</code> error.
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic
+     * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
      * @param environmentName
      *        The name of the environment of the requested data.</p>
      *        <p>
-     *        If no such environment is found,
-     *        <code>RequestEnvironmentInfo</code> returns an
+     *        If no such environment is found, <code>RequestEnvironmentInfo</code> returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Condition: You must specify either this or an EnvironmentId, or
-     *        both. If you do not specify either, AWS Elastic Beanstalk returns
-     *        <code>MissingRequiredParameter</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+     *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RequestEnvironmentInfoRequest withEnvironmentName(
-            String environmentName) {
+    public RequestEnvironmentInfoRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
@@ -322,8 +296,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * 
      * @param infoType
      *        The type of information to request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentInfoType
      */
 
@@ -343,7 +316,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      */
 
     public void setInfoType(EnvironmentInfoType infoType) {
-        this.infoType = infoType.toString();
+        withInfoType(infoType);
     }
 
     /**
@@ -353,20 +326,18 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * 
      * @param infoType
      *        The type of information to request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentInfoType
      */
 
-    public RequestEnvironmentInfoRequest withInfoType(
-            EnvironmentInfoType infoType) {
-        setInfoType(infoType);
+    public RequestEnvironmentInfoRequest withInfoType(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -377,11 +348,11 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getInfoType() != null)
-            sb.append("InfoType: " + getInfoType());
+            sb.append("InfoType: ").append(getInfoType());
         sb.append("}");
         return sb.toString();
     }
@@ -398,19 +369,15 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
         RequestEnvironmentInfoRequest other = (RequestEnvironmentInfoRequest) obj;
         if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null)
             return false;
-        if (other.getEnvironmentId() != null
-                && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         if (other.getInfoType() == null ^ this.getInfoType() == null)
             return false;
-        if (other.getInfoType() != null
-                && other.getInfoType().equals(this.getInfoType()) == false)
+        if (other.getInfoType() != null && other.getInfoType().equals(this.getInfoType()) == false)
             return false;
         return true;
     }
@@ -420,16 +387,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentId() == null) ? 0 : getEnvironmentId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getInfoType() == null) ? 0 : getInfoType().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getInfoType() == null) ? 0 : getInfoType().hashCode());
         return hashCode;
     }
 
@@ -437,4 +397,5 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
     public RequestEnvironmentInfoRequest clone() {
         return (RequestEnvironmentInfoRequest) super.clone();
     }
+
 }

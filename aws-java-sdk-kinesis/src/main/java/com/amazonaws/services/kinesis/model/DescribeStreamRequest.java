@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for <code>DescribeStream</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,7 +36,8 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
     private String streamName;
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      */
     private Integer limit;
@@ -78,8 +80,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @param streamName
      *        The name of the stream to describe.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStreamRequest withStreamName(String streamName) {
@@ -89,11 +90,13 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
      * @param limit
-     *        The maximum number of shards to return.
+     *        The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *        greater than 100, at most 100 shards are returned.
      */
 
     public void setLimit(Integer limit) {
@@ -102,10 +105,12 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
-     * @return The maximum number of shards to return.
+     * @return The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *         greater than 100, at most 100 shards are returned.
      */
 
     public Integer getLimit() {
@@ -114,13 +119,14 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
      * @param limit
-     *        The maximum number of shards to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *        greater than 100, at most 100 shards are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStreamRequest withLimit(Integer limit) {
@@ -160,19 +166,17 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @param exclusiveStartShardId
      *        The shard ID of the shard to start with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeStreamRequest withExclusiveStartShardId(
-            String exclusiveStartShardId) {
+    public DescribeStreamRequest withExclusiveStartShardId(String exclusiveStartShardId) {
         setExclusiveStartShardId(exclusiveStartShardId);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -183,11 +187,11 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartShardId() != null)
-            sb.append("ExclusiveStartShardId: " + getExclusiveStartShardId());
+            sb.append("ExclusiveStartShardId: ").append(getExclusiveStartShardId());
         sb.append("}");
         return sb.toString();
     }
@@ -204,20 +208,15 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
         DescribeStreamRequest other = (DescribeStreamRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
-        if (other.getExclusiveStartShardId() == null
-                ^ this.getExclusiveStartShardId() == null)
+        if (other.getExclusiveStartShardId() == null ^ this.getExclusiveStartShardId() == null)
             return false;
-        if (other.getExclusiveStartShardId() != null
-                && other.getExclusiveStartShardId().equals(
-                        this.getExclusiveStartShardId()) == false)
+        if (other.getExclusiveStartShardId() != null && other.getExclusiveStartShardId().equals(this.getExclusiveStartShardId()) == false)
             return false;
         return true;
     }
@@ -227,14 +226,9 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExclusiveStartShardId() == null) ? 0
-                        : getExclusiveStartShardId().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getExclusiveStartShardId() == null) ? 0 : getExclusiveStartShardId().hashCode());
         return hashCode;
     }
 
@@ -242,4 +236,5 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
     public DescribeStreamRequest clone() {
         return (DescribeStreamRequest) super.clone();
     }
+
 }

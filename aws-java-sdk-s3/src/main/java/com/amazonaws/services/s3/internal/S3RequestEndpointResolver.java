@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,11 +14,12 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -102,7 +103,7 @@ public class S3RequestEndpointResolver {
             final Region r = RegionUtils.getRegion(regionString);
 
             if (r == null) {
-                throw new AmazonClientException("Not able to determine region" +
+                throw new SdkClientException("Not able to determine region" +
                         " for " + regionString + ".Please upgrade to a newer " +
                         "version of the SDK");
             }
@@ -112,11 +113,11 @@ public class S3RequestEndpointResolver {
         final URI endpoint = endpointBuilder.getServiceEndpoint();
         if (shouldUseVirtualAddressing(endpoint)) {
             request.setEndpoint(convertToVirtualHostEndpoint(endpoint, bucketName));
-            request.setResourcePath(getHostStyleResourcePath());
+            request.setResourcePath(SdkHttpUtils.urlEncode(getHostStyleResourcePath(), true));
         } else {
             request.setEndpoint(endpoint);
             if (bucketName != null) {
-                request.setResourcePath(getPathStyleResourcePath());
+                request.setResourcePath(SdkHttpUtils.urlEncode(getPathStyleResourcePath(), true));
             }
         }
     }

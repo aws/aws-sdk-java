@@ -1,54 +1,89 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information to uniquely identify the CloudWatch
- * alarm that you're associating with a Route 53 health check.
+ * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine
+ * whether the specified health check is healthy.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AlarmIdentifier" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 supports CloudWatch alarms with the following features:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private String name;
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health
+     *        check is healthy, the region that the alarm was created in.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the
+     *        <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -58,12 +93,21 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *         created in.
+     * @return For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health
+     *         check is healthy, the region that the alarm was created in.</p>
+     *         <p>
+     *         For the current list of CloudWatch regions, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the
+     *         <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -73,15 +117,23 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health
+     *        check is healthy, the region that the alarm was created in.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the
+     *        <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchRegion
      */
 
@@ -92,46 +144,101 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health
+     *        check is healthy, the region that the alarm was created in.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the
+     *        <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
     public void setRegion(CloudWatchRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is
+     * healthy, the region that the alarm was created in.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <i>AWS
+     * Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health
+     *        check is healthy, the region that the alarm was created in.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the
+     *        <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloudWatchRegion
      */
 
     public AlarmIdentifier withRegion(CloudWatchRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 supports CloudWatch alarms with the following features:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param name
-     *        The name of the CloudWatch alarm.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
+     *        this health check is healthy.</p> <note>
+     *        <p>
+     *        Route 53 supports CloudWatch alarms with the following features:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     *        >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setName(String name) {
@@ -140,10 +247,48 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 supports CloudWatch alarms with the following features:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return The name of the CloudWatch alarm.
+     * @return The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine
+     *         whether this health check is healthy.</p> <note>
+     *         <p>
+     *         Route 53 supports CloudWatch alarms with the following features:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     *         >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getName() {
@@ -152,13 +297,50 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this
+     * health check is healthy.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 supports CloudWatch alarms with the following features:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param name
-     *        The name of the CloudWatch alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
+     *        this health check is healthy.</p> <note>
+     *        <p>
+     *        Route 53 supports CloudWatch alarms with the following features:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics"
+     *        >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AlarmIdentifier withName(String name) {
@@ -167,8 +349,8 @@ public class AlarmIdentifier implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,9 +361,9 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -198,13 +380,11 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         AlarmIdentifier other = (AlarmIdentifier) obj;
         if (other.getRegion() == null ^ this.getRegion() == null)
             return false;
-        if (other.getRegion() != null
-                && other.getRegion().equals(this.getRegion()) == false)
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -214,10 +394,8 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRegion() == null) ? 0 : getRegion().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 
@@ -226,9 +404,8 @@ public class AlarmIdentifier implements Serializable, Cloneable {
         try {
             return (AlarmIdentifier) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

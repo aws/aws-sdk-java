@@ -1,25 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.applicationautoscaling.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.applicationautoscaling.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +26,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * StepScalingPolicyConfiguration JSON Unmarshaller
  */
-public class StepScalingPolicyConfigurationJsonUnmarshaller implements
-        Unmarshaller<StepScalingPolicyConfiguration, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class StepScalingPolicyConfigurationJsonUnmarshaller implements Unmarshaller<StepScalingPolicyConfiguration, JsonUnmarshallerContext> {
 
-    public StepScalingPolicyConfiguration unmarshall(
-            JsonUnmarshallerContext context) throws Exception {
+    public StepScalingPolicyConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         StepScalingPolicyConfiguration stepScalingPolicyConfiguration = new StepScalingPolicyConfiguration();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +39,9 @@ public class StepScalingPolicyConfigurationJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
+        if (token == VALUE_NULL) {
             return null;
+        }
 
         while (true) {
             if (token == null)
@@ -55,40 +50,27 @@ public class StepScalingPolicyConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AdjustmentType", targetDepth)) {
                     context.nextToken();
-                    stepScalingPolicyConfiguration.setAdjustmentType(context
-                            .getUnmarshaller(String.class).unmarshall(context));
+                    stepScalingPolicyConfiguration.setAdjustmentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StepAdjustments", targetDepth)) {
                     context.nextToken();
-                    stepScalingPolicyConfiguration
-                            .setStepAdjustments(new ListUnmarshaller<StepAdjustment>(
-                                    StepAdjustmentJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    stepScalingPolicyConfiguration.setStepAdjustments(new ListUnmarshaller<StepAdjustment>(StepAdjustmentJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
-                if (context.testExpression("MinAdjustmentMagnitude",
-                        targetDepth)) {
+                if (context.testExpression("MinAdjustmentMagnitude", targetDepth)) {
                     context.nextToken();
-                    stepScalingPolicyConfiguration
-                            .setMinAdjustmentMagnitude(context.getUnmarshaller(
-                                    Integer.class).unmarshall(context));
+                    stepScalingPolicyConfiguration.setMinAdjustmentMagnitude(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Cooldown", targetDepth)) {
                     context.nextToken();
-                    stepScalingPolicyConfiguration
-                            .setCooldown(context.getUnmarshaller(Integer.class)
-                                    .unmarshall(context));
+                    stepScalingPolicyConfiguration.setCooldown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context
-                        .testExpression("MetricAggregationType", targetDepth)) {
+                if (context.testExpression("MetricAggregationType", targetDepth)) {
                     context.nextToken();
-                    stepScalingPolicyConfiguration
-                            .setMetricAggregationType(context.getUnmarshaller(
-                                    String.class).unmarshall(context));
+                    stepScalingPolicyConfiguration.setMetricAggregationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

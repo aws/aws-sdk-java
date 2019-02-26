@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for <code>AddTagsToStream</code>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,7 +36,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
     private String streamName;
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
@@ -72,8 +73,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @param streamName
      *        The name of the stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToStreamRequest withStreamName(String streamName) {
@@ -83,10 +83,10 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
-     * @return The set of key-value pairs to use to create the tags.
+     * @return A set of up to 10 key-value pairs to use to create the tags.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -98,28 +98,25 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
      * @param tags
-     *        The set of key-value pairs to use to create the tags.
+     *        A set of up to 10 key-value pairs to use to create the tags.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        tags);
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
     }
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
      * @param tags
-     *        The set of key-value pairs to use to create the tags.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A set of up to 10 key-value pairs to use to create the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToStreamRequest withTags(java.util.Map<String, String> tags) {
@@ -132,15 +129,15 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
             this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.tags.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Tags. &lt;p> Returns a reference to
-     * this object so that method calls can be chained together.
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToStreamRequest clearTagsEntries() {
@@ -149,8 +146,8 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -161,9 +158,9 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -180,13 +177,11 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
         AddTagsToStreamRequest other = (AddTagsToStreamRequest) obj;
         if (other.getStreamName() == null ^ this.getStreamName() == null)
             return false;
-        if (other.getStreamName() != null
-                && other.getStreamName().equals(this.getStreamName()) == false)
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -196,10 +191,8 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -207,4 +200,5 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
     public AddTagsToStreamRequest clone() {
         return (AddTagsToStreamRequest) super.clone();
     }
+
 }

@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Represents the response from the server to create a user pool client.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient" target="_top">AWS
+ *      API Documentation</a>
  */
-public class CreateUserPoolClientResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateUserPoolClientResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,19 +65,17 @@ public class CreateUserPoolClientResult implements Serializable, Cloneable {
      * 
      * @param userPoolClient
      *        The user pool client that was just created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateUserPoolClientResult withUserPoolClient(
-            UserPoolClientType userPoolClient) {
+    public CreateUserPoolClientResult withUserPoolClient(UserPoolClientType userPoolClient) {
         setUserPoolClient(userPoolClient);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +86,7 @@ public class CreateUserPoolClientResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolClient() != null)
-            sb.append("UserPoolClient: " + getUserPoolClient());
+            sb.append("UserPoolClient: ").append(getUserPoolClient());
         sb.append("}");
         return sb.toString();
     }
@@ -102,11 +101,9 @@ public class CreateUserPoolClientResult implements Serializable, Cloneable {
         if (obj instanceof CreateUserPoolClientResult == false)
             return false;
         CreateUserPoolClientResult other = (CreateUserPoolClientResult) obj;
-        if (other.getUserPoolClient() == null
-                ^ this.getUserPoolClient() == null)
+        if (other.getUserPoolClient() == null ^ this.getUserPoolClient() == null)
             return false;
-        if (other.getUserPoolClient() != null
-                && other.getUserPoolClient().equals(this.getUserPoolClient()) == false)
+        if (other.getUserPoolClient() != null && other.getUserPoolClient().equals(this.getUserPoolClient()) == false)
             return false;
         return true;
     }
@@ -116,10 +113,7 @@ public class CreateUserPoolClientResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getUserPoolClient() == null) ? 0 : getUserPoolClient()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getUserPoolClient() == null) ? 0 : getUserPoolClient().hashCode());
         return hashCode;
     }
 
@@ -128,9 +122,8 @@ public class CreateUserPoolClientResult implements Serializable, Cloneable {
         try {
             return (CreateUserPoolClientResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

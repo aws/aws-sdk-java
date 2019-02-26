@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * A resource tag.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ResourceTag" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ResourceTag implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -31,7 +34,11 @@ public class ResourceTag implements Serializable, Cloneable {
      * </p>
      */
     private String resourceId;
-
+    /**
+     * <p>
+     * A list of tags.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tagsList;
 
     /**
@@ -66,8 +73,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * 
      * @param resourceId
      *        Specifies the ARN of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withResourceId(String resourceId) {
@@ -76,7 +82,11 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
+     * @return A list of tags.
      */
 
     public java.util.List<Tag> getTagsList() {
@@ -87,7 +97,12 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
      * @param tagsList
+     *        A list of tags.
      */
 
     public void setTagsList(java.util.Collection<Tag> tagsList) {
@@ -96,27 +111,27 @@ public class ResourceTag implements Serializable, Cloneable {
             return;
         }
 
-        this.tagsList = new com.amazonaws.internal.SdkInternalList<Tag>(
-                tagsList);
+        this.tagsList = new com.amazonaws.internal.SdkInternalList<Tag>(tagsList);
     }
 
     /**
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagsList(java.util.Collection)} or
-     * {@link #withTagsList(java.util.Collection)} if you want to override the
-     * existing values.
+     * A list of tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagsList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withTagsList(Tag... tagsList) {
         if (this.tagsList == null) {
-            setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(
-                    tagsList.length));
+            setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(tagsList.length));
         }
         for (Tag ele : tagsList) {
             this.tagsList.add(ele);
@@ -125,9 +140,13 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
      * @param tagsList
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A list of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceTag withTagsList(java.util.Collection<Tag> tagsList) {
@@ -136,8 +155,8 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -148,9 +167,9 @@ public class ResourceTag implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTagsList() != null)
-            sb.append("TagsList: " + getTagsList());
+            sb.append("TagsList: ").append(getTagsList());
         sb.append("}");
         return sb.toString();
     }
@@ -167,13 +186,11 @@ public class ResourceTag implements Serializable, Cloneable {
         ResourceTag other = (ResourceTag) obj;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getTagsList() == null ^ this.getTagsList() == null)
             return false;
-        if (other.getTagsList() != null
-                && other.getTagsList().equals(this.getTagsList()) == false)
+        if (other.getTagsList() != null && other.getTagsList().equals(this.getTagsList()) == false)
             return false;
         return true;
     }
@@ -183,10 +200,8 @@ public class ResourceTag implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
         return hashCode;
     }
 
@@ -195,9 +210,13 @@ public class ResourceTag implements Serializable, Cloneable {
         try {
             return (ResourceTag) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudtrail.model.transform.ResourceTagMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

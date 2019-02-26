@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * This data type is used in the <a>AssessmentRunFilter</a> data type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/TimestampRange" target="_top">AWS API
+ *      Documentation</a>
  */
-public class TimestampRange implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TimestampRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -70,8 +73,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @param beginDate
      *        The minimum value of the timestamp range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimestampRange withBeginDate(java.util.Date beginDate) {
@@ -111,8 +113,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @param endDate
      *        The maximum value of the timestamp range.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TimestampRange withEndDate(java.util.Date endDate) {
@@ -121,8 +122,8 @@ public class TimestampRange implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,9 +134,9 @@ public class TimestampRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBeginDate() != null)
-            sb.append("BeginDate: " + getBeginDate() + ",");
+            sb.append("BeginDate: ").append(getBeginDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate());
+            sb.append("EndDate: ").append(getEndDate());
         sb.append("}");
         return sb.toString();
     }
@@ -152,13 +153,11 @@ public class TimestampRange implements Serializable, Cloneable {
         TimestampRange other = (TimestampRange) obj;
         if (other.getBeginDate() == null ^ this.getBeginDate() == null)
             return false;
-        if (other.getBeginDate() != null
-                && other.getBeginDate().equals(this.getBeginDate()) == false)
+        if (other.getBeginDate() != null && other.getBeginDate().equals(this.getBeginDate()) == false)
             return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getEndDate() != null
-                && other.getEndDate().equals(this.getEndDate()) == false)
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         return true;
     }
@@ -168,10 +167,8 @@ public class TimestampRange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getBeginDate() == null) ? 0 : getBeginDate().hashCode());
-        hashCode = prime * hashCode
-                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
+        hashCode = prime * hashCode + ((getBeginDate() == null) ? 0 : getBeginDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         return hashCode;
     }
 
@@ -180,9 +177,13 @@ public class TimestampRange implements Serializable, Cloneable {
         try {
             return (TimestampRange) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.TimestampRangeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

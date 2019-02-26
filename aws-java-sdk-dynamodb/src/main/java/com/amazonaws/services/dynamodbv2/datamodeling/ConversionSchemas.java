@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinaryAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinarySetAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BooleanAttributeMarshaller;
@@ -43,6 +24,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.NumberS
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.StringSetAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardModelFactories.Rule;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardModelFactories.RuleFactory;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanSetToNumberSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToNumberMarshaller;
@@ -105,6 +89,25 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDSetUnmar
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDUnmarshaller;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+
 /**
  * Pre-defined strategies for mapping between Java types and DynamoDB types.
  */
@@ -124,11 +127,7 @@ public final class ConversionSchemas {
      * does not understand the new List and Map types and want to ensure that
      * you don't accidentally start writing values using these types.
      */
-    public static final ConversionSchema V1 =
-            new StandardConversionSchema(
-                    "V1ConversionSchema",
-                    new V1MarshallerSet(),
-                    new StandardUnmarshallerSet());
+    public static final ConversionSchema V1 = v1Builder("V1ConversionSchema").build();
 
     /**
      * A V2 conversion schema which retains backwards compatibility with the
@@ -136,11 +135,8 @@ public final class ConversionSchemas {
      * to marshall recursive structures using the new List and Map types. This
      * is currently the default conversion schema.
      */
-    public static final ConversionSchema V2_COMPATIBLE =
-            new StandardConversionSchema(
-                    "V2CompatibleConversionSchema",
-                    new V2CompatibleMarshallerSet(),
-                    new StandardUnmarshallerSet());
+    public static final ConversionSchema V2_COMPATIBLE = v2CompatibleBuilder(
+            "V2CompatibleConversionSchema").build();
 
     /**
      * The native V2 conversion schema. This schema breaks compatibility with
@@ -150,14 +146,86 @@ public final class ConversionSchemas {
      * versions of the mapper from reading items you write that contain
      * booleans.
      */
-    public static final ConversionSchema V2 =
-            new StandardConversionSchema(
-                    "V2ConversionSchema",
-                    new V2MarshallerSet(),
-                    new StandardUnmarshallerSet());
+    public static final ConversionSchema V2 = v2Builder("V2ConversionSchema").build();
 
     static final ConversionSchema DEFAULT = V2_COMPATIBLE;
 
+    /**
+     * A ConversionSchema builder that defaults to building {@link #V1}.
+     */
+    public static Builder v1Builder(String name) {
+        return new Builder(name, V1MarshallerSet.marshallers(), V1MarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
+    }
+
+    /**
+     * A ConversionSchema builder that defaults to building {@link #V2_COMPATIBLE}.
+     */
+    public static Builder v2CompatibleBuilder(String name) {
+        return new Builder(name, V2CompatibleMarshallerSet.marshallers(),
+                           V2CompatibleMarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
+    }
+
+    /**
+     * A ConversionSchema builder that defaults to building {@link #V2}.
+     */
+    public static Builder v2Builder(String name) {
+        return new Builder(name, V2MarshallerSet.marshallers(), V2MarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
+    }
+
+    public static class Builder {
+
+        private final String name;
+        private final List<Pair<ArgumentMarshaller>> marshallers;
+        private final List<Pair<ArgumentMarshaller>> setMarshallers;
+        private final List<Pair<ArgumentUnmarshaller>> unmarshallers;
+        private final List<Pair<ArgumentUnmarshaller>> setUnmarshallers;
+
+        Builder(String name, List<Pair<ArgumentMarshaller>> marshallers,
+                List<Pair<ArgumentMarshaller>> setMarshallers,
+                List<Pair<ArgumentUnmarshaller>> unmarshallers,
+                List<Pair<ArgumentUnmarshaller>> setUnmarshallers) {
+            this.name = name;
+            this.marshallers = marshallers;
+            this.setMarshallers = setMarshallers;
+            this.unmarshallers = unmarshallers;
+            this.setUnmarshallers = setUnmarshallers;
+        }
+
+        /**
+         * Adds marshaling of a type to the schema. Types are in LIFO order, so the last type added
+         * will be the first matched.
+         */
+        public Builder addFirstType(Class<?> clazz, ArgumentMarshaller marshaller,
+                                    ArgumentUnmarshaller unmarshaller) {
+            this.marshallers.add(0, Pair.of(clazz, marshaller));
+            this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
+            return this;
+        }
+
+        /**
+         * Adds marshaling of a Set of a type to the schema. Types are in LIFO order, so the last
+         * type added will be the first matched.
+         */
+        public Builder addFirstSetType(Class<?> clazz, ArgumentMarshaller marshaller,
+                                       ArgumentUnmarshaller unmarshaller) {
+            this.setMarshallers.add(0, Pair.of(clazz, marshaller));
+            this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
+            return this;
+        }
+
+        public ConversionSchema build() {
+            return new StandardConversionSchema(name, new AbstractMarshallerSet(marshallers,
+                                                                                setMarshallers),
+                                                new StandardUnmarshallerSet(unmarshallers,
+                                                                            setUnmarshallers));
+        }
+    }
 
     static class StandardConversionSchema implements ConversionSchema {
 
@@ -186,7 +254,6 @@ public final class ConversionSchemas {
             return new StandardItemConverter(
                     marshallers,
                     unmarshallers,
-                    DynamoDBMappingsRegistry.instance(),
                     s3cc);
         }
 
@@ -201,27 +268,23 @@ public final class ConversionSchemas {
 
         private final MarshallerSet marshallerSet;
         private final UnmarshallerSet unmarshallerSet;
-        private final DynamoDBMappingsRegistry registry;
         private final S3ClientCache s3cc;
 
         public StandardItemConverter(
                 MarshallerSet marshallerSet,
                 UnmarshallerSet unmarshallerSet,
-                DynamoDBMappingsRegistry registry,
                 S3ClientCache s3cc) {
 
             this.marshallerSet = marshallerSet;
             this.unmarshallerSet = unmarshallerSet;
-            this.registry = registry;
             this.s3cc = s3cc;
         }
 
         @Override
         public DynamoDBMapperFieldModel getFieldModel(Method getter) {
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
-            ArgumentMarshaller marshaller = getMarshaller(getter);
+            final ArgumentMarshaller marshaller = getMarshaller(getter);
 
-            DynamoDBAttributeType attributeType = null;
+            final DynamoDBAttributeType attributeType;
             if (marshaller instanceof StringAttributeMarshaller) {
                 attributeType = DynamoDBAttributeType.S;
             } else if (marshaller instanceof NumberAttributeMarshaller) {
@@ -246,7 +309,14 @@ public final class ConversionSchemas {
                                 + marshaller);
             }
 
-            return new DynamoDBMapperFieldModel(mapping.getAttributeName(), attributeType, marshaller);
+            // Note, generating the attribute name using this method is not
+            // actually correct for @DynamoDBFlattened attributes, however,
+            // its the best that can be done given only the method. The
+            // proper way to get this information is using the model factory.
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter, null);
+            final DynamoDBMapperFieldModel.Builder builder = new DynamoDBMapperFieldModel.Builder(void.class, annotations);
+            builder.with(attributeType);
+            return builder.build();
         }
 
         @Override
@@ -265,20 +335,16 @@ public final class ConversionSchemas {
                 return null;
             }
 
-            Class<?> clazz = object.getClass();
+            Class<Object> clazz = (Class<Object>)object.getClass();
             Map<String, AttributeValue> result =
                     new HashMap<String, AttributeValue>();
 
-            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
-
-            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                Object getterResult =
-                        mapping.getValueOf(object);
-
+            for (final Bean<Object,Object> bean : StandardBeanProperties.of(clazz).map().values()) {
+                Object getterResult = bean.reflect().get(object);
                 if (getterResult != null) {
-                    AttributeValue value = convert(mapping.getter(), getterResult);
+                    AttributeValue value = convert(bean.type().getter(), getterResult);
                     if (value != null) {
-                        result.put(mapping.getAttributeName(), value);
+                        result.put(bean.properties().attributeName(), value);
                     }
                 }
             }
@@ -386,7 +452,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (!registry.mappingsOf(clazz).isDocument()) {
+            if (StandardAnnotationMaps.of(clazz).attributeType() != DynamoDBAttributeType.M) {
                 throw new DynamoDBMappingException(
                         "Cannot marshall type " + type
                         + " without a custom marshaler or @DynamoDBDocument "
@@ -416,15 +482,12 @@ public final class ConversionSchemas {
                 return result;
             }
 
-            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
-
-            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                String attributeName = mapping.getAttributeName();
-                AttributeValue av = value.get(attributeName);
+            for (final Bean<T,Object> bean : StandardBeanProperties.of(clazz).map().values()) {
+                AttributeValue av = value.get(bean.properties().attributeName());
                 if (av != null) {
-                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(mapping.getter(), mapping.setter());
-                    Object unmarshalled = unmarshall(unmarshaller, mapping.setter(), av);
-                    mapping.setValueOf(result, unmarshalled);
+                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(bean.type().getter(), bean.type().setter());
+                    Object unmarshalled = unmarshall(unmarshaller, bean.type().setter(), av);
+                    bean.reflect().set(result, unmarshalled);
                 }
             }
 
@@ -571,7 +634,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (!registry.mappingsOf(clazz).isDocument()) {
+            if (StandardAnnotationMaps.of(clazz).attributeType() != DynamoDBAttributeType.M) {
                 throw new DynamoDBMappingException(
                         "Cannot unmarshall to type " + type
                         + " without a custom marshaler or @DynamoDBDocument "
@@ -632,11 +695,7 @@ public final class ConversionSchemas {
         ArgumentUnmarshaller getMemberUnmarshaller(Type memberType);
     }
 
-    static final class V2MarshallerSet extends AbstractMarshallerSet {
-
-        public V2MarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V2MarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
@@ -679,12 +738,7 @@ public final class ConversionSchemas {
         }
     }
 
-    static final class V2CompatibleMarshallerSet
-            extends AbstractMarshallerSet {
-
-        public V2CompatibleMarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V2CompatibleMarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
@@ -720,18 +774,13 @@ public final class ConversionSchemas {
 
             // If all else fails, fall back to this default marshaler to
             // retain backwards-compatible behavior.
-            list.add(Pair.of(Object.class,
-                    ObjectSetToStringSetMarshaller.instance()));
+            list.add(Pair.of(Object.class, ObjectSetToStringSetMarshaller.instance()));
 
             return list;
         }
     }
 
-    static final class V1MarshallerSet extends AbstractMarshallerSet {
-
-        public V1MarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V1MarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
@@ -923,7 +972,7 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMemberMarshaller(Type memberType) {
-            Class<?> clazz = ReflectionUtils.resolveClass(memberType);
+            Class<?> clazz = resolveClass(memberType);
             if (Set.class.isAssignableFrom(clazz)) {
                 Class<?> setMemberType = unwrapGenericSetParam(memberType);
                 return getSet(null, setMemberType);
@@ -1114,7 +1163,7 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentUnmarshaller getMemberUnmarshaller(Type memberType) {
-            Class<?> clazz = ReflectionUtils.resolveClass(memberType);
+            Class<?> clazz = resolveClass(memberType);
             if (Set.class.isAssignableFrom(clazz)) {
                 Class<?> setMemberType = unwrapGenericSetParam(memberType);
                 return getSet(null, setMemberType);
@@ -1191,6 +1240,18 @@ public final class ConversionSchemas {
         }
     }
 
+    private static Class<?> resolveClass(Type type) {
+        Type localType = type;
+        if (localType instanceof ParameterizedType) {
+            localType = ((ParameterizedType) type).getRawType();
+        }
+        if (!(localType instanceof Class)) {
+            throw new DynamoDBMappingException("Cannot resolve class for type "
+                    + type);
+        }
+        return (Class<?>) localType;
+    }
+
     private static <T> T find(Class<?> needle, List<Pair<T>> haystack) {
         for (Pair<? extends T> pair : haystack) {
             if (pair.key.isAssignableFrom(needle)) {
@@ -1236,14 +1297,13 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMarshaller(Method getter) {
-            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
-
-            ArgumentMarshaller customMarshaller = mapping.getCustomMarshaller();
-            if (customMarshaller != null) {
-                return customMarshaller;
+            final StandardAnnotationMaps.FieldMap<?> annotations = StandardAnnotationMaps.of(getter, null);
+            final DynamoDBMarshalling marshalling = annotations.actualOf(DynamoDBMarshalling.class);
+            if (marshalling != null) {
+                return new CustomMarshaller(marshalling.marshallerClass());
+            } else if (annotations.actualOf(DynamoDBNativeBoolean.class) != null) {
+                return BooleanToBooleanMarshaller.instance();
             }
-
             return wrapped.getMarshaller(getter);
         }
 
@@ -1266,15 +1326,11 @@ public final class ConversionSchemas {
         public ArgumentUnmarshaller getUnmarshaller(
                 Method getter,
                 Method setter) {
-
-            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
-
-            ArgumentUnmarshaller customUnmarshaller = mapping.getCustomUnmarshaller();
-            if (customUnmarshaller != null) {
-                return customUnmarshaller;
+            final StandardAnnotationMaps.FieldMap<?> annotations = StandardAnnotationMaps.of(getter, null);
+            final DynamoDBMarshalling marshalling = annotations.actualOf(DynamoDBMarshalling.class);
+            if (marshalling != null) {
+                return new CustomUnmarshaller(getter.getReturnType(), marshalling.marshallerClass());
             }
-
             return wrapped.getUnmarshaller(getter, setter);
         }
 
@@ -1369,6 +1425,63 @@ public final class ConversionSchemas {
                 unmarshaller = wrapped.getMemberUnmarshaller(memberType);
                 memberCache.put(memberType, unmarshaller);
                 return unmarshaller;
+            }
+        }
+    }
+
+    /**
+     * {@link AttributeValue} converter with {@link ItemConverter}
+     */
+    static class ItemConverterRuleFactory<V> implements RuleFactory<V> {
+        private final RuleFactory<V> typeConverters;
+        private final ItemConverter converter;
+        private final boolean customSchema;
+
+        ItemConverterRuleFactory(DynamoDBMapperConfig config, S3Link.Factory s3Links, RuleFactory<V> typeConverters) {
+            final ConversionSchema.Dependencies depends = new ConversionSchema.Dependencies().with(S3ClientCache.class, s3Links.getS3ClientCache());
+            final ConversionSchema schema = config.getConversionSchema();
+
+            this.customSchema = (schema != V1 && schema != V2_COMPATIBLE && schema != V2);
+            this.converter = schema.getConverter(depends);
+            this.typeConverters = typeConverters;
+        }
+
+        @Override
+        public Rule<V> getRule(ConvertibleType<V> type) {
+            if (customSchema && type.typeConverter() == null) {
+                return new ItemConverterRule<V>(type);
+            } else {
+                return typeConverters.getRule(type);
+            }
+        }
+
+        private final class ItemConverterRule<V> implements Rule<V>, DynamoDBTypeConverter<AttributeValue,V> {
+            private final ConvertibleType<V> type;
+            private ItemConverterRule(final ConvertibleType<V> type) {
+                this.type = type;
+            }
+            @Override
+            public boolean isAssignableFrom(ConvertibleType<?> type) {
+                return true;
+            }
+            @Override
+            public DynamoDBTypeConverter<AttributeValue,V> newConverter(ConvertibleType<V> type) {
+                return this;
+            }
+            @Override
+            public DynamoDBAttributeType getAttributeType() {
+                try {
+                    return converter.getFieldModel(type.getter()).attributeType();
+                } catch (final DynamoDBMappingException no) {}
+                return DynamoDBAttributeType.NULL;
+            }
+            @Override
+            public AttributeValue convert(final V object) {
+                return converter.convert(type.getter(), object);
+            }
+            @Override
+            public V unconvert(final AttributeValue object) {
+                return (V)converter.unconvert(type.getter(), type.setter(), object);
             }
         }
     }

@@ -1,30 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The detected properties of the input file. Elastic Transcoder identifies
- * these values from the input file.
+ * The detected properties of the input file. Elastic Transcoder identifies these values from the input file.
  * </p>
  */
-public class DetectedProperties implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DetectedProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -89,8 +88,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @param width
      *        The detected width of the input file, in pixels.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectedProperties withWidth(Integer width) {
@@ -130,8 +128,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @param height
      *        The detected height of the input file, in pixels.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectedProperties withHeight(Integer height) {
@@ -171,8 +168,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @param frameRate
      *        The detected frame rate of the input file, in frames per second.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectedProperties withFrameRate(String frameRate) {
@@ -212,8 +208,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @param fileSize
      *        The detected file size of the input file, in bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectedProperties withFileSize(Long fileSize) {
@@ -253,8 +248,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @param durationMillis
      *        The detected duration of the input file, in milliseconds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectedProperties withDurationMillis(Long durationMillis) {
@@ -263,8 +257,8 @@ public class DetectedProperties implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,15 +269,15 @@ public class DetectedProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWidth() != null)
-            sb.append("Width: " + getWidth() + ",");
+            sb.append("Width: ").append(getWidth()).append(",");
         if (getHeight() != null)
-            sb.append("Height: " + getHeight() + ",");
+            sb.append("Height: ").append(getHeight()).append(",");
         if (getFrameRate() != null)
-            sb.append("FrameRate: " + getFrameRate() + ",");
+            sb.append("FrameRate: ").append(getFrameRate()).append(",");
         if (getFileSize() != null)
-            sb.append("FileSize: " + getFileSize() + ",");
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getDurationMillis() != null)
-            sb.append("DurationMillis: " + getDurationMillis());
+            sb.append("DurationMillis: ").append(getDurationMillis());
         sb.append("}");
         return sb.toString();
     }
@@ -300,29 +294,23 @@ public class DetectedProperties implements Serializable, Cloneable {
         DetectedProperties other = (DetectedProperties) obj;
         if (other.getWidth() == null ^ this.getWidth() == null)
             return false;
-        if (other.getWidth() != null
-                && other.getWidth().equals(this.getWidth()) == false)
+        if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false)
             return false;
         if (other.getHeight() == null ^ this.getHeight() == null)
             return false;
-        if (other.getHeight() != null
-                && other.getHeight().equals(this.getHeight()) == false)
+        if (other.getHeight() != null && other.getHeight().equals(this.getHeight()) == false)
             return false;
         if (other.getFrameRate() == null ^ this.getFrameRate() == null)
             return false;
-        if (other.getFrameRate() != null
-                && other.getFrameRate().equals(this.getFrameRate()) == false)
+        if (other.getFrameRate() != null && other.getFrameRate().equals(this.getFrameRate()) == false)
             return false;
         if (other.getFileSize() == null ^ this.getFileSize() == null)
             return false;
-        if (other.getFileSize() != null
-                && other.getFileSize().equals(this.getFileSize()) == false)
+        if (other.getFileSize() != null && other.getFileSize().equals(this.getFileSize()) == false)
             return false;
-        if (other.getDurationMillis() == null
-                ^ this.getDurationMillis() == null)
+        if (other.getDurationMillis() == null ^ this.getDurationMillis() == null)
             return false;
-        if (other.getDurationMillis() != null
-                && other.getDurationMillis().equals(this.getDurationMillis()) == false)
+        if (other.getDurationMillis() != null && other.getDurationMillis().equals(this.getDurationMillis()) == false)
             return false;
         return true;
     }
@@ -332,18 +320,11 @@ public class DetectedProperties implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getWidth() == null) ? 0 : getWidth().hashCode());
-        hashCode = prime * hashCode
-                + ((getHeight() == null) ? 0 : getHeight().hashCode());
-        hashCode = prime * hashCode
-                + ((getFrameRate() == null) ? 0 : getFrameRate().hashCode());
-        hashCode = prime * hashCode
-                + ((getFileSize() == null) ? 0 : getFileSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDurationMillis() == null) ? 0 : getDurationMillis()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode());
+        hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode());
+        hashCode = prime * hashCode + ((getFrameRate() == null) ? 0 : getFrameRate().hashCode());
+        hashCode = prime * hashCode + ((getFileSize() == null) ? 0 : getFileSize().hashCode());
+        hashCode = prime * hashCode + ((getDurationMillis() == null) ? 0 : getDurationMillis().hashCode());
         return hashCode;
     }
 
@@ -352,9 +333,13 @@ public class DetectedProperties implements Serializable, Cloneable {
         try {
             return (DetectedProperties) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elastictranscoder.model.transform.DetectedPropertiesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

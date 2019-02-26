@@ -1,117 +1,73 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ActivateGatewayRequest Marshaller
+ * ActivateGatewayRequestMarshaller
  */
-public class ActivateGatewayRequestMarshaller implements
-        Marshaller<Request<ActivateGatewayRequest>, ActivateGatewayRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ActivateGatewayRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> ACTIVATIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActivationKey").build();
+    private static final MarshallingInfo<String> GATEWAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayName").build();
+    private static final MarshallingInfo<String> GATEWAYTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayTimezone").build();
+    private static final MarshallingInfo<String> GATEWAYREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayRegion").build();
+    private static final MarshallingInfo<String> GATEWAYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayType").build();
+    private static final MarshallingInfo<String> TAPEDRIVETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeDriveType").build();
+    private static final MarshallingInfo<String> MEDIUMCHANGERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MediumChangerType").build();
 
-    public ActivateGatewayRequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ActivateGatewayRequestMarshaller instance = new ActivateGatewayRequestMarshaller();
+
+    public static ActivateGatewayRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ActivateGatewayRequest> marshall(
-            ActivateGatewayRequest activateGatewayRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ActivateGatewayRequest activateGatewayRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (activateGatewayRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<ActivateGatewayRequest> request = new DefaultRequest<ActivateGatewayRequest>(
-                activateGatewayRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target",
-                "StorageGateway_20130630.ActivateGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (activateGatewayRequest.getActivationKey() != null) {
-                jsonGenerator.writeFieldName("ActivationKey").writeValue(
-                        activateGatewayRequest.getActivationKey());
-            }
-            if (activateGatewayRequest.getGatewayName() != null) {
-                jsonGenerator.writeFieldName("GatewayName").writeValue(
-                        activateGatewayRequest.getGatewayName());
-            }
-            if (activateGatewayRequest.getGatewayTimezone() != null) {
-                jsonGenerator.writeFieldName("GatewayTimezone").writeValue(
-                        activateGatewayRequest.getGatewayTimezone());
-            }
-            if (activateGatewayRequest.getGatewayRegion() != null) {
-                jsonGenerator.writeFieldName("GatewayRegion").writeValue(
-                        activateGatewayRequest.getGatewayRegion());
-            }
-            if (activateGatewayRequest.getGatewayType() != null) {
-                jsonGenerator.writeFieldName("GatewayType").writeValue(
-                        activateGatewayRequest.getGatewayType());
-            }
-            if (activateGatewayRequest.getTapeDriveType() != null) {
-                jsonGenerator.writeFieldName("TapeDriveType").writeValue(
-                        activateGatewayRequest.getTapeDriveType());
-            }
-            if (activateGatewayRequest.getMediumChangerType() != null) {
-                jsonGenerator.writeFieldName("MediumChangerType").writeValue(
-                        activateGatewayRequest.getMediumChangerType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(activateGatewayRequest.getActivationKey(), ACTIVATIONKEY_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getGatewayName(), GATEWAYNAME_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getGatewayTimezone(), GATEWAYTIMEZONE_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getGatewayRegion(), GATEWAYREGION_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getGatewayType(), GATEWAYTYPE_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getTapeDriveType(), TAPEDRIVETYPE_BINDING);
+            protocolMarshaller.marshall(activateGatewayRequest.getMediumChangerType(), MEDIUMCHANGERTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

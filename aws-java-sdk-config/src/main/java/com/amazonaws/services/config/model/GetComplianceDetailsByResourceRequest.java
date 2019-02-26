@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"
+ *      target="_top">AWS API Documentation</a>
  */
-public class GetComplianceDetailsByResourceRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -42,15 +43,14 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
@@ -61,8 +61,7 @@ public class GetComplianceDetailsByResourceRequest extends
      * </p>
      * 
      * @param resourceType
-     *        The type of the AWS resource for which you want compliance
-     *        information.
+     *        The type of the AWS resource for which you want compliance information.
      */
 
     public void setResourceType(String resourceType) {
@@ -74,8 +73,7 @@ public class GetComplianceDetailsByResourceRequest extends
      * The type of the AWS resource for which you want compliance information.
      * </p>
      * 
-     * @return The type of the AWS resource for which you want compliance
-     *         information.
+     * @return The type of the AWS resource for which you want compliance information.
      */
 
     public String getResourceType() {
@@ -88,14 +86,11 @@ public class GetComplianceDetailsByResourceRequest extends
      * </p>
      * 
      * @param resourceType
-     *        The type of the AWS resource for which you want compliance
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The type of the AWS resource for which you want compliance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByResourceRequest withResourceType(
-            String resourceType) {
+    public GetComplianceDetailsByResourceRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
     }
@@ -106,8 +101,7 @@ public class GetComplianceDetailsByResourceRequest extends
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AWS resource for which you want compliance
-     *        information.
+     *        The ID of the AWS resource for which you want compliance information.
      */
 
     public void setResourceId(String resourceId) {
@@ -119,8 +113,7 @@ public class GetComplianceDetailsByResourceRequest extends
      * The ID of the AWS resource for which you want compliance information.
      * </p>
      * 
-     * @return The ID of the AWS resource for which you want compliance
-     *         information.
+     * @return The ID of the AWS resource for which you want compliance information.
      */
 
     public String getResourceId() {
@@ -133,14 +126,11 @@ public class GetComplianceDetailsByResourceRequest extends
      * </p>
      * 
      * @param resourceId
-     *        The ID of the AWS resource for which you want compliance
-     *        information.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the AWS resource for which you want compliance information.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByResourceRequest withResourceId(
-            String resourceId) {
+    public GetComplianceDetailsByResourceRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
     }
@@ -150,14 +140,13 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @return Filters the results by compliance.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code>,
-     *         <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -173,15 +162,13 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
 
@@ -191,8 +178,7 @@ public class GetComplianceDetailsByResourceRequest extends
             return;
         }
 
-        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes);
+        this.complianceTypes = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes);
     }
 
     /**
@@ -200,31 +186,25 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setComplianceTypes(java.util.Collection)} or
-     * {@link #withComplianceTypes(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceTypes(java.util.Collection)} or {@link #withComplianceTypes(java.util.Collection)} if you
+     * want to override the existing values.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByResourceRequest withComplianceTypes(
-            String... complianceTypes) {
+    public GetComplianceDetailsByResourceRequest withComplianceTypes(String... complianceTypes) {
         if (this.complianceTypes == null) {
-            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(
-                    complianceTypes.length));
+            setComplianceTypes(new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length));
         }
         for (String ele : complianceTypes) {
             this.complianceTypes.add(ele);
@@ -237,22 +217,18 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByResourceRequest withComplianceTypes(
-            java.util.Collection<String> complianceTypes) {
+    public GetComplianceDetailsByResourceRequest withComplianceTypes(java.util.Collection<String> complianceTypes) {
         setComplianceTypes(complianceTypes);
         return this;
     }
@@ -262,24 +238,19 @@ public class GetComplianceDetailsByResourceRequest extends
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
-     * , and <code>NOT_APPLICABLE</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>,
-     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
-    public GetComplianceDetailsByResourceRequest withComplianceTypes(
-            ComplianceType... complianceTypes) {
-        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                complianceTypes.length);
+    public GetComplianceDetailsByResourceRequest withComplianceTypes(ComplianceType... complianceTypes) {
+        com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(complianceTypes.length);
         for (ComplianceType value : complianceTypes) {
             complianceTypesCopy.add(value.toString());
         }
@@ -293,13 +264,13 @@ public class GetComplianceDetailsByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -308,13 +279,12 @@ public class GetComplianceDetailsByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The <code>nextToken</code> string returned on a previous page
-     *         that you use to get the next page of results in a paginated
-     *         response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -323,15 +293,14 @@ public class GetComplianceDetailsByResourceRequest extends
 
     /**
      * <p>
-     * The <code>nextToken</code> string returned on a previous page that you
-     * use to get the next page of results in a paginated response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> string returned on a previous page that
-     *        you use to get the next page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetComplianceDetailsByResourceRequest withNextToken(String nextToken) {
@@ -340,8 +309,8 @@ public class GetComplianceDetailsByResourceRequest extends
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -352,13 +321,13 @@ public class GetComplianceDetailsByResourceRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getComplianceTypes() != null)
-            sb.append("ComplianceTypes: " + getComplianceTypes() + ",");
+            sb.append("ComplianceTypes: ").append(getComplianceTypes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -375,24 +344,19 @@ public class GetComplianceDetailsByResourceRequest extends
         GetComplianceDetailsByResourceRequest other = (GetComplianceDetailsByResourceRequest) obj;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
-        if (other.getResourceType() != null
-                && other.getResourceType().equals(this.getResourceType()) == false)
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
-        if (other.getResourceId() != null
-                && other.getResourceId().equals(this.getResourceId()) == false)
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
-        if (other.getComplianceTypes() == null
-                ^ this.getComplianceTypes() == null)
+        if (other.getComplianceTypes() == null ^ this.getComplianceTypes() == null)
             return false;
-        if (other.getComplianceTypes() != null
-                && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
+        if (other.getComplianceTypes() != null && other.getComplianceTypes().equals(this.getComplianceTypes()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -402,18 +366,10 @@ public class GetComplianceDetailsByResourceRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceType() == null) ? 0 : getResourceType()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getComplianceTypes() == null) ? 0 : getComplianceTypes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getComplianceTypes() == null) ? 0 : getComplianceTypes().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -421,4 +377,5 @@ public class GetComplianceDetailsByResourceRequest extends
     public GetComplianceDetailsByResourceRequest clone() {
         return (GetComplianceDetailsByResourceRequest) super.clone();
     }
+
 }

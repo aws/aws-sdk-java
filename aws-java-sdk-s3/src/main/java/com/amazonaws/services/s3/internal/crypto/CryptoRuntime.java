@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,12 +26,15 @@ import org.apache.commons.logging.LogFactory;
 public class CryptoRuntime {
     static final String BOUNCY_CASTLE_PROVIDER = "BC";
     private static final String BC_PROVIDER_FQCN = "org.bouncycastle.jce.provider.BouncyCastleProvider";
-    
-    public static boolean isBouncyCastleAvailable() {
+
+    public static synchronized boolean isBouncyCastleAvailable() {
         return Security.getProvider(BOUNCY_CASTLE_PROVIDER) != null;
     }
 
-    public static void enableBouncyCastle() {
+    public static synchronized void enableBouncyCastle() {
+        if (isBouncyCastleAvailable()) {
+            return;
+        }
         try {
             @SuppressWarnings("unchecked")
             Class<Provider> c = (Class<Provider>)Class.forName(BC_PROVIDER_FQCN);
@@ -42,7 +45,7 @@ public class CryptoRuntime {
                     "Bouncy Castle not available", e);
         }
     }
-    
+
     /**
      * Used only for unit test when the same class loader is used across
      * multiple unit tests.
@@ -51,7 +54,7 @@ public class CryptoRuntime {
         recheckAesGcmAvailablility();
         recheckRsaKeyWrapAvailablility();
     }
-    
+
     public static boolean isAesGcmAvailable() { return AesGcm.isAvailable; }
     public static void recheckAesGcmAvailablility() { AesGcm.recheck(); }
 

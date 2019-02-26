@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -21,7 +21,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -45,6 +44,7 @@ public class RestUtils {
             "acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
             "versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website",
             "delete", "lifecycle", "tagging", "cors", "restore", "replication", "accelerate",
+            "inventory", "analytics", "metrics",
             ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,

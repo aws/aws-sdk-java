@@ -1,40 +1,39 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     * this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      */
     private String alarmNamePrefix;
@@ -58,18 +57,17 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
     private Integer maxRecords;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
-     * @return A list of alarm names to retrieve information for.
+     * @return The names of the alarms.
      */
 
     public java.util.List<String> getAlarmNames() {
@@ -81,11 +79,11 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
+     *        The names of the alarms.
      */
 
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
@@ -94,31 +92,27 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.alarmNames = new com.amazonaws.internal.SdkInternalList<String>(
-                alarmNames);
+        this.alarmNames = new com.amazonaws.internal.SdkInternalList<String>(alarmNames);
     }
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAlarmNames(java.util.Collection)} or
-     * {@link #withAlarmNames(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlarmNames(java.util.Collection)} or {@link #withAlarmNames(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the alarms.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
         if (this.alarmNames == null) {
-            setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    alarmNames.length));
+            setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(alarmNames.length));
         }
         for (String ele : alarmNames) {
             this.alarmNames.add(ele);
@@ -128,30 +122,26 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the alarms.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeAlarmsRequest withAlarmNames(
-            java.util.Collection<String> alarmNames) {
+    public DescribeAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
         setAlarmNames(alarmNames);
         return this;
     }
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     * this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified
-     *        if this parameter is specified.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public void setAlarmNamePrefix(String alarmNamePrefix) {
@@ -160,12 +150,10 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     * this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
-     * @return The alarm name prefix. <code>AlarmNames</code> cannot be
-     *         specified if this parameter is specified.
+     * @return The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public String getAlarmNamePrefix() {
@@ -174,15 +162,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
-     * this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified
-     *        if this parameter is specified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsRequest withAlarmNamePrefix(String alarmNamePrefix) {
@@ -224,8 +209,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @param stateValue
      *        The state value to be used in matching alarms.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateValue
      */
 
@@ -245,7 +229,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      */
 
     public void setStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        withStateValue(stateValue);
     }
 
     /**
@@ -255,13 +239,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @param stateValue
      *        The state value to be used in matching alarms.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateValue
      */
 
     public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
-        setStateValue(stateValue);
+        this.stateValue = stateValue.toString();
         return this;
     }
 
@@ -297,8 +280,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @param actionPrefix
      *        The action name prefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsRequest withActionPrefix(String actionPrefix) {
@@ -338,8 +320,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @param maxRecords
      *        The maximum number of alarm descriptions to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsRequest withMaxRecords(Integer maxRecords) {
@@ -349,13 +330,11 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
+     *        The token returned by a previous call to indicate that there is more data available.
      */
 
     public void setNextToken(String nextToken) {
@@ -364,12 +343,10 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is
-     *         more data available.
+     * @return The token returned by a previous call to indicate that there is more data available.
      */
 
     public String getNextToken() {
@@ -378,15 +355,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data
-     * available.
+     * The token returned by a previous call to indicate that there is more data available.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is
-     *        more data available.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token returned by a previous call to indicate that there is more data available.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAlarmsRequest withNextToken(String nextToken) {
@@ -395,8 +369,8 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -407,17 +381,17 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmNames() != null)
-            sb.append("AlarmNames: " + getAlarmNames() + ",");
+            sb.append("AlarmNames: ").append(getAlarmNames()).append(",");
         if (getAlarmNamePrefix() != null)
-            sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");
+            sb.append("AlarmNamePrefix: ").append(getAlarmNamePrefix()).append(",");
         if (getStateValue() != null)
-            sb.append("StateValue: " + getStateValue() + ",");
+            sb.append("StateValue: ").append(getStateValue()).append(",");
         if (getActionPrefix() != null)
-            sb.append("ActionPrefix: " + getActionPrefix() + ",");
+            sb.append("ActionPrefix: ").append(getActionPrefix()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -434,34 +408,27 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
         DescribeAlarmsRequest other = (DescribeAlarmsRequest) obj;
         if (other.getAlarmNames() == null ^ this.getAlarmNames() == null)
             return false;
-        if (other.getAlarmNames() != null
-                && other.getAlarmNames().equals(this.getAlarmNames()) == false)
+        if (other.getAlarmNames() != null && other.getAlarmNames().equals(this.getAlarmNames()) == false)
             return false;
-        if (other.getAlarmNamePrefix() == null
-                ^ this.getAlarmNamePrefix() == null)
+        if (other.getAlarmNamePrefix() == null ^ this.getAlarmNamePrefix() == null)
             return false;
-        if (other.getAlarmNamePrefix() != null
-                && other.getAlarmNamePrefix().equals(this.getAlarmNamePrefix()) == false)
+        if (other.getAlarmNamePrefix() != null && other.getAlarmNamePrefix().equals(this.getAlarmNamePrefix()) == false)
             return false;
         if (other.getStateValue() == null ^ this.getStateValue() == null)
             return false;
-        if (other.getStateValue() != null
-                && other.getStateValue().equals(this.getStateValue()) == false)
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false)
             return false;
         if (other.getActionPrefix() == null ^ this.getActionPrefix() == null)
             return false;
-        if (other.getActionPrefix() != null
-                && other.getActionPrefix().equals(this.getActionPrefix()) == false)
+        if (other.getActionPrefix() != null && other.getActionPrefix().equals(this.getActionPrefix()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -471,22 +438,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getAlarmNames() == null) ? 0 : getAlarmNames().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAlarmNamePrefix() == null) ? 0 : getAlarmNamePrefix()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActionPrefix() == null) ? 0 : getActionPrefix()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAlarmNames() == null) ? 0 : getAlarmNames().hashCode());
+        hashCode = prime * hashCode + ((getAlarmNamePrefix() == null) ? 0 : getAlarmNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
+        hashCode = prime * hashCode + ((getActionPrefix() == null) ? 0 : getActionPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -494,4 +451,5 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
     public DescribeAlarmsRequest clone() {
         return (DescribeAlarmsRequest) super.clone();
     }
+
 }

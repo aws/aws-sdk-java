@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Represents an EC2 instance provisioned as part of cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Instance" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Instance implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -75,6 +78,24 @@ public class Instance implements Serializable, Cloneable {
     private String instanceGroupId;
     /**
      * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     */
+    private String instanceFleetId;
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     */
+    private String market;
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
      * The list of EBS volumes that are attached to this instance.
      * </p>
      */
@@ -112,8 +133,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param id
      *        The unique identifier for the instance in Amazon EMR.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withId(String id) {
@@ -153,8 +173,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ec2InstanceId
      *        The unique identifier of the instance in Amazon EC2.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEc2InstanceId(String ec2InstanceId) {
@@ -194,8 +213,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param publicDnsName
      *        The public DNS name of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPublicDnsName(String publicDnsName) {
@@ -235,8 +253,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param publicIpAddress
      *        The public IP address of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPublicIpAddress(String publicIpAddress) {
@@ -276,8 +293,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param privateDnsName
      *        The private DNS name of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPrivateDnsName(String privateDnsName) {
@@ -317,8 +333,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param privateIpAddress
      *        The private IP address of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withPrivateIpAddress(String privateIpAddress) {
@@ -358,8 +373,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param status
      *        The current status of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withStatus(InstanceStatus status) {
@@ -373,8 +387,7 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceGroupId
-     *        The identifier of the instance group to which this instance
-     *        belongs.
+     *        The identifier of the instance group to which this instance belongs.
      */
 
     public void setInstanceGroupId(String instanceGroupId) {
@@ -386,8 +399,7 @@ public class Instance implements Serializable, Cloneable {
      * The identifier of the instance group to which this instance belongs.
      * </p>
      * 
-     * @return The identifier of the instance group to which this instance
-     *         belongs.
+     * @return The identifier of the instance group to which this instance belongs.
      */
 
     public String getInstanceGroupId() {
@@ -400,14 +412,165 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceGroupId
-     *        The identifier of the instance group to which this instance
-     *        belongs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the instance group to which this instance belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withInstanceGroupId(String instanceGroupId) {
         setInstanceGroupId(instanceGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet to which an EC2 instance belongs.
+     */
+
+    public void setInstanceFleetId(String instanceFleetId) {
+        this.instanceFleetId = instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @return The unique identifier of the instance fleet to which an EC2 instance belongs.
+     */
+
+    public String getInstanceFleetId() {
+        return this.instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withInstanceFleetId(String instanceFleetId) {
+        setInstanceFleetId(instanceFleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public void setMarket(String market) {
+        this.market = market;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @return The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public String getMarket() {
+        return this.market;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MarketType
+     */
+
+    public Instance withMarket(String market) {
+        setMarket(market);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public void setMarket(MarketType market) {
+        withMarket(market);
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MarketType
+     */
+
+    public Instance withMarket(MarketType market) {
+        this.market = market.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @return The EC2 instance type, for example <code>m3.xlarge</code>.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -441,8 +604,7 @@ public class Instance implements Serializable, Cloneable {
             return;
         }
 
-        this.ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>(
-                ebsVolumes);
+        this.ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>(ebsVolumes);
     }
 
     /**
@@ -450,22 +612,19 @@ public class Instance implements Serializable, Cloneable {
      * The list of EBS volumes that are attached to this instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEbsVolumes(java.util.Collection)} or
-     * {@link #withEbsVolumes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEbsVolumes(java.util.Collection)} or {@link #withEbsVolumes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param ebsVolumes
      *        The list of EBS volumes that are attached to this instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEbsVolumes(EbsVolume... ebsVolumes) {
         if (this.ebsVolumes == null) {
-            setEbsVolumes(new com.amazonaws.internal.SdkInternalList<EbsVolume>(
-                    ebsVolumes.length));
+            setEbsVolumes(new com.amazonaws.internal.SdkInternalList<EbsVolume>(ebsVolumes.length));
         }
         for (EbsVolume ele : ebsVolumes) {
             this.ebsVolumes.add(ele);
@@ -480,8 +639,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param ebsVolumes
      *        The list of EBS volumes that are attached to this instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withEbsVolumes(java.util.Collection<EbsVolume> ebsVolumes) {
@@ -490,8 +648,8 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -502,23 +660,29 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getPublicDnsName() != null)
-            sb.append("PublicDnsName: " + getPublicDnsName() + ",");
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getPublicIpAddress() != null)
-            sb.append("PublicIpAddress: " + getPublicIpAddress() + ",");
+            sb.append("PublicIpAddress: ").append(getPublicIpAddress()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
+        if (getInstanceFleetId() != null)
+            sb.append("InstanceFleetId: ").append(getInstanceFleetId()).append(",");
+        if (getMarket() != null)
+            sb.append("Market: ").append(getMarket()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getEbsVolumes() != null)
-            sb.append("EbsVolumes: " + getEbsVolumes());
+            sb.append("EbsVolumes: ").append(getEbsVolumes());
         sb.append("}");
         return sb.toString();
     }
@@ -535,53 +699,51 @@ public class Instance implements Serializable, Cloneable {
         Instance other = (Instance) obj;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
             return false;
-        if (other.getEc2InstanceId() != null
-                && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
             return false;
         if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null)
             return false;
-        if (other.getPublicDnsName() != null
-                && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
+        if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
             return false;
-        if (other.getPublicIpAddress() == null
-                ^ this.getPublicIpAddress() == null)
+        if (other.getPublicIpAddress() == null ^ this.getPublicIpAddress() == null)
             return false;
-        if (other.getPublicIpAddress() != null
-                && other.getPublicIpAddress().equals(this.getPublicIpAddress()) == false)
+        if (other.getPublicIpAddress() != null && other.getPublicIpAddress().equals(this.getPublicIpAddress()) == false)
             return false;
-        if (other.getPrivateDnsName() == null
-                ^ this.getPrivateDnsName() == null)
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
             return false;
-        if (other.getPrivateDnsName() != null
-                && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
             return false;
-        if (other.getPrivateIpAddress() == null
-                ^ this.getPrivateIpAddress() == null)
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
             return false;
-        if (other.getPrivateIpAddress() != null
-                && other.getPrivateIpAddress().equals(
-                        this.getPrivateIpAddress()) == false)
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getInstanceGroupId() == null
-                ^ this.getInstanceGroupId() == null)
+        if (other.getInstanceGroupId() == null ^ this.getInstanceGroupId() == null)
             return false;
-        if (other.getInstanceGroupId() != null
-                && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
+        if (other.getInstanceGroupId() != null && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
+            return false;
+        if (other.getInstanceFleetId() == null ^ this.getInstanceFleetId() == null)
+            return false;
+        if (other.getInstanceFleetId() != null && other.getInstanceFleetId().equals(this.getInstanceFleetId()) == false)
+            return false;
+        if (other.getMarket() == null ^ this.getMarket() == null)
+            return false;
+        if (other.getMarket() != null && other.getMarket().equals(this.getMarket()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getEbsVolumes() == null ^ this.getEbsVolumes() == null)
             return false;
-        if (other.getEbsVolumes() != null
-                && other.getEbsVolumes().equals(this.getEbsVolumes()) == false)
+        if (other.getEbsVolumes() != null && other.getEbsVolumes().equals(this.getEbsVolumes()) == false)
             return false;
         return true;
     }
@@ -591,36 +753,18 @@ public class Instance implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPublicDnsName() == null) ? 0 : getPublicDnsName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPublicIpAddress() == null) ? 0 : getPublicIpAddress()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getEbsVolumes() == null) ? 0 : getEbsVolumes().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpAddress() == null) ? 0 : getPublicIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFleetId() == null) ? 0 : getInstanceFleetId().hashCode());
+        hashCode = prime * hashCode + ((getMarket() == null) ? 0 : getMarket().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getEbsVolumes() == null) ? 0 : getEbsVolumes().hashCode());
         return hashCode;
     }
 
@@ -629,9 +773,13 @@ public class Instance implements Serializable, Cloneable {
         try {
             return (Instance) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

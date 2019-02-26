@@ -15,10 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.ShapeSubstitution;
@@ -30,6 +26,10 @@ import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * This processor internally keeps track of all the structure members whose

@@ -1,29 +1,26 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
-import com.amazonaws.AmazonServiceException;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * This exception occurs when there is something wrong with user input.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class InvalidRequestException extends com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -31,12 +28,10 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
-    private String errorCode;
+    private String emrErrorCode;
 
     /**
-     * Constructs a new InvalidRequestException with the specified error
-     * message.
+     * Constructs a new InvalidRequestException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
@@ -50,12 +45,13 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      * 
-     * @param errorCode
+     * @param emrErrorCode
      *        The error code associated with the exception.
      */
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public void setEmrErrorCode(String emrErrorCode) {
+        this.emrErrorCode = emrErrorCode;
     }
 
     /**
@@ -66,8 +62,9 @@ public class InvalidRequestException extends AmazonServiceException {
      * @return The error code associated with the exception.
      */
 
-    public String getErrorCode() {
-        return this.errorCode;
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public String getEmrErrorCode() {
+        return this.emrErrorCode;
     }
 
     /**
@@ -75,14 +72,13 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      * 
-     * @param errorCode
+     * @param emrErrorCode
      *        The error code associated with the exception.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InvalidRequestException withErrorCode(String errorCode) {
-        setErrorCode(errorCode);
+    public InvalidRequestException withEmrErrorCode(String emrErrorCode) {
+        setEmrErrorCode(emrErrorCode);
         return this;
     }
 

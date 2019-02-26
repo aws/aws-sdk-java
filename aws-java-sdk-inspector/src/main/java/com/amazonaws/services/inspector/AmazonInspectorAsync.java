@@ -1,353 +1,376 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.inspector;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.inspector.model.*;
 
 /**
- * Interface for accessing Amazon Inspector asynchronously. Each asynchronous
- * method will return a Java Future object representing the asynchronous
- * operation; overloads which accept an {@code AsyncHandler} can be used to
- * receive notification when an asynchronous operation completes.
+ * Interface for accessing Amazon Inspector asynchronously. Each asynchronous method will return a Java Future object
+ * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
+ * notification when an asynchronous operation completes.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.inspector.AbstractAmazonInspectorAsync} instead.
+ * </p>
  * <p>
  * <fullname>Amazon Inspector</fullname>
  * <p>
- * Amazon Inspector enables you to analyze the behavior of your AWS resources
- * and to identify potential security issues. For more information, see <a href=
- * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
- * > Amazon Inspector User Guide</a>.
+ * Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues.
+ * For more information, see <a
+ * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"> Amazon Inspector User
+ * Guide</a>.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
-     * Assigns attributes (key and value pairs) to the findings that are
-     * specified by the ARNs of the findings.
+     * Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.
      * </p>
      * 
      * @param addAttributesToFindingsRequest
-     * @return A Java Future containing the result of the
-     *         AddAttributesToFindings operation returned by the service.
+     * @return A Java Future containing the result of the AddAttributesToFindings operation returned by the service.
      * @sample AmazonInspectorAsync.AddAttributesToFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(
-            AddAttributesToFindingsRequest addAttributesToFindingsRequest);
+    java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(AddAttributesToFindingsRequest addAttributesToFindingsRequest);
 
     /**
      * <p>
-     * Assigns attributes (key and value pairs) to the findings that are
-     * specified by the ARNs of the findings.
+     * Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.
      * </p>
      * 
      * @param addAttributesToFindingsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         AddAttributesToFindings operation returned by the service.
+     * @return A Java Future containing the result of the AddAttributesToFindings operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.AddAttributesToFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(
-            AddAttributesToFindingsRequest addAttributesToFindingsRequest,
+    java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(AddAttributesToFindingsRequest addAttributesToFindingsRequest,
             com.amazonaws.handlers.AsyncHandler<AddAttributesToFindingsRequest, AddAttributesToFindingsResult> asyncHandler);
 
     /**
      * <p>
-     * Creates a new assessment target using the ARN of the resource group that
-     * is generated by <a>CreateResourceGroup</a>. You can create up to 50
-     * assessment targets per AWS account. You can run up to 500 concurrent
-     * agents per AWS account. For more information, see <a href=
-     * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"
-     * > Amazon Inspector Assessment Targets</a>.
+     * Creates a new assessment target using the ARN of the resource group that is generated by
+     * <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+     * and region are included in the assessment target. If the <a
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t
+     * already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access
+     * to AWS Services needed to perform security assessments. You can create up to 50 assessment targets per AWS
+     * account. You can run up to 500 concurrent agents per AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"> Amazon Inspector
+     * Assessment Targets</a>.
      * </p>
      * 
      * @param createAssessmentTargetRequest
-     * @return A Java Future containing the result of the CreateAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the CreateAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsync.CreateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
-            CreateAssessmentTargetRequest createAssessmentTargetRequest);
+    java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(CreateAssessmentTargetRequest createAssessmentTargetRequest);
 
     /**
      * <p>
-     * Creates a new assessment target using the ARN of the resource group that
-     * is generated by <a>CreateResourceGroup</a>. You can create up to 50
-     * assessment targets per AWS account. You can run up to 500 concurrent
-     * agents per AWS account. For more information, see <a href=
-     * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"
-     * > Amazon Inspector Assessment Targets</a>.
+     * Creates a new assessment target using the ARN of the resource group that is generated by
+     * <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+     * and region are included in the assessment target. If the <a
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t
+     * already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access
+     * to AWS Services needed to perform security assessments. You can create up to 50 assessment targets per AWS
+     * account. You can run up to 500 concurrent agents per AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"> Amazon Inspector
+     * Assessment Targets</a>.
      * </p>
      * 
      * @param createAssessmentTargetRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the CreateAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.CreateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
-            CreateAssessmentTargetRequest createAssessmentTargetRequest,
+    java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(CreateAssessmentTargetRequest createAssessmentTargetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult> asyncHandler);
 
     /**
      * <p>
-     * Creates an assessment template for the assessment target that is
-     * specified by the ARN of the assessment target.
+     * Creates an assessment template for the assessment target that is specified by the ARN of the assessment target.
+     * If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+     * role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon
+     * Inspector access to AWS Services needed to perform security assessments.
      * </p>
      * 
      * @param createAssessmentTemplateRequest
-     * @return A Java Future containing the result of the
-     *         CreateAssessmentTemplate operation returned by the service.
+     * @return A Java Future containing the result of the CreateAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsync.CreateAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
-            CreateAssessmentTemplateRequest createAssessmentTemplateRequest);
+    java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(CreateAssessmentTemplateRequest createAssessmentTemplateRequest);
 
     /**
      * <p>
-     * Creates an assessment template for the assessment target that is
-     * specified by the ARN of the assessment target.
+     * Creates an assessment template for the assessment target that is specified by the ARN of the assessment target.
+     * If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+     * role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon
+     * Inspector access to AWS Services needed to perform security assessments.
      * </p>
      * 
      * @param createAssessmentTemplateRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         CreateAssessmentTemplate operation returned by the service.
+     * @return A Java Future containing the result of the CreateAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.CreateAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
-            CreateAssessmentTemplateRequest createAssessmentTemplateRequest,
+    java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(CreateAssessmentTemplateRequest createAssessmentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult> asyncHandler);
 
     /**
      * <p>
-     * Creates a resource group using the specified set of tags (key and value
-     * pairs) that are used to select the EC2 instances to be included in an
-     * Amazon Inspector assessment target. The created resource group is then
-     * used to create an Amazon Inspector assessment target. For more
-     * information, see <a>CreateAssessmentTarget</a>.
+     * Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview
+     * lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment.
      * </p>
      * 
-     * @param createResourceGroupRequest
-     * @return A Java Future containing the result of the CreateResourceGroup
-     *         operation returned by the service.
-     * @sample AmazonInspectorAsync.CreateResourceGroup
+     * @param createExclusionsPreviewRequest
+     * @return A Java Future containing the result of the CreateExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(
-            CreateResourceGroupRequest createResourceGroupRequest);
+    java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest createExclusionsPreviewRequest);
 
     /**
      * <p>
-     * Creates a resource group using the specified set of tags (key and value
-     * pairs) that are used to select the EC2 instances to be included in an
-     * Amazon Inspector assessment target. The created resource group is then
-     * used to create an Amazon Inspector assessment target. For more
-     * information, see <a>CreateAssessmentTarget</a>.
+     * Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview
+     * lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment.
+     * </p>
+     * 
+     * @param createExclusionsPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.CreateExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest createExclusionsPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExclusionsPreviewRequest, CreateExclusionsPreviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2
+     * instances to be included in an Amazon Inspector assessment target. The created resource group is then used to
+     * create an Amazon Inspector assessment target. For more information, see <a>CreateAssessmentTarget</a>.
+     * </p>
+     * 
+     * @param createResourceGroupRequest
+     * @return A Java Future containing the result of the CreateResourceGroup operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateResourceGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(CreateResourceGroupRequest createResourceGroupRequest);
+
+    /**
+     * <p>
+     * Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2
+     * instances to be included in an Amazon Inspector assessment target. The created resource group is then used to
+     * create an Amazon Inspector assessment target. For more information, see <a>CreateAssessmentTarget</a>.
      * </p>
      * 
      * @param createResourceGroupRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the CreateResourceGroup
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the CreateResourceGroup operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.CreateResourceGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(
-            CreateResourceGroupRequest createResourceGroupRequest,
+    java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(CreateResourceGroupRequest createResourceGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateResourceGroupRequest, CreateResourceGroupResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the assessment run that is specified by the ARN of the assessment
-     * run.
+     * Deletes the assessment run that is specified by the ARN of the assessment run.
      * </p>
      * 
      * @param deleteAssessmentRunRequest
-     * @return A Java Future containing the result of the DeleteAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
-            DeleteAssessmentRunRequest deleteAssessmentRunRequest);
+    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(DeleteAssessmentRunRequest deleteAssessmentRunRequest);
 
     /**
      * <p>
-     * Deletes the assessment run that is specified by the ARN of the assessment
-     * run.
+     * Deletes the assessment run that is specified by the ARN of the assessment run.
      * </p>
      * 
      * @param deleteAssessmentRunRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
-            DeleteAssessmentRunRequest deleteAssessmentRunRequest,
+    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(DeleteAssessmentRunRequest deleteAssessmentRunRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the assessment target that is specified by the ARN of the
-     * assessment target.
+     * Deletes the assessment target that is specified by the ARN of the assessment target.
      * </p>
      * 
      * @param deleteAssessmentTargetRequest
-     * @return A Java Future containing the result of the DeleteAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
-            DeleteAssessmentTargetRequest deleteAssessmentTargetRequest);
+    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest);
 
     /**
      * <p>
-     * Deletes the assessment target that is specified by the ARN of the
-     * assessment target.
+     * Deletes the assessment target that is specified by the ARN of the assessment target.
      * </p>
      * 
      * @param deleteAssessmentTargetRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
-            DeleteAssessmentTargetRequest deleteAssessmentTargetRequest,
+    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler);
 
     /**
      * <p>
-     * Deletes the assessment template that is specified by the ARN of the
-     * assessment template.
+     * Deletes the assessment template that is specified by the ARN of the assessment template.
      * </p>
      * 
      * @param deleteAssessmentTemplateRequest
-     * @return A Java Future containing the result of the
-     *         DeleteAssessmentTemplate operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
-            DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest);
+    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest);
 
     /**
      * <p>
-     * Deletes the assessment template that is specified by the ARN of the
-     * assessment template.
+     * Deletes the assessment template that is specified by the ARN of the assessment template.
      * </p>
      * 
      * @param deleteAssessmentTemplateRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DeleteAssessmentTemplate operation returned by the service.
+     * @return A Java Future containing the result of the DeleteAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
-            DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest,
+    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler);
 
     /**
      * <p>
-     * Describes the assessment runs that are specified by the ARNs of the
-     * assessment runs.
+     * Describes the assessment runs that are specified by the ARNs of the assessment runs.
      * </p>
      * 
      * @param describeAssessmentRunsRequest
-     * @return A Java Future containing the result of the DescribeAssessmentRuns
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentRuns operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
-            DescribeAssessmentRunsRequest describeAssessmentRunsRequest);
+    java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(DescribeAssessmentRunsRequest describeAssessmentRunsRequest);
 
     /**
      * <p>
-     * Describes the assessment runs that are specified by the ARNs of the
-     * assessment runs.
+     * Describes the assessment runs that are specified by the ARNs of the assessment runs.
      * </p>
      * 
      * @param describeAssessmentRunsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeAssessmentRuns
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentRuns operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
-            DescribeAssessmentRunsRequest describeAssessmentRunsRequest,
+    java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(DescribeAssessmentRunsRequest describeAssessmentRunsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult> asyncHandler);
 
     /**
      * <p>
-     * Describes the assessment targets that are specified by the ARNs of the
-     * assessment targets.
+     * Describes the assessment targets that are specified by the ARNs of the assessment targets.
      * </p>
      * 
      * @param describeAssessmentTargetsRequest
-     * @return A Java Future containing the result of the
-     *         DescribeAssessmentTargets operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentTargets operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
             DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest);
 
     /**
      * <p>
-     * Describes the assessment targets that are specified by the ARNs of the
-     * assessment targets.
+     * Describes the assessment targets that are specified by the ARNs of the assessment targets.
      * </p>
      * 
      * @param describeAssessmentTargetsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DescribeAssessmentTargets operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentTargets operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
             DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest,
@@ -355,33 +378,32 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
-     * Describes the assessment templates that are specified by the ARNs of the
-     * assessment templates.
+     * Describes the assessment templates that are specified by the ARNs of the assessment templates.
      * </p>
      * 
      * @param describeAssessmentTemplatesRequest
-     * @return A Java Future containing the result of the
-     *         DescribeAssessmentTemplates operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentTemplates operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
             DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest);
 
     /**
      * <p>
-     * Describes the assessment templates that are specified by the ARNs of the
-     * assessment templates.
+     * Describes the assessment templates that are specified by the ARNs of the assessment templates.
      * </p>
      * 
      * @param describeAssessmentTemplatesRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DescribeAssessmentTemplates operation returned by the service.
+     * @return A Java Future containing the result of the DescribeAssessmentTemplates operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
             DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest,
@@ -389,33 +411,34 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
-     * Describes the IAM role that enables Amazon Inspector to access your AWS
-     * account.
+     * Describes the IAM role that enables Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @param describeCrossAccountAccessRoleRequest
-     * @return A Java Future containing the result of the
-     *         DescribeCrossAccountAccessRole operation returned by the service.
+     * @return A Java Future containing the result of the DescribeCrossAccountAccessRole operation returned by the
+     *         service.
      * @sample AmazonInspectorAsync.DescribeCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult> describeCrossAccountAccessRoleAsync(
             DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest);
 
     /**
      * <p>
-     * Describes the IAM role that enables Amazon Inspector to access your AWS
-     * account.
+     * Describes the IAM role that enables Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @param describeCrossAccountAccessRoleRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         DescribeCrossAccountAccessRole operation returned by the service.
+     * @return A Java Future containing the result of the DescribeCrossAccountAccessRole operation returned by the
+     *         service.
      * @sample AmazonInspectorAsyncHandler.DescribeCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult> describeCrossAccountAccessRoleAsync(
             DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest,
@@ -423,16 +446,47 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
+     * Describes the exclusions that are specified by the exclusions' ARNs.
+     * </p>
+     * 
+     * @param describeExclusionsRequest
+     * @return A Java Future containing the result of the DescribeExclusions operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest describeExclusionsRequest);
+
+    /**
+     * <p>
+     * Describes the exclusions that are specified by the exclusions' ARNs.
+     * </p>
+     * 
+     * @param describeExclusionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExclusions operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest describeExclusionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExclusionsRequest, DescribeExclusionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the findings that are specified by the ARNs of the findings.
      * </p>
      * 
      * @param describeFindingsRequest
-     * @return A Java Future containing the result of the DescribeFindings
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeFindings operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
-            DescribeFindingsRequest describeFindingsRequest);
+    java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(DescribeFindingsRequest describeFindingsRequest);
 
     /**
      * <p>
@@ -441,328 +495,399 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * 
      * @param describeFindingsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeFindings
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeFindings operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
-            DescribeFindingsRequest describeFindingsRequest,
+    java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(DescribeFindingsRequest describeFindingsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult> asyncHandler);
 
     /**
      * <p>
-     * Describes the resource groups that are specified by the ARNs of the
-     * resource groups.
+     * Describes the resource groups that are specified by the ARNs of the resource groups.
      * </p>
      * 
      * @param describeResourceGroupsRequest
-     * @return A Java Future containing the result of the DescribeResourceGroups
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeResourceGroups operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeResourceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
-            DescribeResourceGroupsRequest describeResourceGroupsRequest);
+    java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(DescribeResourceGroupsRequest describeResourceGroupsRequest);
 
     /**
      * <p>
-     * Describes the resource groups that are specified by the ARNs of the
-     * resource groups.
+     * Describes the resource groups that are specified by the ARNs of the resource groups.
      * </p>
      * 
      * @param describeResourceGroupsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeResourceGroups
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeResourceGroups operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeResourceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
-            DescribeResourceGroupsRequest describeResourceGroupsRequest,
+    java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(DescribeResourceGroupsRequest describeResourceGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult> asyncHandler);
 
     /**
      * <p>
-     * Describes the rules packages that are specified by the ARNs of the rules
-     * packages.
+     * Describes the rules packages that are specified by the ARNs of the rules packages.
      * </p>
      * 
      * @param describeRulesPackagesRequest
-     * @return A Java Future containing the result of the DescribeRulesPackages
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeRulesPackages operation returned by the service.
      * @sample AmazonInspectorAsync.DescribeRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
-            DescribeRulesPackagesRequest describeRulesPackagesRequest);
+    java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(DescribeRulesPackagesRequest describeRulesPackagesRequest);
 
     /**
      * <p>
-     * Describes the rules packages that are specified by the ARNs of the rules
-     * packages.
+     * Describes the rules packages that are specified by the ARNs of the rules packages.
      * </p>
      * 
      * @param describeRulesPackagesRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeRulesPackages
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the DescribeRulesPackages operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DescribeRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
-            DescribeRulesPackagesRequest describeRulesPackagesRequest,
+    java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(DescribeRulesPackagesRequest describeRulesPackagesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult> asyncHandler);
 
     /**
      * <p>
-     * Information about the data that is collected for the specified assessment
-     * run.
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
      * </p>
      * 
-     * @param getTelemetryMetadataRequest
-     * @return A Java Future containing the result of the GetTelemetryMetadata
-     *         operation returned by the service.
-     * @sample AmazonInspectorAsync.GetTelemetryMetadata
+     * @param getAssessmentReportRequest
+     * @return A Java Future containing the result of the GetAssessmentReport operation returned by the service.
+     * @sample AmazonInspectorAsync.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
-            GetTelemetryMetadataRequest getTelemetryMetadataRequest);
+    java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest getAssessmentReportRequest);
 
     /**
      * <p>
-     * Information about the data that is collected for the specified assessment
-     * run.
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
+     * </p>
+     * 
+     * @param getAssessmentReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAssessmentReport operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest getAssessmentReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can
+     * obtain the preview token by running the CreateExclusionsPreview API.
+     * </p>
+     * 
+     * @param getExclusionsPreviewRequest
+     * @return A Java Future containing the result of the GetExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsync.GetExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest getExclusionsPreviewRequest);
+
+    /**
+     * <p>
+     * Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can
+     * obtain the preview token by running the CreateExclusionsPreview API.
+     * </p>
+     * 
+     * @param getExclusionsPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.GetExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest getExclusionsPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExclusionsPreviewRequest, GetExclusionsPreviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Information about the data that is collected for the specified assessment run.
+     * </p>
+     * 
+     * @param getTelemetryMetadataRequest
+     * @return A Java Future containing the result of the GetTelemetryMetadata operation returned by the service.
+     * @sample AmazonInspectorAsync.GetTelemetryMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(GetTelemetryMetadataRequest getTelemetryMetadataRequest);
+
+    /**
+     * <p>
+     * Information about the data that is collected for the specified assessment run.
      * </p>
      * 
      * @param getTelemetryMetadataRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetTelemetryMetadata
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the GetTelemetryMetadata operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.GetTelemetryMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
-            GetTelemetryMetadataRequest getTelemetryMetadataRequest,
+    java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(GetTelemetryMetadataRequest getTelemetryMetadataRequest,
             com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the agents of the assessment runs that are specified by the ARNs of
-     * the assessment runs.
+     * Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.
      * </p>
      * 
      * @param listAssessmentRunAgentsRequest
-     * @return A Java Future containing the result of the
-     *         ListAssessmentRunAgents operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentRunAgents operation returned by the service.
      * @sample AmazonInspectorAsync.ListAssessmentRunAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
-            ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest);
+    java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest);
 
     /**
      * <p>
-     * Lists the agents of the assessment runs that are specified by the ARNs of
-     * the assessment runs.
+     * Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.
      * </p>
      * 
      * @param listAssessmentRunAgentsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         ListAssessmentRunAgents operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentRunAgents operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListAssessmentRunAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
-            ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest,
+    java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the assessment runs that correspond to the assessment templates
-     * that are specified by the ARNs of the assessment templates.
+     * Lists the assessment runs that correspond to the assessment templates that are specified by the ARNs of the
+     * assessment templates.
      * </p>
      * 
      * @param listAssessmentRunsRequest
-     * @return A Java Future containing the result of the ListAssessmentRuns
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentRuns operation returned by the service.
      * @sample AmazonInspectorAsync.ListAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
-            ListAssessmentRunsRequest listAssessmentRunsRequest);
+    java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(ListAssessmentRunsRequest listAssessmentRunsRequest);
 
     /**
      * <p>
-     * Lists the assessment runs that correspond to the assessment templates
-     * that are specified by the ARNs of the assessment templates.
+     * Lists the assessment runs that correspond to the assessment templates that are specified by the ARNs of the
+     * assessment templates.
      * </p>
      * 
      * @param listAssessmentRunsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListAssessmentRuns
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentRuns operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
-            ListAssessmentRunsRequest listAssessmentRunsRequest,
+    java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(ListAssessmentRunsRequest listAssessmentRunsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the ARNs of the assessment targets within this AWS account. For
-     * more information about assessment targets, see <a href=
-     * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"
-     * >Amazon Inspector Assessment Targets</a>.
+     * Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets,
+     * see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector
+     * Assessment Targets</a>.
      * </p>
      * 
      * @param listAssessmentTargetsRequest
-     * @return A Java Future containing the result of the ListAssessmentTargets
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentTargets operation returned by the service.
      * @sample AmazonInspectorAsync.ListAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
-            ListAssessmentTargetsRequest listAssessmentTargetsRequest);
+    java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(ListAssessmentTargetsRequest listAssessmentTargetsRequest);
 
     /**
      * <p>
-     * Lists the ARNs of the assessment targets within this AWS account. For
-     * more information about assessment targets, see <a href=
-     * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"
-     * >Amazon Inspector Assessment Targets</a>.
+     * Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets,
+     * see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector
+     * Assessment Targets</a>.
      * </p>
      * 
      * @param listAssessmentTargetsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListAssessmentTargets
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentTargets operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListAssessmentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
-            ListAssessmentTargetsRequest listAssessmentTargetsRequest,
+    java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(ListAssessmentTargetsRequest listAssessmentTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the assessment templates that correspond to the assessment targets
-     * that are specified by the ARNs of the assessment targets.
+     * Lists the assessment templates that correspond to the assessment targets that are specified by the ARNs of the
+     * assessment targets.
      * </p>
      * 
      * @param listAssessmentTemplatesRequest
-     * @return A Java Future containing the result of the
-     *         ListAssessmentTemplates operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentTemplates operation returned by the service.
      * @sample AmazonInspectorAsync.ListAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
-            ListAssessmentTemplatesRequest listAssessmentTemplatesRequest);
+    java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest);
 
     /**
      * <p>
-     * Lists the assessment templates that correspond to the assessment targets
-     * that are specified by the ARNs of the assessment targets.
+     * Lists the assessment templates that correspond to the assessment targets that are specified by the ARNs of the
+     * assessment targets.
      * </p>
      * 
      * @param listAssessmentTemplatesRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         ListAssessmentTemplates operation returned by the service.
+     * @return A Java Future containing the result of the ListAssessmentTemplates operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListAssessmentTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
-            ListAssessmentTemplatesRequest listAssessmentTemplatesRequest,
+    java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult> asyncHandler);
 
     /**
      * <p>
-     * Lists all the event subscriptions for the assessment template that is
-     * specified by the ARN of the assessment template. For more information,
-     * see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
+     * Lists all the event subscriptions for the assessment template that is specified by the ARN of the assessment
+     * template. For more information, see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
      * </p>
      * 
      * @param listEventSubscriptionsRequest
-     * @return A Java Future containing the result of the ListEventSubscriptions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListEventSubscriptions operation returned by the service.
      * @sample AmazonInspectorAsync.ListEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
-            ListEventSubscriptionsRequest listEventSubscriptionsRequest);
+    java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(ListEventSubscriptionsRequest listEventSubscriptionsRequest);
 
     /**
      * <p>
-     * Lists all the event subscriptions for the assessment template that is
-     * specified by the ARN of the assessment template. For more information,
-     * see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
+     * Lists all the event subscriptions for the assessment template that is specified by the ARN of the assessment
+     * template. For more information, see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
      * </p>
      * 
      * @param listEventSubscriptionsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListEventSubscriptions
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListEventSubscriptions operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
-            ListEventSubscriptionsRequest listEventSubscriptionsRequest,
+    java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(ListEventSubscriptionsRequest listEventSubscriptionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler);
 
     /**
      * <p>
-     * Lists findings that are generated by the assessment runs that are
-     * specified by the ARNs of the assessment runs.
+     * List exclusions that are generated by the assessment run.
      * </p>
      * 
-     * @param listFindingsRequest
-     * @return A Java Future containing the result of the ListFindings operation
-     *         returned by the service.
-     * @sample AmazonInspectorAsync.ListFindings
+     * @param listExclusionsRequest
+     * @return A Java Future containing the result of the ListExclusions operation returned by the service.
+     * @sample AmazonInspectorAsync.ListExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(
-            ListFindingsRequest listFindingsRequest);
+    java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest listExclusionsRequest);
 
     /**
      * <p>
-     * Lists findings that are generated by the assessment runs that are
-     * specified by the ARNs of the assessment runs.
+     * List exclusions that are generated by the assessment run.
+     * </p>
+     * 
+     * @param listExclusionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExclusions operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest listExclusionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExclusionsRequest, ListExclusionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists findings that are generated by the assessment runs that are specified by the ARNs of the assessment runs.
+     * </p>
+     * 
+     * @param listFindingsRequest
+     * @return A Java Future containing the result of the ListFindings operation returned by the service.
+     * @sample AmazonInspectorAsync.ListFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest listFindingsRequest);
+
+    /**
+     * <p>
+     * Lists findings that are generated by the assessment runs that are specified by the ARNs of the assessment runs.
      * </p>
      * 
      * @param listFindingsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListFindings operation
-     *         returned by the service.
+     * @return A Java Future containing the result of the ListFindings operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(
-            ListFindingsRequest listFindingsRequest,
+    java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest listFindingsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult> asyncHandler);
 
     /**
@@ -771,12 +896,12 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param listRulesPackagesRequest
-     * @return A Java Future containing the result of the ListRulesPackages
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListRulesPackages operation returned by the service.
      * @sample AmazonInspectorAsync.ListRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(
-            ListRulesPackagesRequest listRulesPackagesRequest);
+    java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(ListRulesPackagesRequest listRulesPackagesRequest);
 
     /**
      * <p>
@@ -785,16 +910,15 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * 
      * @param listRulesPackagesRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListRulesPackages
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListRulesPackages operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListRulesPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(
-            ListRulesPackagesRequest listRulesPackagesRequest,
+    java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(ListRulesPackagesRequest listRulesPackagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRulesPackagesRequest, ListRulesPackagesResult> asyncHandler);
 
     /**
@@ -803,12 +927,12 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param listTagsForResourceRequest
-     * @return A Java Future containing the result of the ListTagsForResource
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonInspectorAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
-            ListTagsForResourceRequest listTagsForResourceRequest);
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -817,83 +941,80 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListTagsForResource
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
-            ListTagsForResourceRequest listTagsForResourceRequest,
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
-     * Previews the agents installed on the EC2 instances that are part of the
-     * specified assessment target.
+     * Previews the agents installed on the EC2 instances that are part of the specified assessment target.
      * </p>
      * 
      * @param previewAgentsRequest
-     * @return A Java Future containing the result of the PreviewAgents
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PreviewAgents operation returned by the service.
      * @sample AmazonInspectorAsync.PreviewAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
-            PreviewAgentsRequest previewAgentsRequest);
+    java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(PreviewAgentsRequest previewAgentsRequest);
 
     /**
      * <p>
-     * Previews the agents installed on the EC2 instances that are part of the
-     * specified assessment target.
+     * Previews the agents installed on the EC2 instances that are part of the specified assessment target.
      * </p>
      * 
      * @param previewAgentsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PreviewAgents
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the PreviewAgents operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.PreviewAgents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
-            PreviewAgentsRequest previewAgentsRequest,
+    java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(PreviewAgentsRequest previewAgentsRequest,
             com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult> asyncHandler);
 
     /**
      * <p>
-     * Registers the IAM role that Amazon Inspector uses to list your EC2
-     * instances at the start of the assessment run or when you call the
-     * <a>PreviewAgents</a> action.
+     * Registers the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
-     * @return A Java Future containing the result of the
-     *         RegisterCrossAccountAccessRole operation returned by the service.
+     * @return A Java Future containing the result of the RegisterCrossAccountAccessRole operation returned by the
+     *         service.
      * @sample AmazonInspectorAsync.RegisterCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest);
 
     /**
      * <p>
-     * Registers the IAM role that Amazon Inspector uses to list your EC2
-     * instances at the start of the assessment run or when you call the
-     * <a>PreviewAgents</a> action.
+     * Registers the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         RegisterCrossAccountAccessRole operation returned by the service.
+     * @return A Java Future containing the result of the RegisterCrossAccountAccessRole operation returned by the
+     *         service.
      * @sample AmazonInspectorAsyncHandler.RegisterCrossAccountAccessRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest,
@@ -901,35 +1022,36 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
-     * Removes entire attributes (key and value pairs) from the findings that
-     * are specified by the ARNs of the findings where an attribute with the
-     * specified key exists.
+     * Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings
+     * where an attribute with the specified key exists.
      * </p>
      * 
      * @param removeAttributesFromFindingsRequest
-     * @return A Java Future containing the result of the
-     *         RemoveAttributesFromFindings operation returned by the service.
+     * @return A Java Future containing the result of the RemoveAttributesFromFindings operation returned by the
+     *         service.
      * @sample AmazonInspectorAsync.RemoveAttributesFromFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveAttributesFromFindingsResult> removeAttributesFromFindingsAsync(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest);
 
     /**
      * <p>
-     * Removes entire attributes (key and value pairs) from the findings that
-     * are specified by the ARNs of the findings where an attribute with the
-     * specified key exists.
+     * Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings
+     * where an attribute with the specified key exists.
      * </p>
      * 
      * @param removeAttributesFromFindingsRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the
-     *         RemoveAttributesFromFindings operation returned by the service.
+     * @return A Java Future containing the result of the RemoveAttributesFromFindings operation returned by the
+     *         service.
      * @sample AmazonInspectorAsyncHandler.RemoveAttributesFromFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveAttributesFromFindingsResult> removeAttributesFromFindingsAsync(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest,
@@ -937,208 +1059,204 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
-     * Sets tags (key and value pairs) to the assessment template that is
-     * specified by the ARN of the assessment template.
+     * Sets tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment
+     * template.
      * </p>
      * 
      * @param setTagsForResourceRequest
-     * @return A Java Future containing the result of the SetTagsForResource
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SetTagsForResource operation returned by the service.
      * @sample AmazonInspectorAsync.SetTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
-            SetTagsForResourceRequest setTagsForResourceRequest);
+    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(SetTagsForResourceRequest setTagsForResourceRequest);
 
     /**
      * <p>
-     * Sets tags (key and value pairs) to the assessment template that is
-     * specified by the ARN of the assessment template.
+     * Sets tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment
+     * template.
      * </p>
      * 
      * @param setTagsForResourceRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the SetTagsForResource
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SetTagsForResource operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.SetTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
-            SetTagsForResourceRequest setTagsForResourceRequest,
+    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(SetTagsForResourceRequest setTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, SetTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
-     * Starts the assessment run specified by the ARN of the assessment
-     * template. For this API to function properly, you must not exceed the
-     * limit of running up to 500 concurrent agents per AWS account.
+     * Starts the assessment run specified by the ARN of the assessment template. For this API to function properly, you
+     * must not exceed the limit of running up to 500 concurrent agents per AWS account.
      * </p>
      * 
      * @param startAssessmentRunRequest
-     * @return A Java Future containing the result of the StartAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the StartAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsync.StartAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
-            StartAssessmentRunRequest startAssessmentRunRequest);
+    java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(StartAssessmentRunRequest startAssessmentRunRequest);
 
     /**
      * <p>
-     * Starts the assessment run specified by the ARN of the assessment
-     * template. For this API to function properly, you must not exceed the
-     * limit of running up to 500 concurrent agents per AWS account.
+     * Starts the assessment run specified by the ARN of the assessment template. For this API to function properly, you
+     * must not exceed the limit of running up to 500 concurrent agents per AWS account.
      * </p>
      * 
      * @param startAssessmentRunRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the StartAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the StartAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.StartAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
-            StartAssessmentRunRequest startAssessmentRunRequest,
+    java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(StartAssessmentRunRequest startAssessmentRunRequest,
             com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult> asyncHandler);
 
     /**
      * <p>
-     * Stops the assessment run that is specified by the ARN of the assessment
-     * run.
+     * Stops the assessment run that is specified by the ARN of the assessment run.
      * </p>
      * 
      * @param stopAssessmentRunRequest
-     * @return A Java Future containing the result of the StopAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the StopAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsync.StopAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
-            StopAssessmentRunRequest stopAssessmentRunRequest);
+    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(StopAssessmentRunRequest stopAssessmentRunRequest);
 
     /**
      * <p>
-     * Stops the assessment run that is specified by the ARN of the assessment
-     * run.
+     * Stops the assessment run that is specified by the ARN of the assessment run.
      * </p>
      * 
      * @param stopAssessmentRunRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the StopAssessmentRun
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the StopAssessmentRun operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.StopAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
-            StopAssessmentRunRequest stopAssessmentRunRequest,
+    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(StopAssessmentRunRequest stopAssessmentRunRequest,
             com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler);
 
     /**
      * <p>
-     * Enables the process of sending Amazon Simple Notification Service (SNS)
-     * notifications about a specified event to a specified SNS topic.
+     * Enables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to
+     * a specified SNS topic.
      * </p>
      * 
      * @param subscribeToEventRequest
-     * @return A Java Future containing the result of the SubscribeToEvent
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SubscribeToEvent operation returned by the service.
      * @sample AmazonInspectorAsync.SubscribeToEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
-            SubscribeToEventRequest subscribeToEventRequest);
+    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(SubscribeToEventRequest subscribeToEventRequest);
 
     /**
      * <p>
-     * Enables the process of sending Amazon Simple Notification Service (SNS)
-     * notifications about a specified event to a specified SNS topic.
+     * Enables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to
+     * a specified SNS topic.
      * </p>
      * 
      * @param subscribeToEventRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the SubscribeToEvent
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the SubscribeToEvent operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.SubscribeToEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
-            SubscribeToEventRequest subscribeToEventRequest,
+    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(SubscribeToEventRequest subscribeToEventRequest,
             com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler);
 
     /**
      * <p>
-     * Disables the process of sending Amazon Simple Notification Service (SNS)
-     * notifications about a specified event to a specified SNS topic.
+     * Disables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to
+     * a specified SNS topic.
      * </p>
      * 
      * @param unsubscribeFromEventRequest
-     * @return A Java Future containing the result of the UnsubscribeFromEvent
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UnsubscribeFromEvent operation returned by the service.
      * @sample AmazonInspectorAsync.UnsubscribeFromEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
-            UnsubscribeFromEventRequest unsubscribeFromEventRequest);
+    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(UnsubscribeFromEventRequest unsubscribeFromEventRequest);
 
     /**
      * <p>
-     * Disables the process of sending Amazon Simple Notification Service (SNS)
-     * notifications about a specified event to a specified SNS topic.
+     * Disables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to
+     * a specified SNS topic.
      * </p>
      * 
      * @param unsubscribeFromEventRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UnsubscribeFromEvent
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UnsubscribeFromEvent operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.UnsubscribeFromEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent" target="_top">AWS
+     *      API Documentation</a>
      */
-    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
-            UnsubscribeFromEventRequest unsubscribeFromEventRequest,
+    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(UnsubscribeFromEventRequest unsubscribeFromEventRequest,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler);
 
     /**
      * <p>
-     * Updates the assessment target that is specified by the ARN of the
+     * Updates the assessment target that is specified by the ARN of the assessment target.
+     * </p>
+     * <p>
+     * If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the
      * assessment target.
      * </p>
      * 
      * @param updateAssessmentTargetRequest
-     * @return A Java Future containing the result of the UpdateAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UpdateAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsync.UpdateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
-            UpdateAssessmentTargetRequest updateAssessmentTargetRequest);
+    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(UpdateAssessmentTargetRequest updateAssessmentTargetRequest);
 
     /**
      * <p>
-     * Updates the assessment target that is specified by the ARN of the
+     * Updates the assessment target that is specified by the ARN of the assessment target.
+     * </p>
+     * <p>
+     * If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the
      * assessment target.
      * </p>
      * 
      * @param updateAssessmentTargetRequest
      * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the
-     *        request. Users can provide an implementation of the callback
-     *        methods in this interface to receive notification of successful or
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateAssessmentTarget
-     *         operation returned by the service.
+     * @return A Java Future containing the result of the UpdateAssessmentTarget operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.UpdateAssessmentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
-            UpdateAssessmentTargetRequest updateAssessmentTargetRequest,
+    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(UpdateAssessmentTargetRequest updateAssessmentTargetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler);
 
 }

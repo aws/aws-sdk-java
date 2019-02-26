@@ -1,27 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Contains the output of DescribeLoadBalancerPolicyTypes.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeLoadBalancerPolicyTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
     /**
@@ -55,15 +58,13 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      *        Information about the policy types.
      */
 
-    public void setPolicyTypeDescriptions(
-            java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
+    public void setPolicyTypeDescriptions(java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
         if (policyTypeDescriptions == null) {
             this.policyTypeDescriptions = null;
             return;
         }
 
-        this.policyTypeDescriptions = new com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>(
-                policyTypeDescriptions);
+        this.policyTypeDescriptions = new com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>(policyTypeDescriptions);
     }
 
     /**
@@ -71,23 +72,19 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * Information about the policy types.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPolicyTypeDescriptions(java.util.Collection)} or
-     * {@link #withPolicyTypeDescriptions(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicyTypeDescriptions(java.util.Collection)} or
+     * {@link #withPolicyTypeDescriptions(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param policyTypeDescriptions
      *        Information about the policy types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(
-            PolicyTypeDescription... policyTypeDescriptions) {
+    public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(PolicyTypeDescription... policyTypeDescriptions) {
         if (this.policyTypeDescriptions == null) {
-            setPolicyTypeDescriptions(new com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>(
-                    policyTypeDescriptions.length));
+            setPolicyTypeDescriptions(new com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>(policyTypeDescriptions.length));
         }
         for (PolicyTypeDescription ele : policyTypeDescriptions) {
             this.policyTypeDescriptions.add(ele);
@@ -102,19 +99,17 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * 
      * @param policyTypeDescriptions
      *        Information about the policy types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(
-            java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
+    public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
         setPolicyTypeDescriptions(policyTypeDescriptions);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -125,7 +120,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyTypeDescriptions() != null)
-            sb.append("PolicyTypeDescriptions: " + getPolicyTypeDescriptions());
+            sb.append("PolicyTypeDescriptions: ").append(getPolicyTypeDescriptions());
         sb.append("}");
         return sb.toString();
     }
@@ -140,12 +135,9 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
         if (obj instanceof DescribeLoadBalancerPolicyTypesResult == false)
             return false;
         DescribeLoadBalancerPolicyTypesResult other = (DescribeLoadBalancerPolicyTypesResult) obj;
-        if (other.getPolicyTypeDescriptions() == null
-                ^ this.getPolicyTypeDescriptions() == null)
+        if (other.getPolicyTypeDescriptions() == null ^ this.getPolicyTypeDescriptions() == null)
             return false;
-        if (other.getPolicyTypeDescriptions() != null
-                && other.getPolicyTypeDescriptions().equals(
-                        this.getPolicyTypeDescriptions()) == false)
+        if (other.getPolicyTypeDescriptions() != null && other.getPolicyTypeDescriptions().equals(this.getPolicyTypeDescriptions()) == false)
             return false;
         return true;
     }
@@ -155,10 +147,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPolicyTypeDescriptions() == null) ? 0
-                        : getPolicyTypeDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getPolicyTypeDescriptions() == null) ? 0 : getPolicyTypeDescriptions().hashCode());
         return hashCode;
     }
 
@@ -167,9 +156,8 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
         try {
             return (DescribeLoadBalancerPolicyTypesResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

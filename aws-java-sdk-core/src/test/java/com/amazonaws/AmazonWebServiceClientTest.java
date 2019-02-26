@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -23,8 +24,6 @@ import org.junit.Test;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.http.IdleConnectionReaper;
-import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
 
 public class AmazonWebServiceClientTest {
 
@@ -78,6 +77,13 @@ public class AmazonWebServiceClientTest {
         Assert.assertNotEquals(client.getEndpointPrefix(), client.getServiceName());
     }
 
+    @Test
+    public void testDefaultMonitoringListener() {
+        AmazonTestClient client = new AmazonTestClient();
+        assertNotNull(client.getMonitoringListeners());
+        assertEquals(0, client.getMonitoringListeners().size());
+    }
+
     /**
      * A memory leak was introduced in 1.11 that prevented connection managers from being
      * deregistered with the IdleConnectionReaper. This test asserts that any clients registered
@@ -87,6 +93,8 @@ public class AmazonWebServiceClientTest {
      */
     @Test
     public void connectionManagersAreUnregisteredFromIdleConnectionReaper() {
+        // Clears out the IdleConnectionReaper. This is helpful when there are open registered connections from previous tests.
+        IdleConnectionReaper.shutdown();
         for (int count = 0; count < 100; count++) {
             new AmazonWebServiceClient(new ClientConfiguration()) {
             }.shutdown();

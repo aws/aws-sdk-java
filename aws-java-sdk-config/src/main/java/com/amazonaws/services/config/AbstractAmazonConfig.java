@@ -1,28 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.config;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonConfig}. Convenient method forms pass
- * through to the corresponding overload that takes a request object, which
- * throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonConfig}. Convenient method forms pass through to the corresponding overload
+ * that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonConfig implements AmazonConfig {
 
     protected AbstractAmazonConfig() {
@@ -39,26 +38,72 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DeleteConfigRuleResult deleteConfigRule(
-            DeleteConfigRuleRequest request) {
+    public BatchGetAggregateResourceConfigResult batchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteDeliveryChannelResult deleteDeliveryChannel(
-            DeleteDeliveryChannelRequest request) {
+    public BatchGetResourceConfigResult batchGetResourceConfig(BatchGetResourceConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeliverConfigSnapshotResult deliverConfigSnapshot(
-            DeliverConfigSnapshotRequest request) {
+    public DeleteAggregationAuthorizationResult deleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(
-            DescribeComplianceByConfigRuleRequest request) {
+    public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfigurationAggregatorResult deleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePendingAggregationRequestResult deletePendingAggregationRequest(DeletePendingAggregationRequestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRetentionConfigurationResult deleteRetentionConfiguration(DeleteRetentionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAggregateComplianceByConfigRulesResult describeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAggregationAuthorizationsResult describeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,8 +113,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeComplianceByResourceResult describeComplianceByResource(
-            DescribeComplianceByResourceRequest request) {
+    public DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +123,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
-            DescribeConfigRuleEvaluationStatusRequest request) {
+    public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,8 +133,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeConfigRulesResult describeConfigRules(
-            DescribeConfigRulesRequest request) {
+    public DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,8 +143,18 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
-            DescribeConfigurationRecorderStatusRequest request) {
+    public DescribeConfigurationAggregatorSourcesStatusResult describeConfigurationAggregatorSourcesStatus(
+            DescribeConfigurationAggregatorSourcesStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConfigurationAggregatorsResult describeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,8 +164,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeConfigurationRecordersResult describeConfigurationRecorders(
-            DescribeConfigurationRecordersRequest request) {
+    public DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,8 +174,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(
-            DescribeDeliveryChannelStatusRequest request) {
+    public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,8 +184,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public DescribeDeliveryChannelsResult describeDeliveryChannels(
-            DescribeDeliveryChannelsRequest request) {
+    public DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,20 +194,47 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(
-            GetComplianceDetailsByConfigRuleRequest request) {
+    public DescribePendingAggregationRequestsResult describePendingAggregationRequests(DescribePendingAggregationRequestsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(
-            GetComplianceDetailsByResourceRequest request) {
+    public DescribeRetentionConfigurationsResult describeRetentionConfigurations(DescribeRetentionConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(
-            GetComplianceSummaryByConfigRuleRequest request) {
+    public GetAggregateComplianceDetailsByConfigRuleResult getAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAggregateConfigRuleComplianceSummaryResult getAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAggregateDiscoveredResourceCountsResult getAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAggregateResourceConfigResult getAggregateResourceConfig(GetAggregateResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,8 +244,7 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
-            GetComplianceSummaryByResourceTypeRequest request) {
+    public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,14 +254,27 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public GetResourceConfigHistoryResult getResourceConfigHistory(
-            GetResourceConfigHistoryRequest request) {
+    public GetDiscoveredResourceCountsResult getDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListDiscoveredResourcesResult listDiscoveredResources(
-            ListDiscoveredResourcesRequest request) {
+    public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAggregateDiscoveredResourcesResult listAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAggregationAuthorizationResult putAggregationAuthorization(PutAggregationAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,14 +284,17 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public PutConfigurationRecorderResult putConfigurationRecorder(
-            PutConfigurationRecorderRequest request) {
+    public PutConfigurationAggregatorResult putConfigurationAggregator(PutConfigurationAggregatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PutDeliveryChannelResult putDeliveryChannel(
-            PutDeliveryChannelRequest request) {
+    public PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -213,14 +304,22 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public StartConfigurationRecorderResult startConfigurationRecorder(
-            StartConfigurationRecorderRequest request) {
+    public PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StopConfigurationRecorderResult stopConfigurationRecorder(
-            StopConfigurationRecorderRequest request) {
+    public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -230,8 +329,8 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

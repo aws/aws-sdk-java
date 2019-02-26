@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.securitytoken.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DecodeAuthorizationMessageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -64,19 +64,17 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
      * 
      * @param encodedMessage
      *        The encoded message that was returned with the response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DecodeAuthorizationMessageRequest withEncodedMessage(
-            String encodedMessage) {
+    public DecodeAuthorizationMessageRequest withEncodedMessage(String encodedMessage) {
         setEncodedMessage(encodedMessage);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +85,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEncodedMessage() != null)
-            sb.append("EncodedMessage: " + getEncodedMessage());
+            sb.append("EncodedMessage: ").append(getEncodedMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -102,11 +100,9 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
         if (obj instanceof DecodeAuthorizationMessageRequest == false)
             return false;
         DecodeAuthorizationMessageRequest other = (DecodeAuthorizationMessageRequest) obj;
-        if (other.getEncodedMessage() == null
-                ^ this.getEncodedMessage() == null)
+        if (other.getEncodedMessage() == null ^ this.getEncodedMessage() == null)
             return false;
-        if (other.getEncodedMessage() != null
-                && other.getEncodedMessage().equals(this.getEncodedMessage()) == false)
+        if (other.getEncodedMessage() != null && other.getEncodedMessage().equals(this.getEncodedMessage()) == false)
             return false;
         return true;
     }
@@ -116,10 +112,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEncodedMessage() == null) ? 0 : getEncodedMessage()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getEncodedMessage() == null) ? 0 : getEncodedMessage().hashCode());
         return hashCode;
     }
 
@@ -127,4 +120,5 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
     public DecodeAuthorizationMessageRequest clone() {
         return (DecodeAuthorizationMessageRequest) super.clone();
     }
+
 }

@@ -1,29 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * The collection of documents that match the search request.
  * </p>
  */
-public class Hits implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Hits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -39,8 +39,8 @@ public class Hits implements Serializable, Cloneable {
     private Long start;
     /**
      * <p>
-     * A cursor that can be used to retrieve the next set of matching documents
-     * when you want to page through a large result set.
+     * A cursor that can be used to retrieve the next set of matching documents when you want to page through a large
+     * result set.
      * </p>
      */
     private String cursor;
@@ -83,8 +83,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @param found
      *        The total number of documents that match the search request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hits withFound(Long found) {
@@ -124,8 +123,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @param start
      *        The index of the first matching document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hits withStart(Long start) {
@@ -135,13 +133,13 @@ public class Hits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A cursor that can be used to retrieve the next set of matching documents
-     * when you want to page through a large result set.
+     * A cursor that can be used to retrieve the next set of matching documents when you want to page through a large
+     * result set.
      * </p>
      * 
      * @param cursor
-     *        A cursor that can be used to retrieve the next set of matching
-     *        documents when you want to page through a large result set.
+     *        A cursor that can be used to retrieve the next set of matching documents when you want to page through a
+     *        large result set.
      */
 
     public void setCursor(String cursor) {
@@ -150,12 +148,12 @@ public class Hits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A cursor that can be used to retrieve the next set of matching documents
-     * when you want to page through a large result set.
+     * A cursor that can be used to retrieve the next set of matching documents when you want to page through a large
+     * result set.
      * </p>
      * 
-     * @return A cursor that can be used to retrieve the next set of matching
-     *         documents when you want to page through a large result set.
+     * @return A cursor that can be used to retrieve the next set of matching documents when you want to page through a
+     *         large result set.
      */
 
     public String getCursor() {
@@ -164,15 +162,14 @@ public class Hits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A cursor that can be used to retrieve the next set of matching documents
-     * when you want to page through a large result set.
+     * A cursor that can be used to retrieve the next set of matching documents when you want to page through a large
+     * result set.
      * </p>
      * 
      * @param cursor
-     *        A cursor that can be used to retrieve the next set of matching
-     *        documents when you want to page through a large result set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A cursor that can be used to retrieve the next set of matching documents when you want to page through a
+     *        large result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hits withCursor(String cursor) {
@@ -218,16 +215,14 @@ public class Hits implements Serializable, Cloneable {
      * A document that matches the search request.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setHit(java.util.Collection)} or
-     * {@link #withHit(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHit(java.util.Collection)} or {@link #withHit(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param hit
      *        A document that matches the search request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hits withHit(Hit... hit) {
@@ -247,8 +242,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @param hit
      *        A document that matches the search request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hits withHit(java.util.Collection<Hit> hit) {
@@ -257,8 +251,8 @@ public class Hits implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -269,13 +263,13 @@ public class Hits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFound() != null)
-            sb.append("Found: " + getFound() + ",");
+            sb.append("Found: ").append(getFound()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getCursor() != null)
-            sb.append("Cursor: " + getCursor() + ",");
+            sb.append("Cursor: ").append(getCursor()).append(",");
         if (getHit() != null)
-            sb.append("Hit: " + getHit());
+            sb.append("Hit: ").append(getHit());
         sb.append("}");
         return sb.toString();
     }
@@ -292,23 +286,19 @@ public class Hits implements Serializable, Cloneable {
         Hits other = (Hits) obj;
         if (other.getFound() == null ^ this.getFound() == null)
             return false;
-        if (other.getFound() != null
-                && other.getFound().equals(this.getFound()) == false)
+        if (other.getFound() != null && other.getFound().equals(this.getFound()) == false)
             return false;
         if (other.getStart() == null ^ this.getStart() == null)
             return false;
-        if (other.getStart() != null
-                && other.getStart().equals(this.getStart()) == false)
+        if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
             return false;
         if (other.getCursor() == null ^ this.getCursor() == null)
             return false;
-        if (other.getCursor() != null
-                && other.getCursor().equals(this.getCursor()) == false)
+        if (other.getCursor() != null && other.getCursor().equals(this.getCursor()) == false)
             return false;
         if (other.getHit() == null ^ this.getHit() == null)
             return false;
-        if (other.getHit() != null
-                && other.getHit().equals(this.getHit()) == false)
+        if (other.getHit() != null && other.getHit().equals(this.getHit()) == false)
             return false;
         return true;
     }
@@ -318,14 +308,10 @@ public class Hits implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFound() == null) ? 0 : getFound().hashCode());
-        hashCode = prime * hashCode
-                + ((getStart() == null) ? 0 : getStart().hashCode());
-        hashCode = prime * hashCode
-                + ((getCursor() == null) ? 0 : getCursor().hashCode());
-        hashCode = prime * hashCode
-                + ((getHit() == null) ? 0 : getHit().hashCode());
+        hashCode = prime * hashCode + ((getFound() == null) ? 0 : getFound().hashCode());
+        hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
+        hashCode = prime * hashCode + ((getCursor() == null) ? 0 : getCursor().hashCode());
+        hashCode = prime * hashCode + ((getHit() == null) ? 0 : getHit().hashCode());
         return hashCode;
     }
 
@@ -334,9 +320,13 @@ public class Hits implements Serializable, Cloneable {
         try {
             return (Hits) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudsearchdomain.model.transform.HitsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

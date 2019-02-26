@@ -1,25 +1,21 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
-import java.nio.ByteBuffer;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -31,11 +27,10 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 /**
  * QueryResult JSON Unmarshaller
  */
-public class QueryResultJsonUnmarshaller implements
-        Unmarshaller<QueryResult, JsonUnmarshallerContext> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, JsonUnmarshallerContext> {
 
-    public QueryResult unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public QueryResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         QueryResult queryResult = new QueryResult();
 
         int originalDepth = context.getCurrentDepth();
@@ -45,8 +40,9 @@ public class QueryResultJsonUnmarshaller implements
         JsonToken token = context.getCurrentToken();
         if (token == null)
             token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
+        if (token == VALUE_NULL) {
+            return queryResult;
+        }
 
         while (true) {
             if (token == null)
@@ -55,42 +51,28 @@ public class QueryResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
                     context.nextToken();
-                    queryResult
-                            .setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
-                                    new MapUnmarshaller<String, AttributeValue>(
-                                            context.getUnmarshaller(String.class),
-                                            AttributeValueJsonUnmarshaller
-                                                    .getInstance()))
-                                    .unmarshall(context));
+                    queryResult.setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(new MapUnmarshaller<String, AttributeValue>(context
+                            .getUnmarshaller(String.class), AttributeValueJsonUnmarshaller.getInstance())).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
-                    queryResult.setCount(context.getUnmarshaller(Integer.class)
-                            .unmarshall(context));
+                    queryResult.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ScannedCount", targetDepth)) {
                     context.nextToken();
-                    queryResult.setScannedCount(context.getUnmarshaller(
-                            Integer.class).unmarshall(context));
+                    queryResult.setScannedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
                     context.nextToken();
-                    queryResult
-                            .setLastEvaluatedKey(new MapUnmarshaller<String, AttributeValue>(
-                                    context.getUnmarshaller(String.class),
-                                    AttributeValueJsonUnmarshaller
-                                            .getInstance()).unmarshall(context));
+                    queryResult.setLastEvaluatedKey(new MapUnmarshaller<String, AttributeValue>(context.getUnmarshaller(String.class),
+                            AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
-                    queryResult
-                            .setConsumedCapacity(ConsumedCapacityJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    queryResult.setConsumedCapacity(ConsumedCapacityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
                         break;
                 }

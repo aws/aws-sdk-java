@@ -18,6 +18,8 @@ package com.amazonaws.services.s3.internal;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PresignedUrlDownloadRequest;
+import com.amazonaws.services.s3.model.PresignedUrlUploadRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.UploadPartRequest;
@@ -118,6 +120,23 @@ public class SkipMd5CheckStrategy {
     }
 
     /**
+     * Conveience method to determine whether to do client side validation of a {@link PresignedUrlDownloadRequest} call based
+     * on both the request and the response. See
+     * {@link #skipClientSideValidationPerRequest(PresignedUrlDownloadRequest)} and
+     * {@link #skipClientSideValidationPerGetResponse(ObjectMetadata)} for more details on the
+     * criterion.
+     *
+     * @param request
+     *            Original {@link PresignedUrlDownloadRequest}
+     * @param returnedMetadata
+     *            Metadata returned in {@link S3Object}
+     * @return True if client side validation should be skipped, false otherwise.
+     */
+    public boolean skipClientSideValidation(PresignedUrlDownloadRequest request, ObjectMetadata returnedMetadata) {
+        return skipClientSideValidationPerRequest(request) || skipClientSideValidationPerGetResponse(returnedMetadata);
+    }
+
+    /**
      * Determines whether the client should use the {@link Headers#ETAG} header returned by S3 to
      * validate the integrity of the message client side. We skip the client side check if any of
      * the following conditions are true:
@@ -210,6 +229,46 @@ public class SkipMd5CheckStrategy {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Based on the given {@link PresignedUrlDownloadRequest}, returns whether the specified request should
+     * skip MD5 check on the requested object content. Specifically, MD5 check should be skipped if
+     * one of the following conditions are true:
+     * <ol>
+     * <li>The system property {@value #DISABLE_GET_OBJECT_MD5_VALIDATION_PROPERTY} is set.</li>
+     * <li>The request is a range-get operation</li>
+     * </ol>
+     * Otherwise, MD5 check should not be skipped.
+     */
+    public boolean skipClientSideValidationPerRequest(PresignedUrlDownloadRequest request) {
+        if (isGetObjectMd5ValidationDisabledByProperty()) {
+            return true;
+        }
+
+        if (request.getRange() != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determines whether the client should use the {@link Headers#ETAG} header returned by S3 to
+     * validate the integrity of the message client side. We skip the client side check if any of
+     * the following conditions are true:
+     * <ol>
+     * <li>The system property {@value #DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY} is set</li>
+     * <li>The request involves SSE-C or SSE-KMS</li>
+     * </ol>
+     *
+     * @return True if client side validation should be skipped, false otherwise.
+     */
+    public boolean skipClientSideValidationPerRequest(PresignedUrlUploadRequest request) {
+        if (isPutObjectMd5ValidationDisabledByProperty()) {
+            return true;
+        }
+        return metadataInvolvesSse(request.getMetadata());
     }
 
     private boolean skipClientSideValidationPerResponse(ObjectMetadata metadata) {

@@ -2,9 +2,9 @@
 <#if shape.members?has_content>
 <#list  shape.members as member>
 <#local memberName = member.name />
-<#local setterFunctionName = "set${memberName}" />
-<#local getterFunctionName = "get${memberName}" />
-<#local fluentFunctionName = "with${memberName}" />
+<#local setterMethodName = member.setterMethodName />
+<#local getterMethodName = member.getterMethodName />
+<#local fluentSetterMethodName = member.fluentSetterMethodName />
 <#local variableName = member.variable.variableName />
 <#local variableType = member.variable.variableType />
 <#local getter = member.getterModel/>
@@ -24,7 +24,8 @@
 
     ${getterDoc}
     ${deprecated}
-    public ${getter.returnType} ${getterFunctionName}() {
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public ${getter.returnType} ${getterMethodName}() {
         <#if customConfig.useAutoConstructList>
         if(${variableName} == null) {
             ${variableName} = new ${listModel.templateImplType}();
@@ -35,7 +36,8 @@
 
     ${setterDoc}
     ${deprecated}
-    public void ${setterFunctionName}(${setter.variableSetterType} ${setter.variableName}){
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public void ${setterMethodName}(${setter.variableSetterType} ${setter.variableName}){
         if (${setter.variableName} == null) {
             this.${variableName} = null;
             return;
@@ -47,9 +49,9 @@
 
     ${member.varargSetterDocumentation}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${listModel.memberType}... ${setter.variableName}){
+    public ${shapeName} ${fluentSetterMethodName}(${listModel.memberType}... ${setter.variableName}){
         if (this.${variableName} == null) {
-            ${setterFunctionName}(new ${listModel.templateImplType}(${setter.variableName}.length));
+            ${setterMethodName}(new ${listModel.templateImplType}(${setter.variableName}.length));
         }
         for (${listModel.memberType} ele : ${setter.variableName}) {
             this.${variableName}.add(ele);
@@ -59,8 +61,8 @@
 
     ${fluentDoc}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${setter.variableSetterType} ${setter.variableName}){
-        ${setterFunctionName}(${setter.variableName});
+    public ${shapeName} ${fluentSetterMethodName}(${setter.variableSetterType} ${setter.variableName}){
+        ${setterMethodName}(${setter.variableName});
         return this;
     }
 
@@ -68,15 +70,15 @@
     <#if member.enumType?has_content>
     ${fluentDoc}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${member.enumType}... ${setter.variableName}) {
+    public ${shapeName} ${fluentSetterMethodName}(${member.enumType}... ${setter.variableName}) {
         ${listModel.templateImplType} ${setter.variableName}Copy = new ${listModel.templateImplType}(${setter.variableName}.length);
         for (${member.enumType} value : ${setter.variableName}) {
             ${setter.variableName}Copy.add(value.toString());
         }
-        if (${getterFunctionName}() == null) {
-            ${setterFunctionName}(${setter.variableName}Copy);
+        if (${getterMethodName}() == null) {
+            ${setterMethodName}(${setter.variableName}Copy);
         } else {
-            ${getterFunctionName}().addAll(${setter.variableName}Copy);
+            ${getterMethodName}().addAll(${setter.variableName}Copy);
         }
         return this;
     }
@@ -91,7 +93,8 @@
 
     ${getterDoc}
     ${deprecated}
-    public ${getter.returnType} ${getterFunctionName}(){
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public ${getter.returnType} ${getterMethodName}(){
         <#if customConfig.useAutoConstructMap>
         if(${variableName} == null) {
             ${variableName} = new ${mapModel.templateImplType}();
@@ -102,7 +105,8 @@
 
     ${setterDoc}
     ${deprecated}
-    public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}){
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public void ${setterMethodName}(${setter.variableType} ${setter.variableName}){
         <#if customConfig.useAutoConstructMap>
             this.${variableName} = ${setter.variableName} == null
                 ? null
@@ -114,8 +118,8 @@
 
     ${fluentDoc}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${setter.variableType} ${setter.variableName}){
-        ${setterFunctionName}(${setter.variableName});
+    public ${shapeName} ${fluentSetterMethodName}(${setter.variableType} ${setter.variableName}){
+        ${setterMethodName}(${setter.variableName});
         return this;
     }
 
@@ -132,8 +136,8 @@
 
     /**
       * Removes all the entries added into ${member.name}.
-      * &lt;p>
-      * Returns a reference to this object so that method calls can be chained together.
+      *
+      * @return Returns a reference to this object so that method calls can be chained together.
       */
     ${deprecated}
     public ${shapeName} clear${member.name}Entries() {
@@ -145,20 +149,24 @@
 
     ${setterDoc}
     ${deprecated}
-    public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}) {
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public void ${setterMethodName}(${setter.variableType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName};
     }
 
+    <#-- Do not add Jackson annotations to enum getters and setters. This can break customers.
+         See commit bda4dd89 in codegen package -->
     ${getterDoc}
     ${deprecated}
-    public ${getter.returnType} ${getterFunctionName}() {
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
+    public ${getter.returnType} ${getterMethodName}() {
         return this.${variableName};
     }
 
     ${fluentDoc}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${setter.variableType} ${setter.variableName}) {
-        ${setterFunctionName}(${setter.variableName});
+    public ${shapeName} ${fluentSetterMethodName}(${setter.variableType} ${setter.variableName}) {
+        ${setterMethodName}(${setter.variableName});
         return this;
     }
 
@@ -166,30 +174,34 @@
         <#if convenienceTypeOverload.accepts(shape, member)>
             ${deprecated}
             ${setterDoc}
-            public void ${setterFunctionName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
-                ${setterFunctionName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
+            public void ${setterMethodName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
+                ${setterMethodName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
             }
 
             ${deprecated}
             ${fluentDoc}
-            public ${shapeName} ${fluentFunctionName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
-                ${setterFunctionName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
+            public ${shapeName} ${fluentSetterMethodName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
+                ${setterMethodName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
                 return this;
             }
         </#if>
     </#list>
 
-    <#if member.enumType?has_content>
+     <#-- Do not add Jackson annotations to enum getters and setters. This can break customers.
+          See commit bda4dd89 in codegen package -->
+    <#if member.enumType?has_content && member.shouldEmitLegacyEnumSetter>
     ${setterDoc}
     ${deprecated}
-    public void ${setterFunctionName}(${member.enumType} ${setter.variableName}) {
-        this.${variableName} = ${setter.variableName}.toString();
+    public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {
+        ${fluentSetterMethodName}(${setter.variableName});
     }
+    </#if>
 
+    <#if member.enumType?has_content>
     ${fluentDoc}
     ${deprecated}
-    public ${shapeName} ${fluentFunctionName}(${member.enumType} ${setter.variableName}) {
-        ${setterFunctionName}(${setter.variableName});
+    public ${shapeName} ${fluentSetterMethodName}(${member.enumType} ${setter.variableName}) {
+        this.${variableName} = ${setter.variableName}.toString();
         return this;
     }
     </#if>

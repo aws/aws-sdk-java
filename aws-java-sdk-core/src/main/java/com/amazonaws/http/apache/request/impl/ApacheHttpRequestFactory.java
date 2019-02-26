@@ -14,8 +14,10 @@
  */
 package com.amazonaws.http.apache.request.impl;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.ProxyAuthenticationMethod;
 import com.amazonaws.Request;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.RepeatableInputStreamRequestEntity;
 import com.amazonaws.http.apache.utils.ApacheUtils;
@@ -23,22 +25,23 @@ import com.amazonaws.http.request.HttpRequestFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.SdkHttpUtils;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
+import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.methods.HttpOptions;
 import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
-
-import java.net.URI;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map.Entry;
 
 /**
  * Responsible for creating Apache HttpClient 4 request objects.
@@ -58,13 +61,22 @@ public class ApacheHttpRequestFactory implements
             FakeIOException {
         URI endpoint = request.getEndpoint();
 
-        /*
-         * HttpClient cannot handle url in pattern of "http://host//path", so we
-         * have to escape the double-slash between endpoint and resource-path
-         * into "/%2F"
-         */
-        String uri = SdkHttpUtils.appendUri(endpoint.toString(), request
-                .getResourcePath(), true);
+
+        String uri;
+
+        // skipAppendUriPath is set for APIs making requests with presigned urls. Otherwise
+        // a slash will be appended at the end and the request will fail
+        if (request.getOriginalRequest().getRequestClientOptions().isSkipAppendUriPath()) {
+            uri = endpoint.toString();
+        } else {
+            /*
+             * HttpClient cannot handle url in pattern of "http://host//path", so we
+             * have to escape the double-slash between endpoint and resource-path
+             * into "/%2F"
+             */
+            uri = SdkHttpUtils.appendUri(endpoint.toString(), request.getResourcePath(), true);
+        }
+
         String encodedParams = SdkHttpUtils.encodeParameters(request);
 
         /*
@@ -94,8 +106,6 @@ public class ApacheHttpRequestFactory implements
                 .setConnectionRequestTimeout(settings.getConnectionPoolRequestTimeout())
                 .setConnectTimeout(settings.getConnectionTimeout())
                 .setSocketTimeout(settings.getSocketTimeout())
-                .setStaleConnectionCheckEnabled(true) // TODO Handle
-                        // deprecation here.
                 .setLocalAddress(settings.getLocalAddress());
 
         /*
@@ -109,18 +119,21 @@ public class ApacheHttpRequestFactory implements
             requestConfigBuilder.setExpectContinueEnabled(true);
         }
 
+        addProxyConfig(requestConfigBuilder, settings);
+
         base.setConfig(requestConfigBuilder.build());
     }
-
 
     private HttpRequestBase createApacheRequest(Request<?> request, String uri, String encodedParams) throws FakeIOException {
         switch (request.getHttpMethod()) {
             case HEAD:
                 return new HttpHead(uri);
             case GET:
-                return new HttpGet(uri);
+                return wrapEntity(request, new HttpGetWithBody(uri), encodedParams);
             case DELETE:
                 return new HttpDelete(uri);
+            case OPTIONS:
+                return new HttpOptions(uri);
             case PATCH:
                 return wrapEntity(request, new HttpPatch(uri), encodedParams);
             case POST:
@@ -128,7 +141,7 @@ public class ApacheHttpRequestFactory implements
             case PUT:
                 return wrapEntity(request, new HttpPut(uri), encodedParams);
             default:
-                throw new AmazonClientException("Unknown HTTP method name: " + request.getHttpMethod());
+                throw new SdkClientException("Unknown HTTP method name: " + request.getHttpMethod());
         }
     }
 
@@ -213,5 +226,41 @@ public class ApacheHttpRequestFactory implements
         return SdkHttpUtils.isUsingNonDefaultPort(endpoint)
                 ? endpoint.getHost() + ":" + endpoint.getPort()
                 : endpoint.getHost();
+    }
+
+    /**
+     * Update the provided request configuration builder to specify the proxy authentication schemes that should be used when
+     * authenticating against the HTTP proxy.
+     *
+     * @see ClientConfiguration#setProxyAuthenticationMethods(List)
+     */
+    private void addProxyConfig(RequestConfig.Builder requestConfigBuilder, HttpClientSettings settings) {
+        if (settings.isProxyEnabled() && settings.isAuthenticatedProxy() && settings.getProxyAuthenticationMethods() != null) {
+            List<String> apacheAuthenticationSchemes = new ArrayList<String>();
+
+            for (ProxyAuthenticationMethod authenticationMethod : settings.getProxyAuthenticationMethods()) {
+                apacheAuthenticationSchemes.add(toApacheAuthenticationScheme(authenticationMethod));
+            }
+
+            requestConfigBuilder.setProxyPreferredAuthSchemes(apacheAuthenticationSchemes);
+        }
+    }
+
+    /**
+     * Convert the customer-facing authentication method into an apache-specific authentication method.
+     */
+    private String toApacheAuthenticationScheme(ProxyAuthenticationMethod authenticationMethod) {
+        if (authenticationMethod == null) {
+            throw new IllegalStateException("The configured proxy authentication methods must not be null.");
+        }
+
+        switch (authenticationMethod) {
+            case NTLM: return AuthSchemes.NTLM;
+            case BASIC: return AuthSchemes.BASIC;
+            case DIGEST: return AuthSchemes.DIGEST;
+            case SPNEGO: return AuthSchemes.SPNEGO;
+            case KERBEROS: return AuthSchemes.KERBEROS;
+            default: throw new IllegalStateException("Unknown authentication scheme: " + authenticationMethod);
+        }
     }
 }

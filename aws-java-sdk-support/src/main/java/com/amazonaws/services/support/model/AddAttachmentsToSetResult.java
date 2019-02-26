@@ -1,37 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.support.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * The ID and expiry time of the attachment set returned by the
- * <a>AddAttachmentsToSet</a> operation.
+ * The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet" target="_top">AWS API
+ *      Documentation</a>
  */
-public class AddAttachmentsToSetResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AddAttachmentsToSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      */
     private String attachmentSetId;
@@ -44,18 +43,15 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>AttachmentSetId</code>
-     *        was not specified, a new attachment set is created, and the ID of
-     *        the set is returned in the response. If an
-     *        <code>AttachmentSetId</code> was specified, the attachments are
-     *        added to the specified set, if it exists.
+     *        The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set
+     *        is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was
+     *        specified, the attachments are added to the specified set, if it exists.
      */
 
     public void setAttachmentSetId(String attachmentSetId) {
@@ -64,17 +60,14 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
-     * @return The ID of the attachment set. If an <code>AttachmentSetId</code>
-     *         was not specified, a new attachment set is created, and the ID of
-     *         the set is returned in the response. If an
-     *         <code>AttachmentSetId</code> was specified, the attachments are
-     *         added to the specified set, if it exists.
+     * @return The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set
+     *         is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was
+     *         specified, the attachments are added to the specified set, if it exists.
      */
 
     public String getAttachmentSetId() {
@@ -83,20 +76,16 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
-     * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
-     * specified, the attachments are added to the specified set, if it exists.
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is
+     * created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the
+     * attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>AttachmentSetId</code>
-     *        was not specified, a new attachment set is created, and the ID of
-     *        the set is returned in the response. If an
-     *        <code>AttachmentSetId</code> was specified, the attachments are
-     *        added to the specified set, if it exists.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set
+     *        is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was
+     *        specified, the attachments are added to the specified set, if it exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddAttachmentsToSetResult withAttachmentSetId(String attachmentSetId) {
@@ -136,8 +125,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      * 
      * @param expiryTime
      *        The time and date when the attachment set expires.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddAttachmentsToSetResult withExpiryTime(String expiryTime) {
@@ -146,8 +134,8 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -158,9 +146,9 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId() + ",");
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId()).append(",");
         if (getExpiryTime() != null)
-            sb.append("ExpiryTime: " + getExpiryTime());
+            sb.append("ExpiryTime: ").append(getExpiryTime());
         sb.append("}");
         return sb.toString();
     }
@@ -175,16 +163,13 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
         if (obj instanceof AddAttachmentsToSetResult == false)
             return false;
         AddAttachmentsToSetResult other = (AddAttachmentsToSetResult) obj;
-        if (other.getAttachmentSetId() == null
-                ^ this.getAttachmentSetId() == null)
+        if (other.getAttachmentSetId() == null ^ this.getAttachmentSetId() == null)
             return false;
-        if (other.getAttachmentSetId() != null
-                && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
+        if (other.getAttachmentSetId() != null && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false)
             return false;
         if (other.getExpiryTime() == null ^ this.getExpiryTime() == null)
             return false;
-        if (other.getExpiryTime() != null
-                && other.getExpiryTime().equals(this.getExpiryTime()) == false)
+        if (other.getExpiryTime() != null && other.getExpiryTime().equals(this.getExpiryTime()) == false)
             return false;
         return true;
     }
@@ -194,12 +179,8 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getExpiryTime() == null) ? 0 : getExpiryTime().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId().hashCode());
+        hashCode = prime * hashCode + ((getExpiryTime() == null) ? 0 : getExpiryTime().hashCode());
         return hashCode;
     }
 
@@ -208,9 +189,8 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
         try {
             return (AddAttachmentsToSetResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

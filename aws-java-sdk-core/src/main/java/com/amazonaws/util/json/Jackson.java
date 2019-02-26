@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
@@ -63,7 +63,7 @@ public enum Jackson {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to parse Json String.", e);
+            throw new SdkClientException("Unable to parse Json String.", e);
         }
     }
 

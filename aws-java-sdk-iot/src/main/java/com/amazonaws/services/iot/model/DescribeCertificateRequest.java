@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,23 +22,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DescribeCertificate operation.
  * </p>
  */
-public class DescribeCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      */
     private String certificateId;
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public void setCertificateId(String certificateId) {
@@ -49,10 +47,10 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
-     * @return The ID of the certificate.
+     * @return The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public String getCertificateId() {
@@ -61,13 +59,12 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeCertificateRequest withCertificateId(String certificateId) {
@@ -76,8 +73,8 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -88,7 +85,7 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId());
         sb.append("}");
         return sb.toString();
     }
@@ -105,8 +102,7 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
         DescribeCertificateRequest other = (DescribeCertificateRequest) obj;
         if (other.getCertificateId() == null ^ this.getCertificateId() == null)
             return false;
-        if (other.getCertificateId() != null
-                && other.getCertificateId().equals(this.getCertificateId()) == false)
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
         return true;
     }
@@ -116,10 +112,7 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCertificateId() == null) ? 0 : getCertificateId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
         return hashCode;
     }
 
@@ -127,4 +120,5 @@ public class DescribeCertificateRequest extends AmazonWebServiceRequest
     public DescribeCertificateRequest clone() {
         return (DescribeCertificateRequest) super.clone();
     }
+
 }

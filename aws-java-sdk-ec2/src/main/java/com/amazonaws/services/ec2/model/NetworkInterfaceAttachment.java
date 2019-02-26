@@ -1,36 +1,55 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a network interface attachment.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAttachment" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NetworkInterfaceAttachment implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The timestamp indicating when the attachment initiated.
+     * </p>
+     */
+    private java.util.Date attachTime;
     /**
      * <p>
      * The ID of the network interface attachment.
      * </p>
      */
     private String attachmentId;
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     */
+    private Boolean deleteOnTermination;
+    /**
+     * <p>
+     * The device index of the network interface attachment on the instance.
+     * </p>
+     */
+    private Integer deviceIndex;
     /**
      * <p>
      * The ID of the instance.
@@ -45,29 +64,50 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
     private String instanceOwnerId;
     /**
      * <p>
-     * The device index of the network interface attachment on the instance.
-     * </p>
-     */
-    private Integer deviceIndex;
-    /**
-     * <p>
      * The attachment state.
      * </p>
      */
     private String status;
+
     /**
      * <p>
      * The timestamp indicating when the attachment initiated.
      * </p>
+     * 
+     * @param attachTime
+     *        The timestamp indicating when the attachment initiated.
      */
-    private java.util.Date attachTime;
+
+    public void setAttachTime(java.util.Date attachTime) {
+        this.attachTime = attachTime;
+    }
+
     /**
      * <p>
-     * Indicates whether the network interface is deleted when the instance is
-     * terminated.
+     * The timestamp indicating when the attachment initiated.
      * </p>
+     * 
+     * @return The timestamp indicating when the attachment initiated.
      */
-    private Boolean deleteOnTermination;
+
+    public java.util.Date getAttachTime() {
+        return this.attachTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp indicating when the attachment initiated.
+     * </p>
+     * 
+     * @param attachTime
+     *        The timestamp indicating when the attachment initiated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAttachment withAttachTime(java.util.Date attachTime) {
+        setAttachTime(attachTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -101,12 +141,103 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param attachmentId
      *        The ID of the network interface attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAttachment withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public Boolean getDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the network interface is deleted when the instance is terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAttachment withDeleteOnTermination(Boolean deleteOnTermination) {
+        setDeleteOnTermination(deleteOnTermination);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public Boolean isDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * The device index of the network interface attachment on the instance.
+     * </p>
+     * 
+     * @param deviceIndex
+     *        The device index of the network interface attachment on the instance.
+     */
+
+    public void setDeviceIndex(Integer deviceIndex) {
+        this.deviceIndex = deviceIndex;
+    }
+
+    /**
+     * <p>
+     * The device index of the network interface attachment on the instance.
+     * </p>
+     * 
+     * @return The device index of the network interface attachment on the instance.
+     */
+
+    public Integer getDeviceIndex() {
+        return this.deviceIndex;
+    }
+
+    /**
+     * <p>
+     * The device index of the network interface attachment on the instance.
+     * </p>
+     * 
+     * @param deviceIndex
+     *        The device index of the network interface attachment on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAttachment withDeviceIndex(Integer deviceIndex) {
+        setDeviceIndex(deviceIndex);
         return this;
     }
 
@@ -142,8 +273,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAttachment withInstanceId(String instanceId) {
@@ -183,56 +313,11 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param instanceOwnerId
      *        The AWS account ID of the owner of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAttachment withInstanceOwnerId(String instanceOwnerId) {
         setInstanceOwnerId(instanceOwnerId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device index of the network interface attachment on the instance.
-     * </p>
-     * 
-     * @param deviceIndex
-     *        The device index of the network interface attachment on the
-     *        instance.
-     */
-
-    public void setDeviceIndex(Integer deviceIndex) {
-        this.deviceIndex = deviceIndex;
-    }
-
-    /**
-     * <p>
-     * The device index of the network interface attachment on the instance.
-     * </p>
-     * 
-     * @return The device index of the network interface attachment on the
-     *         instance.
-     */
-
-    public Integer getDeviceIndex() {
-        return this.deviceIndex;
-    }
-
-    /**
-     * <p>
-     * The device index of the network interface attachment on the instance.
-     * </p>
-     * 
-     * @param deviceIndex
-     *        The device index of the network interface attachment on the
-     *        instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public NetworkInterfaceAttachment withDeviceIndex(Integer deviceIndex) {
-        setDeviceIndex(deviceIndex);
         return this;
     }
 
@@ -270,8 +355,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param status
      *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
      */
 
@@ -291,7 +375,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      */
 
     public void setStatus(AttachmentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -301,122 +385,18 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param status
      *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
      */
 
     public NetworkInterfaceAttachment withStatus(AttachmentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * <p>
-     * The timestamp indicating when the attachment initiated.
-     * </p>
-     * 
-     * @param attachTime
-     *        The timestamp indicating when the attachment initiated.
-     */
-
-    public void setAttachTime(java.util.Date attachTime) {
-        this.attachTime = attachTime;
-    }
-
-    /**
-     * <p>
-     * The timestamp indicating when the attachment initiated.
-     * </p>
-     * 
-     * @return The timestamp indicating when the attachment initiated.
-     */
-
-    public java.util.Date getAttachTime() {
-        return this.attachTime;
-    }
-
-    /**
-     * <p>
-     * The timestamp indicating when the attachment initiated.
-     * </p>
-     * 
-     * @param attachTime
-     *        The timestamp indicating when the attachment initiated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public NetworkInterfaceAttachment withAttachTime(java.util.Date attachTime) {
-        setAttachTime(attachTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the network interface is deleted when the instance is
-     * terminated.
-     * </p>
-     * 
-     * @param deleteOnTermination
-     *        Indicates whether the network interface is deleted when the
-     *        instance is terminated.
-     */
-
-    public void setDeleteOnTermination(Boolean deleteOnTermination) {
-        this.deleteOnTermination = deleteOnTermination;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the network interface is deleted when the instance is
-     * terminated.
-     * </p>
-     * 
-     * @return Indicates whether the network interface is deleted when the
-     *         instance is terminated.
-     */
-
-    public Boolean getDeleteOnTermination() {
-        return this.deleteOnTermination;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the network interface is deleted when the instance is
-     * terminated.
-     * </p>
-     * 
-     * @param deleteOnTermination
-     *        Indicates whether the network interface is deleted when the
-     *        instance is terminated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public NetworkInterfaceAttachment withDeleteOnTermination(
-            Boolean deleteOnTermination) {
-        setDeleteOnTermination(deleteOnTermination);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the network interface is deleted when the instance is
-     * terminated.
-     * </p>
-     * 
-     * @return Indicates whether the network interface is deleted when the
-     *         instance is terminated.
-     */
-
-    public Boolean isDeleteOnTermination() {
-        return this.deleteOnTermination;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -426,20 +406,20 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId() + ",");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
-        if (getInstanceOwnerId() != null)
-            sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
-        if (getDeviceIndex() != null)
-            sb.append("DeviceIndex: " + getDeviceIndex() + ",");
-        if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
         if (getAttachTime() != null)
-            sb.append("AttachTime: " + getAttachTime() + ",");
+            sb.append("AttachTime: ").append(getAttachTime()).append(",");
+        if (getAttachmentId() != null)
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getDeviceIndex() != null)
+            sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getInstanceOwnerId() != null)
+            sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -454,43 +434,33 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         if (obj instanceof NetworkInterfaceAttachment == false)
             return false;
         NetworkInterfaceAttachment other = (NetworkInterfaceAttachment) obj;
+        if (other.getAttachTime() == null ^ this.getAttachTime() == null)
+            return false;
+        if (other.getAttachTime() != null && other.getAttachTime().equals(this.getAttachTime()) == false)
+            return false;
         if (other.getAttachmentId() == null ^ this.getAttachmentId() == null)
             return false;
-        if (other.getAttachmentId() != null
-                && other.getAttachmentId().equals(this.getAttachmentId()) == false)
+        if (other.getAttachmentId() != null && other.getAttachmentId().equals(this.getAttachmentId()) == false)
             return false;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
-        if (other.getInstanceOwnerId() == null
-                ^ this.getInstanceOwnerId() == null)
-            return false;
-        if (other.getInstanceOwnerId() != null
-                && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false)
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
             return false;
         if (other.getDeviceIndex() == null ^ this.getDeviceIndex() == null)
             return false;
-        if (other.getDeviceIndex() != null
-                && other.getDeviceIndex().equals(this.getDeviceIndex()) == false)
+        if (other.getDeviceIndex() != null && other.getDeviceIndex().equals(this.getDeviceIndex()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getInstanceOwnerId() == null ^ this.getInstanceOwnerId() == null)
+            return false;
+        if (other.getInstanceOwnerId() != null && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getStatus() != null
-                && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getAttachTime() == null ^ this.getAttachTime() == null)
-            return false;
-        if (other.getAttachTime() != null
-                && other.getAttachTime().equals(this.getAttachTime()) == false)
-            return false;
-        if (other.getDeleteOnTermination() == null
-                ^ this.getDeleteOnTermination() == null)
-            return false;
-        if (other.getDeleteOnTermination() != null
-                && other.getDeleteOnTermination().equals(
-                        this.getDeleteOnTermination()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -500,27 +470,13 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAttachmentId() == null) ? 0 : getAttachmentId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttachTime() == null) ? 0 : getAttachTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeleteOnTermination() == null) ? 0
-                        : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getAttachTime() == null) ? 0 : getAttachTime().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentId() == null) ? 0 : getAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -529,9 +485,8 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         try {
             return (NetworkInterfaceAttachment) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

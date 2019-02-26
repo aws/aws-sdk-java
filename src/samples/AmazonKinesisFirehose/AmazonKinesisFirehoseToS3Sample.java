@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,7 +92,7 @@ public class AmazonKinesisFirehoseToS3Sample extends AbstractAmazonKinesisFireho
         // Validate AccountId parameter is set
         if (StringUtils.isNullOrEmpty(accountId)) {
             throw new IllegalArgumentException("AccountId is empty. Please enter the accountId in "
-                    + "firehosetos3sample.properties file");
+                    + CONFIG_FILE + " file");
         }
     }
 

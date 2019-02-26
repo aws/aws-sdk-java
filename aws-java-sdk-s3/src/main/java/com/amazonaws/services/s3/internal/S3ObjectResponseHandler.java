@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.BinaryUtils;
 
 /**
  * S3 HTTP response handler that knows how to pull S3 object content and
@@ -47,6 +46,11 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         if (response.getHeaders().get(Headers.REQUESTER_CHARGED_HEADER) != null) {
             object.setRequesterCharged(true);
         }
+
+        if (response.getHeaders().get(Headers.S3_TAGGING_COUNT) != null) {
+            object.setTaggingCount(Integer.parseInt(response.getHeaders().get(Headers.S3_TAGGING_COUNT)));
+        }
+
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 
@@ -66,6 +70,15 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
     @Override
     public boolean needsConnectionLeftOpen() {
         return true;
+    }
+
+    private long getContentLength(HttpResponse response) {
+        final String contentLength = response.getHeader("Content-Length");
+        if (contentLength == null) {
+            return -1;
+        } else {
+            return Long.parseLong(response.getHeader("Content-Length"));
+        }
     }
 
 }

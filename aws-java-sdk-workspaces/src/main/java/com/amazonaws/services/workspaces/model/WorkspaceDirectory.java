@@ -1,30 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about an AWS Directory Service directory for use with
- * Amazon WorkSpaces.
+ * Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory" target="_top">AWS API
+ *      Documentation</a>
  */
-public class WorkspaceDirectory implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,23 +48,20 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
     private String directoryName;
     /**
      * <p>
-     * The registration code for the directory. This is the code that users
-     * enter in their Amazon WorkSpaces client application to connect to the
-     * directory.
+     * The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client
+     * application to connect to the directory.
      * </p>
      */
     private String registrationCode;
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used
-     * with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for
-     * the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dnsIpAddresses;
@@ -74,9 +73,8 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
     private String customerUserName;
     /**
      * <p>
-     * The identifier of the IAM role. This is the role that allows Amazon
-     * WorkSpaces to make calls to other services, such as Amazon EC2, on your
-     * behalf.
+     * The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services,
+     * such as Amazon EC2, on your behalf.
      * </p>
      */
     private String iamRoleId;
@@ -100,11 +98,16 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * A structure that specifies the default creation properties for all
-     * WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      */
     private DefaultWorkspaceCreationProperties workspaceCreationProperties;
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> ipGroupIds;
 
     /**
      * <p>
@@ -138,8 +141,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryId
      *        The directory identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withDirectoryId(String directoryId) {
@@ -179,8 +181,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param alias
      *        The directory alias.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withAlias(String alias) {
@@ -220,8 +221,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryName
      *        The name of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withDirectoryName(String directoryName) {
@@ -231,15 +231,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registration code for the directory. This is the code that users
-     * enter in their Amazon WorkSpaces client application to connect to the
-     * directory.
+     * The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client
+     * application to connect to the directory.
      * </p>
      * 
      * @param registrationCode
-     *        The registration code for the directory. This is the code that
-     *        users enter in their Amazon WorkSpaces client application to
-     *        connect to the directory.
+     *        The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces
+     *        client application to connect to the directory.
      */
 
     public void setRegistrationCode(String registrationCode) {
@@ -248,14 +246,12 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registration code for the directory. This is the code that users
-     * enter in their Amazon WorkSpaces client application to connect to the
-     * directory.
+     * The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client
+     * application to connect to the directory.
      * </p>
      * 
-     * @return The registration code for the directory. This is the code that
-     *         users enter in their Amazon WorkSpaces client application to
-     *         connect to the directory.
+     * @return The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces
+     *         client application to connect to the directory.
      */
 
     public String getRegistrationCode() {
@@ -264,17 +260,14 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The registration code for the directory. This is the code that users
-     * enter in their Amazon WorkSpaces client application to connect to the
-     * directory.
+     * The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client
+     * application to connect to the directory.
      * </p>
      * 
      * @param registrationCode
-     *        The registration code for the directory. This is the code that
-     *        users enter in their Amazon WorkSpaces client application to
-     *        connect to the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces
+     *        client application to connect to the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withRegistrationCode(String registrationCode) {
@@ -284,12 +277,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used
-     * with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
-     * @return An array of strings that contains the identifiers of the subnets
-     *         used with the directory.
+     * @return The identifiers of the subnets used with the directory.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -301,13 +292,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used
-     * with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets
-     *        used with the directory.
+     *        The identifiers of the subnets used with the directory.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -316,33 +305,27 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
             return;
         }
 
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(
-                subnetIds);
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
     }
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used
-     * with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnetIds(java.util.Collection)} or
-     * {@link #withSubnetIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets
-     *        used with the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifiers of the subnets used with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    subnetIds.length));
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
         }
         for (String ele : subnetIds) {
             this.subnetIds.add(ele);
@@ -352,31 +335,25 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used
-     * with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets
-     *        used with the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifiers of the subnets used with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceDirectory withSubnetIds(
-            java.util.Collection<String> subnetIds) {
+    public WorkspaceDirectory withSubnetIds(java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
         return this;
     }
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for
-     * the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
-     * @return An array of strings that contains the IP addresses of the DNS
-     *         servers for the directory.
+     * @return The IP addresses of the DNS servers for the directory.
      */
 
     public java.util.List<String> getDnsIpAddresses() {
@@ -388,13 +365,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for
-     * the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS
-     *        servers for the directory.
+     *        The IP addresses of the DNS servers for the directory.
      */
 
     public void setDnsIpAddresses(java.util.Collection<String> dnsIpAddresses) {
@@ -403,33 +378,27 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
             return;
         }
 
-        this.dnsIpAddresses = new com.amazonaws.internal.SdkInternalList<String>(
-                dnsIpAddresses);
+        this.dnsIpAddresses = new com.amazonaws.internal.SdkInternalList<String>(dnsIpAddresses);
     }
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for
-     * the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDnsIpAddresses(java.util.Collection)} or
-     * {@link #withDnsIpAddresses(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnsIpAddresses(java.util.Collection)} or {@link #withDnsIpAddresses(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS
-     *        servers for the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP addresses of the DNS servers for the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withDnsIpAddresses(String... dnsIpAddresses) {
         if (this.dnsIpAddresses == null) {
-            setDnsIpAddresses(new com.amazonaws.internal.SdkInternalList<String>(
-                    dnsIpAddresses.length));
+            setDnsIpAddresses(new com.amazonaws.internal.SdkInternalList<String>(dnsIpAddresses.length));
         }
         for (String ele : dnsIpAddresses) {
             this.dnsIpAddresses.add(ele);
@@ -439,19 +408,15 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for
-     * the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS
-     *        servers for the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The IP addresses of the DNS servers for the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceDirectory withDnsIpAddresses(
-            java.util.Collection<String> dnsIpAddresses) {
+    public WorkspaceDirectory withDnsIpAddresses(java.util.Collection<String> dnsIpAddresses) {
         setDnsIpAddresses(dnsIpAddresses);
         return this;
     }
@@ -488,8 +453,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param customerUserName
      *        The user name for the service account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withCustomerUserName(String customerUserName) {
@@ -499,15 +463,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the IAM role. This is the role that allows Amazon
-     * WorkSpaces to make calls to other services, such as Amazon EC2, on your
-     * behalf.
+     * The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services,
+     * such as Amazon EC2, on your behalf.
      * </p>
      * 
      * @param iamRoleId
-     *        The identifier of the IAM role. This is the role that allows
-     *        Amazon WorkSpaces to make calls to other services, such as Amazon
-     *        EC2, on your behalf.
+     *        The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other
+     *        services, such as Amazon EC2, on your behalf.
      */
 
     public void setIamRoleId(String iamRoleId) {
@@ -516,14 +478,12 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the IAM role. This is the role that allows Amazon
-     * WorkSpaces to make calls to other services, such as Amazon EC2, on your
-     * behalf.
+     * The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services,
+     * such as Amazon EC2, on your behalf.
      * </p>
      * 
-     * @return The identifier of the IAM role. This is the role that allows
-     *         Amazon WorkSpaces to make calls to other services, such as Amazon
-     *         EC2, on your behalf.
+     * @return The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other
+     *         services, such as Amazon EC2, on your behalf.
      */
 
     public String getIamRoleId() {
@@ -532,17 +492,14 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the IAM role. This is the role that allows Amazon
-     * WorkSpaces to make calls to other services, such as Amazon EC2, on your
-     * behalf.
+     * The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services,
+     * such as Amazon EC2, on your behalf.
      * </p>
      * 
      * @param iamRoleId
-     *        The identifier of the IAM role. This is the role that allows
-     *        Amazon WorkSpaces to make calls to other services, such as Amazon
-     *        EC2, on your behalf.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other
+     *        services, such as Amazon EC2, on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDirectory withIamRoleId(String iamRoleId) {
@@ -584,8 +541,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryType
      *        The directory type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryType
      */
 
@@ -605,7 +561,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      */
 
     public void setDirectoryType(WorkspaceDirectoryType directoryType) {
-        this.directoryType = directoryType.toString();
+        withDirectoryType(directoryType);
     }
 
     /**
@@ -615,14 +571,12 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryType
      *        The directory type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryType
      */
 
-    public WorkspaceDirectory withDirectoryType(
-            WorkspaceDirectoryType directoryType) {
-        setDirectoryType(directoryType);
+    public WorkspaceDirectory withDirectoryType(WorkspaceDirectoryType directoryType) {
+        this.directoryType = directoryType.toString();
         return this;
     }
 
@@ -632,8 +586,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * </p>
      * 
      * @param workspaceSecurityGroupId
-     *        The identifier of the security group that is assigned to new
-     *        WorkSpaces.
+     *        The identifier of the security group that is assigned to new WorkSpaces.
      */
 
     public void setWorkspaceSecurityGroupId(String workspaceSecurityGroupId) {
@@ -645,8 +598,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * The identifier of the security group that is assigned to new WorkSpaces.
      * </p>
      * 
-     * @return The identifier of the security group that is assigned to new
-     *         WorkSpaces.
+     * @return The identifier of the security group that is assigned to new WorkSpaces.
      */
 
     public String getWorkspaceSecurityGroupId() {
@@ -659,14 +611,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * </p>
      * 
      * @param workspaceSecurityGroupId
-     *        The identifier of the security group that is assigned to new
-     *        WorkSpaces.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The identifier of the security group that is assigned to new WorkSpaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceDirectory withWorkspaceSecurityGroupId(
-            String workspaceSecurityGroupId) {
+    public WorkspaceDirectory withWorkspaceSecurityGroupId(String workspaceSecurityGroupId) {
         setWorkspaceSecurityGroupId(workspaceSecurityGroupId);
         return this;
     }
@@ -705,8 +654,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the directory's registration with Amazon WorkSpaces
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */
 
@@ -726,7 +674,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      */
 
     public void setState(WorkspaceDirectoryState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -736,40 +684,34 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the directory's registration with Amazon WorkSpaces
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */
 
     public WorkspaceDirectory withState(WorkspaceDirectoryState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all
-     * WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
      * @param workspaceCreationProperties
-     *        A structure that specifies the default creation properties for all
-     *        WorkSpaces in the directory.
+     *        The default creation properties for all WorkSpaces in the directory.
      */
 
-    public void setWorkspaceCreationProperties(
-            DefaultWorkspaceCreationProperties workspaceCreationProperties) {
+    public void setWorkspaceCreationProperties(DefaultWorkspaceCreationProperties workspaceCreationProperties) {
         this.workspaceCreationProperties = workspaceCreationProperties;
     }
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all
-     * WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
-     * @return A structure that specifies the default creation properties for
-     *         all WorkSpaces in the directory.
+     * @return The default creation properties for all WorkSpaces in the directory.
      */
 
     public DefaultWorkspaceCreationProperties getWorkspaceCreationProperties() {
@@ -778,26 +720,95 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all
-     * WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
      * @param workspaceCreationProperties
-     *        A structure that specifies the default creation properties for all
-     *        WorkSpaces in the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The default creation properties for all WorkSpaces in the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public WorkspaceDirectory withWorkspaceCreationProperties(
-            DefaultWorkspaceCreationProperties workspaceCreationProperties) {
+    public WorkspaceDirectory withWorkspaceCreationProperties(DefaultWorkspaceCreationProperties workspaceCreationProperties) {
         setWorkspaceCreationProperties(workspaceCreationProperties);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @return The identifiers of the IP access control groups associated with the directory.
+     */
+
+    public java.util.List<String> getIpGroupIds() {
+        if (ipGroupIds == null) {
+            ipGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return ipGroupIds;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     */
+
+    public void setIpGroupIds(java.util.Collection<String> ipGroupIds) {
+        if (ipGroupIds == null) {
+            this.ipGroupIds = null;
+            return;
+        }
+
+        this.ipGroupIds = new com.amazonaws.internal.SdkInternalList<String>(ipGroupIds);
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpGroupIds(java.util.Collection)} or {@link #withIpGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withIpGroupIds(String... ipGroupIds) {
+        if (this.ipGroupIds == null) {
+            setIpGroupIds(new com.amazonaws.internal.SdkInternalList<String>(ipGroupIds.length));
+        }
+        for (String ele : ipGroupIds) {
+            this.ipGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withIpGroupIds(java.util.Collection<String> ipGroupIds) {
+        setIpGroupIds(ipGroupIds);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -808,31 +819,31 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getAlias() != null)
-            sb.append("Alias: " + getAlias() + ",");
+            sb.append("Alias: ").append(getAlias()).append(",");
         if (getDirectoryName() != null)
-            sb.append("DirectoryName: " + getDirectoryName() + ",");
+            sb.append("DirectoryName: ").append(getDirectoryName()).append(",");
         if (getRegistrationCode() != null)
-            sb.append("RegistrationCode: " + getRegistrationCode() + ",");
+            sb.append("RegistrationCode: ").append(getRegistrationCode()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getDnsIpAddresses() != null)
-            sb.append("DnsIpAddresses: " + getDnsIpAddresses() + ",");
+            sb.append("DnsIpAddresses: ").append(getDnsIpAddresses()).append(",");
         if (getCustomerUserName() != null)
-            sb.append("CustomerUserName: " + getCustomerUserName() + ",");
+            sb.append("CustomerUserName: ").append(getCustomerUserName()).append(",");
         if (getIamRoleId() != null)
-            sb.append("IamRoleId: " + getIamRoleId() + ",");
+            sb.append("IamRoleId: ").append(getIamRoleId()).append(",");
         if (getDirectoryType() != null)
-            sb.append("DirectoryType: " + getDirectoryType() + ",");
+            sb.append("DirectoryType: ").append(getDirectoryType()).append(",");
         if (getWorkspaceSecurityGroupId() != null)
-            sb.append("WorkspaceSecurityGroupId: "
-                    + getWorkspaceSecurityGroupId() + ",");
+            sb.append("WorkspaceSecurityGroupId: ").append(getWorkspaceSecurityGroupId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getWorkspaceCreationProperties() != null)
-            sb.append("WorkspaceCreationProperties: "
-                    + getWorkspaceCreationProperties());
+            sb.append("WorkspaceCreationProperties: ").append(getWorkspaceCreationProperties()).append(",");
+        if (getIpGroupIds() != null)
+            sb.append("IpGroupIds: ").append(getIpGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -849,72 +860,55 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
         WorkspaceDirectory other = (WorkspaceDirectory) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getAlias() == null ^ this.getAlias() == null)
             return false;
-        if (other.getAlias() != null
-                && other.getAlias().equals(this.getAlias()) == false)
+        if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
             return false;
         if (other.getDirectoryName() == null ^ this.getDirectoryName() == null)
             return false;
-        if (other.getDirectoryName() != null
-                && other.getDirectoryName().equals(this.getDirectoryName()) == false)
+        if (other.getDirectoryName() != null && other.getDirectoryName().equals(this.getDirectoryName()) == false)
             return false;
-        if (other.getRegistrationCode() == null
-                ^ this.getRegistrationCode() == null)
+        if (other.getRegistrationCode() == null ^ this.getRegistrationCode() == null)
             return false;
-        if (other.getRegistrationCode() != null
-                && other.getRegistrationCode().equals(
-                        this.getRegistrationCode()) == false)
+        if (other.getRegistrationCode() != null && other.getRegistrationCode().equals(this.getRegistrationCode()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
-        if (other.getSubnetIds() != null
-                && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
-        if (other.getDnsIpAddresses() == null
-                ^ this.getDnsIpAddresses() == null)
+        if (other.getDnsIpAddresses() == null ^ this.getDnsIpAddresses() == null)
             return false;
-        if (other.getDnsIpAddresses() != null
-                && other.getDnsIpAddresses().equals(this.getDnsIpAddresses()) == false)
+        if (other.getDnsIpAddresses() != null && other.getDnsIpAddresses().equals(this.getDnsIpAddresses()) == false)
             return false;
-        if (other.getCustomerUserName() == null
-                ^ this.getCustomerUserName() == null)
+        if (other.getCustomerUserName() == null ^ this.getCustomerUserName() == null)
             return false;
-        if (other.getCustomerUserName() != null
-                && other.getCustomerUserName().equals(
-                        this.getCustomerUserName()) == false)
+        if (other.getCustomerUserName() != null && other.getCustomerUserName().equals(this.getCustomerUserName()) == false)
             return false;
         if (other.getIamRoleId() == null ^ this.getIamRoleId() == null)
             return false;
-        if (other.getIamRoleId() != null
-                && other.getIamRoleId().equals(this.getIamRoleId()) == false)
+        if (other.getIamRoleId() != null && other.getIamRoleId().equals(this.getIamRoleId()) == false)
             return false;
         if (other.getDirectoryType() == null ^ this.getDirectoryType() == null)
             return false;
-        if (other.getDirectoryType() != null
-                && other.getDirectoryType().equals(this.getDirectoryType()) == false)
+        if (other.getDirectoryType() != null && other.getDirectoryType().equals(this.getDirectoryType()) == false)
             return false;
-        if (other.getWorkspaceSecurityGroupId() == null
-                ^ this.getWorkspaceSecurityGroupId() == null)
+        if (other.getWorkspaceSecurityGroupId() == null ^ this.getWorkspaceSecurityGroupId() == null)
             return false;
-        if (other.getWorkspaceSecurityGroupId() != null
-                && other.getWorkspaceSecurityGroupId().equals(
-                        this.getWorkspaceSecurityGroupId()) == false)
+        if (other.getWorkspaceSecurityGroupId() != null && other.getWorkspaceSecurityGroupId().equals(this.getWorkspaceSecurityGroupId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getWorkspaceCreationProperties() == null
-                ^ this.getWorkspaceCreationProperties() == null)
+        if (other.getWorkspaceCreationProperties() == null ^ this.getWorkspaceCreationProperties() == null)
             return false;
-        if (other.getWorkspaceCreationProperties() != null
-                && other.getWorkspaceCreationProperties().equals(
-                        this.getWorkspaceCreationProperties()) == false)
+        if (other.getWorkspaceCreationProperties() != null && other.getWorkspaceCreationProperties().equals(this.getWorkspaceCreationProperties()) == false)
+            return false;
+        if (other.getIpGroupIds() == null ^ this.getIpGroupIds() == null)
+            return false;
+        if (other.getIpGroupIds() != null && other.getIpGroupIds().equals(this.getIpGroupIds()) == false)
             return false;
         return true;
     }
@@ -924,45 +918,19 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getAlias() == null) ? 0 : getAlias().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryName() == null) ? 0 : getDirectoryName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegistrationCode() == null) ? 0 : getRegistrationCode()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDnsIpAddresses() == null) ? 0 : getDnsIpAddresses()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCustomerUserName() == null) ? 0 : getCustomerUserName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIamRoleId() == null) ? 0 : getIamRoleId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryType() == null) ? 0 : getDirectoryType()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceSecurityGroupId() == null) ? 0
-                        : getWorkspaceSecurityGroupId().hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getWorkspaceCreationProperties() == null) ? 0
-                        : getWorkspaceCreationProperties().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryName() == null) ? 0 : getDirectoryName().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationCode() == null) ? 0 : getRegistrationCode().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getDnsIpAddresses() == null) ? 0 : getDnsIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getCustomerUserName() == null) ? 0 : getCustomerUserName().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleId() == null) ? 0 : getIamRoleId().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryType() == null) ? 0 : getDirectoryType().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceSecurityGroupId() == null) ? 0 : getWorkspaceSecurityGroupId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceCreationProperties() == null) ? 0 : getWorkspaceCreationProperties().hashCode());
+        hashCode = prime * hashCode + ((getIpGroupIds() == null) ? 0 : getIpGroupIds().hashCode());
         return hashCode;
     }
 
@@ -971,9 +939,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
         try {
             return (WorkspaceDirectory) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.workspaces.model.transform.WorkspaceDirectoryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

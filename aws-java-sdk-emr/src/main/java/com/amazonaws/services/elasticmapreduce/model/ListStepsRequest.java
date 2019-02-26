@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * This input determines which steps to list.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListStepsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListStepsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -84,8 +85,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * 
      * @param clusterId
      *        The identifier of the cluster for which to list the steps.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListStepsRequest withClusterId(String clusterId) {
@@ -125,8 +125,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.stepStates = new com.amazonaws.internal.SdkInternalList<String>(
-                stepStates);
+        this.stepStates = new com.amazonaws.internal.SdkInternalList<String>(stepStates);
     }
 
     /**
@@ -134,23 +133,20 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * The filter to limit the step list based on certain states.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStepStates(java.util.Collection)} or
-     * {@link #withStepStates(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStepStates(java.util.Collection)} or {@link #withStepStates(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param stepStates
      *        The filter to limit the step list based on certain states.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepState
      */
 
     public ListStepsRequest withStepStates(String... stepStates) {
         if (this.stepStates == null) {
-            setStepStates(new com.amazonaws.internal.SdkInternalList<String>(
-                    stepStates.length));
+            setStepStates(new com.amazonaws.internal.SdkInternalList<String>(stepStates.length));
         }
         for (String ele : stepStates) {
             this.stepStates.add(ele);
@@ -165,13 +161,11 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * 
      * @param stepStates
      *        The filter to limit the step list based on certain states.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepState
      */
 
-    public ListStepsRequest withStepStates(
-            java.util.Collection<String> stepStates) {
+    public ListStepsRequest withStepStates(java.util.Collection<String> stepStates) {
         setStepStates(stepStates);
         return this;
     }
@@ -183,14 +177,12 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * 
      * @param stepStates
      *        The filter to limit the step list based on certain states.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepState
      */
 
     public ListStepsRequest withStepStates(StepState... stepStates) {
-        com.amazonaws.internal.SdkInternalList<String> stepStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                stepStates.length);
+        com.amazonaws.internal.SdkInternalList<String> stepStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(stepStates.length);
         for (StepState value : stepStates) {
             stepStatesCopy.add(value.toString());
         }
@@ -207,8 +199,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * The filter to limit the step list based on the identifier of the steps.
      * </p>
      * 
-     * @return The filter to limit the step list based on the identifier of the
-     *         steps.
+     * @return The filter to limit the step list based on the identifier of the steps.
      */
 
     public java.util.List<String> getStepIds() {
@@ -224,8 +215,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param stepIds
-     *        The filter to limit the step list based on the identifier of the
-     *        steps.
+     *        The filter to limit the step list based on the identifier of the steps.
      */
 
     public void setStepIds(java.util.Collection<String> stepIds) {
@@ -234,8 +224,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
             return;
         }
 
-        this.stepIds = new com.amazonaws.internal.SdkInternalList<String>(
-                stepIds);
+        this.stepIds = new com.amazonaws.internal.SdkInternalList<String>(stepIds);
     }
 
     /**
@@ -243,23 +232,19 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * The filter to limit the step list based on the identifier of the steps.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStepIds(java.util.Collection)} or
-     * {@link #withStepIds(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStepIds(java.util.Collection)} or {@link #withStepIds(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param stepIds
-     *        The filter to limit the step list based on the identifier of the
-     *        steps.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The filter to limit the step list based on the identifier of the steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListStepsRequest withStepIds(String... stepIds) {
         if (this.stepIds == null) {
-            setStepIds(new com.amazonaws.internal.SdkInternalList<String>(
-                    stepIds.length));
+            setStepIds(new com.amazonaws.internal.SdkInternalList<String>(stepIds.length));
         }
         for (String ele : stepIds) {
             this.stepIds.add(ele);
@@ -273,10 +258,8 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param stepIds
-     *        The filter to limit the step list based on the identifier of the
-     *        steps.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The filter to limit the step list based on the identifier of the steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListStepsRequest withStepIds(java.util.Collection<String> stepIds) {
@@ -290,8 +273,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
+     *        The pagination token that indicates the next set of results to retrieve.
      */
 
     public void setMarker(String marker) {
@@ -303,8 +285,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results to
-     *         retrieve.
+     * @return The pagination token that indicates the next set of results to retrieve.
      */
 
     public String getMarker() {
@@ -317,10 +298,8 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param marker
-     *        The pagination token that indicates the next set of results to
-     *        retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The pagination token that indicates the next set of results to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListStepsRequest withMarker(String marker) {
@@ -329,8 +308,8 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -341,13 +320,13 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getStepStates() != null)
-            sb.append("StepStates: " + getStepStates() + ",");
+            sb.append("StepStates: ").append(getStepStates()).append(",");
         if (getStepIds() != null)
-            sb.append("StepIds: " + getStepIds() + ",");
+            sb.append("StepIds: ").append(getStepIds()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -364,23 +343,19 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
         ListStepsRequest other = (ListStepsRequest) obj;
         if (other.getClusterId() == null ^ this.getClusterId() == null)
             return false;
-        if (other.getClusterId() != null
-                && other.getClusterId().equals(this.getClusterId()) == false)
+        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
         if (other.getStepStates() == null ^ this.getStepStates() == null)
             return false;
-        if (other.getStepStates() != null
-                && other.getStepStates().equals(this.getStepStates()) == false)
+        if (other.getStepStates() != null && other.getStepStates().equals(this.getStepStates()) == false)
             return false;
         if (other.getStepIds() == null ^ this.getStepIds() == null)
             return false;
-        if (other.getStepIds() != null
-                && other.getStepIds().equals(this.getStepIds()) == false)
+        if (other.getStepIds() != null && other.getStepIds().equals(this.getStepIds()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         return true;
     }
@@ -390,14 +365,10 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStepStates() == null) ? 0 : getStepStates().hashCode());
-        hashCode = prime * hashCode
-                + ((getStepIds() == null) ? 0 : getStepIds().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getStepStates() == null) ? 0 : getStepStates().hashCode());
+        hashCode = prime * hashCode + ((getStepIds() == null) ? 0 : getStepIds().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
 
@@ -405,4 +376,5 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
     public ListStepsRequest clone() {
         return (ListStepsRequest) super.clone();
     }
+
 }

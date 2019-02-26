@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -17,6 +17,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 import java.io.Serializable;
 import java.security.Permissions;
 import java.util.ArrayList;
@@ -24,8 +26,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
-import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 
 /**
  * <p>
@@ -104,13 +104,24 @@ public class AccessControlList implements Serializable, S3RequesterChargedResult
     }
 
     /**
-     * For internal use only. Sets the owner on this access control list (ACL). This method is only intended for internal use
-     * by the library. The owner of a bucket or object cannot be changed.
-     * However the object can be overwritten by the new desired owner (deleted
-     * and rewritten).
+     * Sets the owner of the {@link AccessControlList}. Note that an owner of a resource can't
+     * change once created.
      *
-     * @param owner
-     *            The owner for this ACL.
+     * <p>
+     * Every bucket and object in Amazon S3 has an owner, the user that created
+     * the bucket or object. The owner of a bucket or object cannot be changed.
+     * However, if the object is overwritten by another user (deleted and
+     * rewritten), the new object will have a new owner.
+     * </p>
+     * <p>
+     * Note: Even the owner is subject to the access control list (ACL). For example, if an owner does
+     * not have {@link Permission#Read} access to an object, the owner cannot
+     * read that object. However, the owner of an object always has write access
+     * to the access control policy ({@link Permission#WriteAcp}) and can change
+     * the ACL to read the object.
+     * </p>
+     *
+     * @param owner Owner of the bucket.
      */
     public void setOwner(Owner owner) {
         this.owner = owner;

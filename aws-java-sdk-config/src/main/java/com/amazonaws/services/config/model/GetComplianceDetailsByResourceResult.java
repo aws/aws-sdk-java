@@ -1,52 +1,49 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
+ * <p/>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource"
+ *      target="_top">AWS API Documentation</a>
  */
-public class GetComplianceDetailsByResourceResult implements Serializable,
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetComplianceDetailsByResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
     /**
      * <p>
-     * Indicates whether the specified AWS resource complies each AWS Config
-     * rule.
+     * Indicates whether the specified AWS resource complies each AWS Config rule.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EvaluationResult> evaluationResults;
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Indicates whether the specified AWS resource complies each AWS Config
-     * rule.
+     * Indicates whether the specified AWS resource complies each AWS Config rule.
      * </p>
      * 
-     * @return Indicates whether the specified AWS resource complies each AWS
-     *         Config rule.
+     * @return Indicates whether the specified AWS resource complies each AWS Config rule.
      */
 
     public java.util.List<EvaluationResult> getEvaluationResults() {
@@ -58,50 +55,40 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
 
     /**
      * <p>
-     * Indicates whether the specified AWS resource complies each AWS Config
-     * rule.
+     * Indicates whether the specified AWS resource complies each AWS Config rule.
      * </p>
      * 
      * @param evaluationResults
-     *        Indicates whether the specified AWS resource complies each AWS
-     *        Config rule.
+     *        Indicates whether the specified AWS resource complies each AWS Config rule.
      */
 
-    public void setEvaluationResults(
-            java.util.Collection<EvaluationResult> evaluationResults) {
+    public void setEvaluationResults(java.util.Collection<EvaluationResult> evaluationResults) {
         if (evaluationResults == null) {
             this.evaluationResults = null;
             return;
         }
 
-        this.evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>(
-                evaluationResults);
+        this.evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>(evaluationResults);
     }
 
     /**
      * <p>
-     * Indicates whether the specified AWS resource complies each AWS Config
-     * rule.
+     * Indicates whether the specified AWS resource complies each AWS Config rule.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEvaluationResults(java.util.Collection)} or
-     * {@link #withEvaluationResults(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvaluationResults(java.util.Collection)} or {@link #withEvaluationResults(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param evaluationResults
-     *        Indicates whether the specified AWS resource complies each AWS
-     *        Config rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the specified AWS resource complies each AWS Config rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByResourceResult withEvaluationResults(
-            EvaluationResult... evaluationResults) {
+    public GetComplianceDetailsByResourceResult withEvaluationResults(EvaluationResult... evaluationResults) {
         if (this.evaluationResults == null) {
-            setEvaluationResults(new com.amazonaws.internal.SdkInternalList<EvaluationResult>(
-                    evaluationResults.length));
+            setEvaluationResults(new com.amazonaws.internal.SdkInternalList<EvaluationResult>(evaluationResults.length));
         }
         for (EvaluationResult ele : evaluationResults) {
             this.evaluationResults.add(ele);
@@ -111,32 +98,26 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
 
     /**
      * <p>
-     * Indicates whether the specified AWS resource complies each AWS Config
-     * rule.
+     * Indicates whether the specified AWS resource complies each AWS Config rule.
      * </p>
      * 
      * @param evaluationResults
-     *        Indicates whether the specified AWS resource complies each AWS
-     *        Config rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the specified AWS resource complies each AWS Config rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetComplianceDetailsByResourceResult withEvaluationResults(
-            java.util.Collection<EvaluationResult> evaluationResults) {
+    public GetComplianceDetailsByResourceResult withEvaluationResults(java.util.Collection<EvaluationResult> evaluationResults) {
         setEvaluationResults(evaluationResults);
         return this;
     }
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,12 +126,10 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next
-     *         page of results in a paginated response.
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
      */
 
     public String getNextToken() {
@@ -159,15 +138,12 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
 
     /**
      * <p>
-     * The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next
-     *        page of results in a paginated response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetComplianceDetailsByResourceResult withNextToken(String nextToken) {
@@ -176,8 +152,8 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -188,9 +164,9 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationResults() != null)
-            sb.append("EvaluationResults: " + getEvaluationResults() + ",");
+            sb.append("EvaluationResults: ").append(getEvaluationResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -205,17 +181,13 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
         if (obj instanceof GetComplianceDetailsByResourceResult == false)
             return false;
         GetComplianceDetailsByResourceResult other = (GetComplianceDetailsByResourceResult) obj;
-        if (other.getEvaluationResults() == null
-                ^ this.getEvaluationResults() == null)
+        if (other.getEvaluationResults() == null ^ this.getEvaluationResults() == null)
             return false;
-        if (other.getEvaluationResults() != null
-                && other.getEvaluationResults().equals(
-                        this.getEvaluationResults()) == false)
+        if (other.getEvaluationResults() != null && other.getEvaluationResults().equals(this.getEvaluationResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -225,12 +197,8 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getEvaluationResults() == null) ? 0
-                        : getEvaluationResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationResults() == null) ? 0 : getEvaluationResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -239,9 +207,8 @@ public class GetComplianceDetailsByResourceResult implements Serializable,
         try {
             return (GetComplianceDetailsByResourceResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

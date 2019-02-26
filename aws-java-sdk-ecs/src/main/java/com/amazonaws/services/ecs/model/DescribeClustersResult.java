@@ -1,27 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeClustersResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeClustersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -66,8 +66,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
             return;
         }
 
-        this.clusters = new com.amazonaws.internal.SdkInternalList<Cluster>(
-                clusters);
+        this.clusters = new com.amazonaws.internal.SdkInternalList<Cluster>(clusters);
     }
 
     /**
@@ -75,22 +74,19 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * The list of clusters.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setClusters(java.util.Collection)} or
-     * {@link #withClusters(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClusters(java.util.Collection)} or {@link #withClusters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param clusters
      *        The list of clusters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClustersResult withClusters(Cluster... clusters) {
         if (this.clusters == null) {
-            setClusters(new com.amazonaws.internal.SdkInternalList<Cluster>(
-                    clusters.length));
+            setClusters(new com.amazonaws.internal.SdkInternalList<Cluster>(clusters.length));
         }
         for (Cluster ele : clusters) {
             this.clusters.add(ele);
@@ -105,12 +101,10 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * 
      * @param clusters
      *        The list of clusters.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClustersResult withClusters(
-            java.util.Collection<Cluster> clusters) {
+    public DescribeClustersResult withClusters(java.util.Collection<Cluster> clusters) {
         setClusters(clusters);
         return this;
     }
@@ -145,8 +139,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
             return;
         }
 
-        this.failures = new com.amazonaws.internal.SdkInternalList<Failure>(
-                failures);
+        this.failures = new com.amazonaws.internal.SdkInternalList<Failure>(failures);
     }
 
     /**
@@ -154,22 +147,19 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * Any failures associated with the call.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFailures(java.util.Collection)} or
-     * {@link #withFailures(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeClustersResult withFailures(Failure... failures) {
         if (this.failures == null) {
-            setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(
-                    failures.length));
+            setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(failures.length));
         }
         for (Failure ele : failures) {
             this.failures.add(ele);
@@ -184,19 +174,17 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * 
      * @param failures
      *        Any failures associated with the call.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClustersResult withFailures(
-            java.util.Collection<Failure> failures) {
+    public DescribeClustersResult withFailures(java.util.Collection<Failure> failures) {
         setFailures(failures);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -207,9 +195,9 @@ public class DescribeClustersResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusters() != null)
-            sb.append("Clusters: " + getClusters() + ",");
+            sb.append("Clusters: ").append(getClusters()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }
@@ -226,13 +214,11 @@ public class DescribeClustersResult implements Serializable, Cloneable {
         DescribeClustersResult other = (DescribeClustersResult) obj;
         if (other.getClusters() == null ^ this.getClusters() == null)
             return false;
-        if (other.getClusters() != null
-                && other.getClusters().equals(this.getClusters()) == false)
+        if (other.getClusters() != null && other.getClusters().equals(this.getClusters()) == false)
             return false;
         if (other.getFailures() == null ^ this.getFailures() == null)
             return false;
-        if (other.getFailures() != null
-                && other.getFailures().equals(this.getFailures()) == false)
+        if (other.getFailures() != null && other.getFailures().equals(this.getFailures()) == false)
             return false;
         return true;
     }
@@ -242,10 +228,8 @@ public class DescribeClustersResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getClusters() == null) ? 0 : getClusters().hashCode());
-        hashCode = prime * hashCode
-                + ((getFailures() == null) ? 0 : getFailures().hashCode());
+        hashCode = prime * hashCode + ((getClusters() == null) ? 0 : getClusters().hashCode());
+        hashCode = prime * hashCode + ((getFailures() == null) ? 0 : getFailures().hashCode());
         return hashCode;
     }
 
@@ -254,9 +238,8 @@ public class DescribeClustersResult implements Serializable, Cloneable {
         try {
             return (DescribeClustersResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

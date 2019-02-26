@@ -3,7 +3,7 @@
 
 <#if shape.members??>
 <#list shape.members as member>
-<#local getMember = getterFunctionPrefix + ".get" + member.name />
+<#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
 <#local http = member.http />
 <#local variable = member.variable />
 
@@ -57,17 +57,22 @@
     </#if>
 
     <#if customConfig.useAutoConstructList>
-        ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
         <#if listModel.sendEmptyQueryString>
-            if (${listVariable}.isEmpty()) {
+            if (${getMember}().isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
-        if (!${listVariable}.isEmpty() || !${listVariable}.isAutoConstruct()) {
+        <#if listModel.marshallNonAutoConstructedEmptyLists>
+            if (${getMember}().isEmpty() && !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
+                request.addParameter("${parameterRootPath}", "");
+            }
+        </#if>
+        if (!${getMember}().isEmpty() || !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
+            ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
     <#else>
-        ${listModel.templateType} ${listVariable} = ${getMember}();
 
-        if (${listVariable} != null) {
+        if (${getMember}() != null) {
+            ${listModel.templateType} ${listVariable} = ${getMember}();
             <#-- For query protocol, an empty list is serialized differently. -->
             if (${listVariable}.isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");
@@ -134,9 +139,11 @@
         <#local parameterPath = contextPath + "." + parameterPath/>
     </#if>
     <#local memberVariableName = variable.variableName/>
-    ${variable.variableType} ${memberVariableName} = ${getMember}();
-    if (${memberVariableName} != null) {
-        <@MemberMarshallerMacro.content customConfig variable.variableType memberVariableName shapes parameterPath/>
+    {
+        ${variable.variableType} ${memberVariableName} = ${getMember}();
+        if (${memberVariableName} != null) {
+            <@MemberMarshallerMacro.content customConfig variable.variableType memberVariableName shapes parameterPath/>
+        }
     }
 </#if>
 </#list>

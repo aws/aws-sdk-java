@@ -1,64 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleemail.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DeleteIdentityPolicyRequest Marshaller
  */
 
-public class DeleteIdentityPolicyRequestMarshaller
-        implements
-        Marshaller<Request<DeleteIdentityPolicyRequest>, DeleteIdentityPolicyRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteIdentityPolicyRequestMarshaller implements Marshaller<Request<DeleteIdentityPolicyRequest>, DeleteIdentityPolicyRequest> {
 
-    public Request<DeleteIdentityPolicyRequest> marshall(
-            DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
+    public Request<DeleteIdentityPolicyRequest> marshall(DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
 
         if (deleteIdentityPolicyRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteIdentityPolicyRequest> request = new DefaultRequest<DeleteIdentityPolicyRequest>(
-                deleteIdentityPolicyRequest, "AmazonSimpleEmailService");
+        Request<DeleteIdentityPolicyRequest> request = new DefaultRequest<DeleteIdentityPolicyRequest>(deleteIdentityPolicyRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "DeleteIdentityPolicy");
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteIdentityPolicyRequest.getIdentity() != null) {
-            request.addParameter("Identity", StringUtils
-                    .fromString(deleteIdentityPolicyRequest.getIdentity()));
+            request.addParameter("Identity", StringUtils.fromString(deleteIdentityPolicyRequest.getIdentity()));
         }
 
         if (deleteIdentityPolicyRequest.getPolicyName() != null) {
-            request.addParameter("PolicyName", StringUtils
-                    .fromString(deleteIdentityPolicyRequest.getPolicyName()));
+            request.addParameter("PolicyName", StringUtils.fromString(deleteIdentityPolicyRequest.getPolicyName()));
         }
 
         return request;

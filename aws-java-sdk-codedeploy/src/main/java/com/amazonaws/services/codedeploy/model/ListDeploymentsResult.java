@@ -1,29 +1,30 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a list deployments operation.
+ * Represents the output of a ListDeployments operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListDeploymentsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,9 +34,8 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> deployments;
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployments call to return
-     * the next set of deployments in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployments call to return the next set of deployments in the list.
      * </p>
      */
     private String nextToken;
@@ -70,8 +70,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.deployments = new com.amazonaws.internal.SdkInternalList<String>(
-                deployments);
+        this.deployments = new com.amazonaws.internal.SdkInternalList<String>(deployments);
     }
 
     /**
@@ -79,22 +78,19 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * A list of deployment IDs.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDeployments(java.util.Collection)} or
-     * {@link #withDeployments(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeployments(java.util.Collection)} or {@link #withDeployments(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param deployments
      *        A list of deployment IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentsResult withDeployments(String... deployments) {
         if (this.deployments == null) {
-            setDeployments(new com.amazonaws.internal.SdkInternalList<String>(
-                    deployments.length));
+            setDeployments(new com.amazonaws.internal.SdkInternalList<String>(deployments.length));
         }
         for (String ele : deployments) {
             this.deployments.add(ele);
@@ -109,27 +105,23 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * 
      * @param deployments
      *        A list of deployment IDs.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDeploymentsResult withDeployments(
-            java.util.Collection<String> deployments) {
+    public ListDeploymentsResult withDeployments(java.util.Collection<String> deployments) {
         setDeployments(deployments);
         return this;
     }
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployments call to return
-     * the next set of deployments in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployments call to return the next set of deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier is
-     *        also returned. It can be used in a subsequent list deployments
-     *        call to return the next set of deployments in the list.
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *        subsequent list deployments call to return the next set of deployments in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -138,14 +130,12 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployments call to return
-     * the next set of deployments in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployments call to return the next set of deployments in the list.
      * </p>
      * 
-     * @return If a large amount of information is returned, an identifier is
-     *         also returned. It can be used in a subsequent list deployments
-     *         call to return the next set of deployments in the list.
+     * @return If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *         subsequent list deployments call to return the next set of deployments in the list.
      */
 
     public String getNextToken() {
@@ -154,17 +144,14 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier is also
-     * returned. It can be used in a subsequent list deployments call to return
-     * the next set of deployments in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * deployments call to return the next set of deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier is
-     *        also returned. It can be used in a subsequent list deployments
-     *        call to return the next set of deployments in the list.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
+     *        subsequent list deployments call to return the next set of deployments in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListDeploymentsResult withNextToken(String nextToken) {
@@ -173,8 +160,8 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -185,9 +172,9 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeployments() != null)
-            sb.append("Deployments: " + getDeployments() + ",");
+            sb.append("Deployments: ").append(getDeployments()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -204,13 +191,11 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
         ListDeploymentsResult other = (ListDeploymentsResult) obj;
         if (other.getDeployments() == null ^ this.getDeployments() == null)
             return false;
-        if (other.getDeployments() != null
-                && other.getDeployments().equals(this.getDeployments()) == false)
+        if (other.getDeployments() != null && other.getDeployments().equals(this.getDeployments()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -220,11 +205,8 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDeployments() == null) ? 0 : getDeployments().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getDeployments() == null) ? 0 : getDeployments().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -233,9 +215,8 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
         try {
             return (ListDeploymentsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

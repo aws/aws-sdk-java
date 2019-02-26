@@ -1,30 +1,135 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Current status of fleet utilization, including the number of game and player
- * sessions being hosted.
+ * Current status of fleet utilization, including the number of game and player sessions being hosted.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateFleet</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListFleets</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteFleet</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Describe fleets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetUtilization</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeRuntimeConfiguration</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEC2InstanceLimits</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetEvents</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * Update fleets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>UpdateFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRuntimeConfiguration</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * Manage fleet actions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartFleetActions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopFleetActions</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization" target="_top">AWS API
+ *      Documentation</a>
  */
-public class FleetUtilization implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class FleetUtilization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,22 +139,25 @@ public class FleetUtilization implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Number of active game sessions currently being hosted on fleet game
-     * servers.
+     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * </p>
+     */
+    private Integer activeServerProcessCount;
+    /**
+     * <p>
+     * Number of active game sessions currently being hosted on all instances in the fleet.
      * </p>
      */
     private Integer activeGameSessionCount;
     /**
      * <p>
-     * Number of active player sessions currently being hosted on fleet game
-     * servers.
+     * Number of active player sessions currently being hosted on all instances in the fleet.
      * </p>
      */
     private Integer currentPlayerSessionCount;
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently hosted in the
-     * fleet.
+     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
@@ -86,8 +194,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * 
      * @param fleetId
      *        Unique identifier for a fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetUtilization withFleetId(String fleetId) {
@@ -97,13 +204,54 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on fleet game
-     * servers.
+     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * </p>
+     * 
+     * @param activeServerProcessCount
+     *        Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
+     *        fleet
+     */
+
+    public void setActiveServerProcessCount(Integer activeServerProcessCount) {
+        this.activeServerProcessCount = activeServerProcessCount;
+    }
+
+    /**
+     * <p>
+     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * </p>
+     * 
+     * @return Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
+     *         fleet
+     */
+
+    public Integer getActiveServerProcessCount() {
+        return this.activeServerProcessCount;
+    }
+
+    /**
+     * <p>
+     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * </p>
+     * 
+     * @param activeServerProcessCount
+     *        Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
+     *        fleet
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetUtilization withActiveServerProcessCount(Integer activeServerProcessCount) {
+        setActiveServerProcessCount(activeServerProcessCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Number of active game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param activeGameSessionCount
-     *        Number of active game sessions currently being hosted on fleet
-     *        game servers.
+     *        Number of active game sessions currently being hosted on all instances in the fleet.
      */
 
     public void setActiveGameSessionCount(Integer activeGameSessionCount) {
@@ -112,12 +260,10 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on fleet game
-     * servers.
+     * Number of active game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
-     * @return Number of active game sessions currently being hosted on fleet
-     *         game servers.
+     * @return Number of active game sessions currently being hosted on all instances in the fleet.
      */
 
     public Integer getActiveGameSessionCount() {
@@ -126,32 +272,26 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on fleet game
-     * servers.
+     * Number of active game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param activeGameSessionCount
-     *        Number of active game sessions currently being hosted on fleet
-     *        game servers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Number of active game sessions currently being hosted on all instances in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FleetUtilization withActiveGameSessionCount(
-            Integer activeGameSessionCount) {
+    public FleetUtilization withActiveGameSessionCount(Integer activeGameSessionCount) {
         setActiveGameSessionCount(activeGameSessionCount);
         return this;
     }
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on fleet game
-     * servers.
+     * Number of active player sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param currentPlayerSessionCount
-     *        Number of active player sessions currently being hosted on fleet
-     *        game servers.
+     *        Number of active player sessions currently being hosted on all instances in the fleet.
      */
 
     public void setCurrentPlayerSessionCount(Integer currentPlayerSessionCount) {
@@ -160,12 +300,10 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on fleet game
-     * servers.
+     * Number of active player sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
-     * @return Number of active player sessions currently being hosted on fleet
-     *         game servers.
+     * @return Number of active player sessions currently being hosted on all instances in the fleet.
      */
 
     public Integer getCurrentPlayerSessionCount() {
@@ -174,32 +312,26 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on fleet game
-     * servers.
+     * Number of active player sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param currentPlayerSessionCount
-     *        Number of active player sessions currently being hosted on fleet
-     *        game servers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Number of active player sessions currently being hosted on all instances in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FleetUtilization withCurrentPlayerSessionCount(
-            Integer currentPlayerSessionCount) {
+    public FleetUtilization withCurrentPlayerSessionCount(Integer currentPlayerSessionCount) {
         setCurrentPlayerSessionCount(currentPlayerSessionCount);
         return this;
     }
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently hosted in the
-     * fleet.
+     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum players allowed across all game sessions currently hosted
-     *        in the fleet.
+     *        Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -208,12 +340,10 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently hosted in the
-     * fleet.
+     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
-     * @return Maximum players allowed across all game sessions currently hosted
-     *         in the fleet.
+     * @return Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -222,26 +352,22 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently hosted in the
-     * fleet.
+     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum players allowed across all game sessions currently hosted
-     *        in the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FleetUtilization withMaximumPlayerSessionCount(
-            Integer maximumPlayerSessionCount) {
+    public FleetUtilization withMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -252,16 +378,15 @@ public class FleetUtilization implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getActiveServerProcessCount() != null)
+            sb.append("ActiveServerProcessCount: ").append(getActiveServerProcessCount()).append(",");
         if (getActiveGameSessionCount() != null)
-            sb.append("ActiveGameSessionCount: " + getActiveGameSessionCount()
-                    + ",");
+            sb.append("ActiveGameSessionCount: ").append(getActiveGameSessionCount()).append(",");
         if (getCurrentPlayerSessionCount() != null)
-            sb.append("CurrentPlayerSessionCount: "
-                    + getCurrentPlayerSessionCount() + ",");
+            sb.append("CurrentPlayerSessionCount: ").append(getCurrentPlayerSessionCount()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: "
-                    + getMaximumPlayerSessionCount());
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount());
         sb.append("}");
         return sb.toString();
     }
@@ -278,29 +403,23 @@ public class FleetUtilization implements Serializable, Cloneable {
         FleetUtilization other = (FleetUtilization) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
-        if (other.getActiveGameSessionCount() == null
-                ^ this.getActiveGameSessionCount() == null)
+        if (other.getActiveServerProcessCount() == null ^ this.getActiveServerProcessCount() == null)
             return false;
-        if (other.getActiveGameSessionCount() != null
-                && other.getActiveGameSessionCount().equals(
-                        this.getActiveGameSessionCount()) == false)
+        if (other.getActiveServerProcessCount() != null && other.getActiveServerProcessCount().equals(this.getActiveServerProcessCount()) == false)
             return false;
-        if (other.getCurrentPlayerSessionCount() == null
-                ^ this.getCurrentPlayerSessionCount() == null)
+        if (other.getActiveGameSessionCount() == null ^ this.getActiveGameSessionCount() == null)
             return false;
-        if (other.getCurrentPlayerSessionCount() != null
-                && other.getCurrentPlayerSessionCount().equals(
-                        this.getCurrentPlayerSessionCount()) == false)
+        if (other.getActiveGameSessionCount() != null && other.getActiveGameSessionCount().equals(this.getActiveGameSessionCount()) == false)
             return false;
-        if (other.getMaximumPlayerSessionCount() == null
-                ^ this.getMaximumPlayerSessionCount() == null)
+        if (other.getCurrentPlayerSessionCount() == null ^ this.getCurrentPlayerSessionCount() == null)
             return false;
-        if (other.getMaximumPlayerSessionCount() != null
-                && other.getMaximumPlayerSessionCount().equals(
-                        this.getMaximumPlayerSessionCount()) == false)
+        if (other.getCurrentPlayerSessionCount() != null && other.getCurrentPlayerSessionCount().equals(this.getCurrentPlayerSessionCount()) == false)
+            return false;
+        if (other.getMaximumPlayerSessionCount() == null ^ this.getMaximumPlayerSessionCount() == null)
+            return false;
+        if (other.getMaximumPlayerSessionCount() != null && other.getMaximumPlayerSessionCount().equals(this.getMaximumPlayerSessionCount()) == false)
             return false;
         return true;
     }
@@ -310,20 +429,11 @@ public class FleetUtilization implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getActiveGameSessionCount() == null) ? 0
-                        : getActiveGameSessionCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCurrentPlayerSessionCount() == null) ? 0
-                        : getCurrentPlayerSessionCount().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getMaximumPlayerSessionCount() == null) ? 0
-                        : getMaximumPlayerSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getActiveServerProcessCount() == null) ? 0 : getActiveServerProcessCount().hashCode());
+        hashCode = prime * hashCode + ((getActiveGameSessionCount() == null) ? 0 : getActiveGameSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getCurrentPlayerSessionCount() == null) ? 0 : getCurrentPlayerSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
         return hashCode;
     }
 
@@ -332,9 +442,13 @@ public class FleetUtilization implements Serializable, Cloneable {
         try {
             return (FleetUtilization) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.FleetUtilizationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

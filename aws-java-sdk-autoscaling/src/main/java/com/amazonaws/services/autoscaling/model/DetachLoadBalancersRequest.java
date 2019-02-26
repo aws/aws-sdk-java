@@ -1,50 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers" target="_top">AWS
+ *      API Documentation</a>
  */
-public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -53,10 +53,10 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -65,27 +65,25 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancersRequest withAutoScalingGroupName(
-            String autoScalingGroupName) {
+    public DetachLoadBalancersRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
     }
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
-     * @return One or more load balancer names.
+     * @return The names of the load balancers. You can specify up to 10 load balancers.
      */
 
     public java.util.List<String> getLoadBalancerNames() {
@@ -97,46 +95,40 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
      */
 
-    public void setLoadBalancerNames(
-            java.util.Collection<String> loadBalancerNames) {
+    public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
             this.loadBalancerNames = null;
             return;
         }
 
-        this.loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>(
-                loadBalancerNames);
+        this.loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>(loadBalancerNames);
     }
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setLoadBalancerNames(java.util.Collection)} or
-     * {@link #withLoadBalancerNames(java.util.Collection)} if you want to
-     * override the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoadBalancerNames(java.util.Collection)} or {@link #withLoadBalancerNames(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancersRequest withLoadBalancerNames(
-            String... loadBalancerNames) {
+    public DetachLoadBalancersRequest withLoadBalancerNames(String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
-            setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(
-                    loadBalancerNames.length));
+            setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(loadBalancerNames.length));
         }
         for (String ele : loadBalancerNames) {
             this.loadBalancerNames.add(ele);
@@ -146,24 +138,22 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DetachLoadBalancersRequest withLoadBalancerNames(
-            java.util.Collection<String> loadBalancerNames) {
+    public DetachLoadBalancersRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,10 +164,9 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
-                    + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLoadBalancerNames() != null)
-            sb.append("LoadBalancerNames: " + getLoadBalancerNames());
+            sb.append("LoadBalancerNames: ").append(getLoadBalancerNames());
         sb.append("}");
         return sb.toString();
     }
@@ -192,19 +181,13 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
         if (obj instanceof DetachLoadBalancersRequest == false)
             return false;
         DetachLoadBalancersRequest other = (DetachLoadBalancersRequest) obj;
-        if (other.getAutoScalingGroupName() == null
-                ^ this.getAutoScalingGroupName() == null)
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null)
             return false;
-        if (other.getAutoScalingGroupName() != null
-                && other.getAutoScalingGroupName().equals(
-                        this.getAutoScalingGroupName()) == false)
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
-        if (other.getLoadBalancerNames() == null
-                ^ this.getLoadBalancerNames() == null)
+        if (other.getLoadBalancerNames() == null ^ this.getLoadBalancerNames() == null)
             return false;
-        if (other.getLoadBalancerNames() != null
-                && other.getLoadBalancerNames().equals(
-                        this.getLoadBalancerNames()) == false)
+        if (other.getLoadBalancerNames() != null && other.getLoadBalancerNames().equals(this.getLoadBalancerNames()) == false)
             return false;
         return true;
     }
@@ -214,14 +197,8 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getAutoScalingGroupName() == null) ? 0
-                        : getAutoScalingGroupName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLoadBalancerNames() == null) ? 0
-                        : getLoadBalancerNames().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode());
         return hashCode;
     }
 
@@ -229,4 +206,5 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
     public DetachLoadBalancersRequest clone() {
         return (DetachLoadBalancersRequest) super.clone();
     }
+
 }

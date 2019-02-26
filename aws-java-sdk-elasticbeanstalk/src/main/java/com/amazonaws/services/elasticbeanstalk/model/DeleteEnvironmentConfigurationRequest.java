@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Request to delete a draft environment configuration.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DeleteEnvironmentConfigurationRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteEnvironmentConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,26 +42,22 @@ public class DeleteEnvironmentConfigurationRequest extends
     private String environmentName;
 
     /**
-     * Default constructor for DeleteEnvironmentConfigurationRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize the object after creating it.
+     * Default constructor for DeleteEnvironmentConfigurationRequest object. Callers should use the setter or fluent
+     * setter (with...) methods to initialize the object after creating it.
      */
     public DeleteEnvironmentConfigurationRequest() {
     }
 
     /**
-     * Constructs a new DeleteEnvironmentConfigurationRequest object. Callers
-     * should use the setter or fluent setter (with...) methods to initialize
-     * any additional object members.
+     * Constructs a new DeleteEnvironmentConfigurationRequest object. Callers should use the setter or fluent setter
+     * (with...) methods to initialize any additional object members.
      * 
      * @param applicationName
      *        The name of the application the environment is associated with.
      * @param environmentName
-     *        The name of the environment to delete the draft configuration
-     *        from.
+     *        The name of the environment to delete the draft configuration from.
      */
-    public DeleteEnvironmentConfigurationRequest(String applicationName,
-            String environmentName) {
+    public DeleteEnvironmentConfigurationRequest(String applicationName, String environmentName) {
         setApplicationName(applicationName);
         setEnvironmentName(environmentName);
     }
@@ -97,12 +94,10 @@ public class DeleteEnvironmentConfigurationRequest extends
      * 
      * @param applicationName
      *        The name of the application the environment is associated with.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteEnvironmentConfigurationRequest withApplicationName(
-            String applicationName) {
+    public DeleteEnvironmentConfigurationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
@@ -113,8 +108,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to delete the draft configuration
-     *        from.
+     *        The name of the environment to delete the draft configuration from.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -126,8 +120,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * The name of the environment to delete the draft configuration from.
      * </p>
      * 
-     * @return The name of the environment to delete the draft configuration
-     *         from.
+     * @return The name of the environment to delete the draft configuration from.
      */
 
     public String getEnvironmentName() {
@@ -140,21 +133,18 @@ public class DeleteEnvironmentConfigurationRequest extends
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to delete the draft configuration
-     *        from.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The name of the environment to delete the draft configuration from.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteEnvironmentConfigurationRequest withEnvironmentName(
-            String environmentName) {
+    public DeleteEnvironmentConfigurationRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -165,9 +155,9 @@ public class DeleteEnvironmentConfigurationRequest extends
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName());
+            sb.append("EnvironmentName: ").append(getEnvironmentName());
         sb.append("}");
         return sb.toString();
     }
@@ -182,17 +172,13 @@ public class DeleteEnvironmentConfigurationRequest extends
         if (obj instanceof DeleteEnvironmentConfigurationRequest == false)
             return false;
         DeleteEnvironmentConfigurationRequest other = (DeleteEnvironmentConfigurationRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
-        if (other.getEnvironmentName() == null
-                ^ this.getEnvironmentName() == null)
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
-        if (other.getEnvironmentName() != null
-                && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         return true;
     }
@@ -202,14 +188,8 @@ public class DeleteEnvironmentConfigurationRequest extends
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getEnvironmentName() == null) ? 0 : getEnvironmentName()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         return hashCode;
     }
 
@@ -217,4 +197,5 @@ public class DeleteEnvironmentConfigurationRequest extends
     public DeleteEnvironmentConfigurationRequest clone() {
         return (DeleteEnvironmentConfigurationRequest) super.clone();
     }
+
 }

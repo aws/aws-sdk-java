@@ -14,13 +14,6 @@
  */
 package com.amazonaws.http.apache.client.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.conn.ConnectionKeepAliveStrategy;
-import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
-
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.http.apache.SdkProxyRoutePlanner;
@@ -31,6 +24,13 @@ import com.amazonaws.http.conn.ClientConnectionManagerFactory;
 import com.amazonaws.http.conn.SdkConnectionKeepAliveStrategy;
 import com.amazonaws.http.protocol.SdkHttpRequestExecutor;
 import com.amazonaws.http.settings.HttpClientSettings;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpResponseInterceptor;
+import org.apache.http.conn.ConnectionKeepAliveStrategy;
+import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
 
 /**
  * Factory class that builds the apache http client from the settings.
@@ -65,12 +65,19 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
             builder.disableContentCompression();
         }
 
+        HttpResponseInterceptor itcp = new CRC32ChecksumResponseInterceptor();
+        if (settings.calculateCRC32FromCompressedData()) {
+            builder.addInterceptorFirst(itcp);
+        } else {
+            builder.addInterceptorLast(itcp);
+        }
+
         addProxyConfig(builder, settings);
 
         final ConnectionManagerAwareHttpClient httpClient = new SdkHttpClient(builder.build(), cm);
 
         if (settings.useReaper()) {
-            IdleConnectionReaper.registerConnectionManager(cm);
+            IdleConnectionReaper.registerConnectionManager(cm, settings.getMaxIdleConnectionTime());
         }
 
         return httpClient;
@@ -78,34 +85,23 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
 
     private void addProxyConfig(HttpClientBuilder builder,
                                 HttpClientSettings settings) {
-        if (isProxyEnabled(settings)) {
+        if (settings.isProxyEnabled()) {
 
             LOG.info("Configuring Proxy. Proxy Host: " + settings.getProxyHost() + " " +
                     "Proxy Port: " + settings.getProxyPort());
 
             builder.setRoutePlanner(new SdkProxyRoutePlanner(
-                    settings.getProxyHost(), settings.getProxyPort(), settings.getNonProxyHosts()));
+                    settings.getProxyHost(), settings.getProxyPort(), settings.getProxyProtocol(), settings.getNonProxyHosts()));
 
-            if (isAuthenticatedProxy(settings)) {
-                builder.setDefaultCredentialsProvider(ApacheUtils
-                        .newProxyCredentialsProvider(settings));
+            if (settings.isAuthenticatedProxy()) {
+                builder.setDefaultCredentialsProvider(ApacheUtils.newProxyCredentialsProvider(settings));
             }
         }
     }
 
-    private ConnectionKeepAliveStrategy buildKeepAliveStrategy
-            (HttpClientSettings settings) {
+    private ConnectionKeepAliveStrategy buildKeepAliveStrategy(HttpClientSettings settings) {
         return settings.getMaxIdleConnectionTime() > 0
                 ? new SdkConnectionKeepAliveStrategy(settings.getMaxIdleConnectionTime())
                 : null;
-    }
-
-    private boolean isAuthenticatedProxy(HttpClientSettings settings) {
-        return settings.getProxyUsername() != null
-                && settings.getProxyPassword() != null;
-    }
-
-    private boolean isProxyEnabled(HttpClientSettings settings) {
-        return settings.getProxyHost() != null && settings.getProxyPort() > 0;
     }
 }

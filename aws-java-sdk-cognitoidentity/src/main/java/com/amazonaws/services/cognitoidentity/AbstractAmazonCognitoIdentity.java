@@ -1,28 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.cognitoidentity;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.*;
 
 /**
- * Abstract implementation of {@code AmazonCognitoIdentity}. Convenient method
- * forms pass through to the corresponding overload that takes a request object,
- * which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonCognitoIdentity}. Convenient method forms pass through to the corresponding
+ * overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
 
     protected AbstractAmazonCognitoIdentity() {
@@ -39,38 +38,32 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public CreateIdentityPoolResult createIdentityPool(
-            CreateIdentityPoolRequest request) {
+    public CreateIdentityPoolResult createIdentityPool(CreateIdentityPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteIdentitiesResult deleteIdentities(
-            DeleteIdentitiesRequest request) {
+    public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteIdentityPoolResult deleteIdentityPool(
-            DeleteIdentityPoolRequest request) {
+    public DeleteIdentityPoolResult deleteIdentityPool(DeleteIdentityPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeIdentityResult describeIdentity(
-            DescribeIdentityRequest request) {
+    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeIdentityPoolResult describeIdentityPool(
-            DescribeIdentityPoolRequest request) {
+    public DescribeIdentityPoolResult describeIdentityPool(DescribeIdentityPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCredentialsForIdentityResult getCredentialsForIdentity(
-            GetCredentialsForIdentityRequest request) {
+    public GetCredentialsForIdentityResult getCredentialsForIdentity(GetCredentialsForIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +73,7 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public GetIdentityPoolRolesResult getIdentityPoolRoles(
-            GetIdentityPoolRolesRequest request) {
+    public GetIdentityPoolRolesResult getIdentityPoolRoles(GetIdentityPoolRolesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,8 +83,7 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
-            GetOpenIdTokenForDeveloperIdentityRequest request) {
+    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,32 +93,27 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public ListIdentityPoolsResult listIdentityPools(
-            ListIdentityPoolsRequest request) {
+    public ListIdentityPoolsResult listIdentityPools(ListIdentityPoolsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public LookupDeveloperIdentityResult lookupDeveloperIdentity(
-            LookupDeveloperIdentityRequest request) {
+    public LookupDeveloperIdentityResult lookupDeveloperIdentity(LookupDeveloperIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(
-            MergeDeveloperIdentitiesRequest request) {
+    public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SetIdentityPoolRolesResult setIdentityPoolRoles(
-            SetIdentityPoolRolesRequest request) {
+    public SetIdentityPoolRolesResult setIdentityPoolRoles(SetIdentityPoolRolesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(
-            UnlinkDeveloperIdentityRequest request) {
+    public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,8 +123,7 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public UpdateIdentityPoolResult updateIdentityPool(
-            UpdateIdentityPoolRequest request) {
+    public UpdateIdentityPoolResult updateIdentityPool(UpdateIdentityPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,8 +133,8 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

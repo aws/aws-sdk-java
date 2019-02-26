@@ -1,135 +1,85 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.cloudtrail.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateTrailRequest Marshaller
+ * CreateTrailRequestMarshaller
  */
-public class CreateTrailRequestMarshaller implements
-        Marshaller<Request<CreateTrailRequest>, CreateTrailRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateTrailRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> S3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3BucketName").build();
+    private static final MarshallingInfo<String> S3KEYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3KeyPrefix").build();
+    private static final MarshallingInfo<String> SNSTOPICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsTopicName").build();
+    private static final MarshallingInfo<Boolean> INCLUDEGLOBALSERVICEEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeGlobalServiceEvents").build();
+    private static final MarshallingInfo<Boolean> ISMULTIREGIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsMultiRegionTrail").build();
+    private static final MarshallingInfo<Boolean> ENABLELOGFILEVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableLogFileValidation").build();
+    private static final MarshallingInfo<String> CLOUDWATCHLOGSLOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsLogGroupArn").build();
+    private static final MarshallingInfo<String> CLOUDWATCHLOGSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsRoleArn").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<Boolean> ISORGANIZATIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsOrganizationTrail").build();
 
-    public CreateTrailRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateTrailRequestMarshaller instance = new CreateTrailRequestMarshaller();
+
+    public static CreateTrailRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateTrailRequest> marshall(
-            CreateTrailRequest createTrailRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateTrailRequest createTrailRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createTrailRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateTrailRequest> request = new DefaultRequest<CreateTrailRequest>(
-                createTrailRequest, "AWSCloudTrail");
-        request.addHeader("X-Amz-Target",
-                "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateTrail");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createTrailRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        createTrailRequest.getName());
-            }
-            if (createTrailRequest.getS3BucketName() != null) {
-                jsonGenerator.writeFieldName("S3BucketName").writeValue(
-                        createTrailRequest.getS3BucketName());
-            }
-            if (createTrailRequest.getS3KeyPrefix() != null) {
-                jsonGenerator.writeFieldName("S3KeyPrefix").writeValue(
-                        createTrailRequest.getS3KeyPrefix());
-            }
-            if (createTrailRequest.getSnsTopicName() != null) {
-                jsonGenerator.writeFieldName("SnsTopicName").writeValue(
-                        createTrailRequest.getSnsTopicName());
-            }
-            if (createTrailRequest.getIncludeGlobalServiceEvents() != null) {
-                jsonGenerator.writeFieldName("IncludeGlobalServiceEvents")
-                        .writeValue(
-                                createTrailRequest
-                                        .getIncludeGlobalServiceEvents());
-            }
-            if (createTrailRequest.getIsMultiRegionTrail() != null) {
-                jsonGenerator.writeFieldName("IsMultiRegionTrail").writeValue(
-                        createTrailRequest.getIsMultiRegionTrail());
-            }
-            if (createTrailRequest.getEnableLogFileValidation() != null) {
-                jsonGenerator
-                        .writeFieldName("EnableLogFileValidation")
-                        .writeValue(
-                                createTrailRequest.getEnableLogFileValidation());
-            }
-            if (createTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
-                jsonGenerator.writeFieldName("CloudWatchLogsLogGroupArn")
-                        .writeValue(
-                                createTrailRequest
-                                        .getCloudWatchLogsLogGroupArn());
-            }
-            if (createTrailRequest.getCloudWatchLogsRoleArn() != null) {
-                jsonGenerator.writeFieldName("CloudWatchLogsRoleArn")
-                        .writeValue(
-                                createTrailRequest.getCloudWatchLogsRoleArn());
-            }
-            if (createTrailRequest.getKmsKeyId() != null) {
-                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
-                        createTrailRequest.getKmsKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createTrailRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getS3BucketName(), S3BUCKETNAME_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getS3KeyPrefix(), S3KEYPREFIX_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getSnsTopicName(), SNSTOPICNAME_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getIncludeGlobalServiceEvents(), INCLUDEGLOBALSERVICEEVENTS_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getIsMultiRegionTrail(), ISMULTIREGIONTRAIL_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getEnableLogFileValidation(), ENABLELOGFILEVALIDATION_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getCloudWatchLogsLogGroupArn(), CLOUDWATCHLOGSLOGGROUPARN_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createTrailRequest.getIsOrganizationTrail(), ISORGANIZATIONTRAIL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

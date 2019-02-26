@@ -1,43 +1,87 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribePrefixLists.
- * </p>
+ * 
  */
-public class DescribePrefixListsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     */
+    private String nextToken;
     /**
      * <p>
      * All available prefix lists.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrefixList> prefixLists;
+
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
      * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
      */
-    private String nextToken;
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePrefixListsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -69,8 +113,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.prefixLists = new com.amazonaws.internal.SdkInternalList<PrefixList>(
-                prefixLists);
+        this.prefixLists = new com.amazonaws.internal.SdkInternalList<PrefixList>(prefixLists);
     }
 
     /**
@@ -78,22 +121,19 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * All available prefix lists.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPrefixLists(java.util.Collection)} or
-     * {@link #withPrefixLists(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrefixLists(java.util.Collection)} or {@link #withPrefixLists(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param prefixLists
      *        All available prefix lists.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribePrefixListsResult withPrefixLists(PrefixList... prefixLists) {
         if (this.prefixLists == null) {
-            setPrefixLists(new com.amazonaws.internal.SdkInternalList<PrefixList>(
-                    prefixLists.length));
+            setPrefixLists(new com.amazonaws.internal.SdkInternalList<PrefixList>(prefixLists.length));
         }
         for (PrefixList ele : prefixLists) {
             this.prefixLists.add(ele);
@@ -108,66 +148,17 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * 
      * @param prefixLists
      *        All available prefix lists.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribePrefixListsResult withPrefixLists(
-            java.util.Collection<PrefixList> prefixLists) {
+    public DescribePrefixListsResult withPrefixLists(java.util.Collection<PrefixList> prefixLists) {
         setPrefixLists(prefixLists);
         return this;
     }
 
     /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items. If there
-     *         are no additional items to return, the string is empty.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there
-     *        are no additional items to return, the string is empty.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public DescribePrefixListsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -177,10 +168,10 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrefixLists() != null)
-            sb.append("PrefixLists: " + getPrefixLists() + ",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPrefixLists() != null)
+            sb.append("PrefixLists: ").append(getPrefixLists());
         sb.append("}");
         return sb.toString();
     }
@@ -195,15 +186,13 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
         if (obj instanceof DescribePrefixListsResult == false)
             return false;
         DescribePrefixListsResult other = (DescribePrefixListsResult) obj;
-        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
-            return false;
-        if (other.getPrefixLists() != null
-                && other.getPrefixLists().equals(this.getPrefixLists()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
+            return false;
+        if (other.getPrefixLists() != null && other.getPrefixLists().equals(this.getPrefixLists()) == false)
             return false;
         return true;
     }
@@ -213,11 +202,8 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
         return hashCode;
     }
 
@@ -226,9 +212,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
         try {
             return (DescribePrefixListsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

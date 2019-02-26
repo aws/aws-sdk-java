@@ -108,6 +108,9 @@
           "location" : "/macros/marshaller/rest/UriMemberMarshallerMacro.ftl",
           "importAsNamespace" : "UriMemberMarshallerMacro"
         }, {
+          "location" : "/macros/marshaller/rest/UriGetMemberMarshallerMacro.ftl",
+          "importAsNamespace" : "UriGetMemberMarshallerMacro"
+        }, {
           "location" : "/macros/marshaller/rest/QueryStringMemberMarshallerMacro.ftl",
           "importAsNamespace" : "QueryStringMemberMarshallerMacro"
         }, {
@@ -131,6 +134,9 @@
         }
     ]
   },
+  "baseExceptionClass": {
+    "mainTemplate" : "/templates/common/base-exception-class.ftl"
+  },
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },
@@ -145,14 +151,11 @@
   },
   "commonChildTemplates" : [
     {
-      "location" : "/macros/common/LicenseCommentBlock.ftl",
-      "importAsNamespace" : "LicenseCommentBlockMacro"
-    }, {
       "location" : "/macros/common/VariableDeclarationMacro.ftl",
       "importAsNamespace" : "VariableDeclarationMacro"
     }, {
-      "location" : "/macros/common/AdditionalAnnotationsForField.ftl",
-      "importAsNamespace" : "AdditionalAnnotationsForField"
+      "location" : "/macros/common/AdditionalAnnotationsForAccessors.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForAccessors"
     }, {
       "location" : "/macros/common/OverrideMethodsMacro.ftl",
       "importAsNamespace" : "OverrideMethodsMacro"

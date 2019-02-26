@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import com.amazonaws.codegen.model.service.Member;
+
 import java.util.List;
 import java.util.Map;
-
-import com.amazonaws.codegen.model.service.Member;
 
 /**
  * Use shapeModifiers customization to add/remove shape members or to modify the
@@ -30,6 +30,7 @@ public class ShapeModifier {
     private List<String> exclude;
     private List<Map<String, ShapeModifier_ModifyModel>> modify;
     private List<Map<String, Member>> inject;
+    private List<String> injectEnumValues;
 
     /**
      * @return true if the whole shape should be excluded.
@@ -75,5 +76,17 @@ public class ShapeModifier {
 
     public void setInject(List<Map<String, Member>> inject) {
         this.inject = inject;
+    }
+
+    /**
+     * @return A list of members to add to the list of enum values.
+     */
+    public List<String> getInjectEnumValues() {
+        return injectEnumValues;
+    }
+
+
+    public void setInjectEnumValues(List<String> injectEnumValues) {
+        this.injectEnumValues = injectEnumValues;
     }
 }

@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -24,37 +22,35 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to list existing <a>Models</a> defined for a <a>RestApi</a> resource.
  * </p>
  */
-public class GetModelsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The position of the next set of results in the <a>Models</a> resource to
-     * get information about.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The maximum number of models in the collection to get information about.
-     * The default limit is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -63,10 +59,10 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -75,13 +71,12 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetModelsRequest withRestApiId(String restApiId) {
@@ -91,13 +86,11 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The position of the next set of results in the <a>Models</a> resource to
-     * get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the next set of results in the <a>Models</a>
-     *        resource to get information about.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -106,12 +99,10 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The position of the next set of results in the <a>Models</a> resource to
-     * get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the next set of results in the <a>Models</a>
-     *         resource to get information about.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -120,15 +111,12 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The position of the next set of results in the <a>Models</a> resource to
-     * get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the next set of results in the <a>Models</a>
-     *        resource to get information about.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The current pagination position in the paged result set.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetModelsRequest withPosition(String position) {
@@ -138,14 +126,11 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of models in the collection to get information about.
-     * The default limit is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of models in the collection to get information
-     *        about. The default limit is 25. It should be an integer between 1
-     *        - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -154,13 +139,10 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of models in the collection to get information about.
-     * The default limit is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of models in the collection to get information
-     *         about. The default limit is 25. It should be an integer between 1
-     *         - 500.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -169,16 +151,12 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of models in the collection to get information about.
-     * The default limit is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of models in the collection to get information
-     *        about. The default limit is 25. It should be an integer between 1
-     *        - 500.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetModelsRequest withLimit(Integer limit) {
@@ -187,8 +165,8 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -199,11 +177,11 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -220,18 +198,15 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
         GetModelsRequest other = (GetModelsRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getPosition() != null
-                && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -241,12 +216,9 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime * hashCode
-                + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -254,4 +226,5 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
     public GetModelsRequest clone() {
         return (GetModelsRequest) super.clone();
     }
+
 }

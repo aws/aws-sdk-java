@@ -1,30 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement;
 
+import javax.annotation.Generated;
+
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
 
 /**
- * Abstract implementation of {@code AmazonIdentityManagement}. Convenient
- * method forms pass through to the corresponding overload that takes a request
- * object, which throws an {@code UnsupportedOperationException}.
+ * Abstract implementation of {@code AmazonIdentityManagement}. Convenient method forms pass through to the
+ * corresponding overload that takes a request object, which throws an {@code UnsupportedOperationException}.
  */
-public class AbstractAmazonIdentityManagement implements
-        AmazonIdentityManagement {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AbstractAmazonIdentityManagement implements AmazonIdentityManagement {
 
     protected AbstractAmazonIdentityManagement() {
     }
@@ -40,14 +39,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
-            AddClientIDToOpenIDConnectProviderRequest request) {
+    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(
-            AddRoleToInstanceProfileRequest request) {
+    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(AddRoleToInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,20 +54,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public AttachGroupPolicyResult attachGroupPolicy(
-            AttachGroupPolicyRequest request) {
+    public AttachGroupPolicyResult attachGroupPolicy(AttachGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachRolePolicyResult attachRolePolicy(
-            AttachRolePolicyRequest request) {
+    public AttachRolePolicyResult attachRolePolicy(AttachRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public AttachUserPolicyResult attachUserPolicy(
-            AttachUserPolicyRequest request) {
+    public AttachUserPolicyResult attachUserPolicy(AttachUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,8 +84,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public CreateAccountAliasResult createAccountAlias(
-            CreateAccountAliasRequest request) {
+    public CreateAccountAliasResult createAccountAlias(CreateAccountAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,20 +94,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public CreateInstanceProfileResult createInstanceProfile(
-            CreateInstanceProfileRequest request) {
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateLoginProfileResult createLoginProfile(
-            CreateLoginProfileRequest request) {
+    public CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateOpenIDConnectProviderResult createOpenIDConnectProvider(
-            CreateOpenIDConnectProviderRequest request) {
+    public CreateOpenIDConnectProviderResult createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,8 +114,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public CreatePolicyVersionResult createPolicyVersion(
-            CreatePolicyVersionRequest request) {
+    public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,8 +124,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public CreateSAMLProviderResult createSAMLProvider(
-            CreateSAMLProviderRequest request) {
+    public CreateSAMLProviderResult createSAMLProvider(CreateSAMLProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateServiceLinkedRoleResult createServiceLinkedRole(CreateServiceLinkedRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateServiceSpecificCredentialResult createServiceSpecificCredential(CreateServiceSpecificCredentialRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -146,14 +144,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public CreateVirtualMFADeviceResult createVirtualMFADevice(
-            CreateVirtualMFADeviceRequest request) {
+    public CreateVirtualMFADeviceResult createVirtualMFADevice(CreateVirtualMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeactivateMFADeviceResult deactivateMFADevice(
-            DeactivateMFADeviceRequest request) {
+    public DeactivateMFADeviceResult deactivateMFADevice(DeactivateMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,14 +159,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public DeleteAccountAliasResult deleteAccountAlias(
-            DeleteAccountAliasRequest request) {
+    public DeleteAccountAliasResult deleteAccountAlias(DeleteAccountAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(
-            DeleteAccountPasswordPolicyRequest request) {
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,26 +179,22 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public DeleteGroupPolicyResult deleteGroupPolicy(
-            DeleteGroupPolicyRequest request) {
+    public DeleteGroupPolicyResult deleteGroupPolicy(DeleteGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteInstanceProfileResult deleteInstanceProfile(
-            DeleteInstanceProfileRequest request) {
+    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteLoginProfileResult deleteLoginProfile(
-            DeleteLoginProfileRequest request) {
+    public DeleteLoginProfileResult deleteLoginProfile(DeleteLoginProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(
-            DeleteOpenIDConnectProviderRequest request) {
+    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,8 +204,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public DeletePolicyVersionResult deletePolicyVersion(
-            DeletePolicyVersionRequest request) {
+    public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -225,32 +214,42 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public DeleteRolePolicyResult deleteRolePolicy(
-            DeleteRolePolicyRequest request) {
+    public DeleteRolePermissionsBoundaryResult deleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteSAMLProviderResult deleteSAMLProvider(
-            DeleteSAMLProviderRequest request) {
+    public DeleteRolePolicyResult deleteRolePolicy(DeleteRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteSSHPublicKeyResult deleteSSHPublicKey(
-            DeleteSSHPublicKeyRequest request) {
+    public DeleteSAMLProviderResult deleteSAMLProvider(DeleteSAMLProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteServerCertificateResult deleteServerCertificate(
-            DeleteServerCertificateRequest request) {
+    public DeleteSSHPublicKeyResult deleteSSHPublicKey(DeleteSSHPublicKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteSigningCertificateResult deleteSigningCertificate(
-            DeleteSigningCertificateRequest request) {
+    public DeleteServerCertificateResult deleteServerCertificate(DeleteServerCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteServiceSpecificCredentialResult deleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSigningCertificateResult deleteSigningCertificate(DeleteSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -260,32 +259,32 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public DeleteUserPolicyResult deleteUserPolicy(
-            DeleteUserPolicyRequest request) {
+    public DeleteUserPermissionsBoundaryResult deleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(
-            DeleteVirtualMFADeviceRequest request) {
+    public DeleteUserPolicyResult deleteUserPolicy(DeleteUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachGroupPolicyResult detachGroupPolicy(
-            DetachGroupPolicyRequest request) {
+    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachRolePolicyResult detachRolePolicy(
-            DetachRolePolicyRequest request) {
+    public DetachGroupPolicyResult detachGroupPolicy(DetachGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachUserPolicyResult detachUserPolicy(
-            DetachUserPolicyRequest request) {
+    public DetachRolePolicyResult detachRolePolicy(DetachRolePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachUserPolicyResult detachUserPolicy(DetachUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -295,8 +294,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GenerateCredentialReportResult generateCredentialReport(
-            GenerateCredentialReportRequest request) {
+    public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -306,14 +304,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetAccessKeyLastUsedResult getAccessKeyLastUsed(
-            GetAccessKeyLastUsedRequest request) {
+    public GenerateServiceLastAccessedDetailsResult generateServiceLastAccessedDetails(GenerateServiceLastAccessedDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(
-            GetAccountAuthorizationDetailsRequest request) {
+    public GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -323,8 +324,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetAccountPasswordPolicyResult getAccountPasswordPolicy(
-            GetAccountPasswordPolicyRequest request) {
+    public GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -334,8 +334,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetAccountSummaryResult getAccountSummary(
-            GetAccountSummaryRequest request) {
+    public GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -345,20 +344,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(
-            GetContextKeysForCustomPolicyRequest request) {
+    public GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(
-            GetContextKeysForPrincipalPolicyRequest request) {
+    public GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetCredentialReportResult getCredentialReport(
-            GetCredentialReportRequest request) {
+    public GetCredentialReportResult getCredentialReport(GetCredentialReportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -378,8 +374,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetInstanceProfileResult getInstanceProfile(
-            GetInstanceProfileRequest request) {
+    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -389,8 +384,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(
-            GetOpenIDConnectProviderRequest request) {
+    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -400,8 +394,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetPolicyVersionResult getPolicyVersion(
-            GetPolicyVersionRequest request) {
+    public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -426,8 +419,22 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public GetServerCertificateResult getServerCertificate(
-            GetServerCertificateRequest request) {
+    public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceLastAccessedDetailsResult getServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceLastAccessedDetailsWithEntitiesResult getServiceLastAccessedDetailsWithEntities(GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceLinkedRoleDeletionStatusResult getServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -457,8 +464,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListAccountAliasesResult listAccountAliases(
-            ListAccountAliasesRequest request) {
+    public ListAccountAliasesResult listAccountAliases(ListAccountAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -468,32 +474,27 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(
-            ListAttachedGroupPoliciesRequest request) {
+    public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListAttachedRolePoliciesResult listAttachedRolePolicies(
-            ListAttachedRolePoliciesRequest request) {
+    public ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListAttachedUserPoliciesResult listAttachedUserPolicies(
-            ListAttachedUserPoliciesRequest request) {
+    public ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListEntitiesForPolicyResult listEntitiesForPolicy(
-            ListEntitiesForPolicyRequest request) {
+    public ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListGroupPoliciesResult listGroupPolicies(
-            ListGroupPoliciesRequest request) {
+    public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -508,14 +509,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListGroupsForUserResult listGroupsForUser(
-            ListGroupsForUserRequest request) {
+    public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListInstanceProfilesResult listInstanceProfiles(
-            ListInstanceProfilesRequest request) {
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -525,8 +524,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(
-            ListInstanceProfilesForRoleRequest request) {
+    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -541,8 +539,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListOpenIDConnectProvidersResult listOpenIDConnectProviders(
-            ListOpenIDConnectProvidersRequest request) {
+    public ListOpenIDConnectProvidersResult listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -562,14 +559,22 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListPolicyVersionsResult listPolicyVersions(
-            ListPolicyVersionsRequest request) {
+    public ListPoliciesGrantingServiceAccessResult listPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListRolePoliciesResult listRolePolicies(
-            ListRolePoliciesRequest request) {
+    public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRoleTagsResult listRoleTags(ListRoleTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -584,8 +589,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListSAMLProvidersResult listSAMLProviders(
-            ListSAMLProvidersRequest request) {
+    public ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -595,8 +599,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListSSHPublicKeysResult listSSHPublicKeys(
-            ListSSHPublicKeysRequest request) {
+    public ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -606,8 +609,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListServerCertificatesResult listServerCertificates(
-            ListServerCertificatesRequest request) {
+    public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -617,8 +619,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListSigningCertificatesResult listSigningCertificates(
-            ListSigningCertificatesRequest request) {
+    public ListServiceSpecificCredentialsResult listServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -628,8 +634,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListUserPoliciesResult listUserPolicies(
-            ListUserPoliciesRequest request) {
+    public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUserTagsResult listUserTags(ListUserTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -644,8 +654,7 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public ListVirtualMFADevicesResult listVirtualMFADevices(
-            ListVirtualMFADevicesRequest request) {
+    public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -660,7 +669,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
+    public PutRolePermissionsBoundaryResult putRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRolePolicyResult putRolePolicy(PutRolePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutUserPermissionsBoundaryResult putUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -670,20 +689,22 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
-            RemoveClientIDFromOpenIDConnectProviderRequest request) {
+    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(
-            RemoveRoleFromInstanceProfileRequest request) {
+    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public RemoveUserFromGroupResult removeUserFromGroup(
-            RemoveUserFromGroupRequest request) {
+    public RemoveUserFromGroupResult removeUserFromGroup(RemoveUserFromGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetServiceSpecificCredentialResult resetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -693,20 +714,37 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
-            SetDefaultPolicyVersionRequest request) {
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SimulateCustomPolicyResult simulateCustomPolicy(
-            SimulateCustomPolicyRequest request) {
+    public SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public SimulatePrincipalPolicyResult simulatePrincipalPolicy(
-            SimulatePrincipalPolicyRequest request) {
+    public SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagRoleResult tagRole(TagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagUserResult tagUser(TagUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagRoleResult untagRole(UntagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagUserResult untagUser(UntagUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -716,14 +754,12 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(
-            UpdateAccountPasswordPolicyRequest request) {
+    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(
-            UpdateAssumeRolePolicyRequest request) {
+    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -733,38 +769,47 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public UpdateLoginProfileResult updateLoginProfile(
-            UpdateLoginProfileRequest request) {
+    public UpdateLoginProfileResult updateLoginProfile(UpdateLoginProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
-            UpdateOpenIDConnectProviderThumbprintRequest request) {
+    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateSAMLProviderResult updateSAMLProvider(
-            UpdateSAMLProviderRequest request) {
+    public UpdateRoleResult updateRole(UpdateRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateSSHPublicKeyResult updateSSHPublicKey(
-            UpdateSSHPublicKeyRequest request) {
+    public UpdateRoleDescriptionResult updateRoleDescription(UpdateRoleDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateServerCertificateResult updateServerCertificate(
-            UpdateServerCertificateRequest request) {
+    public UpdateSAMLProviderResult updateSAMLProvider(UpdateSAMLProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateSigningCertificateResult updateSigningCertificate(
-            UpdateSigningCertificateRequest request) {
+    public UpdateSSHPublicKeyResult updateSSHPublicKey(UpdateSSHPublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateServerCertificateResult updateServerCertificate(UpdateServerCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateServiceSpecificCredentialResult updateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSigningCertificateResult updateSigningCertificate(UpdateSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -774,20 +819,17 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public UploadSSHPublicKeyResult uploadSSHPublicKey(
-            UploadSSHPublicKeyRequest request) {
+    public UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UploadServerCertificateResult uploadServerCertificate(
-            UploadServerCertificateRequest request) {
+    public UploadServerCertificateResult uploadServerCertificate(UploadServerCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UploadSigningCertificateResult uploadSigningCertificate(
-            UploadSigningCertificateRequest request) {
+    public UploadSigningCertificateResult uploadSigningCertificate(UploadSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -797,8 +839,13 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
-            com.amazonaws.AmazonWebServiceRequest request) {
+    public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public AmazonIdentityManagementWaiters waiters() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

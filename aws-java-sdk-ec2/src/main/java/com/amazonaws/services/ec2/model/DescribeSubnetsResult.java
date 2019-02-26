@@ -1,29 +1,27 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeSubnets.
- * </p>
+ * 
  */
-public class DescribeSubnetsResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -62,8 +60,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
             return;
         }
 
-        this.subnets = new com.amazonaws.internal.SdkInternalList<Subnet>(
-                subnets);
+        this.subnets = new com.amazonaws.internal.SdkInternalList<Subnet>(subnets);
     }
 
     /**
@@ -71,22 +68,19 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * Information about one or more subnets.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or
-     * {@link #withSubnets(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param subnets
      *        Information about one or more subnets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
         if (this.subnets == null) {
-            setSubnets(new com.amazonaws.internal.SdkInternalList<Subnet>(
-                    subnets.length));
+            setSubnets(new com.amazonaws.internal.SdkInternalList<Subnet>(subnets.length));
         }
         for (Subnet ele : subnets) {
             this.subnets.add(ele);
@@ -101,19 +95,17 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * 
      * @param subnets
      *        Information about one or more subnets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSubnetsResult withSubnets(
-            java.util.Collection<Subnet> subnets) {
+    public DescribeSubnetsResult withSubnets(java.util.Collection<Subnet> subnets) {
         setSubnets(subnets);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,7 +116,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }
@@ -141,8 +133,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
         DescribeSubnetsResult other = (DescribeSubnetsResult) obj;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
-        if (other.getSubnets() != null
-                && other.getSubnets().equals(this.getSubnets()) == false)
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
         return true;
     }
@@ -152,8 +143,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         return hashCode;
     }
 
@@ -162,9 +152,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
         try {
             return (DescribeSubnetsResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
-import org.apache.http.annotation.GuardedBy;
+import com.amazonaws.annotation.GuardedBy;
 
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
  * Reflection assistant for {@link DynamoDBMapper}
- * 
+ *
  * @deprecated This class is internal only and should not be used. It will be removed in the next
  *             major version of the SDK.
  */
@@ -265,10 +265,10 @@ class DynamoDBReflector {
                     setter = getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
                 } catch ( NoSuchMethodException e ) {
                     throw new DynamoDBMappingException("Expected a public, one-argument method called " + setterName
-                            + " on class " + getter.getDeclaringClass(), e);
+                            + " on " + getter.getDeclaringClass(), e);
                 } catch ( SecurityException e ) {
                     throw new DynamoDBMappingException("No access to public, one-argument method called " + setterName
-                            + " on class " + getter.getDeclaringClass(), e);
+                            + " on " + getter.getDeclaringClass(), e);
                 }
                 setterCache.put(getter, setter);
             }

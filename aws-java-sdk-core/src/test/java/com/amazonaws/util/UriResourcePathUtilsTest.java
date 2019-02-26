@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,16 @@
  */
 package com.amazonaws.util;
 
+import static com.amazonaws.util.UriResourcePathUtils.updateUriHost;
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class UriResourcePathUtilsTest {
 
@@ -91,5 +95,27 @@ public class UriResourcePathUtilsTest {
         Assert.assertEquals(Arrays.asList("value1"), request.getParameters().get("param1"));
         Assert.assertEquals(Arrays.asList("value2"), request.getParameters().get("param2"));
 
+    }
+
+    @Test
+    public void queryparam_without_value_returns_list_containing_null_value() {
+        final String uriResourcePath = "/foo/bar";
+        final String uriResourcePathWithParams =
+                uriResourcePath + "?param";
+        final Request<Object> request = new DefaultRequest<Object>(null, null);
+
+        Assert.assertEquals(uriResourcePath, UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePathWithParams));
+
+        Assert.assertTrue(request.getParameters().containsKey("param"));
+        Assert.assertEquals(Arrays.asList((String)null), request.getParameters().get("param"));
+    }
+
+    @Test
+    public void testUpdateUriHost() throws URISyntaxException {
+        Assert.assertThat(updateUriHost(new URI("https://s3.amazonaws.com/index.html"), "foobar-"),
+                          equalTo(new URI("https://foobar-s3.amazonaws.com/index.html")));
+
+        Assert.assertThat(updateUriHost(new URI("http://user:pass@oldhostname/index.html"), "foobar."),
+                          equalTo(new URI("http://user:pass@foobar.oldhostname/index.html")));
     }
 }

@@ -1,28 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
  * Describes a conversion task.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConversionTask" target="_top">AWS API
+ *      Documentation</a>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConversionTask implements Serializable, Cloneable {
 
     /**
@@ -33,22 +34,20 @@ public class ConversionTask implements Serializable, Cloneable {
     private String conversionTaskId;
     /**
      * <p>
-     * The time when the task expires. If the upload isn't complete before the
-     * expiration time, we automatically cancel the task.
+     * The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel
+     * the task.
      * </p>
      */
     private String expirationTime;
     /**
      * <p>
-     * If the task is for importing an instance, this contains information about
-     * the import instance task.
+     * If the task is for importing an instance, this contains information about the import instance task.
      * </p>
      */
     private ImportInstanceTaskDetails importInstance;
     /**
      * <p>
-     * If the task is for importing a volume, this contains information about
-     * the import volume task.
+     * If the task is for importing a volume, this contains information about the import volume task.
      * </p>
      */
     private ImportVolumeTaskDetails importVolume;
@@ -103,8 +102,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param conversionTaskId
      *        The ID of the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withConversionTaskId(String conversionTaskId) {
@@ -114,13 +112,13 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the task expires. If the upload isn't complete before the
-     * expiration time, we automatically cancel the task.
+     * The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel
+     * the task.
      * </p>
      * 
      * @param expirationTime
-     *        The time when the task expires. If the upload isn't complete
-     *        before the expiration time, we automatically cancel the task.
+     *        The time when the task expires. If the upload isn't complete before the expiration time, we automatically
+     *        cancel the task.
      */
 
     public void setExpirationTime(String expirationTime) {
@@ -129,12 +127,12 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the task expires. If the upload isn't complete before the
-     * expiration time, we automatically cancel the task.
+     * The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel
+     * the task.
      * </p>
      * 
-     * @return The time when the task expires. If the upload isn't complete
-     *         before the expiration time, we automatically cancel the task.
+     * @return The time when the task expires. If the upload isn't complete before the expiration time, we automatically
+     *         cancel the task.
      */
 
     public String getExpirationTime() {
@@ -143,15 +141,14 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the task expires. If the upload isn't complete before the
-     * expiration time, we automatically cancel the task.
+     * The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel
+     * the task.
      * </p>
      * 
      * @param expirationTime
-     *        The time when the task expires. If the upload isn't complete
-     *        before the expiration time, we automatically cancel the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The time when the task expires. If the upload isn't complete before the expiration time, we automatically
+     *        cancel the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withExpirationTime(String expirationTime) {
@@ -161,13 +158,11 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the task is for importing an instance, this contains information about
-     * the import instance task.
+     * If the task is for importing an instance, this contains information about the import instance task.
      * </p>
      * 
      * @param importInstance
-     *        If the task is for importing an instance, this contains
-     *        information about the import instance task.
+     *        If the task is for importing an instance, this contains information about the import instance task.
      */
 
     public void setImportInstance(ImportInstanceTaskDetails importInstance) {
@@ -176,12 +171,10 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the task is for importing an instance, this contains information about
-     * the import instance task.
+     * If the task is for importing an instance, this contains information about the import instance task.
      * </p>
      * 
-     * @return If the task is for importing an instance, this contains
-     *         information about the import instance task.
+     * @return If the task is for importing an instance, this contains information about the import instance task.
      */
 
     public ImportInstanceTaskDetails getImportInstance() {
@@ -190,32 +183,26 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the task is for importing an instance, this contains information about
-     * the import instance task.
+     * If the task is for importing an instance, this contains information about the import instance task.
      * </p>
      * 
      * @param importInstance
-     *        If the task is for importing an instance, this contains
-     *        information about the import instance task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the task is for importing an instance, this contains information about the import instance task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConversionTask withImportInstance(
-            ImportInstanceTaskDetails importInstance) {
+    public ConversionTask withImportInstance(ImportInstanceTaskDetails importInstance) {
         setImportInstance(importInstance);
         return this;
     }
 
     /**
      * <p>
-     * If the task is for importing a volume, this contains information about
-     * the import volume task.
+     * If the task is for importing a volume, this contains information about the import volume task.
      * </p>
      * 
      * @param importVolume
-     *        If the task is for importing a volume, this contains information
-     *        about the import volume task.
+     *        If the task is for importing a volume, this contains information about the import volume task.
      */
 
     public void setImportVolume(ImportVolumeTaskDetails importVolume) {
@@ -224,12 +211,10 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the task is for importing a volume, this contains information about
-     * the import volume task.
+     * If the task is for importing a volume, this contains information about the import volume task.
      * </p>
      * 
-     * @return If the task is for importing a volume, this contains information
-     *         about the import volume task.
+     * @return If the task is for importing a volume, this contains information about the import volume task.
      */
 
     public ImportVolumeTaskDetails getImportVolume() {
@@ -238,15 +223,12 @@ public class ConversionTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the task is for importing a volume, this contains information about
-     * the import volume task.
+     * If the task is for importing a volume, this contains information about the import volume task.
      * </p>
      * 
      * @param importVolume
-     *        If the task is for importing a volume, this contains information
-     *        about the import volume task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the task is for importing a volume, this contains information about the import volume task.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withImportVolume(ImportVolumeTaskDetails importVolume) {
@@ -288,8 +270,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConversionTaskState
      */
 
@@ -309,7 +290,7 @@ public class ConversionTask implements Serializable, Cloneable {
      */
 
     public void setState(ConversionTaskState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -319,13 +300,12 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConversionTaskState
      */
 
     public ConversionTask withState(ConversionTaskState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -361,8 +341,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param statusMessage
      *        The status message related to the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withStatusMessage(String statusMessage) {
@@ -408,16 +387,14 @@ public class ConversionTask implements Serializable, Cloneable {
      * Any tags assigned to the task.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        Any tags assigned to the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withTags(Tag... tags) {
@@ -437,8 +414,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param tags
      *        Any tags assigned to the task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConversionTask withTags(java.util.Collection<Tag> tags) {
@@ -447,8 +423,8 @@ public class ConversionTask implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -459,19 +435,19 @@ public class ConversionTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTaskId() != null)
-            sb.append("ConversionTaskId: " + getConversionTaskId() + ",");
+            sb.append("ConversionTaskId: ").append(getConversionTaskId()).append(",");
         if (getExpirationTime() != null)
-            sb.append("ExpirationTime: " + getExpirationTime() + ",");
+            sb.append("ExpirationTime: ").append(getExpirationTime()).append(",");
         if (getImportInstance() != null)
-            sb.append("ImportInstance: " + getImportInstance() + ",");
+            sb.append("ImportInstance: ").append(getImportInstance()).append(",");
         if (getImportVolume() != null)
-            sb.append("ImportVolume: " + getImportVolume() + ",");
+            sb.append("ImportVolume: ").append(getImportVolume()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -486,44 +462,33 @@ public class ConversionTask implements Serializable, Cloneable {
         if (obj instanceof ConversionTask == false)
             return false;
         ConversionTask other = (ConversionTask) obj;
-        if (other.getConversionTaskId() == null
-                ^ this.getConversionTaskId() == null)
+        if (other.getConversionTaskId() == null ^ this.getConversionTaskId() == null)
             return false;
-        if (other.getConversionTaskId() != null
-                && other.getConversionTaskId().equals(
-                        this.getConversionTaskId()) == false)
+        if (other.getConversionTaskId() != null && other.getConversionTaskId().equals(this.getConversionTaskId()) == false)
             return false;
-        if (other.getExpirationTime() == null
-                ^ this.getExpirationTime() == null)
+        if (other.getExpirationTime() == null ^ this.getExpirationTime() == null)
             return false;
-        if (other.getExpirationTime() != null
-                && other.getExpirationTime().equals(this.getExpirationTime()) == false)
+        if (other.getExpirationTime() != null && other.getExpirationTime().equals(this.getExpirationTime()) == false)
             return false;
-        if (other.getImportInstance() == null
-                ^ this.getImportInstance() == null)
+        if (other.getImportInstance() == null ^ this.getImportInstance() == null)
             return false;
-        if (other.getImportInstance() != null
-                && other.getImportInstance().equals(this.getImportInstance()) == false)
+        if (other.getImportInstance() != null && other.getImportInstance().equals(this.getImportInstance()) == false)
             return false;
         if (other.getImportVolume() == null ^ this.getImportVolume() == null)
             return false;
-        if (other.getImportVolume() != null
-                && other.getImportVolume().equals(this.getImportVolume()) == false)
+        if (other.getImportVolume() != null && other.getImportVolume().equals(this.getImportVolume()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getState() != null
-                && other.getState().equals(this.getState()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getStatusMessage() != null
-                && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -533,30 +498,13 @@ public class ConversionTask implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getConversionTaskId() == null) ? 0 : getConversionTaskId()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getExpirationTime() == null) ? 0 : getExpirationTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImportInstance() == null) ? 0 : getImportInstance()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getImportVolume() == null) ? 0 : getImportVolume()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStatusMessage() == null) ? 0 : getStatusMessage()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConversionTaskId() == null) ? 0 : getConversionTaskId().hashCode());
+        hashCode = prime * hashCode + ((getExpirationTime() == null) ? 0 : getExpirationTime().hashCode());
+        hashCode = prime * hashCode + ((getImportInstance() == null) ? 0 : getImportInstance().hashCode());
+        hashCode = prime * hashCode + ((getImportVolume() == null) ? 0 : getImportVolume().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -565,9 +513,8 @@ public class ConversionTask implements Serializable, Cloneable {
         try {
             return (ConversionTask) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

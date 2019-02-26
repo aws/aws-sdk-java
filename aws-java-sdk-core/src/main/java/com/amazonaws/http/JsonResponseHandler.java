@@ -16,26 +16,23 @@
  */
 package com.amazonaws.http;
 
-import java.io.IOException;
-import java.util.Map;
-
-import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.util.ValidationUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContext.UnmarshallerType;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
-import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.ValidationUtils;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import java.io.IOException;
+import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful response from an AWS
@@ -63,18 +60,20 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private final boolean isPayloadJson;
 
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
+    private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers;
 
     /**
      * Constructs a new response handler that will use the specified JSON unmarshaller to unmarshall
      * the service response and uses the specified response element path to find the root of the
      * business data in the service's response.
-     *
      * @param responseUnmarshaller    The JSON unmarshaller to use on the response.
      * @param simpleTypeUnmarshallers List of unmarshallers to be used for scalar types.
+     * @param customTypeMarshallers   List of custom unmarshallers to be used for special types.
      * @param jsonFactory             the json factory to be used for parsing the response.
      */
     public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller,
                                Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
+                               Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers,
                                JsonFactory jsonFactory, boolean needsConnectionLeftOpen,
                                boolean isPayloadJson) {
         /*
@@ -90,8 +89,8 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         this.needsConnectionLeftOpen = needsConnectionLeftOpen;
         this.isPayloadJson = isPayloadJson;
 
-        this.simpleTypeUnmarshallers = ValidationUtils
-                .assertNotNull(simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.simpleTypeUnmarshallers = ValidationUtils.assertNotNull(simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.customTypeMarshallers = ValidationUtils.assertNotNull(customTypeMarshallers, "custom type marshallers");
         this.jsonFactory = ValidationUtils.assertNotNull(jsonFactory, "JSONFactory");
     }
 
@@ -103,31 +102,30 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         log.trace("Parsing service response JSON");
 
         String CRC32Checksum = response.getHeaders().get("x-amz-crc32");
-        CRC32ChecksumCalculatingInputStream crc32ChecksumInputStream = null;
 
         JsonParser jsonParser = null;
 
         if (shouldParsePayloadAsJson()) {
-            if (CRC32Checksum != null) {
-                crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(
-                        response.getContent());
-                jsonParser = jsonFactory.createParser(crc32ChecksumInputStream);
-            } else {
-                jsonParser = jsonFactory.createParser(response.getContent());
-            }
+            jsonParser = jsonFactory.createParser(response.getContent());
         }
 
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContextImpl(
-                    jsonParser, simpleTypeUnmarshallers, response);
+                    jsonParser, simpleTypeUnmarshallers, customTypeMarshallers, response);
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
 
+            // Make sure we read all the data to get an accurate CRC32 calculation.
+            // See https://github.com/aws/aws-sdk-java/issues/1018
+            if (shouldParsePayloadAsJson() && response.getContent() != null) {
+                IOUtils.drainInputStream(response.getContent());
+            }
+
             if (CRC32Checksum != null) {
                 long serverSideCRC = Long.parseLong(CRC32Checksum);
-                long clientSideCRC = crc32ChecksumInputStream.getCRC32Checksum();
+                long clientSideCRC = response.getCRC32Checksum();
                 if (clientSideCRC != serverSideCRC) {
                     throw new CRC32MismatchException(
                             "Client calculated crc32 checksum didn't match that calculated by server side");

@@ -1,51 +1,85 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Describes a trust relationship between an Microsoft AD in the AWS cloud and
- * an external domain.
+ * <p>
+ * Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust" target="_top">AWS API Documentation</a>
  */
-public class Trust implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Trust implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      */
     private String directoryId;
-    /** The unique ID of the trust relationship. */
+    /**
+     * <p>
+     * The unique ID of the trust relationship.
+     * </p>
+     */
     private String trustId;
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in
-     * the trust relationship.
+     * <p>
+     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
+     * </p>
      */
     private String remoteDomainName;
-    /** The trust relationship type. */
+    /**
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
+     */
     private String trustType;
-    /** The trust relationship direction. */
+    /**
+     * <p>
+     * The trust relationship direction.
+     * </p>
+     */
     private String trustDirection;
-    /** The trust relationship state. */
+    /**
+     * <p>
+     * The trust relationship state.
+     * </p>
+     */
     private String trustState;
-    /** The date and time that the trust relationship was created. */
+    /**
+     * <p>
+     * The date and time that the trust relationship was created.
+     * </p>
+     */
     private java.util.Date createdDateTime;
-    /** The date and time that the trust relationship was last updated. */
+    /**
+     * <p>
+     * The date and time that the trust relationship was last updated.
+     * </p>
+     */
     private java.util.Date lastUpdatedDateTime;
-    /** The date and time that the TrustState was last updated. */
+    /**
+     * <p>
+     * The date and time that the TrustState was last updated.
+     * </p>
+     */
     private java.util.Date stateLastUpdatedDateTime;
     /**
      * <p>
@@ -53,13 +87,20 @@ public class Trust implements Serializable, Cloneable {
      * </p>
      */
     private String trustStateReason;
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     */
+    private String selectiveAuth;
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
      * @param directoryId
-     *        The Directory ID of the AWS directory involved in the trust
-     *        relationship.
+     *        The Directory ID of the AWS directory involved in the trust relationship.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -67,10 +108,11 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
-     * @return The Directory ID of the AWS directory involved in the trust
-     *         relationship.
+     * @return The Directory ID of the AWS directory involved in the trust relationship.
      */
 
     public String getDirectoryId() {
@@ -78,13 +120,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
      * @param directoryId
-     *        The Directory ID of the AWS directory involved in the trust
-     *        relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Directory ID of the AWS directory involved in the trust relationship.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withDirectoryId(String directoryId) {
@@ -93,7 +135,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @param trustId
      *        The unique ID of the trust relationship.
@@ -104,7 +148,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @return The unique ID of the trust relationship.
      */
@@ -114,12 +160,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @param trustId
      *        The unique ID of the trust relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withTrustId(String trustId) {
@@ -128,12 +175,12 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in
-     * the trust relationship.
+     * <p>
+     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
-     *        The Fully Qualified Domain Name (FQDN) of the external domain
-     *        involved in the trust relationship.
+     *        The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
      */
 
     public void setRemoteDomainName(String remoteDomainName) {
@@ -141,11 +188,11 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in
-     * the trust relationship.
+     * <p>
+     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
+     * </p>
      * 
-     * @return The Fully Qualified Domain Name (FQDN) of the external domain
-     *         involved in the trust relationship.
+     * @return The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
      */
 
     public String getRemoteDomainName() {
@@ -153,14 +200,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in
-     * the trust relationship.
+     * <p>
+     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
-     *        The Fully Qualified Domain Name (FQDN) of the external domain
-     *        involved in the trust relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withRemoteDomainName(String remoteDomainName) {
@@ -169,10 +215,12 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The trust relationship type.
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -181,9 +229,11 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The trust relationship type.
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
      * 
-     * @return The trust relationship type.
+     * @return The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -192,12 +242,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The trust relationship type.
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The trust relationship type. <code>Forest</code> is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
 
@@ -207,34 +258,39 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * The trust relationship type.
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
     public void setTrustType(TrustType trustType) {
-        this.trustType = trustType.toString();
+        withTrustType(trustType);
     }
 
     /**
-     * The trust relationship type.
+     * <p>
+     * The trust relationship type. <code>Forest</code> is the default.
+     * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The trust relationship type. <code>Forest</code> is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
 
     public Trust withTrustType(TrustType trustType) {
-        setTrustType(trustType);
+        this.trustType = trustType.toString();
         return this;
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -246,7 +302,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @return The trust relationship direction.
      * @see TrustDirection
@@ -257,12 +315,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustDirection
      */
 
@@ -272,7 +331,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -280,26 +341,29 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public void setTrustDirection(TrustDirection trustDirection) {
-        this.trustDirection = trustDirection.toString();
+        withTrustDirection(trustDirection);
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustDirection
      */
 
     public Trust withTrustDirection(TrustDirection trustDirection) {
-        setTrustDirection(trustDirection);
+        this.trustDirection = trustDirection.toString();
         return this;
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -311,7 +375,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @return The trust relationship state.
      * @see TrustState
@@ -322,12 +388,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustState
      */
 
@@ -337,7 +404,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -345,26 +414,29 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public void setTrustState(TrustState trustState) {
-        this.trustState = trustState.toString();
+        withTrustState(trustState);
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustState
      */
 
     public Trust withTrustState(TrustState trustState) {
-        setTrustState(trustState);
+        this.trustState = trustState.toString();
         return this;
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @param createdDateTime
      *        The date and time that the trust relationship was created.
@@ -375,7 +447,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @return The date and time that the trust relationship was created.
      */
@@ -385,12 +459,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @param createdDateTime
      *        The date and time that the trust relationship was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withCreatedDateTime(java.util.Date createdDateTime) {
@@ -399,7 +474,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @param lastUpdatedDateTime
      *        The date and time that the trust relationship was last updated.
@@ -410,7 +487,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @return The date and time that the trust relationship was last updated.
      */
@@ -420,12 +499,13 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @param lastUpdatedDateTime
      *        The date and time that the trust relationship was last updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withLastUpdatedDateTime(java.util.Date lastUpdatedDateTime) {
@@ -434,19 +514,22 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @param stateLastUpdatedDateTime
      *        The date and time that the TrustState was last updated.
      */
 
-    public void setStateLastUpdatedDateTime(
-            java.util.Date stateLastUpdatedDateTime) {
+    public void setStateLastUpdatedDateTime(java.util.Date stateLastUpdatedDateTime) {
         this.stateLastUpdatedDateTime = stateLastUpdatedDateTime;
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @return The date and time that the TrustState was last updated.
      */
@@ -456,16 +539,16 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @param stateLastUpdatedDateTime
      *        The date and time that the TrustState was last updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Trust withStateLastUpdatedDateTime(
-            java.util.Date stateLastUpdatedDateTime) {
+    public Trust withStateLastUpdatedDateTime(java.util.Date stateLastUpdatedDateTime) {
         setStateLastUpdatedDateTime(stateLastUpdatedDateTime);
         return this;
     }
@@ -502,8 +585,7 @@ public class Trust implements Serializable, Cloneable {
      * 
      * @param trustStateReason
      *        The reason for the TrustState.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Trust withTrustStateReason(String trustStateReason) {
@@ -512,8 +594,81 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(String selectiveAuth) {
+        this.selectiveAuth = selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @return Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public String getSelectiveAuth() {
+        return this.selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public Trust withSelectiveAuth(String selectiveAuth) {
+        setSelectiveAuth(selectiveAuth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(SelectiveAuth selectiveAuth) {
+        withSelectiveAuth(selectiveAuth);
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public Trust withSelectiveAuth(SelectiveAuth selectiveAuth) {
+        this.selectiveAuth = selectiveAuth.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -524,26 +679,27 @@ public class Trust implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId() + ",");
+            sb.append("TrustId: ").append(getTrustId()).append(",");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName() + ",");
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getTrustType() != null)
-            sb.append("TrustType: " + getTrustType() + ",");
+            sb.append("TrustType: ").append(getTrustType()).append(",");
         if (getTrustDirection() != null)
-            sb.append("TrustDirection: " + getTrustDirection() + ",");
+            sb.append("TrustDirection: ").append(getTrustDirection()).append(",");
         if (getTrustState() != null)
-            sb.append("TrustState: " + getTrustState() + ",");
+            sb.append("TrustState: ").append(getTrustState()).append(",");
         if (getCreatedDateTime() != null)
-            sb.append("CreatedDateTime: " + getCreatedDateTime() + ",");
+            sb.append("CreatedDateTime: ").append(getCreatedDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: " + getLastUpdatedDateTime() + ",");
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getStateLastUpdatedDateTime() != null)
-            sb.append("StateLastUpdatedDateTime: "
-                    + getStateLastUpdatedDateTime() + ",");
+            sb.append("StateLastUpdatedDateTime: ").append(getStateLastUpdatedDateTime()).append(",");
         if (getTrustStateReason() != null)
-            sb.append("TrustStateReason: " + getTrustStateReason());
+            sb.append("TrustStateReason: ").append(getTrustStateReason()).append(",");
+        if (getSelectiveAuth() != null)
+            sb.append("SelectiveAuth: ").append(getSelectiveAuth());
         sb.append("}");
         return sb.toString();
     }
@@ -560,63 +716,47 @@ public class Trust implements Serializable, Cloneable {
         Trust other = (Trust) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getTrustId() == null ^ this.getTrustId() == null)
             return false;
-        if (other.getTrustId() != null
-                && other.getTrustId().equals(this.getTrustId()) == false)
+        if (other.getTrustId() != null && other.getTrustId().equals(this.getTrustId()) == false)
             return false;
-        if (other.getRemoteDomainName() == null
-                ^ this.getRemoteDomainName() == null)
+        if (other.getRemoteDomainName() == null ^ this.getRemoteDomainName() == null)
             return false;
-        if (other.getRemoteDomainName() != null
-                && other.getRemoteDomainName().equals(
-                        this.getRemoteDomainName()) == false)
+        if (other.getRemoteDomainName() != null && other.getRemoteDomainName().equals(this.getRemoteDomainName()) == false)
             return false;
         if (other.getTrustType() == null ^ this.getTrustType() == null)
             return false;
-        if (other.getTrustType() != null
-                && other.getTrustType().equals(this.getTrustType()) == false)
+        if (other.getTrustType() != null && other.getTrustType().equals(this.getTrustType()) == false)
             return false;
-        if (other.getTrustDirection() == null
-                ^ this.getTrustDirection() == null)
+        if (other.getTrustDirection() == null ^ this.getTrustDirection() == null)
             return false;
-        if (other.getTrustDirection() != null
-                && other.getTrustDirection().equals(this.getTrustDirection()) == false)
+        if (other.getTrustDirection() != null && other.getTrustDirection().equals(this.getTrustDirection()) == false)
             return false;
         if (other.getTrustState() == null ^ this.getTrustState() == null)
             return false;
-        if (other.getTrustState() != null
-                && other.getTrustState().equals(this.getTrustState()) == false)
+        if (other.getTrustState() != null && other.getTrustState().equals(this.getTrustState()) == false)
             return false;
-        if (other.getCreatedDateTime() == null
-                ^ this.getCreatedDateTime() == null)
+        if (other.getCreatedDateTime() == null ^ this.getCreatedDateTime() == null)
             return false;
-        if (other.getCreatedDateTime() != null
-                && other.getCreatedDateTime().equals(this.getCreatedDateTime()) == false)
+        if (other.getCreatedDateTime() != null && other.getCreatedDateTime().equals(this.getCreatedDateTime()) == false)
             return false;
-        if (other.getLastUpdatedDateTime() == null
-                ^ this.getLastUpdatedDateTime() == null)
+        if (other.getLastUpdatedDateTime() == null ^ this.getLastUpdatedDateTime() == null)
             return false;
-        if (other.getLastUpdatedDateTime() != null
-                && other.getLastUpdatedDateTime().equals(
-                        this.getLastUpdatedDateTime()) == false)
+        if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
-        if (other.getStateLastUpdatedDateTime() == null
-                ^ this.getStateLastUpdatedDateTime() == null)
+        if (other.getStateLastUpdatedDateTime() == null ^ this.getStateLastUpdatedDateTime() == null)
             return false;
-        if (other.getStateLastUpdatedDateTime() != null
-                && other.getStateLastUpdatedDateTime().equals(
-                        this.getStateLastUpdatedDateTime()) == false)
+        if (other.getStateLastUpdatedDateTime() != null && other.getStateLastUpdatedDateTime().equals(this.getStateLastUpdatedDateTime()) == false)
             return false;
-        if (other.getTrustStateReason() == null
-                ^ this.getTrustStateReason() == null)
+        if (other.getTrustStateReason() == null ^ this.getTrustStateReason() == null)
             return false;
-        if (other.getTrustStateReason() != null
-                && other.getTrustStateReason().equals(
-                        this.getTrustStateReason()) == false)
+        if (other.getTrustStateReason() != null && other.getTrustStateReason().equals(this.getTrustStateReason()) == false)
+            return false;
+        if (other.getSelectiveAuth() == null ^ this.getSelectiveAuth() == null)
+            return false;
+        if (other.getSelectiveAuth() != null && other.getSelectiveAuth().equals(this.getSelectiveAuth()) == false)
             return false;
         return true;
     }
@@ -626,39 +766,17 @@ public class Trust implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTrustId() == null) ? 0 : getTrustId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRemoteDomainName() == null) ? 0 : getRemoteDomainName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTrustType() == null) ? 0 : getTrustType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTrustDirection() == null) ? 0 : getTrustDirection()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTrustState() == null) ? 0 : getTrustState().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreatedDateTime() == null) ? 0 : getCreatedDateTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastUpdatedDateTime() == null) ? 0
-                        : getLastUpdatedDateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getStateLastUpdatedDateTime() == null) ? 0
-                        : getStateLastUpdatedDateTime().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTrustStateReason() == null) ? 0 : getTrustStateReason()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getTrustId() == null) ? 0 : getTrustId().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDomainName() == null) ? 0 : getRemoteDomainName().hashCode());
+        hashCode = prime * hashCode + ((getTrustType() == null) ? 0 : getTrustType().hashCode());
+        hashCode = prime * hashCode + ((getTrustDirection() == null) ? 0 : getTrustDirection().hashCode());
+        hashCode = prime * hashCode + ((getTrustState() == null) ? 0 : getTrustState().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDateTime() == null) ? 0 : getCreatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getStateLastUpdatedDateTime() == null) ? 0 : getStateLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getTrustStateReason() == null) ? 0 : getTrustStateReason().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveAuth() == null) ? 0 : getSelectiveAuth().hashCode());
         return hashCode;
     }
 
@@ -667,9 +785,13 @@ public class Trust implements Serializable, Cloneable {
         try {
             return (Trust) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directory.model.transform.TrustMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a get application revision operation.
+ * Represents the input of a GetApplicationRevision operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision" target="_top">AWS
+ *      API Documentation</a>
  */
-public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetApplicationRevisionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,8 +36,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
     private String applicationName;
     /**
      * <p>
-     * Information about the application revision to get, including type and
-     * location.
+     * Information about the application revision to get, including type and location.
      * </p>
      */
     private RevisionLocation revision;
@@ -73,25 +73,21 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * 
      * @param applicationName
      *        The name of the application that corresponds to the revision.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApplicationRevisionRequest withApplicationName(
-            String applicationName) {
+    public GetApplicationRevisionRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
     }
 
     /**
      * <p>
-     * Information about the application revision to get, including type and
-     * location.
+     * Information about the application revision to get, including type and location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including type
-     *        and location.
+     *        Information about the application revision to get, including type and location.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -100,12 +96,10 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including type and
-     * location.
+     * Information about the application revision to get, including type and location.
      * </p>
      * 
-     * @return Information about the application revision to get, including type
-     *         and location.
+     * @return Information about the application revision to get, including type and location.
      */
 
     public RevisionLocation getRevision() {
@@ -114,15 +108,12 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including type and
-     * location.
+     * Information about the application revision to get, including type and location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including type
-     *        and location.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Information about the application revision to get, including type and location.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetApplicationRevisionRequest withRevision(RevisionLocation revision) {
@@ -131,8 +122,8 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,9 +134,9 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision());
+            sb.append("Revision: ").append(getRevision());
         sb.append("}");
         return sb.toString();
     }
@@ -160,16 +151,13 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
         if (obj instanceof GetApplicationRevisionRequest == false)
             return false;
         GetApplicationRevisionRequest other = (GetApplicationRevisionRequest) obj;
-        if (other.getApplicationName() == null
-                ^ this.getApplicationName() == null)
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
-        if (other.getApplicationName() != null
-                && other.getApplicationName().equals(this.getApplicationName()) == false)
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
-        if (other.getRevision() != null
-                && other.getRevision().equals(this.getRevision()) == false)
+        if (other.getRevision() != null && other.getRevision().equals(this.getRevision()) == false)
             return false;
         return true;
     }
@@ -179,12 +167,8 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getApplicationName() == null) ? 0 : getApplicationName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getRevision() == null) ? 0 : getRevision().hashCode());
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
         return hashCode;
     }
 
@@ -192,4 +176,5 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
     public GetApplicationRevisionRequest clone() {
         return (GetApplicationRevisionRequest) super.clone();
     }
+
 }

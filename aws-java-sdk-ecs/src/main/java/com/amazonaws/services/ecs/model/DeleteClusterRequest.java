@@ -1,47 +1,44 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteClusterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to
-     * delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      * </p>
      */
     private String cluster;
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to
-     * delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster
-     *        to delete.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      */
 
     public void setCluster(String cluster) {
@@ -50,12 +47,10 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to
-     * delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster
-     *         to delete.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      */
 
     public String getCluster() {
@@ -64,15 +59,12 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster to
-     * delete.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to delete.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster
-     *        to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteClusterRequest withCluster(String cluster) {
@@ -81,8 +73,8 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -93,7 +85,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster());
+            sb.append("Cluster: ").append(getCluster());
         sb.append("}");
         return sb.toString();
     }
@@ -110,8 +102,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
         DeleteClusterRequest other = (DeleteClusterRequest) obj;
         if (other.getCluster() == null ^ this.getCluster() == null)
             return false;
-        if (other.getCluster() != null
-                && other.getCluster().equals(this.getCluster()) == false)
+        if (other.getCluster() != null && other.getCluster().equals(this.getCluster()) == false)
             return false;
         return true;
     }
@@ -121,8 +112,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getCluster() == null) ? 0 : getCluster().hashCode());
+        hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         return hashCode;
     }
 
@@ -130,4 +120,5 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
     public DeleteClusterRequest clone() {
         return (DeleteClusterRequest) super.clone();
     }
+
 }

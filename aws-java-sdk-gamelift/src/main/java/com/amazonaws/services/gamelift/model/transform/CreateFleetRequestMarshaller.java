@@ -1,146 +1,98 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateFleetRequest Marshaller
+ * CreateFleetRequestMarshaller
  */
-public class CreateFleetRequestMarshaller implements
-        Marshaller<Request<CreateFleetRequest>, CreateFleetRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateFleetRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> BUILDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BuildId").build();
+    private static final MarshallingInfo<String> SERVERLAUNCHPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerLaunchPath").build();
+    private static final MarshallingInfo<String> SERVERLAUNCHPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerLaunchParameters").build();
+    private static final MarshallingInfo<List> LOGPATHS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogPaths").build();
+    private static final MarshallingInfo<String> EC2INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceType").build();
+    private static final MarshallingInfo<List> EC2INBOUNDPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InboundPermissions").build();
+    private static final MarshallingInfo<String> NEWGAMESESSIONPROTECTIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewGameSessionProtectionPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> RUNTIMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCECREATIONLIMITPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCreationLimitPolicy").build();
+    private static final MarshallingInfo<List> METRICGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MetricGroups").build();
+    private static final MarshallingInfo<String> PEERVPCAWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PeerVpcAwsAccountId").build();
+    private static final MarshallingInfo<String> PEERVPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PeerVpcId").build();
+    private static final MarshallingInfo<String> FLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetType").build();
 
-    public CreateFleetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
+
+    public static CreateFleetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateFleetRequest> marshall(
-            CreateFleetRequest createFleetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateFleetRequest createFleetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createFleetRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateFleetRequest> request = new DefaultRequest<CreateFleetRequest>(
-                createFleetRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.CreateFleet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createFleetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(
-                        createFleetRequest.getName());
-            }
-            if (createFleetRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(
-                        createFleetRequest.getDescription());
-            }
-            if (createFleetRequest.getBuildId() != null) {
-                jsonGenerator.writeFieldName("BuildId").writeValue(
-                        createFleetRequest.getBuildId());
-            }
-            if (createFleetRequest.getServerLaunchPath() != null) {
-                jsonGenerator.writeFieldName("ServerLaunchPath").writeValue(
-                        createFleetRequest.getServerLaunchPath());
-            }
-            if (createFleetRequest.getServerLaunchParameters() != null) {
-                jsonGenerator.writeFieldName("ServerLaunchParameters")
-                        .writeValue(
-                                createFleetRequest.getServerLaunchParameters());
-            }
-
-            java.util.List<String> logPathsList = createFleetRequest
-                    .getLogPaths();
-            if (logPathsList != null) {
-                jsonGenerator.writeFieldName("LogPaths");
-                jsonGenerator.writeStartArray();
-                for (String logPathsListValue : logPathsList) {
-                    if (logPathsListValue != null) {
-                        jsonGenerator.writeValue(logPathsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createFleetRequest.getEC2InstanceType() != null) {
-                jsonGenerator.writeFieldName("EC2InstanceType").writeValue(
-                        createFleetRequest.getEC2InstanceType());
-            }
-
-            java.util.List<IpPermission> eC2InboundPermissionsList = createFleetRequest
-                    .getEC2InboundPermissions();
-            if (eC2InboundPermissionsList != null) {
-                jsonGenerator.writeFieldName("EC2InboundPermissions");
-                jsonGenerator.writeStartArray();
-                for (IpPermission eC2InboundPermissionsListValue : eC2InboundPermissionsList) {
-                    if (eC2InboundPermissionsListValue != null) {
-
-                        IpPermissionJsonMarshaller.getInstance().marshall(
-                                eC2InboundPermissionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createFleetRequest.getNewGameSessionProtectionPolicy() != null) {
-                jsonGenerator.writeFieldName("NewGameSessionProtectionPolicy")
-                        .writeValue(
-                                createFleetRequest
-                                        .getNewGameSessionProtectionPolicy());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createFleetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getBuildId(), BUILDID_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getServerLaunchPath(), SERVERLAUNCHPATH_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getServerLaunchParameters(), SERVERLAUNCHPARAMETERS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getLogPaths(), LOGPATHS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getEC2InstanceType(), EC2INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getEC2InboundPermissions(), EC2INBOUNDPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getNewGameSessionProtectionPolicy(), NEWGAMESESSIONPROTECTIONPOLICY_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getRuntimeConfiguration(), RUNTIMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getResourceCreationLimitPolicy(), RESOURCECREATIONLIMITPOLICY_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getMetricGroups(), METRICGROUPS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getPeerVpcAwsAccountId(), PEERVPCAWSACCOUNTID_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getPeerVpcId(), PEERVPCID_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getFleetType(), FLEETTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

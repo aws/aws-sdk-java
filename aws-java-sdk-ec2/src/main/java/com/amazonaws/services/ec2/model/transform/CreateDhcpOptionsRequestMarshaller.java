@@ -1,80 +1,66 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateDhcpOptionsRequest Marshaller
  */
 
-public class CreateDhcpOptionsRequestMarshaller implements
-        Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
 
-    public Request<CreateDhcpOptionsRequest> marshall(
-            CreateDhcpOptionsRequest createDhcpOptionsRequest) {
+    public Request<CreateDhcpOptionsRequest> marshall(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
 
         if (createDhcpOptionsRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(
-                createDhcpOptionsRequest, "AmazonEC2");
+        Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(createDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateDhcpOptions");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<DhcpConfiguration> dhcpConfigurationsList = (com.amazonaws.internal.SdkInternalList<DhcpConfiguration>) createDhcpOptionsRequest
+        com.amazonaws.internal.SdkInternalList<DhcpConfiguration> createDhcpOptionsRequestDhcpConfigurationsList = (com.amazonaws.internal.SdkInternalList<DhcpConfiguration>) createDhcpOptionsRequest
                 .getDhcpConfigurations();
-        if (!dhcpConfigurationsList.isEmpty()
-                || !dhcpConfigurationsList.isAutoConstruct()) {
+        if (!createDhcpOptionsRequestDhcpConfigurationsList.isEmpty() || !createDhcpOptionsRequestDhcpConfigurationsList.isAutoConstruct()) {
             int dhcpConfigurationsListIndex = 1;
 
-            for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
+            for (DhcpConfiguration createDhcpOptionsRequestDhcpConfigurationsListValue : createDhcpOptionsRequestDhcpConfigurationsList) {
 
-                if (dhcpConfigurationsListValue.getKey() != null) {
-                    request.addParameter("DhcpConfiguration."
-                            + dhcpConfigurationsListIndex + ".Key", StringUtils
-                            .fromString(dhcpConfigurationsListValue.getKey()));
+                if (createDhcpOptionsRequestDhcpConfigurationsListValue.getKey() != null) {
+                    request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key",
+                            StringUtils.fromString(createDhcpOptionsRequestDhcpConfigurationsListValue.getKey()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) dhcpConfigurationsListValue
+                com.amazonaws.internal.SdkInternalList<String> dhcpConfigurationValuesList = (com.amazonaws.internal.SdkInternalList<String>) createDhcpOptionsRequestDhcpConfigurationsListValue
                         .getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!dhcpConfigurationValuesList.isEmpty() || !dhcpConfigurationValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("DhcpConfiguration."
-                                    + dhcpConfigurationsListIndex + ".Value."
-                                    + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                    for (String dhcpConfigurationValuesListValue : dhcpConfigurationValuesList) {
+                        if (dhcpConfigurationValuesListValue != null) {
+                            request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex,
+                                    StringUtils.fromString(dhcpConfigurationValuesListValue));
                         }
                         valuesListIndex++;
                     }

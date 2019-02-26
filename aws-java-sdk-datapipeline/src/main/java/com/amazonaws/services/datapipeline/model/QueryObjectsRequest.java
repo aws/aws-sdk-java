@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.datapipeline.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Contains the parameters for QueryObjects.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects" target="_top">AWS API
+ *      Documentation</a>
  */
-public class QueryObjectsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class QueryObjectsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,34 +36,31 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
     private String pipelineId;
     /**
      * <p>
-     * The query that defines the objects to be returned. The <code>Query</code>
-     * object can contain a maximum of ten selectors. The conditions in the
-     * query are limited to top-level String fields in the object. These filters
-     * can be applied to components, instances, and attempts.
+     * The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten
+     * selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be
+     * applied to components, instances, and attempts.
      * </p>
      */
     private Query query;
     /**
      * <p>
-     * Indicates whether the query applies to components or instances. The
-     * possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
-     * <code>ATTEMPT</code>.
+     * Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>,
+     * <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      * </p>
      */
     private String sphere;
     /**
      * <p>
-     * The starting point for the results to be returned. For the first call,
-     * this value should be empty. As long as there are more results, continue
-     * to call <code>QueryObjects</code> with the marker value from the previous
-     * call to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call, this value should be empty. As long as
+     * there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call
+     * to retrieve the next set of results.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * The maximum number of object names that <code>QueryObjects</code> will
-     * return in a single call. The default value is 100.
+     * The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value
+     * is 100.
      * </p>
      */
     private Integer limit;
@@ -99,8 +97,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * 
      * @param pipelineId
      *        The ID of the pipeline.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryObjectsRequest withPipelineId(String pipelineId) {
@@ -110,18 +107,15 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The query that defines the objects to be returned. The <code>Query</code>
-     * object can contain a maximum of ten selectors. The conditions in the
-     * query are limited to top-level String fields in the object. These filters
-     * can be applied to components, instances, and attempts.
+     * The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten
+     * selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be
+     * applied to components, instances, and attempts.
      * </p>
      * 
      * @param query
-     *        The query that defines the objects to be returned. The
-     *        <code>Query</code> object can contain a maximum of ten selectors.
-     *        The conditions in the query are limited to top-level String fields
-     *        in the object. These filters can be applied to components,
-     *        instances, and attempts.
+     *        The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of
+     *        ten selectors. The conditions in the query are limited to top-level String fields in the object. These
+     *        filters can be applied to components, instances, and attempts.
      */
 
     public void setQuery(Query query) {
@@ -130,17 +124,14 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The query that defines the objects to be returned. The <code>Query</code>
-     * object can contain a maximum of ten selectors. The conditions in the
-     * query are limited to top-level String fields in the object. These filters
-     * can be applied to components, instances, and attempts.
+     * The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten
+     * selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be
+     * applied to components, instances, and attempts.
      * </p>
      * 
-     * @return The query that defines the objects to be returned. The
-     *         <code>Query</code> object can contain a maximum of ten selectors.
-     *         The conditions in the query are limited to top-level String
-     *         fields in the object. These filters can be applied to components,
-     *         instances, and attempts.
+     * @return The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of
+     *         ten selectors. The conditions in the query are limited to top-level String fields in the object. These
+     *         filters can be applied to components, instances, and attempts.
      */
 
     public Query getQuery() {
@@ -149,20 +140,16 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The query that defines the objects to be returned. The <code>Query</code>
-     * object can contain a maximum of ten selectors. The conditions in the
-     * query are limited to top-level String fields in the object. These filters
-     * can be applied to components, instances, and attempts.
+     * The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten
+     * selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be
+     * applied to components, instances, and attempts.
      * </p>
      * 
      * @param query
-     *        The query that defines the objects to be returned. The
-     *        <code>Query</code> object can contain a maximum of ten selectors.
-     *        The conditions in the query are limited to top-level String fields
-     *        in the object. These filters can be applied to components,
-     *        instances, and attempts.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of
+     *        ten selectors. The conditions in the query are limited to top-level String fields in the object. These
+     *        filters can be applied to components, instances, and attempts.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryObjectsRequest withQuery(Query query) {
@@ -172,15 +159,13 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the query applies to components or instances. The
-     * possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
-     * <code>ATTEMPT</code>.
+     * Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>,
+     * <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      * </p>
      * 
      * @param sphere
-     *        Indicates whether the query applies to components or instances.
-     *        The possible values are: <code>COMPONENT</code>,
-     *        <code>INSTANCE</code>, and <code>ATTEMPT</code>.
+     *        Indicates whether the query applies to components or instances. The possible values are:
+     *        <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      */
 
     public void setSphere(String sphere) {
@@ -189,14 +174,12 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the query applies to components or instances. The
-     * possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
-     * <code>ATTEMPT</code>.
+     * Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>,
+     * <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      * </p>
      * 
-     * @return Indicates whether the query applies to components or instances.
-     *         The possible values are: <code>COMPONENT</code>,
-     *         <code>INSTANCE</code>, and <code>ATTEMPT</code>.
+     * @return Indicates whether the query applies to components or instances. The possible values are:
+     *         <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      */
 
     public String getSphere() {
@@ -205,17 +188,14 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Indicates whether the query applies to components or instances. The
-     * possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
-     * <code>ATTEMPT</code>.
+     * Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>,
+     * <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      * </p>
      * 
      * @param sphere
-     *        Indicates whether the query applies to components or instances.
-     *        The possible values are: <code>COMPONENT</code>,
-     *        <code>INSTANCE</code>, and <code>ATTEMPT</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Indicates whether the query applies to components or instances. The possible values are:
+     *        <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryObjectsRequest withSphere(String sphere) {
@@ -225,18 +205,15 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The starting point for the results to be returned. For the first call,
-     * this value should be empty. As long as there are more results, continue
-     * to call <code>QueryObjects</code> with the marker value from the previous
-     * call to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call, this value should be empty. As long as
+     * there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call
+     * to retrieve the next set of results.
      * </p>
      * 
      * @param marker
-     *        The starting point for the results to be returned. For the first
-     *        call, this value should be empty. As long as there are more
-     *        results, continue to call <code>QueryObjects</code> with the
-     *        marker value from the previous call to retrieve the next set of
-     *        results.
+     *        The starting point for the results to be returned. For the first call, this value should be empty. As long
+     *        as there are more results, continue to call <code>QueryObjects</code> with the marker value from the
+     *        previous call to retrieve the next set of results.
      */
 
     public void setMarker(String marker) {
@@ -245,17 +222,14 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The starting point for the results to be returned. For the first call,
-     * this value should be empty. As long as there are more results, continue
-     * to call <code>QueryObjects</code> with the marker value from the previous
-     * call to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call, this value should be empty. As long as
+     * there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call
+     * to retrieve the next set of results.
      * </p>
      * 
-     * @return The starting point for the results to be returned. For the first
-     *         call, this value should be empty. As long as there are more
-     *         results, continue to call <code>QueryObjects</code> with the
-     *         marker value from the previous call to retrieve the next set of
-     *         results.
+     * @return The starting point for the results to be returned. For the first call, this value should be empty. As
+     *         long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the
+     *         previous call to retrieve the next set of results.
      */
 
     public String getMarker() {
@@ -264,20 +238,16 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The starting point for the results to be returned. For the first call,
-     * this value should be empty. As long as there are more results, continue
-     * to call <code>QueryObjects</code> with the marker value from the previous
-     * call to retrieve the next set of results.
+     * The starting point for the results to be returned. For the first call, this value should be empty. As long as
+     * there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call
+     * to retrieve the next set of results.
      * </p>
      * 
      * @param marker
-     *        The starting point for the results to be returned. For the first
-     *        call, this value should be empty. As long as there are more
-     *        results, continue to call <code>QueryObjects</code> with the
-     *        marker value from the previous call to retrieve the next set of
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The starting point for the results to be returned. For the first call, this value should be empty. As long
+     *        as there are more results, continue to call <code>QueryObjects</code> with the marker value from the
+     *        previous call to retrieve the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryObjectsRequest withMarker(String marker) {
@@ -287,13 +257,13 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of object names that <code>QueryObjects</code> will
-     * return in a single call. The default value is 100.
+     * The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value
+     * is 100.
      * </p>
      * 
      * @param limit
-     *        The maximum number of object names that <code>QueryObjects</code>
-     *        will return in a single call. The default value is 100.
+     *        The maximum number of object names that <code>QueryObjects</code> will return in a single call. The
+     *        default value is 100.
      */
 
     public void setLimit(Integer limit) {
@@ -302,12 +272,12 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of object names that <code>QueryObjects</code> will
-     * return in a single call. The default value is 100.
+     * The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value
+     * is 100.
      * </p>
      * 
-     * @return The maximum number of object names that <code>QueryObjects</code>
-     *         will return in a single call. The default value is 100.
+     * @return The maximum number of object names that <code>QueryObjects</code> will return in a single call. The
+     *         default value is 100.
      */
 
     public Integer getLimit() {
@@ -316,15 +286,14 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of object names that <code>QueryObjects</code> will
-     * return in a single call. The default value is 100.
+     * The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value
+     * is 100.
      * </p>
      * 
      * @param limit
-     *        The maximum number of object names that <code>QueryObjects</code>
-     *        will return in a single call. The default value is 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of object names that <code>QueryObjects</code> will return in a single call. The
+     *        default value is 100.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryObjectsRequest withLimit(Integer limit) {
@@ -333,8 +302,8 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -345,15 +314,15 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getQuery() != null)
-            sb.append("Query: " + getQuery() + ",");
+            sb.append("Query: ").append(getQuery()).append(",");
         if (getSphere() != null)
-            sb.append("Sphere: " + getSphere() + ",");
+            sb.append("Sphere: ").append(getSphere()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -370,28 +339,23 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
         QueryObjectsRequest other = (QueryObjectsRequest) obj;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
-        if (other.getPipelineId() != null
-                && other.getPipelineId().equals(this.getPipelineId()) == false)
+        if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
             return false;
         if (other.getQuery() == null ^ this.getQuery() == null)
             return false;
-        if (other.getQuery() != null
-                && other.getQuery().equals(this.getQuery()) == false)
+        if (other.getQuery() != null && other.getQuery().equals(this.getQuery()) == false)
             return false;
         if (other.getSphere() == null ^ this.getSphere() == null)
             return false;
-        if (other.getSphere() != null
-                && other.getSphere().equals(this.getSphere()) == false)
+        if (other.getSphere() != null && other.getSphere().equals(this.getSphere()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -401,16 +365,11 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
-        hashCode = prime * hashCode
-                + ((getQuery() == null) ? 0 : getQuery().hashCode());
-        hashCode = prime * hashCode
-                + ((getSphere() == null) ? 0 : getSphere().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
+        hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
+        hashCode = prime * hashCode + ((getSphere() == null) ? 0 : getSphere().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -418,4 +377,5 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
     public QueryObjectsRequest clone() {
         return (QueryObjectsRequest) super.clone();
     }
+
 }

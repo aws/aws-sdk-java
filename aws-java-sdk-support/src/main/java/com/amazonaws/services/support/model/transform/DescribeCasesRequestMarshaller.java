@@ -1,134 +1,80 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.support.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.support.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeCasesRequest Marshaller
+ * DescribeCasesRequestMarshaller
  */
-public class DescribeCasesRequestMarshaller implements
-        Marshaller<Request<DescribeCasesRequest>, DescribeCasesRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class DescribeCasesRequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<List> CASEIDLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("caseIdList").build();
+    private static final MarshallingInfo<String> DISPLAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("displayId").build();
+    private static final MarshallingInfo<String> AFTERTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("afterTime").build();
+    private static final MarshallingInfo<String> BEFORETIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("beforeTime").build();
+    private static final MarshallingInfo<Boolean> INCLUDERESOLVEDCASES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeResolvedCases").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("language").build();
+    private static final MarshallingInfo<Boolean> INCLUDECOMMUNICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeCommunications").build();
 
-    public DescribeCasesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeCasesRequestMarshaller instance = new DescribeCasesRequestMarshaller();
+
+    public static DescribeCasesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeCasesRequest> marshall(
-            DescribeCasesRequest describeCasesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeCasesRequest describeCasesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeCasesRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<DescribeCasesRequest> request = new DefaultRequest<DescribeCasesRequest>(
-                describeCasesRequest, "AWSSupport");
-        request.addHeader("X-Amz-Target", "AWSSupport_20130415.DescribeCases");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> caseIdListList = (com.amazonaws.internal.SdkInternalList<String>) describeCasesRequest
-                    .getCaseIdList();
-            if (!caseIdListList.isEmpty() || !caseIdListList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("caseIdList");
-                jsonGenerator.writeStartArray();
-                for (String caseIdListListValue : caseIdListList) {
-                    if (caseIdListListValue != null) {
-                        jsonGenerator.writeValue(caseIdListListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeCasesRequest.getDisplayId() != null) {
-                jsonGenerator.writeFieldName("displayId").writeValue(
-                        describeCasesRequest.getDisplayId());
-            }
-            if (describeCasesRequest.getAfterTime() != null) {
-                jsonGenerator.writeFieldName("afterTime").writeValue(
-                        describeCasesRequest.getAfterTime());
-            }
-            if (describeCasesRequest.getBeforeTime() != null) {
-                jsonGenerator.writeFieldName("beforeTime").writeValue(
-                        describeCasesRequest.getBeforeTime());
-            }
-            if (describeCasesRequest.getIncludeResolvedCases() != null) {
-                jsonGenerator.writeFieldName("includeResolvedCases")
-                        .writeValue(
-                                describeCasesRequest.getIncludeResolvedCases());
-            }
-            if (describeCasesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(
-                        describeCasesRequest.getNextToken());
-            }
-            if (describeCasesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(
-                        describeCasesRequest.getMaxResults());
-            }
-            if (describeCasesRequest.getLanguage() != null) {
-                jsonGenerator.writeFieldName("language").writeValue(
-                        describeCasesRequest.getLanguage());
-            }
-            if (describeCasesRequest.getIncludeCommunications() != null) {
-                jsonGenerator
-                        .writeFieldName("includeCommunications")
-                        .writeValue(
-                                describeCasesRequest.getIncludeCommunications());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeCasesRequest.getCaseIdList(), CASEIDLIST_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getDisplayId(), DISPLAYID_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getAfterTime(), AFTERTIME_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getBeforeTime(), BEFORETIME_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getIncludeResolvedCases(), INCLUDERESOLVEDCASES_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getLanguage(), LANGUAGE_BINDING);
+            protocolMarshaller.marshall(describeCasesRequest.getIncludeCommunications(), INCLUDECOMMUNICATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

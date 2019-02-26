@@ -1,101 +1,86 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * To retrieve a list of your hosted zones in lexicographic order, send a
- * <code>GET</code> request to the
- * <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The
- * response to this request includes a <code>HostedZones</code> element with
- * zero or more <code>HostedZone</code> child elements lexicographically ordered
- * by DNS name. By default, the list of hosted zones is displayed on a single
- * page. You can control the length of the page that is displayed by using the
- * <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and
- * <code>HostedZoneId</code> parameters to control the hosted zone that the list
- * begins with.
+ * Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII
+ * order by domain name.
  * </p>
- * <p>
- * For more information about listing hosted zones, see <a href=
- * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
- * >Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53
- * Developer Guide</i>.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListHostedZonesByNameRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you
-     * want the <code>ListHostedZonesByNameRequest</code> request to list.
-     * </p>
-     * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     * parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the
+     * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current
+     * AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code>
+     * from the previous response.
      * </p>
      */
     private String dNSName;
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     * <code>hostedzoneid</code> parameter.
+     * </p>
+     * <p>
+     * If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns
+     * only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones,
+     * submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the
+     * <code>NextHostedZoneId</code> element from the previous response.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * The maximum number of hosted zones to be included in the response body for this request. If you have more than
+     * <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is
+     * true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone
+     * in the next group of <code>maxitems</code> hosted zones.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you
-     * want the <code>ListHostedZonesByNameRequest</code> request to list.
-     * </p>
-     * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     * parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the
+     * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current
+     * AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code>
+     * from the previous response.
      * </p>
      * 
      * @param dNSName
-     *        The first name in the lexicographic ordering of domain names that
-     *        you want the <code>ListHostedZonesByNameRequest</code> request to
-     *        list.</p>
-     *        <p>
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextDNSName</code>
-     *        and <code>NextHostedZoneId</code> from the last response in the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        get the next page of results.
+     *        (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     *        parameter only if you want to specify the name of the first hosted zone in the response. If you don't
+     *        include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were
+     *        created by the current AWS account, in ASCII order. For subsequent requests, include both
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value
+     *        of <code>NextDNSName</code> from the previous response.
      */
 
     public void setDNSName(String dNSName) {
@@ -104,26 +89,20 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you
-     * want the <code>ListHostedZonesByNameRequest</code> request to list.
-     * </p>
-     * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     * parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the
+     * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current
+     * AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code>
+     * from the previous response.
      * </p>
      * 
-     * @return The first name in the lexicographic ordering of domain names that
-     *         you want the <code>ListHostedZonesByNameRequest</code> request to
-     *         list.</p>
-     *         <p>
-     *         If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextDNSName</code>
-     *         and <code>NextHostedZoneId</code> from the last response in the
-     *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *         get the next page of results.
+     * @return (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     *         parameter only if you want to specify the name of the first hosted zone in the response. If you don't
+     *         include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were
+     *         created by the current AWS account, in ASCII order. For subsequent requests, include both
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     *         value of <code>NextDNSName</code> from the previous response.
      */
 
     public String getDNSName() {
@@ -132,29 +111,22 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you
-     * want the <code>ListHostedZonesByNameRequest</code> request to list.
-     * </p>
-     * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     * parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the
+     * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current
+     * AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code>
+     * from the previous response.
      * </p>
      * 
      * @param dNSName
-     *        The first name in the lexicographic ordering of domain names that
-     *        you want the <code>ListHostedZonesByNameRequest</code> request to
-     *        list.</p>
-     *        <p>
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextDNSName</code>
-     *        and <code>NextHostedZoneId</code> from the last response in the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        get the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code>
+     *        parameter only if you want to specify the name of the first hosted zone in the response. If you don't
+     *        include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were
+     *        created by the current AWS account, in ASCII order. For subsequent requests, include both
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value
+     *        of <code>NextDNSName</code> from the previous response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesByNameRequest withDNSName(String dNSName) {
@@ -164,19 +136,26 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     * <code>hostedzoneid</code> parameter.
+     * </p>
+     * <p>
+     * If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns
+     * only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones,
+     * submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the
+     * <code>NextHostedZoneId</code> element from the previous response.
      * </p>
      * 
      * @param hostedZoneId
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextDNSName</code>
-     *        and <code>NextHostedZoneId</code> from the last response in the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        get the next page of results.
+     *        (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     *        <code>hostedzoneid</code> parameter.</p>
+     *        <p>
+     *        If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code>
+     *        returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code>
+     *        hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>,
+     *        specify the value of the <code>NextHostedZoneId</code> element from the previous response.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -185,18 +164,25 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     * <code>hostedzoneid</code> parameter.
+     * </p>
+     * <p>
+     * If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns
+     * only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones,
+     * submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the
+     * <code>NextHostedZoneId</code> element from the previous response.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextDNSName</code>
-     *         and <code>NextHostedZoneId</code> from the last response in the
-     *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *         get the next page of results.
+     * @return (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     *         <code>hostedzoneid</code> parameter.</p>
+     *         <p>
+     *         If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code>
+     *         returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code>
+     *         hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>
+     *         , specify the value of the <code>NextHostedZoneId</code> element from the previous response.
      */
 
     public String getHostedZoneId() {
@@ -205,21 +191,27 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> from the last response in the
-     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to get the
-     * next page of results.
+     * (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     * <code>hostedzoneid</code> parameter.
+     * </p>
+     * <p>
+     * If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns
+     * only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones,
+     * submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the
+     * <code>NextHostedZoneId</code> element from the previous response.
      * </p>
      * 
      * @param hostedZoneId
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextDNSName</code>
-     *        and <code>NextHostedZoneId</code> from the last response in the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        get the next page of results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the
+     *        <code>hostedzoneid</code> parameter.</p>
+     *        <p>
+     *        If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code>
+     *        returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code>
+     *        hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>,
+     *        specify the value of the <code>NextHostedZoneId</code> element from the previous response.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesByNameRequest withHostedZoneId(String hostedZoneId) {
@@ -229,12 +221,17 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * The maximum number of hosted zones to be included in the response body for this request. If you have more than
+     * <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is
+     * true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone
+     * in the next group of <code>maxitems</code> hosted zones.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of hosted zones to return per page of
-     *        results.
+     *        The maximum number of hosted zones to be included in the response body for this request. If you have more
+     *        than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the
+     *        response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the
+     *        first hosted zone in the next group of <code>maxitems</code> hosted zones.
      */
 
     public void setMaxItems(String maxItems) {
@@ -243,11 +240,16 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * The maximum number of hosted zones to be included in the response body for this request. If you have more than
+     * <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is
+     * true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone
+     * in the next group of <code>maxitems</code> hosted zones.
      * </p>
      * 
-     * @return Specify the maximum number of hosted zones to return per page of
-     *         results.
+     * @return The maximum number of hosted zones to be included in the response body for this request. If you have more
+     *         than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the
+     *         response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify
+     *         the first hosted zone in the next group of <code>maxitems</code> hosted zones.
      */
 
     public String getMaxItems() {
@@ -256,14 +258,18 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of hosted zones to return per page of results.
+     * The maximum number of hosted zones to be included in the response body for this request. If you have more than
+     * <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is
+     * true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone
+     * in the next group of <code>maxitems</code> hosted zones.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of hosted zones to return per page of
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of hosted zones to be included in the response body for this request. If you have more
+     *        than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the
+     *        response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the
+     *        first hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHostedZonesByNameRequest withMaxItems(String maxItems) {
@@ -272,8 +278,8 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -284,11 +290,11 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }
@@ -305,18 +311,15 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
         ListHostedZonesByNameRequest other = (ListHostedZonesByNameRequest) obj;
         if (other.getDNSName() == null ^ this.getDNSName() == null)
             return false;
-        if (other.getDNSName() != null
-                && other.getDNSName().equals(this.getDNSName()) == false)
+        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false)
             return false;
         if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
             return false;
-        if (other.getHostedZoneId() != null
-                && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
         if (other.getMaxItems() == null ^ this.getMaxItems() == null)
             return false;
-        if (other.getMaxItems() != null
-                && other.getMaxItems().equals(this.getMaxItems()) == false)
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false)
             return false;
         return true;
     }
@@ -326,14 +329,9 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getDNSName() == null) ? 0 : getDNSName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getHostedZoneId() == null) ? 0 : getHostedZoneId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
+        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;
     }
 
@@ -341,4 +339,5 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
     public ListHostedZonesByNameRequest clone() {
         return (ListHostedZonesByNameRequest) super.clone();
     }
+
 }

@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Information about an on-premises instance.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceInfo" target="_top">AWS API
+ *      Documentation</a>
  */
-public class InstanceInfo implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class InstanceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -31,6 +34,12 @@ public class InstanceInfo implements Serializable, Cloneable {
      * </p>
      */
     private String instanceName;
+    /**
+     * <p>
+     * The ARN of the IAM session associated with the on-premises instance.
+     * </p>
+     */
+    private String iamSessionArn;
     /**
      * <p>
      * The IAM user ARN associated with the on-premises instance.
@@ -51,8 +60,7 @@ public class InstanceInfo implements Serializable, Cloneable {
     private java.util.Date registerTime;
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      */
     private java.util.Date deregisterTime;
@@ -95,12 +103,51 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param instanceName
      *        The name of the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withInstanceName(String instanceName) {
         setInstanceName(instanceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM session associated with the on-premises instance.
+     * </p>
+     * 
+     * @param iamSessionArn
+     *        The ARN of the IAM session associated with the on-premises instance.
+     */
+
+    public void setIamSessionArn(String iamSessionArn) {
+        this.iamSessionArn = iamSessionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM session associated with the on-premises instance.
+     * </p>
+     * 
+     * @return The ARN of the IAM session associated with the on-premises instance.
+     */
+
+    public String getIamSessionArn() {
+        return this.iamSessionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM session associated with the on-premises instance.
+     * </p>
+     * 
+     * @param iamSessionArn
+     *        The ARN of the IAM session associated with the on-premises instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceInfo withIamSessionArn(String iamSessionArn) {
+        setIamSessionArn(iamSessionArn);
         return this;
     }
 
@@ -136,8 +183,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param iamUserArn
      *        The IAM user ARN associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withIamUserArn(String iamUserArn) {
@@ -177,8 +223,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param instanceArn
      *        The ARN of the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withInstanceArn(String instanceArn) {
@@ -218,8 +263,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param registerTime
      *        The time at which the on-premises instance was registered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withRegisterTime(java.util.Date registerTime) {
@@ -229,13 +273,11 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
      * @param deregisterTime
-     *        If the on-premises instance was deregistered, the time at which
-     *        the on-premises instance was deregistered.
+     *        If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      */
 
     public void setDeregisterTime(java.util.Date deregisterTime) {
@@ -244,12 +286,11 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
-     * @return If the on-premises instance was deregistered, the time at which
-     *         the on-premises instance was deregistered.
+     * @return If the on-premises instance was deregistered, the time at which the on-premises instance was
+     *         deregistered.
      */
 
     public java.util.Date getDeregisterTime() {
@@ -258,15 +299,12 @@ public class InstanceInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the on-premises instance was deregistered, the time at which the
-     * on-premises instance was deregistered.
+     * If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
      * </p>
      * 
      * @param deregisterTime
-     *        If the on-premises instance was deregistered, the time at which
-     *        the on-premises instance was deregistered.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withDeregisterTime(java.util.Date deregisterTime) {
@@ -312,16 +350,14 @@ public class InstanceInfo implements Serializable, Cloneable {
      * The tags currently associated with the on-premises instance.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or
-     * {@link #withTags(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
      *        The tags currently associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withTags(Tag... tags) {
@@ -341,8 +377,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @param tags
      *        The tags currently associated with the on-premises instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceInfo withTags(java.util.Collection<Tag> tags) {
@@ -351,8 +386,8 @@ public class InstanceInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -363,17 +398,19 @@ public class InstanceInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
+        if (getIamSessionArn() != null)
+            sb.append("IamSessionArn: ").append(getIamSessionArn()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getInstanceArn() != null)
-            sb.append("InstanceArn: " + getInstanceArn() + ",");
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getRegisterTime() != null)
-            sb.append("RegisterTime: " + getRegisterTime() + ",");
+            sb.append("RegisterTime: ").append(getRegisterTime()).append(",");
         if (getDeregisterTime() != null)
-            sb.append("DeregisterTime: " + getDeregisterTime() + ",");
+            sb.append("DeregisterTime: ").append(getDeregisterTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -390,34 +427,31 @@ public class InstanceInfo implements Serializable, Cloneable {
         InstanceInfo other = (InstanceInfo) obj;
         if (other.getInstanceName() == null ^ this.getInstanceName() == null)
             return false;
-        if (other.getInstanceName() != null
-                && other.getInstanceName().equals(this.getInstanceName()) == false)
+        if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
+            return false;
+        if (other.getIamSessionArn() == null ^ this.getIamSessionArn() == null)
+            return false;
+        if (other.getIamSessionArn() != null && other.getIamSessionArn().equals(this.getIamSessionArn()) == false)
             return false;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
-        if (other.getInstanceArn() != null
-                && other.getInstanceArn().equals(this.getInstanceArn()) == false)
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         if (other.getRegisterTime() == null ^ this.getRegisterTime() == null)
             return false;
-        if (other.getRegisterTime() != null
-                && other.getRegisterTime().equals(this.getRegisterTime()) == false)
+        if (other.getRegisterTime() != null && other.getRegisterTime().equals(this.getRegisterTime()) == false)
             return false;
-        if (other.getDeregisterTime() == null
-                ^ this.getDeregisterTime() == null)
+        if (other.getDeregisterTime() == null ^ this.getDeregisterTime() == null)
             return false;
-        if (other.getDeregisterTime() != null
-                && other.getDeregisterTime().equals(this.getDeregisterTime()) == false)
+        if (other.getDeregisterTime() != null && other.getDeregisterTime().equals(this.getDeregisterTime()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTags() != null
-                && other.getTags().equals(this.getTags()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -427,25 +461,13 @@ public class InstanceInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getInstanceName() == null) ? 0 : getInstanceName()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRegisterTime() == null) ? 0 : getRegisterTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeregisterTime() == null) ? 0 : getDeregisterTime()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getIamSessionArn() == null) ? 0 : getIamSessionArn().hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getRegisterTime() == null) ? 0 : getRegisterTime().hashCode());
+        hashCode = prime * hashCode + ((getDeregisterTime() == null) ? 0 : getDeregisterTime().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -454,9 +476,13 @@ public class InstanceInfo implements Serializable, Cloneable {
         try {
             return (InstanceInfo) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.InstanceInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

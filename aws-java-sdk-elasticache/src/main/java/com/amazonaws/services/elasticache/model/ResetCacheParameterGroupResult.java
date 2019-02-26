@@ -1,41 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of one of the following actions:
+ * Represents the output of one of the following operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <i>ModifyCacheParameterGroup</i>
+ * <code>ModifyCacheParameterGroup</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <i>ResetCacheParameterGroup</i>
+ * <code>ResetCacheParameterGroup</code>
  * </p>
  * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup"
+ *      target="_top">AWS API Documentation</a>
  */
-public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ResetCacheParameterGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -76,19 +77,17 @@ public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResetCacheParameterGroupResult withCacheParameterGroupName(
-            String cacheParameterGroupName) {
+    public ResetCacheParameterGroupResult withCacheParameterGroupName(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -99,8 +98,7 @@ public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: "
-                    + getCacheParameterGroupName());
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -115,12 +113,9 @@ public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
         if (obj instanceof ResetCacheParameterGroupResult == false)
             return false;
         ResetCacheParameterGroupResult other = (ResetCacheParameterGroupResult) obj;
-        if (other.getCacheParameterGroupName() == null
-                ^ this.getCacheParameterGroupName() == null)
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null)
             return false;
-        if (other.getCacheParameterGroupName() != null
-                && other.getCacheParameterGroupName().equals(
-                        this.getCacheParameterGroupName()) == false)
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false)
             return false;
         return true;
     }
@@ -130,10 +125,7 @@ public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getCacheParameterGroupName() == null) ? 0
-                        : getCacheParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
         return hashCode;
     }
 
@@ -142,9 +134,8 @@ public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
         try {
             return (ResetCacheParameterGroupResult) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

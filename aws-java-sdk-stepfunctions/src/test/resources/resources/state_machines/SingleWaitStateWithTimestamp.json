@@ -1,0 +1,10 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Wait",
+      "Timestamp": "2016-03-14T01:59:00.000Z",
+      "End": true
+    }
+  }
+}

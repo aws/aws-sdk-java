@@ -1,48 +1,52 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom" target="_top">AWS API
+ *      Documentation</a>
  */
-public class GenerateRandomRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      */
     private Integer numberOfBytes;
+    /**
+     * <p>
+     * Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>. To find
+     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     */
+    private String customKeyStoreId;
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, 1024 and so on. The current limit is
-     *        1024 bytes.
+     *        The length of the byte string.
      */
 
     public void setNumberOfBytes(Integer numberOfBytes) {
@@ -51,13 +55,10 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
-     * @return Integer that contains the number of bytes to generate. Common
-     *         values are 128, 256, 512, 1024 and so on. The current limit is
-     *         1024 bytes.
+     * @return The length of the byte string.
      */
 
     public Integer getNumberOfBytes() {
@@ -66,16 +67,12 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are
-     * 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common
-     *        values are 128, 256, 512, 1024 and so on. The current limit is
-     *        1024 bytes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The length of the byte string.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateRandomRequest withNumberOfBytes(Integer numberOfBytes) {
@@ -84,8 +81,60 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>. To find
+     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>.
+     *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     */
+
+    public void setCustomKeyStoreId(String customKeyStoreId) {
+        this.customKeyStoreId = customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>. To find
+     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * 
+     * @return Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>.
+     *         To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     */
+
+    public String getCustomKeyStoreId() {
+        return this.customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>. To find
+     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        Generates the random byte string in the AWS CloudHSM cluster that is associated with the specified <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>.
+     *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateRandomRequest withCustomKeyStoreId(String customKeyStoreId) {
+        setCustomKeyStoreId(customKeyStoreId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -96,7 +145,9 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNumberOfBytes() != null)
-            sb.append("NumberOfBytes: " + getNumberOfBytes());
+            sb.append("NumberOfBytes: ").append(getNumberOfBytes()).append(",");
+        if (getCustomKeyStoreId() != null)
+            sb.append("CustomKeyStoreId: ").append(getCustomKeyStoreId());
         sb.append("}");
         return sb.toString();
     }
@@ -113,8 +164,11 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
         GenerateRandomRequest other = (GenerateRandomRequest) obj;
         if (other.getNumberOfBytes() == null ^ this.getNumberOfBytes() == null)
             return false;
-        if (other.getNumberOfBytes() != null
-                && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
+        if (other.getNumberOfBytes() != null && other.getNumberOfBytes().equals(this.getNumberOfBytes()) == false)
+            return false;
+        if (other.getCustomKeyStoreId() == null ^ this.getCustomKeyStoreId() == null)
+            return false;
+        if (other.getCustomKeyStoreId() != null && other.getCustomKeyStoreId().equals(this.getCustomKeyStoreId()) == false)
             return false;
         return true;
     }
@@ -124,10 +178,8 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes().hashCode());
+        hashCode = prime * hashCode + ((getCustomKeyStoreId() == null) ? 0 : getCustomKeyStoreId().hashCode());
         return hashCode;
     }
 
@@ -135,4 +187,5 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
     public GenerateRandomRequest clone() {
         return (GenerateRandomRequest) super.clone();
     }
+
 }

@@ -8,7 +8,7 @@
     <#list shape.members as member>
       <#local c2jName = member.c2jName/>
       <#if requiredParams?seq_contains(c2jName)>
-        if (${shape.variable.variableName}.get${member.name}() == null) {
+        if (${shape.variable.variableName}.${member.getterMethodName}() == null) {
           throw new IllegalArgumentException("Required Parameter ${member.name} missing in structure ${shape.variable.variableType}");
         }
       </#if>

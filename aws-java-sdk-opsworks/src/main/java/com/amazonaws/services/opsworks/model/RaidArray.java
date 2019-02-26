@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes an instance's RAID array.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RaidArray" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RaidArray implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RaidArray implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -45,8 +48,7 @@ public class RaidArray implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     * level</a>.
+     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      */
     private Integer raidLevel;
@@ -77,8 +79,7 @@ public class RaidArray implements Serializable, Cloneable {
     /**
      * <p>
      * The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String availabilityZone;
@@ -139,8 +140,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param raidArrayId
      *        The array ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withRaidArrayId(String raidArrayId) {
@@ -180,8 +180,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param instanceId
      *        The instance ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withInstanceId(String instanceId) {
@@ -221,8 +220,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param name
      *        The array name.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withName(String name) {
@@ -232,14 +230,11 @@ public class RaidArray implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     * level</a>.
+     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
+     *        The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public void setRaidLevel(Integer raidLevel) {
@@ -248,13 +243,10 @@ public class RaidArray implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     * level</a>.
+     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
-     * @return The <a
-     *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *         level</a>.
+     * @return The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      */
 
     public Integer getRaidLevel() {
@@ -263,16 +255,12 @@ public class RaidArray implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     * level</a>.
+     * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
      * </p>
      * 
      * @param raidLevel
-     *        The <a
-     *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
-     *        level</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withRaidLevel(Integer raidLevel) {
@@ -312,8 +300,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param numberOfDisks
      *        The number of disks in the array.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withNumberOfDisks(Integer numberOfDisks) {
@@ -353,8 +340,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param size
      *        The array's size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withSize(Integer size) {
@@ -394,8 +380,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param device
      *        The array's Linux device. For example /dev/mdadm0.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withDevice(String device) {
@@ -435,8 +420,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param mountPoint
      *        The array's mount point.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withMountPoint(String mountPoint) {
@@ -447,14 +431,12 @@ public class RaidArray implements Serializable, Cloneable {
     /**
      * <p>
      * The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The array's Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
-     *        >Regions and Endpoints</a>.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -464,13 +446,11 @@ public class RaidArray implements Serializable, Cloneable {
     /**
      * <p>
      * The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The array's Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
-     *         >Regions and Endpoints</a>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getAvailabilityZone() {
@@ -480,16 +460,13 @@ public class RaidArray implements Serializable, Cloneable {
     /**
      * <p>
      * The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The array's Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
-     *        >Regions and Endpoints</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withAvailabilityZone(String availabilityZone) {
@@ -529,8 +506,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        When the RAID array was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withCreatedAt(String createdAt) {
@@ -570,8 +546,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param stackId
      *        The stack ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withStackId(String stackId) {
@@ -611,8 +586,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param volumeType
      *        The volume type, standard or PIOPS.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withVolumeType(String volumeType) {
@@ -652,8 +626,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RaidArray withIops(Integer iops) {
@@ -662,8 +635,8 @@ public class RaidArray implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -674,31 +647,31 @@ public class RaidArray implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRaidArrayId() != null)
-            sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+            sb.append("RaidArrayId: ").append(getRaidArrayId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRaidLevel() != null)
-            sb.append("RaidLevel: " + getRaidLevel() + ",");
+            sb.append("RaidLevel: ").append(getRaidLevel()).append(",");
         if (getNumberOfDisks() != null)
-            sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
+            sb.append("NumberOfDisks: ").append(getNumberOfDisks()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint() + ",");
+            sb.append("MountPoint: ").append(getMountPoint()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }
@@ -715,70 +688,55 @@ public class RaidArray implements Serializable, Cloneable {
         RaidArray other = (RaidArray) obj;
         if (other.getRaidArrayId() == null ^ this.getRaidArrayId() == null)
             return false;
-        if (other.getRaidArrayId() != null
-                && other.getRaidArrayId().equals(this.getRaidArrayId()) == false)
+        if (other.getRaidArrayId() != null && other.getRaidArrayId().equals(this.getRaidArrayId()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getRaidLevel() == null ^ this.getRaidLevel() == null)
             return false;
-        if (other.getRaidLevel() != null
-                && other.getRaidLevel().equals(this.getRaidLevel()) == false)
+        if (other.getRaidLevel() != null && other.getRaidLevel().equals(this.getRaidLevel()) == false)
             return false;
         if (other.getNumberOfDisks() == null ^ this.getNumberOfDisks() == null)
             return false;
-        if (other.getNumberOfDisks() != null
-                && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
+        if (other.getNumberOfDisks() != null && other.getNumberOfDisks().equals(this.getNumberOfDisks()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getDevice() == null ^ this.getDevice() == null)
             return false;
-        if (other.getDevice() != null
-                && other.getDevice().equals(this.getDevice()) == false)
+        if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
             return false;
         if (other.getMountPoint() == null ^ this.getMountPoint() == null)
             return false;
-        if (other.getMountPoint() != null
-                && other.getMountPoint().equals(this.getMountPoint()) == false)
+        if (other.getMountPoint() != null && other.getMountPoint().equals(this.getMountPoint()) == false)
             return false;
-        if (other.getAvailabilityZone() == null
-                ^ this.getAvailabilityZone() == null)
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
-        if (other.getAvailabilityZone() != null
-                && other.getAvailabilityZone().equals(
-                        this.getAvailabilityZone()) == false)
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
-        if (other.getStackId() != null
-                && other.getStackId().equals(this.getStackId()) == false)
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
-        if (other.getVolumeType() != null
-                && other.getVolumeType().equals(this.getVolumeType()) == false)
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
-        if (other.getIops() != null
-                && other.getIops().equals(this.getIops()) == false)
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
         return true;
     }
@@ -788,37 +746,19 @@ public class RaidArray implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRaidArrayId() == null) ? 0 : getRaidArrayId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getDevice() == null) ? 0 : getDevice().hashCode());
-        hashCode = prime * hashCode
-                + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getStackId() == null) ? 0 : getStackId().hashCode());
-        hashCode = prime * hashCode
-                + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode
-                + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getRaidArrayId() == null) ? 0 : getRaidArrayId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRaidLevel() == null) ? 0 : getRaidLevel().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfDisks() == null) ? 0 : getNumberOfDisks().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         return hashCode;
     }
 
@@ -827,9 +767,13 @@ public class RaidArray implements Serializable, Cloneable {
         try {
             return (RaidArray) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.RaidArrayMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,163 +1,87 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutMethodRequest Marshaller
+ * PutMethodRequestMarshaller
  */
-public class PutMethodRequestMarshaller implements
-        Marshaller<Request<PutMethodRequest>, PutMethodRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class PutMethodRequestMarshaller {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> AUTHORIZATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizationType").build();
+    private static final MarshallingInfo<String> AUTHORIZERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerId").build();
+    private static final MarshallingInfo<Boolean> APIKEYREQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeyRequired").build();
+    private static final MarshallingInfo<String> OPERATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operationName").build();
+    private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
+    private static final MarshallingInfo<Map> REQUESTMODELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("requestModels").build();
+    private static final MarshallingInfo<String> REQUESTVALIDATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestValidatorId").build();
+    private static final MarshallingInfo<List> AUTHORIZATIONSCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizationScopes").build();
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final PutMethodRequestMarshaller instance = new PutMethodRequestMarshaller();
 
-    public PutMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static PutMethodRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutMethodRequest> marshall(PutMethodRequest putMethodRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutMethodRequest putMethodRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putMethodRequest == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<PutMethodRequest> request = new DefaultRequest<PutMethodRequest>(
-                putMethodRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
-
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putMethodRequest.getRestApiId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(putMethodRequest
-                                .getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putMethodRequest.getResourceId() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(putMethodRequest
-                                .getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
-                        .urlEncode(StringUtils.fromString(putMethodRequest
-                                .getHttpMethod()), false) : "");
-        request.setResourcePath(uriResourcePath);
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (putMethodRequest.getAuthorizationType() != null) {
-                jsonGenerator.writeFieldName("authorizationType").writeValue(
-                        putMethodRequest.getAuthorizationType());
-            }
-            if (putMethodRequest.getAuthorizerId() != null) {
-                jsonGenerator.writeFieldName("authorizerId").writeValue(
-                        putMethodRequest.getAuthorizerId());
-            }
-            if (putMethodRequest.getApiKeyRequired() != null) {
-                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(
-                        putMethodRequest.getApiKeyRequired());
-            }
-
-            java.util.Map<String, Boolean> requestParametersMap = putMethodRequest
-                    .getRequestParameters();
-            if (requestParametersMap != null) {
-                jsonGenerator.writeFieldName("requestParameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, Boolean> requestParametersMapValue : requestParametersMap
-                        .entrySet()) {
-                    if (requestParametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestParametersMapValue
-                                .getKey());
-
-                        jsonGenerator.writeValue(requestParametersMapValue
-                                .getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, String> requestModelsMap = putMethodRequest
-                    .getRequestModels();
-            if (requestModelsMap != null) {
-                jsonGenerator.writeFieldName("requestModels");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> requestModelsMapValue : requestModelsMap
-                        .entrySet()) {
-                    if (requestModelsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestModelsMapValue
-                                .getKey());
-
-                        jsonGenerator.writeValue(requestModelsMapValue
-                                .getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
-            }
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putMethodRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getAuthorizationType(), AUTHORIZATIONTYPE_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getAuthorizerId(), AUTHORIZERID_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getApiKeyRequired(), APIKEYREQUIRED_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getOperationName(), OPERATIONNAME_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getRequestModels(), REQUESTMODELS_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getRequestValidatorId(), REQUESTVALIDATORID_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getAuthorizationScopes(), AUTHORIZATIONSCOPES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

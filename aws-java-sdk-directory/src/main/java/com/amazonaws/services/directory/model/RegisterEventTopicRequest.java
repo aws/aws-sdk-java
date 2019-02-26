@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Registers a new event topic.
+ * </p>
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic" target="_top">AWS API
+ *      Documentation</a>
  */
-public class RegisterEventTopicRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RegisterEventTopicRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -33,8 +36,8 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
     private String directoryId;
     /**
      * <p>
-     * The SNS topic name to which the directory will publish status messages.
-     * This SNS topic must be in the same region as the specified Directory ID.
+     * The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region
+     * as the specified Directory ID.
      * </p>
      */
     private String topicName;
@@ -45,8 +48,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID that will publish status messages to the SNS
-     *        topic.
+     *        The Directory ID that will publish status messages to the SNS topic.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -58,8 +60,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * The Directory ID that will publish status messages to the SNS topic.
      * </p>
      * 
-     * @return The Directory ID that will publish status messages to the SNS
-     *         topic.
+     * @return The Directory ID that will publish status messages to the SNS topic.
      */
 
     public String getDirectoryId() {
@@ -72,10 +73,8 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID that will publish status messages to the SNS
-     *        topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The Directory ID that will publish status messages to the SNS topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterEventTopicRequest withDirectoryId(String directoryId) {
@@ -85,14 +84,13 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SNS topic name to which the directory will publish status messages.
-     * This SNS topic must be in the same region as the specified Directory ID.
+     * The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region
+     * as the specified Directory ID.
      * </p>
      * 
      * @param topicName
-     *        The SNS topic name to which the directory will publish status
-     *        messages. This SNS topic must be in the same region as the
-     *        specified Directory ID.
+     *        The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same
+     *        region as the specified Directory ID.
      */
 
     public void setTopicName(String topicName) {
@@ -101,13 +99,12 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SNS topic name to which the directory will publish status messages.
-     * This SNS topic must be in the same region as the specified Directory ID.
+     * The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region
+     * as the specified Directory ID.
      * </p>
      * 
-     * @return The SNS topic name to which the directory will publish status
-     *         messages. This SNS topic must be in the same region as the
-     *         specified Directory ID.
+     * @return The SNS topic name to which the directory will publish status messages. This SNS topic must be in the
+     *         same region as the specified Directory ID.
      */
 
     public String getTopicName() {
@@ -116,16 +113,14 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SNS topic name to which the directory will publish status messages.
-     * This SNS topic must be in the same region as the specified Directory ID.
+     * The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region
+     * as the specified Directory ID.
      * </p>
      * 
      * @param topicName
-     *        The SNS topic name to which the directory will publish status
-     *        messages. This SNS topic must be in the same region as the
-     *        specified Directory ID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same
+     *        region as the specified Directory ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterEventTopicRequest withTopicName(String topicName) {
@@ -134,8 +129,8 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -146,9 +141,9 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTopicName() != null)
-            sb.append("TopicName: " + getTopicName());
+            sb.append("TopicName: ").append(getTopicName());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +160,11 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
         RegisterEventTopicRequest other = (RegisterEventTopicRequest) obj;
         if (other.getDirectoryId() == null ^ this.getDirectoryId() == null)
             return false;
-        if (other.getDirectoryId() != null
-                && other.getDirectoryId().equals(this.getDirectoryId()) == false)
+        if (other.getDirectoryId() != null && other.getDirectoryId().equals(this.getDirectoryId()) == false)
             return false;
         if (other.getTopicName() == null ^ this.getTopicName() == null)
             return false;
-        if (other.getTopicName() != null
-                && other.getTopicName().equals(this.getTopicName()) == false)
+        if (other.getTopicName() != null && other.getTopicName().equals(this.getTopicName()) == false)
             return false;
         return true;
     }
@@ -181,11 +174,8 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTopicName() == null) ? 0 : getTopicName().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getTopicName() == null) ? 0 : getTopicName().hashCode());
         return hashCode;
     }
 
@@ -193,4 +183,5 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
     public RegisterEventTopicRequest clone() {
         return (RegisterEventTopicRequest) super.clone();
     }
+
 }

@@ -1,30 +1,33 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about an Amazon Inspector finding. This data type is
- * used as the response element in the <a>DescribeFindings</a> action.
+ * Contains information about an Amazon Inspector finding. This data type is used as the response element in the
+ * <a>DescribeFindings</a> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Finding" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Finding implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -44,7 +47,11 @@ public class Finding implements Serializable, Cloneable {
      * </p>
      */
     private String service;
-
+    /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     */
     private InspectorServiceAttributes serviceAttributes;
     /**
      * <p>
@@ -54,8 +61,7 @@ public class Finding implements Serializable, Cloneable {
     private String assetType;
     /**
      * <p>
-     * A collection of attributes of the host from which the finding is
-     * generated.
+     * A collection of attributes of the host from which the finding is generated.
      * </p>
      */
     private AssetAttributes assetAttributes;
@@ -85,8 +91,7 @@ public class Finding implements Serializable, Cloneable {
     private String recommendation;
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      */
     private String severity;
@@ -165,8 +170,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param arn
      *        The ARN that specifies the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withArn(String arn) {
@@ -206,8 +210,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param schemaVersion
      *        The schema version of this data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withSchemaVersion(Integer schemaVersion) {
@@ -247,8 +250,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param service
      *        The data element is set to "Inspector".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withService(String service) {
@@ -257,16 +259,24 @@ public class Finding implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
      * @param serviceAttributes
+     *        This data type is used in the <a>Finding</a> data type.
      */
 
-    public void setServiceAttributes(
-            InspectorServiceAttributes serviceAttributes) {
+    public void setServiceAttributes(InspectorServiceAttributes serviceAttributes) {
         this.serviceAttributes = serviceAttributes;
     }
 
     /**
-     * @return
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
+     * @return This data type is used in the <a>Finding</a> data type.
      */
 
     public InspectorServiceAttributes getServiceAttributes() {
@@ -274,13 +284,16 @@ public class Finding implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
      * @param serviceAttributes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        This data type is used in the <a>Finding</a> data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Finding withServiceAttributes(
-            InspectorServiceAttributes serviceAttributes) {
+    public Finding withServiceAttributes(InspectorServiceAttributes serviceAttributes) {
         setServiceAttributes(serviceAttributes);
         return this;
     }
@@ -319,8 +332,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param assetType
      *        The type of the host from which the finding is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssetType
      */
 
@@ -340,7 +352,7 @@ public class Finding implements Serializable, Cloneable {
      */
 
     public void setAssetType(AssetType assetType) {
-        this.assetType = assetType.toString();
+        withAssetType(assetType);
     }
 
     /**
@@ -350,25 +362,22 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param assetType
      *        The type of the host from which the finding is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssetType
      */
 
     public Finding withAssetType(AssetType assetType) {
-        setAssetType(assetType);
+        this.assetType = assetType.toString();
         return this;
     }
 
     /**
      * <p>
-     * A collection of attributes of the host from which the finding is
-     * generated.
+     * A collection of attributes of the host from which the finding is generated.
      * </p>
      * 
      * @param assetAttributes
-     *        A collection of attributes of the host from which the finding is
-     *        generated.
+     *        A collection of attributes of the host from which the finding is generated.
      */
 
     public void setAssetAttributes(AssetAttributes assetAttributes) {
@@ -377,12 +386,10 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A collection of attributes of the host from which the finding is
-     * generated.
+     * A collection of attributes of the host from which the finding is generated.
      * </p>
      * 
-     * @return A collection of attributes of the host from which the finding is
-     *         generated.
+     * @return A collection of attributes of the host from which the finding is generated.
      */
 
     public AssetAttributes getAssetAttributes() {
@@ -391,15 +398,12 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A collection of attributes of the host from which the finding is
-     * generated.
+     * A collection of attributes of the host from which the finding is generated.
      * </p>
      * 
      * @param assetAttributes
-     *        A collection of attributes of the host from which the finding is
-     *        generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A collection of attributes of the host from which the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withAssetAttributes(AssetAttributes assetAttributes) {
@@ -439,8 +443,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param id
      *        The ID of the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withId(String id) {
@@ -480,8 +483,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param title
      *        The name of the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withTitle(String title) {
@@ -521,8 +523,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param description
      *        The description of the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withDescription(String description) {
@@ -562,8 +563,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param recommendation
      *        The recommendation for the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withRecommendation(String recommendation) {
@@ -573,13 +573,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      * 
      * @param severity
-     *        The finding severity. Values can be set to High, Medium, Low, and
-     *        Informational.
+     *        The finding severity. Values can be set to High, Medium, Low, and Informational.
      * @see Severity
      */
 
@@ -589,12 +587,10 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      * 
-     * @return The finding severity. Values can be set to High, Medium, Low, and
-     *         Informational.
+     * @return The finding severity. Values can be set to High, Medium, Low, and Informational.
      * @see Severity
      */
 
@@ -604,15 +600,12 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      * 
      * @param severity
-     *        The finding severity. Values can be set to High, Medium, Low, and
-     *        Informational.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The finding severity. Values can be set to High, Medium, Low, and Informational.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Severity
      */
 
@@ -623,36 +616,31 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      * 
      * @param severity
-     *        The finding severity. Values can be set to High, Medium, Low, and
-     *        Informational.
+     *        The finding severity. Values can be set to High, Medium, Low, and Informational.
      * @see Severity
      */
 
     public void setSeverity(Severity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
      * <p>
-     * The finding severity. Values can be set to High, Medium, Low, and
-     * Informational.
+     * The finding severity. Values can be set to High, Medium, Low, and Informational.
      * </p>
      * 
      * @param severity
-     *        The finding severity. Values can be set to High, Medium, Low, and
-     *        Informational.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The finding severity. Values can be set to High, Medium, Low, and Informational.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see Severity
      */
 
     public Finding withSeverity(Severity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 
@@ -688,8 +676,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param numericSeverity
      *        The numeric value of the finding severity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withNumericSeverity(Double numericSeverity) {
@@ -729,8 +716,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param confidence
      *        This data element is currently not used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withConfidence(Integer confidence) {
@@ -770,8 +756,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param indicatorOfCompromise
      *        This data element is currently not used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withIndicatorOfCompromise(Boolean indicatorOfCompromise) {
@@ -826,16 +811,14 @@ public class Finding implements Serializable, Cloneable {
      * The system-defined attributes for the finding.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setAttributes(java.util.Collection)} or
-     * {@link #withAttributes(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param attributes
      *        The system-defined attributes for the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withAttributes(Attribute... attributes) {
@@ -855,8 +838,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param attributes
      *        The system-defined attributes for the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withAttributes(java.util.Collection<Attribute> attributes) {
@@ -899,22 +881,19 @@ public class Finding implements Serializable, Cloneable {
      * The user-defined attributes that are assigned to the finding.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setUserAttributes(java.util.Collection)} or
-     * {@link #withUserAttributes(java.util.Collection)} if you want to override
-     * the existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
      * @param userAttributes
      *        The user-defined attributes that are assigned to the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withUserAttributes(Attribute... userAttributes) {
         if (this.userAttributes == null) {
-            setUserAttributes(new java.util.ArrayList<Attribute>(
-                    userAttributes.length));
+            setUserAttributes(new java.util.ArrayList<Attribute>(userAttributes.length));
         }
         for (Attribute ele : userAttributes) {
             this.userAttributes.add(ele);
@@ -929,12 +908,10 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param userAttributes
      *        The user-defined attributes that are assigned to the finding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Finding withUserAttributes(
-            java.util.Collection<Attribute> userAttributes) {
+    public Finding withUserAttributes(java.util.Collection<Attribute> userAttributes) {
         setUserAttributes(userAttributes);
         return this;
     }
@@ -971,8 +948,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param createdAt
      *        The time when the finding was generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withCreatedAt(java.util.Date createdAt) {
@@ -1012,8 +988,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param updatedAt
      *        The time when <a>AddAttributesToFindings</a> is called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Finding withUpdatedAt(java.util.Date updatedAt) {
@@ -1022,8 +997,8 @@ public class Finding implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1034,42 +1009,41 @@ public class Finding implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getService() != null)
-            sb.append("Service: " + getService() + ",");
+            sb.append("Service: ").append(getService()).append(",");
         if (getServiceAttributes() != null)
-            sb.append("ServiceAttributes: " + getServiceAttributes() + ",");
+            sb.append("ServiceAttributes: ").append(getServiceAttributes()).append(",");
         if (getAssetType() != null)
-            sb.append("AssetType: " + getAssetType() + ",");
+            sb.append("AssetType: ").append(getAssetType()).append(",");
         if (getAssetAttributes() != null)
-            sb.append("AssetAttributes: " + getAssetAttributes() + ",");
+            sb.append("AssetAttributes: ").append(getAssetAttributes()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getTitle() != null)
-            sb.append("Title: " + getTitle() + ",");
+            sb.append("Title: ").append(getTitle()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRecommendation() != null)
-            sb.append("Recommendation: " + getRecommendation() + ",");
+            sb.append("Recommendation: ").append(getRecommendation()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getNumericSeverity() != null)
-            sb.append("NumericSeverity: " + getNumericSeverity() + ",");
+            sb.append("NumericSeverity: ").append(getNumericSeverity()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence() + ",");
+            sb.append("Confidence: ").append(getConfidence()).append(",");
         if (getIndicatorOfCompromise() != null)
-            sb.append("IndicatorOfCompromise: " + getIndicatorOfCompromise()
-                    + ",");
+            sb.append("IndicatorOfCompromise: ").append(getIndicatorOfCompromise()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: " + getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -1086,101 +1060,75 @@ public class Finding implements Serializable, Cloneable {
         Finding other = (Finding) obj;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getArn() != null
-                && other.getArn().equals(this.getArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
             return false;
-        if (other.getSchemaVersion() != null
-                && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
         if (other.getService() == null ^ this.getService() == null)
             return false;
-        if (other.getService() != null
-                && other.getService().equals(this.getService()) == false)
+        if (other.getService() != null && other.getService().equals(this.getService()) == false)
             return false;
-        if (other.getServiceAttributes() == null
-                ^ this.getServiceAttributes() == null)
+        if (other.getServiceAttributes() == null ^ this.getServiceAttributes() == null)
             return false;
-        if (other.getServiceAttributes() != null
-                && other.getServiceAttributes().equals(
-                        this.getServiceAttributes()) == false)
+        if (other.getServiceAttributes() != null && other.getServiceAttributes().equals(this.getServiceAttributes()) == false)
             return false;
         if (other.getAssetType() == null ^ this.getAssetType() == null)
             return false;
-        if (other.getAssetType() != null
-                && other.getAssetType().equals(this.getAssetType()) == false)
+        if (other.getAssetType() != null && other.getAssetType().equals(this.getAssetType()) == false)
             return false;
-        if (other.getAssetAttributes() == null
-                ^ this.getAssetAttributes() == null)
+        if (other.getAssetAttributes() == null ^ this.getAssetAttributes() == null)
             return false;
-        if (other.getAssetAttributes() != null
-                && other.getAssetAttributes().equals(this.getAssetAttributes()) == false)
+        if (other.getAssetAttributes() != null && other.getAssetAttributes().equals(this.getAssetAttributes()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getId() != null
-                && other.getId().equals(this.getId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
-        if (other.getTitle() != null
-                && other.getTitle().equals(this.getTitle()) == false)
+        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getRecommendation() == null
-                ^ this.getRecommendation() == null)
+        if (other.getRecommendation() == null ^ this.getRecommendation() == null)
             return false;
-        if (other.getRecommendation() != null
-                && other.getRecommendation().equals(this.getRecommendation()) == false)
+        if (other.getRecommendation() != null && other.getRecommendation().equals(this.getRecommendation()) == false)
             return false;
         if (other.getSeverity() == null ^ this.getSeverity() == null)
             return false;
-        if (other.getSeverity() != null
-                && other.getSeverity().equals(this.getSeverity()) == false)
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
             return false;
-        if (other.getNumericSeverity() == null
-                ^ this.getNumericSeverity() == null)
+        if (other.getNumericSeverity() == null ^ this.getNumericSeverity() == null)
             return false;
-        if (other.getNumericSeverity() != null
-                && other.getNumericSeverity().equals(this.getNumericSeverity()) == false)
+        if (other.getNumericSeverity() != null && other.getNumericSeverity().equals(this.getNumericSeverity()) == false)
             return false;
         if (other.getConfidence() == null ^ this.getConfidence() == null)
             return false;
-        if (other.getConfidence() != null
-                && other.getConfidence().equals(this.getConfidence()) == false)
+        if (other.getConfidence() != null && other.getConfidence().equals(this.getConfidence()) == false)
             return false;
-        if (other.getIndicatorOfCompromise() == null
-                ^ this.getIndicatorOfCompromise() == null)
+        if (other.getIndicatorOfCompromise() == null ^ this.getIndicatorOfCompromise() == null)
             return false;
-        if (other.getIndicatorOfCompromise() != null
-                && other.getIndicatorOfCompromise().equals(
-                        this.getIndicatorOfCompromise()) == false)
+        if (other.getIndicatorOfCompromise() != null && other.getIndicatorOfCompromise().equals(this.getIndicatorOfCompromise()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
-        if (other.getUserAttributes() == null
-                ^ this.getUserAttributes() == null)
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
-        if (other.getUserAttributes() != null
-                && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getCreatedAt() != null
-                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
-        if (other.getUpdatedAt() != null
-                && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         return true;
     }
@@ -1190,57 +1138,24 @@ public class Finding implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSchemaVersion() == null) ? 0 : getSchemaVersion()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getService() == null) ? 0 : getService().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getServiceAttributes() == null) ? 0
-                        : getServiceAttributes().hashCode());
-        hashCode = prime * hashCode
-                + ((getAssetType() == null) ? 0 : getAssetType().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getAssetAttributes() == null) ? 0 : getAssetAttributes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode
-                + ((getTitle() == null) ? 0 : getTitle().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRecommendation() == null) ? 0 : getRecommendation()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getNumericSeverity() == null) ? 0 : getNumericSeverity()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getIndicatorOfCompromise() == null) ? 0
-                        : getIndicatorOfCompromise().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getUserAttributes() == null) ? 0 : getUserAttributes()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode
-                + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
+        hashCode = prime * hashCode + ((getServiceAttributes() == null) ? 0 : getServiceAttributes().hashCode());
+        hashCode = prime * hashCode + ((getAssetType() == null) ? 0 : getAssetType().hashCode());
+        hashCode = prime * hashCode + ((getAssetAttributes() == null) ? 0 : getAssetAttributes().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRecommendation() == null) ? 0 : getRecommendation().hashCode());
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode + ((getNumericSeverity() == null) ? 0 : getNumericSeverity().hashCode());
+        hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
+        hashCode = prime * hashCode + ((getIndicatorOfCompromise() == null) ? 0 : getIndicatorOfCompromise().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }
 
@@ -1249,9 +1164,13 @@ public class Finding implements Serializable, Cloneable {
         try {
             return (Finding) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.FindingMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * The result of the <code>DescribeSnapshotCopyGrants</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants"
+ *      target="_top">AWS API Documentation</a>
  */
-public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -35,11 +36,9 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
     private String snapshotCopyGrantName;
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -51,40 +50,32 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching resources
-     * that are associated with the specified key or keys. For example, suppose
-     * that you have resources tagged with keys called <code>owner</code> and
-     * <code>environment</code>. If you specify both of these tag keys in the
-     * request, Amazon Redshift returns a response with all resources that have
-     * either or both of these tag keys associated with them.
+     * A tag key or keys for which you want to return all matching resources that are associated with the specified key
+     * or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and
+     * <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a
+     * response with all resources that have either or both of these tag keys associated with them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
     /**
      * <p>
-     * A tag value or values for which you want to return all matching resources
-     * that are associated with the specified value or values. For example,
-     * suppose that you have resources tagged with values called
-     * <code>admin</code> and <code>test</code>. If you specify both of these
-     * tag values in the request, Amazon Redshift returns a response with all
-     * resources that have either or both of these tag values associated with
-     * them.
+     * A tag value or values for which you want to return all matching resources that are associated with the specified
+     * value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and
+     * <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response
+     * with all resources that have either or both of these tag values associated with them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagValues;
@@ -121,23 +112,19 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
      * 
      * @param snapshotCopyGrantName
      *        The name of the snapshot copy grant.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotCopyGrantsRequest withSnapshotCopyGrantName(
-            String snapshotCopyGrantName) {
+    public DescribeSnapshotCopyGrantsRequest withSnapshotCopyGrantName(String snapshotCopyGrantName) {
         setSnapshotCopyGrantName(snapshotCopyGrantName);
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -147,12 +134,10 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
@@ -166,11 +151,9 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -179,11 +162,9 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
      * Constraints: minimum 20, maximum 100.
      * </p>
      * 
-     * @return The maximum number of response records to return in each call. If
-     *         the number of remaining response records exceeds the specified
-     *         <code>MaxRecords</code> value, a value is returned in a
-     *         <code>marker</code> field of the response. You can retrieve the
-     *         next set of records by retrying the command with the returned
+     * @return The maximum number of response records to return in each call. If the number of remaining response
+     *         records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code>
+     *         field of the response. You can retrieve the next set of records by retrying the command with the returned
      *         marker value. </p>
      *         <p>
      *         Default: <code>100</code>
@@ -198,11 +179,9 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of response records to return in each call. If the
-     * number of remaining response records exceeds the specified
-     * <code>MaxRecords</code> value, a value is returned in a
-     * <code>marker</code> field of the response. You can retrieve the next set
-     * of records by retrying the command with the returned marker value.
+     * The maximum number of response records to return in each call. If the number of remaining response records
+     * exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the
+     * response. You can retrieve the next set of records by retrying the command with the returned marker value.
      * </p>
      * <p>
      * Default: <code>100</code>
@@ -212,19 +191,16 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of response records to return in each call. If
-     *        the number of remaining response records exceeds the specified
-     *        <code>MaxRecords</code> value, a value is returned in a
-     *        <code>marker</code> field of the response. You can retrieve the
-     *        next set of records by retrying the command with the returned
-     *        marker value. </p>
+     *        The maximum number of response records to return in each call. If the number of remaining response records
+     *        exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of
+     *        the response. You can retrieve the next set of records by retrying the command with the returned marker
+     *        value. </p>
      *        <p>
      *        Default: <code>100</code>
      *        </p>
      *        <p>
      *        Constraints: minimum 20, maximum 100.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotCopyGrantsRequest withMaxRecords(Integer maxRecords) {
@@ -234,31 +210,24 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request. </p>
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the
-     *        <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
      */
 
@@ -268,30 +237,23 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
-     * @return An optional parameter that specifies the starting point to return
-     *         a set of response records. When the results of a
-     *         <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *         specified in <code>MaxRecords</code>, AWS returns a value in the
-     *         <code>Marker</code> field of the response. You can retrieve the
-     *         next set of response records by providing the returned marker
-     *         value in the <code>Marker</code> parameter and retrying the
-     *         request. </p>
+     * @return An optional parameter that specifies the starting point to return a set of response records. When the
+     *         results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request. </p>
      *         <p>
-     *         Constraints: You can specify either the
-     *         <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *         Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *         parameter, but not both.
      */
 
@@ -301,34 +263,26 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional parameter that specifies the starting point to return a set
-     * of response records. When the results of a
-     * <code>DescribeSnapshotCopyGrant</code> request exceed the value specified
-     * in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set
-     * of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request.
+     * An optional parameter that specifies the starting point to return a set of response records. When the results of
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
+     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
+     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b>
-     * parameter or the <b>Marker</b> parameter, but not both.
+     * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
+     * but not both.
      * </p>
      * 
      * @param marker
-     *        An optional parameter that specifies the starting point to return
-     *        a set of response records. When the results of a
-     *        <code>DescribeSnapshotCopyGrant</code> request exceed the value
-     *        specified in <code>MaxRecords</code>, AWS returns a value in the
-     *        <code>Marker</code> field of the response. You can retrieve the
-     *        next set of response records by providing the returned marker
-     *        value in the <code>Marker</code> parameter and retrying the
-     *        request. </p>
+     *        An optional parameter that specifies the starting point to return a set of response records. When the
+     *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
+     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
+     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the
-     *        <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
+     *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotCopyGrantsRequest withMarker(String marker) {
@@ -338,21 +292,17 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching resources
-     * that are associated with the specified key or keys. For example, suppose
-     * that you have resources tagged with keys called <code>owner</code> and
-     * <code>environment</code>. If you specify both of these tag keys in the
-     * request, Amazon Redshift returns a response with all resources that have
-     * either or both of these tag keys associated with them.
+     * A tag key or keys for which you want to return all matching resources that are associated with the specified key
+     * or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and
+     * <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a
+     * response with all resources that have either or both of these tag keys associated with them.
      * </p>
      * 
-     * @return A tag key or keys for which you want to return all matching
-     *         resources that are associated with the specified key or keys. For
-     *         example, suppose that you have resources tagged with keys called
-     *         <code>owner</code> and <code>environment</code>. If you specify
-     *         both of these tag keys in the request, Amazon Redshift returns a
-     *         response with all resources that have either or both of these tag
-     *         keys associated with them.
+     * @return A tag key or keys for which you want to return all matching resources that are associated with the
+     *         specified key or keys. For example, suppose that you have resources tagged with keys called
+     *         <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request,
+     *         Amazon Redshift returns a response with all resources that have either or both of these tag keys
+     *         associated with them.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -364,22 +314,18 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching resources
-     * that are associated with the specified key or keys. For example, suppose
-     * that you have resources tagged with keys called <code>owner</code> and
-     * <code>environment</code>. If you specify both of these tag keys in the
-     * request, Amazon Redshift returns a response with all resources that have
-     * either or both of these tag keys associated with them.
+     * A tag key or keys for which you want to return all matching resources that are associated with the specified key
+     * or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and
+     * <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a
+     * response with all resources that have either or both of these tag keys associated with them.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        resources that are associated with the specified key or keys. For
-     *        example, suppose that you have resources tagged with keys called
-     *        <code>owner</code> and <code>environment</code>. If you specify
-     *        both of these tag keys in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        keys associated with them.
+     *        A tag key or keys for which you want to return all matching resources that are associated with the
+     *        specified key or keys. For example, suppose that you have resources tagged with keys called
+     *        <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request,
+     *        Amazon Redshift returns a response with all resources that have either or both of these tag keys
+     *        associated with them.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -388,42 +334,34 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(
-                tagKeys);
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(tagKeys);
     }
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching resources
-     * that are associated with the specified key or keys. For example, suppose
-     * that you have resources tagged with keys called <code>owner</code> and
-     * <code>environment</code>. If you specify both of these tag keys in the
-     * request, Amazon Redshift returns a response with all resources that have
-     * either or both of these tag keys associated with them.
+     * A tag key or keys for which you want to return all matching resources that are associated with the specified key
+     * or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and
+     * <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a
+     * response with all resources that have either or both of these tag keys associated with them.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagKeys(java.util.Collection)} or
-     * {@link #withTagKeys(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        resources that are associated with the specified key or keys. For
-     *        example, suppose that you have resources tagged with keys called
-     *        <code>owner</code> and <code>environment</code>. If you specify
-     *        both of these tag keys in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        keys associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag key or keys for which you want to return all matching resources that are associated with the
+     *        specified key or keys. For example, suppose that you have resources tagged with keys called
+     *        <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request,
+     *        Amazon Redshift returns a response with all resources that have either or both of these tag keys
+     *        associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotCopyGrantsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
-            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagKeys.length));
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(tagKeys.length));
         }
         for (String ele : tagKeys) {
             this.tagKeys.add(ele);
@@ -433,50 +371,39 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag key or keys for which you want to return all matching resources
-     * that are associated with the specified key or keys. For example, suppose
-     * that you have resources tagged with keys called <code>owner</code> and
-     * <code>environment</code>. If you specify both of these tag keys in the
-     * request, Amazon Redshift returns a response with all resources that have
-     * either or both of these tag keys associated with them.
+     * A tag key or keys for which you want to return all matching resources that are associated with the specified key
+     * or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and
+     * <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a
+     * response with all resources that have either or both of these tag keys associated with them.
      * </p>
      * 
      * @param tagKeys
-     *        A tag key or keys for which you want to return all matching
-     *        resources that are associated with the specified key or keys. For
-     *        example, suppose that you have resources tagged with keys called
-     *        <code>owner</code> and <code>environment</code>. If you specify
-     *        both of these tag keys in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        keys associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag key or keys for which you want to return all matching resources that are associated with the
+     *        specified key or keys. For example, suppose that you have resources tagged with keys called
+     *        <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request,
+     *        Amazon Redshift returns a response with all resources that have either or both of these tag keys
+     *        associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotCopyGrantsRequest withTagKeys(
-            java.util.Collection<String> tagKeys) {
+    public DescribeSnapshotCopyGrantsRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;
     }
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching resources
-     * that are associated with the specified value or values. For example,
-     * suppose that you have resources tagged with values called
-     * <code>admin</code> and <code>test</code>. If you specify both of these
-     * tag values in the request, Amazon Redshift returns a response with all
-     * resources that have either or both of these tag values associated with
-     * them.
+     * A tag value or values for which you want to return all matching resources that are associated with the specified
+     * value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and
+     * <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response
+     * with all resources that have either or both of these tag values associated with them.
      * </p>
      * 
-     * @return A tag value or values for which you want to return all matching
-     *         resources that are associated with the specified value or values.
-     *         For example, suppose that you have resources tagged with values
-     *         called <code>admin</code> and <code>test</code>. If you specify
-     *         both of these tag values in the request, Amazon Redshift returns
-     *         a response with all resources that have either or both of these
-     *         tag values associated with them.
+     * @return A tag value or values for which you want to return all matching resources that are associated with the
+     *         specified value or values. For example, suppose that you have resources tagged with values called
+     *         <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     *         Redshift returns a response with all resources that have either or both of these tag values associated
+     *         with them.
      */
 
     public java.util.List<String> getTagValues() {
@@ -488,23 +415,18 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching resources
-     * that are associated with the specified value or values. For example,
-     * suppose that you have resources tagged with values called
-     * <code>admin</code> and <code>test</code>. If you specify both of these
-     * tag values in the request, Amazon Redshift returns a response with all
-     * resources that have either or both of these tag values associated with
-     * them.
+     * A tag value or values for which you want to return all matching resources that are associated with the specified
+     * value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and
+     * <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response
+     * with all resources that have either or both of these tag values associated with them.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        resources that are associated with the specified value or values.
-     *        For example, suppose that you have resources tagged with values
-     *        called <code>admin</code> and <code>test</code>. If you specify
-     *        both of these tag values in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        values associated with them.
+     *        A tag value or values for which you want to return all matching resources that are associated with the
+     *        specified value or values. For example, suppose that you have resources tagged with values called
+     *        <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     *        Redshift returns a response with all resources that have either or both of these tag values associated
+     *        with them.
      */
 
     public void setTagValues(java.util.Collection<String> tagValues) {
@@ -513,43 +435,34 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
             return;
         }
 
-        this.tagValues = new com.amazonaws.internal.SdkInternalList<String>(
-                tagValues);
+        this.tagValues = new com.amazonaws.internal.SdkInternalList<String>(tagValues);
     }
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching resources
-     * that are associated with the specified value or values. For example,
-     * suppose that you have resources tagged with values called
-     * <code>admin</code> and <code>test</code>. If you specify both of these
-     * tag values in the request, Amazon Redshift returns a response with all
-     * resources that have either or both of these tag values associated with
-     * them.
+     * A tag value or values for which you want to return all matching resources that are associated with the specified
+     * value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and
+     * <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response
+     * with all resources that have either or both of these tag values associated with them.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagValues(java.util.Collection)} or
-     * {@link #withTagValues(java.util.Collection)} if you want to override the
-     * existing values.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        resources that are associated with the specified value or values.
-     *        For example, suppose that you have resources tagged with values
-     *        called <code>admin</code> and <code>test</code>. If you specify
-     *        both of these tag values in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        values associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag value or values for which you want to return all matching resources that are associated with the
+     *        specified value or values. For example, suppose that you have resources tagged with values called
+     *        <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     *        Redshift returns a response with all resources that have either or both of these tag values associated
+     *        with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeSnapshotCopyGrantsRequest withTagValues(String... tagValues) {
         if (this.tagValues == null) {
-            setTagValues(new com.amazonaws.internal.SdkInternalList<String>(
-                    tagValues.length));
+            setTagValues(new com.amazonaws.internal.SdkInternalList<String>(tagValues.length));
         }
         for (String ele : tagValues) {
             this.tagValues.add(ele);
@@ -559,36 +472,29 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A tag value or values for which you want to return all matching resources
-     * that are associated with the specified value or values. For example,
-     * suppose that you have resources tagged with values called
-     * <code>admin</code> and <code>test</code>. If you specify both of these
-     * tag values in the request, Amazon Redshift returns a response with all
-     * resources that have either or both of these tag values associated with
-     * them.
+     * A tag value or values for which you want to return all matching resources that are associated with the specified
+     * value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and
+     * <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response
+     * with all resources that have either or both of these tag values associated with them.
      * </p>
      * 
      * @param tagValues
-     *        A tag value or values for which you want to return all matching
-     *        resources that are associated with the specified value or values.
-     *        For example, suppose that you have resources tagged with values
-     *        called <code>admin</code> and <code>test</code>. If you specify
-     *        both of these tag values in the request, Amazon Redshift returns a
-     *        response with all resources that have either or both of these tag
-     *        values associated with them.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A tag value or values for which you want to return all matching resources that are associated with the
+     *        specified value or values. For example, suppose that you have resources tagged with values called
+     *        <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon
+     *        Redshift returns a response with all resources that have either or both of these tag values associated
+     *        with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeSnapshotCopyGrantsRequest withTagValues(
-            java.util.Collection<String> tagValues) {
+    public DescribeSnapshotCopyGrantsRequest withTagValues(java.util.Collection<String> tagValues) {
         setTagValues(tagValues);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -599,16 +505,15 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName()
-                    + ",");
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: " + getTagKeys() + ",");
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
         if (getTagValues() != null)
-            sb.append("TagValues: " + getTagValues());
+            sb.append("TagValues: ").append(getTagValues());
         sb.append("}");
         return sb.toString();
     }
@@ -623,32 +528,25 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeSnapshotCopyGrantsRequest == false)
             return false;
         DescribeSnapshotCopyGrantsRequest other = (DescribeSnapshotCopyGrantsRequest) obj;
-        if (other.getSnapshotCopyGrantName() == null
-                ^ this.getSnapshotCopyGrantName() == null)
+        if (other.getSnapshotCopyGrantName() == null ^ this.getSnapshotCopyGrantName() == null)
             return false;
-        if (other.getSnapshotCopyGrantName() != null
-                && other.getSnapshotCopyGrantName().equals(
-                        this.getSnapshotCopyGrantName()) == false)
+        if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
-        if (other.getMaxRecords() != null
-                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
             return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
-        if (other.getMarker() != null
-                && other.getMarker().equals(this.getMarker()) == false)
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
-        if (other.getTagKeys() != null
-                && other.getTagKeys().equals(this.getTagKeys()) == false)
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
         if (other.getTagValues() == null ^ this.getTagValues() == null)
             return false;
-        if (other.getTagValues() != null
-                && other.getTagValues().equals(this.getTagValues()) == false)
+        if (other.getTagValues() != null && other.getTagValues().equals(this.getTagValues()) == false)
             return false;
         return true;
     }
@@ -658,18 +556,11 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getSnapshotCopyGrantName() == null) ? 0
-                        : getSnapshotCopyGrantName().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
-        hashCode = prime * hashCode
-                + ((getMarker() == null) ? 0 : getMarker().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
-        hashCode = prime * hashCode
-                + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
         return hashCode;
     }
 
@@ -677,4 +568,5 @@ public class DescribeSnapshotCopyGrantsRequest extends AmazonWebServiceRequest
     public DescribeSnapshotCopyGrantsRequest clone() {
         return (DescribeSnapshotCopyGrantsRequest) super.clone();
     }
+
 }

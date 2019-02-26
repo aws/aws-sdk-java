@@ -1,108 +1,64 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-import java.util.Collections;
-import java.util.Map;
-import java.util.List;
-import java.util.regex.Pattern;
+import javax.annotation.Generated;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
-import com.amazonaws.util.StringInputStream;
-import com.amazonaws.protocol.json.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDataSourceFromS3Request Marshaller
+ * CreateDataSourceFromS3RequestMarshaller
  */
-public class CreateDataSourceFromS3RequestMarshaller
-        implements
-        Marshaller<Request<CreateDataSourceFromS3Request>, CreateDataSourceFromS3Request> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateDataSourceFromS3RequestMarshaller {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceId").build();
+    private static final MarshallingInfo<String> DATASOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceName").build();
+    private static final MarshallingInfo<StructuredPojo> DATASPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSpec").build();
+    private static final MarshallingInfo<Boolean> COMPUTESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeStatistics").build();
 
-    public CreateDataSourceFromS3RequestMarshaller(
-            SdkJsonProtocolFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDataSourceFromS3RequestMarshaller instance = new CreateDataSourceFromS3RequestMarshaller();
+
+    public static CreateDataSourceFromS3RequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDataSourceFromS3Request> marshall(
-            CreateDataSourceFromS3Request createDataSourceFromS3Request) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDataSourceFromS3Request createDataSourceFromS3Request, ProtocolMarshaller protocolMarshaller) {
 
         if (createDataSourceFromS3Request == null) {
-            throw new AmazonClientException(
-                    "Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
-
-        Request<CreateDataSourceFromS3Request> request = new DefaultRequest<CreateDataSourceFromS3Request>(
-                createDataSourceFromS3Request, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target",
-                "AmazonML_20141212.CreateDataSourceFromS3");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory
-                    .createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDataSourceFromS3Request.getDataSourceId() != null) {
-                jsonGenerator.writeFieldName("DataSourceId").writeValue(
-                        createDataSourceFromS3Request.getDataSourceId());
-            }
-            if (createDataSourceFromS3Request.getDataSourceName() != null) {
-                jsonGenerator.writeFieldName("DataSourceName").writeValue(
-                        createDataSourceFromS3Request.getDataSourceName());
-            }
-            if (createDataSourceFromS3Request.getDataSpec() != null) {
-                jsonGenerator.writeFieldName("DataSpec");
-                S3DataSpecJsonMarshaller.getInstance().marshall(
-                        createDataSourceFromS3Request.getDataSpec(),
-                        jsonGenerator);
-            }
-            if (createDataSourceFromS3Request.getComputeStatistics() != null) {
-                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
-                        createDataSourceFromS3Request.getComputeStatistics());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length",
-                    Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
-        } catch (Throwable t) {
-            throw new AmazonClientException(
-                    "Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDataSourceFromS3Request.getDataSourceId(), DATASOURCEID_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromS3Request.getDataSourceName(), DATASOURCENAME_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromS3Request.getDataSpec(), DATASPEC_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromS3Request.getComputeStatistics(), COMPUTESTATISTICS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

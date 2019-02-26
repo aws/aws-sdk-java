@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Input to the <code>LookupDeveloperIdentityInput</code> action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity"
+ *      target="_top">AWS API Documentation</a>
  */
-public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class LookupDeveloperIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
@@ -41,9 +42,8 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
     private String identityId;
     /**
      * <p>
-     * A unique ID used by your backend authentication process to identify a
-     * user. Typically, a developer identity provider would issue many developer
-     * user identifiers, in keeping with the number of users.
+     * A unique ID used by your backend authentication process to identify a user. Typically, a developer identity
+     * provider would issue many developer user identifiers, in keeping with the number of users.
      * </p>
      */
     private String developerUserIdentifier;
@@ -55,13 +55,11 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * A pagination token. The first call you make will have
-     * <code>NextToken</code> set to null. After that the service will return
-     * <code>NextToken</code> values as needed. For example, let's say you make
-     * a request with <code>MaxResults</code> set to 10, and there are 20
-     * matches in the database. The service will return a pagination token as a
-     * part of the response. This token can be used to call the API again and
-     * get results starting from the 11th match.
+     * A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service
+     * will return <code>NextToken</code> values as needed. For example, let's say you make a request with
+     * <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination
+     * token as a part of the response. This token can be used to call the API again and get results starting from the
+     * 11th match.
      * </p>
      */
     private String nextToken;
@@ -98,12 +96,10 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LookupDeveloperIdentityRequest withIdentityPoolId(
-            String identityPoolId) {
+    public LookupDeveloperIdentityRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
     }
@@ -140,8 +136,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LookupDeveloperIdentityRequest withIdentityId(String identityId) {
@@ -151,16 +146,13 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique ID used by your backend authentication process to identify a
-     * user. Typically, a developer identity provider would issue many developer
-     * user identifiers, in keeping with the number of users.
+     * A unique ID used by your backend authentication process to identify a user. Typically, a developer identity
+     * provider would issue many developer user identifiers, in keeping with the number of users.
      * </p>
      * 
      * @param developerUserIdentifier
-     *        A unique ID used by your backend authentication process to
-     *        identify a user. Typically, a developer identity provider would
-     *        issue many developer user identifiers, in keeping with the number
-     *        of users.
+     *        A unique ID used by your backend authentication process to identify a user. Typically, a developer
+     *        identity provider would issue many developer user identifiers, in keeping with the number of users.
      */
 
     public void setDeveloperUserIdentifier(String developerUserIdentifier) {
@@ -169,15 +161,12 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique ID used by your backend authentication process to identify a
-     * user. Typically, a developer identity provider would issue many developer
-     * user identifiers, in keeping with the number of users.
+     * A unique ID used by your backend authentication process to identify a user. Typically, a developer identity
+     * provider would issue many developer user identifiers, in keeping with the number of users.
      * </p>
      * 
-     * @return A unique ID used by your backend authentication process to
-     *         identify a user. Typically, a developer identity provider would
-     *         issue many developer user identifiers, in keeping with the number
-     *         of users.
+     * @return A unique ID used by your backend authentication process to identify a user. Typically, a developer
+     *         identity provider would issue many developer user identifiers, in keeping with the number of users.
      */
 
     public String getDeveloperUserIdentifier() {
@@ -186,22 +175,17 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique ID used by your backend authentication process to identify a
-     * user. Typically, a developer identity provider would issue many developer
-     * user identifiers, in keeping with the number of users.
+     * A unique ID used by your backend authentication process to identify a user. Typically, a developer identity
+     * provider would issue many developer user identifiers, in keeping with the number of users.
      * </p>
      * 
      * @param developerUserIdentifier
-     *        A unique ID used by your backend authentication process to
-     *        identify a user. Typically, a developer identity provider would
-     *        issue many developer user identifiers, in keeping with the number
-     *        of users.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A unique ID used by your backend authentication process to identify a user. Typically, a developer
+     *        identity provider would issue many developer user identifiers, in keeping with the number of users.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public LookupDeveloperIdentityRequest withDeveloperUserIdentifier(
-            String developerUserIdentifier) {
+    public LookupDeveloperIdentityRequest withDeveloperUserIdentifier(String developerUserIdentifier) {
         setDeveloperUserIdentifier(developerUserIdentifier);
         return this;
     }
@@ -238,8 +222,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @param maxResults
      *        The maximum number of identities to return.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LookupDeveloperIdentityRequest withMaxResults(Integer maxResults) {
@@ -249,24 +232,19 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token. The first call you make will have
-     * <code>NextToken</code> set to null. After that the service will return
-     * <code>NextToken</code> values as needed. For example, let's say you make
-     * a request with <code>MaxResults</code> set to 10, and there are 20
-     * matches in the database. The service will return a pagination token as a
-     * part of the response. This token can be used to call the API again and
-     * get results starting from the 11th match.
+     * A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service
+     * will return <code>NextToken</code> values as needed. For example, let's say you make a request with
+     * <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination
+     * token as a part of the response. This token can be used to call the API again and get results starting from the
+     * 11th match.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token. The first call you make will have
-     *        <code>NextToken</code> set to null. After that the service will
-     *        return <code>NextToken</code> values as needed. For example, let's
-     *        say you make a request with <code>MaxResults</code> set to 10, and
-     *        there are 20 matches in the database. The service will return a
-     *        pagination token as a part of the response. This token can be used
-     *        to call the API again and get results starting from the 11th
-     *        match.
+     *        A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the
+     *        service will return <code>NextToken</code> values as needed. For example, let's say you make a request
+     *        with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return
+     *        a pagination token as a part of the response. This token can be used to call the API again and get results
+     *        starting from the 11th match.
      */
 
     public void setNextToken(String nextToken) {
@@ -275,23 +253,18 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token. The first call you make will have
-     * <code>NextToken</code> set to null. After that the service will return
-     * <code>NextToken</code> values as needed. For example, let's say you make
-     * a request with <code>MaxResults</code> set to 10, and there are 20
-     * matches in the database. The service will return a pagination token as a
-     * part of the response. This token can be used to call the API again and
-     * get results starting from the 11th match.
+     * A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service
+     * will return <code>NextToken</code> values as needed. For example, let's say you make a request with
+     * <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination
+     * token as a part of the response. This token can be used to call the API again and get results starting from the
+     * 11th match.
      * </p>
      * 
-     * @return A pagination token. The first call you make will have
-     *         <code>NextToken</code> set to null. After that the service will
-     *         return <code>NextToken</code> values as needed. For example,
-     *         let's say you make a request with <code>MaxResults</code> set to
-     *         10, and there are 20 matches in the database. The service will
-     *         return a pagination token as a part of the response. This token
-     *         can be used to call the API again and get results starting from
-     *         the 11th match.
+     * @return A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the
+     *         service will return <code>NextToken</code> values as needed. For example, let's say you make a request
+     *         with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return
+     *         a pagination token as a part of the response. This token can be used to call the API again and get
+     *         results starting from the 11th match.
      */
 
     public String getNextToken() {
@@ -300,26 +273,20 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A pagination token. The first call you make will have
-     * <code>NextToken</code> set to null. After that the service will return
-     * <code>NextToken</code> values as needed. For example, let's say you make
-     * a request with <code>MaxResults</code> set to 10, and there are 20
-     * matches in the database. The service will return a pagination token as a
-     * part of the response. This token can be used to call the API again and
-     * get results starting from the 11th match.
+     * A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service
+     * will return <code>NextToken</code> values as needed. For example, let's say you make a request with
+     * <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination
+     * token as a part of the response. This token can be used to call the API again and get results starting from the
+     * 11th match.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token. The first call you make will have
-     *        <code>NextToken</code> set to null. After that the service will
-     *        return <code>NextToken</code> values as needed. For example, let's
-     *        say you make a request with <code>MaxResults</code> set to 10, and
-     *        there are 20 matches in the database. The service will return a
-     *        pagination token as a part of the response. This token can be used
-     *        to call the API again and get results starting from the 11th
-     *        match.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the
+     *        service will return <code>NextToken</code> values as needed. For example, let's say you make a request
+     *        with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return
+     *        a pagination token as a part of the response. This token can be used to call the API again and get results
+     *        starting from the 11th match.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LookupDeveloperIdentityRequest withNextToken(String nextToken) {
@@ -328,8 +295,8 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -340,16 +307,15 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDeveloperUserIdentifier() != null)
-            sb.append("DeveloperUserIdentifier: "
-                    + getDeveloperUserIdentifier() + ",");
+            sb.append("DeveloperUserIdentifier: ").append(getDeveloperUserIdentifier()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -364,33 +330,25 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
         if (obj instanceof LookupDeveloperIdentityRequest == false)
             return false;
         LookupDeveloperIdentityRequest other = (LookupDeveloperIdentityRequest) obj;
-        if (other.getIdentityPoolId() == null
-                ^ this.getIdentityPoolId() == null)
+        if (other.getIdentityPoolId() == null ^ this.getIdentityPoolId() == null)
             return false;
-        if (other.getIdentityPoolId() != null
-                && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
+        if (other.getIdentityPoolId() != null && other.getIdentityPoolId().equals(this.getIdentityPoolId()) == false)
             return false;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
-        if (other.getDeveloperUserIdentifier() == null
-                ^ this.getDeveloperUserIdentifier() == null)
+        if (other.getDeveloperUserIdentifier() == null ^ this.getDeveloperUserIdentifier() == null)
             return false;
-        if (other.getDeveloperUserIdentifier() != null
-                && other.getDeveloperUserIdentifier().equals(
-                        this.getDeveloperUserIdentifier()) == false)
+        if (other.getDeveloperUserIdentifier() != null && other.getDeveloperUserIdentifier().equals(this.getDeveloperUserIdentifier()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMaxResults() != null
-                && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -400,20 +358,11 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeveloperUserIdentifier() == null) ? 0
-                        : getDeveloperUserIdentifier().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getDeveloperUserIdentifier() == null) ? 0 : getDeveloperUserIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -421,4 +370,5 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
     public LookupDeveloperIdentityRequest clone() {
         return (LookupDeveloperIdentityRequest) super.clone();
     }
+
 }

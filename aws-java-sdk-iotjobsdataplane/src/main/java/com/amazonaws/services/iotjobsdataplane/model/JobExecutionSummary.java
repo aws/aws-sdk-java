@@ -1,0 +1,408 @@
+/*
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotjobsdataplane.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Contains a subset of information about a job execution.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/JobExecutionSummary" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class JobExecutionSummary implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The unique identifier you assigned to this job when it was created.
+     * </p>
+     */
+    private String jobId;
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was enqueued.
+     * </p>
+     */
+    private Long queuedAt;
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution started.
+     * </p>
+     */
+    private Long startedAt;
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * </p>
+     */
+    private Long lastUpdatedAt;
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an
+     * update from a device.
+     * </p>
+     */
+    private Long versionNumber;
+    /**
+     * <p>
+     * A number that identifies a particular job execution on a particular device.
+     * </p>
+     */
+    private Long executionNumber;
+
+    /**
+     * <p>
+     * The unique identifier you assigned to this job when it was created.
+     * </p>
+     * 
+     * @param jobId
+     *        The unique identifier you assigned to this job when it was created.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier you assigned to this job when it was created.
+     * </p>
+     * 
+     * @return The unique identifier you assigned to this job when it was created.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier you assigned to this job when it was created.
+     * </p>
+     * 
+     * @param jobId
+     *        The unique identifier you assigned to this job when it was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was enqueued.
+     * </p>
+     * 
+     * @param queuedAt
+     *        The time, in milliseconds since the epoch, when the job execution was enqueued.
+     */
+
+    public void setQueuedAt(Long queuedAt) {
+        this.queuedAt = queuedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was enqueued.
+     * </p>
+     * 
+     * @return The time, in milliseconds since the epoch, when the job execution was enqueued.
+     */
+
+    public Long getQueuedAt() {
+        return this.queuedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was enqueued.
+     * </p>
+     * 
+     * @param queuedAt
+     *        The time, in milliseconds since the epoch, when the job execution was enqueued.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withQueuedAt(Long queuedAt) {
+        setQueuedAt(queuedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution started.
+     * </p>
+     * 
+     * @param startedAt
+     *        The time, in milliseconds since the epoch, when the job execution started.
+     */
+
+    public void setStartedAt(Long startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution started.
+     * </p>
+     * 
+     * @return The time, in milliseconds since the epoch, when the job execution started.
+     */
+
+    public Long getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution started.
+     * </p>
+     * 
+     * @param startedAt
+     *        The time, in milliseconds since the epoch, when the job execution started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withStartedAt(Long startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     */
+
+    public void setLastUpdatedAt(Long lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * </p>
+     * 
+     * @return The time, in milliseconds since the epoch, when the job execution was last updated.
+     */
+
+    public Long getLastUpdatedAt() {
+        return this.lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withLastUpdatedAt(Long lastUpdatedAt) {
+        setLastUpdatedAt(lastUpdatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an
+     * update from a device.
+     * </p>
+     * 
+     * @param versionNumber
+     *        The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
+     *        an update from a device.
+     */
+
+    public void setVersionNumber(Long versionNumber) {
+        this.versionNumber = versionNumber;
+    }
+
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an
+     * update from a device.
+     * </p>
+     * 
+     * @return The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
+     *         an update from a device.
+     */
+
+    public Long getVersionNumber() {
+        return this.versionNumber;
+    }
+
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an
+     * update from a device.
+     * </p>
+     * 
+     * @param versionNumber
+     *        The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
+     *        an update from a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withVersionNumber(Long versionNumber) {
+        setVersionNumber(versionNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A number that identifies a particular job execution on a particular device.
+     * </p>
+     * 
+     * @param executionNumber
+     *        A number that identifies a particular job execution on a particular device.
+     */
+
+    public void setExecutionNumber(Long executionNumber) {
+        this.executionNumber = executionNumber;
+    }
+
+    /**
+     * <p>
+     * A number that identifies a particular job execution on a particular device.
+     * </p>
+     * 
+     * @return A number that identifies a particular job execution on a particular device.
+     */
+
+    public Long getExecutionNumber() {
+        return this.executionNumber;
+    }
+
+    /**
+     * <p>
+     * A number that identifies a particular job execution on a particular device.
+     * </p>
+     * 
+     * @param executionNumber
+     *        A number that identifies a particular job execution on a particular device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionSummary withExecutionNumber(Long executionNumber) {
+        setExecutionNumber(executionNumber);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getQueuedAt() != null)
+            sb.append("QueuedAt: ").append(getQueuedAt()).append(",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
+        if (getLastUpdatedAt() != null)
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getVersionNumber() != null)
+            sb.append("VersionNumber: ").append(getVersionNumber()).append(",");
+        if (getExecutionNumber() != null)
+            sb.append("ExecutionNumber: ").append(getExecutionNumber());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof JobExecutionSummary == false)
+            return false;
+        JobExecutionSummary other = (JobExecutionSummary) obj;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
+        if (other.getQueuedAt() == null ^ this.getQueuedAt() == null)
+            return false;
+        if (other.getQueuedAt() != null && other.getQueuedAt().equals(this.getQueuedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
+        if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
+            return false;
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+            return false;
+        if (other.getVersionNumber() == null ^ this.getVersionNumber() == null)
+            return false;
+        if (other.getVersionNumber() != null && other.getVersionNumber().equals(this.getVersionNumber()) == false)
+            return false;
+        if (other.getExecutionNumber() == null ^ this.getExecutionNumber() == null)
+            return false;
+        if (other.getExecutionNumber() != null && other.getExecutionNumber().equals(this.getExecutionNumber()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getQueuedAt() == null) ? 0 : getQueuedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getVersionNumber() == null) ? 0 : getVersionNumber().hashCode());
+        hashCode = prime * hashCode + ((getExecutionNumber() == null) ? 0 : getExecutionNumber().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public JobExecutionSummary clone() {
+        try {
+            return (JobExecutionSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iotjobsdataplane.model.transform.JobExecutionSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

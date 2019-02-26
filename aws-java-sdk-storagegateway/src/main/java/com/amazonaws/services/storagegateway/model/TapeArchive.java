@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Represents a virtual tape that is archived in the virtual tape shelf (VTS).
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeArchive" target="_top">AWS API
+ *      Documentation</a>
  */
-public class TapeArchive implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -39,6 +42,12 @@ public class TapeArchive implements Serializable, Cloneable {
     private String tapeBarcode;
     /**
      * <p>
+     * The date the virtual tape was created.
+     * </p>
+     */
+    private java.util.Date tapeCreatedDate;
+    /**
+     * <p>
      * The size, in bytes, of the archived virtual tape.
      * </p>
      */
@@ -48,15 +57,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      */
     private java.util.Date completionTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape
-     * is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
@@ -69,6 +76,19 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      */
     private String tapeStatus;
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     */
+    private Long tapeUsedInBytes;
+
+    private String kMSKey;
 
     /**
      * <p>
@@ -102,8 +122,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of an archived virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withTapeARN(String tapeARN) {
@@ -143,12 +162,51 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param tapeBarcode
      *        The barcode that identifies the archived virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withTapeBarcode(String tapeBarcode) {
         setTapeBarcode(tapeBarcode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @param tapeCreatedDate
+     *        The date the virtual tape was created.
+     */
+
+    public void setTapeCreatedDate(java.util.Date tapeCreatedDate) {
+        this.tapeCreatedDate = tapeCreatedDate;
+    }
+
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @return The date the virtual tape was created.
+     */
+
+    public java.util.Date getTapeCreatedDate() {
+        return this.tapeCreatedDate;
+    }
+
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @param tapeCreatedDate
+     *        The date the virtual tape was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withTapeCreatedDate(java.util.Date tapeCreatedDate) {
+        setTapeCreatedDate(tapeCreatedDate);
         return this;
     }
 
@@ -184,8 +242,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the archived virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -198,15 +255,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
      * @param completionTime
      *        The time that the archiving of the virtual tape was completed.</p>
      *        <p>
-     *        The string format of the completion time is in the ISO8601
-     *        extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     *        The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public void setCompletionTime(java.util.Date completionTime) {
@@ -218,15 +273,12 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
-     * @return The time that the archiving of the virtual tape was
-     *         completed.</p>
+     * @return The time that the archiving of the virtual tape was completed.</p>
      *         <p>
-     *         The string format of the completion time is in the ISO8601
-     *         extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     *         The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public java.util.Date getCompletionTime() {
@@ -238,17 +290,14 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
      * @param completionTime
      *        The time that the archiving of the virtual tape was completed.</p>
      *        <p>
-     *        The string format of the completion time is in the ISO8601
-     *        extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withCompletionTime(java.util.Date completionTime) {
@@ -258,16 +307,14 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape
-     * is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -278,15 +325,13 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape
-     * is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the gateway-VTL that the
-     *         virtual tape is being retrieved to.</p>
+     * @return The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -297,20 +342,17 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape
-     * is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withRetrievedTo(String retrievedTo) {
@@ -350,8 +392,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param tapeStatus
      *        The current state of the archived virtual tape.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TapeArchive withTapeStatus(String tapeStatus) {
@@ -360,8 +401,98 @@ public class TapeArchive implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     */
+
+    public void setTapeUsedInBytes(Long tapeUsedInBytes) {
+        this.tapeUsedInBytes = tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @return The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *         <p>
+     *         This value is not available for tapes created prior to May 13, 2015.
+     *         </p>
+     */
+
+    public Long getTapeUsedInBytes() {
+        return this.tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withTapeUsedInBytes(Long tapeUsedInBytes) {
+        setTapeUsedInBytes(tapeUsedInBytes);
+        return this;
+    }
+
+    /**
+     * @param kMSKey
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * @param kMSKey
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -372,17 +503,23 @@ public class TapeArchive implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: " + getTapeBarcode() + ",");
+            sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
+        if (getTapeCreatedDate() != null)
+            sb.append("TapeCreatedDate: ").append(getTapeCreatedDate()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getCompletionTime() != null)
-            sb.append("CompletionTime: " + getCompletionTime() + ",");
+            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
         if (getRetrievedTo() != null)
-            sb.append("RetrievedTo: " + getRetrievedTo() + ",");
+            sb.append("RetrievedTo: ").append(getRetrievedTo()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: " + getTapeStatus());
+            sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
+        if (getTapeUsedInBytes() != null)
+            sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey());
         sb.append("}");
         return sb.toString();
     }
@@ -399,35 +536,39 @@ public class TapeArchive implements Serializable, Cloneable {
         TapeArchive other = (TapeArchive) obj;
         if (other.getTapeARN() == null ^ this.getTapeARN() == null)
             return false;
-        if (other.getTapeARN() != null
-                && other.getTapeARN().equals(this.getTapeARN()) == false)
+        if (other.getTapeARN() != null && other.getTapeARN().equals(this.getTapeARN()) == false)
             return false;
         if (other.getTapeBarcode() == null ^ this.getTapeBarcode() == null)
             return false;
-        if (other.getTapeBarcode() != null
-                && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
+        if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
             return false;
-        if (other.getTapeSizeInBytes() == null
-                ^ this.getTapeSizeInBytes() == null)
+        if (other.getTapeCreatedDate() == null ^ this.getTapeCreatedDate() == null)
             return false;
-        if (other.getTapeSizeInBytes() != null
-                && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
+        if (other.getTapeCreatedDate() != null && other.getTapeCreatedDate().equals(this.getTapeCreatedDate()) == false)
             return false;
-        if (other.getCompletionTime() == null
-                ^ this.getCompletionTime() == null)
+        if (other.getTapeSizeInBytes() == null ^ this.getTapeSizeInBytes() == null)
             return false;
-        if (other.getCompletionTime() != null
-                && other.getCompletionTime().equals(this.getCompletionTime()) == false)
+        if (other.getTapeSizeInBytes() != null && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
+            return false;
+        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
+            return false;
+        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
             return false;
         if (other.getRetrievedTo() == null ^ this.getRetrievedTo() == null)
             return false;
-        if (other.getRetrievedTo() != null
-                && other.getRetrievedTo().equals(this.getRetrievedTo()) == false)
+        if (other.getRetrievedTo() != null && other.getRetrievedTo().equals(this.getRetrievedTo()) == false)
             return false;
         if (other.getTapeStatus() == null ^ this.getTapeStatus() == null)
             return false;
-        if (other.getTapeStatus() != null
-                && other.getTapeStatus().equals(this.getTapeStatus()) == false)
+        if (other.getTapeStatus() != null && other.getTapeStatus().equals(this.getTapeStatus()) == false)
+            return false;
+        if (other.getTapeUsedInBytes() == null ^ this.getTapeUsedInBytes() == null)
+            return false;
+        if (other.getTapeUsedInBytes() != null && other.getTapeUsedInBytes().equals(this.getTapeUsedInBytes()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
             return false;
         return true;
     }
@@ -437,24 +578,15 @@ public class TapeArchive implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCompletionTime() == null) ? 0 : getCompletionTime()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRetrievedTo() == null) ? 0 : getRetrievedTo().hashCode());
-        hashCode = prime * hashCode
-                + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
+        hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime * hashCode + ((getTapeCreatedDate() == null) ? 0 : getTapeCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
+        hashCode = prime * hashCode + ((getRetrievedTo() == null) ? 0 : getRetrievedTo().hashCode());
+        hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         return hashCode;
     }
 
@@ -463,9 +595,13 @@ public class TapeArchive implements Serializable, Cloneable {
         try {
             return (TapeArchive) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeArchiveMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -17,32 +17,9 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.util.IOUtils.closeQuietly;
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.services.s3.internal.Constants.KB;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.SocketException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import javax.net.ssl.SSLProtocolException;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -52,10 +29,34 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.ValidationUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.URL;
+import java.nio.channels.FileChannel;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.net.ssl.SSLProtocolException;
+
+import static com.amazonaws.services.s3.internal.Constants.MB;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -136,9 +137,11 @@ public class ServiceUtils {
      *            The request to convert into a URL.
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
+     * @deprecated No longer used. May be removed in a future major version.
      */
+    @Deprecated
     public static URL convertRequestToUrl(Request<?> request) {
         // To be backward compatible, this method by default does not
         // remove the leading slash in the request resource-path.
@@ -156,9 +159,11 @@ public class ServiceUtils {
      *            before appending to the endpoint.
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
+     * @deprecated No longer used. May be removed in a future major version.
      */
+    @Deprecated
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
         return convertRequestToUrl(request, removeLeadingSlashInResourcePath, true);
     }
@@ -175,7 +180,7 @@ public class ServiceUtils {
      * @param urlEncode True if request resource path should be URL encoded
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath,
@@ -216,7 +221,7 @@ public class ServiceUtils {
         try {
             return new URL(url.toString());
         } catch (MalformedURLException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to convert request to well formed URL: " + e.getMessage(), e);
         }
     }
@@ -280,15 +285,7 @@ public class ServiceUtils {
         final boolean appendData,
         final long expectedFileLength)
     {
-        // attempt to create the parent if it doesn't exist
-        File parentDirectory = dstfile.getParentFile();
-        if ( parentDirectory != null && !parentDirectory.exists() ) {
-            if (!(parentDirectory.mkdirs())) {
-                throw new AmazonClientException(
-                        "Unable to create directory in the path"
-                                + parentDirectory.getAbsolutePath());
-            }
-        }
+        createParentDirectoryIfNecessary(dstfile);
 
         if (!FileLocks.lock(dstfile)) {
             throw new FileLockException("Fail to lock " + dstfile
@@ -313,7 +310,7 @@ public class ServiceUtils {
             }
         } catch (IOException e) {
             s3Object.getObjectContent().abort();
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
             closeQuietly(outputStream, LOG);
@@ -335,11 +332,24 @@ public class ServiceUtils {
             }
 
             if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
-                throw new AmazonClientException("Unable to verify integrity of data download.  " +
+                throw new SdkClientException("Unable to verify integrity of data download.  " +
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                         "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
             }
         }
+    }
+
+    /**
+     * Creates the parent directory for a file if it doesn't already exist.
+     * @param file
+     * @throws SdkClientException when creation of parent directory failed.
+     */
+    public static void createParentDirectoryIfNecessary(final File file) {
+        final File parentDirectory = file.getParentFile();
+        if (parentDirectory == null || parentDirectory.mkdirs() || parentDirectory.exists()) {
+            return;
+	}
+        throw new SdkClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
     }
 
     /**
@@ -393,13 +403,13 @@ public class ServiceUtils {
                 ServiceUtils.downloadObjectToFile(s3Object, file,
                         retryableS3DownloadTask.needIntegrityCheck(),
                         appendData);
-            } catch (AmazonClientException ace) {
+            } catch (SdkClientException ace) {
                 if (!ace.isRetryable()) {
                     s3Object.getObjectContent().abort();
                     throw ace;
                 }
-                // Determine whether an immediate retry is needed according to the captured AmazonClientException.
-                // (There are three cases when downloadObjectToFile() throws AmazonClientException:
+                // Determine whether an immediate retry is needed according to the captured SdkClientException.
+                // (There are three cases when downloadObjectToFile() throws SdkClientException:
                 //        1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
                 //        2) Other IOException when writing to disk
                 //        3) MD5 hashes don't match
@@ -441,26 +451,34 @@ public class ServiceUtils {
             throw new FileLockException("Fail to lock " + destinationFile);
         }
 
-        BufferedInputStream in = null;
-        BufferedOutputStream out = null;
+        FileChannel in = null;
+        FileChannel out = null;
         try {
-            in = new BufferedInputStream(new FileInputStream(sourceFile));
-            out = new BufferedOutputStream(new FileOutputStream(destinationFile, true));
-            byte[] buffer = new byte[4 * KB];
-            int length;
-            while ((length = in.read(buffer)) > 0) {
-                out.write(buffer, 0, length);
+            in = new FileInputStream(sourceFile).getChannel();
+            out = new FileOutputStream(destinationFile, true).getChannel();
+            final long size = in.size();
+            // In some Windows platforms, copying large files fail due to insufficient system resources.
+            // Limit copy size to 32 MB in each transfer
+            final long count = 32 * MB;
+            long position = 0;
+
+            while (position < size) {
+                position += in.transferTo(position, count, out);
             }
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to append file " + sourceFile.getAbsolutePath()
+            throw new SdkClientException("Unable to append file " + sourceFile.getAbsolutePath()
                     + "to destination file " + destinationFile.getAbsolutePath() + "\n" + e.getMessage(), e);
         } finally {
             closeQuietly(out, LOG);
             closeQuietly(in, LOG);
             FileLocks.unlock(sourceFile);
             FileLocks.unlock(destinationFile);
-            if (!sourceFile.delete()) {
-                LOG.warn("Failed to delete file " + sourceFile.getAbsolutePath());
+            try {
+                if (!sourceFile.delete()) {
+                    LOG.warn("Failed to delete file " + sourceFile.getAbsolutePath());
+                }
+            } catch (SecurityException exception) {
+                LOG.warn("Security manager denied delete access to file " + sourceFile.getAbsolutePath());
             }
         }
     }
@@ -479,7 +497,8 @@ public class ServiceUtils {
     }
 
     public static boolean isS3AccelerateEndpoint(String endpoint) {
-        return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME);
+        return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME) ||
+                endpoint.endsWith(Constants.S3_ACCELERATE_DUALSTACK_HOSTNAME);
     }
 
     /**
@@ -496,10 +515,29 @@ public class ServiceUtils {
         ValidationUtils.assertNotNull(s3, "S3 client");
         ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
 
-        ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
-                .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
-                .withPartNumber(1));
-        return metadata.getPartCount();
+        GetObjectMetadataRequest getObjectMetadataRequest = RequestCopyUtils.createGetObjectMetadataRequestFrom(getObjectRequest)
+                .withPartNumber(1);
+
+        return s3.getObjectMetadata(getObjectMetadataRequest).getPartCount();
+    }
+
+    /**
+     * Returns the part size of the part
+     *
+     * @param getObjectRequest the request to check
+     * @param s3 the s3 client
+     * @param partNumber the part number
+     * @return the part size
+     */
+    @SdkInternalApi
+    public static long getPartSize(GetObjectRequest getObjectRequest, AmazonS3 s3, int partNumber) {
+        ValidationUtils.assertNotNull(s3, "S3 client");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+
+        GetObjectMetadataRequest getObjectMetadataRequest = RequestCopyUtils.createGetObjectMetadataRequestFrom(getObjectRequest)
+                                                                            .withPartNumber(partNumber);
+
+        return s3.getObjectMetadata(getObjectMetadataRequest).getContentLength();
     }
 
     /**
@@ -519,9 +557,9 @@ public class ServiceUtils {
         ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
         ValidationUtils.assertNotNull(partNumber, "partNumber");
 
-        ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
-                .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
-                .withPartNumber(partNumber));
+        GetObjectMetadataRequest getObjectMetadataRequest = RequestCopyUtils.createGetObjectMetadataRequestFrom(getObjectRequest)
+                .withPartNumber(partNumber);
+        ObjectMetadata metadata = s3.getObjectMetadata(getObjectMetadataRequest);
         return metadata.getContentRange()[1];
     }
 }

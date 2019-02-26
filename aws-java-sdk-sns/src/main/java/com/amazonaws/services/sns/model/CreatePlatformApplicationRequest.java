@@ -1,52 +1,51 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.sns.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Input for CreatePlatformApplication action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication" target="_top">AWS API
+ *      Documentation</a>
  */
-public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Application names must be made up of only uppercase and lowercase ASCII
-     * letters, numbers, underscores, hyphens, and periods, and must be between
-     * 1 and 256 characters long.
+     * Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens,
+     * and periods, and must be between 1 and 256 characters long.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The following platforms are supported: ADM (Amazon Device Messaging),
-     * APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
-     * Cloud Messaging).
+     * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
+     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      */
@@ -54,15 +53,13 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Application names must be made up of only uppercase and lowercase ASCII
-     * letters, numbers, underscores, hyphens, and periods, and must be between
-     * 1 and 256 characters long.
+     * Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens,
+     * and periods, and must be between 1 and 256 characters long.
      * </p>
      * 
      * @param name
-     *        Application names must be made up of only uppercase and lowercase
-     *        ASCII letters, numbers, underscores, hyphens, and periods, and
-     *        must be between 1 and 256 characters long.
+     *        Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores,
+     *        hyphens, and periods, and must be between 1 and 256 characters long.
      */
 
     public void setName(String name) {
@@ -71,14 +68,12 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Application names must be made up of only uppercase and lowercase ASCII
-     * letters, numbers, underscores, hyphens, and periods, and must be between
-     * 1 and 256 characters long.
+     * Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens,
+     * and periods, and must be between 1 and 256 characters long.
      * </p>
      * 
-     * @return Application names must be made up of only uppercase and lowercase
-     *         ASCII letters, numbers, underscores, hyphens, and periods, and
-     *         must be between 1 and 256 characters long.
+     * @return Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores,
+     *         hyphens, and periods, and must be between 1 and 256 characters long.
      */
 
     public String getName() {
@@ -87,17 +82,14 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Application names must be made up of only uppercase and lowercase ASCII
-     * letters, numbers, underscores, hyphens, and periods, and must be between
-     * 1 and 256 characters long.
+     * Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens,
+     * and periods, and must be between 1 and 256 characters long.
      * </p>
      * 
      * @param name
-     *        Application names must be made up of only uppercase and lowercase
-     *        ASCII letters, numbers, underscores, hyphens, and periods, and
-     *        must be between 1 and 256 characters long.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores,
+     *        hyphens, and periods, and must be between 1 and 256 characters long.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlatformApplicationRequest withName(String name) {
@@ -107,15 +99,13 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The following platforms are supported: ADM (Amazon Device Messaging),
-     * APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
-     * Cloud Messaging).
+     * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
+     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
      * </p>
      * 
      * @param platform
-     *        The following platforms are supported: ADM (Amazon Device
-     *        Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX,
-     *        and GCM (Google Cloud Messaging).
+     *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
+     *        Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
      */
 
     public void setPlatform(String platform) {
@@ -124,14 +114,12 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The following platforms are supported: ADM (Amazon Device Messaging),
-     * APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
-     * Cloud Messaging).
+     * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
+     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
      * </p>
      * 
-     * @return The following platforms are supported: ADM (Amazon Device
-     *         Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX,
-     *         and GCM (Google Cloud Messaging).
+     * @return The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
+     *         Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
      */
 
     public String getPlatform() {
@@ -140,17 +128,14 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The following platforms are supported: ADM (Amazon Device Messaging),
-     * APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
-     * Cloud Messaging).
+     * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
+     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
      * </p>
      * 
      * @param platform
-     *        The following platforms are supported: ADM (Amazon Device
-     *        Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX,
-     *        and GCM (Google Cloud Messaging).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
+     *        Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlatformApplicationRequest withPlatform(String platform) {
@@ -160,13 +145,13 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
-     * @return For a list of attributes, see <a href=
-     *         "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * @return For a list of attributes, see <a
+     *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *         >SetPlatformApplicationAttributes</a>
      */
 
@@ -179,59 +164,54 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
      * @param attributes
-     *        For a list of attributes, see <a href=
-     *        "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     *        For a list of attributes, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *        >SetPlatformApplicationAttributes</a>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
-        this.attributes = attributes == null ? null
-                : new com.amazonaws.internal.SdkInternalMap<String, String>(
-                        attributes);
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
     }
 
     /**
      * <p>
-     * For a list of attributes, see <a href=
-     * "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
      * @param attributes
-     *        For a list of attributes, see <a href=
-     *        "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     *        For a list of attributes, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *        >SetPlatformApplicationAttributes</a>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePlatformApplicationRequest withAttributes(
-            java.util.Map<String, String> attributes) {
+    public CreatePlatformApplicationRequest withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
     }
 
-    public CreatePlatformApplicationRequest addAttributesEntry(String key,
-            String value) {
+    public CreatePlatformApplicationRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
         }
         if (this.attributes.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys ("
-                    + key.toString() + ") are provided.");
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
         this.attributes.put(key, value);
         return this;
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference
-     * to this object so that method calls can be chained together.
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePlatformApplicationRequest clearAttributesEntries() {
@@ -240,8 +220,8 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -252,11 +232,11 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -273,18 +253,15 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
         CreatePlatformApplicationRequest other = (CreatePlatformApplicationRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
-        if (other.getPlatform() != null
-                && other.getPlatform().equals(this.getPlatform()) == false)
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getAttributes() != null
-                && other.getAttributes().equals(this.getAttributes()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         return true;
     }
@@ -294,12 +271,9 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode
-                + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 
@@ -307,4 +281,5 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
     public CreatePlatformApplicationRequest clone() {
         return (CreatePlatformApplicationRequest) super.clone();
     }
+
 }

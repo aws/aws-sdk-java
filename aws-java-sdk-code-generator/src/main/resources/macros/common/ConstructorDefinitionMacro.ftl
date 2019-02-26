@@ -11,8 +11,8 @@ public ${shape.shapeName}() { }
     ${constructor.documentation}
     public ${shape.shapeName}(${constructor.argumentsDeclaration}) {
     <#list constructor.arguments as argument>
-        <#local memberName = shape.getMemberByVariableName(argument.name).name />
-        set${memberName}(${argument.name}<#if argument.isEnumArg>.toString()</#if>);
+        <#local member = shape.getMemberByVariableName(argument.name) />
+        ${member.setterMethodName}(${argument.name}<#if argument.isEnumArg>.toString()</#if>);
     </#list>
     }
 

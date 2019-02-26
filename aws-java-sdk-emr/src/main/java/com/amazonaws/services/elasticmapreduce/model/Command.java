@@ -1,29 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * An entity describing an executable that runs on a cluster.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Command" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Command implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -76,8 +79,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withName(String name) {
@@ -117,8 +119,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param scriptPath
      *        The Amazon S3 location of the command script.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withScriptPath(String scriptPath) {
@@ -164,22 +165,19 @@ public class Command implements Serializable, Cloneable {
      * Arguments for Amazon EMR to pass to the command for execution.
      * </p>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArgs(java.util.Collection)} or
-     * {@link #withArgs(java.util.Collection)} if you want to override the
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArgs(java.util.Collection)} or {@link #withArgs(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param args
      *        Arguments for Amazon EMR to pass to the command for execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withArgs(String... args) {
         if (this.args == null) {
-            setArgs(new com.amazonaws.internal.SdkInternalList<String>(
-                    args.length));
+            setArgs(new com.amazonaws.internal.SdkInternalList<String>(args.length));
         }
         for (String ele : args) {
             this.args.add(ele);
@@ -194,8 +192,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param args
      *        Arguments for Amazon EMR to pass to the command for execution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Command withArgs(java.util.Collection<String> args) {
@@ -204,8 +201,8 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -216,11 +213,11 @@ public class Command implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getScriptPath() != null)
-            sb.append("ScriptPath: " + getScriptPath() + ",");
+            sb.append("ScriptPath: ").append(getScriptPath()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs());
+            sb.append("Args: ").append(getArgs());
         sb.append("}");
         return sb.toString();
     }
@@ -237,18 +234,15 @@ public class Command implements Serializable, Cloneable {
         Command other = (Command) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getScriptPath() == null ^ this.getScriptPath() == null)
             return false;
-        if (other.getScriptPath() != null
-                && other.getScriptPath().equals(this.getScriptPath()) == false)
+        if (other.getScriptPath() != null && other.getScriptPath().equals(this.getScriptPath()) == false)
             return false;
         if (other.getArgs() == null ^ this.getArgs() == null)
             return false;
-        if (other.getArgs() != null
-                && other.getArgs().equals(this.getArgs()) == false)
+        if (other.getArgs() != null && other.getArgs().equals(this.getArgs()) == false)
             return false;
         return true;
     }
@@ -258,12 +252,9 @@ public class Command implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getScriptPath() == null) ? 0 : getScriptPath().hashCode());
-        hashCode = prime * hashCode
-                + ((getArgs() == null) ? 0 : getArgs().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getScriptPath() == null) ? 0 : getScriptPath().hashCode());
+        hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode());
         return hashCode;
     }
 
@@ -272,9 +263,13 @@ public class Command implements Serializable, Cloneable {
         try {
             return (Command) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.CommandMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

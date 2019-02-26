@@ -20,6 +20,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.amazonaws.handlers.HandlerContextKey;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -34,10 +35,12 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.SyncProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 
+import utils.model.EmptyAmazonWebServiceRequest;
+
 public class AmazonWebServiceRequestTest {
 
     @Test
-    public void testClone() {
+    public void cloneSourceAndRootBehaviorShouldBeCorrect() {
         AmazonWebServiceRequest root = new AmazonWebServiceRequest() {};
         assertNull(root.getCloneSource());
         assertNull(root.getCloneRoot());
@@ -49,6 +52,32 @@ public class AmazonWebServiceRequestTest {
         AmazonWebServiceRequest clone2 = clone.clone();
         assertEquals(clone, clone2.getCloneSource());
         assertEquals(root, clone2.getCloneRoot());
+    }
+
+    @Test
+    public void contextBehaviorShouldBeCorrect() {
+        final String givenContextValue = "Hello";
+        HandlerContextKey<String> context = new HandlerContextKey<String>("");
+        AmazonWebServiceRequest request = new AmazonWebServiceRequest() {};
+
+        // Requests should store context
+        request.addHandlerContext(context, "Hello");
+
+        assertEquals(request.getHandlerContext().get(context), givenContextValue);
+        assertEquals(request.getHandlerContext(context), givenContextValue);
+
+        // Clones should inherit context
+        AmazonWebServiceRequest clone = request.clone();
+
+        assertEquals(clone.getHandlerContext().get(context), givenContextValue);
+        assertEquals(clone.getHandlerContext(context), givenContextValue);
+
+        // Modifications of request and clone context should not affect each other
+        clone.addHandlerContext(context, "Hello2");
+        request.addHandlerContext(context, "Hello3");
+
+        assertEquals(clone.getHandlerContext(context), "Hello2");
+        assertEquals(request.getHandlerContext(context), "Hello3");
     }
 
     @Test
@@ -88,6 +117,13 @@ public class AmazonWebServiceRequestTest {
         // After copy
         from.copyBaseTo(to);
         verifyBaseAfterCopy(listener, credentials, collector, from, to);
+    }
+
+    @Test
+    public void nullCredentialsSet_ReturnsNullProvider() {
+        AmazonWebServiceRequest request = new EmptyAmazonWebServiceRequest();
+        request.setRequestCredentials(null);
+        assertNull(request.getRequestCredentialsProvider());
     }
 
     public static void verifyBaseBeforeCopy(final AmazonWebServiceRequest to) {

@@ -1,35 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Represents the input for a request action.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS API
+ *      Documentation</a>
  */
-public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update capacity for.
+     * Unique identifier for a fleet to update capacity for.
      * </p>
      */
     private String fleetId;
@@ -41,26 +42,24 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
     private Integer desiredInstances;
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      */
     private Integer maxSize;
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update capacity for.
+     * Unique identifier for a fleet to update capacity for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update capacity for.
+     *        Unique identifier for a fleet to update capacity for.
      */
 
     public void setFleetId(String fleetId) {
@@ -69,10 +68,10 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update capacity for.
+     * Unique identifier for a fleet to update capacity for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to update capacity for.
+     * @return Unique identifier for a fleet to update capacity for.
      */
 
     public String getFleetId() {
@@ -81,13 +80,12 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update capacity for.
+     * Unique identifier for a fleet to update capacity for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update capacity for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Unique identifier for a fleet to update capacity for.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withFleetId(String fleetId) {
@@ -127,25 +125,21 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * 
      * @param desiredInstances
      *        Number of EC2 instances you want this fleet to host.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFleetCapacityRequest withDesiredInstances(
-            Integer desiredInstances) {
+    public UpdateFleetCapacityRequest withDesiredInstances(Integer desiredInstances) {
         setDesiredInstances(desiredInstances);
         return this;
     }
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if
-     *        not set is 0.
+     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public void setMinSize(Integer minSize) {
@@ -154,12 +148,10 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
-     * @return Minimum value allowed for the fleet's instance count. Default if
-     *         not set is 0.
+     * @return Minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public Integer getMinSize() {
@@ -168,15 +160,12 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set
-     * is 0.
+     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if
-     *        not set is 0.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withMinSize(Integer minSize) {
@@ -186,13 +175,11 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if
-     *        not set is 1.
+     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -201,12 +188,10 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
-     * @return Maximum value allowed for the fleet's instance count. Default if
-     *         not set is 1.
+     * @return Maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public Integer getMaxSize() {
@@ -215,15 +200,12 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set
-     * is 1.
+     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if
-     *        not set is 1.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withMaxSize(Integer maxSize) {
@@ -232,8 +214,8 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -244,13 +226,13 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getDesiredInstances() != null)
-            sb.append("DesiredInstances: " + getDesiredInstances() + ",");
+            sb.append("DesiredInstances: ").append(getDesiredInstances()).append(",");
         if (getMinSize() != null)
-            sb.append("MinSize: " + getMinSize() + ",");
+            sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
-            sb.append("MaxSize: " + getMaxSize());
+            sb.append("MaxSize: ").append(getMaxSize());
         sb.append("}");
         return sb.toString();
     }
@@ -267,25 +249,19 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
         UpdateFleetCapacityRequest other = (UpdateFleetCapacityRequest) obj;
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
-        if (other.getFleetId() != null
-                && other.getFleetId().equals(this.getFleetId()) == false)
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
-        if (other.getDesiredInstances() == null
-                ^ this.getDesiredInstances() == null)
+        if (other.getDesiredInstances() == null ^ this.getDesiredInstances() == null)
             return false;
-        if (other.getDesiredInstances() != null
-                && other.getDesiredInstances().equals(
-                        this.getDesiredInstances()) == false)
+        if (other.getDesiredInstances() != null && other.getDesiredInstances().equals(this.getDesiredInstances()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
-        if (other.getMinSize() != null
-                && other.getMinSize().equals(this.getMinSize()) == false)
+        if (other.getMinSize() != null && other.getMinSize().equals(this.getMinSize()) == false)
             return false;
         if (other.getMaxSize() == null ^ this.getMaxSize() == null)
             return false;
-        if (other.getMaxSize() != null
-                && other.getMaxSize().equals(this.getMaxSize()) == false)
+        if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false)
             return false;
         return true;
     }
@@ -295,16 +271,10 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDesiredInstances() == null) ? 0 : getDesiredInstances()
-                        .hashCode());
-        hashCode = prime * hashCode
-                + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
-        hashCode = prime * hashCode
-                + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getDesiredInstances() == null) ? 0 : getDesiredInstances().hashCode());
+        hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
+        hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         return hashCode;
     }
 
@@ -312,4 +282,5 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
     public UpdateFleetCapacityRequest clone() {
         return (UpdateFleetCapacityRequest) super.clone();
     }
+
 }

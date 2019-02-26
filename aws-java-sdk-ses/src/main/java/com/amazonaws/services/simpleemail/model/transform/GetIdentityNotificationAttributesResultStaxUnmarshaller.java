@@ -1,27 +1,23 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
 
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.transform.Unmarshaller;
@@ -32,17 +28,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * GetIdentityNotificationAttributesResult StAX Unmarshaller
  */
-public class GetIdentityNotificationAttributesResultStaxUnmarshaller
-        implements
-        Unmarshaller<GetIdentityNotificationAttributesResult, StaxUnmarshallerContext> {
 
-    private static class NotificationAttributesMapEntryUnmarshaller
-            implements
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetIdentityNotificationAttributesResultStaxUnmarshaller implements Unmarshaller<GetIdentityNotificationAttributesResult, StaxUnmarshallerContext> {
+
+    private static class NotificationAttributesMapEntryUnmarshaller implements
             Unmarshaller<Map.Entry<String, IdentityNotificationAttributes>, StaxUnmarshallerContext> {
 
         @Override
-        public Entry<String, IdentityNotificationAttributes> unmarshall(
-                StaxUnmarshallerContext context) throws Exception {
+        public Entry<String, IdentityNotificationAttributes> unmarshall(StaxUnmarshallerContext context) throws Exception {
             int originalDepth = context.getCurrentDepth();
             int targetDepth = originalDepth + 1;
 
@@ -55,13 +49,11 @@ public class GetIdentityNotificationAttributesResultStaxUnmarshaller
 
                 if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                     if (context.testExpression("key", targetDepth)) {
-                        entry.setKey(StringStaxUnmarshaller.getInstance()
-                                .unmarshall(context));
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
                     if (context.testExpression("value", targetDepth)) {
-                        entry.setValue(IdentityNotificationAttributesStaxUnmarshaller
-                                .getInstance().unmarshall(context));
+                        entry.setValue(IdentityNotificationAttributesStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
                 } else if (xmlEvent.isEndElement()) {
@@ -81,8 +73,7 @@ public class GetIdentityNotificationAttributesResultStaxUnmarshaller
 
     }
 
-    public GetIdentityNotificationAttributesResult unmarshall(
-            StaxUnmarshallerContext context) throws Exception {
+    public GetIdentityNotificationAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetIdentityNotificationAttributesResult getIdentityNotificationAttributesResult = new GetIdentityNotificationAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
@@ -97,13 +88,9 @@ public class GetIdentityNotificationAttributesResultStaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("NotificationAttributes/entry",
-                        targetDepth)) {
-                    Entry<String, IdentityNotificationAttributes> entry = NotificationAttributesMapEntryUnmarshaller
-                            .getInstance().unmarshall(context);
-                    getIdentityNotificationAttributesResult
-                            .addNotificationAttributesEntry(entry.getKey(),
-                                    entry.getValue());
+                if (context.testExpression("NotificationAttributes/entry", targetDepth)) {
+                    Entry<String, IdentityNotificationAttributes> entry = NotificationAttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    getIdentityNotificationAttributesResult.addNotificationAttributesEntry(entry.getKey(), entry.getValue());
                     continue;
                 }
 

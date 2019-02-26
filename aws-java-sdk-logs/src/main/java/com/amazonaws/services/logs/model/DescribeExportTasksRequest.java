@@ -1,69 +1,62 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DescribeExportTasksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Export task that matches the specified task Id will be returned. This can
-     * result in zero or one export task.
+     * The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      * </p>
      */
     private String taskId;
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeExportTasks</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * Export task that matches the specified task Id will be returned. This can
-     * result in zero or one export task.
+     * The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      * </p>
      * 
      * @param taskId
-     *        Export task that matches the specified task Id will be returned.
-     *        This can result in zero or one export task.
+     *        The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      */
 
     public void setTaskId(String taskId) {
@@ -72,12 +65,10 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Export task that matches the specified task Id will be returned. This can
-     * result in zero or one export task.
+     * The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      * </p>
      * 
-     * @return Export task that matches the specified task Id will be returned.
-     *         This can result in zero or one export task.
+     * @return The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      */
 
     public String getTaskId() {
@@ -86,15 +77,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Export task that matches the specified task Id will be returned. This can
-     * result in zero or one export task.
+     * The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
      * </p>
      * 
      * @param taskId
-     *        Export task that matches the specified task Id will be returned.
-     *        This can result in zero or one export task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksRequest withTaskId(String taskId) {
@@ -104,13 +92,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      * 
      * @param statusCode
-     *        All export tasks that matches the specified status code will be
-     *        returned. This can return zero or more export tasks.
+     *        The status code of the export task. Specifying a status code filters the results to zero or more export
+     *        tasks.
      * @see ExportTaskStatusCode
      */
 
@@ -120,12 +107,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      * 
-     * @return All export tasks that matches the specified status code will be
-     *         returned. This can return zero or more export tasks.
+     * @return The status code of the export task. Specifying a status code filters the results to zero or more export
+     *         tasks.
      * @see ExportTaskStatusCode
      */
 
@@ -135,15 +121,13 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      * 
      * @param statusCode
-     *        All export tasks that matches the specified status code will be
-     *        returned. This can return zero or more export tasks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status code of the export task. Specifying a status code filters the results to zero or more export
+     *        tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportTaskStatusCode
      */
 
@@ -154,51 +138,43 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      * 
      * @param statusCode
-     *        All export tasks that matches the specified status code will be
-     *        returned. This can return zero or more export tasks.
+     *        The status code of the export task. Specifying a status code filters the results to zero or more export
+     *        tasks.
      * @see ExportTaskStatusCode
      */
 
     public void setStatusCode(ExportTaskStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
      * <p>
-     * All export tasks that matches the specified status code will be returned.
-     * This can return zero or more export tasks.
+     * The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
      * </p>
      * 
      * @param statusCode
-     *        All export tasks that matches the specified status code will be
-     *        returned. This can return zero or more export tasks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The status code of the export task. Specifying a status code filters the results to zero or more export
+     *        tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportTaskStatusCode
      */
 
-    public DescribeExportTasksRequest withStatusCode(
-            ExportTaskStatusCode statusCode) {
-        setStatusCode(statusCode);
+    public DescribeExportTasksRequest withStatusCode(ExportTaskStatusCode statusCode) {
+        this.statusCode = statusCode.toString();
         return this;
     }
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeExportTasks</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeExportTasks</code> request.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -207,14 +183,10 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeExportTasks</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return A string token used for pagination that points to the next page
-     *         of results. It must be a value obtained from the response of the
-     *         previous <code class="code">DescribeExportTasks</code> request.
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -223,17 +195,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of
-     * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeExportTasks</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of
-     *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeExportTasks</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksRequest withNextToken(String nextToken) {
@@ -243,13 +210,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public void setLimit(Integer limit) {
@@ -258,12 +223,10 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
-     * @return The maximum number of items returned in the response. If you
-     *         don't specify a value, the request would return up to 50 items.
+     * @return The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public Integer getLimit() {
@@ -272,15 +235,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the request would return up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't
-     *        specify a value, the request would return up to 50 items.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExportTasksRequest withLimit(Integer limit) {
@@ -289,8 +249,8 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -301,13 +261,13 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -324,23 +284,19 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
         DescribeExportTasksRequest other = (DescribeExportTasksRequest) obj;
         if (other.getTaskId() == null ^ this.getTaskId() == null)
             return false;
-        if (other.getTaskId() != null
-                && other.getTaskId().equals(this.getTaskId()) == false)
+        if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
-        if (other.getStatusCode() != null
-                && other.getStatusCode().equals(this.getStatusCode()) == false)
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getNextToken() != null
-                && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
-        if (other.getLimit() != null
-                && other.getLimit().equals(this.getLimit()) == false)
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
         return true;
     }
@@ -350,14 +306,10 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
-        hashCode = prime * hashCode
-                + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
-        hashCode = prime * hashCode
-                + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode
-                + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 
@@ -365,4 +317,5 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
     public DescribeExportTasksRequest clone() {
         return (DescribeExportTasksRequest) super.clone();
     }
+
 }

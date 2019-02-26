@@ -1,37 +1,33 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for a double-precision 64-bit floating point field. Present if
- * <code>IndexFieldType</code> specifies the field is of type
- * <code>double</code>. All options are enabled by default.
+ * Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the
+ * field is of type <code>double</code>. All options are enabled by default.
  * </p>
  */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DoubleOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value to use for the field if the field isn't specified for a document.
-     * This can be important if you are using the field in an expression and
-     * that field is not present in every document.
+     * A value to use for the field if the field isn't specified for a document. This can be important if you are using
+     * the field in an expression and that field is not present in every document.
      * </p>
      */
     private Double defaultValue;
@@ -68,15 +64,13 @@ public class DoubleOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value to use for the field if the field isn't specified for a document.
-     * This can be important if you are using the field in an expression and
-     * that field is not present in every document.
+     * A value to use for the field if the field isn't specified for a document. This can be important if you are using
+     * the field in an expression and that field is not present in every document.
      * </p>
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document. This can be important if you are using the field in an
-     *        expression and that field is not present in every document.
+     *        A value to use for the field if the field isn't specified for a document. This can be important if you are
+     *        using the field in an expression and that field is not present in every document.
      */
 
     public void setDefaultValue(Double defaultValue) {
@@ -85,14 +79,12 @@ public class DoubleOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value to use for the field if the field isn't specified for a document.
-     * This can be important if you are using the field in an expression and
-     * that field is not present in every document.
+     * A value to use for the field if the field isn't specified for a document. This can be important if you are using
+     * the field in an expression and that field is not present in every document.
      * </p>
      * 
-     * @return A value to use for the field if the field isn't specified for a
-     *         document. This can be important if you are using the field in an
-     *         expression and that field is not present in every document.
+     * @return A value to use for the field if the field isn't specified for a document. This can be important if you
+     *         are using the field in an expression and that field is not present in every document.
      */
 
     public Double getDefaultValue() {
@@ -101,17 +93,14 @@ public class DoubleOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value to use for the field if the field isn't specified for a document.
-     * This can be important if you are using the field in an expression and
-     * that field is not present in every document.
+     * A value to use for the field if the field isn't specified for a document. This can be important if you are using
+     * the field in an expression and that field is not present in every document.
      * </p>
      * 
      * @param defaultValue
-     *        A value to use for the field if the field isn't specified for a
-     *        document. This can be important if you are using the field in an
-     *        expression and that field is not present in every document.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A value to use for the field if the field isn't specified for a document. This can be important if you are
+     *        using the field in an expression and that field is not present in every document.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withDefaultValue(Double defaultValue) {
@@ -151,8 +140,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * 
      * @param sourceField
      *        The name of the source field to map to the field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withSourceField(String sourceField) {
@@ -192,8 +180,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * 
      * @param facetEnabled
      *        Whether facet information can be returned for the field.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withFacetEnabled(Boolean facetEnabled) {
@@ -245,8 +232,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * 
      * @param searchEnabled
      *        Whether the contents of the field are searchable.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withSearchEnabled(Boolean searchEnabled) {
@@ -272,8 +258,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
+     *        Whether the contents of the field can be returned in the search results.
      */
 
     public void setReturnEnabled(Boolean returnEnabled) {
@@ -285,8 +270,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean getReturnEnabled() {
@@ -299,10 +283,8 @@ public class DoubleOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param returnEnabled
-     *        Whether the contents of the field can be returned in the search
-     *        results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Whether the contents of the field can be returned in the search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withReturnEnabled(Boolean returnEnabled) {
@@ -315,8 +297,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * Whether the contents of the field can be returned in the search results.
      * </p>
      * 
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * @return Whether the contents of the field can be returned in the search results.
      */
 
     public Boolean isReturnEnabled() {
@@ -355,8 +336,7 @@ public class DoubleOptions implements Serializable, Cloneable {
      * 
      * @param sortEnabled
      *        Whether the field can be used to sort the search results.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DoubleOptions withSortEnabled(Boolean sortEnabled) {
@@ -377,8 +357,8 @@ public class DoubleOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -389,17 +369,17 @@ public class DoubleOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getSourceField() != null)
-            sb.append("SourceField: " + getSourceField() + ",");
+            sb.append("SourceField: ").append(getSourceField()).append(",");
         if (getFacetEnabled() != null)
-            sb.append("FacetEnabled: " + getFacetEnabled() + ",");
+            sb.append("FacetEnabled: ").append(getFacetEnabled()).append(",");
         if (getSearchEnabled() != null)
-            sb.append("SearchEnabled: " + getSearchEnabled() + ",");
+            sb.append("SearchEnabled: ").append(getSearchEnabled()).append(",");
         if (getReturnEnabled() != null)
-            sb.append("ReturnEnabled: " + getReturnEnabled() + ",");
+            sb.append("ReturnEnabled: ").append(getReturnEnabled()).append(",");
         if (getSortEnabled() != null)
-            sb.append("SortEnabled: " + getSortEnabled());
+            sb.append("SortEnabled: ").append(getSortEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -416,33 +396,27 @@ public class DoubleOptions implements Serializable, Cloneable {
         DoubleOptions other = (DoubleOptions) obj;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getDefaultValue() != null
-                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
         if (other.getSourceField() == null ^ this.getSourceField() == null)
             return false;
-        if (other.getSourceField() != null
-                && other.getSourceField().equals(this.getSourceField()) == false)
+        if (other.getSourceField() != null && other.getSourceField().equals(this.getSourceField()) == false)
             return false;
         if (other.getFacetEnabled() == null ^ this.getFacetEnabled() == null)
             return false;
-        if (other.getFacetEnabled() != null
-                && other.getFacetEnabled().equals(this.getFacetEnabled()) == false)
+        if (other.getFacetEnabled() != null && other.getFacetEnabled().equals(this.getFacetEnabled()) == false)
             return false;
         if (other.getSearchEnabled() == null ^ this.getSearchEnabled() == null)
             return false;
-        if (other.getSearchEnabled() != null
-                && other.getSearchEnabled().equals(this.getSearchEnabled()) == false)
+        if (other.getSearchEnabled() != null && other.getSearchEnabled().equals(this.getSearchEnabled()) == false)
             return false;
         if (other.getReturnEnabled() == null ^ this.getReturnEnabled() == null)
             return false;
-        if (other.getReturnEnabled() != null
-                && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
+        if (other.getReturnEnabled() != null && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
             return false;
         if (other.getSortEnabled() == null ^ this.getSortEnabled() == null)
             return false;
-        if (other.getSortEnabled() != null
-                && other.getSortEnabled().equals(this.getSortEnabled()) == false)
+        if (other.getSortEnabled() != null && other.getSortEnabled().equals(this.getSortEnabled()) == false)
             return false;
         return true;
     }
@@ -452,28 +426,12 @@ public class DoubleOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getFacetEnabled() == null) ? 0 : getFacetEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSearchEnabled() == null) ? 0 : getSearchEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getReturnEnabled() == null) ? 0 : getReturnEnabled()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getSortEnabled() == null) ? 0 : getSortEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getSourceField() == null) ? 0 : getSourceField().hashCode());
+        hashCode = prime * hashCode + ((getFacetEnabled() == null) ? 0 : getFacetEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSearchEnabled() == null) ? 0 : getSearchEnabled().hashCode());
+        hashCode = prime * hashCode + ((getReturnEnabled() == null) ? 0 : getReturnEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSortEnabled() == null) ? 0 : getSortEnabled().hashCode());
         return hashCode;
     }
 
@@ -482,9 +440,8 @@ public class DoubleOptions implements Serializable, Cloneable {
         try {
             return (DoubleOptions) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

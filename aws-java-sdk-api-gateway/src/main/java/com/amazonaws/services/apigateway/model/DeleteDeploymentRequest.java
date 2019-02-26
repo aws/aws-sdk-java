@@ -1,55 +1,50 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to delete a <a>Deployment</a> resource.
+ * Requests API Gateway to delete a <a>Deployment</a> resource.
  * </p>
  */
-public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
-     * resource to delete.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource to delete.
+     * [Required] The identifier of the <a>Deployment</a> resource to delete.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
-     * resource to delete.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the
-     *        <a>Deployment</a> resource to delete.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -58,12 +53,10 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
-     * resource to delete.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The identifier of the <a>RestApi</a> resource for the
-     *         <a>Deployment</a> resource to delete.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -72,15 +65,12 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Deployment</a>
-     * resource to delete.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the
-     *        <a>Deployment</a> resource to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteDeploymentRequest withRestApiId(String restApiId) {
@@ -90,11 +80,11 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource to delete.
+     * [Required] The identifier of the <a>Deployment</a> resource to delete.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> resource to delete.
+     *        [Required] The identifier of the <a>Deployment</a> resource to delete.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -103,10 +93,10 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource to delete.
+     * [Required] The identifier of the <a>Deployment</a> resource to delete.
      * </p>
      * 
-     * @return The identifier of the <a>Deployment</a> resource to delete.
+     * @return [Required] The identifier of the <a>Deployment</a> resource to delete.
      */
 
     public String getDeploymentId() {
@@ -115,13 +105,12 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource to delete.
+     * [Required] The identifier of the <a>Deployment</a> resource to delete.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> resource to delete.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        [Required] The identifier of the <a>Deployment</a> resource to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteDeploymentRequest withDeploymentId(String deploymentId) {
@@ -130,8 +119,8 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -142,9 +131,9 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +150,11 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
         DeleteDeploymentRequest other = (DeleteDeploymentRequest) obj;
         if (other.getRestApiId() == null ^ this.getRestApiId() == null)
             return false;
-        if (other.getRestApiId() != null
-                && other.getRestApiId().equals(this.getRestApiId()) == false)
+        if (other.getRestApiId() != null && other.getRestApiId().equals(this.getRestApiId()) == false)
             return false;
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
-        if (other.getDeploymentId() != null
-                && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
         return true;
     }
@@ -177,12 +164,8 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDeploymentId() == null) ? 0 : getDeploymentId()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         return hashCode;
     }
 
@@ -190,4 +173,5 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
     public DeleteDeploymentRequest clone() {
         return (DeleteDeploymentRequest) super.clone();
     }
+
 }

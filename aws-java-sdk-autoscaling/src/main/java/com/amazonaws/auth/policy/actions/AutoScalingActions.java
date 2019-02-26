@@ -1,27 +1,25 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.auth.policy.actions;
+
+import javax.annotation.Generated;
 
 import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Auto Scaling.
  */
-
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AutoScalingActions implements Action {
 
     /** Represents any action executed on Auto Scaling. */
@@ -29,8 +27,14 @@ public enum AutoScalingActions implements Action {
 
     /** Action for the AttachInstances operation. */
     AttachInstances("autoscaling:AttachInstances"),
+    /** Action for the AttachLoadBalancerTargetGroups operation. */
+    AttachLoadBalancerTargetGroups("autoscaling:AttachLoadBalancerTargetGroups"),
     /** Action for the AttachLoadBalancers operation. */
     AttachLoadBalancers("autoscaling:AttachLoadBalancers"),
+    /** Action for the BatchDeleteScheduledAction operation. */
+    BatchDeleteScheduledAction("autoscaling:BatchDeleteScheduledAction"),
+    /** Action for the BatchPutScheduledUpdateGroupAction operation. */
+    BatchPutScheduledUpdateGroupAction("autoscaling:BatchPutScheduledUpdateGroupAction"),
     /** Action for the CompleteLifecycleAction operation. */
     CompleteLifecycleAction("autoscaling:CompleteLifecycleAction"),
     /** Action for the CreateAutoScalingGroup operation. */
@@ -46,8 +50,7 @@ public enum AutoScalingActions implements Action {
     /** Action for the DeleteLifecycleHook operation. */
     DeleteLifecycleHook("autoscaling:DeleteLifecycleHook"),
     /** Action for the DeleteNotificationConfiguration operation. */
-    DeleteNotificationConfiguration(
-            "autoscaling:DeleteNotificationConfiguration"),
+    DeleteNotificationConfiguration("autoscaling:DeleteNotificationConfiguration"),
     /** Action for the DeletePolicy operation. */
     DeletePolicy("autoscaling:DeletePolicy"),
     /** Action for the DeleteScheduledAction operation. */
@@ -63,21 +66,21 @@ public enum AutoScalingActions implements Action {
     /** Action for the DescribeAutoScalingInstances operation. */
     DescribeAutoScalingInstances("autoscaling:DescribeAutoScalingInstances"),
     /** Action for the DescribeAutoScalingNotificationTypes operation. */
-    DescribeAutoScalingNotificationTypes(
-            "autoscaling:DescribeAutoScalingNotificationTypes"),
+    DescribeAutoScalingNotificationTypes("autoscaling:DescribeAutoScalingNotificationTypes"),
     /** Action for the DescribeLaunchConfigurations operation. */
     DescribeLaunchConfigurations("autoscaling:DescribeLaunchConfigurations"),
     /** Action for the DescribeLifecycleHookTypes operation. */
     DescribeLifecycleHookTypes("autoscaling:DescribeLifecycleHookTypes"),
     /** Action for the DescribeLifecycleHooks operation. */
     DescribeLifecycleHooks("autoscaling:DescribeLifecycleHooks"),
+    /** Action for the DescribeLoadBalancerTargetGroups operation. */
+    DescribeLoadBalancerTargetGroups("autoscaling:DescribeLoadBalancerTargetGroups"),
     /** Action for the DescribeLoadBalancers operation. */
     DescribeLoadBalancers("autoscaling:DescribeLoadBalancers"),
     /** Action for the DescribeMetricCollectionTypes operation. */
     DescribeMetricCollectionTypes("autoscaling:DescribeMetricCollectionTypes"),
     /** Action for the DescribeNotificationConfigurations operation. */
-    DescribeNotificationConfigurations(
-            "autoscaling:DescribeNotificationConfigurations"),
+    DescribeNotificationConfigurations("autoscaling:DescribeNotificationConfigurations"),
     /** Action for the DescribePolicies operation. */
     DescribePolicies("autoscaling:DescribePolicies"),
     /** Action for the DescribeScalingActivities operation. */
@@ -92,6 +95,8 @@ public enum AutoScalingActions implements Action {
     DescribeTerminationPolicyTypes("autoscaling:DescribeTerminationPolicyTypes"),
     /** Action for the DetachInstances operation. */
     DetachInstances("autoscaling:DetachInstances"),
+    /** Action for the DetachLoadBalancerTargetGroups operation. */
+    DetachLoadBalancerTargetGroups("autoscaling:DetachLoadBalancerTargetGroups"),
     /** Action for the DetachLoadBalancers operation. */
     DetachLoadBalancers("autoscaling:DetachLoadBalancers"),
     /** Action for the DisableMetricsCollection operation. */
@@ -125,8 +130,7 @@ public enum AutoScalingActions implements Action {
     /** Action for the SuspendProcesses operation. */
     SuspendProcesses("autoscaling:SuspendProcesses"),
     /** Action for the TerminateInstanceInAutoScalingGroup operation. */
-    TerminateInstanceInAutoScalingGroup(
-            "autoscaling:TerminateInstanceInAutoScalingGroup"),
+    TerminateInstanceInAutoScalingGroup("autoscaling:TerminateInstanceInAutoScalingGroup"),
     /** Action for the UpdateAutoScalingGroup operation. */
     UpdateAutoScalingGroup("autoscaling:UpdateAutoScalingGroup"),
 

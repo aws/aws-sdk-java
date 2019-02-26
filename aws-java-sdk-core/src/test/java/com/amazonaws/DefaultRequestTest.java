@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,5 +37,25 @@ public class DefaultRequestTest {
 
         Assert.assertEquals(intValue, request.getHandlerContext
                 (integerContextKey));
+    }
+
+    @Test
+    public void defaultRequestShouldInheritModelRequestContextCopy() {
+        HandlerContextKey<String> context = new HandlerContextKey<String>("");
+
+        AmazonWebServiceRequest modelRequest = new AmazonWebServiceRequest() {};
+
+        // Requests should inherit model request context
+        modelRequest.addHandlerContext(context, "Hello");
+        Request<?> request = new DefaultRequest<Object>(modelRequest, "service-name");
+
+        Assert.assertEquals("Hello", request.getHandlerContext(context));
+
+        // After copied, request contexts should be modifiable separately
+        modelRequest.addHandlerContext(context, "Hello2");
+        request.addHandlerContext(context, "Hello3");
+
+        Assert.assertEquals("Hello2", modelRequest.getHandlerContext(context));
+        Assert.assertEquals("Hello3", request.getHandlerContext(context));
     }
 }

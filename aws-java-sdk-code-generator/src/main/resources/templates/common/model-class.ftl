@@ -1,16 +1,25 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+<#if shouldEmitStructuredPojoInterface>
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+</#if>
 
+<#if shape.documentation?has_content || awsDocsUrl?has_content>
 /**
- * <#if shape.documentation?has_content>${shape.documentation}</#if>
+<#if shape.documentation?has_content> * ${shape.documentation}</#if>
+<#if awsDocsUrl?has_content> * ${awsDocsUrl}</#if>
  */
+</#if>
 <#if shape.deprecated>
 @Deprecated
 </#if>
-public class ${shape.shapeName} implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ${shape.shapeName} <#if baseClassFqcn??>extends ${baseClassFqcn}</#if>
+    implements Serializable, Cloneable<#if shouldEmitStructuredPojoInterface>, StructuredPojo</#if> {
 
     <@VariableDeclarationMacro.content shape/>
 
@@ -38,4 +47,12 @@ public class ${shape.shapeName} implements Serializable, Cloneable {
                     e);
         }
     }
+
+    <#if shouldEmitStructuredPojoInterface>
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+       ${transformPackage}.${shape.shapeName}Marshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+    </#if>
 }

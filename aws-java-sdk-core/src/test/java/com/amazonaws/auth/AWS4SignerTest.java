@@ -1,28 +1,25 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
+ * Copyright (c) 2016. Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
  *
- *  http://aws.amazon.com/apache2.0
+ * http://aws.amazon.com/apache2.0
  *
- * or in the "license" file accompanying this file. This file is
- * distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either
- * express or implied. See the License for the specific language
- * governing
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
 package com.amazonaws.auth;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import com.amazonaws.SignableRequest;
+import com.amazonaws.auth.internal.AWS4SignerUtils;
+
+import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,15 +27,12 @@ import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.Request;
-import com.amazonaws.auth.internal.AWS4SignerUtils;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
- * Unit tests for the
+ * Unit tests for AWS4Signer class
  */
 public class AWS4SignerTest {
 
@@ -81,7 +75,7 @@ public class AWS4SignerTest {
     @Test
     public void testDoubleURLEncode() {
         // Sanity-check that doubleUrlEncode is true by default.
-        Assert.assertTrue(signer.doubleUrlEncode);
+        assertTrue(signer.doubleUrlEncode);
     }
 
     @Test
@@ -96,7 +90,7 @@ public class AWS4SignerTest {
 
         AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
         // Test request without 'x-amz-sha256' header
-        Request<?> request = generateBasicRequest();
+        SignableRequest<?> request = generateBasicRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -119,13 +113,109 @@ public class AWS4SignerTest {
                 request.getHeaders().get("Authorization"));
     }
 
+    @Test
+    public void testPresigning() throws Exception {
+        final String EXPECTED_AMZ_SIGNATURE = "bf7ae1c2f266d347e290a2aee7b126d38b8a695149d003b9fab2ed1eb6d6ebda";
+        final String EXPECTED_AMZ_CREDENTIALS = "access/19810216/us-east-1/demo/aws4_request";
+        final String EXPECTED_AMZ_HEADER = "19810216T063000Z";
+        final String EXPECTED_AMZ_EXPIRES = "604800";
+
+        AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
+        // Test request without 'x-amz-sha256' header
+
+        SignableRequest<?> request = generateBasicRequest();
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        signer.setOverrideDate(c.getTime());
+        signer.setServiceName("demo");
+
+        signer.presignRequest(request, credentials, null);
+        assertEquals(EXPECTED_AMZ_SIGNATURE, request.getParameters().get("X-Amz-Signature").get(0));
+        assertEquals(EXPECTED_AMZ_CREDENTIALS,
+                     request.getParameters().get("X-Amz-Credential").get(0));
+        assertEquals(EXPECTED_AMZ_HEADER, request.getParameters().get("X-Amz-Date").get(0));
+        assertEquals(EXPECTED_AMZ_EXPIRES, request.getParameters().get("X-Amz-Expires").get(0));
+    }
+
+    /*
+     * This test verifies that SDK correctly signs the request for services which
+     * have non-matching service name and endpoint prefix.
+     */
+    @Test
+    public void testSigning_ForRequestToBjsRegion() throws Exception {
+
+        final String EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER =
+                "AWS4-HMAC-SHA256 Credential=access/19810216/cn-north-1/application-autoscaling/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=a6e694a96dfa9243b8a8ca6139a046de96dc7fcd2896c2cd7ff36daab48e78d0";
+
+        final String EXPECTED_AUTHORIZATION_HEADER_WITH_SHA256_HEADER =
+                "AWS4-HMAC-SHA256 Credential=access/19810216/cn-north-1/application-autoscaling/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date;x-amz-sha256, Signature=504f0cc7e4afdc30d985a6ba607917744539621c138a75f185dbfed652c8ebeb";
+
+
+        AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
+        // Test request without 'x-amz-sha256' header
+        SignableRequest<?> request = generateBasicRequestToBjs();
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        AWS4Signer signer = new AWS4Signer();
+        signer.setOverrideDate(c.getTime());
+        signer.setServiceName("application-autoscaling");
+        signer.setEndpointPrefix("autoscaling");
+
+        signer.sign(request, credentials);
+        assertEquals(EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER,
+                request.getHeaders().get("Authorization"));
+
+
+        // Test request with 'x-amz-sha256' header
+        request = generateBasicRequestToBjs();
+        request.addHeader("x-amz-sha256", "required");
+
+        signer.sign(request, credentials);
+        assertEquals(EXPECTED_AUTHORIZATION_HEADER_WITH_SHA256_HEADER,
+                request.getHeaders().get("Authorization"));
+    }
+
+    @Test
+    public void testPresigning_ForRequestToBjsRegion() throws Exception {
+        final String EXPECTED_AMZ_CREDENTIALS = "access/19810216/cn-north-1/application-autoscaling/aws4_request";
+        final String EXPECTED_AMZ_HEADER = "19810216T063000Z";
+        final String EXPECTED_AMZ_EXPIRES = "604800";
+
+        AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
+
+        // Test request without 'x-amz-sha256' header
+        SignableRequest<?> request = generateBasicRequestToBjs();
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        AWS4Signer signer = new AWS4Signer();
+        signer.setOverrideDate(c.getTime());
+        signer.setServiceName("application-autoscaling");
+        signer.setEndpointPrefix("autoscaling");
+
+        signer.presignRequest(request, credentials, null);
+
+        assertEquals(EXPECTED_AMZ_CREDENTIALS,
+                request.getParameters().get("X-Amz-Credential").get(0));
+        assertEquals(EXPECTED_AMZ_HEADER, request.getParameters().get("X-Amz-Date").get(0));
+        assertEquals(EXPECTED_AMZ_EXPIRES, request.getParameters().get("X-Amz-Expires").get(0));
+    }
+
     /**
      * Tests that if passed anonymous credentials, signer will not generate a signature
      */
     @Test
     public void testAnonymous() throws Exception {
         AWSCredentials credentials = new AnonymousAWSCredentials();
-        Request<?> request = generateBasicRequest();
+        SignableRequest<?> request = generateBasicRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -138,15 +228,45 @@ public class AWS4SignerTest {
         assertNull(request.getHeaders().get("Authorization"));
     }
 
-    private Request<?> generateBasicRequest() {
-        Request<?> request = new DefaultRequest<Void>("Foo");
-        request.setContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()));
-        request.addHeader("Host", "demo.us-east-1.amazonaws.com");
-        // HTTP header containing multiple spaces in a row.
-        request.addHeader("x-amz-archive-description", "test  test");
-        request.setResourcePath("/");
-        request.setEndpoint(URI.create("http://demo.us-east-1.amazonaws.com"));
-        return request;
+    /**
+     * x-amzn-trace-id should not be signed as it may be mutated by proxies or load balancers.
+     */
+    @Test
+    public void xAmznTraceId_NotSigned() throws Exception {
+        AWSCredentials credentials = new BasicAWSCredentials("akid", "skid");
+        SignableRequest<?> request = generateBasicRequest();
+        request.addHeader("X-Amzn-Trace-Id", " Root=1-584b150a-708479cb060007ffbf3ee1da;Parent=36d3dbcfd150aac9;Sampled=1");
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+        signer.setServiceName("demo");
+        signer.setOverrideDate(c.getTime());
+
+        signer.sign(request, credentials);
+
+        assertEquals(
+                "AWS4-HMAC-SHA256 Credential=akid/19810216/us-east-1/demo/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=581d0042389009a28d461124138f1fe8eeb8daed87611d2a2b47fd3d68d81d73",
+                request.getHeaders().get("Authorization"));
+    }
+
+    private SignableRequest<?> generateBasicRequest() {
+        return MockRequestBuilder.create()
+                .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                .withHeader("Host", "demo.us-east-1.amazonaws.com")
+                .withHeader("x-amz-archive-description", "test  test")
+                .withPath("/")
+                .withEndpoint("http://demo.us-east-1.amazonaws.com").build();
+    }
+
+    private SignableRequest<?> generateBasicRequestToBjs() {
+        return MockRequestBuilder.create()
+                .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                .withHeader("Host", "autoscaling.cn-north-1.amazonaws.com.cn")
+                .withHeader("x-amz-archive-description", "test  test")
+                .withPath("/")
+                .withEndpoint("http://autoscaling.cn-north-1.amazonaws.com.cn")
+                .build();
     }
 
     private String getOldTimeStamp(Date date) {

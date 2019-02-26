@@ -1,31 +1,32 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * SetLocalConsolePasswordInput
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword"
+ *      target="_top">AWS API Documentation</a>
  */
-public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SetLocalConsolePasswordRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**
@@ -53,8 +54,7 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
 
     /**
      * @param gatewayARN
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetLocalConsolePasswordRequest withGatewayARN(String gatewayARN) {
@@ -94,19 +94,17 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
      * 
      * @param localConsolePassword
      *        The password you want to set for your VM local console.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SetLocalConsolePasswordRequest withLocalConsolePassword(
-            String localConsolePassword) {
+    public SetLocalConsolePasswordRequest withLocalConsolePassword(String localConsolePassword) {
         setLocalConsolePassword(localConsolePassword);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -117,9 +115,9 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getLocalConsolePassword() != null)
-            sb.append("LocalConsolePassword: " + getLocalConsolePassword());
+            sb.append("LocalConsolePassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -136,15 +134,11 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
         SetLocalConsolePasswordRequest other = (SetLocalConsolePasswordRequest) obj;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
-        if (other.getGatewayARN() != null
-                && other.getGatewayARN().equals(this.getGatewayARN()) == false)
+        if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
-        if (other.getLocalConsolePassword() == null
-                ^ this.getLocalConsolePassword() == null)
+        if (other.getLocalConsolePassword() == null ^ this.getLocalConsolePassword() == null)
             return false;
-        if (other.getLocalConsolePassword() != null
-                && other.getLocalConsolePassword().equals(
-                        this.getLocalConsolePassword()) == false)
+        if (other.getLocalConsolePassword() != null && other.getLocalConsolePassword().equals(this.getLocalConsolePassword()) == false)
             return false;
         return true;
     }
@@ -154,12 +148,8 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLocalConsolePassword() == null) ? 0
-                        : getLocalConsolePassword().hashCode());
+        hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getLocalConsolePassword() == null) ? 0 : getLocalConsolePassword().hashCode());
         return hashCode;
     }
 
@@ -167,4 +157,5 @@ public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
     public SetLocalConsolePasswordRequest clone() {
         return (SetLocalConsolePasswordRequest) super.clone();
     }
+
 }

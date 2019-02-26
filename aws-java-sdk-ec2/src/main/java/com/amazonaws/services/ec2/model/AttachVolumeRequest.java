@@ -1,22 +1,20 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
@@ -26,16 +24,15 @@ import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
  * Contains the parameters for AttachVolume.
  * </p>
  */
-public class AttachVolumeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable, DryRunSupportedRequest<AttachVolumeRequest> {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AttachVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AttachVolumeRequest> {
 
     /**
      * <p>
-     * The ID of the EBS volume. The volume and instance must be within the same
-     * Availability Zone.
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
-    private String volumeId;
+    private String device;
     /**
      * <p>
      * The ID of the instance.
@@ -44,33 +41,28 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
     private String instanceId;
     /**
      * <p>
-     * The device name to expose to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      * </p>
      */
-    private String device;
+    private String volumeId;
 
     /**
-     * Default constructor for AttachVolumeRequest object. Callers should use
-     * the setter or fluent setter (with...) methods to initialize the object
-     * after creating it.
+     * Default constructor for AttachVolumeRequest object. Callers should use the setter or fluent setter (with...)
+     * methods to initialize the object after creating it.
      */
     public AttachVolumeRequest() {
     }
 
     /**
-     * Constructs a new AttachVolumeRequest object. Callers should use the
-     * setter or fluent setter (with...) methods to initialize any additional
-     * object members.
+     * Constructs a new AttachVolumeRequest object. Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
      * 
      * @param volumeId
-     *        The ID of the EBS volume. The volume and instance must be within
-     *        the same Availability Zone.
+     *        The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      * @param instanceId
      *        The ID of the instance.
      * @param device
-     *        The device name to expose to the instance (for example,
-     *        <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public AttachVolumeRequest(String volumeId, String instanceId, String device) {
         setVolumeId(volumeId);
@@ -80,48 +72,41 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the EBS volume. The volume and instance must be within the same
-     * Availability Zone.
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @param volumeId
-     *        The ID of the EBS volume. The volume and instance must be within
-     *        the same Availability Zone.
+     * @param device
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
+    public void setDevice(String device) {
+        this.device = device;
     }
 
     /**
      * <p>
-     * The ID of the EBS volume. The volume and instance must be within the same
-     * Availability Zone.
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The ID of the EBS volume. The volume and instance must be within
-     *         the same Availability Zone.
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
-    public String getVolumeId() {
-        return this.volumeId;
+    public String getDevice() {
+        return this.device;
     }
 
     /**
      * <p>
-     * The ID of the EBS volume. The volume and instance must be within the same
-     * Availability Zone.
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @param volumeId
-     *        The ID of the EBS volume. The volume and instance must be within
-     *        the same Availability Zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param device
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AttachVolumeRequest withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
+    public AttachVolumeRequest withDevice(String device) {
+        setDevice(device);
         return this;
     }
 
@@ -157,8 +142,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @param instanceId
      *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachVolumeRequest withInstanceId(String instanceId) {
@@ -168,67 +152,58 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The device name to expose to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      * </p>
      * 
-     * @param device
-     *        The device name to expose to the instance (for example,
-     *        <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @param volumeId
+     *        The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      */
 
-    public void setDevice(String device) {
-        this.device = device;
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
     }
 
     /**
      * <p>
-     * The device name to expose to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      * </p>
      * 
-     * @return The device name to expose to the instance (for example,
-     *         <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      */
 
-    public String getDevice() {
-        return this.device;
+    public String getVolumeId() {
+        return this.volumeId;
     }
 
     /**
      * <p>
-     * The device name to expose to the instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
      * </p>
      * 
-     * @param device
-     *        The device name to expose to the instance (for example,
-     *        <code>/dev/sdh</code> or <code>xvdh</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @param volumeId
+     *        The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AttachVolumeRequest withDevice(String device) {
-        setDevice(device);
+    public AttachVolumeRequest withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
         return this;
     }
 
     /**
-     * This method is intended for internal use only. Returns the marshaled
-     * request configured with additional parameters to enable operation
-     * dry-run.
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
      */
     @Override
     public Request<AttachVolumeRequest> getDryRunRequest() {
-        Request<AttachVolumeRequest> request = new AttachVolumeRequestMarshaller()
-                .marshall(this);
+        Request<AttachVolumeRequest> request = new AttachVolumeRequestMarshaller().marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -238,12 +213,12 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice());
+            sb.append("Device: ").append(getDevice()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -258,20 +233,17 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
         if (obj instanceof AttachVolumeRequest == false)
             return false;
         AttachVolumeRequest other = (AttachVolumeRequest) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+        if (other.getDevice() == null ^ this.getDevice() == null)
             return false;
-        if (other.getVolumeId() != null
-                && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getInstanceId() != null
-                && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getDevice() == null ^ this.getDevice() == null)
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getDevice() != null
-                && other.getDevice().equals(this.getDevice()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -281,12 +253,9 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode
-                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode
-                + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

@@ -11,12 +11,8 @@
     <#if shape.members?has_content>
         <#list shape.members as member>
         <#if member.http.isUri() >
-            <#local getMember = getterFunctionPrefix + ".get" + member.name />
-            <#if member.idempotencyToken>
-                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
-            <#else>
-                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", (${getMember}() != null ) ? SdkHttpUtils.urlEncode(StringUtils.from${member.variable.simpleType}(${getMember}()), false) : "");
-            </#if>
+            uriResourcePath = ${member.pathMarshaller}.marshall(uriResourcePath, "${member.http.marshallLocationName}",
+                <@UriGetMemberMarshallerMacro.content getterFunctionPrefix, member/>);
         </#if>
         </#list>
      </#if>

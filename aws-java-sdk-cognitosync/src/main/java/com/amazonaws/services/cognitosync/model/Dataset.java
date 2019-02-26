@@ -1,41 +1,42 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A collection of data for an identity pool. An identity pool can have multiple
- * datasets. A dataset is per identity and can be general or associated with a
- * particular entity in an application (like a saved game). Datasets are
- * automatically created if they don't exist. Data is synced by dataset, and a
- * dataset can hold up to 1MB of key-value pairs.
+ * A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and
+ * can be general or associated with a particular entity in an application (like a saved game). Datasets are
+ * automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value
+ * pairs.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/Dataset" target="_top">AWS API
+ *      Documentation</a>
  */
-public class Dataset implements Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      */
     private String identityId;
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      */
     private String datasetName;
     /** Date on which the dataset was created. */
@@ -50,13 +51,11 @@ public class Dataset implements Serializable, Cloneable {
     private Long numRecords;
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
 
@@ -65,12 +64,10 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
-     * @return A name-spaced GUID (for example,
-     *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     * @return A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
 
@@ -79,16 +76,13 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * A name-spaced GUID (for example,
-     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-     * Cognito. GUID generation is unique within a region.
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+     * generation is unique within a region.
      * 
      * @param identityId
-     *        A name-spaced GUID (for example,
-     *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
+     *        A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withIdentityId(String identityId) {
@@ -97,12 +91,12 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
      */
 
     public void setDatasetName(String datasetName) {
@@ -110,11 +104,11 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
-     * @return A string of up to 128 characters. Allowed characters are a-z,
-     *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+     * @return A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *         '.' (dot).
      */
 
     public String getDatasetName() {
@@ -122,14 +116,13 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-     * '_' (underscore), '-' (dash), and '.' (dot).
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+     * (dot).
      * 
      * @param datasetName
-     *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
-     *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and
+     *        '.' (dot).
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withDatasetName(String datasetName) {
@@ -163,8 +156,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @param creationDate
      *        Date on which the dataset was created.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withCreationDate(java.util.Date creationDate) {
@@ -198,8 +190,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @param lastModifiedDate
      *        Date when the dataset was last modified.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -233,8 +224,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @param lastModifiedBy
      *        The device that made the last change to this dataset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withLastModifiedBy(String lastModifiedBy) {
@@ -268,8 +258,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @param dataStorage
      *        Total size in bytes of the records in this dataset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withDataStorage(Long dataStorage) {
@@ -303,8 +292,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @param numRecords
      *        Number of records in this dataset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withNumRecords(Long numRecords) {
@@ -313,8 +301,8 @@ public class Dataset implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -325,19 +313,19 @@ public class Dataset implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName() + ",");
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getLastModifiedBy() != null)
-            sb.append("LastModifiedBy: " + getLastModifiedBy() + ",");
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getDataStorage() != null)
-            sb.append("DataStorage: " + getDataStorage() + ",");
+            sb.append("DataStorage: ").append(getDataStorage()).append(",");
         if (getNumRecords() != null)
-            sb.append("NumRecords: " + getNumRecords());
+            sb.append("NumRecords: ").append(getNumRecords());
         sb.append("}");
         return sb.toString();
     }
@@ -354,41 +342,31 @@ public class Dataset implements Serializable, Cloneable {
         Dataset other = (Dataset) obj;
         if (other.getIdentityId() == null ^ this.getIdentityId() == null)
             return false;
-        if (other.getIdentityId() != null
-                && other.getIdentityId().equals(this.getIdentityId()) == false)
+        if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false)
             return false;
         if (other.getDatasetName() == null ^ this.getDatasetName() == null)
             return false;
-        if (other.getDatasetName() != null
-                && other.getDatasetName().equals(this.getDatasetName()) == false)
+        if (other.getDatasetName() != null && other.getDatasetName().equals(this.getDatasetName()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
-        if (other.getCreationDate() != null
-                && other.getCreationDate().equals(this.getCreationDate()) == false)
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
-        if (other.getLastModifiedDate() == null
-                ^ this.getLastModifiedDate() == null)
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
             return false;
-        if (other.getLastModifiedDate() != null
-                && other.getLastModifiedDate().equals(
-                        this.getLastModifiedDate()) == false)
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
-        if (other.getLastModifiedBy() == null
-                ^ this.getLastModifiedBy() == null)
+        if (other.getLastModifiedBy() == null ^ this.getLastModifiedBy() == null)
             return false;
-        if (other.getLastModifiedBy() != null
-                && other.getLastModifiedBy().equals(this.getLastModifiedBy()) == false)
+        if (other.getLastModifiedBy() != null && other.getLastModifiedBy().equals(this.getLastModifiedBy()) == false)
             return false;
         if (other.getDataStorage() == null ^ this.getDataStorage() == null)
             return false;
-        if (other.getDataStorage() != null
-                && other.getDataStorage().equals(this.getDataStorage()) == false)
+        if (other.getDataStorage() != null && other.getDataStorage().equals(this.getDataStorage()) == false)
             return false;
         if (other.getNumRecords() == null ^ this.getNumRecords() == null)
             return false;
-        if (other.getNumRecords() != null
-                && other.getNumRecords().equals(this.getNumRecords()) == false)
+        if (other.getNumRecords() != null && other.getNumRecords().equals(this.getNumRecords()) == false)
             return false;
         return true;
     }
@@ -398,28 +376,13 @@ public class Dataset implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getCreationDate() == null) ? 0 : getCreationDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDataStorage() == null) ? 0 : getDataStorage().hashCode());
-        hashCode = prime * hashCode
-                + ((getNumRecords() == null) ? 0 : getNumRecords().hashCode());
+        hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
+        hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
+        hashCode = prime * hashCode + ((getDataStorage() == null) ? 0 : getDataStorage().hashCode());
+        hashCode = prime * hashCode + ((getNumRecords() == null) ? 0 : getNumRecords().hashCode());
         return hashCode;
     }
 
@@ -428,9 +391,13 @@ public class Dataset implements Serializable, Cloneable {
         try {
             return (Dataset) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(
-                    "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitosync.model.transform.DatasetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

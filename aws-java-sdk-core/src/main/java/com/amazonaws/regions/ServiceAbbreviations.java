@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2016 Amazon Technologies, Inc.
+ * Copyright 2013-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonWebServiceClient;
 
 /**
  * Abbreviations for looking up information about a specific service. Used in
  * {@link Region#getServiceEndpoint(String)} and related methods.
  *
- * @deprecated use {@link AmazonWebServiceClient#getEndpointPrefix()} instead for retrieving
- *             the specific service abbreviation.
+ * @deprecated use the constant ENDPOINT_PREFIX from the specific service client
+ *             interface instead for retrieving the specific service abbreviation,
+ *             e.g. AmazonEC2.ENDPOINT_PREFIX.
  */
 
 @Deprecated

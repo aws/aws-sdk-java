@@ -1,44 +1,44 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile" target="_top">AWS API
+ *      Documentation</a>
  */
-public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteUserProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      */
     private String iamUserArn;
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
+     *        The user's IAM ARN. This can also be a federated user's ARN.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -47,10 +47,10 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
-     * @return The user's IAM ARN.
+     * @return The user's IAM ARN. This can also be a federated user's ARN.
      */
 
     public String getIamUserArn() {
@@ -59,13 +59,12 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN. This can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The user's IAM ARN. This can also be a federated user's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteUserProfileRequest withIamUserArn(String iamUserArn) {
@@ -74,8 +73,8 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -86,7 +85,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn());
+            sb.append("IamUserArn: ").append(getIamUserArn());
         sb.append("}");
         return sb.toString();
     }
@@ -103,8 +102,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
         DeleteUserProfileRequest other = (DeleteUserProfileRequest) obj;
         if (other.getIamUserArn() == null ^ this.getIamUserArn() == null)
             return false;
-        if (other.getIamUserArn() != null
-                && other.getIamUserArn().equals(this.getIamUserArn()) == false)
+        if (other.getIamUserArn() != null && other.getIamUserArn().equals(this.getIamUserArn()) == false)
             return false;
         return true;
     }
@@ -114,8 +112,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
+        hashCode = prime * hashCode + ((getIamUserArn() == null) ? 0 : getIamUserArn().hashCode());
         return hashCode;
     }
 
@@ -123,4 +120,5 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
     public DeleteUserProfileRequest clone() {
         return (DeleteUserProfileRequest) super.clone();
     }
+
 }

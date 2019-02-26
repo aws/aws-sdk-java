@@ -1,36 +1,36 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
-
 package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
+
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
  * Contains the inputs for the <a>ConnectDirectory</a> operation.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory" target="_top">AWS API
+ *      Documentation</a>
  */
-public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      */
     private String name;
@@ -60,21 +60,24 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
     private String size;
     /**
      * <p>
-     * A <a>DirectoryConnectSettings</a> object that contains additional
-     * information for the operation.
+     * A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      * </p>
      */
     private DirectoryConnectSettings connectSettings;
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the on-premises directory, such as
-     *        <code>corp.example.com</code>.
+     *        The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      */
 
     public void setName(String name) {
@@ -83,12 +86,10 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
-     * @return The fully-qualified name of the on-premises directory, such as
-     *         <code>corp.example.com</code>.
+     * @return The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      */
 
     public String getName() {
@@ -97,15 +98,12 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as
-     * <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the on-premises directory, such as
-     *        <code>corp.example.com</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectDirectoryRequest withName(String name) {
@@ -119,8 +117,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param shortName
-     *        The NetBIOS name of the on-premises directory, such as
-     *        <code>CORP</code>.
+     *        The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
      */
 
     public void setShortName(String shortName) {
@@ -132,8 +129,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
      * </p>
      * 
-     * @return The NetBIOS name of the on-premises directory, such as
-     *         <code>CORP</code>.
+     * @return The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
      */
 
     public String getShortName() {
@@ -146,10 +142,8 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param shortName
-     *        The NetBIOS name of the on-premises directory, such as
-     *        <code>CORP</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectDirectoryRequest withShortName(String shortName) {
@@ -189,8 +183,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param password
      *        The password for the on-premises user account.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectDirectoryRequest withPassword(String password) {
@@ -230,8 +223,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param description
      *        A textual description for the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConnectDirectoryRequest withDescription(String description) {
@@ -273,8 +265,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectorySize
      */
 
@@ -294,7 +285,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      */
 
     public void setSize(DirectorySize size) {
-        this.size = size.toString();
+        withSize(size);
     }
 
     /**
@@ -304,25 +295,22 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectorySize
      */
 
     public ConnectDirectoryRequest withSize(DirectorySize size) {
-        setSize(size);
+        this.size = size.toString();
         return this;
     }
 
     /**
      * <p>
-     * A <a>DirectoryConnectSettings</a> object that contains additional
-     * information for the operation.
+     * A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      * </p>
      * 
      * @param connectSettings
-     *        A <a>DirectoryConnectSettings</a> object that contains additional
-     *        information for the operation.
+     *        A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      */
 
     public void setConnectSettings(DirectoryConnectSettings connectSettings) {
@@ -331,12 +319,10 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <a>DirectoryConnectSettings</a> object that contains additional
-     * information for the operation.
+     * A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      * </p>
      * 
-     * @return A <a>DirectoryConnectSettings</a> object that contains additional
-     *         information for the operation.
+     * @return A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      */
 
     public DirectoryConnectSettings getConnectSettings() {
@@ -345,26 +331,95 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A <a>DirectoryConnectSettings</a> object that contains additional
-     * information for the operation.
+     * A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
      * </p>
      * 
      * @param connectSettings
-     *        A <a>DirectoryConnectSettings</a> object that contains additional
-     *        information for the operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        A <a>DirectoryConnectSettings</a> object that contains additional information for the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ConnectDirectoryRequest withConnectSettings(
-            DirectoryConnectSettings connectSettings) {
+    public ConnectDirectoryRequest withConnectSettings(DirectoryConnectSettings connectSettings) {
         setConnectSettings(connectSettings);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @return The tags to be assigned to AD Connector.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectDirectoryRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectDirectoryRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -375,17 +430,19 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getShortName() != null)
-            sb.append("ShortName: " + getShortName() + ",");
+            sb.append("ShortName: ").append(getShortName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getConnectSettings() != null)
-            sb.append("ConnectSettings: " + getConnectSettings());
+            sb.append("ConnectSettings: ").append(getConnectSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -402,34 +459,31 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
         ConnectDirectoryRequest other = (ConnectDirectoryRequest) obj;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null
-                && other.getName().equals(this.getName()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getShortName() == null ^ this.getShortName() == null)
             return false;
-        if (other.getShortName() != null
-                && other.getShortName().equals(this.getShortName()) == false)
+        if (other.getShortName() != null && other.getShortName().equals(this.getShortName()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
-        if (other.getPassword() != null
-                && other.getPassword().equals(this.getPassword()) == false)
+        if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getDescription() != null
-                && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getSize() != null
-                && other.getSize().equals(this.getSize()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
-        if (other.getConnectSettings() == null
-                ^ this.getConnectSettings() == null)
+        if (other.getConnectSettings() == null ^ this.getConnectSettings() == null)
             return false;
-        if (other.getConnectSettings() != null
-                && other.getConnectSettings().equals(this.getConnectSettings()) == false)
+        if (other.getConnectSettings() != null && other.getConnectSettings().equals(this.getConnectSettings()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -439,21 +493,13 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode
-                + ((getShortName() == null) ? 0 : getShortName().hashCode());
-        hashCode = prime * hashCode
-                + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode
-                + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getConnectSettings() == null) ? 0 : getConnectSettings()
-                        .hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getShortName() == null) ? 0 : getShortName().hashCode());
+        hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getConnectSettings() == null) ? 0 : getConnectSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -461,4 +507,5 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
     public ConnectDirectoryRequest clone() {
         return (ConnectDirectoryRequest) super.clone();
     }
+
 }

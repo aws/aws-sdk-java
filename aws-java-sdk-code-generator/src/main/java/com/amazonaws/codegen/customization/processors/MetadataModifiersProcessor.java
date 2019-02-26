@@ -52,9 +52,9 @@ public class MetadataModifiersProcessor implements CodegenCustomizationProcessor
 
         Metadata metadata = intermediateModel.getMetadata();
 
-        String jsonContentVersion = metadataConfig.getJsonContentVersion();
-        if (jsonContentVersion != null) {
-            metadata.setJsonContentVersion(jsonContentVersion);
+        String contentType = metadataConfig.getContentType();
+        if (contentType != null) {
+            metadata.setContentType(contentType);
         }
     }
 
