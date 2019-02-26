@@ -257,8 +257,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
     /**
@@ -2139,12 +2137,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
-     * </p>
      * 
      * @return One or more network interfaces.</p>
-     *         <p>
-     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2159,13 +2153,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
-     * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2182,8 +2172,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
-     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
@@ -2192,8 +2180,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param networkInterfaces
      *        One or more network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2212,13 +2198,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
-     * </p>
      * 
      * @param networkInterfaces
      *        One or more network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
