@@ -24,6 +24,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
@@ -62,9 +63,10 @@ public class MockServer {
     /**
      * The server socket which the test service will listen to.
      */
+
     private ServerSocket serverSocket;
 
-    private Thread listenerThread;
+    private MockServerListenerThread listenerThread;
 
     public MockServer(final ServerBehaviorStrategy serverBehaviorStrategy) {
         this.serverBehaviorStrategy = serverBehaviorStrategy;
@@ -112,10 +114,20 @@ public class MockServer {
         return "https://localhost:" + getPort();
     }
 
+    public long getAcceptCount() {
+        return listenerThread.accepts.get();
+    }
+
+    public void resetAcceptCount() {
+        listenerThread.accepts.set(0);
+    }
+
     private static class MockServerListenerThread extends Thread {
         /** The server socket which this thread listens and responds to */
         private final ServerSocket serverSocket;
         private final ServerBehaviorStrategy behaviorStrategy;
+
+        AtomicLong accepts = new AtomicLong(0);
 
         public MockServerListenerThread(ServerSocket serverSocket, ServerBehaviorStrategy behaviorStrategy) {
             super(behaviorStrategy.getClass().getName());
@@ -126,12 +138,27 @@ public class MockServer {
 
         @Override
         public void run() {
-            this.behaviorStrategy.runServer(serverSocket);
+            try {
+                while (true) {
+                    try {
+                        Socket socket = serverSocket.accept();
+                        accepts.incrementAndGet();
+                        this.behaviorStrategy.handleSocket(socket);
+                    } catch (SocketException s) {
+
+                    }
+                }
+            } catch (IOException e) {
+                throw new RuntimeException("Error when waiting for new socket connection.", e);
+            } catch (InterruptedException e) {
+                System.err.println("Socket listener thread interrupted. Terminating the thread...");
+                return;
+            }
         }
     }
 
     public interface ServerBehaviorStrategy {
-        public void runServer(ServerSocket serverSocket);
+        public void handleSocket(Socket socket) throws IOException, InterruptedException;
     }
 
     /**
@@ -143,27 +170,14 @@ public class MockServer {
     public static class OverloadedServerBehavior implements ServerBehaviorStrategy {
 
         @Override
-        public void runServer(ServerSocket serverSocket) {
-            try {
-                while (true) {
-                    try {
-                        Socket socket = serverSocket.accept();
-                        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-                        out.writeBytes("HTTP/1.1 200 OK\r\n");
-                        out.writeBytes("Content-Type: text/html\r\n\r\n");
-                        out.writeBytes("<html><head></head><body><h1>Hello.");
-                        while (true) {
-                            Thread.sleep(1 * 1000);
-                            out.writeBytes("Hi.");
-                        }
-                    } catch (SocketException se) {
-                    }
-                }
-            } catch (IOException e) {
-                throw new RuntimeException("Error when waiting for new socket connection.", e);
-            } catch (InterruptedException e) {
-                System.err.println("Socket listener thread interrupted. Terminating the thread...");
-                return;
+        public void handleSocket(Socket socket) throws IOException, InterruptedException {
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+            out.writeBytes("HTTP/1.1 200 OK\r\n");
+            out.writeBytes("Content-Type: text/html\r\n\r\n");
+            out.writeBytes("<html><head></head><body><h1>Hello.");
+            while (true) {
+                Thread.sleep(1 * 1000);
+                out.writeBytes("Hi.");
             }
         }
     }
@@ -176,19 +190,11 @@ public class MockServer {
      */
     public static class UnresponsiveServerBehavior implements ServerBehaviorStrategy {
         @Override
-        public void runServer(ServerSocket serverSocket) {
-            try {
-                Socket socket = serverSocket.accept();
-                System.out.println("Socket created on port " + socket.getLocalPort());
-                while (true) {
-                    System.out.println("I don't want to talk.");
-                    Thread.sleep(10 * 1000);
-                }
-            } catch (IOException e) {
-                throw new RuntimeException("Error when waiting for new socket connection.", e);
-            } catch (InterruptedException e) {
-                System.err.println("Socket listener thread interrupted. Terminating the thread...");
-                return;
+        public void handleSocket(Socket socket) throws IOException, InterruptedException {
+            System.out.println("Socket created on port " + socket.getLocalPort());
+            while (true) {
+                System.out.println("I don't want to talk.");
+                Thread.sleep(10 * 1000);
             }
         }
     }
@@ -226,27 +232,17 @@ public class MockServer {
         }
 
         @Override
-        public void runServer(ServerSocket serverSocket) {
-            try {
-                while (true) {
-                    try {
-                        Socket socket = serverSocket.accept();
-                        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-                        StringBuilder builder = new StringBuilder();
-                        builder.append(response.getStatusLine().toString() + "\r\n");
-                        for (Header header : response.getAllHeaders()) {
-                            builder.append(header.getName() + ":" + header.getValue() + "\r\n");
-                        }
-                        builder.append("\r\n");
-                        builder.append(content);
-                        System.out.println(builder.toString());
-                        out.writeBytes(builder.toString());
-                    } catch (SocketException se) {
-                    }
-                }
-            } catch (IOException e) {
-                throw new RuntimeException("Error when waiting for new socket connection.", e);
+        public void handleSocket(Socket socket) throws IOException, InterruptedException {
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+            StringBuilder builder = new StringBuilder();
+            builder.append(response.getStatusLine().toString() + "\r\n");
+            for (Header header : response.getAllHeaders()) {
+                builder.append(header.getName() + ":" + header.getValue() + "\r\n");
             }
+            builder.append("\r\n");
+            builder.append(content);
+            System.out.println(builder.toString());
+            out.writeBytes(builder.toString());
         }
 
     }
