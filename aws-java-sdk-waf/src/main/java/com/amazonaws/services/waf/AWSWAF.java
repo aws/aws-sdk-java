@@ -31,7 +31,7 @@ import com.amazonaws.services.waf.model.*;
  * listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and
  * data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed information
  * about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an
- * overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+ * overview of how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
  * WAF Developer Guide</a>.
  * </p>
  */
@@ -134,7 +134,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -207,7 +207,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateByteMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet" target="_top">AWS API
@@ -251,7 +251,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -324,7 +324,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateGeoMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet" target="_top">AWS API
@@ -368,7 +368,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -441,7 +441,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet" target="_top">AWS API
@@ -555,7 +555,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -625,7 +625,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule" target="_top">AWS API
@@ -672,7 +672,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -687,7 +687,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRegexMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet" target="_top">AWS API
@@ -730,7 +730,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -745,7 +745,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet" target="_top">AWS API
@@ -819,7 +819,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -889,7 +889,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule" target="_top">AWS API
@@ -924,7 +924,7 @@ public interface AWSWAF {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -939,7 +939,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
@@ -985,7 +985,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1058,7 +1058,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateSizeConstraintSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet" target="_top">AWS
@@ -1102,7 +1102,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1176,7 +1176,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateSqlInjectionMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet" target="_top">AWS
@@ -1239,7 +1239,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1312,7 +1312,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL" target="_top">AWS API
@@ -1356,7 +1356,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -1430,7 +1430,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateXssMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet" target="_top">AWS API
@@ -2592,7 +2592,7 @@ public interface AWSWAF {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -3358,6 +3358,10 @@ public interface AWSWAF {
      * <p>
      * Create an Amazon Kinesis Data Firehose .
      * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -3368,7 +3372,7 @@ public interface AWSWAF {
      * <p>
      * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
      * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
-     * information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
      * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
      * </p>
      * 
@@ -3584,7 +3588,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -3717,7 +3721,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateByteMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet" target="_top">AWS API
@@ -3776,7 +3780,7 @@ public interface AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -3922,7 +3926,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateGeoMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet" target="_top">AWS API
@@ -3957,8 +3961,8 @@ public interface AWSWAF {
      * </ul>
      * <p>
      * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
-     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -4022,7 +4026,7 @@ public interface AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -4168,7 +4172,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet" target="_top">AWS API
@@ -4384,7 +4388,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule" target="_top">AWS API
@@ -4453,7 +4457,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -4468,7 +4472,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
@@ -4609,7 +4613,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -4622,7 +4626,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
@@ -4759,7 +4763,7 @@ public interface AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -4905,7 +4909,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule" target="_top">AWS API
@@ -4955,7 +4959,7 @@ public interface AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -5030,7 +5034,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFInvalidParameterException
      *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
@@ -5163,7 +5167,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -5309,7 +5313,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateSizeConstraintSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet" target="_top">AWS
@@ -5375,7 +5379,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -5509,7 +5513,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateSqlInjectionMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet" target="_top">AWS
@@ -5607,7 +5611,7 @@ public interface AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -5753,7 +5757,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFSubscriptionNotFoundException
      *         The specified subscription does not exist.
@@ -5821,7 +5825,7 @@ public interface AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest
@@ -5955,7 +5959,7 @@ public interface AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateXssMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet" target="_top">AWS API

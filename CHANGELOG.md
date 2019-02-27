@@ -1,3 +1,12 @@
+# __1.11.508__ __2019-02-27__
+## __AWS WAF__
+  - ### Features
+    - Documentation updates for waf
+
+## __AWS WAF Regional__
+  - ### Features
+    - Documentation updates for waf-regional
+
 # __1.11.507__ __2019-02-26__
 ## __AWS Application Discovery Service__
   - ### Features

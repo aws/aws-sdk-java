@@ -30,7 +30,7 @@ import com.amazonaws.services.waf.model.*;
  * listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and
  * data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed information
  * about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an
- * overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+ * overview of how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
  * WAF Developer Guide</a>.
  * </p>
  */
@@ -74,7 +74,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -122,7 +122,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -174,7 +174,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -221,7 +221,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -273,7 +273,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -320,7 +320,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -442,7 +442,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -559,7 +559,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -614,7 +614,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -664,7 +664,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -715,7 +715,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -761,7 +761,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -843,7 +843,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -920,7 +920,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -963,7 +963,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -1001,7 +1001,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -1055,7 +1055,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1104,7 +1104,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1156,7 +1156,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1205,7 +1205,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1278,7 +1278,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1344,7 +1344,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1396,7 +1396,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -1444,7 +1444,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -2576,7 +2576,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -2608,7 +2608,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -3618,6 +3618,10 @@ public interface AWSWAFAsync extends AWSWAF {
      * <p>
      * Create an Amazon Kinesis Data Firehose .
      * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -3628,7 +3632,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * <p>
      * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
      * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
-     * information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
      * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
      * </p>
      * 
@@ -3652,6 +3656,10 @@ public interface AWSWAFAsync extends AWSWAF {
      * <p>
      * Create an Amazon Kinesis Data Firehose .
      * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -3662,7 +3670,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * <p>
      * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
      * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
-     * information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
      * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
      * </p>
      * 
@@ -3886,7 +3894,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -3963,7 +3971,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -4030,7 +4038,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -4092,7 +4100,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -4135,8 +4143,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ul>
      * <p>
      * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
-     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -4200,7 +4208,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -4238,8 +4246,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ul>
      * <p>
      * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
-     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -4303,7 +4311,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -4531,7 +4539,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -4603,7 +4611,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -4687,7 +4695,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -4766,7 +4774,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -4844,7 +4852,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -4917,7 +4925,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -4975,7 +4983,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -5028,7 +5036,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -5114,7 +5122,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -5195,7 +5203,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -5269,7 +5277,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -5340,7 +5348,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -5448,7 +5456,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -5549,7 +5557,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -5623,7 +5631,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest
@@ -5693,7 +5701,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest
