@@ -105,7 +105,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -181,7 +181,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DeviceNotRegisteredException",
@@ -221,7 +221,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -257,7 +257,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
@@ -301,7 +301,11 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -497,7 +501,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -581,7 +585,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -625,7 +629,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -665,7 +669,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -705,7 +709,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -781,7 +785,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -821,7 +825,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidCertificateAuthorityException",
@@ -865,7 +869,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -905,7 +909,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -941,7 +945,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -981,7 +985,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1021,7 +1025,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1061,7 +1065,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1129,7 +1133,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DeviceNotRegisteredException",
@@ -1169,7 +1173,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
@@ -1209,7 +1213,11 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1245,7 +1253,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1483,6 +1491,42 @@
         "documentation" : null
       },
       "syncReturnType" : "GetDeviceResult"
+    },
+    "GetInvitationConfiguration" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<GetInvitationConfigurationResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<GetInvitationConfigurationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult>",
+      "asyncReturnType" : "GetInvitationConfigurationResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Retrieves the configured values for the user enrollment invitation email template.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The resource is not found.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetInvitationConfigurationRequest",
+        "variableName" : "getInvitationConfigurationRequest",
+        "variableType" : "GetInvitationConfigurationRequest",
+        "documentation" : "",
+        "simpleType" : "GetInvitationConfigurationRequest",
+        "variableSetterType" : "GetInvitationConfigurationRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "getInvitationConfiguration",
+      "operationName" : "GetInvitationConfiguration",
+      "returnType" : {
+        "returnType" : "GetInvitationConfigurationResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "GetInvitationConfigurationResult"
     },
     "GetProfile" : {
       "asyncCallableType" : "java.util.concurrent.Callable<GetProfileResult>",
@@ -1932,6 +1976,46 @@
       },
       "syncReturnType" : "PutConferencePreferenceResult"
     },
+    "PutInvitationConfiguration" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<PutInvitationConfigurationResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<PutInvitationConfigurationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult>",
+      "asyncReturnType" : "PutInvitationConfigurationResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Configures the email template for the user enrollment invitation with the specified attributes.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The resource is not found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutInvitationConfigurationRequest",
+        "variableName" : "putInvitationConfigurationRequest",
+        "variableType" : "PutInvitationConfigurationRequest",
+        "documentation" : "",
+        "simpleType" : "PutInvitationConfigurationRequest",
+        "variableSetterType" : "PutInvitationConfigurationRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "putInvitationConfiguration",
+      "operationName" : "PutInvitationConfiguration",
+      "returnType" : {
+        "returnType" : "PutInvitationConfigurationResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "PutInvitationConfigurationResult"
+    },
     "PutRoomSkillParameter" : {
       "asyncCallableType" : "java.util.concurrent.Callable<PutRoomSkillParameterResult>",
       "asyncFutureType" : "java.util.concurrent.Future<PutRoomSkillParameterResult>",
@@ -1945,7 +2029,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1985,7 +2069,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2025,7 +2109,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidDeviceException",
@@ -2065,7 +2149,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
@@ -2145,7 +2229,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2413,7 +2497,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2601,7 +2685,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2641,7 +2725,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2717,7 +2801,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2757,7 +2841,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DeviceNotRegisteredException",
@@ -2805,7 +2889,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2889,7 +2973,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
-        "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+        "documentation" : "<p>There is a concurrent modification of resources.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -5478,80 +5562,14 @@
         "xmlNameSpaceUri" : null
       },
       "members" : [ {
-        "c2jName" : "OrganizationArn",
-        "c2jShape" : "Arn",
-        "deprecated" : false,
-        "documentation" : "<p>The ARN of the organization.</p>",
-        "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "fluentSetterMethodName" : "withOrganizationArn",
-        "getterDocumentation" : "/**<p>The ARN of the organization.</p>\n@return The ARN of the organization.*/",
-        "getterMethodName" : "getOrganizationArn",
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "additionalMarshallingPath" : null,
-          "additionalUnmarshallingPath" : null,
-          "flattened" : false,
-          "greedy" : false,
-          "header" : false,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "marshallLocation" : "PAYLOAD",
-          "marshallLocationName" : "OrganizationArn",
-          "queryString" : false,
-          "statusCode" : false,
-          "unmarshallLocationName" : "OrganizationArn",
-          "uri" : false
-        },
-        "idempotencyToken" : false,
-        "isBinary" : false,
-        "jsonValue" : false,
-        "list" : false,
-        "listModel" : null,
-        "map" : false,
-        "mapModel" : null,
-        "marshallingTargetClass" : "String",
-        "marshallingType" : "STRING",
-        "name" : "OrganizationArn",
-        "sensitive" : false,
-        "setterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.*/",
-        "setterMethodName" : "setOrganizationArn",
-        "setterModel" : {
-          "timestampFormat" : null,
-          "variableDeclarationType" : "String",
-          "variableName" : "organizationArn",
-          "variableType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "shouldEmitLegacyEnumSetter" : false,
-        "simple" : true,
-        "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "variable" : {
-          "timestampFormat" : null,
-          "variableDeclarationType" : "String",
-          "variableName" : "organizationArn",
-          "variableType" : "String",
-          "documentation" : "<p>The ARN of the organization.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "xmlNameSpaceUri" : null
-      }, {
         "c2jName" : "SkillId",
         "c2jShape" : "SkillId",
         "deprecated" : false,
-        "documentation" : "<p>The private skill ID you want to make available to enrolled users.&gt;</p>",
+        "documentation" : "<p>The private skill ID you want to make available to enrolled users.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSkillId",
-        "getterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@return The private skill ID you want to make available to enrolled users.&gt;*/",
+        "getterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@return The private skill ID you want to make available to enrolled users.*/",
         "getterMethodName" : "getSkillId",
         "getterModel" : {
           "returnType" : "String",
@@ -5584,7 +5602,7 @@
         "marshallingType" : "STRING",
         "name" : "SkillId",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;*/",
+        "setterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.*/",
         "setterMethodName" : "setSkillId",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5598,95 +5616,28 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "skillId",
           "variableType" : "String",
-          "documentation" : "<p>The private skill ID you want to make available to enrolled users.&gt;</p>",
+          "documentation" : "<p>The private skill ID you want to make available to enrolled users.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
-        "OrganizationArn" : {
-          "c2jName" : "OrganizationArn",
-          "c2jShape" : "Arn",
-          "deprecated" : false,
-          "documentation" : "<p>The ARN of the organization.</p>",
-          "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "fluentSetterMethodName" : "withOrganizationArn",
-          "getterDocumentation" : "/**<p>The ARN of the organization.</p>\n@return The ARN of the organization.*/",
-          "getterMethodName" : "getOrganizationArn",
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "additionalMarshallingPath" : null,
-            "additionalUnmarshallingPath" : null,
-            "flattened" : false,
-            "greedy" : false,
-            "header" : false,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "marshallLocation" : "PAYLOAD",
-            "marshallLocationName" : "OrganizationArn",
-            "queryString" : false,
-            "statusCode" : false,
-            "unmarshallLocationName" : "OrganizationArn",
-            "uri" : false
-          },
-          "idempotencyToken" : false,
-          "isBinary" : false,
-          "jsonValue" : false,
-          "list" : false,
-          "listModel" : null,
-          "map" : false,
-          "mapModel" : null,
-          "marshallingTargetClass" : "String",
-          "marshallingType" : "STRING",
-          "name" : "OrganizationArn",
-          "sensitive" : false,
-          "setterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.*/",
-          "setterMethodName" : "setOrganizationArn",
-          "setterModel" : {
-            "timestampFormat" : null,
-            "variableDeclarationType" : "String",
-            "variableName" : "organizationArn",
-            "variableType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "shouldEmitLegacyEnumSetter" : false,
-          "simple" : true,
-          "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "variable" : {
-            "timestampFormat" : null,
-            "variableDeclarationType" : "String",
-            "variableName" : "organizationArn",
-            "variableType" : "String",
-            "documentation" : "<p>The ARN of the organization.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "xmlNameSpaceUri" : null
-        },
         "SkillId" : {
           "c2jName" : "SkillId",
           "c2jShape" : "SkillId",
           "deprecated" : false,
-          "documentation" : "<p>The private skill ID you want to make available to enrolled users.&gt;</p>",
+          "documentation" : "<p>The private skill ID you want to make available to enrolled users.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSkillId",
-          "getterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@return The private skill ID you want to make available to enrolled users.&gt;*/",
+          "getterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@return The private skill ID you want to make available to enrolled users.*/",
           "getterMethodName" : "getSkillId",
           "getterModel" : {
             "returnType" : "String",
@@ -5719,7 +5670,7 @@
           "marshallingType" : "STRING",
           "name" : "SkillId",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;*/",
+          "setterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.*/",
           "setterMethodName" : "setSkillId",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5733,13 +5684,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.&gt;</p>\n@param skillId The private skill ID you want to make available to enrolled users.&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The private skill ID you want to make available to enrolled users.</p>\n@param skillId The private skill ID you want to make available to enrolled users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "skillId",
             "variableType" : "String",
-            "documentation" : "<p>The private skill ID you want to make available to enrolled users.&gt;</p>",
+            "documentation" : "<p>The private skill ID you want to make available to enrolled users.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8825,7 +8776,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
+      "documentation" : "<p>There is a concurrent modification of resources.</p>",
       "enums" : null,
       "errorCode" : "ConcurrentModificationException",
       "hasHeaderMember" : false,
@@ -12106,11 +12057,11 @@
         "c2jName" : "S3BucketName",
         "c2jShape" : "CustomerS3BucketName",
         "deprecated" : false,
-        "documentation" : "<p>The S3 bucket name of the output reports.</p>",
+        "documentation" : "<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withS3BucketName",
-        "getterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@return The S3 bucket name of the output reports.*/",
+        "getterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@return The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.*/",
         "getterMethodName" : "getS3BucketName",
         "getterModel" : {
           "returnType" : "String",
@@ -12143,7 +12094,7 @@
         "marshallingType" : "STRING",
         "name" : "S3BucketName",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.*/",
+        "setterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.*/",
         "setterMethodName" : "setS3BucketName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -12157,13 +12108,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "s3BucketName",
           "variableType" : "String",
-          "documentation" : "<p>The S3 bucket name of the output reports.</p>",
+          "documentation" : "<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -12370,11 +12321,11 @@
         "c2jName" : "Recurrence",
         "c2jShape" : "BusinessReportRecurrence",
         "deprecated" : false,
-        "documentation" : "<p>The recurrence of the reports.</p>",
+        "documentation" : "<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRecurrence",
-        "getterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@return The recurrence of the reports.*/",
+        "getterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@return The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.*/",
         "getterMethodName" : "getRecurrence",
         "getterModel" : {
           "returnType" : "BusinessReportRecurrence",
@@ -12407,7 +12358,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "Recurrence",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.*/",
+        "setterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.*/",
         "setterMethodName" : "setRecurrence",
         "setterModel" : {
           "timestampFormat" : null,
@@ -12421,13 +12372,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "BusinessReportRecurrence",
           "variableName" : "recurrence",
           "variableType" : "BusinessReportRecurrence",
-          "documentation" : "<p>The recurrence of the reports.</p>",
+          "documentation" : "<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>",
           "simpleType" : "BusinessReportRecurrence",
           "variableSetterType" : "BusinessReportRecurrence"
         },
@@ -12705,11 +12656,11 @@
           "c2jName" : "Recurrence",
           "c2jShape" : "BusinessReportRecurrence",
           "deprecated" : false,
-          "documentation" : "<p>The recurrence of the reports.</p>",
+          "documentation" : "<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRecurrence",
-          "getterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@return The recurrence of the reports.*/",
+          "getterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@return The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.*/",
           "getterMethodName" : "getRecurrence",
           "getterModel" : {
             "returnType" : "BusinessReportRecurrence",
@@ -12742,7 +12693,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "Recurrence",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.*/",
+          "setterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.*/",
           "setterMethodName" : "setRecurrence",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12756,13 +12707,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The recurrence of the reports.</p>\n@param recurrence The recurrence of the reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>\n@param recurrence The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "BusinessReportRecurrence",
             "variableName" : "recurrence",
             "variableType" : "BusinessReportRecurrence",
-            "documentation" : "<p>The recurrence of the reports.</p>",
+            "documentation" : "<p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>",
             "simpleType" : "BusinessReportRecurrence",
             "variableSetterType" : "BusinessReportRecurrence"
           },
@@ -12772,11 +12723,11 @@
           "c2jName" : "S3BucketName",
           "c2jShape" : "CustomerS3BucketName",
           "deprecated" : false,
-          "documentation" : "<p>The S3 bucket name of the output reports.</p>",
+          "documentation" : "<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withS3BucketName",
-          "getterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@return The S3 bucket name of the output reports.*/",
+          "getterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@return The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.*/",
           "getterMethodName" : "getS3BucketName",
           "getterModel" : {
             "returnType" : "String",
@@ -12809,7 +12760,7 @@
           "marshallingType" : "STRING",
           "name" : "S3BucketName",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.*/",
+          "setterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.*/",
           "setterMethodName" : "setS3BucketName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12823,13 +12774,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The S3 bucket name of the output reports.</p>\n@param s3BucketName The S3 bucket name of the output reports.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>\n@param s3BucketName The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "s3BucketName",
             "variableType" : "String",
-            "documentation" : "<p>The S3 bucket name of the output reports.</p>",
+            "documentation" : "<p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -27909,72 +27860,6 @@
         "xmlNameSpaceUri" : null
       },
       "members" : [ {
-        "c2jName" : "OrganizationArn",
-        "c2jShape" : "Arn",
-        "deprecated" : false,
-        "documentation" : "<p>The ARN of the organization.</p>",
-        "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "fluentSetterMethodName" : "withOrganizationArn",
-        "getterDocumentation" : "/**<p>The ARN of the organization.</p>\n@return The ARN of the organization.*/",
-        "getterMethodName" : "getOrganizationArn",
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "additionalMarshallingPath" : null,
-          "additionalUnmarshallingPath" : null,
-          "flattened" : false,
-          "greedy" : false,
-          "header" : false,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "marshallLocation" : "PAYLOAD",
-          "marshallLocationName" : "OrganizationArn",
-          "queryString" : false,
-          "statusCode" : false,
-          "unmarshallLocationName" : "OrganizationArn",
-          "uri" : false
-        },
-        "idempotencyToken" : false,
-        "isBinary" : false,
-        "jsonValue" : false,
-        "list" : false,
-        "listModel" : null,
-        "map" : false,
-        "mapModel" : null,
-        "marshallingTargetClass" : "String",
-        "marshallingType" : "STRING",
-        "name" : "OrganizationArn",
-        "sensitive" : false,
-        "setterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.*/",
-        "setterMethodName" : "setOrganizationArn",
-        "setterModel" : {
-          "timestampFormat" : null,
-          "variableDeclarationType" : "String",
-          "variableName" : "organizationArn",
-          "variableType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "shouldEmitLegacyEnumSetter" : false,
-        "simple" : true,
-        "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "variable" : {
-          "timestampFormat" : null,
-          "variableDeclarationType" : "String",
-          "variableName" : "organizationArn",
-          "variableType" : "String",
-          "documentation" : "<p>The ARN of the organization.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "xmlNameSpaceUri" : null
-      }, {
         "c2jName" : "SkillId",
         "c2jShape" : "SkillId",
         "deprecated" : false,
@@ -28042,73 +27927,6 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
-        "OrganizationArn" : {
-          "c2jName" : "OrganizationArn",
-          "c2jShape" : "Arn",
-          "deprecated" : false,
-          "documentation" : "<p>The ARN of the organization.</p>",
-          "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "fluentSetterMethodName" : "withOrganizationArn",
-          "getterDocumentation" : "/**<p>The ARN of the organization.</p>\n@return The ARN of the organization.*/",
-          "getterMethodName" : "getOrganizationArn",
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "additionalMarshallingPath" : null,
-            "additionalUnmarshallingPath" : null,
-            "flattened" : false,
-            "greedy" : false,
-            "header" : false,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "marshallLocation" : "PAYLOAD",
-            "marshallLocationName" : "OrganizationArn",
-            "queryString" : false,
-            "statusCode" : false,
-            "unmarshallLocationName" : "OrganizationArn",
-            "uri" : false
-          },
-          "idempotencyToken" : false,
-          "isBinary" : false,
-          "jsonValue" : false,
-          "list" : false,
-          "listModel" : null,
-          "map" : false,
-          "mapModel" : null,
-          "marshallingTargetClass" : "String",
-          "marshallingType" : "STRING",
-          "name" : "OrganizationArn",
-          "sensitive" : false,
-          "setterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.*/",
-          "setterMethodName" : "setOrganizationArn",
-          "setterModel" : {
-            "timestampFormat" : null,
-            "variableDeclarationType" : "String",
-            "variableName" : "organizationArn",
-            "variableType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "shouldEmitLegacyEnumSetter" : false,
-          "simple" : true,
-          "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The ARN of the organization.</p>\n@param organizationArn The ARN of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "variable" : {
-            "timestampFormat" : null,
-            "variableDeclarationType" : "String",
-            "variableName" : "organizationArn",
-            "variableType" : "String",
-            "documentation" : "<p>The ARN of the organization.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "xmlNameSpaceUri" : null
-        },
         "SkillId" : {
           "c2jName" : "SkillId",
           "c2jShape" : "SkillId",
@@ -31147,6 +30965,652 @@
         "documentation" : null,
         "simpleType" : "GetDeviceResult",
         "variableSetterType" : "GetDeviceResult"
+      },
+      "wrapper" : false
+    },
+    "GetInvitationConfigurationRequest" : {
+      "c2jName" : "GetInvitationConfigurationRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "GetInvitationConfiguration",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AlexaForBusiness.GetInvitationConfiguration",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GetInvitationConfigurationRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetInvitationConfigurationRequest",
+        "variableName" : "getInvitationConfigurationRequest",
+        "variableType" : "GetInvitationConfigurationRequest",
+        "documentation" : null,
+        "simpleType" : "GetInvitationConfigurationRequest",
+        "variableSetterType" : "GetInvitationConfigurationRequest"
+      },
+      "wrapper" : false
+    },
+    "GetInvitationConfigurationResult" : {
+      "c2jName" : "GetInvitationConfigurationResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "OrganizationName",
+        "c2jShape" : "OrganizationName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOrganizationName",
+        "getterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@return The name of the organization sending the enrollment invite to a user.*/",
+        "getterMethodName" : "getOrganizationName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OrganizationName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OrganizationName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OrganizationName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.*/",
+        "setterMethodName" : "setOrganizationName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ContactEmail",
+        "c2jShape" : "Email",
+        "deprecated" : false,
+        "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContactEmail",
+        "getterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@return The email ID of the organization or individual contact that the enrolled user can use.*/",
+        "getterMethodName" : "getContactEmail",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContactEmail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContactEmail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContactEmail",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.*/",
+        "setterMethodName" : "setContactEmail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactEmail",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactEmail",
+          "variableType" : "String",
+          "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "PrivateSkillIds",
+        "c2jShape" : "ShortSkillIdList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrivateSkillIds",
+        "getterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@return The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+        "getterMethodName" : "getPrivateSkillIds",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PrivateSkillIds",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PrivateSkillIds",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "SkillId",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "PrivateSkillIds",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+        "setterMethodName" : "setPrivateSkillIds",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "privateSkillIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrivateSkillIds(java.util.Collection)} or {@link #withPrivateSkillIds(java.util.Collection)} if you want to override the existing values.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "privateSkillIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ContactEmail" : {
+          "c2jName" : "ContactEmail",
+          "c2jShape" : "Email",
+          "deprecated" : false,
+          "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContactEmail",
+          "getterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@return The email ID of the organization or individual contact that the enrolled user can use.*/",
+          "getterMethodName" : "getContactEmail",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContactEmail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContactEmail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContactEmail",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.*/",
+          "setterMethodName" : "setContactEmail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactEmail",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactEmail",
+            "variableType" : "String",
+            "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "OrganizationName" : {
+          "c2jName" : "OrganizationName",
+          "c2jShape" : "OrganizationName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOrganizationName",
+          "getterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@return The name of the organization sending the enrollment invite to a user.*/",
+          "getterMethodName" : "getOrganizationName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OrganizationName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OrganizationName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OrganizationName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.*/",
+          "setterMethodName" : "setOrganizationName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PrivateSkillIds" : {
+          "c2jName" : "PrivateSkillIds",
+          "c2jShape" : "ShortSkillIdList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrivateSkillIds",
+          "getterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@return The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+          "getterMethodName" : "getPrivateSkillIds",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PrivateSkillIds",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PrivateSkillIds",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "SkillId",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "PrivateSkillIds",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+          "setterMethodName" : "setPrivateSkillIds",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "privateSkillIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrivateSkillIds(java.util.Collection)} or {@link #withPrivateSkillIds(java.util.Collection)} if you want to override the existing values.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "privateSkillIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GetInvitationConfigurationResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetInvitationConfigurationResult",
+        "variableName" : "getInvitationConfigurationResult",
+        "variableType" : "GetInvitationConfigurationResult",
+        "documentation" : null,
+        "simpleType" : "GetInvitationConfigurationResult",
+        "variableSetterType" : "GetInvitationConfigurationResult"
       },
       "wrapper" : false
     },
@@ -35913,11 +36377,11 @@
         "c2jName" : "SkillGroupArn",
         "c2jShape" : "Arn",
         "deprecated" : false,
-        "documentation" : "<p>The ARN of the skill group for which to list enabled skills.</p>",
+        "documentation" : "<p>The ARN of the skill group for which to list enabled skills. Required.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSkillGroupArn",
-        "getterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@return The ARN of the skill group for which to list enabled skills.*/",
+        "getterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@return The ARN of the skill group for which to list enabled skills. Required.*/",
         "getterMethodName" : "getSkillGroupArn",
         "getterModel" : {
           "returnType" : "String",
@@ -35950,7 +36414,7 @@
         "marshallingType" : "STRING",
         "name" : "SkillGroupArn",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.*/",
+        "setterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.*/",
         "setterMethodName" : "setSkillGroupArn",
         "setterModel" : {
           "timestampFormat" : null,
@@ -35964,13 +36428,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "skillGroupArn",
           "variableType" : "String",
-          "documentation" : "<p>The ARN of the skill group for which to list enabled skills.</p>",
+          "documentation" : "<p>The ARN of the skill group for which to list enabled skills. Required.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -36111,11 +36575,11 @@
         "c2jName" : "NextToken",
         "c2jShape" : "NextToken",
         "deprecated" : false,
-        "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>",
+        "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@return An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
+        "getterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@return An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -36148,7 +36612,7 @@
         "marshallingType" : "STRING",
         "name" : "NextToken",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
+        "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "timestampFormat" : null,
@@ -36162,13 +36626,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>",
+          "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -36177,11 +36641,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "SkillListMaxResults",
         "deprecated" : false,
-        "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>",
+        "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@return The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.*/",
+        "getterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@return The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -36214,7 +36678,7 @@
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.*/",
+        "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "timestampFormat" : null,
@@ -36228,13 +36692,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>",
+          "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -36312,11 +36776,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "SkillListMaxResults",
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>",
+          "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@return The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.*/",
+          "getterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@return The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -36349,7 +36813,7 @@
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.*/",
+          "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "timestampFormat" : null,
@@ -36363,13 +36827,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>",
+            "documentation" : "<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -36379,11 +36843,11 @@
           "c2jName" : "NextToken",
           "c2jShape" : "NextToken",
           "deprecated" : false,
-          "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>",
+          "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@return An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
+          "getterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@return An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -36416,7 +36880,7 @@
           "marshallingType" : "STRING",
           "name" : "NextToken",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
+          "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "timestampFormat" : null,
@@ -36430,13 +36894,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>",
+            "documentation" : "<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -36446,11 +36910,11 @@
           "c2jName" : "SkillGroupArn",
           "c2jShape" : "Arn",
           "deprecated" : false,
-          "documentation" : "<p>The ARN of the skill group for which to list enabled skills.</p>",
+          "documentation" : "<p>The ARN of the skill group for which to list enabled skills. Required.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSkillGroupArn",
-          "getterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@return The ARN of the skill group for which to list enabled skills.*/",
+          "getterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@return The ARN of the skill group for which to list enabled skills. Required.*/",
           "getterMethodName" : "getSkillGroupArn",
           "getterModel" : {
             "returnType" : "String",
@@ -36483,7 +36947,7 @@
           "marshallingType" : "STRING",
           "name" : "SkillGroupArn",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.*/",
+          "setterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.*/",
           "setterMethodName" : "setSkillGroupArn",
           "setterModel" : {
             "timestampFormat" : null,
@@ -36497,13 +36961,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ARN of the skill group for which to list enabled skills. Required.</p>\n@param skillGroupArn The ARN of the skill group for which to list enabled skills. Required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "skillGroupArn",
             "variableType" : "String",
-            "documentation" : "<p>The ARN of the skill group for which to list enabled skills.</p>",
+            "documentation" : "<p>The ARN of the skill group for which to list enabled skills. Required.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -44361,6 +44825,652 @@
         "documentation" : null,
         "simpleType" : "PutConferencePreferenceResult",
         "variableSetterType" : "PutConferencePreferenceResult"
+      },
+      "wrapper" : false
+    },
+    "PutInvitationConfigurationRequest" : {
+      "c2jName" : "PutInvitationConfigurationRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "PutInvitationConfiguration",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AlexaForBusiness.PutInvitationConfiguration",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "OrganizationName",
+        "c2jShape" : "OrganizationName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOrganizationName",
+        "getterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@return The name of the organization sending the enrollment invite to a user.*/",
+        "getterMethodName" : "getOrganizationName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OrganizationName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OrganizationName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OrganizationName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.*/",
+        "setterMethodName" : "setOrganizationName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ContactEmail",
+        "c2jShape" : "Email",
+        "deprecated" : false,
+        "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContactEmail",
+        "getterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@return The email ID of the organization or individual contact that the enrolled user can use.*/",
+        "getterMethodName" : "getContactEmail",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContactEmail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContactEmail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContactEmail",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.*/",
+        "setterMethodName" : "setContactEmail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactEmail",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "contactEmail",
+          "variableType" : "String",
+          "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "PrivateSkillIds",
+        "c2jShape" : "ShortSkillIdList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrivateSkillIds",
+        "getterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@return The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+        "getterMethodName" : "getPrivateSkillIds",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PrivateSkillIds",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PrivateSkillIds",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "SkillId",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "PrivateSkillIds",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+        "setterMethodName" : "setPrivateSkillIds",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "privateSkillIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrivateSkillIds(java.util.Collection)} or {@link #withPrivateSkillIds(java.util.Collection)} if you want to override the existing values.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "privateSkillIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ContactEmail" : {
+          "c2jName" : "ContactEmail",
+          "c2jShape" : "Email",
+          "deprecated" : false,
+          "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContactEmail",
+          "getterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@return The email ID of the organization or individual contact that the enrolled user can use.*/",
+          "getterMethodName" : "getContactEmail",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContactEmail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContactEmail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContactEmail",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.*/",
+          "setterMethodName" : "setContactEmail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactEmail",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The email ID of the organization or individual contact that the enrolled user can use. </p>\n@param contactEmail The email ID of the organization or individual contact that the enrolled user can use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "contactEmail",
+            "variableType" : "String",
+            "documentation" : "<p>The email ID of the organization or individual contact that the enrolled user can use. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "OrganizationName" : {
+          "c2jName" : "OrganizationName",
+          "c2jShape" : "OrganizationName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOrganizationName",
+          "getterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@return The name of the organization sending the enrollment invite to a user.*/",
+          "getterMethodName" : "getOrganizationName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OrganizationName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OrganizationName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OrganizationName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.*/",
+          "setterMethodName" : "setOrganizationName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the organization sending the enrollment invite to a user.</p>\n@param organizationName The name of the organization sending the enrollment invite to a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the organization sending the enrollment invite to a user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PrivateSkillIds" : {
+          "c2jName" : "PrivateSkillIds",
+          "c2jShape" : "ShortSkillIdList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrivateSkillIds",
+          "getterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@return The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+          "getterMethodName" : "getPrivateSkillIds",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PrivateSkillIds",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PrivateSkillIds",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "SkillId",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "PrivateSkillIds",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.*/",
+          "setterMethodName" : "setPrivateSkillIds",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "privateSkillIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrivateSkillIds(java.util.Collection)} or {@link #withPrivateSkillIds(java.util.Collection)} if you want to override the existing values.</p>\n@param privateSkillIds The list of private skill IDs that you want to recommend to the user to enable in the invitation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "privateSkillIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "OrganizationName" ],
+      "shapeName" : "PutInvitationConfigurationRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutInvitationConfigurationRequest",
+        "variableName" : "putInvitationConfigurationRequest",
+        "variableType" : "PutInvitationConfigurationRequest",
+        "documentation" : null,
+        "simpleType" : "PutInvitationConfigurationRequest",
+        "variableSetterType" : "PutInvitationConfigurationRequest"
+      },
+      "wrapper" : false
+    },
+    "PutInvitationConfigurationResult" : {
+      "c2jName" : "PutInvitationConfigurationResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PutInvitationConfigurationResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutInvitationConfigurationResult",
+        "variableName" : "putInvitationConfigurationResult",
+        "variableType" : "PutInvitationConfigurationResult",
+        "documentation" : null,
+        "simpleType" : "PutInvitationConfigurationResult",
+        "variableSetterType" : "PutInvitationConfigurationResult"
       },
       "wrapper" : false
     },

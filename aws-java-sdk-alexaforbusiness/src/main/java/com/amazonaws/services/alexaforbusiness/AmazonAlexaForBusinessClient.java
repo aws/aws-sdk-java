@@ -179,7 +179,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.ApproveSkill
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
      *      API Documentation</a>
@@ -294,7 +294,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -354,7 +354,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param associateSkillGroupWithRoomRequest
      * @return Result of the AssociateSkillGroupWithRoom operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.AssociateSkillGroupWithRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
@@ -410,7 +410,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param associateSkillWithSkillGroupRequest
      * @return Result of the AssociateSkillWithSkillGroup operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws NotFoundException
      *         The resource is not found.
      * @throws SkillNotLinkedException
@@ -470,7 +470,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param associateSkillWithUsersRequest
      * @return Result of the AssociateSkillWithUsers operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.AssociateSkillWithUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
      *      target="_top">AWS API Documentation</a>
@@ -755,7 +757,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws AlreadyExistsException
      *         The resource being created already exists.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.CreateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -869,7 +871,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.CreateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -927,7 +929,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
@@ -983,7 +985,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -1039,7 +1041,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteBusinessReportSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -1153,7 +1155,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
@@ -1209,7 +1211,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws InvalidCertificateAuthorityException
      *         The Certificate Authority can't issue or revoke a certificate.
      * @sample AmazonAlexaForBusiness.DeleteDevice
@@ -1267,7 +1269,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
@@ -1323,7 +1325,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
@@ -1377,7 +1379,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param deleteRoomSkillParameterRequest
      * @return Result of the DeleteRoomSkillParameter operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -1435,7 +1437,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteSkillAuthorization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
@@ -1493,7 +1495,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1549,7 +1551,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
@@ -1660,7 +1662,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param disassociateDeviceFromRoomRequest
      * @return Result of the DisassociateDeviceFromRoom operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -1719,7 +1721,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param disassociateSkillFromSkillGroupRequest
      * @return Result of the DisassociateSkillFromSkillGroup operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws NotFoundException
      *         The resource is not found.
      * @sample AmazonAlexaForBusiness.DisassociateSkillFromSkillGroup
@@ -1778,7 +1780,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param disassociateSkillFromUsersRequest
      * @return Result of the DisassociateSkillFromUsers operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.DisassociateSkillFromUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
      *      target="_top">AWS API Documentation</a>
@@ -1835,7 +1839,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param disassociateSkillGroupFromRoomRequest
      * @return Result of the DisassociateSkillGroupFromRoom operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.DisassociateSkillGroupFromRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
@@ -2202,6 +2206,62 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the configured values for the user enrollment invitation email template.
+     * </p>
+     * 
+     * @param getInvitationConfigurationRequest
+     * @return Result of the GetInvitationConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInvitationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetInvitationConfigurationResult executeGetInvitationConfiguration(GetInvitationConfigurationRequest getInvitationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInvitationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInvitationConfigurationRequest> request = null;
+        Response<GetInvitationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInvitationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getInvitationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInvitationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetInvitationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2920,6 +2980,64 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Configures the email template for the user enrollment invitation with the specified attributes.
+     * </p>
+     * 
+     * @param putInvitationConfigurationRequest
+     * @return Result of the PutInvitationConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @sample AmazonAlexaForBusiness.PutInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutInvitationConfigurationResult putInvitationConfiguration(PutInvitationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutInvitationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutInvitationConfigurationResult executePutInvitationConfiguration(PutInvitationConfigurationRequest putInvitationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putInvitationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutInvitationConfigurationRequest> request = null;
+        Response<PutInvitationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutInvitationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putInvitationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInvitationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutInvitationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutInvitationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill
      * parameter.
      * </p>
@@ -2927,7 +3045,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param putRoomSkillParameterRequest
      * @return Result of the PutRoomSkillParameter operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.PutRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -2986,7 +3104,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws UnauthorizedException
      *         The caller has no permissions to operate on the resource involved in the API call.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.PutSkillAuthorization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
@@ -3044,7 +3162,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws InvalidDeviceException
      *         The device is in an invalid state.
      * @sample AmazonAlexaForBusiness.RegisterAVSDevice
@@ -3102,7 +3220,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param rejectSkillRequest
      * @return Result of the RejectSkill operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws NotFoundException
      *         The resource is not found.
      * @sample AmazonAlexaForBusiness.RejectSkill
@@ -3215,7 +3333,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.RevokeInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -3638,7 +3756,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws InvalidUserStatusException
      *         The attempt to update a user is invalid due to the user's current status.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.SendInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -3918,7 +4036,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NameInUseException
      *         The name sent in the request is already in use.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.UpdateAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -3974,7 +4092,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.UpdateBusinessReportSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -4088,7 +4206,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.UpdateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
@@ -4144,7 +4262,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -4205,7 +4323,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NameInUseException
      *         The name sent in the request is already in use.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.UpdateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -4319,7 +4437,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NameInUseException
      *         The name sent in the request is already in use.
      * @throws ConcurrentModificationException
-     *         Concurrent modification of resources. HTTP Status Code: 400.
+     *         There is a concurrent modification of resources.
      * @sample AmazonAlexaForBusiness.UpdateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>

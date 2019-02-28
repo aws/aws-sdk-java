@@ -35,7 +35,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
@@ -179,12 +179,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
     private String policyType;
@@ -252,14 +251,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -272,13 +271,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
      *         resource provided by your own application or service. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -291,14 +290,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -313,14 +312,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -333,14 +332,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -1442,24 +1441,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        For information on which services do not support <code>StepScaling</code> or
-     *        <code>TargetTrackingScaling</code>, see <a href=
+     *        <code>TargetTrackingScaling</code>, see the information about <b>Limits</b> in <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     *        >Step Scaling Policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     *        Guide</i>.
+     *        >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -1473,23 +1470,21 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The policy type. This parameter is required if you are creating a scaling policy.</p>
      *         <p>
      *         For information on which services do not support <code>StepScaling</code> or
-     *         <code>TargetTrackingScaling</code>, see <a href=
+     *         <code>TargetTrackingScaling</code>, see the information about <b>Limits</b> in <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *         >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     *         >Step Scaling Policies</a> and <a href=
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *         >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling
-     *         User Guide</i>.
+     *         >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -1503,24 +1498,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        For information on which services do not support <code>StepScaling</code> or
-     *        <code>TargetTrackingScaling</code>, see <a href=
+     *        <code>TargetTrackingScaling</code>, see the information about <b>Limits</b> in <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     *        >Step Scaling Policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     *        Guide</i>.
+     *        >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -1536,24 +1529,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        For information on which services do not support <code>StepScaling</code> or
-     *        <code>TargetTrackingScaling</code>, see <a href=
+     *        <code>TargetTrackingScaling</code>, see the information about <b>Limits</b> in <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     *        >Step Scaling Policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     *        Guide</i>.
+     *        >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @see PolicyType
      */
 
@@ -1567,24 +1558,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For information on which services do not support <code>StepScaling</code> or <code>TargetTrackingScaling</code>,
-     * see <a href=
+     * see the information about <b>Limits</b> in <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     * >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     * >Step Scaling Policies</a> and <a href=
      * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     * >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.
+     * >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        For information on which services do not support <code>StepScaling</code> or
-     *        <code>TargetTrackingScaling</code>, see <a href=
+     *        <code>TargetTrackingScaling</code>, see the information about <b>Limits</b> in <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
-     *        >Step Scaling Policies for Application Auto Scaling</a> and <a href=
+     *        >Step Scaling Policies</a> and <a href=
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
-     *        >Target Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     *        Guide</i>.
+     *        >Target Tracking Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

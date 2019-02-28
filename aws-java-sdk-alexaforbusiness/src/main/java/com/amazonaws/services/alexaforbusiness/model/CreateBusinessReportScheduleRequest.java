@@ -33,7 +33,8 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
     private String scheduleName;
     /**
      * <p>
-     * The S3 bucket name of the output reports.
+     * The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download
+     * link by calling ListBusinessReportSchedule.
      * </p>
      */
     private String s3BucketName;
@@ -57,7 +58,8 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
     private BusinessReportContentRange contentRange;
     /**
      * <p>
-     * The recurrence of the reports.
+     * The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API
+     * is called.
      * </p>
      */
     private BusinessReportRecurrence recurrence;
@@ -110,11 +112,13 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The S3 bucket name of the output reports.
+     * The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download
+     * link by calling ListBusinessReportSchedule.
      * </p>
      * 
      * @param s3BucketName
-     *        The S3 bucket name of the output reports.
+     *        The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a
+     *        download link by calling ListBusinessReportSchedule.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -123,10 +127,12 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The S3 bucket name of the output reports.
+     * The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download
+     * link by calling ListBusinessReportSchedule.
      * </p>
      * 
-     * @return The S3 bucket name of the output reports.
+     * @return The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a
+     *         download link by calling ListBusinessReportSchedule.
      */
 
     public String getS3BucketName() {
@@ -135,11 +141,13 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The S3 bucket name of the output reports.
+     * The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download
+     * link by calling ListBusinessReportSchedule.
      * </p>
      * 
      * @param s3BucketName
-     *        The S3 bucket name of the output reports.
+     *        The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a
+     *        download link by calling ListBusinessReportSchedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +297,13 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The recurrence of the reports.
+     * The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API
+     * is called.
      * </p>
      * 
      * @param recurrence
-     *        The recurrence of the reports.
+     *        The recurrence of the reports. If this isn't specified, the report will only be delivered one time when
+     *        the API is called.
      */
 
     public void setRecurrence(BusinessReportRecurrence recurrence) {
@@ -302,10 +312,12 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The recurrence of the reports.
+     * The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API
+     * is called.
      * </p>
      * 
-     * @return The recurrence of the reports.
+     * @return The recurrence of the reports. If this isn't specified, the report will only be delivered one time when
+     *         the API is called.
      */
 
     public BusinessReportRecurrence getRecurrence() {
@@ -314,11 +326,13 @@ public class CreateBusinessReportScheduleRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The recurrence of the reports.
+     * The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API
+     * is called.
      * </p>
      * 
      * @param recurrence
-     *        The recurrence of the reports.
+     *        The recurrence of the reports. If this isn't specified, the report will only be delivered one time when
+     *        the API is called.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

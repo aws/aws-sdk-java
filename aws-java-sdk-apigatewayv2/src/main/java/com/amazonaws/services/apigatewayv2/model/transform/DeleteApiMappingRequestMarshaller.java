@@ -27,8 +27,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteApiMappingRequestMarshaller {
 
-    private static final MarshallingInfo<String> APIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> APIMAPPINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("apiMappingId").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -50,7 +48,6 @@ public class DeleteApiMappingRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteApiMappingRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(deleteApiMappingRequest.getApiMappingId(), APIMAPPINGID_BINDING);
             protocolMarshaller.marshall(deleteApiMappingRequest.getDomainName(), DOMAINNAME_BINDING);
         } catch (Exception e) {

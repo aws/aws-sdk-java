@@ -208,6 +208,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProfileResult getProfile(GetProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +274,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public PutConferencePreferenceResult putConferencePreference(PutConferencePreferenceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutInvitationConfigurationResult putInvitationConfiguration(PutInvitationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

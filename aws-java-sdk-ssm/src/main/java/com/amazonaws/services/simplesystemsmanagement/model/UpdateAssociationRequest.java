@@ -58,7 +58,29 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private InstanceAssociationOutputLocation outputLocation;
     /**
      * <p>
-     * The name of the association document.
+     * The name of the SSM document that contains the configuration information for the instance. You can specify
+     * Command, Policy, or Automation documents.
+     * </p>
+     * <p>
+     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
+     * another account.
+     * </p>
+     * <p>
+     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     * </p>
+     * <p>
+     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
+     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      */
     private String name;
@@ -354,11 +376,54 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the association document.
+     * The name of the SSM document that contains the configuration information for the instance. You can specify
+     * Command, Policy, or Automation documents.
+     * </p>
+     * <p>
+     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
+     * another account.
+     * </p>
+     * <p>
+     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     * </p>
+     * <p>
+     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
+     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
-     *        The name of the association document.
+     *        The name of the SSM document that contains the configuration information for the instance. You can specify
+     *        Command, Policy, or Automation documents.</p>
+     *        <p>
+     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
+     *        from another account.
+     *        </p>
+     *        <p>
+     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
+     *        document ARN, in the following format:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     *        </p>
+     *        <p>
+     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
+     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      */
 
     public void setName(String name) {
@@ -367,10 +432,53 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the association document.
+     * The name of the SSM document that contains the configuration information for the instance. You can specify
+     * Command, Policy, or Automation documents.
+     * </p>
+     * <p>
+     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
+     * another account.
+     * </p>
+     * <p>
+     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     * </p>
+     * <p>
+     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
+     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
-     * @return The name of the association document.
+     * @return The name of the SSM document that contains the configuration information for the instance. You can
+     *         specify Command, Policy, or Automation documents.</p>
+     *         <p>
+     *         You can specify AWS-predefined documents, documents you created, or a document that is shared with you
+     *         from another account.
+     *         </p>
+     *         <p>
+     *         For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
+     *         document ARN, in the following format:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     *         </p>
+     *         <p>
+     *         For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
+     *         document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      */
 
     public String getName() {
@@ -379,11 +487,54 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the association document.
+     * The name of the SSM document that contains the configuration information for the instance. You can specify
+     * Command, Policy, or Automation documents.
+     * </p>
+     * <p>
+     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
+     * another account.
+     * </p>
+     * <p>
+     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     * </p>
+     * <p>
+     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
+     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
-     *        The name of the association document.
+     *        The name of the SSM document that contains the configuration information for the instance. You can specify
+     *        Command, Policy, or Automation documents.</p>
+     *        <p>
+     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
+     *        from another account.
+     *        </p>
+     *        <p>
+     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
+     *        document ARN, in the following format:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
+     *        </p>
+     *        <p>
+     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
+     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

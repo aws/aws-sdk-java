@@ -48,7 +48,7 @@ public class CreateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String name;
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      */
     private String protocolType;
@@ -251,11 +251,11 @@ public class CreateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @see ProtocolType
      */
 
@@ -265,10 +265,10 @@ public class CreateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
-     * @return The API protocol: HTTP or WEBSOCKET.
+     * @return The API protocol: Currently only WEBSOCKET is supported.
      * @see ProtocolType
      */
 
@@ -278,11 +278,11 @@ public class CreateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */
@@ -294,11 +294,11 @@ public class CreateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */

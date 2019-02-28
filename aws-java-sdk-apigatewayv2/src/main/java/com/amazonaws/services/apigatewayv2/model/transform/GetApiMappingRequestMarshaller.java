@@ -27,8 +27,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetApiMappingRequestMarshaller {
 
-    private static final MarshallingInfo<String> APIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
-            .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> APIMAPPINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("apiMappingId").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -50,7 +48,6 @@ public class GetApiMappingRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getApiMappingRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(getApiMappingRequest.getApiMappingId(), APIMAPPINGID_BINDING);
             protocolMarshaller.marshall(getApiMappingRequest.getDomainName(), DOMAINNAME_BINDING);
         } catch (Exception e) {

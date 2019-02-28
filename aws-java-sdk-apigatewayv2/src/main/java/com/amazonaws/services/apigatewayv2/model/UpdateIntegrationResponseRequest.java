@@ -49,11 +49,7 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String integrationId;
-    /**
-     * <p>
-     * The integration response ID.
-     * </p>
-     */
+    /** The integration response ID. */
     private String integrationResponseId;
     /**
      * <p>
@@ -316,9 +312,7 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p>
      * The integration response ID.
-     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.
@@ -329,9 +323,7 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p>
      * The integration response ID.
-     * </p>
      * 
      * @return The integration response ID.
      */
@@ -341,9 +333,7 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p>
      * The integration response ID.
-     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.

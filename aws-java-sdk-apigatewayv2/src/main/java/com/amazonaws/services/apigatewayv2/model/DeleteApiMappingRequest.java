@@ -22,12 +22,6 @@ public class DeleteApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the API.
-     * </p>
-     */
-    private String apiId;
-    /**
-     * <p>
      * The API mapping identifier.
      * </p>
      */
@@ -38,46 +32,6 @@ public class DeleteApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String domainName;
-
-    /**
-     * <p>
-     * The identifier of the API.
-     * </p>
-     * 
-     * @param apiId
-     *        The identifier of the API.
-     */
-
-    public void setApiId(String apiId) {
-        this.apiId = apiId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the API.
-     * </p>
-     * 
-     * @return The identifier of the API.
-     */
-
-    public String getApiId() {
-        return this.apiId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the API.
-     * </p>
-     * 
-     * @param apiId
-     *        The identifier of the API.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteApiMappingRequest withApiId(String apiId) {
-        setApiId(apiId);
-        return this;
-    }
 
     /**
      * <p>
@@ -171,8 +125,6 @@ public class DeleteApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApiId() != null)
-            sb.append("ApiId: ").append(getApiId()).append(",");
         if (getApiMappingId() != null)
             sb.append("ApiMappingId: ").append(getApiMappingId()).append(",");
         if (getDomainName() != null)
@@ -191,10 +143,6 @@ public class DeleteApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof DeleteApiMappingRequest == false)
             return false;
         DeleteApiMappingRequest other = (DeleteApiMappingRequest) obj;
-        if (other.getApiId() == null ^ this.getApiId() == null)
-            return false;
-        if (other.getApiId() != null && other.getApiId().equals(this.getApiId()) == false)
-            return false;
         if (other.getApiMappingId() == null ^ this.getApiMappingId() == null)
             return false;
         if (other.getApiMappingId() != null && other.getApiMappingId().equals(this.getApiMappingId()) == false)
@@ -211,7 +159,6 @@ public class DeleteApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getApiMappingId() == null) ? 0 : getApiMappingId().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         return hashCode;

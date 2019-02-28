@@ -1208,6 +1208,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Retrieves the configured values for the user enrollment invitation email template.
+     * </p>
+     * 
+     * @param getInvitationConfigurationRequest
+     * @return A Java Future containing the result of the GetInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
+            GetInvitationConfigurationRequest getInvitationConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configured values for the user enrollment invitation email template.
+     * </p>
+     * 
+     * @param getInvitationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
+            GetInvitationConfigurationRequest getInvitationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the details of a room profile by profile ARN.
      * </p>
      * 
@@ -1616,6 +1649,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest putConferencePreferenceRequest,
             com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Configures the email template for the user enrollment invitation with the specified attributes.
+     * </p>
+     * 
+     * @param putInvitationConfigurationRequest
+     * @return A Java Future containing the result of the PutInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.PutInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
+            PutInvitationConfigurationRequest putInvitationConfigurationRequest);
+
+    /**
+     * <p>
+     * Configures the email template for the user enrollment invitation with the specified attributes.
+     * </p>
+     * 
+     * @param putInvitationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.PutInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
+            PutInvitationConfigurationRequest putInvitationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler);
 
     /**
      * <p>

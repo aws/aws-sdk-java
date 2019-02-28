@@ -27,64 +27,18 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the organization.
-     * </p>
-     */
-    private String organizationArn;
-    /**
-     * <p>
-     * The private skill ID you want to make available to enrolled users.&gt;
+     * The private skill ID you want to make available to enrolled users.
      * </p>
      */
     private String skillId;
 
     /**
      * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @param organizationArn
-     *        The ARN of the organization.
-     */
-
-    public void setOrganizationArn(String organizationArn) {
-        this.organizationArn = organizationArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @return The ARN of the organization.
-     */
-
-    public String getOrganizationArn() {
-        return this.organizationArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @param organizationArn
-     *        The ARN of the organization.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateSkillWithUsersRequest withOrganizationArn(String organizationArn) {
-        setOrganizationArn(organizationArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The private skill ID you want to make available to enrolled users.&gt;
+     * The private skill ID you want to make available to enrolled users.
      * </p>
      * 
      * @param skillId
-     *        The private skill ID you want to make available to enrolled users.&gt;
+     *        The private skill ID you want to make available to enrolled users.
      */
 
     public void setSkillId(String skillId) {
@@ -93,10 +47,10 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The private skill ID you want to make available to enrolled users.&gt;
+     * The private skill ID you want to make available to enrolled users.
      * </p>
      * 
-     * @return The private skill ID you want to make available to enrolled users.&gt;
+     * @return The private skill ID you want to make available to enrolled users.
      */
 
     public String getSkillId() {
@@ -105,11 +59,11 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The private skill ID you want to make available to enrolled users.&gt;
+     * The private skill ID you want to make available to enrolled users.
      * </p>
      * 
      * @param skillId
-     *        The private skill ID you want to make available to enrolled users.&gt;
+     *        The private skill ID you want to make available to enrolled users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,8 +84,6 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOrganizationArn() != null)
-            sb.append("OrganizationArn: ").append(getOrganizationArn()).append(",");
         if (getSkillId() != null)
             sb.append("SkillId: ").append(getSkillId());
         sb.append("}");
@@ -148,10 +100,6 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof AssociateSkillWithUsersRequest == false)
             return false;
         AssociateSkillWithUsersRequest other = (AssociateSkillWithUsersRequest) obj;
-        if (other.getOrganizationArn() == null ^ this.getOrganizationArn() == null)
-            return false;
-        if (other.getOrganizationArn() != null && other.getOrganizationArn().equals(this.getOrganizationArn()) == false)
-            return false;
         if (other.getSkillId() == null ^ this.getSkillId() == null)
             return false;
         if (other.getSkillId() != null && other.getSkillId().equals(this.getSkillId()) == false)
@@ -164,7 +112,6 @@ public class AssociateSkillWithUsersRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOrganizationArn() == null) ? 0 : getOrganizationArn().hashCode());
         hashCode = prime * hashCode + ((getSkillId() == null) ? 0 : getSkillId().hashCode());
         return hashCode;
     }

@@ -27,8 +27,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DisassociateSkillFromUsersRequestMarshaller {
 
-    private static final MarshallingInfo<String> ORGANIZATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationArn").build();
     private static final MarshallingInfo<String> SKILLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SkillId").build();
 
@@ -48,7 +46,6 @@ public class DisassociateSkillFromUsersRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(disassociateSkillFromUsersRequest.getOrganizationArn(), ORGANIZATIONARN_BINDING);
             protocolMarshaller.marshall(disassociateSkillFromUsersRequest.getSkillId(), SKILLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

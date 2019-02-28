@@ -502,6 +502,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request) {
+
+        return getInvitationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request) {
 
         return getProfileAsync(request, null);
@@ -668,6 +681,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(PutInvitationConfigurationRequest request) {
+
+        return putInvitationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(PutInvitationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

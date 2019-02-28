@@ -27,56 +27,10 @@ public class DisassociateSkillFromUsersRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the organization.
-     * </p>
-     */
-    private String organizationArn;
-    /**
-     * <p>
      * The private skill ID you want to make unavailable for enrolled users.
      * </p>
      */
     private String skillId;
-
-    /**
-     * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @param organizationArn
-     *        The ARN of the organization.
-     */
-
-    public void setOrganizationArn(String organizationArn) {
-        this.organizationArn = organizationArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @return The ARN of the organization.
-     */
-
-    public String getOrganizationArn() {
-        return this.organizationArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the organization.
-     * </p>
-     * 
-     * @param organizationArn
-     *        The ARN of the organization.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DisassociateSkillFromUsersRequest withOrganizationArn(String organizationArn) {
-        setOrganizationArn(organizationArn);
-        return this;
-    }
 
     /**
      * <p>
@@ -130,8 +84,6 @@ public class DisassociateSkillFromUsersRequest extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOrganizationArn() != null)
-            sb.append("OrganizationArn: ").append(getOrganizationArn()).append(",");
         if (getSkillId() != null)
             sb.append("SkillId: ").append(getSkillId());
         sb.append("}");
@@ -148,10 +100,6 @@ public class DisassociateSkillFromUsersRequest extends com.amazonaws.AmazonWebSe
         if (obj instanceof DisassociateSkillFromUsersRequest == false)
             return false;
         DisassociateSkillFromUsersRequest other = (DisassociateSkillFromUsersRequest) obj;
-        if (other.getOrganizationArn() == null ^ this.getOrganizationArn() == null)
-            return false;
-        if (other.getOrganizationArn() != null && other.getOrganizationArn().equals(this.getOrganizationArn()) == false)
-            return false;
         if (other.getSkillId() == null ^ this.getSkillId() == null)
             return false;
         if (other.getSkillId() != null && other.getSkillId().equals(this.getSkillId()) == false)
@@ -164,7 +112,6 @@ public class DisassociateSkillFromUsersRequest extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOrganizationArn() == null) ? 0 : getOrganizationArn().hashCode());
         hashCode = prime * hashCode + ((getSkillId() == null) ? 0 : getSkillId().hashCode());
         return hashCode;
     }

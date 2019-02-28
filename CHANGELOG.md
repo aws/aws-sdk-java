@@ -1,3 +1,20 @@
+# __1.11.509__ __2019-02-28__
+## __Alexa For Business__
+  - ### Features
+    - This release adds the PutInvitationConfiguration API to configure the user invitation email template with custom attributes, and the GetInvitationConfiguration API to retrieve the configured values.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager State Manager now supports associations using documents shared by other AWS accounts.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Marking certain properties as explicitly required and fixing an issue with the GetApiMappings operation for ApiMapping resources.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for application-autoscaling
+
 # __1.11.508__ __2019-02-27__
 ## __AWS WAF__
   - ### Features

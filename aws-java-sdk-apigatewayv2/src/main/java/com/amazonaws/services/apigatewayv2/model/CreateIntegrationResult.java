@@ -20,15 +20,14 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise undefined.
+     * The connection ID.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. The valid value is INTERNET for connections
-     * through the public routable internet or VPC_LINK for private connections between API Gateway and a network load
-     * balancer in a VPC. The default value is INTERNET.
+     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
+     * connections through the public routable internet.
      * </p>
      */
     private String connectionType;
@@ -76,7 +75,13 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String integrationMethod;
-
+    /**
+     * <p>
+     * The integration response selection expression for the integration. See <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     * >Integration Response Selection Expressions</a>.
+     * </p>
+     */
     private String integrationResponseSelectionExpression;
     /**
      * <p>
@@ -92,12 +97,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * request passed through as-is. This integration is also referred to as Lambda proxy integration.
      * </p>
      * <p>
-     * HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint within
-     * a VPC. This integration is also referred to as the HTTP custom integration.
+     * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
+     * the HTTP custom integration.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP endpoint
-     * within a VPC, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
+     * as-is. This is also referred to as HTTP proxy integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -107,25 +112,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     private String integrationType;
     /**
      * <p>
-     * Specifies the Uniform Resource Identifier (URI) of the integration endpoint.
-     * </p>
-     * <p>
-     * For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard
-     * integration, where connectionType is not VPC_LINK, or private integration, where connectionType is VPC_LINK. For
-     * a private HTTP integration, the URI is not used for routing.
-     * </p>
-     * <p>
-     * For AWS or AWS_PROXY integrations, the URI is of the form
-     * arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the API
-     * Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and {subdomain}
-     * is a designated subdomain supported by certain AWS service for fast host-name lookup. action can be used for an
-     * AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string. The ensuing {service_api}
-     * refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an
-     * AWS service path-based API. The ensuing service_api refers to the path to an AWS service resource, including the
-     * region of the integrated AWS service, if applicable. For example, for integration with the S3 API of GetObject,
-     * the URI can be either arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     * arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     * For a Lambda proxy integration, this is the URI of the Lambda function.
      * </p>
      */
     private String integrationUri;
@@ -182,12 +169,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise undefined.
+     * The connection ID.
      * </p>
      * 
      * @param connectionId
-     *        The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise
-     *        undefined.
+     *        The connection ID.
      */
 
     public void setConnectionId(String connectionId) {
@@ -196,11 +182,10 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise undefined.
+     * The connection ID.
      * </p>
      * 
-     * @return The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise
-     *         undefined.
+     * @return The connection ID.
      */
 
     public String getConnectionId() {
@@ -209,12 +194,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise undefined.
+     * The connection ID.
      * </p>
      * 
      * @param connectionId
-     *        The identifier of the VpcLink used for the integration when the connectionType is VPC_LINK; otherwise
-     *        undefined.
+     *        The connection ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,15 +209,13 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. The valid value is INTERNET for connections
-     * through the public routable internet or VPC_LINK for private connections between API Gateway and a network load
-     * balancer in a VPC. The default value is INTERNET.
+     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
+     * connections through the public routable internet.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. The valid value is INTERNET for
-     *        connections through the public routable internet or VPC_LINK for private connections between API Gateway
-     *        and a network load balancer in a VPC. The default value is INTERNET.
+     *        The type of the network connection to the integration endpoint. Currently the only valid value is
+     *        INTERNET, for connections through the public routable internet.
      * @see ConnectionType
      */
 
@@ -243,14 +225,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. The valid value is INTERNET for connections
-     * through the public routable internet or VPC_LINK for private connections between API Gateway and a network load
-     * balancer in a VPC. The default value is INTERNET.
+     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
+     * connections through the public routable internet.
      * </p>
      * 
-     * @return The type of the network connection to the integration endpoint. The valid value is INTERNET for
-     *         connections through the public routable internet or VPC_LINK for private connections between API Gateway
-     *         and a network load balancer in a VPC. The default value is INTERNET.
+     * @return The type of the network connection to the integration endpoint. Currently the only valid value is
+     *         INTERNET, for connections through the public routable internet.
      * @see ConnectionType
      */
 
@@ -260,15 +240,13 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. The valid value is INTERNET for connections
-     * through the public routable internet or VPC_LINK for private connections between API Gateway and a network load
-     * balancer in a VPC. The default value is INTERNET.
+     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
+     * connections through the public routable internet.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. The valid value is INTERNET for
-     *        connections through the public routable internet or VPC_LINK for private connections between API Gateway
-     *        and a network load balancer in a VPC. The default value is INTERNET.
+     *        The type of the network connection to the integration endpoint. Currently the only valid value is
+     *        INTERNET, for connections through the public routable internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -280,15 +258,13 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. The valid value is INTERNET for connections
-     * through the public routable internet or VPC_LINK for private connections between API Gateway and a network load
-     * balancer in a VPC. The default value is INTERNET.
+     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
+     * connections through the public routable internet.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. The valid value is INTERNET for
-     *        connections through the public routable internet or VPC_LINK for private connections between API Gateway
-     *        and a network load balancer in a VPC. The default value is INTERNET.
+     *        The type of the network connection to the integration endpoint. Currently the only valid value is
+     *        INTERNET, for connections through the public routable internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -624,7 +600,16 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The integration response selection expression for the integration. See <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     * >Integration Response Selection Expressions</a>.
+     * </p>
+     * 
      * @param integrationResponseSelectionExpression
+     *        The integration response selection expression for the integration. See <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     *        >Integration Response Selection Expressions</a>.
      */
 
     public void setIntegrationResponseSelectionExpression(String integrationResponseSelectionExpression) {
@@ -632,7 +617,15 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @return
+     * <p>
+     * The integration response selection expression for the integration. See <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     * >Integration Response Selection Expressions</a>.
+     * </p>
+     * 
+     * @return The integration response selection expression for the integration. See <a href=
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     *         >Integration Response Selection Expressions</a>.
      */
 
     public String getIntegrationResponseSelectionExpression() {
@@ -640,7 +633,16 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The integration response selection expression for the integration. See <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     * >Integration Response Selection Expressions</a>.
+     * </p>
+     * 
      * @param integrationResponseSelectionExpression
+     *        The integration response selection expression for the integration. See <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions"
+     *        >Integration Response Selection Expressions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,12 +665,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * request passed through as-is. This integration is also referred to as Lambda proxy integration.
      * </p>
      * <p>
-     * HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint within
-     * a VPC. This integration is also referred to as the HTTP custom integration.
+     * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
+     * the HTTP custom integration.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP endpoint
-     * within a VPC, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
+     * as-is. This is also referred to as HTTP proxy integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -687,13 +689,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
      *        </p>
      *        <p>
-     *        HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint
-     *        within a VPC. This integration is also referred to as the HTTP custom integration.
+     *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
+     *        to as the HTTP custom integration.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP
-     *        endpoint within a VPC, with the client request passed through as-is. This is also referred to as HTTP
-     *        proxy integration.
+     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
+     *        through as-is. This is also referred to as HTTP proxy integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -719,12 +720,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * request passed through as-is. This integration is also referred to as Lambda proxy integration.
      * </p>
      * <p>
-     * HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint within
-     * a VPC. This integration is also referred to as the HTTP custom integration.
+     * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
+     * the HTTP custom integration.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP endpoint
-     * within a VPC, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
+     * as-is. This is also referred to as HTTP proxy integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -742,13 +743,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         client request passed through as-is. This integration is also referred to as Lambda proxy integration.
      *         </p>
      *         <p>
-     *         HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP
-     *         endpoint within a VPC. This integration is also referred to as the HTTP custom integration.
+     *         HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also
+     *         referred to as the HTTP custom integration.
      *         </p>
      *         <p>
-     *         HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP
-     *         endpoint within a VPC, with the client request passed through as-is. This is also referred to as HTTP
-     *         proxy integration.
+     *         HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
+     *         through as-is. This is also referred to as HTTP proxy integration.
      *         </p>
      *         <p>
      *         MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -774,12 +774,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * request passed through as-is. This integration is also referred to as Lambda proxy integration.
      * </p>
      * <p>
-     * HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint within
-     * a VPC. This integration is also referred to as the HTTP custom integration.
+     * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
+     * the HTTP custom integration.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP endpoint
-     * within a VPC, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
+     * as-is. This is also referred to as HTTP proxy integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -798,13 +798,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
      *        </p>
      *        <p>
-     *        HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint
-     *        within a VPC. This integration is also referred to as the HTTP custom integration.
+     *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
+     *        to as the HTTP custom integration.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP
-     *        endpoint within a VPC, with the client request passed through as-is. This is also referred to as HTTP
-     *        proxy integration.
+     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
+     *        through as-is. This is also referred to as HTTP proxy integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -832,12 +831,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * request passed through as-is. This integration is also referred to as Lambda proxy integration.
      * </p>
      * <p>
-     * HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint within
-     * a VPC. This integration is also referred to as the HTTP custom integration.
+     * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
+     * the HTTP custom integration.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP endpoint
-     * within a VPC, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
+     * as-is. This is also referred to as HTTP proxy integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -856,13 +855,12 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
      *        </p>
      *        <p>
-     *        HTTP: for integrating the route or method request with an HTTP endpoint, including a private HTTP endpoint
-     *        within a VPC. This integration is also referred to as the HTTP custom integration.
+     *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
+     *        to as the HTTP custom integration.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, including a private HTTP
-     *        endpoint within a VPC, with the client request passed through as-is. This is also referred to as HTTP
-     *        proxy integration.
+     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
+     *        through as-is. This is also referred to as HTTP proxy integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -878,47 +876,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the Uniform Resource Identifier (URI) of the integration endpoint.
-     * </p>
-     * <p>
-     * For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard
-     * integration, where connectionType is not VPC_LINK, or private integration, where connectionType is VPC_LINK. For
-     * a private HTTP integration, the URI is not used for routing.
-     * </p>
-     * <p>
-     * For AWS or AWS_PROXY integrations, the URI is of the form
-     * arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the API
-     * Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and {subdomain}
-     * is a designated subdomain supported by certain AWS service for fast host-name lookup. action can be used for an
-     * AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string. The ensuing {service_api}
-     * refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an
-     * AWS service path-based API. The ensuing service_api refers to the path to an AWS service resource, including the
-     * region of the integrated AWS service, if applicable. For example, for integration with the S3 API of GetObject,
-     * the URI can be either arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     * arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     * For a Lambda proxy integration, this is the URI of the Lambda function.
      * </p>
      * 
      * @param integrationUri
-     *        Specifies the Uniform Resource Identifier (URI) of the integration endpoint.</p>
-     *        <p>
-     *        For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the
-     *        <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where connectionType is not VPC_LINK, or private integration, where connectionType
-     *        is VPC_LINK. For a private HTTP integration, the URI is not used for routing.
-     *        </p>
-     *        <p>
-     *        For AWS or AWS_PROXY integrations, the URI is of the form
-     *        arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the
-     *        API Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and
-     *        {subdomain} is a designated subdomain supported by certain AWS service for fast host-name lookup. action
-     *        can be used for an AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string.
-     *        The ensuing {service_api} refers to a supported action {name} plus any required input parameters.
-     *        Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the
-     *        path to an AWS service resource, including the region of the integrated AWS service, if applicable. For
-     *        example, for integration with the S3 API of GetObject, the URI can be either
-     *        arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     *        arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     *        For a Lambda proxy integration, this is the URI of the Lambda function.
      */
 
     public void setIntegrationUri(String integrationUri) {
@@ -927,46 +889,10 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the Uniform Resource Identifier (URI) of the integration endpoint.
-     * </p>
-     * <p>
-     * For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard
-     * integration, where connectionType is not VPC_LINK, or private integration, where connectionType is VPC_LINK. For
-     * a private HTTP integration, the URI is not used for routing.
-     * </p>
-     * <p>
-     * For AWS or AWS_PROXY integrations, the URI is of the form
-     * arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the API
-     * Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and {subdomain}
-     * is a designated subdomain supported by certain AWS service for fast host-name lookup. action can be used for an
-     * AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string. The ensuing {service_api}
-     * refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an
-     * AWS service path-based API. The ensuing service_api refers to the path to an AWS service resource, including the
-     * region of the integrated AWS service, if applicable. For example, for integration with the S3 API of GetObject,
-     * the URI can be either arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     * arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     * For a Lambda proxy integration, this is the URI of the Lambda function.
      * </p>
      * 
-     * @return Specifies the Uniform Resource Identifier (URI) of the integration endpoint.</p>
-     *         <p>
-     *         For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the
-     *         <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for
-     *         either standard integration, where connectionType is not VPC_LINK, or private integration, where
-     *         connectionType is VPC_LINK. For a private HTTP integration, the URI is not used for routing.
-     *         </p>
-     *         <p>
-     *         For AWS or AWS_PROXY integrations, the URI is of the form
-     *         arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the
-     *         API Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and
-     *         {subdomain} is a designated subdomain supported by certain AWS service for fast host-name lookup. action
-     *         can be used for an AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query
-     *         string. The ensuing {service_api} refers to a supported action {name} plus any required input parameters.
-     *         Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the
-     *         path to an AWS service resource, including the region of the integrated AWS service, if applicable. For
-     *         example, for integration with the S3 API of GetObject, the URI can be either
-     *         arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     *         arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     * @return For a Lambda proxy integration, this is the URI of the Lambda function.
      */
 
     public String getIntegrationUri() {
@@ -975,47 +901,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the Uniform Resource Identifier (URI) of the integration endpoint.
-     * </p>
-     * <p>
-     * For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard
-     * integration, where connectionType is not VPC_LINK, or private integration, where connectionType is VPC_LINK. For
-     * a private HTTP integration, the URI is not used for routing.
-     * </p>
-     * <p>
-     * For AWS or AWS_PROXY integrations, the URI is of the form
-     * arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the API
-     * Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and {subdomain}
-     * is a designated subdomain supported by certain AWS service for fast host-name lookup. action can be used for an
-     * AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string. The ensuing {service_api}
-     * refers to a supported action {name} plus any required input parameters. Alternatively, path can be used for an
-     * AWS service path-based API. The ensuing service_api refers to the path to an AWS service resource, including the
-     * region of the integrated AWS service, if applicable. For example, for integration with the S3 API of GetObject,
-     * the URI can be either arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     * arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     * For a Lambda proxy integration, this is the URI of the Lambda function.
      * </p>
      * 
      * @param integrationUri
-     *        Specifies the Uniform Resource Identifier (URI) of the integration endpoint.</p>
-     *        <p>
-     *        For HTTP or HTTP_PROXY integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the
-     *        <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where connectionType is not VPC_LINK, or private integration, where connectionType
-     *        is VPC_LINK. For a private HTTP integration, the URI is not used for routing.
-     *        </p>
-     *        <p>
-     *        For AWS or AWS_PROXY integrations, the URI is of the form
-     *        arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}. Here, {Region} is the
-     *        API Gateway region (e.g., us-east-1); {service} is the name of the integrated AWS service (e.g., s3); and
-     *        {subdomain} is a designated subdomain supported by certain AWS service for fast host-name lookup. action
-     *        can be used for an AWS service action-based API, using an Action={name}&{p1}={v1}&p2={v2}... query string.
-     *        The ensuing {service_api} refers to a supported action {name} plus any required input parameters.
-     *        Alternatively, path can be used for an AWS service path-based API. The ensuing service_api refers to the
-     *        path to an AWS service resource, including the region of the integrated AWS service, if applicable. For
-     *        example, for integration with the S3 API of GetObject, the URI can be either
-     *        arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key} or
-     *        arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}
+     *        For a Lambda proxy integration, this is the URI of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

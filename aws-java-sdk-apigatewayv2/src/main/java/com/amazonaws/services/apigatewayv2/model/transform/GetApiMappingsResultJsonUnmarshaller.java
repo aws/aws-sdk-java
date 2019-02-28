@@ -48,21 +48,13 @@ public class GetApiMappingsResultJsonUnmarshaller implements Unmarshaller<GetApi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("apiId", targetDepth)) {
+                if (context.testExpression("items", targetDepth)) {
                     context.nextToken();
-                    getApiMappingsResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getApiMappingsResult.setItems(new ListUnmarshaller<ApiMapping>(ApiMappingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("apiMappingId", targetDepth)) {
+                if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    getApiMappingsResult.setApiMappingId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("apiMappingKey", targetDepth)) {
-                    context.nextToken();
-                    getApiMappingsResult.setApiMappingKey(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("stage", targetDepth)) {
-                    context.nextToken();
-                    getApiMappingsResult.setStage(context.getUnmarshaller(String.class).unmarshall(context));
+                    getApiMappingsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

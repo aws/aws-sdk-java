@@ -15,7 +15,9 @@ package com.amazonaws.services.alexaforbusiness.model;
 import javax.annotation.Generated;
 
 /**
- * Concurrent modification of resources. HTTP Status Code: 400.
+ * <p>
+ * There is a concurrent modification of resources.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationException extends com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException {

@@ -865,6 +865,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
+ * <code>CentOS7.5</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.6</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>*</code>
  * </p>
  * <p>

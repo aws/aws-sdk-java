@@ -39,7 +39,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      */
     private PatchFilterGroup globalFilters;
@@ -268,11 +268,11 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
      * @param globalFilters
-     *        A set of global filters used to exclude patches from the baseline.
+     *        A set of global filters used to include patches in the baseline.
      */
 
     public void setGlobalFilters(PatchFilterGroup globalFilters) {
@@ -281,10 +281,10 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
-     * @return A set of global filters used to exclude patches from the baseline.
+     * @return A set of global filters used to include patches in the baseline.
      */
 
     public PatchFilterGroup getGlobalFilters() {
@@ -293,11 +293,11 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
      * @param globalFilters
-     *        A set of global filters used to exclude patches from the baseline.
+     *        A set of global filters used to include patches in the baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

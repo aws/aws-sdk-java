@@ -58,9 +58,7 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
     private String endpointType;
     /**
      * <p>
-     * The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
-     * Gateway</a>.
+     * The Amazon Route 53 Hosted Zone ID of the endpoint.
      * </p>
      */
     private String hostedZoneId;
@@ -298,15 +296,11 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
-     * Gateway</a>.
+     * The Amazon Route 53 Hosted Zone ID of the endpoint.
      * </p>
      * 
      * @param hostedZoneId
-     *        The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     *        href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     *        API Gateway</a>.
+     *        The Amazon Route 53 Hosted Zone ID of the endpoint.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -315,14 +309,10 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
-     * Gateway</a>.
+     * The Amazon Route 53 Hosted Zone ID of the endpoint.
      * </p>
      * 
-     * @return The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     *         href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     *         API Gateway</a>.
+     * @return The Amazon Route 53 Hosted Zone ID of the endpoint.
      */
 
     public String getHostedZoneId() {
@@ -331,15 +321,11 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
-     * Gateway</a>.
+     * The Amazon Route 53 Hosted Zone ID of the endpoint.
      * </p>
      * 
      * @param hostedZoneId
-     *        The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     *        href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     *        API Gateway</a>.
+     *        The Amazon Route 53 Hosted Zone ID of the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

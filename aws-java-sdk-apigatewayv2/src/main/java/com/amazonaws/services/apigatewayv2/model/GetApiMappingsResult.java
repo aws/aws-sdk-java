@@ -20,186 +20,124 @@ public class GetApiMappingsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The API identifier.
+     * The elements from this collection.
      * </p>
      */
-    private String apiId;
+    private java.util.List<ApiMapping> items;
     /**
      * <p>
-     * The API mapping identifier.
+     * The next page of elements from this collection. Not valid for the last element of the collection.
      * </p>
      */
-    private String apiMappingId;
-    /**
-     * <p>
-     * The API mapping key.
-     * </p>
-     */
-    private String apiMappingKey;
-    /**
-     * <p>
-     * The API stage.
-     * </p>
-     */
-    private String stage;
+    private String nextToken;
 
     /**
      * <p>
-     * The API identifier.
+     * The elements from this collection.
      * </p>
      * 
-     * @param apiId
-     *        The API identifier.
+     * @return The elements from this collection.
      */
 
-    public void setApiId(String apiId) {
-        this.apiId = apiId;
+    public java.util.List<ApiMapping> getItems() {
+        return items;
     }
 
     /**
      * <p>
-     * The API identifier.
+     * The elements from this collection.
      * </p>
      * 
-     * @return The API identifier.
+     * @param items
+     *        The elements from this collection.
      */
 
-    public String getApiId() {
-        return this.apiId;
+    public void setItems(java.util.Collection<ApiMapping> items) {
+        if (items == null) {
+            this.items = null;
+            return;
+        }
+
+        this.items = new java.util.ArrayList<ApiMapping>(items);
     }
 
     /**
      * <p>
-     * The API identifier.
+     * The elements from this collection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param apiId
-     *        The API identifier.
+     * @param items
+     *        The elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApiMappingsResult withApiId(String apiId) {
-        setApiId(apiId);
+    public GetApiMappingsResult withItems(ApiMapping... items) {
+        if (this.items == null) {
+            setItems(new java.util.ArrayList<ApiMapping>(items.length));
+        }
+        for (ApiMapping ele : items) {
+            this.items.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The API mapping identifier.
+     * The elements from this collection.
      * </p>
      * 
-     * @param apiMappingId
-     *        The API mapping identifier.
-     */
-
-    public void setApiMappingId(String apiMappingId) {
-        this.apiMappingId = apiMappingId;
-    }
-
-    /**
-     * <p>
-     * The API mapping identifier.
-     * </p>
-     * 
-     * @return The API mapping identifier.
-     */
-
-    public String getApiMappingId() {
-        return this.apiMappingId;
-    }
-
-    /**
-     * <p>
-     * The API mapping identifier.
-     * </p>
-     * 
-     * @param apiMappingId
-     *        The API mapping identifier.
+     * @param items
+     *        The elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApiMappingsResult withApiMappingId(String apiMappingId) {
-        setApiMappingId(apiMappingId);
+    public GetApiMappingsResult withItems(java.util.Collection<ApiMapping> items) {
+        setItems(items);
         return this;
     }
 
     /**
      * <p>
-     * The API mapping key.
+     * The next page of elements from this collection. Not valid for the last element of the collection.
      * </p>
      * 
-     * @param apiMappingKey
-     *        The API mapping key.
+     * @param nextToken
+     *        The next page of elements from this collection. Not valid for the last element of the collection.
      */
 
-    public void setApiMappingKey(String apiMappingKey) {
-        this.apiMappingKey = apiMappingKey;
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * The API mapping key.
+     * The next page of elements from this collection. Not valid for the last element of the collection.
      * </p>
      * 
-     * @return The API mapping key.
+     * @return The next page of elements from this collection. Not valid for the last element of the collection.
      */
 
-    public String getApiMappingKey() {
-        return this.apiMappingKey;
+    public String getNextToken() {
+        return this.nextToken;
     }
 
     /**
      * <p>
-     * The API mapping key.
+     * The next page of elements from this collection. Not valid for the last element of the collection.
      * </p>
      * 
-     * @param apiMappingKey
-     *        The API mapping key.
+     * @param nextToken
+     *        The next page of elements from this collection. Not valid for the last element of the collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApiMappingsResult withApiMappingKey(String apiMappingKey) {
-        setApiMappingKey(apiMappingKey);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The API stage.
-     * </p>
-     * 
-     * @param stage
-     *        The API stage.
-     */
-
-    public void setStage(String stage) {
-        this.stage = stage;
-    }
-
-    /**
-     * <p>
-     * The API stage.
-     * </p>
-     * 
-     * @return The API stage.
-     */
-
-    public String getStage() {
-        return this.stage;
-    }
-
-    /**
-     * <p>
-     * The API stage.
-     * </p>
-     * 
-     * @param stage
-     *        The API stage.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApiMappingsResult withStage(String stage) {
-        setStage(stage);
+    public GetApiMappingsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -215,14 +153,10 @@ public class GetApiMappingsResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApiId() != null)
-            sb.append("ApiId: ").append(getApiId()).append(",");
-        if (getApiMappingId() != null)
-            sb.append("ApiMappingId: ").append(getApiMappingId()).append(",");
-        if (getApiMappingKey() != null)
-            sb.append("ApiMappingKey: ").append(getApiMappingKey()).append(",");
-        if (getStage() != null)
-            sb.append("Stage: ").append(getStage());
+        if (getItems() != null)
+            sb.append("Items: ").append(getItems()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -237,21 +171,13 @@ public class GetApiMappingsResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof GetApiMappingsResult == false)
             return false;
         GetApiMappingsResult other = (GetApiMappingsResult) obj;
-        if (other.getApiId() == null ^ this.getApiId() == null)
+        if (other.getItems() == null ^ this.getItems() == null)
             return false;
-        if (other.getApiId() != null && other.getApiId().equals(this.getApiId()) == false)
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
-        if (other.getApiMappingId() == null ^ this.getApiMappingId() == null)
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
-        if (other.getApiMappingId() != null && other.getApiMappingId().equals(this.getApiMappingId()) == false)
-            return false;
-        if (other.getApiMappingKey() == null ^ this.getApiMappingKey() == null)
-            return false;
-        if (other.getApiMappingKey() != null && other.getApiMappingKey().equals(this.getApiMappingKey()) == false)
-            return false;
-        if (other.getStage() == null ^ this.getStage() == null)
-            return false;
-        if (other.getStage() != null && other.getStage().equals(this.getStage()) == false)
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -261,10 +187,8 @@ public class GetApiMappingsResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
-        hashCode = prime * hashCode + ((getApiMappingId() == null) ? 0 : getApiMappingId().hashCode());
-        hashCode = prime * hashCode + ((getApiMappingKey() == null) ? 0 : getApiMappingKey().hashCode());
-        hashCode = prime * hashCode + ((getStage() == null) ? 0 : getStage().hashCode());
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -72,7 +72,7 @@ public class Api implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      */
     private String protocolType;
@@ -407,11 +407,11 @@ public class Api implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @see ProtocolType
      */
 
@@ -421,10 +421,10 @@ public class Api implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
-     * @return The API protocol: HTTP or WEBSOCKET.
+     * @return The API protocol: Currently only WEBSOCKET is supported.
      * @see ProtocolType
      */
 
@@ -434,11 +434,11 @@ public class Api implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */
@@ -450,11 +450,11 @@ public class Api implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API protocol: HTTP or WEBSOCKET.
+     * The API protocol: Currently only WEBSOCKET is supported.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: HTTP or WEBSOCKET.
+     *        The API protocol: Currently only WEBSOCKET is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */

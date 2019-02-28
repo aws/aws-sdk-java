@@ -1264,6 +1264,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request) {
+
+        return getInvitationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(final GetInvitationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler) {
+        final GetInvitationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInvitationConfigurationResult>() {
+            @Override
+            public GetInvitationConfigurationResult call() throws Exception {
+                GetInvitationConfigurationResult result = null;
+
+                try {
+                    result = executeGetInvitationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request) {
 
         return getProfileAsync(request, null);
@@ -1679,6 +1712,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executePutConferencePreference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(PutInvitationConfigurationRequest request) {
+
+        return putInvitationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(final PutInvitationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler) {
+        final PutInvitationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutInvitationConfigurationResult>() {
+            @Override
+            public PutInvitationConfigurationResult call() throws Exception {
+                PutInvitationConfigurationResult result = null;
+
+                try {
+                    result = executePutInvitationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

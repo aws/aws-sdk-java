@@ -29,7 +29,7 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
@@ -178,14 +178,14 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -198,13 +198,13 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
      *         resource provided by your own application or service. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -217,14 +217,14 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -239,14 +239,14 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
