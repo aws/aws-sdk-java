@@ -34,7 +34,7 @@ public class ClientVpnConnection implements Serializable, Cloneable {
     private String clientVpnEndpointId;
     /**
      * <p>
-     * <b>The current date and time.</b>
+     * The current date and time.
      * </p>
      */
     private String timestamp;
@@ -89,8 +89,8 @@ public class ClientVpnConnection implements Serializable, Cloneable {
     private String clientIp;
     /**
      * <p>
-     * <b>The common name associated with the client. This is either the name of the client certificate, or the Active
-     * Directory user name.</b>
+     * The common name associated with the client. This is either the name of the client certificate, or the Active
+     * Directory user name.
      * </p>
      */
     private String commonName;
@@ -149,11 +149,11 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The current date and time.</b>
+     * The current date and time.
      * </p>
      * 
      * @param timestamp
-     *        <b>The current date and time.</b>
+     *        The current date and time.
      */
 
     public void setTimestamp(String timestamp) {
@@ -162,10 +162,10 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The current date and time.</b>
+     * The current date and time.
      * </p>
      * 
-     * @return <b>The current date and time.</b>
+     * @return The current date and time.
      */
 
     public String getTimestamp() {
@@ -174,11 +174,11 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The current date and time.</b>
+     * The current date and time.
      * </p>
      * 
      * @param timestamp
-     *        <b>The current date and time.</b>
+     *        The current date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,13 +515,13 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The common name associated with the client. This is either the name of the client certificate, or the Active
-     * Directory user name.</b>
+     * The common name associated with the client. This is either the name of the client certificate, or the Active
+     * Directory user name.
      * </p>
      * 
      * @param commonName
-     *        <b>The common name associated with the client. This is either the name of the client certificate, or the
-     *        Active Directory user name.</b>
+     *        The common name associated with the client. This is either the name of the client certificate, or the
+     *        Active Directory user name.
      */
 
     public void setCommonName(String commonName) {
@@ -530,12 +530,12 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The common name associated with the client. This is either the name of the client certificate, or the Active
-     * Directory user name.</b>
+     * The common name associated with the client. This is either the name of the client certificate, or the Active
+     * Directory user name.
      * </p>
      * 
-     * @return <b>The common name associated with the client. This is either the name of the client certificate, or the
-     *         Active Directory user name.</b>
+     * @return The common name associated with the client. This is either the name of the client certificate, or the
+     *         Active Directory user name.
      */
 
     public String getCommonName() {
@@ -544,13 +544,13 @@ public class ClientVpnConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The common name associated with the client. This is either the name of the client certificate, or the Active
-     * Directory user name.</b>
+     * The common name associated with the client. This is either the name of the client certificate, or the Active
+     * Directory user name.
      * </p>
      * 
      * @param commonName
-     *        <b>The common name associated with the client. This is either the name of the client certificate, or the
-     *        Active Directory user name.</b>
+     *        The common name associated with the client. This is either the name of the client certificate, or the
+     *        Active Directory user name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

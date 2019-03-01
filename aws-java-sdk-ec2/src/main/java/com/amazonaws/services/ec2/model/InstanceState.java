@@ -28,7 +28,17 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
+     * The state of the instance as a 16-bit unsigned integer.
+     * </p>
+     * <p>
+     * The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535.
+     * These numerical values are used for internal purposes and should be ignored.
+     * </p>
+     * <p>
+     * The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     * </p>
+     * <p>
+     * The valid values for instance-state-code will all be in the range of the low byte and they are:
      * </p>
      * <ul>
      * <li>
@@ -62,6 +72,9 @@ public class InstanceState implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
+     * </p>
      */
     private Integer code;
     /**
@@ -73,7 +86,17 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
+     * The state of the instance as a 16-bit unsigned integer.
+     * </p>
+     * <p>
+     * The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535.
+     * These numerical values are used for internal purposes and should be ignored.
+     * </p>
+     * <p>
+     * The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     * </p>
+     * <p>
+     * The valid values for instance-state-code will all be in the range of the low byte and they are:
      * </p>
      * <ul>
      * <li>
@@ -107,9 +130,22 @@ public class InstanceState implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
+     * </p>
      * 
      * @param code
-     *        The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
+     *        The state of the instance as a 16-bit unsigned integer. </p>
+     *        <p>
+     *        The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and
+     *        65,535. These numerical values are used for internal purposes and should be ignored.
+     *        </p>
+     *        <p>
+     *        The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     *        </p>
+     *        <p>
+     *        The valid values for instance-state-code will all be in the range of the low byte and they are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -141,6 +177,9 @@ public class InstanceState implements Serializable, Cloneable {
      *        <code>80</code> : <code>stopped</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
      */
 
     public void setCode(Integer code) {
@@ -149,7 +188,17 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
+     * The state of the instance as a 16-bit unsigned integer.
+     * </p>
+     * <p>
+     * The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535.
+     * These numerical values are used for internal purposes and should be ignored.
+     * </p>
+     * <p>
+     * The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     * </p>
+     * <p>
+     * The valid values for instance-state-code will all be in the range of the low byte and they are:
      * </p>
      * <ul>
      * <li>
@@ -183,8 +232,21 @@ public class InstanceState implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
+     * </p>
      * 
-     * @return The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
+     * @return The state of the instance as a 16-bit unsigned integer. </p>
+     *         <p>
+     *         The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and
+     *         65,535. These numerical values are used for internal purposes and should be ignored.
+     *         </p>
+     *         <p>
+     *         The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     *         </p>
+     *         <p>
+     *         The valid values for instance-state-code will all be in the range of the low byte and they are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -216,6 +278,9 @@ public class InstanceState implements Serializable, Cloneable {
      *         <code>80</code> : <code>stopped</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
      */
 
     public Integer getCode() {
@@ -224,7 +289,17 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
+     * The state of the instance as a 16-bit unsigned integer.
+     * </p>
+     * <p>
+     * The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535.
+     * These numerical values are used for internal purposes and should be ignored.
+     * </p>
+     * <p>
+     * The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     * </p>
+     * <p>
+     * The valid values for instance-state-code will all be in the range of the low byte and they are:
      * </p>
      * <ul>
      * <li>
@@ -258,9 +333,22 @@ public class InstanceState implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
+     * </p>
      * 
      * @param code
-     *        The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
+     *        The state of the instance as a 16-bit unsigned integer. </p>
+     *        <p>
+     *        The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and
+     *        65,535. These numerical values are used for internal purposes and should be ignored.
+     *        </p>
+     *        <p>
+     *        The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.
+     *        </p>
+     *        <p>
+     *        The valid values for instance-state-code will all be in the range of the low byte and they are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -292,6 +380,9 @@ public class InstanceState implements Serializable, Cloneable {
      *        <code>80</code> : <code>stopped</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

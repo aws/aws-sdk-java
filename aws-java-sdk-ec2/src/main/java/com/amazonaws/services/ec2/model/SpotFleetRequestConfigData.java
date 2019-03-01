@@ -144,7 +144,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. The default end date is 7 days from the current date.
+     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
+     * it.
      * </p>
      */
     private java.util.Date validUntil;
@@ -1195,13 +1196,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. The default end date is 7 days from the current date.
+     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
+     * it.
      * </p>
      * 
      * @param validUntil
      *        The end date and time of the request, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *        requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
+     *        requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     *        remains until you cancel it.
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -1212,12 +1215,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. The default end date is 7 days from the current date.
+     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
+     * it.
      * </p>
      * 
      * @return The end date and time of the request, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *         requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
+     *         requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     *         remains until you cancel it.
      */
 
     public java.util.Date getValidUntil() {
@@ -1228,13 +1233,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. The default end date is 7 days from the current date.
+     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
+     * it.
      * </p>
      * 
      * @param validUntil
      *        The end date and time of the request, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *        requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
+     *        requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     *        remains until you cancel it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

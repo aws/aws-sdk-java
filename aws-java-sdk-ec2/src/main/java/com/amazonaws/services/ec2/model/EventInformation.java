@@ -48,12 +48,6 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
-     * instances have failed. For more information, see the description of the event.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid. For more information, see the
      * description of the event.
      * </p>
@@ -140,6 +134,12 @@ public class EventInformation implements Serializable, Cloneable {
      * The following are the <code>Information</code> events:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
+     * instances have failed. For more information, see the description of the event.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot
@@ -218,12 +218,6 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
-     * instances have failed. For more information, see the description of the event.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid. For more information, see the
      * description of the event.
      * </p>
@@ -312,6 +306,12 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
+     * instances have failed. For more information, see the description of the event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot
      * price or the Spot price is above the On-Demand price.
      * </p>
@@ -334,12 +334,6 @@ public class EventInformation implements Serializable, Cloneable {
      *        <p>
      *        <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
      *        or terminate an instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
-     *        launch instances have failed. For more information, see the description of the event.
      *        </p>
      *        </li>
      *        <li>
@@ -433,6 +427,12 @@ public class EventInformation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
+     *        launch instances have failed. For more information, see the description of the event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the
      *        Spot price or the Spot price is above the On-Demand price.
      *        </p>
@@ -461,12 +461,6 @@ public class EventInformation implements Serializable, Cloneable {
      * <p>
      * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
      * terminate an instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
-     * instances have failed. For more information, see the description of the event.
      * </p>
      * </li>
      * <li>
@@ -559,6 +553,12 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
+     * instances have failed. For more information, see the description of the event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot
      * price or the Spot price is above the On-Demand price.
      * </p>
@@ -580,12 +580,6 @@ public class EventInformation implements Serializable, Cloneable {
      *         <p>
      *         <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
      *         or terminate an instance.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
-     *         launch instances have failed. For more information, see the description of the event.
      *         </p>
      *         </li>
      *         <li>
@@ -680,6 +674,12 @@ public class EventInformation implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
+     *         launch instances have failed. For more information, see the description of the event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below
      *         the Spot price or the Spot price is above the On-Demand price.
      *         </p>
@@ -708,12 +708,6 @@ public class EventInformation implements Serializable, Cloneable {
      * <p>
      * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
      * terminate an instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
-     * instances have failed. For more information, see the description of the event.
      * </p>
      * </li>
      * <li>
@@ -806,6 +800,12 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch
+     * instances have failed. For more information, see the description of the event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot
      * price or the Spot price is above the On-Demand price.
      * </p>
@@ -828,12 +828,6 @@ public class EventInformation implements Serializable, Cloneable {
      *        <p>
      *        <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
      *        or terminate an instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
-     *        launch instances have failed. For more information, see the description of the event.
      *        </p>
      *        </li>
      *        <li>
@@ -925,6 +919,12 @@ public class EventInformation implements Serializable, Cloneable {
      *        The following are the <code>Information</code> events:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to
+     *        launch instances have failed. For more information, see the description of the event.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the

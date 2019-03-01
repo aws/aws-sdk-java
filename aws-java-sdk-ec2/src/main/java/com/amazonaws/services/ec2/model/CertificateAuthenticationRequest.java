@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <b>Information about the client certificate to be used for authentication.</b>
+ * Information about the client certificate to be used for authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CertificateAuthenticationRequest"
@@ -28,21 +28,21 @@ public class CertificateAuthenticationRequest implements Serializable, Cloneable
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must
-     * be provisioned in AWS Certificate Manager (ACM).</b>
+     * The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be
+     * provisioned in AWS Certificate Manager (ACM).
      * </p>
      */
     private String clientRootCertificateChainArn;
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must
-     * be provisioned in AWS Certificate Manager (ACM).</b>
+     * The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be
+     * provisioned in AWS Certificate Manager (ACM).
      * </p>
      * 
      * @param clientRootCertificateChainArn
-     *        <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and
-     *        it must be provisioned in AWS Certificate Manager (ACM).</b>
+     *        The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it
+     *        must be provisioned in AWS Certificate Manager (ACM).
      */
 
     public void setClientRootCertificateChainArn(String clientRootCertificateChainArn) {
@@ -51,12 +51,12 @@ public class CertificateAuthenticationRequest implements Serializable, Cloneable
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must
-     * be provisioned in AWS Certificate Manager (ACM).</b>
+     * The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be
+     * provisioned in AWS Certificate Manager (ACM).
      * </p>
      * 
-     * @return <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and
-     *         it must be provisioned in AWS Certificate Manager (ACM).</b>
+     * @return The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it
+     *         must be provisioned in AWS Certificate Manager (ACM).
      */
 
     public String getClientRootCertificateChainArn() {
@@ -65,13 +65,13 @@ public class CertificateAuthenticationRequest implements Serializable, Cloneable
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must
-     * be provisioned in AWS Certificate Manager (ACM).</b>
+     * The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be
+     * provisioned in AWS Certificate Manager (ACM).
      * </p>
      * 
      * @param clientRootCertificateChainArn
-     *        <b>The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and
-     *        it must be provisioned in AWS Certificate Manager (ACM).</b>
+     *        The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it
+     *        must be provisioned in AWS Certificate Manager (ACM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

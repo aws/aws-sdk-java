@@ -38,7 +38,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      */
     private String serverCertificateArn;
@@ -179,12 +179,12 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      * 
      * @param serverCertificateArn
      *        The ARN of the server certificate. For more information, see the <a
-     *        href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      */
 
     public void setServerCertificateArn(String serverCertificateArn) {
@@ -194,11 +194,11 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      * 
      * @return The ARN of the server certificate. For more information, see the <a
-     *         href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      */
 
     public String getServerCertificateArn() {
@@ -208,12 +208,12 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      * 
      * @param serverCertificateArn
      *        The ARN of the server certificate. For more information, see the <a
-     *        href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User Guide</a> .
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

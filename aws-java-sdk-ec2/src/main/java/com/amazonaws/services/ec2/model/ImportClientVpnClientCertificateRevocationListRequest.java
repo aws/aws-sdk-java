@@ -34,9 +34,9 @@ public class ImportClientVpnClientCertificateRevocationListRequest extends Amazo
     private String clientVpnEndpointId;
     /**
      * <p>
-     * The client certificate revocation list file. For more information, see <a
-     * href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a
-     * Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     * The client certificate revocation list file. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     * >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      */
     private String certificateRevocationList;
@@ -83,15 +83,15 @@ public class ImportClientVpnClientCertificateRevocationListRequest extends Amazo
 
     /**
      * <p>
-     * The client certificate revocation list file. For more information, see <a
-     * href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a
-     * Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     * The client certificate revocation list file. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     * >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      * 
      * @param certificateRevocationList
-     *        The client certificate revocation list file. For more information, see <a
-     *        href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
-     *        >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     *        The client certificate revocation list file. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     *        >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      */
 
     public void setCertificateRevocationList(String certificateRevocationList) {
@@ -100,14 +100,14 @@ public class ImportClientVpnClientCertificateRevocationListRequest extends Amazo
 
     /**
      * <p>
-     * The client certificate revocation list file. For more information, see <a
-     * href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a
-     * Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     * The client certificate revocation list file. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     * >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      * 
-     * @return The client certificate revocation list file. For more information, see <a
-     *         href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
-     *         >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     * @return The client certificate revocation list file. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     *         >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      */
 
     public String getCertificateRevocationList() {
@@ -116,15 +116,15 @@ public class ImportClientVpnClientCertificateRevocationListRequest extends Amazo
 
     /**
      * <p>
-     * The client certificate revocation list file. For more information, see <a
-     * href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a
-     * Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     * The client certificate revocation list file. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     * >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      * 
      * @param certificateRevocationList
-     *        The client certificate revocation list file. For more information, see <a
-     *        href="vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
-     *        >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Admin Guide</i>.
+     *        The client certificate revocation list file. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate"
+     *        >Generate a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

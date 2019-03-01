@@ -10507,6 +10507,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyInstanceEventStartTimeResult> modifyInstanceEventStartTimeAsync(ModifyInstanceEventStartTimeRequest request) {
+
+        return modifyInstanceEventStartTimeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceEventStartTimeResult> modifyInstanceEventStartTimeAsync(final ModifyInstanceEventStartTimeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceEventStartTimeRequest, ModifyInstanceEventStartTimeResult> asyncHandler) {
+        final ModifyInstanceEventStartTimeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyInstanceEventStartTimeResult>() {
+            @Override
+            public ModifyInstanceEventStartTimeResult call() throws Exception {
+                ModifyInstanceEventStartTimeResult result = null;
+
+                try {
+                    result = executeModifyInstanceEventStartTime(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyInstancePlacementResult> modifyInstancePlacementAsync(ModifyInstancePlacementRequest request) {
 
         return modifyInstancePlacementAsync(request, null);

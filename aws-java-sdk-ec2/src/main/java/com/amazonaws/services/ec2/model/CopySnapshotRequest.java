@@ -35,14 +35,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String description;
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
      * <p>
      * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
-     * parameter or the default region in your AWS configuration file.
+     * parameter or the default Region in your AWS configuration file.
      * </p>
      */
     private String destinationRegion;
@@ -118,7 +118,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String presignedUrl;
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      */
     private String sourceRegion;
@@ -171,24 +171,24 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
      * <p>
      * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
-     * parameter or the default region in your AWS configuration file.
+     * parameter or the default Region in your AWS configuration file.
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *        This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
+     *        The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *        This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
      *        parameter, where it is required.</p>
      *        <p>
      *        The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      *        <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
-     *        <code>--region</code> parameter or the default region in your AWS configuration file.
+     *        <code>--region</code> parameter or the default Region in your AWS configuration file.
      */
 
     public void setDestinationRegion(String destinationRegion) {
@@ -197,23 +197,23 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
      * <p>
      * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
-     * parameter or the default region in your AWS configuration file.
+     * parameter or the default Region in your AWS configuration file.
      * </p>
      * 
-     * @return The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *         This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
+     * @return The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *         This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
      *         parameter, where it is required.</p>
      *         <p>
      *         The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      *         <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
-     *         <code>--region</code> parameter or the default region in your AWS configuration file.
+     *         <code>--region</code> parameter or the default Region in your AWS configuration file.
      */
 
     public String getDestinationRegion() {
@@ -222,24 +222,24 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
      * <p>
      * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
-     * parameter or the default region in your AWS configuration file.
+     * parameter or the default Region in your AWS configuration file.
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *        This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
+     *        The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *        This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
      *        parameter, where it is required.</p>
      *        <p>
      *        The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
      *        <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
-     *        <code>--region</code> parameter or the default region in your AWS configuration file.
+     *        <code>--region</code> parameter or the default Region in your AWS configuration file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,11 +704,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The ID of the region that contains the snapshot to be copied.
+     *        The ID of the Region that contains the snapshot to be copied.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -717,10 +717,10 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
-     * @return The ID of the region that contains the snapshot to be copied.
+     * @return The ID of the Region that contains the snapshot to be copied.
      */
 
     public String getSourceRegion() {
@@ -729,11 +729,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The ID of the region that contains the snapshot to be copied.
+     *        The ID of the Region that contains the snapshot to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,24 +28,24 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ID of the subnet.</b>
+     * The ID of the subnet.
      * </p>
      */
     private String networkId;
     /**
      * <p>
-     * <b>The target network type.</b>
+     * The target network type.
      * </p>
      */
     private String networkType;
 
     /**
      * <p>
-     * <b>The ID of the subnet.</b>
+     * The ID of the subnet.
      * </p>
      * 
      * @param networkId
-     *        <b>The ID of the subnet.</b>
+     *        The ID of the subnet.
      */
 
     public void setNetworkId(String networkId) {
@@ -54,10 +54,10 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ID of the subnet.</b>
+     * The ID of the subnet.
      * </p>
      * 
-     * @return <b>The ID of the subnet.</b>
+     * @return The ID of the subnet.
      */
 
     public String getNetworkId() {
@@ -66,11 +66,11 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ID of the subnet.</b>
+     * The ID of the subnet.
      * </p>
      * 
      * @param networkId
-     *        <b>The ID of the subnet.</b>
+     *        The ID of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The target network type.</b>
+     * The target network type.
      * </p>
      * 
      * @param networkType
-     *        <b>The target network type.</b>
+     *        The target network type.
      * @see AssociatedNetworkType
      */
 
@@ -95,10 +95,10 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The target network type.</b>
+     * The target network type.
      * </p>
      * 
-     * @return <b>The target network type.</b>
+     * @return The target network type.
      * @see AssociatedNetworkType
      */
 
@@ -108,11 +108,11 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The target network type.</b>
+     * The target network type.
      * </p>
      * 
      * @param networkType
-     *        <b>The target network type.</b>
+     *        The target network type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociatedNetworkType
      */
@@ -124,11 +124,11 @@ public class AssociatedTargetNetwork implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The target network type.</b>
+     * The target network type.
      * </p>
      * 
      * @param networkType
-     *        <b>The target network type.</b>
+     *        The target network type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociatedNetworkType
      */

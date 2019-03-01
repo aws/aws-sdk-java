@@ -120,7 +120,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     private String nextToken;
     /**
      * <p>
-     * Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * Describes the snapshots owned by one or more owners.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ownerIds;
@@ -135,7 +135,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * One or more snapshot IDs.
      * </p>
      * <p>
-     * Default: Describes snapshots for which you have launch permissions.
+     * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> snapshotIds;
@@ -860,10 +860,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * Describes the snapshots owned by one or more owners.
      * </p>
      * 
-     * @return Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * @return Describes the snapshots owned by one or more owners.
      */
 
     public java.util.List<String> getOwnerIds() {
@@ -875,11 +875,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * Describes the snapshots owned by one or more owners.
      * </p>
      * 
      * @param ownerIds
-     *        Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     *        Describes the snapshots owned by one or more owners.
      */
 
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
@@ -893,7 +893,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * Describes the snapshots owned by one or more owners.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -902,7 +902,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param ownerIds
-     *        Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     *        Describes the snapshots owned by one or more owners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,11 +918,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     * Describes the snapshots owned by one or more owners.
      * </p>
      * 
      * @param ownerIds
-     *        Returns the snapshots owned by the specified owner. Multiple owners can be specified.
+     *        Describes the snapshots owned by one or more owners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1009,12 +1009,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * One or more snapshot IDs.
      * </p>
      * <p>
-     * Default: Describes snapshots for which you have launch permissions.
+     * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
      * @return One or more snapshot IDs.</p>
      *         <p>
-     *         Default: Describes snapshots for which you have launch permissions.
+     *         Default: Describes the snapshots for which you have create volume permissions.
      */
 
     public java.util.List<String> getSnapshotIds() {
@@ -1029,13 +1029,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * One or more snapshot IDs.
      * </p>
      * <p>
-     * Default: Describes snapshots for which you have launch permissions.
+     * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
      * @param snapshotIds
      *        One or more snapshot IDs.</p>
      *        <p>
-     *        Default: Describes snapshots for which you have launch permissions.
+     *        Default: Describes the snapshots for which you have create volume permissions.
      */
 
     public void setSnapshotIds(java.util.Collection<String> snapshotIds) {
@@ -1052,7 +1052,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * One or more snapshot IDs.
      * </p>
      * <p>
-     * Default: Describes snapshots for which you have launch permissions.
+     * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1063,7 +1063,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param snapshotIds
      *        One or more snapshot IDs.</p>
      *        <p>
-     *        Default: Describes snapshots for which you have launch permissions.
+     *        Default: Describes the snapshots for which you have create volume permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1082,13 +1082,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * One or more snapshot IDs.
      * </p>
      * <p>
-     * Default: Describes snapshots for which you have launch permissions.
+     * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
      * @param snapshotIds
      *        One or more snapshot IDs.</p>
      *        <p>
-     *        Default: Describes snapshots for which you have launch permissions.
+     *        Default: Describes the snapshots for which you have create volume permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

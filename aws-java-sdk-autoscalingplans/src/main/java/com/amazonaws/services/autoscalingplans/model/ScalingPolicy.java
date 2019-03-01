@@ -42,7 +42,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyType;
     /**
      * <p>
-     * The target tracking scaling policy.
+     * The target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
@@ -148,11 +148,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tracking scaling policy.
+     * The target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        The target tracking scaling policy.
+     *        The target tracking scaling policy. Includes support for predefined or customized metrics.
      */
 
     public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
@@ -161,10 +161,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tracking scaling policy.
+     * The target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * 
-     * @return The target tracking scaling policy.
+     * @return The target tracking scaling policy. Includes support for predefined or customized metrics.
      */
 
     public TargetTrackingConfiguration getTargetTrackingConfiguration() {
@@ -173,11 +173,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tracking scaling policy.
+     * The target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        The target tracking scaling policy.
+     *        The target tracking scaling policy. Includes support for predefined or customized metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1658,6 +1658,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyInstanceEventStartTimeResult modifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyInstancePlacementResult modifyInstancePlacement(ModifyInstancePlacementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <b>Information about a Client VPN endpoint route.</b>
+ * Information about a Client VPN endpoint route.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnRoute" target="_top">AWS API
@@ -46,7 +46,7 @@ public class ClientVpnRoute implements Serializable, Cloneable {
     private String targetSubnet;
     /**
      * <p>
-     * <b>The route type.</b>
+     * The route type.
      * </p>
      */
     private String type;
@@ -193,11 +193,11 @@ public class ClientVpnRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The route type.</b>
+     * The route type.
      * </p>
      * 
      * @param type
-     *        <b>The route type.</b>
+     *        The route type.
      */
 
     public void setType(String type) {
@@ -206,10 +206,10 @@ public class ClientVpnRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The route type.</b>
+     * The route type.
      * </p>
      * 
-     * @return <b>The route type.</b>
+     * @return The route type.
      */
 
     public String getType() {
@@ -218,11 +218,11 @@ public class ClientVpnRoute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The route type.</b>
+     * The route type.
      * </p>
      * 
      * @param type
-     *        <b>The route type.</b>
+     *        The route type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

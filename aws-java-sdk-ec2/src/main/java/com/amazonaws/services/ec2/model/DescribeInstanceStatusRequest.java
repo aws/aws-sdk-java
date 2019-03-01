@@ -50,6 +50,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -57,6 +62,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
      * </li>
@@ -162,6 +173,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -169,6 +185,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
      * </li>
@@ -233,6 +255,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
+     *         <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *         <code>2014-09-15T17:15:20.000Z</code>).
      *         </p>
@@ -240,6 +267,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <li>
      *         <p>
      *         <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     *         <code>2014-09-15T17:15:20.000Z</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      *         <code>2014-09-15T17:15:20.000Z</code>).
      *         </p>
      *         </li>
@@ -317,6 +350,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -324,6 +362,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
      * </li>
@@ -389,6 +433,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -396,6 +445,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
      *        </li>
@@ -475,6 +530,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -482,6 +542,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
      * </li>
@@ -552,6 +618,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -559,6 +630,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
      *        </li>
@@ -640,6 +717,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -647,6 +729,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
      * </li>
@@ -712,6 +800,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -719,6 +812,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>event.not-before</code> - The earliest start time for the scheduled event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
      *        </li>

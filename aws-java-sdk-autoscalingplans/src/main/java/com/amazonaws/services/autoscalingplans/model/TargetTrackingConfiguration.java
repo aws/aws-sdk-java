@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a target tracking configuration. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.
+ * Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and
+ * <a>ScalingPolicy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TargetTrackingConfiguration"
@@ -30,13 +31,13 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      */
     private PredefinedScalingMetricSpecification predefinedScalingMetricSpecification;
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      */
     private CustomizedScalingMetricSpecification customizedScalingMetricSpecification;
@@ -93,11 +94,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param predefinedScalingMetricSpecification
-     *        A predefined metric.
+     *        A predefined metric. You can specify either a predefined metric or a customized metric.
      */
 
     public void setPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification predefinedScalingMetricSpecification) {
@@ -106,10 +107,10 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
-     * @return A predefined metric.
+     * @return A predefined metric. You can specify either a predefined metric or a customized metric.
      */
 
     public PredefinedScalingMetricSpecification getPredefinedScalingMetricSpecification() {
@@ -118,11 +119,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param predefinedScalingMetricSpecification
-     *        A predefined metric.
+     *        A predefined metric. You can specify either a predefined metric or a customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +134,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedScalingMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public void setCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification customizedScalingMetricSpecification) {
@@ -146,10 +147,10 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
-     * @return A customized metric.
+     * @return A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public CustomizedScalingMetricSpecification getCustomizedScalingMetricSpecification() {
@@ -158,11 +159,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedScalingMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,7 +88,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     private String vpnProtocol;
     /**
      * <p>
-     * <b>The transport protocol used by the Client VPN endpoint.</b>
+     * The transport protocol used by the Client VPN endpoint.
      * </p>
      */
     private String transportProtocol;
@@ -590,11 +590,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The transport protocol used by the Client VPN endpoint.</b>
+     * The transport protocol used by the Client VPN endpoint.
      * </p>
      * 
      * @param transportProtocol
-     *        <b>The transport protocol used by the Client VPN endpoint.</b>
+     *        The transport protocol used by the Client VPN endpoint.
      * @see TransportProtocol
      */
 
@@ -604,10 +604,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The transport protocol used by the Client VPN endpoint.</b>
+     * The transport protocol used by the Client VPN endpoint.
      * </p>
      * 
-     * @return <b>The transport protocol used by the Client VPN endpoint.</b>
+     * @return The transport protocol used by the Client VPN endpoint.
      * @see TransportProtocol
      */
 
@@ -617,11 +617,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The transport protocol used by the Client VPN endpoint.</b>
+     * The transport protocol used by the Client VPN endpoint.
      * </p>
      * 
      * @param transportProtocol
-     *        <b>The transport protocol used by the Client VPN endpoint.</b>
+     *        The transport protocol used by the Client VPN endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransportProtocol
      */
@@ -633,11 +633,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The transport protocol used by the Client VPN endpoint.</b>
+     * The transport protocol used by the Client VPN endpoint.
      * </p>
      * 
      * @param transportProtocol
-     *        <b>The transport protocol used by the Client VPN endpoint.</b>
+     *        The transport protocol used by the Client VPN endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransportProtocol
      */

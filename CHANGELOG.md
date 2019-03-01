@@ -1,3 +1,12 @@
+# __1.11.510__ __2019-03-01__
+## __AWS Auto Scaling Plans__
+  - ### Features
+    - Documentation updates for autoscaling-plans
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for modifying instance event start time which allows users to reschedule EC2 events.
+
 # __1.11.509__ __2019-02-28__
 ## __Alexa For Business__
   - ### Features

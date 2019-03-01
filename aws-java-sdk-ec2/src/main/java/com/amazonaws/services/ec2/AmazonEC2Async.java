@@ -1942,7 +1942,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine
+     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
      * Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.
      * </p>
      * <p>
@@ -1977,7 +1977,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine
+     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
      * Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.
      * </p>
      * <p>
@@ -3254,8 +3254,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved Instance Marketplace.
-     * Convertible Reserved Instances and Standard Reserved Instances with a regional benefit cannot be sold.
+     * Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible Reserved Instances
+     * cannot be sold.
      * </p>
      * </note>
      * <p>
@@ -3295,8 +3295,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved Instance Marketplace.
-     * Convertible Reserved Instances and Standard Reserved Instances with a regional benefit cannot be sold.
+     * Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible Reserved Instances
+     * cannot be sold.
      * </p>
      * </note>
      * <p>
@@ -9375,8 +9375,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for any AWS account to launch, private snapshots that you own, and private snapshots owned by another
-     * AWS account but for which you've been given explicit create volume permissions.
+     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
+     * account for which you've been given explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -9445,8 +9445,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for any AWS account to launch, private snapshots that you own, and private snapshots owned by another
-     * AWS account but for which you've been given explicit create volume permissions.
+     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
+     * account for which you've been given explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -13227,6 +13227,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ModifyInstanceCreditSpecificationResult> modifyInstanceCreditSpecificationAsync(
             ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceCreditSpecificationRequest, ModifyInstanceCreditSpecificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the start time for a scheduled Amazon EC2 instance event.
+     * </p>
+     * 
+     * @param modifyInstanceEventStartTimeRequest
+     * @return A Java Future containing the result of the ModifyInstanceEventStartTime operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyInstanceEventStartTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceEventStartTimeResult> modifyInstanceEventStartTimeAsync(
+            ModifyInstanceEventStartTimeRequest modifyInstanceEventStartTimeRequest);
+
+    /**
+     * <p>
+     * Modifies the start time for a scheduled Amazon EC2 instance event.
+     * </p>
+     * 
+     * @param modifyInstanceEventStartTimeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceEventStartTime operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyInstanceEventStartTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceEventStartTimeResult> modifyInstanceEventStartTimeAsync(
+            ModifyInstanceEventStartTimeRequest modifyInstanceEventStartTimeRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceEventStartTimeRequest, ModifyInstanceEventStartTimeResult> asyncHandler);
 
     /**
      * <p>

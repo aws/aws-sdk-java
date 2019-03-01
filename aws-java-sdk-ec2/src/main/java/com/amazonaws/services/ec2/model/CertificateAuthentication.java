@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <b>Information about the client certificate used for authentication.</b>
+ * Information about the client certificate used for authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CertificateAuthentication" target="_top">AWS API
@@ -28,18 +28,18 @@ public class CertificateAuthentication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. </b>
+     * The ARN of the client certificate.
      * </p>
      */
     private String clientRootCertificateChain;
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. </b>
+     * The ARN of the client certificate.
      * </p>
      * 
      * @param clientRootCertificateChain
-     *        <b>The ARN of the client certificate. </b>
+     *        The ARN of the client certificate.
      */
 
     public void setClientRootCertificateChain(String clientRootCertificateChain) {
@@ -48,10 +48,10 @@ public class CertificateAuthentication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. </b>
+     * The ARN of the client certificate.
      * </p>
      * 
-     * @return <b>The ARN of the client certificate. </b>
+     * @return The ARN of the client certificate.
      */
 
     public String getClientRootCertificateChain() {
@@ -60,11 +60,11 @@ public class CertificateAuthentication implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>The ARN of the client certificate. </b>
+     * The ARN of the client certificate.
      * </p>
      * 
      * @param clientRootCertificateChain
-     *        <b>The ARN of the client certificate. </b>
+     *        The ARN of the client certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

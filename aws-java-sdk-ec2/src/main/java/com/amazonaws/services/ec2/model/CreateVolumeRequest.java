@@ -48,9 +48,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
-     * families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -141,7 +141,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      */
     private String volumeType;
@@ -350,9 +350,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
-     * families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -362,11 +362,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
-     *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed
+     *        only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
@@ -378,9 +379,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
-     * families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -389,11 +390,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *         IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
-     *         only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     *         instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed
+     *         only on <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
@@ -405,9 +407,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
-     * families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -417,11 +419,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
-     *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed
+     *        only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -880,7 +883,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -890,7 +893,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
      *        <code>gp2</code>.
      * @see VolumeType
      */
@@ -908,7 +911,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @return The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned
@@ -917,7 +920,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <p>
      *         Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      *         eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *         ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *         ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
      *         <code>gp2</code>.
      * @see VolumeType
      */
@@ -935,7 +938,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -945,7 +948,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
      *        <code>gp2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
@@ -965,7 +968,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -975,7 +978,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
      *        <code>gp2</code>.
      * @see VolumeType
      */
@@ -993,7 +996,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -1003,7 +1006,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
      *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
      *        <code>gp2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType

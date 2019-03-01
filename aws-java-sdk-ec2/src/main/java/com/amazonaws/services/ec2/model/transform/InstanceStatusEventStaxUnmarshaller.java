@@ -43,6 +43,11 @@ public class InstanceStatusEventStaxUnmarshaller implements Unmarshaller<Instanc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instanceEventId", targetDepth)) {
+                    instanceStatusEvent.setInstanceEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("code", targetDepth)) {
                     instanceStatusEvent.setCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -60,6 +65,11 @@ public class InstanceStatusEventStaxUnmarshaller implements Unmarshaller<Instanc
 
                 if (context.testExpression("notBefore", targetDepth)) {
                     instanceStatusEvent.setNotBefore(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("notBeforeDeadline", targetDepth)) {
+                    instanceStatusEvent.setNotBeforeDeadline(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

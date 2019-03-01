@@ -42,7 +42,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private Boolean resetPolicy;
     /**
      * <p>
-     * (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      */
     private String policyDocument;
@@ -191,11 +192,14 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *        service.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -204,10 +208,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
-     * @return (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * @return A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *         format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *         service.
      */
 
     public String getPolicyDocument() {
@@ -216,11 +223,14 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        (Gateway endpoint) A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

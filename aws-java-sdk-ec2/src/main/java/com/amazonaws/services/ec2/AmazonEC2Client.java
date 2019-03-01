@@ -2612,7 +2612,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine
+     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
      * Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.
      * </p>
      * <p>
@@ -4136,8 +4136,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved Instance Marketplace.
-     * Convertible Reserved Instances and Standard Reserved Instances with a regional benefit cannot be sold.
+     * Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible Reserved Instances
+     * cannot be sold.
      * </p>
      * </note>
      * <p>
@@ -11614,8 +11614,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for any AWS account to launch, private snapshots that you own, and private snapshots owned by another
-     * AWS account but for which you've been given explicit create volume permissions.
+     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
+     * account for which you've been given explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -16406,6 +16406,58 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
                     new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the start time for a scheduled Amazon EC2 instance event.
+     * </p>
+     * 
+     * @param modifyInstanceEventStartTimeRequest
+     * @return Result of the ModifyInstanceEventStartTime operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceEventStartTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceEventStartTimeResult modifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceEventStartTime(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceEventStartTimeResult executeModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest modifyInstanceEventStartTimeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceEventStartTimeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceEventStartTimeRequest> request = null;
+        Response<ModifyInstanceEventStartTimeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceEventStartTimeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceEventStartTimeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceEventStartTime");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyInstanceEventStartTimeResult> responseHandler = new StaxResponseHandler<ModifyInstanceEventStartTimeResult>(
+                    new ModifyInstanceEventStartTimeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

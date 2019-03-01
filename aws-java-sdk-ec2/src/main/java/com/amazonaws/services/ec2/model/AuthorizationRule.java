@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <b>Information about an authorization rule.</b>
+ * Information about an authorization rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizationRule" target="_top">AWS API

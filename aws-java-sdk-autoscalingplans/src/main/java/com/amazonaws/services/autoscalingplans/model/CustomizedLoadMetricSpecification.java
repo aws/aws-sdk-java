@@ -24,9 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the
  * <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are
- * calculations used to aggregate data over specified time periods. For more information, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User
- * Guide</a>.
+ * calculations used to aggregate data over specified time periods.
  * </p>
  * <p>
  * When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for
@@ -38,9 +36,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * average request count processed by each instance of the group.
  * </p>
  * <p>
- * For information about terminology, see <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
- * Concepts</a>.
+ * For information about terminology, available metrics, or how to publish new metrics, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
+ * Concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedLoadMetricSpecification"
@@ -64,6 +62,10 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The dimensions of the metric.
+     * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     * customized load metric specification.
      * </p>
      */
     private java.util.List<MetricDimension> dimensions;
@@ -164,8 +166,15 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     * customized load metric specification.
+     * </p>
      * 
-     * @return The dimensions of the metric.
+     * @return The dimensions of the metric.</p>
+     *         <p>
+     *         Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *         customized load metric specification.
      */
 
     public java.util.List<MetricDimension> getDimensions() {
@@ -176,9 +185,16 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     * customized load metric specification.
+     * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        customized load metric specification.
      */
 
     public void setDimensions(java.util.Collection<MetricDimension> dimensions) {
@@ -195,13 +211,20 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
      * The dimensions of the metric.
      * </p>
      * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     * customized load metric specification.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        customized load metric specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,9 +242,16 @@ public class CustomizedLoadMetricSpecification implements Serializable, Cloneabl
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     * customized load metric specification.
+     * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        customized load metric specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

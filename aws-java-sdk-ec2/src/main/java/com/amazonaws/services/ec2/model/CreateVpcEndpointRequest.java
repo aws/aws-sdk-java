@@ -51,9 +51,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private String serviceName;
     /**
      * <p>
-     * (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must be in
-     * valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the
-     * service.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      */
     private String policyDocument;
@@ -269,15 +268,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must be in
-     * valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the
-     * service.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must
-     *        be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full
-     *        access to the service.
+     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *        service.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -286,14 +284,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must be in
-     * valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the
-     * service.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
-     * @return (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy
-     *         must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows
-     *         full access to the service.
+     * @return A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *         format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *         service.
      */
 
     public String getPolicyDocument() {
@@ -302,15 +299,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must be in
-     * valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the
-     * service.
+     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * If this parameter is not specified, we attach a default policy that allows full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        (Gateway endpoint) A policy to attach to the endpoint that controls access to the service. The policy must
-     *        be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full
-     *        access to the service.
+     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
+     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

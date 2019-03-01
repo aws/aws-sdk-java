@@ -950,7 +950,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine
+     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
      * Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.
      * </p>
      * <p>
@@ -1542,8 +1542,8 @@ public interface AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved Instance Marketplace.
-     * Convertible Reserved Instances and Standard Reserved Instances with a regional benefit cannot be sold.
+     * Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible Reserved Instances
+     * cannot be sold.
      * </p>
      * </note>
      * <p>
@@ -4203,8 +4203,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for any AWS account to launch, private snapshots that you own, and private snapshots owned by another
-     * AWS account but for which you've been given explicit create volume permissions.
+     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
+     * account for which you've been given explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -5862,6 +5862,19 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyInstanceCreditSpecificationResult modifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest);
+
+    /**
+     * <p>
+     * Modifies the start time for a scheduled Amazon EC2 instance event.
+     * </p>
+     * 
+     * @param modifyInstanceEventStartTimeRequest
+     * @return Result of the ModifyInstanceEventStartTime operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceEventStartTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyInstanceEventStartTimeResult modifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest modifyInstanceEventStartTimeRequest);
 
     /**
      * <p>
