@@ -226,6 +226,15 @@ public interface AWSMediaPackage {
     ListOriginEndpointsResult listOriginEndpoints(ListOriginEndpointsRequest listOriginEndpointsRequest);
 
     /**
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaPackage.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
      * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
      * RotateIngestEndpointCredentials instead
      * 
@@ -272,6 +281,24 @@ public interface AWSMediaPackage {
      *      target="_top">AWS API Documentation</a>
      */
     RotateIngestEndpointCredentialsResult rotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @sample AWSMediaPackage.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @sample AWSMediaPackage.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Updates an existing Channel.

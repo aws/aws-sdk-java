@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.mediapackage.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class CreateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateChannelRequestMarshaller instance = new CreateChannelRequestMarshaller();
 
@@ -50,6 +54,7 @@ public class CreateChannelRequestMarshaller {
         try {
             protocolMarshaller.marshall(createChannelRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(createChannelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

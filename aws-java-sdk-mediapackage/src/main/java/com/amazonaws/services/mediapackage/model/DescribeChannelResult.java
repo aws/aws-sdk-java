@@ -32,6 +32,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     /** The ID of the Channel. */
     private String id;
 
+    private java.util.Map<String, String> tags;
+
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      * 
@@ -161,6 +163,53 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DescribeChannelResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,7 +228,9 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         if (getHlsIngest() != null)
             sb.append("HlsIngest: ").append(getHlsIngest()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +261,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +277,7 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHlsIngest() == null) ? 0 : getHlsIngest().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

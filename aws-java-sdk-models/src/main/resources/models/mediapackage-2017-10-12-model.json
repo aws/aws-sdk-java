@@ -301,6 +301,22 @@
         "shape": "ListOriginEndpointsResponse"
       }
     }, 
+    "ListTagsForResource": {
+      "errors": [], 
+      "http": {
+        "method": "GET", 
+        "requestUri": "/tags/{resource-arn}", 
+        "responseCode": 200
+      }, 
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      }, 
+      "name": "ListTagsForResource", 
+      "output": {
+        "documentation": "200 response", 
+        "shape": "ListTagsForResourceResponse"
+      }
+    }, 
     "RotateChannelCredentials": {
       "deprecated": true, 
       "deprecatedMessage": "This API is deprecated. Please use RotateIngestEndpointCredentials instead", 
@@ -374,6 +390,30 @@
         "documentation": "The updated Channel record.", 
         "shape": "RotateIngestEndpointCredentialsResponse"
       }
+    }, 
+    "TagResource": {
+      "errors": [], 
+      "http": {
+        "method": "POST", 
+        "requestUri": "/tags/{resource-arn}", 
+        "responseCode": 204
+      }, 
+      "input": {
+        "shape": "TagResourceRequest"
+      }, 
+      "name": "TagResource"
+    }, 
+    "UntagResource": {
+      "errors": [], 
+      "http": {
+        "method": "DELETE", 
+        "requestUri": "/tags/{resource-arn}", 
+        "responseCode": 204
+      }, 
+      "input": {
+        "shape": "UntagResourceRequest"
+      }, 
+      "name": "UntagResource"
     }, 
     "UpdateChannel": {
       "documentation": "Updates an existing Channel.", 
@@ -478,6 +518,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -494,6 +538,10 @@
           "documentation": "The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.\n", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "required": [
@@ -616,6 +664,10 @@
           "documentation": "The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.\n", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "required": [
@@ -643,6 +695,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -690,6 +746,10 @@
           "documentation": "Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n", 
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
@@ -755,6 +815,10 @@
           "documentation": "Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n", 
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
@@ -921,6 +985,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -986,6 +1054,10 @@
           "documentation": "Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n", 
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
@@ -1322,6 +1394,28 @@
       }, 
       "type": "structure"
     }, 
+    "ListTagsForResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri", 
+          "locationName": "resource-arn", 
+          "shape": "__string"
+        }
+      }, 
+      "required": [
+        "ResourceArn"
+      ], 
+      "type": "structure"
+    }, 
+    "ListTagsForResourceResponse": {
+      "members": {
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "__mapOf__string"
+        }
+      }, 
+      "type": "structure"
+    }, 
     "ManifestLayout": {
       "enum": [
         "FULL", 
@@ -1434,6 +1528,10 @@
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
         }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
+        }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
           "locationName": "timeDelaySeconds", 
@@ -1495,6 +1593,10 @@
           "documentation": "Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n", 
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
@@ -1627,6 +1729,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -1672,6 +1778,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -1763,6 +1873,46 @@
       }, 
       "type": "structure"
     }, 
+    "TagResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri", 
+          "locationName": "resource-arn", 
+          "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "__mapOf__string"
+        }
+      }, 
+      "required": [
+        "ResourceArn", 
+        "Tags"
+      ], 
+      "type": "structure"
+    }, 
+    "Tags": {
+      "documentation": "A collection of tags associated with a resource", 
+      "key": {
+        "shape": "__string"
+      }, 
+      "type": "map", 
+      "value": {
+        "shape": "__string"
+      }
+    }, 
+    "TagsModel": {
+      "members": {
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "__mapOf__string"
+        }
+      }, 
+      "required": [
+        "Tags"
+      ], 
+      "type": "structure"
+    }, 
     "TooManyRequestsException": {
       "documentation": "The client has exceeded their resource or throttling limits.", 
       "error": {
@@ -1789,6 +1939,26 @@
           "shape": "__string"
         }
       }, 
+      "type": "structure"
+    }, 
+    "UntagResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri", 
+          "locationName": "resource-arn", 
+          "shape": "__string"
+        }, 
+        "TagKeys": {
+          "documentation": "The key(s) of tag to be deleted", 
+          "location": "querystring", 
+          "locationName": "tagKeys", 
+          "shape": "__listOf__string"
+        }
+      }, 
+      "required": [
+        "TagKeys", 
+        "ResourceArn"
+      ], 
       "type": "structure"
     }, 
     "UpdateChannelRequest": {
@@ -1831,6 +2001,10 @@
           "documentation": "The ID of the Channel.", 
           "locationName": "id", 
           "shape": "__string"
+        }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
         }
       }, 
       "type": "structure"
@@ -1939,6 +2113,10 @@
           "locationName": "startoverWindowSeconds", 
           "shape": "__integer"
         }, 
+        "Tags": {
+          "locationName": "tags", 
+          "shape": "Tags"
+        }, 
         "TimeDelaySeconds": {
           "documentation": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n", 
           "locationName": "timeDelaySeconds", 
@@ -2016,6 +2194,15 @@
     }, 
     "__long": {
       "type": "long"
+    }, 
+    "__mapOf__string": {
+      "key": {
+        "shape": "__string"
+      }, 
+      "type": "map", 
+      "value": {
+        "shape": "__string"
+      }
     }, 
     "__string": {
       "type": "string"

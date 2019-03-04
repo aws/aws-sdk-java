@@ -132,6 +132,19 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     @Deprecated
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest request) {
 
@@ -157,6 +170,32 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
             RotateIngestEndpointCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

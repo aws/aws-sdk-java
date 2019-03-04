@@ -160,6 +160,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("ParameterVersionNotFound").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceSettingNotFound").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ResourceInUseException.class))
                     .addErrorMetadata(
@@ -5274,6 +5277,78 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the <a>ResetServiceSetting</a> to
+     * change the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Query the current service setting for the account.
+     * </p>
+     * 
+     * @param getServiceSettingRequest
+     *        The request body of the GetServiceSetting API action.
+     * @return Result of the GetServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @sample AWSSimpleSystemsManagement.GetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetServiceSettingResult getServiceSetting(GetServiceSettingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceSetting(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceSettingResult executeGetServiceSetting(GetServiceSettingRequest getServiceSettingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getServiceSettingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetServiceSettingRequest> request = null;
+        Response<GetServiceSettingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceSettingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceSetting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetServiceSettingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetServiceSettingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a
      * parameter, Systems Manager automatically saves a new version and increments the version number by one. A label
      * can help you remember the purpose of a parameter when there are multiple versions.
@@ -6917,6 +6992,80 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Use the <a>UpdateServiceSetting</a> API action to
+     * change the default setting.
+     * </p>
+     * <p>
+     * Reset the service setting for the account to the default value as provisioned by the AWS service team.
+     * </p>
+     * 
+     * @param resetServiceSettingRequest
+     *        The request body of the ResetServiceSetting API action.
+     * @return Result of the ResetServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @sample AWSSimpleSystemsManagement.ResetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResetServiceSettingResult resetServiceSetting(ResetServiceSettingRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetServiceSetting(request);
+    }
+
+    @SdkInternalApi
+    final ResetServiceSettingResult executeResetServiceSetting(ResetServiceSettingRequest resetServiceSettingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetServiceSettingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetServiceSettingRequest> request = null;
+        Response<ResetServiceSettingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetServiceSettingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetServiceSetting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetServiceSettingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetServiceSettingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
      * sessions, but not terminated sessions.
      * </p>
@@ -8137,6 +8286,80 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Or, use the <a>ResetServiceSetting</a> to change
+     * the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Update the service setting for the account.
+     * </p>
+     * 
+     * @param updateServiceSettingRequest
+     *        The request body of the UpdateServiceSetting API action.
+     * @return Result of the UpdateServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @sample AWSSimpleSystemsManagement.UpdateServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateServiceSettingResult updateServiceSetting(UpdateServiceSettingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServiceSetting(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServiceSettingResult executeUpdateServiceSetting(UpdateServiceSettingRequest updateServiceSettingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateServiceSettingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateServiceSettingRequest> request = null;
+        Response<UpdateServiceSettingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceSettingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceSetting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateServiceSettingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateServiceSettingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

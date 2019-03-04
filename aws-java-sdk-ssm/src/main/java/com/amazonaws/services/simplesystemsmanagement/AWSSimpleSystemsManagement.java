@@ -1895,6 +1895,39 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the <a>ResetServiceSetting</a> to
+     * change the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Query the current service setting for the account.
+     * </p>
+     * 
+     * @param getServiceSettingRequest
+     *        The request body of the GetServiceSetting API action.
+     * @return Result of the GetServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @sample AWSSimpleSystemsManagement.GetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetServiceSettingResult getServiceSetting(GetServiceSettingRequest getServiceSettingRequest);
+
+    /**
+     * <p>
      * A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a
      * parameter, Systems Manager automatically saves a new version and increments the version number by one. A label
      * can help you remember the purpose of a parameter when there are multiple versions.
@@ -2661,6 +2694,41 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Use the <a>UpdateServiceSetting</a> API action to
+     * change the default setting.
+     * </p>
+     * <p>
+     * Reset the service setting for the account to the default value as provisioned by the AWS service team.
+     * </p>
+     * 
+     * @param resetServiceSettingRequest
+     *        The request body of the ResetServiceSetting API action.
+     * @return Result of the ResetServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @sample AWSSimpleSystemsManagement.ResetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResetServiceSettingResult resetServiceSetting(ResetServiceSettingRequest resetServiceSettingRequest);
+
+    /**
+     * <p>
      * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
      * sessions, but not terminated sessions.
      * </p>
@@ -3210,6 +3278,41 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest);
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Or, use the <a>ResetServiceSetting</a> to change
+     * the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Update the service setting for the account.
+     * </p>
+     * 
+     * @param updateServiceSettingRequest
+     *        The request body of the UpdateServiceSetting API action.
+     * @return Result of the UpdateServiceSetting operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ServiceSettingNotFoundException
+     *         The specified service setting was not found. Either the service name or the setting has not been
+     *         provisioned by the AWS service team.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @sample AWSSimpleSystemsManagement.UpdateServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateServiceSettingResult updateServiceSetting(UpdateServiceSettingRequest updateServiceSettingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

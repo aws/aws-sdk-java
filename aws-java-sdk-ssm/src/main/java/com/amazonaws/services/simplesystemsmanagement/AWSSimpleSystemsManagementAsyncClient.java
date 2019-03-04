@@ -2683,6 +2683,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest request) {
+
+        return getServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(final GetServiceSettingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceSettingRequest, GetServiceSettingResult> asyncHandler) {
+        final GetServiceSettingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceSettingResult>() {
+            @Override
+            public GetServiceSettingResult call() throws Exception {
+                GetServiceSettingResult result = null;
+
+                try {
+                    result = executeGetServiceSetting(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request) {
 
         return labelParameterVersionAsync(request, null);
@@ -3440,6 +3473,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest request) {
+
+        return resetServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(final ResetServiceSettingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetServiceSettingRequest, ResetServiceSettingResult> asyncHandler) {
+        final ResetServiceSettingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetServiceSettingResult>() {
+            @Override
+            public ResetServiceSettingResult call() throws Exception {
+                ResetServiceSettingResult result = null;
+
+                try {
+                    result = executeResetServiceSetting(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ResumeSessionResult> resumeSessionAsync(ResumeSessionRequest request) {
 
         return resumeSessionAsync(request, null);
@@ -3986,6 +4052,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeUpdatePatchBaseline(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest request) {
+
+        return updateServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(final UpdateServiceSettingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServiceSettingRequest, UpdateServiceSettingResult> asyncHandler) {
+        final UpdateServiceSettingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServiceSettingResult>() {
+            @Override
+            public UpdateServiceSettingResult call() throws Exception {
+                UpdateServiceSettingResult result = null;
+
+                try {
+                    result = executeUpdateServiceSetting(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

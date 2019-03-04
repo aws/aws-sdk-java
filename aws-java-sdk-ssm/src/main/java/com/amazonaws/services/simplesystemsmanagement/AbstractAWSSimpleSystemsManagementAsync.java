@@ -1002,6 +1002,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest request) {
+
+        return getServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceSettingRequest, GetServiceSettingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request) {
 
         return labelParameterVersionAsync(request, null);
@@ -1319,6 +1332,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest request) {
+
+        return resetServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetServiceSettingRequest, ResetServiceSettingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ResumeSessionResult> resumeSessionAsync(ResumeSessionRequest request) {
 
         return resumeSessionAsync(request, null);
@@ -1535,6 +1561,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePatchBaselineRequest, UpdatePatchBaselineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest request) {
+
+        return updateServiceSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateServiceSettingRequest, UpdateServiceSettingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

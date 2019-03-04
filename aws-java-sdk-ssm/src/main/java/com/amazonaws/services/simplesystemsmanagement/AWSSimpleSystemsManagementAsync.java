@@ -2648,6 +2648,67 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the <a>ResetServiceSetting</a> to
+     * change the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Query the current service setting for the account.
+     * </p>
+     * 
+     * @param getServiceSettingRequest
+     *        The request body of the GetServiceSetting API action.
+     * @return A Java Future containing the result of the GetServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest getServiceSettingRequest);
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the <a>ResetServiceSetting</a> to
+     * change the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Query the current service setting for the account.
+     * </p>
+     * 
+     * @param getServiceSettingRequest
+     *        The request body of the GetServiceSetting API action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest getServiceSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetServiceSettingRequest, GetServiceSettingResult> asyncHandler);
+
+    /**
+     * <p>
      * A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a
      * parameter, Systems Manager automatically saves a new version and increments the version number by one. A label
      * can help you remember the purpose of a parameter when there are multiple versions.
@@ -3675,6 +3736,67 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Use the <a>UpdateServiceSetting</a> API action to
+     * change the default setting.
+     * </p>
+     * <p>
+     * Reset the service setting for the account to the default value as provisioned by the AWS service team.
+     * </p>
+     * 
+     * @param resetServiceSettingRequest
+     *        The request body of the ResetServiceSetting API action.
+     * @return A Java Future containing the result of the ResetServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ResetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest resetServiceSettingRequest);
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Use the <a>UpdateServiceSetting</a> API action to
+     * change the default setting.
+     * </p>
+     * <p>
+     * Reset the service setting for the account to the default value as provisioned by the AWS service team.
+     * </p>
+     * 
+     * @param resetServiceSettingRequest
+     *        The request body of the ResetServiceSetting API action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ResetServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest resetServiceSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetServiceSettingRequest, ResetServiceSettingResult> asyncHandler);
+
+    /**
+     * <p>
      * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
      * sessions, but not terminated sessions.
      * </p>
@@ -4383,5 +4505,66 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest updatePatchBaselineRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePatchBaselineRequest, UpdatePatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Or, use the <a>ResetServiceSetting</a> to change
+     * the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Update the service setting for the account.
+     * </p>
+     * 
+     * @param updateServiceSettingRequest
+     *        The request body of the UpdateServiceSetting API action.
+     * @return A Java Future containing the result of the UpdateServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest updateServiceSettingRequest);
+
+    /**
+     * <p>
+     * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
+     * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
+     * account based on feature or service usage, then the AWS service team might create a default setting of "false".
+     * This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for
+     * a paid feature.
+     * </p>
+     * <p>
+     * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for
+     * a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value
+     * if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+     * <a>GetServiceSetting</a> API action to view the current value. Or, use the <a>ResetServiceSetting</a> to change
+     * the value back to the original value defined by the AWS service team.
+     * </p>
+     * <p>
+     * Update the service setting for the account.
+     * </p>
+     * 
+     * @param updateServiceSettingRequest
+     *        The request body of the UpdateServiceSetting API action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateServiceSetting operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateServiceSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest updateServiceSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateServiceSettingRequest, UpdateServiceSettingResult> asyncHandler);
 
 }

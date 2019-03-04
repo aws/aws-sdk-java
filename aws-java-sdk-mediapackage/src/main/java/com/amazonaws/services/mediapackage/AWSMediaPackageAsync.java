@@ -251,6 +251,29 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
             com.amazonaws.handlers.AsyncHandler<ListOriginEndpointsRequest, ListOriginEndpointsResult> asyncHandler);
 
     /**
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaPackageAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
      * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
      * RotateIngestEndpointCredentials instead
      * 
@@ -311,6 +334,52 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
     java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
             RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler);
+
+    /**
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaPackageAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaPackageAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * Updates an existing Channel.

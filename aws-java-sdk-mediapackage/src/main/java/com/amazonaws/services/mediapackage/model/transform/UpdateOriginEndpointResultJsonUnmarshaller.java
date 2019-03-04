@@ -88,6 +88,11 @@ public class UpdateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     updateOriginEndpointResult.setStartoverWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    updateOriginEndpointResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("timeDelaySeconds", targetDepth)) {
                     context.nextToken();
                     updateOriginEndpointResult.setTimeDelaySeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
