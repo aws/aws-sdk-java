@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white
+ * space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Tag" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +29,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Tag implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Tag key (String). The key can't start with aws:.
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * Value of the tag key.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * Tag key (String). The key can't start with aws:.
+     * </p>
+     * 
      * @param key
+     *        Tag key (String). The key can't start with aws:.
      */
 
     public void setKey(String key) {
@@ -38,7 +56,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Tag key (String). The key can't start with aws:.
+     * </p>
+     * 
+     * @return Tag key (String). The key can't start with aws:.
      */
 
     public String getKey() {
@@ -46,7 +68,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Tag key (String). The key can't start with aws:.
+     * </p>
+     * 
      * @param key
+     *        Tag key (String). The key can't start with aws:.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +83,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Value of the tag key.
+     * </p>
+     * 
      * @param value
+     *        Value of the tag key.
      */
 
     public void setValue(String value) {
@@ -64,7 +96,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Value of the tag key.
+     * </p>
+     * 
+     * @return Value of the tag key.
      */
 
     public String getValue() {
@@ -72,7 +108,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Value of the tag key.
+     * </p>
+     * 
      * @param value
+     *        Value of the tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

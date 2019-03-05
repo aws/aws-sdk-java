@@ -94,8 +94,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String ivSource;
     /**
-     * If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod", this
-     * parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     * destination directory.
      */
     private Integer keepSegments;
     /**
@@ -126,8 +126,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String mode;
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without
-     * the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * group.
+     * 
+     * SEGMENTSONLY: Does not generate any manifests for this output group.
      */
     private String outputSelection;
     /**
@@ -161,9 +163,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /** Provides an extra millisecond delta offset to fine tune the timestamps. */
     private Integer timestampDeltaMilliseconds;
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags
-     * to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server
-     * caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
+     * running is not guaranteed due to HTTP server caching.
      */
     private String tsFileMode;
 
@@ -1108,12 +1113,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod", this
-     * parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     * destination directory.
      * 
      * @param keepSegments
-     *        If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod",
-     *        this parameter has no effect.
+     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     *        destination directory.
      */
 
     public void setKeepSegments(Integer keepSegments) {
@@ -1121,11 +1126,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod", this
-     * parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     * destination directory.
      * 
-     * @return If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod",
-     *         this parameter has no effect.
+     * @return Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     *         destination directory.
      */
 
     public Integer getKeepSegments() {
@@ -1133,12 +1138,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod", this
-     * parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     * destination directory.
      * 
      * @param keepSegments
-     *        If mode is "live", the number of TS segments to retain in the destination directory. If mode is "vod",
-     *        this parameter has no effect.
+     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
+     *        destination directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1489,12 +1494,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without
-     * the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * group.
+     * 
+     * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments
-     *        without the .m3u8 file.
+     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        output group.
+     * 
+     *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
      */
 
@@ -1503,11 +1512,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without
-     * the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * group.
      * 
-     * @return Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments
-     *         without the .m3u8 file.
+     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * 
+     * @return MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *         output group.
+     * 
+     *         SEGMENTSONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
      */
 
@@ -1516,12 +1529,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without
-     * the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * group.
+     * 
+     * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments
-     *        without the .m3u8 file.
+     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        output group.
+     * 
+     *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -1532,12 +1549,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without
-     * the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * group.
+     * 
+     * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments
-     *        without the .m3u8 file.
+     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        output group.
+     * 
+     *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -2005,14 +2026,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags
-     * to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server
-     * caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
+     * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        When set to "singleFile", emits the program as a single media resource (.ts) file, and uses
-     *        #EXT-X-BYTERANGE tags to index segment for playback. Playback of VOD mode content during event is not
-     *        guaranteed due to HTTP server caching.
+     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
+     *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
+     *        while the channel is running is not guaranteed due to HTTP server caching.
      * @see HlsTsFileMode
      */
 
@@ -2021,13 +2048,19 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags
-     * to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server
-     * caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
      * 
-     * @return When set to "singleFile", emits the program as a single media resource (.ts) file, and uses
-     *         #EXT-X-BYTERANGE tags to index segment for playback. Playback of VOD mode content during event is not
-     *         guaranteed due to HTTP server caching.
+     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
+     * running is not guaranteed due to HTTP server caching.
+     * 
+     * @return SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     *         SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *         manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
+     *         when sending the output to AWS Elemental MediaConvert, which can accept only a single media file.
+     *         Playback while the channel is running is not guaranteed due to HTTP server caching.
      * @see HlsTsFileMode
      */
 
@@ -2036,14 +2069,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags
-     * to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server
-     * caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
+     * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        When set to "singleFile", emits the program as a single media resource (.ts) file, and uses
-     *        #EXT-X-BYTERANGE tags to index segment for playback. Playback of VOD mode content during event is not
-     *        guaranteed due to HTTP server caching.
+     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
+     *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
+     *        while the channel is running is not guaranteed due to HTTP server caching.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTsFileMode
      */
@@ -2054,14 +2093,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags
-     * to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server
-     * caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
+     * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        When set to "singleFile", emits the program as a single media resource (.ts) file, and uses
-     *        #EXT-X-BYTERANGE tags to index segment for playback. Playback of VOD mode content during event is not
-     *        guaranteed due to HTTP server caching.
+     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * 
+     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
+     *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
+     *        while the channel is running is not guaranteed due to HTTP server caching.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTsFileMode
      */

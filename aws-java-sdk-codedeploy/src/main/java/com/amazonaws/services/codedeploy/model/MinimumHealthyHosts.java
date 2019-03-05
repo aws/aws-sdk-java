@@ -70,7 +70,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      */
@@ -152,7 +152,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
@@ -191,7 +191,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
      *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
@@ -236,7 +236,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
@@ -274,7 +274,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *         </note>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
      *         Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
@@ -319,7 +319,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
@@ -358,7 +358,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
      *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MinimumHealthyHostsType
@@ -405,7 +405,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
@@ -444,7 +444,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
      *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
@@ -489,7 +489,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
      * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
@@ -528,7 +528,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
      *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MinimumHealthyHostsType

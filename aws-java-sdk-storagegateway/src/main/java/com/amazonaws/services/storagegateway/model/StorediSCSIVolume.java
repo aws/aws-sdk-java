@@ -55,7 +55,9 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
-     * from a gateway.
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     * >Moving Your Volumes to a Different Gateway</a>.
      * </p>
      */
     private String volumeAttachmentStatus;
@@ -122,10 +124,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private String kMSKey;
     /**
      * <p>
-     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
-     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     * .
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      */
     private String targetName;
@@ -293,12 +299,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
-     * from a gateway.
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     * >Moving Your Volumes to a Different Gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
-     *        detaching from a gateway.
+     *        detaching from a gateway. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     *        >Moving Your Volumes to a Different Gateway</a>.
      */
 
     public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
@@ -308,11 +318,15 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
-     * from a gateway.
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     * >Moving Your Volumes to a Different Gateway</a>.
      * </p>
      * 
      * @return A value that indicates whether a storage volume is attached to, detached from, or is in the process of
-     *         detaching from a gateway.
+     *         detaching from a gateway. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     *         >Moving Your Volumes to a Different Gateway</a>.
      */
 
     public String getVolumeAttachmentStatus() {
@@ -322,12 +336,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
-     * from a gateway.
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     * >Moving Your Volumes to a Different Gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
-     *        detaching from a gateway.
+     *        detaching from a gateway. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
+     *        >Moving Your Volumes to a Different Gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -766,18 +784,25 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
-     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     * .
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
-     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
-     *        ARN of
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
      *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     *        .
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      */
 
     public void setTargetName(String targetName) {
@@ -786,17 +811,24 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
-     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     * .
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
-     * @return The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
-     *         the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
-     *         ARN of
+     * @return The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *         target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *         of
      *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     *         .
+     *         . The target name must be unique across all volumes on a gateway.</p>
+     *         <p>
+     *         If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *         the new target name.
      */
 
     public String getTargetName() {
@@ -805,18 +837,25 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
-     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     * .
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
-     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
-     *        ARN of
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
      *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
-     *        .
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

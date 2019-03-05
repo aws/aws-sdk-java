@@ -88,6 +88,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Boolean requesterPays;
+    /**
+     * <p>
+     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
+     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * @param nFSFileShareDefaults
@@ -737,6 +745,95 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
+     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API.
+     * </p>
+     * 
+     * @return A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
+     *         name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
+     *         using the <code>ListTagsForResource</code> API.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
+     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
+     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
+     *        using the <code>ListTagsForResource</code> API.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
+     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
+     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
+     *        using the <code>ListTagsForResource</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
+     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
+     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
+     *        using the <code>ListTagsForResource</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -781,7 +878,9 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         if (getGuessMIMETypeEnabled() != null)
             sb.append("GuessMIMETypeEnabled: ").append(getGuessMIMETypeEnabled()).append(",");
         if (getRequesterPays() != null)
-            sb.append("RequesterPays: ").append(getRequesterPays());
+            sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -864,6 +963,10 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRequesterPays() != null && other.getRequesterPays().equals(this.getRequesterPays()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -889,6 +992,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

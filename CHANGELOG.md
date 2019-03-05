@@ -1,3 +1,20 @@
+# __1.11.512__ __2019-03-05__
+## __AWS CodeDeploy__
+  - ### Features
+    - Documentation updates for codedeploy
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release adds support for pausing and unpausing one or both pipelines at scheduled times.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - ActivateGateway, CreateNFSFileShare and CreateSMBFileShare APIs support a new parameter: Tags (to be attached to the created resource). Output for DescribeNFSFileShare, DescribeSMBFileShare and DescribeGatewayInformation APIs now also list the Tags associated with the resource. Minimum length of a KMSKey is now 7 characters.
+
+## __Amazon Textract__
+  - ### Features
+    - This release is intended ONLY for customers that are officially part of the Amazon Textract Preview program.  If you are not officially part of the Amazon Textract program THIS WILL NOT WORK.  Our two main regions for Amazon Textract Preview are N. Virginia and Dublin.  Also some members have been added to Oregon and Ohio.  If you are outside of any of these AWS regions, Amazon Textract Preview definitely will not work. If you would like to be part of the Amazon Textract program, you can officially request sign up here - https://pages.awscloud.com/textract-preview.html. To set expectations appropriately, we are aiming to admit new preview participants once a week until General Availability.
+
 # __1.11.511__ __2019-03-04__
 ## __AWS Elemental MediaPackage__
   - ### Features

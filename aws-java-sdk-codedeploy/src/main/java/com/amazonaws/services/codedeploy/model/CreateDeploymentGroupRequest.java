@@ -52,7 +52,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
      */
@@ -86,7 +86,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
      * CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * </p>
      */
@@ -237,7 +237,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
@@ -251,7 +251,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        </p>
      *        <p>
      *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      *        Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      */
 
@@ -271,7 +271,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
@@ -284,8 +284,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *         </p>
      *         <p>
      *         For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-     *         Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     *         with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      */
 
     public String getDeploymentConfigName() {
@@ -304,7 +304,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
@@ -318,7 +318,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        </p>
      *        <p>
      *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      *        Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -609,13 +609,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
      * CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @return Information about triggers to create when the deployment group is created. For examples, see <a
-     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
-     *         an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger
+     *         for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -628,13 +628,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
      * CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
      *        an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      */
 
@@ -650,7 +650,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
      * CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * </p>
      * <p>
@@ -661,7 +661,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
      *        an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -679,13 +679,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to create when the deployment group is created. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS
      * CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is created. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for
      *        an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

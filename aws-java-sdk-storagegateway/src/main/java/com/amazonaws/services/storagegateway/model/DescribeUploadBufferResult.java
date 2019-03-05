@@ -24,11 +24,25 @@ import javax.annotation.Generated;
 public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified
+     * as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage,
+     * then the DiskIds array is empty.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> diskIds;
-
+    /**
+     * <p>
+     * The total number of bytes being used in the gateway's upload buffer.
+     * </p>
+     */
     private Long uploadBufferUsedInBytes;
-
+    /**
+     * <p>
+     * The total number of bytes allocated in the gateway's as upload buffer.
+     * </p>
+     */
     private Long uploadBufferAllocatedInBytes;
 
     /**
@@ -58,7 +72,15 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified
+     * as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage,
+     * then the DiskIds array is empty.
+     * </p>
+     * 
+     * @return An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is
+     *         specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured
+     *         as working storage, then the DiskIds array is empty.
      */
 
     public java.util.List<String> getDiskIds() {
@@ -69,7 +91,16 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified
+     * as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage,
+     * then the DiskIds array is empty.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is
+     *        specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as
+     *        working storage, then the DiskIds array is empty.
      */
 
     public void setDiskIds(java.util.Collection<String> diskIds) {
@@ -83,12 +114,20 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified
+     * as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage,
+     * then the DiskIds array is empty.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDiskIds(java.util.Collection)} or {@link #withDiskIds(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param diskIds
+     *        An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is
+     *        specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as
+     *        working storage, then the DiskIds array is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,7 +142,16 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified
+     * as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage,
+     * then the DiskIds array is empty.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is
+     *        specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as
+     *        working storage, then the DiskIds array is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +161,12 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The total number of bytes being used in the gateway's upload buffer.
+     * </p>
+     * 
      * @param uploadBufferUsedInBytes
+     *        The total number of bytes being used in the gateway's upload buffer.
      */
 
     public void setUploadBufferUsedInBytes(Long uploadBufferUsedInBytes) {
@@ -121,7 +174,11 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The total number of bytes being used in the gateway's upload buffer.
+     * </p>
+     * 
+     * @return The total number of bytes being used in the gateway's upload buffer.
      */
 
     public Long getUploadBufferUsedInBytes() {
@@ -129,7 +186,12 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The total number of bytes being used in the gateway's upload buffer.
+     * </p>
+     * 
      * @param uploadBufferUsedInBytes
+     *        The total number of bytes being used in the gateway's upload buffer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,7 +201,12 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The total number of bytes allocated in the gateway's as upload buffer.
+     * </p>
+     * 
      * @param uploadBufferAllocatedInBytes
+     *        The total number of bytes allocated in the gateway's as upload buffer.
      */
 
     public void setUploadBufferAllocatedInBytes(Long uploadBufferAllocatedInBytes) {
@@ -147,7 +214,11 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The total number of bytes allocated in the gateway's as upload buffer.
+     * </p>
+     * 
+     * @return The total number of bytes allocated in the gateway's as upload buffer.
      */
 
     public Long getUploadBufferAllocatedInBytes() {
@@ -155,7 +226,12 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The total number of bytes allocated in the gateway's as upload buffer.
+     * </p>
+     * 
      * @param uploadBufferAllocatedInBytes
+     *        The total number of bytes allocated in the gateway's as upload buffer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

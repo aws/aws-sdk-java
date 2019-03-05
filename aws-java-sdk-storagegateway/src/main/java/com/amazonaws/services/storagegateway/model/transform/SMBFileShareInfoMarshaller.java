@@ -62,6 +62,8 @@ public class SMBFileShareInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvalidUserList").build();
     private static final MarshallingInfo<String> AUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Authentication").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final SMBFileShareInfoMarshaller instance = new SMBFileShareInfoMarshaller();
 
@@ -96,6 +98,7 @@ public class SMBFileShareInfoMarshaller {
             protocolMarshaller.marshall(sMBFileShareInfo.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(sMBFileShareInfo.getInvalidUserList(), INVALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(sMBFileShareInfo.getAuthentication(), AUTHENTICATION_BINDING);
+            protocolMarshaller.marshall(sMBFileShareInfo.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

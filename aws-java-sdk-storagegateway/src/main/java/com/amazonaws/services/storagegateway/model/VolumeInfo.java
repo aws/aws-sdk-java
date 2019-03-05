@@ -62,7 +62,11 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String gatewayId;
-
+    /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     */
     private String volumeType;
     /**
      * <p>
@@ -73,7 +77,11 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long volumeSizeInBytes;
-
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     */
     private String volumeAttachmentStatus;
 
     /**
@@ -298,7 +306,12 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public void setVolumeType(String volumeType) {
@@ -306,7 +319,11 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
+     * @return One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public String getVolumeType() {
@@ -314,7 +331,12 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,7 +401,12 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeAttachmentStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
@@ -387,7 +414,11 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @return One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public String getVolumeAttachmentStatus() {
@@ -395,7 +426,12 @@ public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeAttachmentStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

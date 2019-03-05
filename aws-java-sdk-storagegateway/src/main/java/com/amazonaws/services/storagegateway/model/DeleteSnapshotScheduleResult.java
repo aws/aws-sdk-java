@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSnapshotScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The volume which snapshot schedule was deleted.
+     * </p>
+     */
     private String volumeARN;
 
     /**
+     * <p>
+     * The volume which snapshot schedule was deleted.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule was deleted.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -34,7 +44,11 @@ public class DeleteSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The volume which snapshot schedule was deleted.
+     * </p>
+     * 
+     * @return The volume which snapshot schedule was deleted.
      */
 
     public String getVolumeARN() {
@@ -42,7 +56,12 @@ public class DeleteSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The volume which snapshot schedule was deleted.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule was deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

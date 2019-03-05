@@ -50,7 +50,11 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
      * </p>
      */
     private Long tapeSizeInBytes;
-
+    /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     */
     private String tapeStatus;
 
     /**
@@ -195,7 +199,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
      * @param tapeStatus
+     *        The status of the virtual tapes.
      */
 
     public void setTapeStatus(String tapeStatus) {
@@ -203,7 +212,11 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
+     * @return The status of the virtual tapes.
      */
 
     public String getTapeStatus() {
@@ -211,7 +224,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
      * @param tapeStatus
+     *        The status of the virtual tapes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

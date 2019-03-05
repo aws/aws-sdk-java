@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     */
     private String volumeARN;
 
     /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule to delete.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -36,7 +46,11 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
+     * @return The volume which snapshot schedule to delete.
      */
 
     public String getVolumeARN() {
@@ -44,7 +58,12 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

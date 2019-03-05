@@ -26,26 +26,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Settings to emit HLS metadata */
+    /** Action to insert HLS metadata */
     private HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings;
-    /** Settings to switch an input */
+    /** Action to switch the input */
     private InputSwitchScheduleActionSettings inputSwitchSettings;
-    /** Settings for SCTE-35 return_to_network message */
+    /** Action to pause or unpause one or both channel pipelines */
+    private PauseStateScheduleActionSettings pauseStateSettings;
+    /** Action to insert SCTE-35 return_to_network message */
     private Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings;
-    /** Settings for SCTE-35 splice_insert message */
+    /** Action to insert SCTE-35 splice_insert message */
     private Scte35SpliceInsertScheduleActionSettings scte35SpliceInsertSettings;
-    /** Settings for SCTE-35 time_signal message */
+    /** Action to insert SCTE-35 time_signal message */
     private Scte35TimeSignalScheduleActionSettings scte35TimeSignalSettings;
-    /** Settings to activate a static image overlay */
+    /** Action to activate a static image overlay */
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
-    /** Settings to deactivate a static image overlay */
+    /** Action to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      * 
      * @param hlsTimedMetadataSettings
-     *        Settings to emit HLS metadata
+     *        Action to insert HLS metadata
      */
 
     public void setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings) {
@@ -53,9 +55,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      * 
-     * @return Settings to emit HLS metadata
+     * @return Action to insert HLS metadata
      */
 
     public HlsTimedMetadataScheduleActionSettings getHlsTimedMetadataSettings() {
@@ -63,10 +65,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      * 
      * @param hlsTimedMetadataSettings
-     *        Settings to emit HLS metadata
+     *        Action to insert HLS metadata
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,10 +78,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      * 
      * @param inputSwitchSettings
-     *        Settings to switch an input
+     *        Action to switch the input
      */
 
     public void setInputSwitchSettings(InputSwitchScheduleActionSettings inputSwitchSettings) {
@@ -87,9 +89,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      * 
-     * @return Settings to switch an input
+     * @return Action to switch the input
      */
 
     public InputSwitchScheduleActionSettings getInputSwitchSettings() {
@@ -97,10 +99,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      * 
      * @param inputSwitchSettings
-     *        Settings to switch an input
+     *        Action to switch the input
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +112,44 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to pause or unpause one or both channel pipelines
+     * 
+     * @param pauseStateSettings
+     *        Action to pause or unpause one or both channel pipelines
+     */
+
+    public void setPauseStateSettings(PauseStateScheduleActionSettings pauseStateSettings) {
+        this.pauseStateSettings = pauseStateSettings;
+    }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     * 
+     * @return Action to pause or unpause one or both channel pipelines
+     */
+
+    public PauseStateScheduleActionSettings getPauseStateSettings() {
+        return this.pauseStateSettings;
+    }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     * 
+     * @param pauseStateSettings
+     *        Action to pause or unpause one or both channel pipelines
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withPauseStateSettings(PauseStateScheduleActionSettings pauseStateSettings) {
+        setPauseStateSettings(pauseStateSettings);
+        return this;
+    }
+
+    /**
+     * Action to insert SCTE-35 return_to_network message
      * 
      * @param scte35ReturnToNetworkSettings
-     *        Settings for SCTE-35 return_to_network message
+     *        Action to insert SCTE-35 return_to_network message
      */
 
     public void setScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings) {
@@ -121,9 +157,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      * 
-     * @return Settings for SCTE-35 return_to_network message
+     * @return Action to insert SCTE-35 return_to_network message
      */
 
     public Scte35ReturnToNetworkScheduleActionSettings getScte35ReturnToNetworkSettings() {
@@ -131,10 +167,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      * 
      * @param scte35ReturnToNetworkSettings
-     *        Settings for SCTE-35 return_to_network message
+     *        Action to insert SCTE-35 return_to_network message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +180,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      * 
      * @param scte35SpliceInsertSettings
-     *        Settings for SCTE-35 splice_insert message
+     *        Action to insert SCTE-35 splice_insert message
      */
 
     public void setScte35SpliceInsertSettings(Scte35SpliceInsertScheduleActionSettings scte35SpliceInsertSettings) {
@@ -155,9 +191,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      * 
-     * @return Settings for SCTE-35 splice_insert message
+     * @return Action to insert SCTE-35 splice_insert message
      */
 
     public Scte35SpliceInsertScheduleActionSettings getScte35SpliceInsertSettings() {
@@ -165,10 +201,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      * 
      * @param scte35SpliceInsertSettings
-     *        Settings for SCTE-35 splice_insert message
+     *        Action to insert SCTE-35 splice_insert message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +214,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      * 
      * @param scte35TimeSignalSettings
-     *        Settings for SCTE-35 time_signal message
+     *        Action to insert SCTE-35 time_signal message
      */
 
     public void setScte35TimeSignalSettings(Scte35TimeSignalScheduleActionSettings scte35TimeSignalSettings) {
@@ -189,9 +225,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      * 
-     * @return Settings for SCTE-35 time_signal message
+     * @return Action to insert SCTE-35 time_signal message
      */
 
     public Scte35TimeSignalScheduleActionSettings getScte35TimeSignalSettings() {
@@ -199,10 +235,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      * 
      * @param scte35TimeSignalSettings
-     *        Settings for SCTE-35 time_signal message
+     *        Action to insert SCTE-35 time_signal message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +248,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      * 
      * @param staticImageActivateSettings
-     *        Settings to activate a static image overlay
+     *        Action to activate a static image overlay
      */
 
     public void setStaticImageActivateSettings(StaticImageActivateScheduleActionSettings staticImageActivateSettings) {
@@ -223,9 +259,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      * 
-     * @return Settings to activate a static image overlay
+     * @return Action to activate a static image overlay
      */
 
     public StaticImageActivateScheduleActionSettings getStaticImageActivateSettings() {
@@ -233,10 +269,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      * 
      * @param staticImageActivateSettings
-     *        Settings to activate a static image overlay
+     *        Action to activate a static image overlay
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,10 +282,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      * 
      * @param staticImageDeactivateSettings
-     *        Settings to deactivate a static image overlay
+     *        Action to deactivate a static image overlay
      */
 
     public void setStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings) {
@@ -257,9 +293,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      * 
-     * @return Settings to deactivate a static image overlay
+     * @return Action to deactivate a static image overlay
      */
 
     public StaticImageDeactivateScheduleActionSettings getStaticImageDeactivateSettings() {
@@ -267,10 +303,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      * 
      * @param staticImageDeactivateSettings
-     *        Settings to deactivate a static image overlay
+     *        Action to deactivate a static image overlay
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,6 +331,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             sb.append("HlsTimedMetadataSettings: ").append(getHlsTimedMetadataSettings()).append(",");
         if (getInputSwitchSettings() != null)
             sb.append("InputSwitchSettings: ").append(getInputSwitchSettings()).append(",");
+        if (getPauseStateSettings() != null)
+            sb.append("PauseStateSettings: ").append(getPauseStateSettings()).append(",");
         if (getScte35ReturnToNetworkSettings() != null)
             sb.append("Scte35ReturnToNetworkSettings: ").append(getScte35ReturnToNetworkSettings()).append(",");
         if (getScte35SpliceInsertSettings() != null)
@@ -326,6 +364,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (other.getInputSwitchSettings() == null ^ this.getInputSwitchSettings() == null)
             return false;
         if (other.getInputSwitchSettings() != null && other.getInputSwitchSettings().equals(this.getInputSwitchSettings()) == false)
+            return false;
+        if (other.getPauseStateSettings() == null ^ this.getPauseStateSettings() == null)
+            return false;
+        if (other.getPauseStateSettings() != null && other.getPauseStateSettings().equals(this.getPauseStateSettings()) == false)
             return false;
         if (other.getScte35ReturnToNetworkSettings() == null ^ this.getScte35ReturnToNetworkSettings() == null)
             return false;
@@ -359,6 +401,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getHlsTimedMetadataSettings() == null) ? 0 : getHlsTimedMetadataSettings().hashCode());
         hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
+        hashCode = prime * hashCode + ((getPauseStateSettings() == null) ? 0 : getPauseStateSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsertSettings() == null) ? 0 : getScte35SpliceInsertSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35TimeSignalSettings() == null) ? 0 : getScte35TimeSignalSettings().hashCode());

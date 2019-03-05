@@ -126,17 +126,17 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a>
+ * <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a>
  * </p>
  * </li>
  * <li>
@@ -2171,6 +2171,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * <p>
      * Gets information about a deployment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always
+     * null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned
+     * <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file.
+     * </p>
+     * </note>
      * 
      * @param getDeploymentRequest
      *        Represents the input of a GetDeployment operation.

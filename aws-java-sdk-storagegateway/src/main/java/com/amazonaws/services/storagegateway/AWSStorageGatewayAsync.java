@@ -39,7 +39,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
@@ -47,23 +47,22 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
- * Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
+ * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
- * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
- * elements, possible errors, and examples of requests and responses.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS
+ * Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters,
+ * response elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
@@ -231,7 +230,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached
      * volume, tape and file gateway type (see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
      * <p>
@@ -251,7 +250,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached
      * volume, tape and file gateway type (see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
      * <p>
@@ -285,18 +284,19 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Storage gateways of all types
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * Storage Volumes
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * Virtual Tapes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NFS and SMB File Shares
      * </p>
      * </li>
      * </ul>
@@ -327,18 +327,19 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Storage gateways of all types
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * Storage Volumes
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * Virtual Tapes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NFS and SMB File Shares
      * </p>
      * </li>
      * </ul>
@@ -717,7 +718,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>
@@ -745,7 +746,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>
@@ -776,7 +777,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
      * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a Snapshot Schedule</a>.
      * </p>
      * <p>
@@ -789,13 +790,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <note>
      * <p>
      * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or
-     * DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2 API
-     * reference</a>.
+     * DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+     * API reference</a>.
      * </p>
      * </note> <important>
      * <p>
      * Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note
-     * on the <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
+     * on the <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
      * </p>
      * </important>
      * 
@@ -828,7 +829,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
      * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a Snapshot Schedule</a>.
      * </p>
      * <p>
@@ -841,13 +842,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <note>
      * <p>
      * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or
-     * DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2 API
-     * reference</a>.
+     * DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+     * API reference</a>.
      * </p>
      * </note> <important>
      * <p>
      * Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note
-     * on the <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
+     * on the <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
      * </p>
      * </important>
      * 
@@ -1363,7 +1364,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
      * Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its
      * Amazon Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
@@ -1389,7 +1390,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
      * Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its
      * Amazon Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
@@ -1492,7 +1493,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Before you delete a volume, make sure there are no iSCSI connections to the volume you are deleting. You should
      * also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to
      * query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
      * DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * <p>
@@ -1519,7 +1520,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Before you delete a volume, make sure there are no iSCSI connections to the volume you are deleting. You should
      * also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to
      * query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
      * DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * <p>
@@ -3571,9 +3572,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your
      * applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
      * timeouts for Windows and Linux, see <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
      * >Customizing Your Linux iSCSI Settings</a>, respectively.
      * </p>
      * </important>
@@ -3602,9 +3603,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your
      * applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
      * timeouts for Windows and Linux, see <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
      * >Customizing Your Linux iSCSI Settings</a>, respectively.
      * </p>
      * </important>
@@ -3821,7 +3822,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>
@@ -3852,7 +3853,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>

@@ -26,7 +26,7 @@
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
@@ -34,23 +34,22 @@
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
- * Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
+ * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
- * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
- * elements, possible errors, and examples of requests and responses.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS
+ * Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters,
+ * response elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>

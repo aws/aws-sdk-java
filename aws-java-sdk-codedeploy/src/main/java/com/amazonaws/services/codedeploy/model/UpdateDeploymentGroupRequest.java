@@ -83,7 +83,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
      * CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * </p>
      */
@@ -596,12 +596,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
      * CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @return Information about triggers to change when the deployment group is updated. For examples, see <a
-     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
      *         an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      */
 
@@ -615,13 +615,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
      * CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
      *        an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      */
 
@@ -637,7 +637,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
      * CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * </p>
      * <p>
@@ -648,7 +648,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
      *        an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -666,13 +666,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about triggers to change when the deployment group is updated. For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in an AWS
      * CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is updated. For examples, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify Triggers in
      *        an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

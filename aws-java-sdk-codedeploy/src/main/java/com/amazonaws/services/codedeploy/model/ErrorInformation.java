@@ -30,9 +30,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -121,9 +122,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -204,9 +206,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     *        Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -291,9 +293,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -373,8 +376,8 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @return For more information, see <a
-     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *         CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *         CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      *         User Guide</a>.</p>
      *         <p>
      *         The error code:
@@ -460,9 +463,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -543,9 +547,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     *        Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -632,9 +636,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -715,9 +720,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     *        Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>
@@ -802,9 +807,10 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-     * CodeDeploy User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
      * </p>
      * <p>
      * The error code:
@@ -885,9 +891,9 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * 
      * @param code
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
-     *        CodeDeploy</a> in the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-     *        Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
      *        <p>
      *        The error code:
      *        </p>

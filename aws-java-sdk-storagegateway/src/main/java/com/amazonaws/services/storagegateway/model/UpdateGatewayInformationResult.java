@@ -27,7 +27,11 @@ import javax.annotation.Generated;
 public class UpdateGatewayInformationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     */
     private String gatewayName;
 
     /**
@@ -57,7 +61,12 @@ public class UpdateGatewayInformationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name you configured for your gateway.
      */
 
     public void setGatewayName(String gatewayName) {
@@ -65,7 +74,11 @@ public class UpdateGatewayInformationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
+     * @return The name you configured for your gateway.
      */
 
     public String getGatewayName() {
@@ -73,7 +86,12 @@ public class UpdateGatewayInformationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name you configured for your gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

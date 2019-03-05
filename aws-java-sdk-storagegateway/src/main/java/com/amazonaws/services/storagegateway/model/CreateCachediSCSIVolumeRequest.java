@@ -37,17 +37,21 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      */
     private String snapshotId;
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      */
     private String targetName;
@@ -162,7 +166,7 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
@@ -170,7 +174,7 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *        To list snapshots for your account use <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
@@ -183,14 +187,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
      * @return The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
      *         field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *         To list snapshots for your account use <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
@@ -203,7 +207,7 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
@@ -211,7 +215,7 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *        To list snapshots for your account use <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -223,17 +227,25 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *        ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *        arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     *        The target name must be unique across all volumes of a gateway.
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      */
 
     public void setTargetName(String targetName) {
@@ -242,17 +254,24 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
-     * @return The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *         ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *         arn:aws
-     *         :storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     *         target name must be unique across all volumes of a gateway.
+     * @return The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *         target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *         of
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *         . The target name must be unique across all volumes on a gateway.</p>
+     *         <p>
+     *         If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *         the new target name.
      */
 
     public String getTargetName() {
@@ -261,17 +280,25 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *        ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *        arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     *        The target name must be unique across all volumes of a gateway.
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
