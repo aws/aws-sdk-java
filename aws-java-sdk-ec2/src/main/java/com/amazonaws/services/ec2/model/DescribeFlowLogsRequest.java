@@ -72,16 +72,14 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
@@ -502,17 +500,13 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        You cannot specify this parameter and the flow log IDs parameter in the same request.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -521,16 +515,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *         5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *         You cannot specify this parameter and the flow log IDs parameter in the same request.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -539,17 +529,13 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        You cannot specify this parameter and the flow log IDs parameter in the same request.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,11 +546,11 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -573,10 +559,10 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -585,11 +571,11 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

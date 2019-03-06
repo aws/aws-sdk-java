@@ -46,6 +46,12 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String region;
+    /**
+     * <p>
+     * The available port speeds for the location.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> availablePortSpeeds;
 
     /**
      * <p>
@@ -171,6 +177,79 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The available port speeds for the location.
+     * </p>
+     * 
+     * @return The available port speeds for the location.
+     */
+
+    public java.util.List<String> getAvailablePortSpeeds() {
+        if (availablePortSpeeds == null) {
+            availablePortSpeeds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return availablePortSpeeds;
+    }
+
+    /**
+     * <p>
+     * The available port speeds for the location.
+     * </p>
+     * 
+     * @param availablePortSpeeds
+     *        The available port speeds for the location.
+     */
+
+    public void setAvailablePortSpeeds(java.util.Collection<String> availablePortSpeeds) {
+        if (availablePortSpeeds == null) {
+            this.availablePortSpeeds = null;
+            return;
+        }
+
+        this.availablePortSpeeds = new com.amazonaws.internal.SdkInternalList<String>(availablePortSpeeds);
+    }
+
+    /**
+     * <p>
+     * The available port speeds for the location.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailablePortSpeeds(java.util.Collection)} or {@link #withAvailablePortSpeeds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param availablePortSpeeds
+     *        The available port speeds for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withAvailablePortSpeeds(String... availablePortSpeeds) {
+        if (this.availablePortSpeeds == null) {
+            setAvailablePortSpeeds(new com.amazonaws.internal.SdkInternalList<String>(availablePortSpeeds.length));
+        }
+        for (String ele : availablePortSpeeds) {
+            this.availablePortSpeeds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The available port speeds for the location.
+     * </p>
+     * 
+     * @param availablePortSpeeds
+     *        The available port speeds for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withAvailablePortSpeeds(java.util.Collection<String> availablePortSpeeds) {
+        setAvailablePortSpeeds(availablePortSpeeds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +266,9 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         if (getLocationName() != null)
             sb.append("LocationName: ").append(getLocationName()).append(",");
         if (getRegion() != null)
-            sb.append("Region: ").append(getRegion());
+            sb.append("Region: ").append(getRegion()).append(",");
+        if (getAvailablePortSpeeds() != null)
+            sb.append("AvailablePortSpeeds: ").append(getAvailablePortSpeeds());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +295,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getAvailablePortSpeeds() == null ^ this.getAvailablePortSpeeds() == null)
+            return false;
+        if (other.getAvailablePortSpeeds() != null && other.getAvailablePortSpeeds().equals(this.getAvailablePortSpeeds()) == false)
+            return false;
         return true;
     }
 
@@ -225,6 +310,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocationCode() == null) ? 0 : getLocationCode().hashCode());
         hashCode = prime * hashCode + ((getLocationName() == null) ? 0 : getLocationName().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getAvailablePortSpeeds() == null) ? 0 : getAvailablePortSpeeds().hashCode());
         return hashCode;
     }
 

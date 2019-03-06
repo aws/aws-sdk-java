@@ -80,6 +80,14 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        if (describeNetworkAclsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeNetworkAclsRequest.getNextToken()));
+        }
+
+        if (describeNetworkAclsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeNetworkAclsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

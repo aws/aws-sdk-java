@@ -78,6 +78,19 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> internetGatewayIds;
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -538,6 +551,92 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @return The token for the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInternetGatewaysRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInternetGatewaysRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -563,7 +662,11 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getInternetGatewayIds() != null)
-            sb.append("InternetGatewayIds: ").append(getInternetGatewayIds());
+            sb.append("InternetGatewayIds: ").append(getInternetGatewayIds()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -586,6 +689,14 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
             return false;
         if (other.getInternetGatewayIds() != null && other.getInternetGatewayIds().equals(this.getInternetGatewayIds()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -596,6 +707,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getInternetGatewayIds() == null) ? 0 : getInternetGatewayIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,13 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Vpc> vpcs;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -104,6 +111,52 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -116,7 +169,9 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcs() != null)
-            sb.append("Vpcs: ").append(getVpcs());
+            sb.append("Vpcs: ").append(getVpcs()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +190,10 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getVpcs() != null && other.getVpcs().equals(this.getVpcs()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +203,7 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVpcs() == null) ? 0 : getVpcs().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

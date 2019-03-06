@@ -29,6 +29,13 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkAcl> networkAcls;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -104,6 +111,52 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkAclsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -116,7 +169,9 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAcls() != null)
-            sb.append("NetworkAcls: ").append(getNetworkAcls());
+            sb.append("NetworkAcls: ").append(getNetworkAcls()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +190,10 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getNetworkAcls() != null && other.getNetworkAcls().equals(this.getNetworkAcls()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +203,7 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNetworkAcls() == null) ? 0 : getNetworkAcls().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

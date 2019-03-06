@@ -55,6 +55,10 @@ public class DescribeInternetGatewaysResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeInternetGatewaysResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeInternetGatewaysResult;

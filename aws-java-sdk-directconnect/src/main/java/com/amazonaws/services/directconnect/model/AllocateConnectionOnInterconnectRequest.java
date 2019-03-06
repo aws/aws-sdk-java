@@ -46,7 +46,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     private String ownerAccount;
     /**
      * <p>
-     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * The ID of the interconnect on which the connection will be provisioned.
      * </p>
      */
     private String interconnectId;
@@ -185,11 +185,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * The ID of the interconnect on which the connection will be provisioned.
      * </p>
      * 
      * @param interconnectId
-     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     *        The ID of the interconnect on which the connection will be provisioned.
      */
 
     public void setInterconnectId(String interconnectId) {
@@ -198,10 +198,10 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * The ID of the interconnect on which the connection will be provisioned.
      * </p>
      * 
-     * @return The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * @return The ID of the interconnect on which the connection will be provisioned.
      */
 
     public String getInterconnectId() {
@@ -210,11 +210,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     * The ID of the interconnect on which the connection will be provisioned.
      * </p>
      * 
      * @param interconnectId
-     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
+     *        The ID of the interconnect on which the connection will be provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

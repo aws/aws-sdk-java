@@ -112,14 +112,14 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<String> vpcPeeringConnectionIds;
     /**
      * <p>
-     * The token to request the next page of results. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -840,11 +840,11 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to request the next page of results. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results. (You received this token from a prior call.)
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -853,10 +853,10 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to request the next page of results. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
-     * @return The token to request the next page of results. (You received this token from a prior call.)
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -865,11 +865,11 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to request the next page of results. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results. (You received this token from a prior call.)
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -880,13 +880,13 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -895,12 +895,12 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return for this request. The request returns a token that you can
-     *         specify in a subsequent call to get the next set of results.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -909,13 +909,13 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

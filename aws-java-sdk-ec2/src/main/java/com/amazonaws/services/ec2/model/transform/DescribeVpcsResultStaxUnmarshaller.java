@@ -55,6 +55,10 @@ public class DescribeVpcsResultStaxUnmarshaller implements Unmarshaller<Describe
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeVpcsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVpcsResult;

@@ -80,6 +80,14 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
             }
         }
 
+        if (describeVpcsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcsRequest.getNextToken()));
+        }
+
+        if (describeVpcsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

@@ -25,8 +25,8 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -39,13 +39,13 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,12 +54,12 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -68,13 +68,13 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

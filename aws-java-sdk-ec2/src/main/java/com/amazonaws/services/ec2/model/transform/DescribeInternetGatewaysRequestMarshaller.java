@@ -82,6 +82,14 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
             }
         }
 
+        if (describeInternetGatewaysRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeInternetGatewaysRequest.getNextToken()));
+        }
+
+        if (describeInternetGatewaysRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeInternetGatewaysRequest.getMaxResults()));
+        }
+
         return request;
     }
 

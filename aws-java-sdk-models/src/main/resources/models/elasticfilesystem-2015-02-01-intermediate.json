@@ -23596,6 +23596,23 @@
         },
         "title" : "To describe an EFS file system"
       } ],
+      "DescribeLifecycleConfiguration" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation describes a file system's LifecycleConfiguration. EFS lifecycle management uses the LifecycleConfiguration object to identify which files to move to the EFS Infrequent Access (IA) storage class. ",
+        "id" : "to-describe-the-lifecycle-configuration-for-a-file-system-1551200664502",
+        "input" : {
+          "FileSystemId" : "fs-01234567"
+        },
+        "output" : {
+          "LifecyclePolicies" : [ {
+            "TransitionToIA" : "AFTER_30_DAYS"
+          } ]
+        },
+        "title" : "To describe the lifecycle configuration for a file system"
+      } ],
       "DescribeMountTargetSecurityGroups" : [ {
         "comments" : {
           "input" : null,
@@ -23665,6 +23682,26 @@
         },
         "output" : null,
         "title" : "To modify the security groups associated with a mount target for a file system"
+      } ],
+      "PutLifecycleConfiguration" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This operation enables lifecycle management on a file system by creating a new LifecycleConfiguration object. A LifecycleConfiguration object defines when files in an Amazon EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access (IA) storage class. A LifecycleConfiguration applies to all files in a file system.",
+        "id" : "creates-a-new-lifecycleconfiguration-object-for-a-file-system-1551201594692",
+        "input" : {
+          "FileSystemId" : "fs-01234567",
+          "LifecyclePolicies" : [ {
+            "TransitionToIA" : "AFTER_30_DAYS"
+          } ]
+        },
+        "output" : {
+          "LifecyclePolicies" : [ {
+            "TransitionToIA" : "AFTER_30_DAYS"
+          } ]
+        },
+        "title" : "Creates a new lifecycleconfiguration object for a file system"
       } ]
     },
     "version" : "1.0"
