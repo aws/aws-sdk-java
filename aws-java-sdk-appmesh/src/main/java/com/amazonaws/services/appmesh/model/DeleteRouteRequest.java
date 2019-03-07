@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the route.
+     * The name of the service mesh to delete the route in.
      * </p>
      */
     private String meshName;
@@ -39,18 +39,18 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String routeName;
     /**
      * <p>
-     * The name of the virtual router in which to delete the route.
+     * The name of the virtual router to delete the route in.
      * </p>
      */
     private String virtualRouterName;
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the route.
+     * The name of the service mesh to delete the route in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to delete the route.
+     *        The name of the service mesh to delete the route in.
      */
 
     public void setMeshName(String meshName) {
@@ -59,10 +59,10 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the route.
+     * The name of the service mesh to delete the route in.
      * </p>
      * 
-     * @return The name of the service mesh in which to delete the route.
+     * @return The name of the service mesh to delete the route in.
      */
 
     public String getMeshName() {
@@ -71,11 +71,11 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the route.
+     * The name of the service mesh to delete the route in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to delete the route.
+     *        The name of the service mesh to delete the route in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router in which to delete the route.
+     * The name of the virtual router to delete the route in.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router in which to delete the route.
+     *        The name of the virtual router to delete the route in.
      */
 
     public void setVirtualRouterName(String virtualRouterName) {
@@ -139,10 +139,10 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router in which to delete the route.
+     * The name of the virtual router to delete the route in.
      * </p>
      * 
-     * @return The name of the virtual router in which to delete the route.
+     * @return The name of the virtual router to delete the route in.
      */
 
     public String getVirtualRouterName() {
@@ -151,11 +151,11 @@ public class DeleteRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router in which to delete the route.
+     * The name of the virtual router to delete the route in.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router in which to delete the route.
+     *        The name of the virtual router to delete the route in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

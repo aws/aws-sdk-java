@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the specification of a virtual node.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualNodeSpec" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeSpec" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,13 +30,14 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The backends to which the virtual node is expected to send outbound traffic.
+     * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      */
-    private java.util.List<String> backends;
+    private java.util.List<Backend> backends;
     /**
      * <p>
-     * The listeners from which the virtual node is expected to receive inbound traffic.
+     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual node.
      * </p>
      */
     private java.util.List<Listener> listeners;
@@ -49,37 +50,37 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The backends to which the virtual node is expected to send outbound traffic.
+     * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      * 
-     * @return The backends to which the virtual node is expected to send outbound traffic.
+     * @return The backends that the virtual node is expected to send outbound traffic to.
      */
 
-    public java.util.List<String> getBackends() {
+    public java.util.List<Backend> getBackends() {
         return backends;
     }
 
     /**
      * <p>
-     * The backends to which the virtual node is expected to send outbound traffic.
+     * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      * 
      * @param backends
-     *        The backends to which the virtual node is expected to send outbound traffic.
+     *        The backends that the virtual node is expected to send outbound traffic to.
      */
 
-    public void setBackends(java.util.Collection<String> backends) {
+    public void setBackends(java.util.Collection<Backend> backends) {
         if (backends == null) {
             this.backends = null;
             return;
         }
 
-        this.backends = new java.util.ArrayList<String>(backends);
+        this.backends = new java.util.ArrayList<Backend>(backends);
     }
 
     /**
      * <p>
-     * The backends to which the virtual node is expected to send outbound traffic.
+     * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,15 +89,15 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param backends
-     *        The backends to which the virtual node is expected to send outbound traffic.
+     *        The backends that the virtual node is expected to send outbound traffic to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VirtualNodeSpec withBackends(String... backends) {
+    public VirtualNodeSpec withBackends(Backend... backends) {
         if (this.backends == null) {
-            setBackends(new java.util.ArrayList<String>(backends.length));
+            setBackends(new java.util.ArrayList<Backend>(backends.length));
         }
-        for (String ele : backends) {
+        for (Backend ele : backends) {
             this.backends.add(ele);
         }
         return this;
@@ -104,25 +105,27 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The backends to which the virtual node is expected to send outbound traffic.
+     * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      * 
      * @param backends
-     *        The backends to which the virtual node is expected to send outbound traffic.
+     *        The backends that the virtual node is expected to send outbound traffic to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VirtualNodeSpec withBackends(java.util.Collection<String> backends) {
+    public VirtualNodeSpec withBackends(java.util.Collection<Backend> backends) {
         setBackends(backends);
         return this;
     }
 
     /**
      * <p>
-     * The listeners from which the virtual node is expected to receive inbound traffic.
+     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual node.
      * </p>
      * 
-     * @return The listeners from which the virtual node is expected to receive inbound traffic.
+     * @return The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
+     *         listener is supported per virtual node.
      */
 
     public java.util.List<Listener> getListeners() {
@@ -131,11 +134,13 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners from which the virtual node is expected to receive inbound traffic.
+     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual node.
      * </p>
      * 
      * @param listeners
-     *        The listeners from which the virtual node is expected to receive inbound traffic.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual node.
      */
 
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -149,7 +154,8 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners from which the virtual node is expected to receive inbound traffic.
+     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual node.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,7 +164,8 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param listeners
-     *        The listeners from which the virtual node is expected to receive inbound traffic.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +181,13 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners from which the virtual node is expected to receive inbound traffic.
+     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual node.
      * </p>
      * 
      * @param listeners
-     *        The listeners from which the virtual node is expected to receive inbound traffic.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

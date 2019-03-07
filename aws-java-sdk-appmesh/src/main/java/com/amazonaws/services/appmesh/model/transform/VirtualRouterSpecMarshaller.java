@@ -28,8 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualRouterSpecMarshaller {
 
-    private static final MarshallingInfo<List> SERVICENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("serviceNames").build();
+    private static final MarshallingInfo<List> LISTENERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("listeners").build();
 
     private static final VirtualRouterSpecMarshaller instance = new VirtualRouterSpecMarshaller();
 
@@ -47,7 +47,7 @@ public class VirtualRouterSpecMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(virtualRouterSpec.getServiceNames(), SERVICENAMES_BINDING);
+            protocolMarshaller.marshall(virtualRouterSpec.getListeners(), LISTENERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

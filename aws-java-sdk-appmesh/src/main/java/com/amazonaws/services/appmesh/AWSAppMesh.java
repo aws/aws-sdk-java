@@ -41,9 +41,10 @@ import com.amazonaws.services.appmesh.model.*;
  * use App Mesh, you must have a containerized application running on Amazon EC2 instances, hosted in either Amazon ECS,
  * Amazon EKS, or Kubernetes on AWS. For more information about service discovery on Amazon ECS, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
- * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> is supported. For more
- * information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services
- * and Pods</a> in the Kubernetes documentation.
+ * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
+ * are supported. For more information, see <a
+ * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services and Pods</a> in the
+ * Kubernetes documentation.
  * </p>
  * </note>
  */
@@ -64,8 +65,8 @@ public interface AWSAppMesh {
      * reside within it.
      * </p>
      * <p>
-     * After you create your service mesh, you can create virtual nodes, virtual routers, and routes to distribute
-     * traffic between the applications in your mesh.
+     * After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes
+     * to distribute traffic between the applications in your mesh.
      * </p>
      * 
      * @param createMeshRequest
@@ -76,7 +77,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -84,14 +85,14 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh" target="_top">AWS API
      *      Documentation</a>
      */
     CreateMeshResult createMesh(CreateMeshRequest createMeshRequest);
@@ -118,7 +119,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -126,14 +127,14 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     CreateRouteResult createRoute(CreateRouteRequest createRouteRequest);
@@ -144,7 +145,8 @@ public interface AWSAppMesh {
      * </p>
      * <p>
      * A virtual node acts as logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes
-     * deployment. When you create a virtual node, you must specify the DNS service discovery name for your task group.
+     * deployment. When you create a virtual node, you must specify the DNS service discovery hostname for your task
+     * group.
      * </p>
      * <p>
      * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound
@@ -173,7 +175,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -181,14 +183,14 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     CreateVirtualNodeResult createVirtualNode(CreateVirtualNodeRequest createVirtualNodeRequest);
@@ -196,6 +198,9 @@ public interface AWSAppMesh {
     /**
      * <p>
      * Creates a new virtual router within a service mesh.
+     * </p>
+     * <p>
+     * Any inbound traffic that your virtual router expects should be specified as a <code>listener</code>.
      * </p>
      * <p>
      * Virtual routers handle traffic for one or more service names within your mesh. After you create your virtual
@@ -211,7 +216,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -219,25 +224,64 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     CreateVirtualRouterResult createVirtualRouter(CreateVirtualRouterRequest createVirtualRouterRequest);
 
     /**
      * <p>
+     * Creates a virtual service within a service mesh.
+     * </p>
+     * <p>
+     * A virtual service is an abstraction of a real service that is either provided by a virtual node directly, or
+     * indirectly by means of a virtual router. Dependent services call your virtual service by its
+     * <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is
+     * specified as the provider for the virtual service.
+     * </p>
+     * 
+     * @param createVirtualServiceRequest
+     * @return Result of the CreateVirtualService operation returned by the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @sample AWSAppMesh.CreateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateVirtualServiceResult createVirtualService(CreateVirtualServiceRequest createVirtualServiceRequest);
+
+    /**
+     * <p>
      * Deletes an existing service mesh.
      * </p>
      * <p>
-     * You must delete all resources (routes, virtual routers, virtual nodes) in the service mesh before you can delete
-     * the mesh itself.
+     * You must delete all resources (virtual services, routes, virtual routers, virtual nodes) in the service mesh
+     * before you can delete the mesh itself.
      * </p>
      * 
      * @param deleteMeshRequest
@@ -245,20 +289,20 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ResourceInUseException
-     *         You cannot delete the specified resource because it is in use or required by another resource.
+     *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DeleteMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteMeshResult deleteMesh(DeleteMeshRequest deleteMeshRequest);
@@ -273,20 +317,20 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ResourceInUseException
-     *         You cannot delete the specified resource because it is in use or required by another resource.
+     *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DeleteRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteRouteResult deleteRoute(DeleteRouteRequest deleteRouteRequest);
@@ -295,26 +339,30 @@ public interface AWSAppMesh {
      * <p>
      * Deletes an existing virtual node.
      * </p>
+     * <p>
+     * You must delete any virtual services that list a virtual node as a service provider before you can delete the
+     * virtual node itself.
+     * </p>
      * 
      * @param deleteVirtualNodeRequest
      * @return Result of the DeleteVirtualNode operation returned by the service.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ResourceInUseException
-     *         You cannot delete the specified resource because it is in use or required by another resource.
+     *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DeleteVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteVirtualNodeResult deleteVirtualNode(DeleteVirtualNodeRequest deleteVirtualNodeRequest);
@@ -332,23 +380,49 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ResourceInUseException
-     *         You cannot delete the specified resource because it is in use or required by another resource.
+     *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DeleteVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteVirtualRouterResult deleteVirtualRouter(DeleteVirtualRouterRequest deleteVirtualRouterRequest);
+
+    /**
+     * <p>
+     * Deletes an existing virtual service.
+     * </p>
+     * 
+     * @param deleteVirtualServiceRequest
+     * @return Result of the DeleteVirtualService operation returned by the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @sample AWSAppMesh.DeleteVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVirtualServiceResult deleteVirtualService(DeleteVirtualServiceRequest deleteVirtualServiceRequest);
 
     /**
      * <p>
@@ -360,18 +434,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DescribeMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeMeshResult describeMesh(DescribeMeshRequest describeMeshRequest);
@@ -386,18 +460,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DescribeRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeRouteResult describeRoute(DescribeRouteRequest describeRouteRequest);
@@ -412,18 +486,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DescribeVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode" target="_top">AWS
      *      API Documentation</a>
      */
     DescribeVirtualNodeResult describeVirtualNode(DescribeVirtualNodeRequest describeVirtualNodeRequest);
@@ -438,21 +512,47 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.DescribeVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     DescribeVirtualRouterResult describeVirtualRouter(DescribeVirtualRouterRequest describeVirtualRouterRequest);
+
+    /**
+     * <p>
+     * Describes an existing virtual service.
+     * </p>
+     * 
+     * @param describeVirtualServiceRequest
+     * @return Result of the DescribeVirtualService operation returned by the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @sample AWSAppMesh.DescribeVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeVirtualServiceResult describeVirtualService(DescribeVirtualServiceRequest describeVirtualServiceRequest);
 
     /**
      * <p>
@@ -464,18 +564,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.ListMeshes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes" target="_top">AWS API
      *      Documentation</a>
      */
     ListMeshesResult listMeshes(ListMeshesRequest listMeshesRequest);
@@ -490,18 +590,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.ListRoutes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
      *      Documentation</a>
      */
     ListRoutesResult listRoutes(ListRoutesRequest listRoutesRequest);
@@ -516,18 +616,18 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.ListVirtualNodes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes" target="_top">AWS API
      *      Documentation</a>
      */
     ListVirtualNodesResult listVirtualNodes(ListVirtualNodesRequest listVirtualNodesRequest);
@@ -542,21 +642,47 @@ public interface AWSAppMesh {
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.ListVirtualRouters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters" target="_top">AWS API
      *      Documentation</a>
      */
     ListVirtualRoutersResult listVirtualRouters(ListVirtualRoutersRequest listVirtualRoutersRequest);
+
+    /**
+     * <p>
+     * Returns a list of existing virtual services in a service mesh.
+     * </p>
+     * 
+     * @param listVirtualServicesRequest
+     * @return Result of the ListVirtualServices operation returned by the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @sample AWSAppMesh.ListVirtualServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListVirtualServicesResult listVirtualServices(ListVirtualServicesRequest listVirtualServicesRequest);
 
     /**
      * <p>
@@ -571,7 +697,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -579,14 +705,14 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateRouteResult updateRoute(UpdateRouteRequest updateRouteRequest);
@@ -604,7 +730,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -612,14 +738,14 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateVirtualNodeResult updateVirtualNode(UpdateVirtualNodeRequest updateVirtualNodeRequest);
@@ -637,7 +763,7 @@ public interface AWSAppMesh {
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
      * @throws ForbiddenException
-     *         You do not have permissions to perform this action.
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
@@ -645,17 +771,50 @@ public interface AWSAppMesh {
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
-     *         The specified resource does not exist. Check your request syntax and try again.
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     UpdateVirtualRouterResult updateVirtualRouter(UpdateVirtualRouterRequest updateVirtualRouterRequest);
+
+    /**
+     * <p>
+     * Updates an existing virtual service in a specified service mesh.
+     * </p>
+     * 
+     * @param updateVirtualServiceRequest
+     * @return Result of the UpdateVirtualService operation returned by the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @sample AWSAppMesh.UpdateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateVirtualServiceResult updateVirtualService(UpdateVirtualServiceRequest updateVirtualServiceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

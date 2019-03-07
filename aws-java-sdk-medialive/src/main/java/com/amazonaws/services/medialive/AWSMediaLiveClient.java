@@ -76,9 +76,6 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadGatewayException").withModeledClass(
-                                    com.amazonaws.services.medialive.model.BadGatewayException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
                                     com.amazonaws.services.medialive.model.ForbiddenException.class))
                     .addErrorMetadata(
@@ -91,14 +88,17 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                             new JsonErrorShapeMetadata().withErrorCode("UnprocessableEntityException").withModeledClass(
                                     com.amazonaws.services.medialive.model.UnprocessableEntityException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GatewayTimeoutException").withModeledClass(
-                                    com.amazonaws.services.medialive.model.GatewayTimeoutException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
                                     com.amazonaws.services.medialive.model.TooManyRequestsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
                                     com.amazonaws.services.medialive.model.BadRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadGatewayException").withModeledClass(
+                                    com.amazonaws.services.medialive.model.BadGatewayException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GatewayTimeoutException").withModeledClass(
+                                    com.amazonaws.services.medialive.model.GatewayTimeoutException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
                                     com.amazonaws.services.medialive.model.InternalServerErrorException.class))

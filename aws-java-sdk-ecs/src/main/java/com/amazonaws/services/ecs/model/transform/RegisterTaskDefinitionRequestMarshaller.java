@@ -54,6 +54,8 @@ public class RegisterTaskDefinitionRequestMarshaller {
             .marshallLocationName("pidMode").build();
     private static final MarshallingInfo<String> IPCMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ipcMode").build();
+    private static final MarshallingInfo<StructuredPojo> PROXYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proxyConfiguration").build();
 
     private static final RegisterTaskDefinitionRequestMarshaller instance = new RegisterTaskDefinitionRequestMarshaller();
 
@@ -84,6 +86,7 @@ public class RegisterTaskDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getPidMode(), PIDMODE_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getIpcMode(), IPCMODE_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

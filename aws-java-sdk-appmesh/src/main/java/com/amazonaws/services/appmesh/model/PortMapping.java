@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a virtual node listener port mapping.
+ * An object representing a virtual node or virtual router listener port mapping.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/PortMapping" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/PortMapping" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

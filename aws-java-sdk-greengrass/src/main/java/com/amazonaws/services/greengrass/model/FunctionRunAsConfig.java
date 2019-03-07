@@ -18,11 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Specifies the user and/or group whose permissions are used when running the Lambda function. You can specify one or
- * both values to override the default values (ggc_user/ggc_group). We recommend that you avoid running as root unless
- * absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set
- * IsolationMode to NoContainer and you must update config.json in greengrass-root/config to set
- * allowFunctionsToRunAsRoot to yes.
+ * Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both
+ * values to override the default values. We recommend that you avoid running as root unless absolutely necessary to
+ * minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to
+ * ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionRunAsConfig" target="_top">AWS API
  *      Documentation</a>
@@ -30,16 +29,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /** The Group ID whose permissions are used to run a Lambda function. */
+    /** The group ID whose permissions are used to run a Lambda function. */
     private Integer gid;
-    /** The User ID whose permissions are used to run a Lambda function. */
+    /** The user ID whose permissions are used to run a Lambda function. */
     private Integer uid;
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      * 
      * @param gid
-     *        The Group ID whose permissions are used to run a Lambda function.
+     *        The group ID whose permissions are used to run a Lambda function.
      */
 
     public void setGid(Integer gid) {
@@ -47,9 +46,9 @@ public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      * 
-     * @return The Group ID whose permissions are used to run a Lambda function.
+     * @return The group ID whose permissions are used to run a Lambda function.
      */
 
     public Integer getGid() {
@@ -57,10 +56,10 @@ public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      * 
      * @param gid
-     *        The Group ID whose permissions are used to run a Lambda function.
+     *        The group ID whose permissions are used to run a Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +69,10 @@ public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      * 
      * @param uid
-     *        The User ID whose permissions are used to run a Lambda function.
+     *        The user ID whose permissions are used to run a Lambda function.
      */
 
     public void setUid(Integer uid) {
@@ -81,9 +80,9 @@ public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      * 
-     * @return The User ID whose permissions are used to run a Lambda function.
+     * @return The user ID whose permissions are used to run a Lambda function.
      */
 
     public Integer getUid() {
@@ -91,10 +90,10 @@ public class FunctionRunAsConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      * 
      * @param uid
-     *        The User ID whose permissions are used to run a Lambda function.
+     *        The user ID whose permissions are used to run a Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

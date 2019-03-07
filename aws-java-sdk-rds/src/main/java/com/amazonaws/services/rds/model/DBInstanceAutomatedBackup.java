@@ -102,7 +102,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <p>
      * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
      * Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      */
@@ -656,14 +656,14 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <p>
      * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
      * Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone that the automated backup was created in. For information on AWS Regions and
      *        Availability Zones, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      */
 
@@ -675,13 +675,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <p>
      * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
      * Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @return The Availability Zone that the automated backup was created in. For information on AWS Regions and
      *         Availability Zones, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>.
      */
 
@@ -693,14 +693,14 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <p>
      * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
      * Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone that the automated backup was created in. For information on AWS Regions and
      *        Availability Zones, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

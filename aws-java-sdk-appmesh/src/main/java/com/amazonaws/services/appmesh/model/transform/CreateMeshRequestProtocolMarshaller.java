@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateMeshRequestProtocolMarshaller implements Marshaller<Request<CreateMeshRequest>, CreateMeshRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/meshes")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v20190125/meshes")
             .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSAppMesh").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

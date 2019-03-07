@@ -29,6 +29,8 @@ public class FunctionDefaultExecutionConfigMarshaller {
 
     private static final MarshallingInfo<String> ISOLATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsolationMode").build();
+    private static final MarshallingInfo<StructuredPojo> RUNAS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RunAs").build();
 
     private static final FunctionDefaultExecutionConfigMarshaller instance = new FunctionDefaultExecutionConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class FunctionDefaultExecutionConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(functionDefaultExecutionConfig.getIsolationMode(), ISOLATIONMODE_BINDING);
+            protocolMarshaller.marshall(functionDefaultExecutionConfig.getRunAs(), RUNAS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

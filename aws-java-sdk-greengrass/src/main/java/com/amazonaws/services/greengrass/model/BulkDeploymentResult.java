@@ -32,7 +32,7 @@ public class BulkDeploymentResult implements Serializable, Cloneable, Structured
     private String deploymentArn;
     /** The ID of the group deployment. */
     private String deploymentId;
-    /** The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''. */
+    /** The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''. */
     private String deploymentStatus;
     /** The type of the deployment. */
     private String deploymentType;
@@ -146,10 +146,10 @@ public class BulkDeploymentResult implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     * The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      * 
      * @param deploymentStatus
-     *        The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     *        The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      */
 
     public void setDeploymentStatus(String deploymentStatus) {
@@ -157,9 +157,9 @@ public class BulkDeploymentResult implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     * The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      * 
-     * @return The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     * @return The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      */
 
     public String getDeploymentStatus() {
@@ -167,10 +167,10 @@ public class BulkDeploymentResult implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     * The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      * 
      * @param deploymentStatus
-     *        The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
+     *        The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

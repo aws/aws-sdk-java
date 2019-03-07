@@ -60,6 +60,10 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
                     context.nextToken();
                     outputGroupSettings.setHlsGroupSettings(HlsGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mediaPackageGroupSettings", targetDepth)) {
+                    context.nextToken();
+                    outputGroupSettings.setMediaPackageGroupSettings(MediaPackageGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("msSmoothGroupSettings", targetDepth)) {
                     context.nextToken();
                     outputGroupSettings.setMsSmoothGroupSettings(MsSmoothGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));

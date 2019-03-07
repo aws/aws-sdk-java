@@ -118,6 +118,10 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     context.nextToken();
                     taskDefinition.setIpcMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("proxyConfiguration", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

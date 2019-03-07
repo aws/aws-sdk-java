@@ -52,7 +52,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private java.util.Date time;
     /**
      * <p>
-     * The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to begin.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
@@ -62,7 +62,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time that the action is scheduled to end. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to end.
      * </p>
      */
     private java.util.Date endTime;
@@ -253,7 +253,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to begin.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
@@ -261,8 +261,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin. This date and time can be up to one month in the
-     *        future.</p>
+     *        The date and time that the action is scheduled to begin. </p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.
@@ -274,15 +273,14 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to begin.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
      * boundaries of when the recurring action starts and stops.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to begin. This date and time can be up to one month in the
-     *         future.</p>
+     * @return The date and time that the action is scheduled to begin. </p>
      *         <p>
      *         When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they
      *         form the boundaries of when the recurring action starts and stops.
@@ -294,7 +292,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to begin.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
@@ -302,8 +300,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin. This date and time can be up to one month in the
-     *        future.</p>
+     *        The date and time that the action is scheduled to begin. </p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.
@@ -317,12 +314,11 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to end.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end. This date and time can be up to one month in the
-     *        future.
+     *        The date and time that the action is scheduled to end.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -331,11 +327,10 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to end.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to end. This date and time can be up to one month in the
-     *         future.
+     * @return The date and time that the action is scheduled to end.
      */
 
     public java.util.Date getEndTime() {
@@ -344,12 +339,11 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end. This date and time can be up to one month in the future.
+     * The date and time that the action is scheduled to end.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end. This date and time can be up to one month in the
-     *        future.
+     *        The date and time that the action is scheduled to end.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

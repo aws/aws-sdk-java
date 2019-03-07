@@ -48,9 +48,9 @@ public class DnsServiceDiscoveryJsonUnmarshaller implements Unmarshaller<DnsServ
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("serviceName", targetDepth)) {
+                if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
-                    dnsServiceDiscovery.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));
+                    dnsServiceDiscovery.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

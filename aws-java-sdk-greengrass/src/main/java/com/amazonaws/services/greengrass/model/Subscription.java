@@ -36,7 +36,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * represents the AWS IoT cloud), or 'GGShadowService'.
      */
     private String source;
-    /** The subject of the message. */
+    /** The MQTT topic used to route the message. */
     private String subject;
     /**
      * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which
@@ -125,10 +125,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      * 
      * @param subject
-     *        The subject of the message.
+     *        The MQTT topic used to route the message.
      */
 
     public void setSubject(String subject) {
@@ -136,9 +136,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      * 
-     * @return The subject of the message.
+     * @return The MQTT topic used to route the message.
      */
 
     public String getSubject() {
@@ -146,10 +146,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      * 
      * @param subject
-     *        The subject of the message.
+     *        The MQTT topic used to route the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

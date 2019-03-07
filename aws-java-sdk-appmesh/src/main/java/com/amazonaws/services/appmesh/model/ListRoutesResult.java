@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,7 +26,7 @@ public class ListRoutesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a
-     * <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the next page of
+     * <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to return.
      * </p>
      */
@@ -41,13 +41,13 @@ public class ListRoutesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a
-     * <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the next page of
+     * <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results
-     *        of a <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the
+     *        of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the
      *        next page of results. This value is <code>null</code> when there are no more results to return.
      */
 
@@ -58,12 +58,12 @@ public class ListRoutesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a
-     * <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the next page of
+     * <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @return The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results
-     *         of a <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the
+     *         of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the
      *         next page of results. This value is <code>null</code> when there are no more results to return.
      */
 
@@ -74,13 +74,13 @@ public class ListRoutesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a
-     * <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the next page of
+     * <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results
-     *        of a <code>ListRoutes</code> request exceed <code>limit</code>, this value can be used to retrieve the
+     *        of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the
      *        next page of results. This value is <code>null</code> when there are no more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

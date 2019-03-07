@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,11 +27,11 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this parameter
-     * is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     * parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
      * another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to 100 results and a
+     * 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -52,28 +52,28 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nextToken;
     /**
      * <p>
-     * The name of the virtual router in which to list routes.
+     * The name of the virtual router to list routes in.
      * </p>
      */
     private String virtualRouterName;
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this parameter
-     * is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     * parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
      * another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to 100 results and a
+     * 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param limit
-     *        The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this
-     *        parameter is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along
-     *        with a <code>nextToken</code> response element. The remaining results of the initial request can be seen
-     *        by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to
-     *        100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     *        parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     *        <code>nextToken</code> response element. You can see the remaining results of the initial request by
+     *        sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100
+     *        results and a <code>nextToken</code> value if applicable.
      */
 
     public void setLimit(Integer limit) {
@@ -82,19 +82,19 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this parameter
-     * is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     * parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
      * another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to 100 results and a
+     * 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this
-     *         parameter is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along
-     *         with a <code>nextToken</code> response element. The remaining results of the initial request can be seen
-     *         by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This
-     *         value can be between 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to
+     * @return The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     *         parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     *         <code>nextToken</code> response element. You can see the remaining results of the initial request by
+     *         sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This
+     *         value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to
      *         100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -104,21 +104,21 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this parameter
-     * is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
+     * The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     * parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
      * another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to 100 results and a
+     * 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param limit
-     *        The maximum number of mesh results returned by <code>ListRoutes</code> in paginated output. When this
-     *        parameter is used, <code>ListRoutes</code> only returns <code>limit</code> results in a single page along
-     *        with a <code>nextToken</code> response element. The remaining results of the initial request can be seen
-     *        by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then <code>ListRoutes</code> returns up to
-     *        100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this
+     *        parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a
+     *        <code>nextToken</code> response element. You can see the remaining results of the initial request by
+     *        sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100
+     *        results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the virtual router in which to list routes.
+     * The name of the virtual router to list routes in.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router in which to list routes.
+     *        The name of the virtual router to list routes in.
      */
 
     public void setVirtualRouterName(String virtualRouterName) {
@@ -234,10 +234,10 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the virtual router in which to list routes.
+     * The name of the virtual router to list routes in.
      * </p>
      * 
-     * @return The name of the virtual router in which to list routes.
+     * @return The name of the virtual router to list routes in.
      */
 
     public String getVirtualRouterName() {
@@ -246,11 +246,11 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the virtual router in which to list routes.
+     * The name of the virtual router to list routes in.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router in which to list routes.
+     *        The name of the virtual router to list routes in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

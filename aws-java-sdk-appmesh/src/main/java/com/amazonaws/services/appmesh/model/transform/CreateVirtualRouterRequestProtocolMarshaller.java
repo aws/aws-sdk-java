@@ -33,8 +33,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CreateVirtualRouterRequestProtocolMarshaller implements Marshaller<Request<CreateVirtualRouterRequest>, CreateVirtualRouterRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/meshes/{meshName}/virtualRouters").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
-            .serviceName("AWSAppMesh").build();
+            .requestUri("/v20190125/meshes/{meshName}/virtualRouters").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false)
+            .hasPayloadMembers(true).serviceName("AWSAppMesh").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

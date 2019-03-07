@@ -385,6 +385,36 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<Secret> secrets;
     /**
      * <p>
+     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ContainerDependency> dependsOn;
+    /**
+     * <p>
+     * Time duration to wait before giving up on starting the container.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>startTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     */
+    private Integer startTimeout;
+    /**
+     * <p>
+     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>stopTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     */
+    private Integer stopTimeout;
+    /**
+     * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option
@@ -399,11 +429,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String hostname;
     /**
      * <p>
-     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <p>
+     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>user</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:group</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:group</code>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * This parameter is not supported for Windows containers.
@@ -3331,6 +3396,222 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * </p>
+     * 
+     * @return The dependencies defined for container startup. A container can contain multiple dependencies.
+     */
+
+    public java.util.List<ContainerDependency> getDependsOn() {
+        if (dependsOn == null) {
+            dependsOn = new com.amazonaws.internal.SdkInternalList<ContainerDependency>();
+        }
+        return dependsOn;
+    }
+
+    /**
+     * <p>
+     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * </p>
+     * 
+     * @param dependsOn
+     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     */
+
+    public void setDependsOn(java.util.Collection<ContainerDependency> dependsOn) {
+        if (dependsOn == null) {
+            this.dependsOn = null;
+            return;
+        }
+
+        this.dependsOn = new com.amazonaws.internal.SdkInternalList<ContainerDependency>(dependsOn);
+    }
+
+    /**
+     * <p>
+     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDependsOn(java.util.Collection)} or {@link #withDependsOn(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dependsOn
+     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withDependsOn(ContainerDependency... dependsOn) {
+        if (this.dependsOn == null) {
+            setDependsOn(new com.amazonaws.internal.SdkInternalList<ContainerDependency>(dependsOn.length));
+        }
+        for (ContainerDependency ele : dependsOn) {
+            this.dependsOn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * </p>
+     * 
+     * @param dependsOn
+     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withDependsOn(java.util.Collection<ContainerDependency> dependsOn) {
+        setDependsOn(dependsOn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before giving up on starting the container.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>startTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @param startTimeout
+     *        Time duration to wait before giving up on starting the container.</p> <note>
+     *        <p>
+     *        The <code>startTimeout</code> value for the container will take precedence over the
+     *        <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     *        </p>
+     */
+
+    public void setStartTimeout(Integer startTimeout) {
+        this.startTimeout = startTimeout;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before giving up on starting the container.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>startTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @return Time duration to wait before giving up on starting the container.</p> <note>
+     *         <p>
+     *         The <code>startTimeout</code> value for the container will take precedence over the
+     *         <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     *         </p>
+     */
+
+    public Integer getStartTimeout() {
+        return this.startTimeout;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before giving up on starting the container.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>startTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @param startTimeout
+     *        Time duration to wait before giving up on starting the container.</p> <note>
+     *        <p>
+     *        The <code>startTimeout</code> value for the container will take precedence over the
+     *        <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withStartTimeout(Integer startTimeout) {
+        setStartTimeout(startTimeout);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>stopTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @param stopTimeout
+     *        Time duration to wait before the container is forcefully killed if it does not exit normally on its
+     *        own.</p> <note>
+     *        <p>
+     *        The <code>stopTimeout</code> value for the container will take precedence over the
+     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     *        </p>
+     */
+
+    public void setStopTimeout(Integer stopTimeout) {
+        this.stopTimeout = stopTimeout;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>stopTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @return Time duration to wait before the container is forcefully killed if it does not exit normally on its
+     *         own.</p> <note>
+     *         <p>
+     *         The <code>stopTimeout</code> value for the container will take precedence over the
+     *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     *         </p>
+     */
+
+    public Integer getStopTimeout() {
+        return this.stopTimeout;
+    }
+
+    /**
+     * <p>
+     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>stopTimeout</code> value for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * </p>
+     * </note>
+     * 
+     * @param stopTimeout
+     *        Time duration to wait before the container is forcefully killed if it does not exit normally on its
+     *        own.</p> <note>
+     *        <p>
+     *        The <code>stopTimeout</code> value for the container will take precedence over the
+     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withStopTimeout(Integer stopTimeout) {
+        setStopTimeout(stopTimeout);
+        return this;
+    }
+
+    /**
+     * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option
@@ -3419,11 +3700,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <p>
+     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>user</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:group</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:group</code>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * This parameter is not supported for Windows containers.
@@ -3431,10 +3747,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param user
-     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        The username to use inside the container. This parameter maps to <code>User</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <p>
+     *        This following formats can be used. If specifying a UID or GID, it must be specified as a positive
+     *        integer.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>user</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>user:group</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid:gid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>user:gid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid:group</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
@@ -3447,21 +3799,92 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <p>
+     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>user</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:group</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:group</code>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
-     * @return The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * @return The username to use inside the container. This parameter maps to <code>User</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *         <p>
+     *         This following formats can be used. If specifying a UID or GID, it must be specified as a positive
+     *         integer.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>user</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>user:group</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>uid</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>uid:gid</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>user:gid</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>uid:group</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <note>
      *         <p>
      *         This parameter is not supported for Windows containers.
@@ -3474,11 +3897,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <p>
+     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>user</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:group</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>user:gid</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uid:group</code>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * This parameter is not supported for Windows containers.
@@ -3486,10 +3944,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param user
-     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        The username to use inside the container. This parameter maps to <code>User</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <p>
+     *        This following formats can be used. If specifying a UID or GID, it must be specified as a positive
+     *        integer.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>user</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>user:group</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid:gid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>user:gid</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>uid:group</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
@@ -5589,6 +6083,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("LinuxParameters: ").append(getLinuxParameters()).append(",");
         if (getSecrets() != null)
             sb.append("Secrets: ").append(getSecrets()).append(",");
+        if (getDependsOn() != null)
+            sb.append("DependsOn: ").append(getDependsOn()).append(",");
+        if (getStartTimeout() != null)
+            sb.append("StartTimeout: ").append(getStartTimeout()).append(",");
+        if (getStopTimeout() != null)
+            sb.append("StopTimeout: ").append(getStopTimeout()).append(",");
         if (getHostname() != null)
             sb.append("Hostname: ").append(getHostname()).append(",");
         if (getUser() != null)
@@ -5703,6 +6203,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSecrets() != null && other.getSecrets().equals(this.getSecrets()) == false)
             return false;
+        if (other.getDependsOn() == null ^ this.getDependsOn() == null)
+            return false;
+        if (other.getDependsOn() != null && other.getDependsOn().equals(this.getDependsOn()) == false)
+            return false;
+        if (other.getStartTimeout() == null ^ this.getStartTimeout() == null)
+            return false;
+        if (other.getStartTimeout() != null && other.getStartTimeout().equals(this.getStartTimeout()) == false)
+            return false;
+        if (other.getStopTimeout() == null ^ this.getStopTimeout() == null)
+            return false;
+        if (other.getStopTimeout() != null && other.getStopTimeout().equals(this.getStopTimeout()) == false)
+            return false;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
@@ -5799,6 +6311,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getVolumesFrom() == null) ? 0 : getVolumesFrom().hashCode());
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
+        hashCode = prime * hashCode + ((getDependsOn() == null) ? 0 : getDependsOn().hashCode());
+        hashCode = prime * hashCode + ((getStartTimeout() == null) ? 0 : getStartTimeout().hashCode());
+        hashCode = prime * hashCode + ((getStopTimeout() == null) ? 0 : getStopTimeout().hashCode());
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
         hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());

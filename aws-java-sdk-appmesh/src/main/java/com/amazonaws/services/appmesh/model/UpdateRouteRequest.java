@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientToken;
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      */
     private String meshName;
@@ -52,7 +52,7 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
     private RouteSpec spec;
     /**
      * <p>
-     * The name of the virtual router with which the route is associated.
+     * The name of the virtual router that the route is associated with.
      * </p>
      */
     private String virtualRouterName;
@@ -105,11 +105,11 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the route resides.
+     *        The name of the service mesh that the route resides in.
      */
 
     public void setMeshName(String meshName) {
@@ -118,10 +118,10 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
-     * @return The name of the service mesh in which the route resides.
+     * @return The name of the service mesh that the route resides in.
      */
 
     public String getMeshName() {
@@ -130,11 +130,11 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the route resides.
+     *        The name of the service mesh that the route resides in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +225,11 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router with which the route is associated.
+     * The name of the virtual router that the route is associated with.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router with which the route is associated.
+     *        The name of the virtual router that the route is associated with.
      */
 
     public void setVirtualRouterName(String virtualRouterName) {
@@ -238,10 +238,10 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router with which the route is associated.
+     * The name of the virtual router that the route is associated with.
      * </p>
      * 
-     * @return The name of the virtual router with which the route is associated.
+     * @return The name of the virtual router that the route is associated with.
      */
 
     public String getVirtualRouterName() {
@@ -250,11 +250,11 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the virtual router with which the route is associated.
+     * The name of the virtual router that the route is associated with.
      * </p>
      * 
      * @param virtualRouterName
-     *        The name of the virtual router with which the route is associated.
+     *        The name of the virtual router that the route is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

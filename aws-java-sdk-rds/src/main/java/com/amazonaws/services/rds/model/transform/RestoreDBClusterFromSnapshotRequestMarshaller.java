@@ -183,6 +183,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getDeletionProtection()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getCopyTagsToSnapshot()));
+        }
+
         return request;
     }
 

@@ -60,7 +60,7 @@ import com.amazonaws.services.autoscaling.model.transform.*;
  * <p>
  * For more information, including information about granting IAM users required permissions for Amazon EC2 Auto Scaling
  * actions, see the <a
- * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon EC2 Auto
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon EC2 Auto
  * Scaling User Guide</a>.
  * </p>
  */
@@ -312,15 +312,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach EC2 Instances to Your
-     * Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach EC2 Instances to
+     * Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param attachInstancesRequest
      * @return Result of the AttachInstances operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachInstances
@@ -379,15 +379,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * With Application Load Balancers and Network Load Balancers, instances are registered as targets with a target
      * group. With Classic Load Balancers, instances are registered with the load balancer. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching a Load
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching a Load
      * Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param attachLoadBalancerTargetGroupsRequest
      * @return Result of the AttachLoadBalancerTargetGroups operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachLoadBalancerTargetGroups
@@ -449,15 +449,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching a Load
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching a Load
      * Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param attachLoadBalancersRequest
      * @return Result of the AttachLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachLoadBalancers
@@ -518,8 +518,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param batchDeleteScheduledActionRequest
      * @return Result of the BatchDeleteScheduledAction operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.BatchDeleteScheduledAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction"
      *      target="_top">AWS API Documentation</a>
@@ -576,11 +576,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.BatchPutScheduledUpdateGroupAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction"
      *      target="_top">AWS API Documentation</a>
@@ -666,15 +667,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </ol>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
+     * Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param completeLifecycleActionRequest
      * @return Result of the CompleteLifecycleAction operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.CompleteLifecycleAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"
      *      target="_top">AWS API Documentation</a>
@@ -727,13 +728,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this
      * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
      * Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto Scaling Groups</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param createAutoScalingGroupRequest
@@ -741,11 +737,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
@@ -800,13 +797,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this
      * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
      * Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch Configurations</a> in
-     * the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch Configurations</a>
+     * in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param createLaunchConfigurationRequest
@@ -814,11 +811,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -874,20 +872,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling Groups
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling Groups
      * and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param createOrUpdateTagsRequest
      * @return Result of the CreateOrUpdateTags operation returned by the service.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @sample AmazonAutoScaling.CreateOrUpdateTags
@@ -964,8 +963,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1025,8 +1024,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1084,8 +1083,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteLifecycleHookRequest
      * @return Result of the DeleteLifecycleHook operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteLifecycleHook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"
      *      target="_top">AWS API Documentation</a>
@@ -1139,8 +1138,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteNotificationConfigurationRequest
      * @return Result of the DeleteNotificationConfiguration operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1189,7 +1188,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified Auto Scaling policy.
+     * Deletes the specified scaling policy.
      * </p>
      * <p>
      * Deleting a policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an
@@ -1199,8 +1198,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deletePolicyRequest
      * @return Result of the DeletePolicy operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.DeletePolicy
@@ -1255,8 +1254,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteScheduledActionRequest
      * @return Result of the DeleteScheduledAction operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"
      *      target="_top">AWS API Documentation</a>
@@ -1310,8 +1309,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param deleteTagsRequest
      * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @sample AmazonAutoScaling.DeleteTags
@@ -1360,19 +1359,19 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the current Auto Scaling resource limits for your AWS account.
+     * Describes the current Amazon EC2 Auto Scaling resource limits for your AWS account.
      * </p>
      * <p>
      * For information about requesting an increase in these limits, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling
      * Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest
      * @return Result of the DescribeAccountLimits operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeAccountLimits
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits"
      *      target="_top">AWS API Documentation</a>
@@ -1431,8 +1430,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeAdjustmentTypesRequest
      * @return Result of the DescribeAdjustmentTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeAdjustmentTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes"
      *      target="_top">AWS API Documentation</a>
@@ -1493,8 +1492,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1555,8 +1554,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"
      *      target="_top">AWS API Documentation</a>
@@ -1615,8 +1614,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeAutoScalingNotificationTypesRequest
      * @return Result of the DescribeAutoScalingNotificationTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeAutoScalingNotificationTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes"
      *      target="_top">AWS API Documentation</a>
@@ -1679,8 +1678,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeLaunchConfigurations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations"
      *      target="_top">AWS API Documentation</a>
@@ -1754,8 +1753,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeLifecycleHookTypesRequest
      * @return Result of the DescribeLifecycleHookTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHookTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes"
      *      target="_top">AWS API Documentation</a>
@@ -1814,8 +1813,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeLifecycleHooksRequest
      * @return Result of the DescribeLifecycleHooks operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeLifecycleHooks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"
      *      target="_top">AWS API Documentation</a>
@@ -1869,8 +1868,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeLoadBalancerTargetGroupsRequest
      * @return Result of the DescribeLoadBalancerTargetGroups operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancerTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1929,8 +1928,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeLoadBalancersRequest
      * @return Result of the DescribeLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"
      *      target="_top">AWS API Documentation</a>
@@ -1988,8 +1987,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeMetricCollectionTypesRequest
      * @return Result of the DescribeMetricCollectionTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeMetricCollectionTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes"
      *      target="_top">AWS API Documentation</a>
@@ -2050,8 +2049,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeNotificationConfigurations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"
      *      target="_top">AWS API Documentation</a>
@@ -2114,8 +2113,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.DescribePolicies
@@ -2178,8 +2177,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeScalingActivities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"
      *      target="_top">AWS API Documentation</a>
@@ -2238,8 +2237,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param describeScalingProcessTypesRequest
      * @return Result of the DescribeScalingProcessTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeScalingProcessTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes"
      *      target="_top">AWS API Documentation</a>
@@ -2301,8 +2300,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeScheduledActions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"
      *      target="_top">AWS API Documentation</a>
@@ -2372,8 +2371,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags" target="_top">AWS API
      *      Documentation</a>
@@ -2429,15 +2428,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which Auto
      * Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeTerminationPolicyTypesRequest
      * @return Result of the DescribeTerminationPolicyTypes operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DescribeTerminationPolicyTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes"
      *      target="_top">AWS API Documentation</a>
@@ -2506,15 +2505,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach EC2 Instances from
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach EC2 Instances from
      * Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param detachInstancesRequest
      * @return Result of the DetachInstances operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DetachInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances" target="_top">AWS
      *      API Documentation</a>
@@ -2568,8 +2567,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param detachLoadBalancerTargetGroupsRequest
      * @return Result of the DetachLoadBalancerTargetGroups operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancerTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups"
      *      target="_top">AWS API Documentation</a>
@@ -2632,8 +2631,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param detachLoadBalancersRequest
      * @return Result of the DetachLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DetachLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"
      *      target="_top">AWS API Documentation</a>
@@ -2692,8 +2691,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param disableMetricsCollectionRequest
      * @return Result of the DisableMetricsCollection operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"
      *      target="_top">AWS API Documentation</a>
@@ -2742,15 +2741,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Enables group metrics for the specified Auto Scaling group. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring Your Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring Your Auto
      * Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enableMetricsCollectionRequest
      * @return Result of the EnableMetricsCollection operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"
      *      target="_top">AWS API Documentation</a>
@@ -2802,15 +2801,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily Removing
      * Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enterStandbyRequest
      * @return Result of the EnterStandby operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.EnterStandby
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby" target="_top">AWS API
      *      Documentation</a>
@@ -2865,8 +2864,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.ExecutePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -2917,15 +2916,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily Removing
      * Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param exitStandbyRequest
      * @return Result of the ExitStandby operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.ExitStandby
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby" target="_top">AWS API
      *      Documentation</a>
@@ -2975,8 +2974,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Creates or updates a lifecycle hook for the specified Auto Scaling group.
      * </p>
      * <p>
-     * A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance that is not actively in
-     * service; for example, either when the instance launches or before the instance terminates.
+     * A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches
+     * (before it is put into service) or as the instance terminates (before it is fully terminated).
      * </p>
      * <p>
      * This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:
@@ -3001,33 +3000,39 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.
+     * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using using
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you finish before the timeout period ends, complete the lifecycle action.
+     * If you finish before the timeout period ends, complete the lifecycle action using <a>CompleteLifecycleAction</a>.
      * </p>
      * </li>
      * </ol>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
      * Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call
      * fails.
      * </p>
+     * <p>
+     * You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. If you are no
+     * longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
+     * </p>
      * 
      * @param putLifecycleHookRequest
      * @return Result of the PutLifecycleHook operation returned by the service.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutLifecycleHook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook" target="_top">AWS
      *      API Documentation</a>
@@ -3083,18 +3088,19 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
      * Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param putNotificationConfigurationRequest
      * @return Result of the PutNotificationConfiguration operation returned by the service.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.PutNotificationConfiguration
@@ -3152,11 +3158,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @param putScalingPolicyRequest
      * @return Result of the PutScalingPolicy operation returned by the service.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.PutScalingPolicy
@@ -3211,7 +3218,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled Scaling</a> in the
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled Scaling</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -3220,11 +3227,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction"
      *      target="_top">AWS API Documentation</a>
@@ -3309,15 +3317,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </ol>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
      * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
      * @return Result of the RecordLifecycleActionHeartbeat operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.RecordLifecycleActionHeartbeat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat"
      *      target="_top">AWS API Documentation</a>
@@ -3370,7 +3378,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
      * Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -3379,8 +3387,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.ResumeProcesses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses" target="_top">AWS
      *      API Documentation</a>
@@ -3432,7 +3440,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information about desired capacity, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What Is Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What Is Amazon
      * EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -3441,8 +3449,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetDesiredCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity" target="_top">AWS
      *      API Documentation</a>
@@ -3493,15 +3501,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Sets the health status of the specified instance.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param setInstanceHealthRequest
      * @return Result of the SetInstanceHealth operation returned by the service.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth" target="_top">AWS
      *      API Documentation</a>
@@ -3554,18 +3562,19 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * For more information about preventing instances that are part of an Auto Scaling group from terminating on scale
      * in, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param setInstanceProtectionRequest
      * @return Result of the SetInstanceProtection operation returned by the service.
      * @throws LimitExceededException
-     *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
-     *         configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see
+     *         <a>DescribeAccountLimits</a>.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetInstanceProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"
      *      target="_top">AWS API Documentation</a>
@@ -3624,7 +3633,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
      * Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -3633,8 +3642,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.SuspendProcesses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses" target="_top">AWS
      *      API Documentation</a>
@@ -3693,8 +3702,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @sample AmazonAutoScaling.TerminateInstanceInAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup"
      *      target="_top">AWS API Documentation</a>
@@ -3786,8 +3795,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
      * @throws ResourceContentionException
-     *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
-     *         balancer).
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
      * @throws ServiceLinkedRoleFailureException
      *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup

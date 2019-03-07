@@ -46,9 +46,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      */
     private String lifecycleState;
@@ -76,11 +74,6 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean protectedFromScaleIn;
@@ -207,15 +200,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     *        Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        The lifecycle state for the instance.
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -224,14 +213,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
-     * @return The lifecycle state for the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     *         Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return The lifecycle state for the instance.
      */
 
     public String getLifecycleState() {
@@ -240,15 +225,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     *        Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        The lifecycle state for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,19 +380,9 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-     *        in.</p>
-     *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     *        >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -422,18 +393,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-     *         in.</p>
-     *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     *         >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean getProtectedFromScaleIn() {
@@ -444,19 +405,9 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-     *        in.</p>
-     *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     *        >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,18 +420,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-     *         in.</p>
-     *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     *         >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean isProtectedFromScaleIn() {

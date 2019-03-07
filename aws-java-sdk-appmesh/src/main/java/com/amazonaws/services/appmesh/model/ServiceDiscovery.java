@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the service discovery information for a virtual node.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ServiceDiscovery" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ServiceDiscovery" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,18 +30,18 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the DNS service name for the virtual node.
+     * Specifies the DNS information for the virtual node.
      * </p>
      */
     private DnsServiceDiscovery dns;
 
     /**
      * <p>
-     * Specifies the DNS service name for the virtual node.
+     * Specifies the DNS information for the virtual node.
      * </p>
      * 
      * @param dns
-     *        Specifies the DNS service name for the virtual node.
+     *        Specifies the DNS information for the virtual node.
      */
 
     public void setDns(DnsServiceDiscovery dns) {
@@ -50,10 +50,10 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the DNS service name for the virtual node.
+     * Specifies the DNS information for the virtual node.
      * </p>
      * 
-     * @return Specifies the DNS service name for the virtual node.
+     * @return Specifies the DNS information for the virtual node.
      */
 
     public DnsServiceDiscovery getDns() {
@@ -62,11 +62,11 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the DNS service name for the virtual node.
+     * Specifies the DNS information for the virtual node.
      * </p>
      * 
      * @param dns
-     *        Specifies the DNS service name for the virtual node.
+     *        Specifies the DNS information for the virtual node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

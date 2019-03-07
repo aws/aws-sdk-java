@@ -48,6 +48,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public CreateVirtualServiceResult createVirtualService(CreateVirtualServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMeshResult deleteMesh(DeleteMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
 
     @Override
     public DeleteVirtualRouterResult deleteVirtualRouter(DeleteVirtualRouterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVirtualServiceResult deleteVirtualService(DeleteVirtualServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +98,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public DescribeVirtualServiceResult describeVirtualService(DescribeVirtualServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMeshesResult listMeshes(ListMeshesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,6 +123,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public ListVirtualServicesResult listVirtualServices(ListVirtualServicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRouteResult updateRoute(UpdateRouteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +139,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
 
     @Override
     public UpdateVirtualRouterResult updateVirtualRouter(UpdateVirtualRouterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVirtualServiceResult updateVirtualService(UpdateVirtualServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

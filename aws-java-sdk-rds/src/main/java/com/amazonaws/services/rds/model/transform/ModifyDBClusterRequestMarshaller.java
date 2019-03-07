@@ -173,6 +173,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("EnableHttpEndpoint", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableHttpEndpoint()));
         }
 
+        if (modifyDBClusterRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBClusterRequest.getCopyTagsToSnapshot()));
+        }
+
         return request;
     }
 

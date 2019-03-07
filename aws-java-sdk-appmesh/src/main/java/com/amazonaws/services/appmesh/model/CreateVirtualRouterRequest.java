@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
     private String clientToken;
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual router.
+     * The name of the service mesh to create the virtual router in.
      * </p>
      */
     private String meshName;
@@ -99,11 +99,11 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual router.
+     * The name of the service mesh to create the virtual router in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to create the virtual router.
+     *        The name of the service mesh to create the virtual router in.
      */
 
     public void setMeshName(String meshName) {
@@ -112,10 +112,10 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual router.
+     * The name of the service mesh to create the virtual router in.
      * </p>
      * 
-     * @return The name of the service mesh in which to create the virtual router.
+     * @return The name of the service mesh to create the virtual router in.
      */
 
     public String getMeshName() {
@@ -124,11 +124,11 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual router.
+     * The name of the service mesh to create the virtual router in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to create the virtual router.
+     *        The name of the service mesh to create the virtual router in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

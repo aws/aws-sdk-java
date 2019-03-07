@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeRouteRequestProtocolMarshaller implements Marshaller<Request<DescribeRouteRequest>, DescribeRouteRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}").httpMethodName(HttpMethodName.GET)
+            .requestUri("/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}").httpMethodName(HttpMethodName.GET)
             .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSAppMesh").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

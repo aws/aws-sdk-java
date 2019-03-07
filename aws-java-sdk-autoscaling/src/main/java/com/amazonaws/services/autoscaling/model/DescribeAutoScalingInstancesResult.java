@@ -31,8 +31,9 @@ public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails> autoScalingInstances;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -112,13 +113,15 @@ public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        A string that indicates that the response contains more items than can be returned in a single response.
+     *        To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +130,14 @@ public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
+     * @return A string that indicates that the response contains more items than can be returned in a single response.
+     *         To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *         next set of items. This value is null when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -141,13 +146,15 @@ public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        A string that indicates that the response contains more items than can be returned in a single response.
+     *        To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

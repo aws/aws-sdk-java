@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Default configuration that will apply to all Lambda functions in the group.
+ * The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override
+ * these settings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefaultConfig" target="_top">AWS
  *      API Documentation</a>

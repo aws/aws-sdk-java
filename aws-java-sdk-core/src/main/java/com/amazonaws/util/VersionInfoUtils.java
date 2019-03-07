@@ -153,7 +153,9 @@ public class VersionInfoUtils {
             .replace("{os.version}", replaceSpaces(System.getProperty("os.version")))
             .replace("{java.vm.name}", replaceSpaces(System.getProperty("java.vm.name")))
             .replace("{java.vm.version}", replaceSpaces(System.getProperty("java.vm.version")))
-            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")));
+            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")))
+            .replace("{java.vendor}", replaceSpaces(System.getProperty("java.vendor")))
+	    ;
 
         if (ua.contains("{additional.languages}")) {
             ua = ua.replace("{additional.languages}", getAdditionalJvmLanguages());

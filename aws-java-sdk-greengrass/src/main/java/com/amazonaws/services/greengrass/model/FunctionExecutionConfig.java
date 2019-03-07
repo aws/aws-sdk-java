@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Configuration information that specifies how the Lambda function runs.
+ * Configuration information that specifies how a Lambda function runs.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionExecutionConfig" target="_top">AWS
  *      API Documentation</a>

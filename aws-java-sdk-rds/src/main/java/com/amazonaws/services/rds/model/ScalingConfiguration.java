@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
  * 

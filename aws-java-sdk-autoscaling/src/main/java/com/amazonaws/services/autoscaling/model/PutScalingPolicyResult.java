@@ -34,7 +34,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
     private String policyARN;
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy.
+     * The CloudWatch alarms created for the target tracking scaling policy.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Alarm> alarms;
@@ -81,10 +81,10 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy.
+     * The CloudWatch alarms created for the target tracking scaling policy.
      * </p>
      * 
-     * @return The CloudWatch alarms created for the target tracking policy.
+     * @return The CloudWatch alarms created for the target tracking scaling policy.
      */
 
     public java.util.List<Alarm> getAlarms() {
@@ -96,11 +96,11 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy.
+     * The CloudWatch alarms created for the target tracking scaling policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy.
+     *        The CloudWatch alarms created for the target tracking scaling policy.
      */
 
     public void setAlarms(java.util.Collection<Alarm> alarms) {
@@ -114,7 +114,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy.
+     * The CloudWatch alarms created for the target tracking scaling policy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy.
+     *        The CloudWatch alarms created for the target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy.
+     * The CloudWatch alarms created for the target tracking scaling policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy.
+     *        The CloudWatch alarms created for the target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,10 +18,10 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can
- * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more
- * information, see <a
- * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using Multiple
- * Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+ * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. Used in combination
+ * with <a>CreateAutoScalingGroup</a>. For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
+ * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * <p>
  * When you create your Auto Scaling group, you can specify a launch configuration or template as a parameter for the

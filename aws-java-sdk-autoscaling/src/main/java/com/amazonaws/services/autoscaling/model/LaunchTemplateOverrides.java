@@ -32,7 +32,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      */
@@ -44,7 +44,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
@@ -52,7 +52,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        The instance type. </p>
      *        <p>
      *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
      *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
@@ -66,14 +66,14 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
      * @return The instance type. </p>
      *         <p>
      *         For information about available instance types, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
      *         >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
@@ -87,7 +87,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
@@ -95,7 +95,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        The instance type. </p>
      *        <p>
      *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
      *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing a route returned by a describe operation.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/RouteData" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteData" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,7 +30,7 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      */
     private String meshName;
@@ -60,18 +60,18 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
     private RouteStatus status;
     /**
      * <p>
-     * The virtual router with which the route is associated.
+     * The virtual router that the route is associated with.
      * </p>
      */
     private String virtualRouterName;
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the route resides.
+     *        The name of the service mesh that the route resides in.
      */
 
     public void setMeshName(String meshName) {
@@ -80,10 +80,10 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
-     * @return The name of the service mesh in which the route resides.
+     * @return The name of the service mesh that the route resides in.
      */
 
     public String getMeshName() {
@@ -92,11 +92,11 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the service mesh in which the route resides.
+     * The name of the service mesh that the route resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the route resides.
+     *        The name of the service mesh that the route resides in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The virtual router with which the route is associated.
+     * The virtual router that the route is associated with.
      * </p>
      * 
      * @param virtualRouterName
-     *        The virtual router with which the route is associated.
+     *        The virtual router that the route is associated with.
      */
 
     public void setVirtualRouterName(String virtualRouterName) {
@@ -280,10 +280,10 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The virtual router with which the route is associated.
+     * The virtual router that the route is associated with.
      * </p>
      * 
-     * @return The virtual router with which the route is associated.
+     * @return The virtual router that the route is associated with.
      */
 
     public String getVirtualRouterName() {
@@ -292,11 +292,11 @@ public class RouteData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The virtual router with which the route is associated.
+     * The virtual router that the route is associated with.
      * </p>
      * 
      * @param virtualRouterName
-     *        The virtual router with which the route is associated.
+     *        The virtual router that the route is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

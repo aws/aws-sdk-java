@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the requirements for a route to match HTTP requests for a virtual router.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HttpRouteMatch" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteMatch" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,30 +30,28 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the path with which to match requests. This parameter must always start with <code>/</code>, which by
-     * itself matches all requests to the virtual router service name. You can also match for path-based routing of
-     * requests. For example, if your virtual router service name is <code>my-service.local</code>, and you want the
-     * route to match requests to <code>my-service.local/metrics</code>, then your prefix should be
-     * <code>/metrics</code>.
+     * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
+     * matches all requests to the virtual router service name. You can also match for path-based routing of requests.
+     * For example, if your virtual router service name is <code>my-service.local</code> and you want the route to match
+     * requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.
      * </p>
      */
     private String prefix;
 
     /**
      * <p>
-     * Specifies the path with which to match requests. This parameter must always start with <code>/</code>, which by
-     * itself matches all requests to the virtual router service name. You can also match for path-based routing of
-     * requests. For example, if your virtual router service name is <code>my-service.local</code>, and you want the
-     * route to match requests to <code>my-service.local/metrics</code>, then your prefix should be
-     * <code>/metrics</code>.
+     * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
+     * matches all requests to the virtual router service name. You can also match for path-based routing of requests.
+     * For example, if your virtual router service name is <code>my-service.local</code> and you want the route to match
+     * requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.
      * </p>
      * 
      * @param prefix
-     *        Specifies the path with which to match requests. This parameter must always start with <code>/</code>,
-     *        which by itself matches all requests to the virtual router service name. You can also match for path-based
-     *        routing of requests. For example, if your virtual router service name is <code>my-service.local</code>,
-     *        and you want the route to match requests to <code>my-service.local/metrics</code>, then your prefix should
-     *        be <code>/metrics</code>.
+     *        Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by
+     *        itself matches all requests to the virtual router service name. You can also match for path-based routing
+     *        of requests. For example, if your virtual router service name is <code>my-service.local</code> and you
+     *        want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be
+     *        <code>/metrics</code>.
      */
 
     public void setPrefix(String prefix) {
@@ -62,18 +60,17 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the path with which to match requests. This parameter must always start with <code>/</code>, which by
-     * itself matches all requests to the virtual router service name. You can also match for path-based routing of
-     * requests. For example, if your virtual router service name is <code>my-service.local</code>, and you want the
-     * route to match requests to <code>my-service.local/metrics</code>, then your prefix should be
-     * <code>/metrics</code>.
+     * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
+     * matches all requests to the virtual router service name. You can also match for path-based routing of requests.
+     * For example, if your virtual router service name is <code>my-service.local</code> and you want the route to match
+     * requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.
      * </p>
      * 
-     * @return Specifies the path with which to match requests. This parameter must always start with <code>/</code>,
-     *         which by itself matches all requests to the virtual router service name. You can also match for
-     *         path-based routing of requests. For example, if your virtual router service name is
-     *         <code>my-service.local</code>, and you want the route to match requests to
-     *         <code>my-service.local/metrics</code>, then your prefix should be <code>/metrics</code>.
+     * @return Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by
+     *         itself matches all requests to the virtual router service name. You can also match for path-based routing
+     *         of requests. For example, if your virtual router service name is <code>my-service.local</code> and you
+     *         want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be
+     *         <code>/metrics</code>.
      */
 
     public String getPrefix() {
@@ -82,19 +79,18 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the path with which to match requests. This parameter must always start with <code>/</code>, which by
-     * itself matches all requests to the virtual router service name. You can also match for path-based routing of
-     * requests. For example, if your virtual router service name is <code>my-service.local</code>, and you want the
-     * route to match requests to <code>my-service.local/metrics</code>, then your prefix should be
-     * <code>/metrics</code>.
+     * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
+     * matches all requests to the virtual router service name. You can also match for path-based routing of requests.
+     * For example, if your virtual router service name is <code>my-service.local</code> and you want the route to match
+     * requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.
      * </p>
      * 
      * @param prefix
-     *        Specifies the path with which to match requests. This parameter must always start with <code>/</code>,
-     *        which by itself matches all requests to the virtual router service name. You can also match for path-based
-     *        routing of requests. For example, if your virtual router service name is <code>my-service.local</code>,
-     *        and you want the route to match requests to <code>my-service.local/metrics</code>, then your prefix should
-     *        be <code>/metrics</code>.
+     *        Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by
+     *        itself matches all requests to the virtual router service name. You can also match for path-based routing
+     *        of requests. For example, if your virtual router service name is <code>my-service.local</code> and you
+     *        want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be
+     *        <code>/metrics</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

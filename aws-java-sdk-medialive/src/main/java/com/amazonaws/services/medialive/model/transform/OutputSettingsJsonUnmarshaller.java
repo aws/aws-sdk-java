@@ -60,6 +60,10 @@ public class OutputSettingsJsonUnmarshaller implements Unmarshaller<OutputSettin
                     context.nextToken();
                     outputSettings.setHlsOutputSettings(HlsOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mediaPackageOutputSettings", targetDepth)) {
+                    context.nextToken();
+                    outputSettings.setMediaPackageOutputSettings(MediaPackageOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("msSmoothOutputSettings", targetDepth)) {
                     context.nextToken();
                     outputSettings.setMsSmoothOutputSettings(MsSmoothOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));

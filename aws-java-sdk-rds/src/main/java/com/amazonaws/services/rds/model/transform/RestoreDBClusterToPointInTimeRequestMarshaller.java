@@ -143,6 +143,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getDeletionProtection()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot()));
+        }
+
         return request;
     }
 

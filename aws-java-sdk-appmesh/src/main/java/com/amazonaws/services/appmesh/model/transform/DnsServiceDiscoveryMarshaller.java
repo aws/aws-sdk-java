@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DnsServiceDiscoveryMarshaller {
 
-    private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
+    private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("hostname").build();
 
     private static final DnsServiceDiscoveryMarshaller instance = new DnsServiceDiscoveryMarshaller();
 
@@ -46,7 +46,7 @@ public class DnsServiceDiscoveryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dnsServiceDiscovery.getServiceName(), SERVICENAME_BINDING);
+            protocolMarshaller.marshall(dnsServiceDiscovery.getHostname(), HOSTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

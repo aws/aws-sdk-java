@@ -12,6 +12,7 @@
  */
 
 /**
+ * <fullname>Amazon Elastic Container Service</fullname>
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless

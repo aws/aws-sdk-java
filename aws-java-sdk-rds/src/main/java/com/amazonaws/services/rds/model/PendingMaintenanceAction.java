@@ -28,7 +28,8 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of pending maintenance action that is available for the resource.
+     * The type of pending maintenance action that is available for the resource. Valid actions are
+     * <code>system-update</code> and <code>db-upgrade</code>.
      * </p>
      */
     private String action;
@@ -72,11 +73,13 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of pending maintenance action that is available for the resource.
+     * The type of pending maintenance action that is available for the resource. Valid actions are
+     * <code>system-update</code> and <code>db-upgrade</code>.
      * </p>
      * 
      * @param action
-     *        The type of pending maintenance action that is available for the resource.
+     *        The type of pending maintenance action that is available for the resource. Valid actions are
+     *        <code>system-update</code> and <code>db-upgrade</code>.
      */
 
     public void setAction(String action) {
@@ -85,10 +88,12 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of pending maintenance action that is available for the resource.
+     * The type of pending maintenance action that is available for the resource. Valid actions are
+     * <code>system-update</code> and <code>db-upgrade</code>.
      * </p>
      * 
-     * @return The type of pending maintenance action that is available for the resource.
+     * @return The type of pending maintenance action that is available for the resource. Valid actions are
+     *         <code>system-update</code> and <code>db-upgrade</code>.
      */
 
     public String getAction() {
@@ -97,11 +102,13 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of pending maintenance action that is available for the resource.
+     * The type of pending maintenance action that is available for the resource. Valid actions are
+     * <code>system-update</code> and <code>db-upgrade</code>.
      * </p>
      * 
      * @param action
-     *        The type of pending maintenance action that is available for the resource.
+     *        The type of pending maintenance action that is available for the resource. Valid actions are
+     *        <code>system-update</code> and <code>db-upgrade</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

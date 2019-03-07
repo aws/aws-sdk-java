@@ -872,18 +872,14 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * game server build files in an Amazon Simple Storage Service (Amazon S3) location.
      * </p>
      * <p>
-     * Game server binaries must be combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
-     * Game</a> for more information.
+     * Game server binaries must be combined into a <code>.zip</code> file for use with Amazon GameLift.
      * </p>
      * <important>
      * <p>
      * To create new builds quickly and easily, use the AWS CLI command <b> <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This
      * helper command uploads your build and creates a new build record in one step, and automatically handles the
-     * necessary permissions. See <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html"> Upload Build
-     * Files to Amazon GameLift</a> for more help.
+     * necessary permissions.
      * </p>
      * </important>
      * <p>
@@ -894,11 +890,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <li>
      * <p>
      * Store a build file in an Amazon S3 bucket under your own AWS account. To use this option, you must first give
-     * Amazon GameLift access to that Amazon S3 bucket. See <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * > Create a Build with Files in Amazon S3</a> for detailed help. To create a new build record using files in your
-     * Amazon S3 bucket, call <code>CreateBuild</code> and specify a build name, operating system, and the storage
-     * location of your game build.
+     * Amazon GameLift access to that Amazon S3 bucket. To create a new build record using files in your Amazon S3
+     * bucket, call <code>CreateBuild</code> and specify a build name, operating system, and the storage location of
+     * your game build.
      * </p>
      * </li>
      * <li>
@@ -916,6 +910,21 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * If successful, this operation creates a new build record with a unique build ID and places it in
      * <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to check the status of your build. A build must
      * be in <code>READY</code> status before it can be used to create fleets.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
+     * Game</a>
+     * </p>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
+     * > Create a Build with Files in Amazon S3</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -960,18 +969,14 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * game server build files in an Amazon Simple Storage Service (Amazon S3) location.
      * </p>
      * <p>
-     * Game server binaries must be combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
-     * Game</a> for more information.
+     * Game server binaries must be combined into a <code>.zip</code> file for use with Amazon GameLift.
      * </p>
      * <important>
      * <p>
      * To create new builds quickly and easily, use the AWS CLI command <b> <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This
      * helper command uploads your build and creates a new build record in one step, and automatically handles the
-     * necessary permissions. See <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html"> Upload Build
-     * Files to Amazon GameLift</a> for more help.
+     * necessary permissions.
      * </p>
      * </important>
      * <p>
@@ -982,11 +987,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <li>
      * <p>
      * Store a build file in an Amazon S3 bucket under your own AWS account. To use this option, you must first give
-     * Amazon GameLift access to that Amazon S3 bucket. See <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * > Create a Build with Files in Amazon S3</a> for detailed help. To create a new build record using files in your
-     * Amazon S3 bucket, call <code>CreateBuild</code> and specify a build name, operating system, and the storage
-     * location of your game build.
+     * Amazon GameLift access to that Amazon S3 bucket. To create a new build record using files in your Amazon S3
+     * bucket, call <code>CreateBuild</code> and specify a build name, operating system, and the storage location of
+     * your game build.
      * </p>
      * </li>
      * <li>
@@ -1004,6 +1007,21 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * If successful, this operation creates a new build record with a unique build ID and places it in
      * <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to check the status of your build. A build must
      * be in <code>READY</code> status before it can be used to create fleets.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
+     * Game</a>
+     * </p>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
+     * > Create a Build with Files in Amazon S3</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -1100,8 +1118,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <b>Learn more</b>
      * </p>
      * <p>
-     * See Amazon GameLift Developer Guide topics in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
      * </p>
      * <p>
      * <b>Related operations</b>
@@ -1272,8 +1289,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <b>Learn more</b>
      * </p>
      * <p>
-     * See Amazon GameLift Developer Guide topics in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
      * </p>
      * <p>
      * <b>Related operations</b>
@@ -2743,6 +2759,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * To delete a build, specify its ID. Deleting a build does not affect the status of any active fleets using the
      * build, but you can no longer create new fleets with the deleted build.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2787,6 +2812,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * To delete a build, specify its ID. Deleting a build does not affect the status of any active fleets using the
      * build, but you can no longer create new fleets with the deleted build.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -2838,6 +2872,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * This action removes the fleet's resources and the fleet record. Once a fleet is deleted, you can no longer use
      * that fleet.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -2960,6 +3003,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * This action removes the fleet's resources and the fleet record. Once a fleet is deleted, you can no longer use
      * that fleet.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -3907,6 +3959,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Retrieves properties for a build. To request a build record, specify a build ID. If successful, an object
      * containing the build properties is returned.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3948,6 +4009,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves properties for a build. To request a build record, specify a build ID. If successful, an object
      * containing the build properties is returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -4010,6 +4080,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Service limits vary depending on region. Available regions for Amazon GameLift can be found in the AWS Management
      * Console for Amazon GameLift (see the drop-down list in the upper right corner).
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -4145,6 +4224,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Service limits vary depending on region. Available regions for Amazon GameLift can be found in the AWS Management
      * Console for Amazon GameLift (see the drop-down list in the upper right corner).
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4278,6 +4366,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4405,6 +4502,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4538,6 +4644,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4666,6 +4781,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4790,6 +4914,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * the pagination parameters to retrieve results as a set of sequential pages. If successful, a collection of event
      * log entries matching the request are returned.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4908,6 +5041,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Retrieves entries from the specified fleet's event log. You can specify a time range to limit the result set. Use
      * the pagination parameters to retrieve results as a set of sequential pages. If successful, a collection of event
      * log entries matching the request are returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -5034,6 +5176,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * connection permissions, specify a fleet ID. If successful, a collection of <a>IpPermission</a> objects is
      * returned for the requested fleet ID. If the requested fleet has been deleted, the result set is empty.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5154,6 +5305,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * and port settings that incoming traffic can use to access server processes in the fleet. To get a fleet's inbound
      * connection permissions, specify a fleet ID. If successful, a collection of <a>IpPermission</a> objects is
      * returned for the requested fleet ID. If the requested fleet has been deleted, the result set is empty.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -5288,6 +5448,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5415,6 +5584,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6661,6 +6839,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Retrieves the current run-time configuration for the specified fleet. The run-time configuration tells Amazon
      * GameLift how to launch server processes on instances in the fleet.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6780,6 +6967,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves the current run-time configuration for the specified fleet. The run-time configuration tells Amazon
      * GameLift how to launch server processes on instances in the fleet.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -7624,6 +7820,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Build records are not listed in any particular order.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -7672,6 +7877,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Build records are not listed in any particular order.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -7724,6 +7938,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Fleet records are not listed in any particular order.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -7847,6 +8070,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Fleet records are not listed in any particular order.
      * </p>
      * </note>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -8278,6 +8510,43 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * successful, a new set of credentials are returned, along with the S3 storage location associated with the build
      * ID.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
+     * Game</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListBuilds</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteBuild</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param requestUploadCredentialsRequest
      *        Represents the input for a request action.
@@ -8298,6 +8567,43 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * successful, a new set of credentials are returned, along with the S3 storage location associated with the build
      * ID.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
+     * Game</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListBuilds</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateBuild</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteBuild</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param requestUploadCredentialsRequest
      *        Represents the input for a request action.
@@ -8696,7 +9002,41 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * If actions on the fleet were never stopped, this operation will have no effect. You can view a fleet's stopped
      * actions using <a>DescribeFleetAttributes</a>.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <a>CreateFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListFleets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Describe fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeFleetAttributes</a>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <a>DescribeFleetCapacity</a>
@@ -8704,7 +9044,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </li>
      * <li>
      * <p>
-     * <a>UpdateFleetCapacity</a>
+     * <a>DescribeFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetUtilization</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeRuntimeConfiguration</a>
      * </p>
      * </li>
      * <li>
@@ -8714,22 +9064,34 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </li>
      * <li>
      * <p>
-     * Manage scaling policies:
+     * <a>DescribeFleetEvents</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Update fleets:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>PutScalingPolicy</a> (auto-scaling)
+     * <a>UpdateFleetAttributes</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DescribeScalingPolicies</a> (auto-scaling)
+     * <a>UpdateFleetCapacity</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DeleteScalingPolicy</a> (auto-scaling)
+     * <a>UpdateFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateRuntimeConfiguration</a>
      * </p>
      * </li>
      * </ul>
@@ -8772,7 +9134,41 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * If actions on the fleet were never stopped, this operation will have no effect. You can view a fleet's stopped
      * actions using <a>DescribeFleetAttributes</a>.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <a>CreateFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListFleets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Describe fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeFleetAttributes</a>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <a>DescribeFleetCapacity</a>
@@ -8780,7 +9176,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </li>
      * <li>
      * <p>
-     * <a>UpdateFleetCapacity</a>
+     * <a>DescribeFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetUtilization</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeRuntimeConfiguration</a>
      * </p>
      * </li>
      * <li>
@@ -8790,22 +9196,34 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </li>
      * <li>
      * <p>
-     * Manage scaling policies:
+     * <a>DescribeFleetEvents</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Update fleets:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>PutScalingPolicy</a> (auto-scaling)
+     * <a>UpdateFleetAttributes</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DescribeScalingPolicies</a> (auto-scaling)
+     * <a>UpdateFleetCapacity</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DeleteScalingPolicy</a> (auto-scaling)
+     * <a>UpdateFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateRuntimeConfiguration</a>
      * </p>
      * </li>
      * </ul>
@@ -9472,6 +9890,118 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * setting (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually using
      * <a>UpdateFleetCapacity</a>.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListFleets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Describe fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeFleetAttributes</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetCapacity</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetUtilization</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeRuntimeConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeEC2InstanceLimits</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetEvents</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Update fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>UpdateFleetAttributes</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateFleetCapacity</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateRuntimeConfiguration</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Manage fleet actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>StartFleetActions</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>StopFleetActions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param stopFleetActionsRequest
      * @return A Java Future containing the result of the StopFleetActions operation returned by the service.
@@ -9494,6 +10024,118 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * setting (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually using
      * <a>UpdateFleetCapacity</a>.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListFleets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteFleet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Describe fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>DescribeFleetAttributes</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetCapacity</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetUtilization</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeRuntimeConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeEC2InstanceLimits</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeFleetEvents</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Update fleets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>UpdateFleetAttributes</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateFleetCapacity</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateFleetPortSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateRuntimeConfiguration</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Manage fleet actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>StartFleetActions</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>StopFleetActions</a>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param stopFleetActionsRequest
      * @param asyncHandler
@@ -9849,6 +10491,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * build ID to update and provide the new values. If successful, a build object containing the updated metadata is
      * returned.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -9891,6 +10542,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Updates metadata in a build record, including the build name and version. To update the metadata, specify the
      * build ID to update and provide the new values. If successful, a build object containing the updated metadata is
      * returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html"> Working with Builds</a>
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -9938,6 +10598,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Updates fleet properties, including name and description, for a fleet. To update metadata, specify the fleet ID
      * and the property values that you want to change. If successful, the fleet ID for the updated fleet is returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -10056,6 +10725,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Updates fleet properties, including name and description, for a fleet. To update metadata, specify the fleet ID
      * and the property values that you want to change. If successful, the fleet ID for the updated fleet is returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -10193,6 +10871,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the instance type's limit, the
      * "Limit Exceeded" exception occurs.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -10324,6 +11011,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the instance type's limit, the
      * "Limit Exceeded" exception occurs.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -10450,6 +11146,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <code>InboundPermissionRevocations</code>. Permissions to be removed must match existing fleet permissions. If
      * successful, the fleet ID for the updated fleet is returned.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -10570,6 +11275,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <code>InboundPermissionAuthorizations</code>, and permissions you want to remove in
      * <code>InboundPermissionRevocations</code>. Permissions to be removed must match existing fleet permissions. If
      * successful, the fleet ID for the updated fleet is returned.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -11059,6 +11773,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * current run-time configuration. As a result, the run-time configuration changes are applied gradually as existing
      * processes shut down and new processes are launched in Amazon GameLift's normal process recycling activity.
      * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -11189,6 +11912,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * update; they continue to run until they end, while Amazon GameLift simply adds new server processes to fit the
      * current run-time configuration. As a result, the run-time configuration changes are applied gradually as existing
      * processes shut down and new processes are launched in Amazon GameLift's normal process recycling activity.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>

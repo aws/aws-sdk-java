@@ -288,7 +288,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
      * Files</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      */
@@ -299,7 +299,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
@@ -336,11 +336,17 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private Boolean httpEndpointEnabled;
+    /**
+     * <p>
+     * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * </p>
+     */
+    private Boolean copyTagsToSnapshot;
 
     /**
      * <p>
@@ -2295,14 +2301,14 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
      * Files</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @return A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
      *         <p>
      *         Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS
      *         Database Log Files</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
@@ -2319,7 +2325,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
      * Files</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
@@ -2327,8 +2333,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database
-     *        Log Files</a> in the <i>Amazon Aurora User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS
+     *        Database Log Files</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -2346,7 +2352,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
      * Files</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
@@ -2359,8 +2365,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database
-     *        Log Files</a> in the <i>Amazon Aurora User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS
+     *        Database Log Files</a> in the <i>Amazon Aurora User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2380,7 +2386,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log
      * Files</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
@@ -2388,8 +2394,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
      *        <p>
      *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database
-     *        Log Files</a> in the <i>Amazon Aurora User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS
+     *        Database Log Files</a> in the <i>Amazon Aurora User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2404,7 +2410,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2413,7 +2419,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        paused.</p>
      *        <p>
      *        For more information about Aurora Serverless, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2427,7 +2433,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2435,7 +2441,7 @@ public class DBCluster implements Serializable, Cloneable {
      *         paused.</p>
      *         <p>
      *         For more information about Aurora Serverless, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2449,7 +2455,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2458,7 +2464,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        paused.</p>
      *        <p>
      *        For more information about Aurora Serverless, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2616,7 +2622,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2636,7 +2642,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about Aurora Serverless, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2660,7 +2666,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2679,7 +2685,7 @@ public class DBCluster implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about Aurora Serverless, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2703,7 +2709,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2723,7 +2729,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about Aurora Serverless, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2749,7 +2755,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
@@ -2768,12 +2774,64 @@ public class DBCluster implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about Aurora Serverless, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Boolean isHttpEndpointEnabled() {
         return this.httpEndpointEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     */
+
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * </p>
+     * 
+     * @return Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     */
+
+    public Boolean getCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        setCopyTagsToSnapshot(copyTagsToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     * </p>
+     * 
+     * @return Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
+     */
+
+    public Boolean isCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
     }
 
     /**
@@ -2877,7 +2935,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getHttpEndpointEnabled() != null)
-            sb.append("HttpEndpointEnabled: ").append(getHttpEndpointEnabled());
+            sb.append("HttpEndpointEnabled: ").append(getHttpEndpointEnabled()).append(",");
+        if (getCopyTagsToSnapshot() != null)
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
         sb.append("}");
         return sb.toString();
     }
@@ -3075,6 +3135,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getHttpEndpointEnabled() != null && other.getHttpEndpointEnabled().equals(this.getHttpEndpointEnabled()) == false)
             return false;
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
+            return false;
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
+            return false;
         return true;
     }
 
@@ -3128,6 +3192,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getScalingConfigurationInfo() == null) ? 0 : getScalingConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getHttpEndpointEnabled() == null) ? 0 : getHttpEndpointEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         return hashCode;
     }
 

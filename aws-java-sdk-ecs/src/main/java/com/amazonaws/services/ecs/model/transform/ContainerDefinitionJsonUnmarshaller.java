@@ -112,6 +112,19 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setSecrets(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("dependsOn", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDependsOn(new ListUnmarshaller<ContainerDependency>(ContainerDependencyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("startTimeout", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setStartTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("stopTimeout", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setStopTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setHostname(context.getUnmarshaller(String.class).unmarshall(context));

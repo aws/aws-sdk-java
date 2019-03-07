@@ -18,8 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Configuration that defines the default containerization used for when running Lambda functions in the group.
- * Individual Lambda functions can be override this setting.
+ * Configuration information that specifies how a Lambda function runs.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefaultExecutionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -28,6 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class FunctionDefaultExecutionConfig implements Serializable, Cloneable, StructuredPojo {
 
     private String isolationMode;
+
+    private FunctionRunAsConfig runAs;
 
     /**
      * @param isolationMode
@@ -70,6 +71,32 @@ public class FunctionDefaultExecutionConfig implements Serializable, Cloneable, 
     }
 
     /**
+     * @param runAs
+     */
+
+    public void setRunAs(FunctionRunAsConfig runAs) {
+        this.runAs = runAs;
+    }
+
+    /**
+     * @return
+     */
+
+    public FunctionRunAsConfig getRunAs() {
+        return this.runAs;
+    }
+
+    /**
+     * @param runAs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionDefaultExecutionConfig withRunAs(FunctionRunAsConfig runAs) {
+        setRunAs(runAs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -82,7 +109,9 @@ public class FunctionDefaultExecutionConfig implements Serializable, Cloneable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIsolationMode() != null)
-            sb.append("IsolationMode: ").append(getIsolationMode());
+            sb.append("IsolationMode: ").append(getIsolationMode()).append(",");
+        if (getRunAs() != null)
+            sb.append("RunAs: ").append(getRunAs());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +130,10 @@ public class FunctionDefaultExecutionConfig implements Serializable, Cloneable, 
             return false;
         if (other.getIsolationMode() != null && other.getIsolationMode().equals(this.getIsolationMode()) == false)
             return false;
+        if (other.getRunAs() == null ^ this.getRunAs() == null)
+            return false;
+        if (other.getRunAs() != null && other.getRunAs().equals(this.getRunAs()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +143,7 @@ public class FunctionDefaultExecutionConfig implements Serializable, Cloneable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIsolationMode() == null) ? 0 : getIsolationMode().hashCode());
+        hashCode = prime * hashCode + ((getRunAs() == null) ? 0 : getRunAs().hashCode());
         return hashCode;
     }
 

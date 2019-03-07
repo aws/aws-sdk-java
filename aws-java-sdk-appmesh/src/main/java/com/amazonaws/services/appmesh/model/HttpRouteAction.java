@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the traffic distribution requirements for matched HTTP requests.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HttpRouteAction" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteAction" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,7 +31,7 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights with which to distribute traffic.
+     * their relative weights to distribute traffic with.
      * </p>
      */
     private java.util.List<WeightedTarget> weightedTargets;
@@ -39,11 +39,11 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights with which to distribute traffic.
+     * their relative weights to distribute traffic with.
      * </p>
      * 
      * @return The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *         targets and their relative weights with which to distribute traffic.
+     *         targets and their relative weights to distribute traffic with.
      */
 
     public java.util.List<WeightedTarget> getWeightedTargets() {
@@ -53,12 +53,12 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights with which to distribute traffic.
+     * their relative weights to distribute traffic with.
      * </p>
      * 
      * @param weightedTargets
      *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights with which to distribute traffic.
+     *        targets and their relative weights to distribute traffic with.
      */
 
     public void setWeightedTargets(java.util.Collection<WeightedTarget> weightedTargets) {
@@ -73,7 +73,7 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights with which to distribute traffic.
+     * their relative weights to distribute traffic with.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param weightedTargets
      *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights with which to distribute traffic.
+     *        targets and their relative weights to distribute traffic with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,12 +100,12 @@ public class HttpRouteAction implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights with which to distribute traffic.
+     * their relative weights to distribute traffic with.
      * </p>
      * 
      * @param weightedTargets
      *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights with which to distribute traffic.
+     *        targets and their relative weights to distribute traffic with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

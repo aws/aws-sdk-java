@@ -170,6 +170,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String fleetType;
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     */
+    private String instanceRoleArn;
 
     /**
      * <p>
@@ -1396,6 +1407,79 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @param instanceRoleArn
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *        (background processes). Create a role or look up a role's ARN using the <a
+     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        about using on-box credentials for your game servers at <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Access external resources from a game server</a>.
+     */
+
+    public void setInstanceRoleArn(String instanceRoleArn) {
+        this.instanceRoleArn = instanceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *         on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *         (background processes). Create a role or look up a role's ARN using the <a
+     *         href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *         about using on-box credentials for your game servers at <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *         Access external resources from a game server</a>.
+     */
+
+    public String getInstanceRoleArn() {
+        return this.instanceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @param instanceRoleArn
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *        (background processes). Create a role or look up a role's ARN using the <a
+     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        about using on-box credentials for your game servers at <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Access external resources from a game server</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withInstanceRoleArn(String instanceRoleArn) {
+        setInstanceRoleArn(instanceRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1436,7 +1520,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getPeerVpcId() != null)
             sb.append("PeerVpcId: ").append(getPeerVpcId()).append(",");
         if (getFleetType() != null)
-            sb.append("FleetType: ").append(getFleetType());
+            sb.append("FleetType: ").append(getFleetType()).append(",");
+        if (getInstanceRoleArn() != null)
+            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1512,6 +1598,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
             return false;
+        if (other.getInstanceRoleArn() == null ^ this.getInstanceRoleArn() == null)
+            return false;
+        if (other.getInstanceRoleArn() != null && other.getInstanceRoleArn().equals(this.getInstanceRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1535,6 +1625,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getPeerVpcAwsAccountId() == null) ? 0 : getPeerVpcAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
         return hashCode;
     }
 

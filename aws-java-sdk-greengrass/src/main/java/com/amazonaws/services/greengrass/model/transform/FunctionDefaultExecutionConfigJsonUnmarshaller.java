@@ -52,6 +52,10 @@ public class FunctionDefaultExecutionConfigJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     functionDefaultExecutionConfig.setIsolationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RunAs", targetDepth)) {
+                    context.nextToken();
+                    functionDefaultExecutionConfig.setRunAs(FunctionRunAsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

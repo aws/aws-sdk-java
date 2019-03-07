@@ -30,7 +30,8 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /** The ID of the deployment if you wish to redeploy a previous deployment. */
     private String deploymentId;
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      */
     private String deploymentType;
     /** The ID of the Greengrass group. */
@@ -107,11 +108,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      * 
      * @param deploymentType
-     *        The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
-     *        valid.
+     *        The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
+     *        are valid.
      * @see DeploymentType
      */
 
@@ -120,9 +122,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      * 
-     * @return The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
+     * @return The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
      *         are valid.
      * @see DeploymentType
      */
@@ -132,11 +135,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      * 
      * @param deploymentType
-     *        The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
-     *        valid.
+     *        The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
+     *        are valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */
@@ -147,11 +151,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      * 
      * @param deploymentType
-     *        The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
-     *        valid.
+     *        The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
+     *        are valid.
      * @see DeploymentType
      */
 
@@ -160,11 +165,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+     * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
+     * valid.
      * 
      * @param deploymentType
-     *        The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are
-     *        valid.
+     *        The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment''
+     *        are valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */

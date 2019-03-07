@@ -30,7 +30,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
@@ -46,14 +46,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *        information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      */
 
@@ -65,13 +65,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @return The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *         information about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      */
 
@@ -83,14 +83,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *        information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

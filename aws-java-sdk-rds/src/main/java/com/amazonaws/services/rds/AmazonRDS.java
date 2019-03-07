@@ -59,25 +59,25 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
  * <li>
  * <p>
  * For the alphabetical list of API actions, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API Actions</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API Actions</a>.
  * </p>
  * </li>
  * <li>
  * <p>
  * For the alphabetical list of data types, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data Types</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data Types</a>.
  * </p>
  * </li>
  * <li>
  * <p>
  * For a list of common query parameters, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common Parameters</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common Parameters</a>.
  * </p>
  * </li>
  * <li>
  * <p>
  * For descriptions of the error codes, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common Errors</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common Errors</a>.
  * </p>
  * </li>
  * </ul>
@@ -88,14 +88,14 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
  * <li>
  * <p>
  * For a summary of the Amazon RDS interfaces, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available RDS
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available RDS
  * Interfaces</a>.
  * </p>
  * </li>
  * <li>
  * <p>
  * For more information about how to use the Query API, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using the Query API</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using the Query API</a>.
  * </p>
  * </li>
  * </ul>
@@ -166,10 +166,15 @@ public interface AmazonRDS {
      * <p>
      * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
      * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param addRoleToDBClusterRequest
      * @return Result of the AddRoleToDBCluster operation returned by the service.
@@ -233,7 +238,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For an overview on tagging Amazon RDS resources, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
      * Resources</a>.
      * </p>
      * 
@@ -312,9 +317,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on backtracking, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
      * Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param backtrackDBClusterRequest
      * @return Result of the BacktrackDBCluster operation returned by the service.
@@ -332,6 +342,11 @@ public interface AmazonRDS {
      * <p>
      * Copies the specified DB cluster parameter group.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param copyDBClusterParameterGroupRequest
      * @return Result of the CopyDBClusterParameterGroup operation returned by the service.
@@ -404,9 +419,9 @@ public interface AmazonRDS {
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
      * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      * </li>
@@ -430,14 +445,19 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on copying encrypted DB cluster snapshots from one AWS Region to another, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html"> Copying a Snapshot</a>
-     * in the <i>Amazon Aurora User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html"> Copying a
+     * Snapshot</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param copyDBClusterSnapshotRequest
      * @return Result of the CopyDBClusterSnapshot operation returned by the service.
@@ -488,7 +508,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information about copying snapshots, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying a DB Snapshot</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying a DB Snapshot</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
@@ -541,9 +561,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param createDBClusterRequest
      * @return Result of the CreateDBCluster operation returned by the service.
@@ -593,6 +618,11 @@ public interface AmazonRDS {
      * <p>
      * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param createDBClusterEndpointRequest
      * @return Result of the CreateDBClusterEndpoint operation returned by the service.
@@ -643,9 +673,14 @@ public interface AmazonRDS {
      * </important>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param createDBClusterParameterGroupRequest
      * @return Result of the CreateDBClusterParameterGroup operation returned by the service.
@@ -662,9 +697,14 @@ public interface AmazonRDS {
     /**
      * <p>
      * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param createDBClusterSnapshotRequest
      * @return Result of the CreateDBClusterSnapshot operation returned by the service.
@@ -733,7 +773,6 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
-     *         The backup policy was not found.
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -744,7 +783,7 @@ public interface AmazonRDS {
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
      * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
      * and MariaDB Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -971,6 +1010,11 @@ public interface AmazonRDS {
      * to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the
      * primary cluster of the global database.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param createGlobalClusterRequest
      * @return Result of the CreateGlobalCluster operation returned by the service.
@@ -1012,9 +1056,14 @@ public interface AmazonRDS {
      * <p/>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
@@ -1038,6 +1087,11 @@ public interface AmazonRDS {
      * <p>
      * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteDBClusterEndpointRequest
      * @return Result of the DeleteDBClusterEndpoint operation returned by the service.
@@ -1060,9 +1114,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteDBClusterParameterGroupRequest
      * @return Result of the DeleteDBClusterParameterGroup operation returned by the service.
@@ -1088,9 +1147,14 @@ public interface AmazonRDS {
      * </note>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteDBClusterSnapshotRequest
      * @return Result of the DeleteDBClusterSnapshot operation returned by the service.
@@ -1292,6 +1356,11 @@ public interface AmazonRDS {
      * Deletes a global database cluster. The primary and secondary clusters must already be detached or destroyed
      * first.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteGlobalClusterRequest
      * @return Result of the DeleteGlobalCluster operation returned by the service.
@@ -1373,9 +1442,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterBacktracksRequest
      * @return Result of the DescribeDBClusterBacktracks operation returned by the service.
@@ -1393,6 +1467,11 @@ public interface AmazonRDS {
      * <p>
      * Returns information about endpoints for an Amazon Aurora DB cluster.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterEndpointsRequest
      * @return Result of the DescribeDBClusterEndpoints operation returned by the service.
@@ -1412,9 +1491,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterParameterGroupsRequest
      * @return Result of the DescribeDBClusterParameterGroups operation returned by the service.
@@ -1439,9 +1523,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterParametersRequest
      * @return Result of the DescribeDBClusterParameters operation returned by the service.
@@ -1467,6 +1556,11 @@ public interface AmazonRDS {
      * To add or remove access for an AWS account to copy or restore a manual DB cluster snapshot, or to make the manual
      * DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterSnapshotAttributesRequest
      * @return Result of the DescribeDBClusterSnapshotAttributes operation returned by the service.
@@ -1484,9 +1578,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClusterSnapshotsRequest
      * @return Result of the DescribeDBClusterSnapshots operation returned by the service.
@@ -1511,9 +1610,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClustersRequest
      * @return Result of the DescribeDBClusters operation returned by the service.
@@ -1760,7 +1864,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
@@ -1789,7 +1893,7 @@ public interface AmazonRDS {
      * <p>
      * Displays a list of categories for all event source types, or, if specified, for a specified source type. You can
      * see a list of the event categories and source types in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the <i>Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the <i>Amazon
      * RDS User Guide.</i>
      * </p>
      * 
@@ -1862,9 +1966,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalClustersRequest
      * @return Result of the DescribeGlobalClusters operation returned by the service.
@@ -2057,9 +2166,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param failoverDBClusterRequest
      * @return Result of the FailoverDBCluster operation returned by the service.
@@ -2088,7 +2202,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For an overview on tagging an Amazon RDS resource, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
      * Resources</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
@@ -2121,7 +2235,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <important>
@@ -2129,10 +2243,14 @@ public interface AmazonRDS {
      * If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections
      * that prevent Aurora Serverless from finding a scaling point might be dropped. For more information about scaling
      * points, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
      * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyCurrentDBClusterCapacityRequest
      * @return Result of the ModifyCurrentDBClusterCapacity operation returned by the service.
@@ -2154,9 +2272,14 @@ public interface AmazonRDS {
      * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
      * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyDBClusterRequest
      * @return Result of the ModifyDBCluster operation returned by the service.
@@ -2193,6 +2316,11 @@ public interface AmazonRDS {
      * <p>
      * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyDBClusterEndpointRequest
      * @return Result of the ModifyDBClusterEndpoint operation returned by the service.
@@ -2220,7 +2348,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
@@ -2239,7 +2367,11 @@ public interface AmazonRDS {
      * console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has
      * been created or modified.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyDBClusterParameterGroupRequest
      * @return Result of the ModifyDBClusterParameterGroup operation returned by the service.
@@ -2272,6 +2404,11 @@ public interface AmazonRDS {
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
      * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
      * @return Result of the ModifyDBClusterSnapshotAttribute operation returned by the service.
@@ -2333,7 +2470,6 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
-     *         The backup policy was not found.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2460,7 +2596,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
      * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      * 
@@ -2488,9 +2624,14 @@ public interface AmazonRDS {
      * <p>
      * Modify a setting for an Amazon Aurora global cluster. You can change one or more database configuration
      * parameters by specifying these parameters and the new values in the request. For more information on Amazon
-     * Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What
+     * Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What
      * Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param modifyGlobalClusterRequest
      * @return Result of the ModifyGlobalCluster operation returned by the service.
@@ -2558,6 +2699,11 @@ public interface AmazonRDS {
      * <p>
      * Promotes a Read Replica DB cluster to a standalone DB cluster.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param promoteReadReplicaDBClusterRequest
      * @return Result of the PromoteReadReplicaDBCluster operation returned by the service.
@@ -2602,8 +2748,8 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information about rebooting, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB Instance</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB
+     * Instance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param rebootDBInstanceRequest
@@ -2624,6 +2770,11 @@ public interface AmazonRDS {
      * cluster with read-write capability instead of being read-only and receiving data from a primary cluster in a
      * different region.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param removeFromGlobalClusterRequest
      * @return Result of the RemoveFromGlobalCluster operation returned by the service.
@@ -2641,10 +2792,15 @@ public interface AmazonRDS {
      * <p>
      * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
      * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param removeRoleFromDBClusterRequest
      * @return Result of the RemoveRoleFromDBCluster operation returned by the service.
@@ -2702,7 +2858,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For an overview on tagging an Amazon RDS resource, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS
      * Resources</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
@@ -2735,9 +2891,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param resetDBClusterParameterGroupRequest
      * @return Result of the ResetDBClusterParameterGroup operation returned by the service.
@@ -2779,9 +2940,14 @@ public interface AmazonRDS {
      * <p>
      * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
      * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html"> Migrating Data to
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html"> Migrating Data to
      * an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param restoreDBClusterFromS3Request
      * @return Result of the RestoreDBClusterFromS3 operation returned by the service.
@@ -2837,9 +3003,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param restoreDBClusterFromSnapshotRequest
      * @return Result of the RestoreDBClusterFromSnapshot operation returned by the service.
@@ -2906,9 +3077,14 @@ public interface AmazonRDS {
      * </note>
      * <p>
      * For more information on Amazon Aurora, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param restoreDBClusterToPointInTimeRequest
      * @return Result of the RestoreDBClusterToPointInTime operation returned by the service.
@@ -3028,7 +3204,6 @@ public interface AmazonRDS {
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws BackupPolicyNotFoundException
-     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -3040,7 +3215,7 @@ public interface AmazonRDS {
      * Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can
      * create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then
      * restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into
      * an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
@@ -3086,7 +3261,6 @@ public interface AmazonRDS {
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
      * @throws BackupPolicyNotFoundException
-     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
      *      API Documentation</a>
@@ -3159,7 +3333,6 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
-     *         The backup policy was not found.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBInstanceAutomatedBackupNotFoundException
@@ -3201,9 +3374,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
      * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param startDBClusterRequest
      * @return Result of the StartDBCluster operation returned by the service.
@@ -3226,7 +3404,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
      * instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
@@ -3278,9 +3456,14 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
      * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param stopDBClusterRequest
      * @return Result of the StopDBCluster operation returned by the service.
@@ -3303,8 +3486,9 @@ public interface AmazonRDS {
      * logs so you can do a point-in-time restore if necessary.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
-     * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html"> Stopping an Amazon RDS DB
+     * Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>

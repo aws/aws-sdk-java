@@ -58,7 +58,8 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      */
     private Integer maxRecords;
@@ -316,12 +317,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *        100.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -330,11 +332,12 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
-     * @return The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *         100.
+     * @return The maximum number of items to return with this call. The default value is <code>50</code> and the
+     *         maximum value is <code>100</code>.
      */
 
     public Integer getMaxRecords() {
@@ -343,12 +346,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *        100.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

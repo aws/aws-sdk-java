@@ -315,6 +315,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String ipcMode;
+    /** <p/> */
+    private ProxyConfiguration proxyConfiguration;
 
     /**
      * <p>
@@ -2882,6 +2884,38 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p/>
+     * 
+     * @param proxyConfiguration
+     */
+
+    public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
+        this.proxyConfiguration = proxyConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public ProxyConfiguration getProxyConfiguration() {
+        return this.proxyConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param proxyConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withProxyConfiguration(ProxyConfiguration proxyConfiguration) {
+        setProxyConfiguration(proxyConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2926,7 +2960,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getPidMode() != null)
             sb.append("PidMode: ").append(getPidMode()).append(",");
         if (getIpcMode() != null)
-            sb.append("IpcMode: ").append(getIpcMode());
+            sb.append("IpcMode: ").append(getIpcMode()).append(",");
+        if (getProxyConfiguration() != null)
+            sb.append("ProxyConfiguration: ").append(getProxyConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -3009,6 +3045,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpcMode() != null && other.getIpcMode().equals(this.getIpcMode()) == false)
             return false;
+        if (other.getProxyConfiguration() == null ^ this.getProxyConfiguration() == null)
+            return false;
+        if (other.getProxyConfiguration() != null && other.getProxyConfiguration().equals(this.getProxyConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -3034,6 +3074,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getPidMode() == null) ? 0 : getPidMode().hashCode());
         hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
+        hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());
         return hashCode;
     }
 

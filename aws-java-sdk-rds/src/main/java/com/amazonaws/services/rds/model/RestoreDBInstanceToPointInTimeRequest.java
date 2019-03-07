@@ -113,7 +113,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
@@ -309,8 +309,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private String optionGroupName;
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
-     * default is false.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -393,7 +393,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
      * the DB engine being used. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
@@ -446,7 +446,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      */
@@ -1033,7 +1033,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
@@ -1044,7 +1044,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
      *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
      *        of DB instance classes, and availability for your engine, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Default: The same DBInstanceClass as the original DB instance.
@@ -1059,7 +1059,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
@@ -1069,7 +1069,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * @return The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
      *         all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
      *         of DB instance classes, and availability for your engine, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         Default: The same DBInstanceClass as the original DB instance.
@@ -1084,7 +1084,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
@@ -1095,7 +1095,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
      *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
      *        of DB instance classes, and availability for your engine, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Default: The same DBInstanceClass as the original DB instance.
@@ -2295,13 +2295,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
-     * default is false.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
-     *        The default is false.
+     *        True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *        otherwise false. The default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2310,12 +2310,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
-     * default is false.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
-     *         The default is false.
+     * @return True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2324,13 +2324,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
-     * default is false.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
-     *        The default is false.
+     *        True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *        otherwise false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2341,12 +2341,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
-     * default is false.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
-     *         The default is false.
+     * @return True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -2957,13 +2957,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
      * the DB engine being used. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @return The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
      *         depend on the DB engine being used. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *         >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      */
 
@@ -2978,14 +2978,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
      * the DB engine being used. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      */
 
@@ -3002,7 +3002,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
      * the DB engine being used. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -3014,7 +3014,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * @param enableCloudwatchLogsExports
      *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3033,14 +3033,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
      * the DB engine being used. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3372,14 +3372,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
      *        Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
      *        this value is set to true. The default is false. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
 
@@ -3391,13 +3391,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @return Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
      *         this value is set to true. The default is false. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 
@@ -3409,14 +3409,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
      *        Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
      *        this value is set to true. The default is false. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3430,13 +3430,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @return Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
      *         this value is set to true. The default is false. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
 

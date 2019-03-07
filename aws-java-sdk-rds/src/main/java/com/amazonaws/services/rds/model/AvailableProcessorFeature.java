@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor"
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor"
  * >Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
  * </p>
  * 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a target tracking policy configuration to use with Amazon EC2 Auto Scaling.
+ * Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TargetTrackingConfiguration"
@@ -34,7 +34,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
     private PredefinedMetricSpecification predefinedMetricSpecification;
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      */
     private CustomizedMetricSpecification customizedMetricSpecification;
@@ -46,9 +46,9 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
     private Double targetValue;
     /**
      * <p>
-     * Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the target
-     * tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking policy can
-     * remove instances from the Auto Scaling group. The default is disabled.
+     * Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the
+     * target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
+     * tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * </p>
      */
     private Boolean disableScaleIn;
@@ -95,11 +95,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public void setCustomizedMetricSpecification(CustomizedMetricSpecification customizedMetricSpecification) {
@@ -108,10 +108,10 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
-     * @return A customized metric.
+     * @return A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public CustomizedMetricSpecification getCustomizedMetricSpecification() {
@@ -120,11 +120,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,15 +175,15 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the target
-     * tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking policy can
-     * remove instances from the Auto Scaling group. The default is disabled.
+     * Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the
+     * target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
+     * tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * </p>
      * 
      * @param disableScaleIn
-     *        Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the
-     *        target tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
-     *        tracking policy can remove instances from the Auto Scaling group. The default is disabled.
+     *        Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled,
+     *        the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the
+     *        target tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      */
 
     public void setDisableScaleIn(Boolean disableScaleIn) {
@@ -192,14 +192,15 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the target
-     * tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking policy can
-     * remove instances from the Auto Scaling group. The default is disabled.
+     * Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the
+     * target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
+     * tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * </p>
      * 
-     * @return Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the
-     *         target tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
-     *         tracking policy can remove instances from the Auto Scaling group. The default is disabled.
+     * @return Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is
+     *         disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group.
+     *         Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The
+     *         default is disabled.
      */
 
     public Boolean getDisableScaleIn() {
@@ -208,15 +209,15 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the target
-     * tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking policy can
-     * remove instances from the Auto Scaling group. The default is disabled.
+     * Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the
+     * target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
+     * tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * </p>
      * 
      * @param disableScaleIn
-     *        Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the
-     *        target tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
-     *        tracking policy can remove instances from the Auto Scaling group. The default is disabled.
+     *        Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled,
+     *        the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the
+     *        target tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,14 +228,15 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the target
-     * tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking policy can
-     * remove instances from the Auto Scaling group. The default is disabled.
+     * Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the
+     * target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
+     * tracking scaling policy can remove instances from the Auto Scaling group. The default is disabled.
      * </p>
      * 
-     * @return Indicates whether scaling in by the target tracking policy is disabled. If scaling in is disabled, the
-     *         target tracking policy doesn't remove instances from the Auto Scaling group. Otherwise, the target
-     *         tracking policy can remove instances from the Auto Scaling group. The default is disabled.
+     * @return Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is
+     *         disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group.
+     *         Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The
+     *         default is disabled.
      */
 
     public Boolean isDisableScaleIn() {

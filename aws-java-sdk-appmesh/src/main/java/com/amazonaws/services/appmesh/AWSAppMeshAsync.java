@@ -40,9 +40,10 @@ import com.amazonaws.services.appmesh.model.*;
  * use App Mesh, you must have a containerized application running on Amazon EC2 instances, hosted in either Amazon ECS,
  * Amazon EKS, or Kubernetes on AWS. For more information about service discovery on Amazon ECS, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
- * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> is supported. For more
- * information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services
- * and Pods</a> in the Kubernetes documentation.
+ * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
+ * are supported. For more information, see <a
+ * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services and Pods</a> in the
+ * Kubernetes documentation.
  * </p>
  * </note>
  */
@@ -55,14 +56,14 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * reside within it.
      * </p>
      * <p>
-     * After you create your service mesh, you can create virtual nodes, virtual routers, and routes to distribute
-     * traffic between the applications in your mesh.
+     * After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes
+     * to distribute traffic between the applications in your mesh.
      * </p>
      * 
      * @param createMeshRequest
      * @return A Java Future containing the result of the CreateMesh operation returned by the service.
      * @sample AWSAppMeshAsync.CreateMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateMeshResult> createMeshAsync(CreateMeshRequest createMeshRequest);
@@ -73,8 +74,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * reside within it.
      * </p>
      * <p>
-     * After you create your service mesh, you can create virtual nodes, virtual routers, and routes to distribute
-     * traffic between the applications in your mesh.
+     * After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes
+     * to distribute traffic between the applications in your mesh.
      * </p>
      * 
      * @param createMeshRequest
@@ -84,7 +85,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateMesh operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.CreateMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateMeshResult> createMeshAsync(CreateMeshRequest createMeshRequest,
@@ -107,7 +108,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param createRouteRequest
      * @return A Java Future containing the result of the CreateRoute operation returned by the service.
      * @sample AWSAppMeshAsync.CreateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateRouteResult> createRouteAsync(CreateRouteRequest createRouteRequest);
@@ -133,7 +134,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateRoute operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.CreateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateRouteResult> createRouteAsync(CreateRouteRequest createRouteRequest,
@@ -145,7 +146,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * </p>
      * <p>
      * A virtual node acts as logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes
-     * deployment. When you create a virtual node, you must specify the DNS service discovery name for your task group.
+     * deployment. When you create a virtual node, you must specify the DNS service discovery hostname for your task
+     * group.
      * </p>
      * <p>
      * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound
@@ -169,7 +171,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param createVirtualNodeRequest
      * @return A Java Future containing the result of the CreateVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsync.CreateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualNodeResult> createVirtualNodeAsync(CreateVirtualNodeRequest createVirtualNodeRequest);
@@ -180,7 +182,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * </p>
      * <p>
      * A virtual node acts as logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes
-     * deployment. When you create a virtual node, you must specify the DNS service discovery name for your task group.
+     * deployment. When you create a virtual node, you must specify the DNS service discovery hostname for your task
+     * group.
      * </p>
      * <p>
      * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound
@@ -208,7 +211,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.CreateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualNodeResult> createVirtualNodeAsync(CreateVirtualNodeRequest createVirtualNodeRequest,
@@ -219,6 +222,9 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * Creates a new virtual router within a service mesh.
      * </p>
      * <p>
+     * Any inbound traffic that your virtual router expects should be specified as a <code>listener</code>.
+     * </p>
+     * <p>
      * Virtual routers handle traffic for one or more service names within your mesh. After you create your virtual
      * router, create and associate routes for your virtual router that direct incoming requests to different virtual
      * nodes.
@@ -227,7 +233,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param createVirtualRouterRequest
      * @return A Java Future containing the result of the CreateVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsync.CreateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualRouterResult> createVirtualRouterAsync(CreateVirtualRouterRequest createVirtualRouterRequest);
@@ -235,6 +241,9 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
     /**
      * <p>
      * Creates a new virtual router within a service mesh.
+     * </p>
+     * <p>
+     * Any inbound traffic that your virtual router expects should be specified as a <code>listener</code>.
      * </p>
      * <p>
      * Virtual routers handle traffic for one or more service names within your mesh. After you create your virtual
@@ -249,7 +258,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.CreateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/CreateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateVirtualRouterResult> createVirtualRouterAsync(CreateVirtualRouterRequest createVirtualRouterRequest,
@@ -257,17 +266,60 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
 
     /**
      * <p>
+     * Creates a virtual service within a service mesh.
+     * </p>
+     * <p>
+     * A virtual service is an abstraction of a real service that is either provided by a virtual node directly, or
+     * indirectly by means of a virtual router. Dependent services call your virtual service by its
+     * <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is
+     * specified as the provider for the virtual service.
+     * </p>
+     * 
+     * @param createVirtualServiceRequest
+     * @return A Java Future containing the result of the CreateVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsync.CreateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVirtualServiceResult> createVirtualServiceAsync(CreateVirtualServiceRequest createVirtualServiceRequest);
+
+    /**
+     * <p>
+     * Creates a virtual service within a service mesh.
+     * </p>
+     * <p>
+     * A virtual service is an abstraction of a real service that is either provided by a virtual node directly, or
+     * indirectly by means of a virtual router. Dependent services call your virtual service by its
+     * <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is
+     * specified as the provider for the virtual service.
+     * </p>
+     * 
+     * @param createVirtualServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsyncHandler.CreateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVirtualServiceResult> createVirtualServiceAsync(CreateVirtualServiceRequest createVirtualServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVirtualServiceRequest, CreateVirtualServiceResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an existing service mesh.
      * </p>
      * <p>
-     * You must delete all resources (routes, virtual routers, virtual nodes) in the service mesh before you can delete
-     * the mesh itself.
+     * You must delete all resources (virtual services, routes, virtual routers, virtual nodes) in the service mesh
+     * before you can delete the mesh itself.
      * </p>
      * 
      * @param deleteMeshRequest
      * @return A Java Future containing the result of the DeleteMesh operation returned by the service.
      * @sample AWSAppMeshAsync.DeleteMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMeshResult> deleteMeshAsync(DeleteMeshRequest deleteMeshRequest);
@@ -277,8 +329,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * Deletes an existing service mesh.
      * </p>
      * <p>
-     * You must delete all resources (routes, virtual routers, virtual nodes) in the service mesh before you can delete
-     * the mesh itself.
+     * You must delete all resources (virtual services, routes, virtual routers, virtual nodes) in the service mesh
+     * before you can delete the mesh itself.
      * </p>
      * 
      * @param deleteMeshRequest
@@ -288,7 +340,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteMesh operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DeleteMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteMeshResult> deleteMeshAsync(DeleteMeshRequest deleteMeshRequest,
@@ -302,7 +354,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param deleteRouteRequest
      * @return A Java Future containing the result of the DeleteRoute operation returned by the service.
      * @sample AWSAppMeshAsync.DeleteRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(DeleteRouteRequest deleteRouteRequest);
@@ -319,7 +371,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteRoute operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DeleteRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(DeleteRouteRequest deleteRouteRequest,
@@ -329,11 +381,15 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * <p>
      * Deletes an existing virtual node.
      * </p>
+     * <p>
+     * You must delete any virtual services that list a virtual node as a service provider before you can delete the
+     * virtual node itself.
+     * </p>
      * 
      * @param deleteVirtualNodeRequest
      * @return A Java Future containing the result of the DeleteVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsync.DeleteVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualNodeResult> deleteVirtualNodeAsync(DeleteVirtualNodeRequest deleteVirtualNodeRequest);
@@ -341,6 +397,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
     /**
      * <p>
      * Deletes an existing virtual node.
+     * </p>
+     * <p>
+     * You must delete any virtual services that list a virtual node as a service provider before you can delete the
+     * virtual node itself.
      * </p>
      * 
      * @param deleteVirtualNodeRequest
@@ -350,7 +410,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DeleteVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualNodeResult> deleteVirtualNodeAsync(DeleteVirtualNodeRequest deleteVirtualNodeRequest,
@@ -367,7 +427,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param deleteVirtualRouterRequest
      * @return A Java Future containing the result of the DeleteVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsync.DeleteVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualRouterResult> deleteVirtualRouterAsync(DeleteVirtualRouterRequest deleteVirtualRouterRequest);
@@ -387,11 +447,42 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DeleteVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteVirtualRouterResult> deleteVirtualRouterAsync(DeleteVirtualRouterRequest deleteVirtualRouterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVirtualRouterRequest, DeleteVirtualRouterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing virtual service.
+     * </p>
+     * 
+     * @param deleteVirtualServiceRequest
+     * @return A Java Future containing the result of the DeleteVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsync.DeleteVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVirtualServiceResult> deleteVirtualServiceAsync(DeleteVirtualServiceRequest deleteVirtualServiceRequest);
+
+    /**
+     * <p>
+     * Deletes an existing virtual service.
+     * </p>
+     * 
+     * @param deleteVirtualServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsyncHandler.DeleteVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVirtualServiceResult> deleteVirtualServiceAsync(DeleteVirtualServiceRequest deleteVirtualServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVirtualServiceRequest, DeleteVirtualServiceResult> asyncHandler);
 
     /**
      * <p>
@@ -401,7 +492,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param describeMeshRequest
      * @return A Java Future containing the result of the DescribeMesh operation returned by the service.
      * @sample AWSAppMeshAsync.DescribeMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMeshResult> describeMeshAsync(DescribeMeshRequest describeMeshRequest);
@@ -418,7 +509,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeMesh operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DescribeMesh
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeMeshResult> describeMeshAsync(DescribeMeshRequest describeMeshRequest,
@@ -432,7 +523,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param describeRouteRequest
      * @return A Java Future containing the result of the DescribeRoute operation returned by the service.
      * @sample AWSAppMeshAsync.DescribeRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeRouteResult> describeRouteAsync(DescribeRouteRequest describeRouteRequest);
@@ -449,7 +540,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeRoute operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DescribeRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DescribeRouteResult> describeRouteAsync(DescribeRouteRequest describeRouteRequest,
@@ -463,7 +554,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param describeVirtualNodeRequest
      * @return A Java Future containing the result of the DescribeVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsync.DescribeVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualNodeResult> describeVirtualNodeAsync(DescribeVirtualNodeRequest describeVirtualNodeRequest);
@@ -480,7 +571,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DescribeVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualNode" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualNodeResult> describeVirtualNodeAsync(DescribeVirtualNodeRequest describeVirtualNodeRequest,
@@ -494,7 +585,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param describeVirtualRouterRequest
      * @return A Java Future containing the result of the DescribeVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsync.DescribeVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualRouterResult> describeVirtualRouterAsync(DescribeVirtualRouterRequest describeVirtualRouterRequest);
@@ -511,11 +602,42 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.DescribeVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DescribeVirtualRouterResult> describeVirtualRouterAsync(DescribeVirtualRouterRequest describeVirtualRouterRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualRouterRequest, DescribeVirtualRouterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing virtual service.
+     * </p>
+     * 
+     * @param describeVirtualServiceRequest
+     * @return A Java Future containing the result of the DescribeVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsync.DescribeVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVirtualServiceResult> describeVirtualServiceAsync(DescribeVirtualServiceRequest describeVirtualServiceRequest);
+
+    /**
+     * <p>
+     * Describes an existing virtual service.
+     * </p>
+     * 
+     * @param describeVirtualServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsyncHandler.DescribeVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVirtualServiceResult> describeVirtualServiceAsync(DescribeVirtualServiceRequest describeVirtualServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVirtualServiceRequest, DescribeVirtualServiceResult> asyncHandler);
 
     /**
      * <p>
@@ -525,7 +647,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param listMeshesRequest
      * @return A Java Future containing the result of the ListMeshes operation returned by the service.
      * @sample AWSAppMeshAsync.ListMeshes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListMeshesResult> listMeshesAsync(ListMeshesRequest listMeshesRequest);
@@ -542,7 +664,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListMeshes operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.ListMeshes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListMeshes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListMeshesResult> listMeshesAsync(ListMeshesRequest listMeshesRequest,
@@ -556,7 +678,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param listRoutesRequest
      * @return A Java Future containing the result of the ListRoutes operation returned by the service.
      * @sample AWSAppMeshAsync.ListRoutes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListRoutesResult> listRoutesAsync(ListRoutesRequest listRoutesRequest);
@@ -573,7 +695,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListRoutes operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.ListRoutes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListRoutesResult> listRoutesAsync(ListRoutesRequest listRoutesRequest,
@@ -587,7 +709,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param listVirtualNodesRequest
      * @return A Java Future containing the result of the ListVirtualNodes operation returned by the service.
      * @sample AWSAppMeshAsync.ListVirtualNodes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualNodesResult> listVirtualNodesAsync(ListVirtualNodesRequest listVirtualNodesRequest);
@@ -604,7 +726,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVirtualNodes operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.ListVirtualNodes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualNodesResult> listVirtualNodesAsync(ListVirtualNodesRequest listVirtualNodesRequest,
@@ -618,7 +740,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param listVirtualRoutersRequest
      * @return A Java Future containing the result of the ListVirtualRouters operation returned by the service.
      * @sample AWSAppMeshAsync.ListVirtualRouters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualRoutersResult> listVirtualRoutersAsync(ListVirtualRoutersRequest listVirtualRoutersRequest);
@@ -635,11 +757,42 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListVirtualRouters operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.ListVirtualRouters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRouters" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListVirtualRoutersResult> listVirtualRoutersAsync(ListVirtualRoutersRequest listVirtualRoutersRequest,
             com.amazonaws.handlers.AsyncHandler<ListVirtualRoutersRequest, ListVirtualRoutersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of existing virtual services in a service mesh.
+     * </p>
+     * 
+     * @param listVirtualServicesRequest
+     * @return A Java Future containing the result of the ListVirtualServices operation returned by the service.
+     * @sample AWSAppMeshAsync.ListVirtualServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVirtualServicesResult> listVirtualServicesAsync(ListVirtualServicesRequest listVirtualServicesRequest);
+
+    /**
+     * <p>
+     * Returns a list of existing virtual services in a service mesh.
+     * </p>
+     * 
+     * @param listVirtualServicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVirtualServices operation returned by the service.
+     * @sample AWSAppMeshAsyncHandler.ListVirtualServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVirtualServicesResult> listVirtualServicesAsync(ListVirtualServicesRequest listVirtualServicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVirtualServicesRequest, ListVirtualServicesResult> asyncHandler);
 
     /**
      * <p>
@@ -649,7 +802,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param updateRouteRequest
      * @return A Java Future containing the result of the UpdateRoute operation returned by the service.
      * @sample AWSAppMeshAsync.UpdateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest updateRouteRequest);
@@ -666,7 +819,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateRoute operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.UpdateRoute
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateRoute" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest updateRouteRequest,
@@ -680,7 +833,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param updateVirtualNodeRequest
      * @return A Java Future containing the result of the UpdateVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsync.UpdateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateVirtualNodeResult> updateVirtualNodeAsync(UpdateVirtualNodeRequest updateVirtualNodeRequest);
@@ -697,7 +850,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateVirtualNode operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.UpdateVirtualNode
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateVirtualNodeResult> updateVirtualNodeAsync(UpdateVirtualNodeRequest updateVirtualNodeRequest,
@@ -711,7 +864,7 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * @param updateVirtualRouterRequest
      * @return A Java Future containing the result of the UpdateVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsync.UpdateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateVirtualRouterResult> updateVirtualRouterAsync(UpdateVirtualRouterRequest updateVirtualRouterRequest);
@@ -728,10 +881,41 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateVirtualRouter operation returned by the service.
      * @sample AWSAppMeshAsyncHandler.UpdateVirtualRouter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualRouter" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateVirtualRouterResult> updateVirtualRouterAsync(UpdateVirtualRouterRequest updateVirtualRouterRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateVirtualRouterRequest, UpdateVirtualRouterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing virtual service in a specified service mesh.
+     * </p>
+     * 
+     * @param updateVirtualServiceRequest
+     * @return A Java Future containing the result of the UpdateVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsync.UpdateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVirtualServiceResult> updateVirtualServiceAsync(UpdateVirtualServiceRequest updateVirtualServiceRequest);
+
+    /**
+     * <p>
+     * Updates an existing virtual service in a specified service mesh.
+     * </p>
+     * 
+     * @param updateVirtualServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVirtualService operation returned by the service.
+     * @sample AWSAppMeshAsyncHandler.UpdateVirtualService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVirtualServiceResult> updateVirtualServiceAsync(UpdateVirtualServiceRequest updateVirtualServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVirtualServiceRequest, UpdateVirtualServiceResult> asyncHandler);
 
 }

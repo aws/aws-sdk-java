@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Configures a predefined metric for a target tracking policy.
+ * Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredefinedMetricSpecification"

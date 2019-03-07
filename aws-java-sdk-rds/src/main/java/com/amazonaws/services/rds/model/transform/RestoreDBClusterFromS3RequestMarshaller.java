@@ -198,6 +198,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getDeletionProtection()));
         }
 
+        if (restoreDBClusterFromS3Request.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getCopyTagsToSnapshot()));
+        }
+
         return request;
     }
 

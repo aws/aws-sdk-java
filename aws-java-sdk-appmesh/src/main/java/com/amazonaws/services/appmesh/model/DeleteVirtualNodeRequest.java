@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualNode" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the virtual node.
+     * The name of the service mesh to delete the virtual node in.
      * </p>
      */
     private String meshName;
@@ -40,11 +40,11 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the virtual node.
+     * The name of the service mesh to delete the virtual node in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to delete the virtual node.
+     *        The name of the service mesh to delete the virtual node in.
      */
 
     public void setMeshName(String meshName) {
@@ -53,10 +53,10 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the virtual node.
+     * The name of the service mesh to delete the virtual node in.
      * </p>
      * 
-     * @return The name of the service mesh in which to delete the virtual node.
+     * @return The name of the service mesh to delete the virtual node in.
      */
 
     public String getMeshName() {
@@ -65,11 +65,11 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to delete the virtual node.
+     * The name of the service mesh to delete the virtual node in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to delete the virtual node.
+     *        The name of the service mesh to delete the virtual node in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

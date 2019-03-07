@@ -41,7 +41,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
     /**
      * <p>
-     * One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyTypes;
@@ -53,7 +54,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum
+     * value is <code>100</code>.
      * </p>
      */
     private Integer maxRecords;
@@ -189,10 +191,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
-     * @return One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *         <code>TargetTrackingScaling</code>.
      */
 
     public java.util.List<String> getPolicyTypes() {
@@ -204,11 +208,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *        <code>TargetTrackingScaling</code>.
      */
 
     public void setPolicyTypes(java.util.Collection<String> policyTypes) {
@@ -222,7 +228,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,7 +238,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *        <code>TargetTrackingScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +255,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *        <code>TargetTrackingScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,12 +312,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum
+     * value is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to be returned with each call. The default value is 50 and the maximum value
-     *        is 100.
+     *        The maximum number of items to be returned with each call. The default value is <code>50</code> and the
+     *        maximum value is <code>100</code>.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -316,11 +327,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum
+     * value is <code>100</code>.
      * </p>
      * 
-     * @return The maximum number of items to be returned with each call. The default value is 50 and the maximum value
-     *         is 100.
+     * @return The maximum number of items to be returned with each call. The default value is <code>50</code> and the
+     *         maximum value is <code>100</code>.
      */
 
     public Integer getMaxRecords() {
@@ -329,12 +341,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum
+     * value is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to be returned with each call. The default value is 50 and the maximum value
-     *        is 100.
+     *        The maximum number of items to be returned with each call. The default value is <code>50</code> and the
+     *        maximum value is <code>100</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

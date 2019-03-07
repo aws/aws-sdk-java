@@ -91,6 +91,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -428,6 +441,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -465,6 +491,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>public</code> - Return all DB snapshots that have been marked as public.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *        </p>
+     *        <p>
+     *        For information about AWS Backup, see the <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *        Guide.</i> </a>
+     *        </p>
+     *        <p>
+     *        The <code>awsbackup</code> type does not apply to Aurora.
      *        </p>
      *        </li>
      *        </ul>
@@ -513,6 +552,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -549,6 +601,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <code>public</code> - Return all DB snapshots that have been marked as public.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *         </p>
+     *         <p>
+     *         For information about AWS Backup, see the <a
+     *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *         Guide.</i> </a>
+     *         </p>
+     *         <p>
+     *         The <code>awsbackup</code> type does not apply to Aurora.
      *         </p>
      *         </li>
      *         </ul>
@@ -597,6 +662,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -634,6 +712,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>public</code> - Return all DB snapshots that have been marked as public.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *        </p>
+     *        <p>
+     *        For information about AWS Backup, see the <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *        Guide.</i> </a>
+     *        </p>
+     *        <p>
+     *        The <code>awsbackup</code> type does not apply to Aurora.
      *        </p>
      *        </li>
      *        </ul>

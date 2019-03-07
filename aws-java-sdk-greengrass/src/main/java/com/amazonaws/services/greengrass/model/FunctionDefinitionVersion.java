@@ -26,16 +26,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Default configuration that will apply to all Lambda functions in this function definition version */
+    /**
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
+     */
     private FunctionDefaultConfig defaultConfig;
     /** A list of Lambda functions in this function definition version. */
     private java.util.List<Function> functions;
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
      * @param defaultConfig
-     *        Default configuration that will apply to all Lambda functions in this function definition version
+     *        The default configuration that applies to all Lambda functions in this function definition version.
+     *        Individual Lambda functions can override these settings.
      */
 
     public void setDefaultConfig(FunctionDefaultConfig defaultConfig) {
@@ -43,9 +48,11 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
-     * @return Default configuration that will apply to all Lambda functions in this function definition version
+     * @return The default configuration that applies to all Lambda functions in this function definition version.
+     *         Individual Lambda functions can override these settings.
      */
 
     public FunctionDefaultConfig getDefaultConfig() {
@@ -53,10 +60,12 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
      * @param defaultConfig
-     *        Default configuration that will apply to all Lambda functions in this function definition version
+     *        The default configuration that applies to all Lambda functions in this function definition version.
+     *        Individual Lambda functions can override these settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

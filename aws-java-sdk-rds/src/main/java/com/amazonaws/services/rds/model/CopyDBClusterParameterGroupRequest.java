@@ -29,7 +29,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
@@ -103,7 +103,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
@@ -132,7 +132,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *        <p>
      *        Constraints:
@@ -166,7 +166,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
@@ -194,7 +194,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *         about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *         <p>
      *         Constraints:
@@ -228,7 +228,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
@@ -257,7 +257,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *        <p>
      *        Constraints:

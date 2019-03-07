@@ -34,7 +34,9 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     private String virtualName;
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String deviceName;
@@ -97,11 +99,16 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setDeviceName(String deviceName) {
@@ -110,10 +117,15 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *         Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getDeviceName() {
@@ -122,11 +134,16 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

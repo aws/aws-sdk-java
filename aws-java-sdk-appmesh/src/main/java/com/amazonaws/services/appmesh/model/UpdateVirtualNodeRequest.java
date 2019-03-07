@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/UpdateVirtualNode" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class UpdateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientToken;
     /**
      * <p>
-     * The name of the service mesh in which the virtual node resides.
+     * The name of the service mesh that the virtual node resides in.
      * </p>
      */
     private String meshName;
@@ -99,11 +99,11 @@ public class UpdateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual node resides.
+     * The name of the service mesh that the virtual node resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the virtual node resides.
+     *        The name of the service mesh that the virtual node resides in.
      */
 
     public void setMeshName(String meshName) {
@@ -112,10 +112,10 @@ public class UpdateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual node resides.
+     * The name of the service mesh that the virtual node resides in.
      * </p>
      * 
-     * @return The name of the service mesh in which the virtual node resides.
+     * @return The name of the service mesh that the virtual node resides in.
      */
 
     public String getMeshName() {
@@ -124,11 +124,11 @@ public class UpdateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual node resides.
+     * The name of the service mesh that the virtual node resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the virtual node resides.
+     *        The name of the service mesh that the virtual node resides in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

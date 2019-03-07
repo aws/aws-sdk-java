@@ -33,8 +33,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListVirtualNodesRequestProtocolMarshaller implements Marshaller<Request<ListVirtualNodesRequest>, ListVirtualNodesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/meshes/{meshName}/virtualNodes").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .serviceName("AWSAppMesh").build();
+            .requestUri("/v20190125/meshes/{meshName}/virtualNodes").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
+            .hasPayloadMembers(false).serviceName("AWSAppMesh").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

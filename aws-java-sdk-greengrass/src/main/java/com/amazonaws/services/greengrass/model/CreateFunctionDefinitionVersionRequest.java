@@ -28,7 +28,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
 
     /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** Default configuration that will apply to all Lambda functions in this function definition version */
+    /**
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
+     */
     private FunctionDefaultConfig defaultConfig;
     /** The ID of the Lambda function definition. */
     private String functionDefinitionId;
@@ -70,10 +73,12 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
      * @param defaultConfig
-     *        Default configuration that will apply to all Lambda functions in this function definition version
+     *        The default configuration that applies to all Lambda functions in this function definition version.
+     *        Individual Lambda functions can override these settings.
      */
 
     public void setDefaultConfig(FunctionDefaultConfig defaultConfig) {
@@ -81,9 +86,11 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
-     * @return Default configuration that will apply to all Lambda functions in this function definition version
+     * @return The default configuration that applies to all Lambda functions in this function definition version.
+     *         Individual Lambda functions can override these settings.
      */
 
     public FunctionDefaultConfig getDefaultConfig() {
@@ -91,10 +98,12 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function definition version
+     * The default configuration that applies to all Lambda functions in this function definition version. Individual
+     * Lambda functions can override these settings.
      * 
      * @param defaultConfig
-     *        Default configuration that will apply to all Lambda functions in this function definition version
+     *        The default configuration that applies to all Lambda functions in this function definition version.
+     *        Individual Lambda functions can override these settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

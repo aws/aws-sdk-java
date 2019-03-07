@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You cannot delete the specified resource because it is in use or required by another resource.
+ * You can't delete the specified resource because it's in use or required by another resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

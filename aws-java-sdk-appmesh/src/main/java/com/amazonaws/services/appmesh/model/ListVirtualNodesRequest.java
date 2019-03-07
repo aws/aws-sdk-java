@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodes" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When this
-     * parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListVirtualNodes</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this
+     * parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The name of the service mesh in which to list virtual nodes.
+     * The name of the service mesh to list virtual nodes in.
      * </p>
      */
     private String meshName;
@@ -53,21 +53,21 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When this
-     * parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListVirtualNodes</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this
+     * parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param limit
-     *        The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When
-     *        this parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single
-     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListVirtualNodes</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *        <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use
+     *        this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page
+     *        along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     *        request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setLimit(Integer limit) {
@@ -76,19 +76,19 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When this
-     * parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListVirtualNodes</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this
+     * parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When
-     *         this parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single
-     *         page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *         can be seen by sending another <code>ListVirtualNodes</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * @return The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use
+     *         this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page
+     *         along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     *         request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>
+     *         value. This value can be between 1 and 100. If you don't use this parameter,
      *         <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -98,21 +98,21 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When this
-     * parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>ListVirtualNodes</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable.
+     * The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this
+     * parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param limit
-     *        The maximum number of mesh results returned by <code>ListVirtualNodes</code> in paginated output. When
-     *        this parameter is used, <code>ListVirtualNodes</code> only returns <code>limit</code> results in a single
-     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListVirtualNodes</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *        <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use
+     *        this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page
+     *        along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     *        request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +123,11 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service mesh in which to list virtual nodes.
+     * The name of the service mesh to list virtual nodes in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to list virtual nodes.
+     *        The name of the service mesh to list virtual nodes in.
      */
 
     public void setMeshName(String meshName) {
@@ -136,10 +136,10 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service mesh in which to list virtual nodes.
+     * The name of the service mesh to list virtual nodes in.
      * </p>
      * 
-     * @return The name of the service mesh in which to list virtual nodes.
+     * @return The name of the service mesh to list virtual nodes in.
      */
 
     public String getMeshName() {
@@ -148,11 +148,11 @@ public class ListVirtualNodesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the service mesh in which to list virtual nodes.
+     * The name of the service mesh to list virtual nodes in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to list virtual nodes.
+     *        The name of the service mesh to list virtual nodes in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

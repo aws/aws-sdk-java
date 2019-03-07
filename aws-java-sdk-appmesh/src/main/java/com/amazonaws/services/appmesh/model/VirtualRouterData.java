@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing a virtual router returned by a describe operation.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualRouterData" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterData" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,7 +30,7 @@ public class VirtualRouterData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual router resides.
+     * The name of the service mesh that the virtual router resides in.
      * </p>
      */
     private String meshName;
@@ -61,11 +61,11 @@ public class VirtualRouterData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual router resides.
+     * The name of the service mesh that the virtual router resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the virtual router resides.
+     *        The name of the service mesh that the virtual router resides in.
      */
 
     public void setMeshName(String meshName) {
@@ -74,10 +74,10 @@ public class VirtualRouterData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual router resides.
+     * The name of the service mesh that the virtual router resides in.
      * </p>
      * 
-     * @return The name of the service mesh in which the virtual router resides.
+     * @return The name of the service mesh that the virtual router resides in.
      */
 
     public String getMeshName() {
@@ -86,11 +86,11 @@ public class VirtualRouterData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the service mesh in which the virtual router resides.
+     * The name of the service mesh that the virtual router resides in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which the virtual router resides.
+     *        The name of the service mesh that the virtual router resides in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

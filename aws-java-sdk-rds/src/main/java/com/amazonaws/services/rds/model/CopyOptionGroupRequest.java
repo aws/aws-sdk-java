@@ -29,7 +29,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -102,7 +102,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -130,7 +130,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:
@@ -162,7 +162,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -189,7 +189,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
      *         Constraints:
@@ -221,7 +221,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
@@ -249,7 +249,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:

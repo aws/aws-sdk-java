@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the health check policy for a virtual node's listener.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HealthCheckPolicy" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HealthCheckPolicy" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -42,8 +42,8 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
     private Long intervalMillis;
     /**
      * <p>
-     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
-     * the protocol is TCP, then this parameter is ignored.
+     * The destination path for the health check request. This is required only if the specified protocol is HTTP. If
+     * the protocol is TCP, this parameter is ignored.
      * </p>
      */
     private String path;
@@ -155,13 +155,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
-     * the protocol is TCP, then this parameter is ignored.
+     * The destination path for the health check request. This is required only if the specified protocol is HTTP. If
+     * the protocol is TCP, this parameter is ignored.
      * </p>
      * 
      * @param path
-     *        The destination path for the health check request. This is only required if the specified protocol is
-     *        HTTP; if the protocol is TCP, then this parameter is ignored.
+     *        The destination path for the health check request. This is required only if the specified protocol is
+     *        HTTP. If the protocol is TCP, this parameter is ignored.
      */
 
     public void setPath(String path) {
@@ -170,12 +170,12 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
-     * the protocol is TCP, then this parameter is ignored.
+     * The destination path for the health check request. This is required only if the specified protocol is HTTP. If
+     * the protocol is TCP, this parameter is ignored.
      * </p>
      * 
-     * @return The destination path for the health check request. This is only required if the specified protocol is
-     *         HTTP; if the protocol is TCP, then this parameter is ignored.
+     * @return The destination path for the health check request. This is required only if the specified protocol is
+     *         HTTP. If the protocol is TCP, this parameter is ignored.
      */
 
     public String getPath() {
@@ -184,13 +184,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
-     * the protocol is TCP, then this parameter is ignored.
+     * The destination path for the health check request. This is required only if the specified protocol is HTTP. If
+     * the protocol is TCP, this parameter is ignored.
      * </p>
      * 
      * @param path
-     *        The destination path for the health check request. This is only required if the specified protocol is
-     *        HTTP; if the protocol is TCP, then this parameter is ignored.
+     *        The destination path for the health check request. This is required only if the specified protocol is
+     *        HTTP. If the protocol is TCP, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

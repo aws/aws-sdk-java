@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing metadata for a resource.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ResourceMetadata" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ResourceMetadata" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -67,8 +67,8 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
     private String uid;
     /**
      * <p>
-     * The version of the resource. Resources are created at version 1, and this version is incremented each time they
-     * are updated.
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
      * </p>
      */
     private Long version;
@@ -307,13 +307,13 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The version of the resource. Resources are created at version 1, and this version is incremented each time they
-     * are updated.
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
      * </p>
      * 
      * @param version
      *        The version of the resource. Resources are created at version 1, and this version is incremented each time
-     *        they are updated.
+     *        that they're updated.
      */
 
     public void setVersion(Long version) {
@@ -322,12 +322,12 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The version of the resource. Resources are created at version 1, and this version is incremented each time they
-     * are updated.
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
      * </p>
      * 
      * @return The version of the resource. Resources are created at version 1, and this version is incremented each
-     *         time they are updated.
+     *         time that they're updated.
      */
 
     public Long getVersion() {
@@ -336,13 +336,13 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The version of the resource. Resources are created at version 1, and this version is incremented each time they
-     * are updated.
+     * The version of the resource. Resources are created at version 1, and this version is incremented each time that
+     * they're updated.
      * </p>
      * 
      * @param version
      *        The version of the resource. Resources are created at version 1, and this version is incremented each time
-     *        they are updated.
+     *        that they're updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

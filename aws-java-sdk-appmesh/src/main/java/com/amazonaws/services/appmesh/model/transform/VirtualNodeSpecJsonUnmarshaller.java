@@ -50,7 +50,7 @@ public class VirtualNodeSpecJsonUnmarshaller implements Unmarshaller<VirtualNode
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("backends", targetDepth)) {
                     context.nextToken();
-                    virtualNodeSpec.setBackends(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    virtualNodeSpec.setBackends(new ListUnmarshaller<Backend>(BackendJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("listeners", targetDepth)) {
                     context.nextToken();

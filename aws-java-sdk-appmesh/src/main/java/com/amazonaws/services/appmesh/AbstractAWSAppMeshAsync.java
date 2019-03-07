@@ -80,6 +80,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVirtualServiceResult> createVirtualServiceAsync(CreateVirtualServiceRequest request) {
+
+        return createVirtualServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVirtualServiceResult> createVirtualServiceAsync(CreateVirtualServiceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVirtualServiceRequest, CreateVirtualServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMeshResult> deleteMeshAsync(DeleteMeshRequest request) {
 
         return deleteMeshAsync(request, null);
@@ -127,6 +140,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<DeleteVirtualRouterResult> deleteVirtualRouterAsync(DeleteVirtualRouterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVirtualRouterRequest, DeleteVirtualRouterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualServiceResult> deleteVirtualServiceAsync(DeleteVirtualServiceRequest request) {
+
+        return deleteVirtualServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualServiceResult> deleteVirtualServiceAsync(DeleteVirtualServiceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVirtualServiceRequest, DeleteVirtualServiceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +210,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVirtualServiceResult> describeVirtualServiceAsync(DescribeVirtualServiceRequest request) {
+
+        return describeVirtualServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVirtualServiceResult> describeVirtualServiceAsync(DescribeVirtualServiceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVirtualServiceRequest, DescribeVirtualServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMeshesResult> listMeshesAsync(ListMeshesRequest request) {
 
         return listMeshesAsync(request, null);
@@ -236,6 +275,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<ListVirtualServicesResult> listVirtualServicesAsync(ListVirtualServicesRequest request) {
+
+        return listVirtualServicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualServicesResult> listVirtualServicesAsync(ListVirtualServicesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVirtualServicesRequest, ListVirtualServicesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest request) {
 
         return updateRouteAsync(request, null);
@@ -270,6 +322,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<UpdateVirtualRouterResult> updateVirtualRouterAsync(UpdateVirtualRouterRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateVirtualRouterRequest, UpdateVirtualRouterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualServiceResult> updateVirtualServiceAsync(UpdateVirtualServiceRequest request) {
+
+        return updateVirtualServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualServiceResult> updateVirtualServiceAsync(UpdateVirtualServiceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVirtualServiceRequest, UpdateVirtualServiceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

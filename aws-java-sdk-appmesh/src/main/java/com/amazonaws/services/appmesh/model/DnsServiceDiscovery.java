@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The DNS service discovery information for your virtual node.
+ * An object representing the DNS service discovery information for your virtual node.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DnsServiceDiscovery" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DnsServiceDiscovery" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,48 +30,48 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS service name for your virtual node.
+     * Specifies the DNS service discovery hostname for the virtual node.
      * </p>
      */
-    private String serviceName;
+    private String hostname;
 
     /**
      * <p>
-     * The DNS service name for your virtual node.
+     * Specifies the DNS service discovery hostname for the virtual node.
      * </p>
      * 
-     * @param serviceName
-     *        The DNS service name for your virtual node.
+     * @param hostname
+     *        Specifies the DNS service discovery hostname for the virtual node.
      */
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 
     /**
      * <p>
-     * The DNS service name for your virtual node.
+     * Specifies the DNS service discovery hostname for the virtual node.
      * </p>
      * 
-     * @return The DNS service name for your virtual node.
+     * @return Specifies the DNS service discovery hostname for the virtual node.
      */
 
-    public String getServiceName() {
-        return this.serviceName;
+    public String getHostname() {
+        return this.hostname;
     }
 
     /**
      * <p>
-     * The DNS service name for your virtual node.
+     * Specifies the DNS service discovery hostname for the virtual node.
      * </p>
      * 
-     * @param serviceName
-     *        The DNS service name for your virtual node.
+     * @param hostname
+     *        Specifies the DNS service discovery hostname for the virtual node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DnsServiceDiscovery withServiceName(String serviceName) {
-        setServiceName(serviceName);
+    public DnsServiceDiscovery withHostname(String hostname) {
+        setHostname(hostname);
         return this;
     }
 
@@ -87,8 +87,8 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getServiceName() != null)
-            sb.append("ServiceName: ").append(getServiceName());
+        if (getHostname() != null)
+            sb.append("Hostname: ").append(getHostname());
         sb.append("}");
         return sb.toString();
     }
@@ -103,9 +103,9 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         if (obj instanceof DnsServiceDiscovery == false)
             return false;
         DnsServiceDiscovery other = (DnsServiceDiscovery) obj;
-        if (other.getServiceName() == null ^ this.getServiceName() == null)
+        if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
-        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+        if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
         return true;
     }
@@ -115,7 +115,7 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         return hashCode;
     }
 

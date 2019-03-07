@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing the specification of a virtual router.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualRouterSpec" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterSpec" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,78 +30,87 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The service mesh service names to associate with the virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual router.
      * </p>
      */
-    private java.util.List<String> serviceNames;
+    private java.util.List<VirtualRouterListener> listeners;
 
     /**
      * <p>
-     * The service mesh service names to associate with the virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual router.
      * </p>
      * 
-     * @return The service mesh service names to associate with the virtual router.
+     * @return The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
+     *         listener is supported per virtual router.
      */
 
-    public java.util.List<String> getServiceNames() {
-        return serviceNames;
+    public java.util.List<VirtualRouterListener> getListeners() {
+        return listeners;
     }
 
     /**
      * <p>
-     * The service mesh service names to associate with the virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual router.
      * </p>
      * 
-     * @param serviceNames
-     *        The service mesh service names to associate with the virtual router.
+     * @param listeners
+     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual router.
      */
 
-    public void setServiceNames(java.util.Collection<String> serviceNames) {
-        if (serviceNames == null) {
-            this.serviceNames = null;
+    public void setListeners(java.util.Collection<VirtualRouterListener> listeners) {
+        if (listeners == null) {
+            this.listeners = null;
             return;
         }
 
-        this.serviceNames = new java.util.ArrayList<String>(serviceNames);
+        this.listeners = new java.util.ArrayList<VirtualRouterListener>(listeners);
     }
 
     /**
      * <p>
-     * The service mesh service names to associate with the virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual router.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setServiceNames(java.util.Collection)} or {@link #withServiceNames(java.util.Collection)} if you want to
+     * {@link #setListeners(java.util.Collection)} or {@link #withListeners(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
-     * @param serviceNames
-     *        The service mesh service names to associate with the virtual router.
+     * @param listeners
+     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual router.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VirtualRouterSpec withServiceNames(String... serviceNames) {
-        if (this.serviceNames == null) {
-            setServiceNames(new java.util.ArrayList<String>(serviceNames.length));
+    public VirtualRouterSpec withListeners(VirtualRouterListener... listeners) {
+        if (this.listeners == null) {
+            setListeners(new java.util.ArrayList<VirtualRouterListener>(listeners.length));
         }
-        for (String ele : serviceNames) {
-            this.serviceNames.add(ele);
+        for (VirtualRouterListener ele : listeners) {
+            this.listeners.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * The service mesh service names to associate with the virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
+     * supported per virtual router.
      * </p>
      * 
-     * @param serviceNames
-     *        The service mesh service names to associate with the virtual router.
+     * @param listeners
+     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
+     *        listener is supported per virtual router.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VirtualRouterSpec withServiceNames(java.util.Collection<String> serviceNames) {
-        setServiceNames(serviceNames);
+    public VirtualRouterSpec withListeners(java.util.Collection<VirtualRouterListener> listeners) {
+        setListeners(listeners);
         return this;
     }
 
@@ -117,8 +126,8 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getServiceNames() != null)
-            sb.append("ServiceNames: ").append(getServiceNames());
+        if (getListeners() != null)
+            sb.append("Listeners: ").append(getListeners());
         sb.append("}");
         return sb.toString();
     }
@@ -133,9 +142,9 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof VirtualRouterSpec == false)
             return false;
         VirtualRouterSpec other = (VirtualRouterSpec) obj;
-        if (other.getServiceNames() == null ^ this.getServiceNames() == null)
+        if (other.getListeners() == null ^ this.getListeners() == null)
             return false;
-        if (other.getServiceNames() != null && other.getServiceNames().equals(this.getServiceNames()) == false)
+        if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false)
             return false;
         return true;
     }
@@ -145,7 +154,7 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getServiceNames() == null) ? 0 : getServiceNames().hashCode());
+        hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
         return hashCode;
     }
 

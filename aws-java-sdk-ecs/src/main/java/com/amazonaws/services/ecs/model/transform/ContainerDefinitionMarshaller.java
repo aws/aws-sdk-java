@@ -61,6 +61,12 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linuxParameters").build();
     private static final MarshallingInfo<List> SECRETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("secrets").build();
+    private static final MarshallingInfo<List> DEPENDSON_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dependsOn").build();
+    private static final MarshallingInfo<Integer> STARTTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimeout").build();
+    private static final MarshallingInfo<Integer> STOPTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTimeout").build();
     private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hostname").build();
     private static final MarshallingInfo<String> USER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -130,6 +136,9 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getVolumesFrom(), VOLUMESFROM_BINDING);
             protocolMarshaller.marshall(containerDefinition.getLinuxParameters(), LINUXPARAMETERS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getSecrets(), SECRETS_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getDependsOn(), DEPENDSON_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getStartTimeout(), STARTTIMEOUT_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getStopTimeout(), STOPTIMEOUT_BINDING);
             protocolMarshaller.marshall(containerDefinition.getHostname(), HOSTNAME_BINDING);
             protocolMarshaller.marshall(containerDefinition.getUser(), USER_BINDING);
             protocolMarshaller.marshall(containerDefinition.getWorkingDirectory(), WORKINGDIRECTORY_BINDING);
