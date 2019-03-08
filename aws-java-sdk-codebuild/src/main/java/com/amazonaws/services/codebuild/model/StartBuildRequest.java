@@ -127,6 +127,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer gitCloneDepthOverride;
     /**
      * <p>
+     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * </p>
+     */
+    private GitSubmodulesConfig gitSubmodulesConfigOverride;
+    /**
+     * <p>
      * A build spec declaration that overrides, for this build only, the latest one already defined in the build
      * project.
      * </p>
@@ -1028,6 +1034,46 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public StartBuildRequest withGitCloneDepthOverride(Integer gitCloneDepthOverride) {
         setGitCloneDepthOverride(gitCloneDepthOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfigOverride
+     *        Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     */
+
+    public void setGitSubmodulesConfigOverride(GitSubmodulesConfig gitSubmodulesConfigOverride) {
+        this.gitSubmodulesConfigOverride = gitSubmodulesConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * </p>
+     * 
+     * @return Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     */
+
+    public GitSubmodulesConfig getGitSubmodulesConfigOverride() {
+        return this.gitSubmodulesConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfigOverride
+     *        Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withGitSubmodulesConfigOverride(GitSubmodulesConfig gitSubmodulesConfigOverride) {
+        setGitSubmodulesConfigOverride(gitSubmodulesConfigOverride);
         return this;
     }
 
@@ -1986,6 +2032,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("SourceAuthOverride: ").append(getSourceAuthOverride()).append(",");
         if (getGitCloneDepthOverride() != null)
             sb.append("GitCloneDepthOverride: ").append(getGitCloneDepthOverride()).append(",");
+        if (getGitSubmodulesConfigOverride() != null)
+            sb.append("GitSubmodulesConfigOverride: ").append(getGitSubmodulesConfigOverride()).append(",");
         if (getBuildspecOverride() != null)
             sb.append("BuildspecOverride: ").append(getBuildspecOverride()).append(",");
         if (getInsecureSslOverride() != null)
@@ -2077,6 +2125,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getGitCloneDepthOverride() != null && other.getGitCloneDepthOverride().equals(this.getGitCloneDepthOverride()) == false)
             return false;
+        if (other.getGitSubmodulesConfigOverride() == null ^ this.getGitSubmodulesConfigOverride() == null)
+            return false;
+        if (other.getGitSubmodulesConfigOverride() != null && other.getGitSubmodulesConfigOverride().equals(this.getGitSubmodulesConfigOverride()) == false)
+            return false;
         if (other.getBuildspecOverride() == null ^ this.getBuildspecOverride() == null)
             return false;
         if (other.getBuildspecOverride() != null && other.getBuildspecOverride().equals(this.getBuildspecOverride()) == false)
@@ -2162,6 +2214,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSourceLocationOverride() == null) ? 0 : getSourceLocationOverride().hashCode());
         hashCode = prime * hashCode + ((getSourceAuthOverride() == null) ? 0 : getSourceAuthOverride().hashCode());
         hashCode = prime * hashCode + ((getGitCloneDepthOverride() == null) ? 0 : getGitCloneDepthOverride().hashCode());
+        hashCode = prime * hashCode + ((getGitSubmodulesConfigOverride() == null) ? 0 : getGitSubmodulesConfigOverride().hashCode());
         hashCode = prime * hashCode + ((getBuildspecOverride() == null) ? 0 : getBuildspecOverride().hashCode());
         hashCode = prime * hashCode + ((getInsecureSslOverride() == null) ? 0 : getInsecureSslOverride().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatusOverride() == null) ? 0 : getReportBuildStatusOverride().hashCode());

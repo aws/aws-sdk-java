@@ -33,8 +33,11 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      */
     private String trainingImage;
@@ -53,7 +56,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p/>
      * <p>
      * For more information about input modes, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      */
     private String trainingInputMode;
@@ -75,15 +78,22 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about Docker
      *        registry paths for built-in algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     *        Provided by Amazon SageMaker: Common Parameters</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -94,14 +104,21 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm. For information about Docker
      *         registry paths for built-in algorithms, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
-     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
+     *         with Amazon SageMaker</a>.
      */
 
     public String getTrainingImage() {
@@ -112,15 +129,22 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about Docker
      *        registry paths for built-in algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     *        Provided by Amazon SageMaker: Common Parameters</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +168,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p/>
      * <p>
      * For more information about input modes, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * 
      * @param trainingInputMode
@@ -160,7 +184,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      *        <p/>
      *        <p>
      *        For more information about input modes, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * @see TrainingInputMode
      */
 
@@ -183,7 +207,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p/>
      * <p>
      * For more information about input modes, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * 
      * @return The input mode that the algorithm supports: File or Pipe. In File input mode, Amazon SageMaker downloads
@@ -198,7 +222,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      *         <p/>
      *         <p>
      *         For more information about input modes, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * @see TrainingInputMode
      */
 
@@ -221,7 +245,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p/>
      * <p>
      * For more information about input modes, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * 
      * @param trainingInputMode
@@ -237,7 +261,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      *        <p/>
      *        <p>
      *        For more information about input modes, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInputMode
      */
@@ -262,7 +286,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      * <p/>
      * <p>
      * For more information about input modes, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * 
      * @param trainingInputMode
@@ -278,7 +302,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
      *        <p/>
      *        <p>
      *        For more information about input modes, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInputMode
      */

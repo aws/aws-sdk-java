@@ -28,7 +28,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      * </p>
      */
     private String endpointConfigName;
@@ -41,7 +41,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      */
@@ -57,12 +57,12 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      * </p>
      * 
      * @param endpointConfigName
      *        The name of the endpoint configuration. You specify this name in a <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      */
 
     public void setEndpointConfigName(String endpointConfigName) {
@@ -72,11 +72,12 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      * </p>
      * 
      * @return The name of the endpoint configuration. You specify this name in a <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     *         request.
      */
 
     public String getEndpointConfigName() {
@@ -86,12 +87,12 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      * </p>
      * 
      * @param endpointConfigName
      *        The name of the endpoint configuration. You specify this name in a <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,12 +178,12 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return An array of key-value pairs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -193,13 +194,13 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -215,7 +216,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
@@ -226,7 +227,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -244,13 +245,13 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

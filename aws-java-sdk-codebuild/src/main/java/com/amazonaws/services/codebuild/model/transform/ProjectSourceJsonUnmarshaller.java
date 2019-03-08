@@ -60,6 +60,10 @@ public class ProjectSourceJsonUnmarshaller implements Unmarshaller<ProjectSource
                     context.nextToken();
                     projectSource.setGitCloneDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("gitSubmodulesConfig", targetDepth)) {
+                    context.nextToken();
+                    projectSource.setGitSubmodulesConfig(GitSubmodulesConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("buildspec", targetDepth)) {
                     context.nextToken();
                     projectSource.setBuildspec(context.getUnmarshaller(String.class).unmarshall(context));

@@ -30,7 +30,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS host name for the container after Amazon SageMaker deploys it.
+     * This parameter is ignored.
      * </p>
      */
     private String containerHostname;
@@ -40,7 +40,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
      * SageMaker</a>
      * </p>
      */
@@ -76,11 +76,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS host name for the container after Amazon SageMaker deploys it.
+     * This parameter is ignored.
      * </p>
      * 
      * @param containerHostname
-     *        The DNS host name for the container after Amazon SageMaker deploys it.
+     *        This parameter is ignored.
      */
 
     public void setContainerHostname(String containerHostname) {
@@ -89,10 +89,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS host name for the container after Amazon SageMaker deploys it.
+     * This parameter is ignored.
      * </p>
      * 
-     * @return The DNS host name for the container after Amazon SageMaker deploys it.
+     * @return This parameter is ignored.
      */
 
     public String getContainerHostname() {
@@ -101,11 +101,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The DNS host name for the container after Amazon SageMaker deploys it.
+     * This parameter is ignored.
      * </p>
      * 
      * @param containerHostname
-     *        The DNS host name for the container after Amazon SageMaker deploys it.
+     *        This parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +120,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
      * SageMaker</a>
      * </p>
      * 
@@ -129,7 +129,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
      *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      */
 
@@ -143,7 +143,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
      * SageMaker</a>
      * </p>
      * 
@@ -151,8 +151,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
      *         Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      *         <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
-     *         Amazon SageMaker</a>
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
+     *         with Amazon SageMaker</a>
      */
 
     public String getImage() {
@@ -165,7 +165,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
      * SageMaker</a>
      * </p>
      * 
@@ -174,7 +174,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
      *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

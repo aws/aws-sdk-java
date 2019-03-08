@@ -44,7 +44,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private String transformJobStatus;
     /**
      * <p>
-     * If the transform job failed, the reason that it failed.
+     * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
+     * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * Amazon CloudWatch</a>.
      * </p>
      */
     private String failureReason;
@@ -69,13 +72,20 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private Integer maxPayloadInMB;
     /**
      * <p>
-     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
-     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
-     * <code>MultiRecord</code>.S
+     * Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i/> is
+     * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
+     * </p>
+     * <p>
+     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
+     * <code>TFRecord</code>.
      * </p>
      */
     private String batchStrategy;
-    /** <p/> */
+    /**
+     * <p>
+     * The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.
+     * </p>
+     */
     private java.util.Map<String, String> environment;
     /**
      * <p>
@@ -272,11 +282,17 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the transform job failed, the reason that it failed.
+     * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
+     * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the transform job failed, the reason that it failed.
+     *        If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a
+     *        log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see
+     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
+     *        Events with Amazon CloudWatch</a>.
      */
 
     public void setFailureReason(String failureReason) {
@@ -285,10 +301,16 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the transform job failed, the reason that it failed.
+     * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
+     * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
-     * @return If the transform job failed, the reason that it failed.
+     * @return If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates
+     *         a log file, which includes error messages, and stores it as an Amazon S3 object. For more information,
+     *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
+     *         Events with Amazon CloudWatch</a>.
      */
 
     public String getFailureReason() {
@@ -297,11 +319,17 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the transform job failed, the reason that it failed.
+     * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
+     * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param failureReason
-     *        If the transform job failed, the reason that it failed.
+     *        If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a
+     *        log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see
+     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
+     *        Events with Amazon CloudWatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,15 +466,21 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
-     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
-     * <code>MultiRecord</code>.S
+     * Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i/> is
+     * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
+     * </p>
+     * <p>
+     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
+     * <code>TFRecord</code>.
      * </p>
      * 
      * @param batchStrategy
-     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
-     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     *        specify <code>MultiRecord</code>.S
+     *        Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i>
+     *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
+     *        file is a record. </p>
+     *        <p>
+     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
+     *        <code>RecordIO</code>, or <code>TFRecord</code>.
      * @see BatchStrategy
      */
 
@@ -456,14 +490,20 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
-     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
-     * <code>MultiRecord</code>.S
+     * Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i/> is
+     * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
+     * </p>
+     * <p>
+     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
+     * <code>TFRecord</code>.
      * </p>
      * 
-     * @return If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want
-     *         batches to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code>
-     *         parameter, specify <code>MultiRecord</code>.S
+     * @return Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i>
+     *         <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
+     *         file is a record. </p>
+     *         <p>
+     *         To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
+     *         <code>RecordIO</code>, or <code>TFRecord</code>.
      * @see BatchStrategy
      */
 
@@ -473,15 +513,21 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
-     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
-     * <code>MultiRecord</code>.S
+     * Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i/> is
+     * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
+     * </p>
+     * <p>
+     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
+     * <code>TFRecord</code>.
      * </p>
      * 
      * @param batchStrategy
-     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
-     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     *        specify <code>MultiRecord</code>.S
+     *        Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i>
+     *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
+     *        file is a record. </p>
+     *        <p>
+     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
+     *        <code>RecordIO</code>, or <code>TFRecord</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -493,15 +539,21 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
-     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
-     * <code>MultiRecord</code>.S
+     * Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i/> is
+     * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
+     * </p>
+     * <p>
+     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
+     * <code>TFRecord</code>.
      * </p>
      * 
      * @param batchStrategy
-     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
-     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     *        specify <code>MultiRecord</code>.S
+     *        Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i>
+     *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
+     *        file is a record. </p>
+     *        <p>
+     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
+     *        <code>RecordIO</code>, or <code>TFRecord</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -512,9 +564,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.
+     * </p>
      * 
-     * @return
+     * @return The environment variables to set in the Docker container. We support up to 16 key and values entries in
+     *         the map.
      */
 
     public java.util.Map<String, String> getEnvironment() {
@@ -522,9 +577,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.
+     * </p>
      * 
      * @param environment
+     *        The environment variables to set in the Docker container. We support up to 16 key and values entries in
+     *        the map.
      */
 
     public void setEnvironment(java.util.Map<String, String> environment) {
@@ -532,9 +591,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.
+     * </p>
      * 
      * @param environment
+     *        The environment variables to set in the Docker container. We support up to 16 key and values entries in
+     *        the map.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

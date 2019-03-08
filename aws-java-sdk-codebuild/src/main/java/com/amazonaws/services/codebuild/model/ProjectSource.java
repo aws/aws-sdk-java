@@ -133,10 +133,16 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private String location;
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      */
     private Integer gitCloneDepth;
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    private GitSubmodulesConfig gitSubmodulesConfig;
     /**
      * <p>
      * The build spec declaration to use for the builds in this build project.
@@ -968,11 +974,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
      * @param gitCloneDepth
-     *        Information about the git clone depth for the build project.
+     *        Information about the Git clone depth for the build project.
      */
 
     public void setGitCloneDepth(Integer gitCloneDepth) {
@@ -981,10 +987,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
-     * @return Information about the git clone depth for the build project.
+     * @return Information about the Git clone depth for the build project.
      */
 
     public Integer getGitCloneDepth() {
@@ -993,16 +999,56 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
      * @param gitCloneDepth
-     *        Information about the git clone depth for the build project.
+     *        Information about the Git clone depth for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProjectSource withGitCloneDepth(Integer gitCloneDepth) {
         setGitCloneDepth(gitCloneDepth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfig
+     *        Information about the Git submodules configuration for the build project.
+     */
+
+    public void setGitSubmodulesConfig(GitSubmodulesConfig gitSubmodulesConfig) {
+        this.gitSubmodulesConfig = gitSubmodulesConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @return Information about the Git submodules configuration for the build project.
+     */
+
+    public GitSubmodulesConfig getGitSubmodulesConfig() {
+        return this.gitSubmodulesConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfig
+     *        Information about the Git submodules configuration for the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withGitSubmodulesConfig(GitSubmodulesConfig gitSubmodulesConfig) {
+        setGitSubmodulesConfig(gitSubmodulesConfig);
         return this;
     }
 
@@ -1300,6 +1346,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Location: ").append(getLocation()).append(",");
         if (getGitCloneDepth() != null)
             sb.append("GitCloneDepth: ").append(getGitCloneDepth()).append(",");
+        if (getGitSubmodulesConfig() != null)
+            sb.append("GitSubmodulesConfig: ").append(getGitSubmodulesConfig()).append(",");
         if (getBuildspec() != null)
             sb.append("Buildspec: ").append(getBuildspec()).append(",");
         if (getAuth() != null)
@@ -1336,6 +1384,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGitCloneDepth() != null && other.getGitCloneDepth().equals(this.getGitCloneDepth()) == false)
             return false;
+        if (other.getGitSubmodulesConfig() == null ^ this.getGitSubmodulesConfig() == null)
+            return false;
+        if (other.getGitSubmodulesConfig() != null && other.getGitSubmodulesConfig().equals(this.getGitSubmodulesConfig()) == false)
+            return false;
         if (other.getBuildspec() == null ^ this.getBuildspec() == null)
             return false;
         if (other.getBuildspec() != null && other.getBuildspec().equals(this.getBuildspec()) == false)
@@ -1367,6 +1419,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getGitCloneDepth() == null) ? 0 : getGitCloneDepth().hashCode());
+        hashCode = prime * hashCode + ((getGitSubmodulesConfig() == null) ? 0 : getGitSubmodulesConfig().hashCode());
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());

@@ -56,6 +56,10 @@ public class S3LogsConfigJsonUnmarshaller implements Unmarshaller<S3LogsConfig, 
                     context.nextToken();
                     s3LogsConfig.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("encryptionDisabled", targetDepth)) {
+                    context.nextToken();
+                    s3LogsConfig.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

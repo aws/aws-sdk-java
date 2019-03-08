@@ -31,7 +31,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker algorithms
-     * support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3
@@ -80,7 +80,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker algorithms
-     * support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3
@@ -92,7 +92,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
      * @param trainingInputMode
      *        The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker
      *        algorithms support, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
      *        <p>
      *        If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data
      *        from S3 to the provisioned ML storage Volume, and mounts the directory to docker volume for training
@@ -108,7 +108,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker algorithms
-     * support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3
@@ -119,7 +119,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
      * 
      * @return The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker
      *         algorithms support, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
      *         <p>
      *         If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data
      *         from S3 to the provisioned ML storage Volume, and mounts the directory to docker volume for training
@@ -135,7 +135,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker algorithms
-     * support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3
@@ -147,7 +147,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
      * @param trainingInputMode
      *        The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker
      *        algorithms support, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
      *        <p>
      *        If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data
      *        from S3 to the provisioned ML storage Volume, and mounts the directory to docker volume for training
@@ -165,7 +165,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker algorithms
-     * support, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3
@@ -177,7 +177,7 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
      * @param trainingInputMode
      *        The input mode used by the algorithm for the training job. For the input modes that Amazon SageMaker
      *        algorithms support, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
      *        <p>
      *        If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training data
      *        from S3 to the provisioned ML storage Volume, and mounts the directory to docker volume for training

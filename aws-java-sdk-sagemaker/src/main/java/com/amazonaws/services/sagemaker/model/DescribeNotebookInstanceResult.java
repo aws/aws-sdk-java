@@ -108,7 +108,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>
      * </p>
      */
@@ -116,12 +116,12 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
-     * and endpoint services</i>.
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     * training and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      */
@@ -162,6 +162,19 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private java.util.List<String> additionalCodeRepositories;
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     */
+    private String rootAccess;
 
     /**
      * <p>
@@ -763,7 +776,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>
      * </p>
      * 
@@ -771,7 +784,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        Returns the name of a notebook instance lifecycle configuration.</p>
      *        <p>
      *        For information about notebook instance lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>
      */
 
@@ -785,15 +798,15 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>
      * </p>
      * 
      * @return Returns the name of a notebook instance lifecycle configuration.</p>
      *         <p>
      *         For information about notebook instance lifestyle configurations, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-     *         Customize a Notebook Instance</a>
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1:
+     *         (Optional) Customize a Notebook Instance</a>
      */
 
     public String getNotebookInstanceLifecycleConfigName() {
@@ -806,7 +819,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>
      * </p>
      * 
@@ -814,7 +827,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        Returns the name of a notebook instance lifecycle configuration.</p>
      *        <p>
      *        For information about notebook instance lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -827,22 +840,22 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
-     * and endpoint services</i>.
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     * training and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
      *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     *        training and endpoint services</i>.</p>
+     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
+     *        SageMaker training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @see DirectInternetAccess
      */
@@ -854,21 +867,21 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
-     * and endpoint services</i>.
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     * training and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is
-     *         set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon
-     *         SageMaker training and endpoint services</i>.</p>
+     *         set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
+     *         SageMaker training and endpoint services.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *         >Notebook Instances Are Internet-Enabled by Default</a>.
      * @see DirectInternetAccess
      */
@@ -880,22 +893,22 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
-     * and endpoint services</i>.
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     * training and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
      *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     *        training and endpoint services</i>.</p>
+     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
+     *        SageMaker training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
@@ -909,22 +922,22 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
-     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
-     * and endpoint services</i>.
+     * <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     * training and endpoint services.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
      *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
-     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
-     *        training and endpoint services</i>.</p>
+     *        to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to Amazon
+     *        SageMaker training and endpoint services.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
@@ -1286,6 +1299,113 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @see RootAccess
+     */
+
+    public void setRootAccess(String rootAccess) {
+        this.rootAccess = rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @return Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+     *         <p>
+     *         Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *         lifecycle configurations associated with a notebook instance always run with root access even if you
+     *         disable root access for users.
+     *         </p>
+     * @see RootAccess
+     */
+
+    public String getRootAccess() {
+        return this.rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public DescribeNotebookInstanceResult withRootAccess(String rootAccess) {
+        setRootAccess(rootAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public DescribeNotebookInstanceResult withRootAccess(RootAccess rootAccess) {
+        this.rootAccess = rootAccess.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1334,7 +1454,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         if (getDefaultCodeRepository() != null)
             sb.append("DefaultCodeRepository: ").append(getDefaultCodeRepository()).append(",");
         if (getAdditionalCodeRepositories() != null)
-            sb.append("AdditionalCodeRepositories: ").append(getAdditionalCodeRepositories());
+            sb.append("AdditionalCodeRepositories: ").append(getAdditionalCodeRepositories()).append(",");
+        if (getRootAccess() != null)
+            sb.append("RootAccess: ").append(getRootAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -1426,6 +1548,10 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getAdditionalCodeRepositories() != null && other.getAdditionalCodeRepositories().equals(this.getAdditionalCodeRepositories()) == false)
             return false;
+        if (other.getRootAccess() == null ^ this.getRootAccess() == null)
+            return false;
+        if (other.getRootAccess() != null && other.getRootAccess().equals(this.getRootAccess()) == false)
+            return false;
         return true;
     }
 
@@ -1453,6 +1579,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getAcceleratorTypes() == null) ? 0 : getAcceleratorTypes().hashCode());
         hashCode = prime * hashCode + ((getDefaultCodeRepository() == null) ? 0 : getDefaultCodeRepository().hashCode());
         hashCode = prime * hashCode + ((getAdditionalCodeRepositories() == null) ? 0 : getAdditionalCodeRepositories().hashCode());
+        hashCode = prime * hashCode + ((getRootAccess() == null) ? 0 : getRootAccess().hashCode());
         return hashCode;
     }
 

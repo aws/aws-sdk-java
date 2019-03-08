@@ -75,6 +75,8 @@ public class TrainingJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FinalMetricDataList").build();
     private static final MarshallingInfo<Boolean> ENABLENETWORKISOLATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
+    private static final MarshallingInfo<Boolean> ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableInterContainerTrafficEncryption").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -117,6 +119,7 @@ public class TrainingJobMarshaller {
             protocolMarshaller.marshall(trainingJob.getSecondaryStatusTransitions(), SECONDARYSTATUSTRANSITIONS_BINDING);
             protocolMarshaller.marshall(trainingJob.getFinalMetricDataList(), FINALMETRICDATALIST_BINDING);
             protocolMarshaller.marshall(trainingJob.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
+            protocolMarshaller.marshall(trainingJob.getEnableInterContainerTrafficEncryption(), ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING);
             protocolMarshaller.marshall(trainingJob.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

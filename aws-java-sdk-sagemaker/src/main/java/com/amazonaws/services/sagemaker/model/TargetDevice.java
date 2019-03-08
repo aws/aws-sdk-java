@@ -29,7 +29,9 @@ public enum TargetDevice {
     Jetson_tx1("jetson_tx1"),
     Jetson_tx2("jetson_tx2"),
     Rasp3b("rasp3b"),
-    Deeplens("deeplens");
+    Deeplens("deeplens"),
+    Rk3399("rk3399"),
+    Rk3288("rk3288");
 
     private String value;
 

@@ -33,7 +33,7 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sortBy;
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
@@ -148,11 +148,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @see OrderKey
      */
 
@@ -162,10 +162,10 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return The sort order for results. The default is <code>Ascending</code>.
+     * @return The sort order for results. The default is <code>Descending</code>.
      * @see OrderKey
      */
 
@@ -175,11 +175,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderKey
      */
@@ -191,11 +191,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderKey
      */

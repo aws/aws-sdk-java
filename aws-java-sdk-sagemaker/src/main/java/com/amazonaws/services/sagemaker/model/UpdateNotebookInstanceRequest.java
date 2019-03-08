@@ -40,7 +40,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
      * <note>
@@ -54,7 +54,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      */
@@ -88,7 +88,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
@@ -120,6 +120,19 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean disassociateAdditionalCodeRepositories;
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle
+     * configuration scripts still run with root permissions.
+     * </p>
+     * </note>
+     */
+    private String rootAccess;
 
     /**
      * <p>
@@ -223,7 +236,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
      * <note>
@@ -236,7 +249,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
      *        instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
      *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -251,7 +264,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
      * <note>
@@ -263,7 +276,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
      *         instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *         </p> <note>
      *         <p>
      *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -278,7 +291,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
      * <note>
@@ -291,7 +304,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook
      *        instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
      *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -308,14 +321,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
      *        lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>.
      */
 
@@ -326,14 +339,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
      *         lifestyle configurations, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-     *         Customize a Notebook Instance</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1:
+     *         (Optional) Customize a Notebook Instance</a>.
      */
 
     public String getLifecycleConfigName() {
@@ -343,14 +356,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
      *        lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -538,7 +551,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
@@ -546,7 +559,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * @return An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *         names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      *         href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
-     *         other Git repository.. These repositories are cloned at the same level as the default repository of your
+     *         other Git repository. These repositories are cloned at the same level as the default repository of your
      *         notebook instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *         Amazon SageMaker Notebook Instances</a>.
@@ -561,7 +574,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
@@ -570,7 +583,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
-     *        other Git repository.. These repositories are cloned at the same level as the default repository of your
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
@@ -590,7 +603,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
@@ -604,7 +617,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
-     *        other Git repository.. These repositories are cloned at the same level as the default repository of your
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
@@ -626,7 +639,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
@@ -635,7 +648,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
      *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
-     *        other Git repository.. These repositories are cloned at the same level as the default repository of your
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
@@ -927,6 +940,113 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle
+     * configuration scripts still run with root permissions.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but
+     *        lifecycle configuration scripts still run with root permissions.
+     *        </p>
+     * @see RootAccess
+     */
+
+    public void setRootAccess(String rootAccess) {
+        this.rootAccess = rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle
+     * configuration scripts still run with root permissions.
+     * </p>
+     * </note>
+     * 
+     * @return Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *         <code>Enabled</code>.</p> <note>
+     *         <p>
+     *         If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but
+     *         lifecycle configuration scripts still run with root permissions.
+     *         </p>
+     * @see RootAccess
+     */
+
+    public String getRootAccess() {
+        return this.rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle
+     * configuration scripts still run with root permissions.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but
+     *        lifecycle configuration scripts still run with root permissions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public UpdateNotebookInstanceRequest withRootAccess(String rootAccess) {
+        setRootAccess(rootAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle
+     * configuration scripts still run with root permissions.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but
+     *        lifecycle configuration scripts still run with root permissions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public UpdateNotebookInstanceRequest withRootAccess(RootAccess rootAccess) {
+        this.rootAccess = rootAccess.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -961,7 +1081,9 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getDisassociateDefaultCodeRepository() != null)
             sb.append("DisassociateDefaultCodeRepository: ").append(getDisassociateDefaultCodeRepository()).append(",");
         if (getDisassociateAdditionalCodeRepositories() != null)
-            sb.append("DisassociateAdditionalCodeRepositories: ").append(getDisassociateAdditionalCodeRepositories());
+            sb.append("DisassociateAdditionalCodeRepositories: ").append(getDisassociateAdditionalCodeRepositories()).append(",");
+        if (getRootAccess() != null)
+            sb.append("RootAccess: ").append(getRootAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -1026,6 +1148,10 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (other.getDisassociateAdditionalCodeRepositories() != null
                 && other.getDisassociateAdditionalCodeRepositories().equals(this.getDisassociateAdditionalCodeRepositories()) == false)
             return false;
+        if (other.getRootAccess() == null ^ this.getRootAccess() == null)
+            return false;
+        if (other.getRootAccess() != null && other.getRootAccess().equals(this.getRootAccess()) == false)
+            return false;
         return true;
     }
 
@@ -1046,6 +1172,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDisassociateAcceleratorTypes() == null) ? 0 : getDisassociateAcceleratorTypes().hashCode());
         hashCode = prime * hashCode + ((getDisassociateDefaultCodeRepository() == null) ? 0 : getDisassociateDefaultCodeRepository().hashCode());
         hashCode = prime * hashCode + ((getDisassociateAdditionalCodeRepositories() == null) ? 0 : getDisassociateAdditionalCodeRepositories().hashCode());
+        hashCode = prime * hashCode + ((getRootAccess() == null) ? 0 : getRootAccess().hashCode());
         return hashCode;
     }
 

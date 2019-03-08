@@ -40,7 +40,7 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.
      * </p>
      */
@@ -90,14 +90,14 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
      *        information about using regular expressions to define metrics, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      *        Objective Metrics</a>.
      */
 
@@ -109,14 +109,14 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.
      * </p>
      * 
      * @return A regular expression that searches the output of a training job and gets the value of the metric. For
      *         more information about using regular expressions to define metrics, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     *         Objective Metrics</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html"
+     *         >Defining Objective Metrics</a>.
      */
 
     public String getRegex() {
@@ -127,14 +127,14 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
      *        information about using regular expressions to define metrics, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      *        Objective Metrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

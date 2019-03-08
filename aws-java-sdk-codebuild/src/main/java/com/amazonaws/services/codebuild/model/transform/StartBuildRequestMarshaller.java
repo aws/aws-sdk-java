@@ -50,6 +50,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceAuthOverride").build();
     private static final MarshallingInfo<Integer> GITCLONEDEPTHOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitCloneDepthOverride").build();
+    private static final MarshallingInfo<StructuredPojo> GITSUBMODULESCONFIGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitSubmodulesConfigOverride").build();
     private static final MarshallingInfo<String> BUILDSPECOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildspecOverride").build();
     private static final MarshallingInfo<Boolean> INSECURESSLOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -110,6 +112,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getSourceLocationOverride(), SOURCELOCATIONOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getSourceAuthOverride(), SOURCEAUTHOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getGitCloneDepthOverride(), GITCLONEDEPTHOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getGitSubmodulesConfigOverride(), GITSUBMODULESCONFIGOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getBuildspecOverride(), BUILDSPECOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getInsecureSslOverride(), INSECURESSLOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getReportBuildStatusOverride(), REPORTBUILDSTATUSOVERRIDE_BINDING);

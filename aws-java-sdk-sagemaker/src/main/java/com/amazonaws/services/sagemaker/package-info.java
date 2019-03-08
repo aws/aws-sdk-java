@@ -12,7 +12,9 @@
  */
 
 /**
- * Definition of the public APIs exposed by SageMaker
+ * <p>
+ * Provides APIs for creating and managing Amazon SageMaker resources.
+ * </p>
  */
 package com.amazonaws.services.sagemaker;
 

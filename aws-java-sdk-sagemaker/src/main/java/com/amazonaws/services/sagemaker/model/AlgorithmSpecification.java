@@ -20,12 +20,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the training algorithm to use in a <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
  * </p>
  * <p>
  * For more information about algorithms provided by Amazon SageMaker, see <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own
- * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your
+ * own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
  * Algorithms with Amazon SageMaker</a>.
  * </p>
  * 
@@ -39,8 +39,11 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      */
     private String trainingImage;
@@ -55,7 +58,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -85,15 +88,22 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
      *        registry paths for built-in algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     *        Provided by Amazon SageMaker: Common Parameters</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -104,14 +114,21 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm. For information about docker
      *         registry paths for built-in algorithms, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
-     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
+     *         with Amazon SageMaker</a>.
      */
 
     public String getTrainingImage() {
@@ -122,15 +139,22 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
      * paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
      *        registry paths for built-in algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     *        Provided by Amazon SageMaker: Common Parameters</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +218,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -213,7 +237,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the
@@ -239,7 +263,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -257,7 +281,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @return The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *         see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *         supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *         provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *         algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to
@@ -283,7 +307,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -302,7 +326,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the
@@ -330,7 +354,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -349,7 +373,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the

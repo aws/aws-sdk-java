@@ -250,7 +250,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      */
@@ -320,9 +320,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private Boolean enableNetworkIsolation;
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      */
     private Boolean enableInterContainerTrafficEncryption;
@@ -2093,13 +2094,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      *        Jobs by Using an Amazon Virtual Private Cloud</a>.
      */
 
@@ -2110,13 +2111,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *         information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
-     *         Jobs by Using an Amazon Virtual Private Cloud</a>.
+     *         information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     *         Training Jobs by Using an Amazon Virtual Private Cloud</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -2126,13 +2127,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      *        Jobs by Using an Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2636,15 +2637,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
-     *        To encrypt all communications between ML compute instances in distributed training, specify
-     *        <code>True</code>. Encryption provides greater security for distributed training, but training take longer
-     *        because of the additional communications between ML compute instances.
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
      */
 
     public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
@@ -2653,14 +2656,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
-     * @return To encrypt all communications between ML compute instances in distributed training, specify
-     *         <code>True</code>. Encryption provides greater security for distributed training, but training take
-     *         longer because of the additional communications between ML compute instances.
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
      */
 
     public Boolean getEnableInterContainerTrafficEncryption() {
@@ -2669,15 +2674,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
-     *        To encrypt all communications between ML compute instances in distributed training, specify
-     *        <code>True</code>. Encryption provides greater security for distributed training, but training take longer
-     *        because of the additional communications between ML compute instances.
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2688,14 +2695,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
-     * @return To encrypt all communications between ML compute instances in distributed training, specify
-     *         <code>True</code>. Encryption provides greater security for distributed training, but training take
-     *         longer because of the additional communications between ML compute instances.
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
      */
 
     public Boolean isEnableInterContainerTrafficEncryption() {

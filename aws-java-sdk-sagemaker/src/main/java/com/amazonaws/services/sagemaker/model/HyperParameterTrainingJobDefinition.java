@@ -57,7 +57,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
      * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
-     * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      * Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      */
@@ -113,9 +113,10 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private Boolean enableNetworkIsolation;
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      */
     private Boolean enableInterContainerTrafficEncryption;
@@ -348,7 +349,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
      * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
-     * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      * Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
@@ -356,7 +357,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
      *        hyperparameter tuning job launches to connect to. Control access to and from your training container by
      *        configuring the VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      */
 
@@ -368,14 +369,14 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
      * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
-     * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      * Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
      * @return The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
      *         hyperparameter tuning job launches to connect to. Control access to and from your training container by
      *         configuring the VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *         Amazon Virtual Private Cloud</a>.
      */
 
@@ -387,7 +388,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * <p>
      * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
      * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
-     * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      * Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
@@ -395,7 +396,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
      *        hyperparameter tuning job launches to connect to. Control access to and from your training container by
      *        configuring the VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -735,15 +736,17 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
-     *        To encrypt all communications between ML compute instances in distributed training, specify
-     *        <code>True</code>. Encryption provides greater security for distributed training, but training take longer
-     *        because of the additional communications between ML compute instances.
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
      */
 
     public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
@@ -752,14 +755,16 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
-     * @return To encrypt all communications between ML compute instances in distributed training, specify
-     *         <code>True</code>. Encryption provides greater security for distributed training, but training take
-     *         longer because of the additional communications between ML compute instances.
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
      */
 
     public Boolean getEnableInterContainerTrafficEncryption() {
@@ -768,15 +773,17 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
-     *        To encrypt all communications between ML compute instances in distributed training, specify
-     *        <code>True</code>. Encryption provides greater security for distributed training, but training take longer
-     *        because of the additional communications between ML compute instances.
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -787,14 +794,16 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * To encrypt all communications between ML compute instances in distributed training, specify <code>True</code>.
-     * Encryption provides greater security for distributed training, but training take longer because of the additional
-     * communications between ML compute instances.
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
      * </p>
      * 
-     * @return To encrypt all communications between ML compute instances in distributed training, specify
-     *         <code>True</code>. Encryption provides greater security for distributed training, but training take
-     *         longer because of the additional communications between ML compute instances.
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
      */
 
     public Boolean isEnableInterContainerTrafficEncryption() {

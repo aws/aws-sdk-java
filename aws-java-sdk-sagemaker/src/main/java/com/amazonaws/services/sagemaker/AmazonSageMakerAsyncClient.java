@@ -25,7 +25,9 @@ import java.util.concurrent.ExecutorService;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * Definition of the public APIs exposed by SageMaker
+ * <p>
+ * Provides APIs for creating and managing Amazon SageMaker resources.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

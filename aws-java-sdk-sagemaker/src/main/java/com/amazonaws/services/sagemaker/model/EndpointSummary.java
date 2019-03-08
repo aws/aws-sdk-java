@@ -75,7 +75,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled
-     * until it has completed. This mainenance operation does not change any customer-specified values such as VPC
+     * until it has completed. This maintenance operation does not change any customer-specified values such as VPC
      * config, KMS encryption, model, instance type, or instance count.
      * </p>
      * </li>
@@ -295,7 +295,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled
-     * until it has completed. This mainenance operation does not change any customer-specified values such as VPC
+     * until it has completed. This maintenance operation does not change any customer-specified values such as VPC
      * config, KMS encryption, model, instance type, or instance count.
      * </p>
      * </li>
@@ -351,7 +351,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or
-     *        re-scaled until it has completed. This mainenance operation does not change any customer-specified values
+     *        re-scaled until it has completed. This maintenance operation does not change any customer-specified values
      *        such as VPC config, KMS encryption, model, instance type, or instance count.
      *        </p>
      *        </li>
@@ -415,7 +415,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled
-     * until it has completed. This mainenance operation does not change any customer-specified values such as VPC
+     * until it has completed. This maintenance operation does not change any customer-specified values such as VPC
      * config, KMS encryption, model, instance type, or instance count.
      * </p>
      * </li>
@@ -470,8 +470,8 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or
-     *         re-scaled until it has completed. This mainenance operation does not change any customer-specified values
-     *         such as VPC config, KMS encryption, model, instance type, or instance count.
+     *         re-scaled until it has completed. This maintenance operation does not change any customer-specified
+     *         values such as VPC config, KMS encryption, model, instance type, or instance count.
      *         </p>
      *         </li>
      *         <li>
@@ -535,7 +535,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled
-     * until it has completed. This mainenance operation does not change any customer-specified values such as VPC
+     * until it has completed. This maintenance operation does not change any customer-specified values such as VPC
      * config, KMS encryption, model, instance type, or instance count.
      * </p>
      * </li>
@@ -591,7 +591,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or
-     *        re-scaled until it has completed. This mainenance operation does not change any customer-specified values
+     *        re-scaled until it has completed. This maintenance operation does not change any customer-specified values
      *        such as VPC config, KMS encryption, model, instance type, or instance count.
      *        </p>
      *        </li>
@@ -657,7 +657,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled
-     * until it has completed. This mainenance operation does not change any customer-specified values such as VPC
+     * until it has completed. This maintenance operation does not change any customer-specified values such as VPC
      * config, KMS encryption, model, instance type, or instance count.
      * </p>
      * </li>
@@ -713,7 +713,7 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or
-     *        re-scaled until it has completed. This mainenance operation does not change any customer-specified values
+     *        re-scaled until it has completed. This maintenance operation does not change any customer-specified values
      *        such as VPC config, KMS encryption, model, instance type, or instance count.
      *        </p>
      *        </li>

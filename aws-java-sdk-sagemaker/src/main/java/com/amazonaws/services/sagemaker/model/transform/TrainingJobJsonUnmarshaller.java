@@ -142,6 +142,10 @@ public class TrainingJobJsonUnmarshaller implements Unmarshaller<TrainingJob, Js
                     context.nextToken();
                     trainingJob.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableInterContainerTrafficEncryption", targetDepth)) {
+                    context.nextToken();
+                    trainingJob.setEnableInterContainerTrafficEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     trainingJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));

@@ -56,7 +56,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
      * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -85,7 +85,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      */
@@ -99,7 +99,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
@@ -141,6 +141,20 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<String> additionalCodeRepositories;
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     */
+    private String rootAccess;
 
     /**
      * <p>
@@ -368,7 +382,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
      * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -382,7 +396,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
      *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
      *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -400,7 +414,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
      * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -413,7 +427,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker
      *         can perform these tasks. The policy must allow the Amazon SageMaker service principal
      *         (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *         </p> <note>
      *         <p>
      *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -431,7 +445,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
      * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -445,7 +459,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
      *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
      *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
@@ -599,14 +613,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
      *        lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>.
      */
 
@@ -617,14 +631,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
      *         lifestyle configurations, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-     *         Customize a Notebook Instance</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1:
+     *         (Optional) Customize a Notebook Instance</a>.
      */
 
     public String getLifecycleConfigName() {
@@ -634,14 +648,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
      *        lifestyle configurations, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      *        Customize a Notebook Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -660,7 +674,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
@@ -672,7 +686,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        Gateway in your VPC.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @see DirectInternetAccess
@@ -691,7 +705,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
@@ -702,7 +716,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         Gateway in your VPC.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *         >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      *         <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @see DirectInternetAccess
@@ -721,7 +735,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
@@ -733,7 +747,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        Gateway in your VPC.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -754,7 +768,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
@@ -766,7 +780,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        Gateway in your VPC.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
      *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
      *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1129,6 +1143,121 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @see RootAccess
+     */
+
+    public void setRootAccess(String rootAccess) {
+        this.rootAccess = rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @return Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *         <code>Enabled</code>.</p> <note>
+     *         <p>
+     *         Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *         lifecycle configurations associated with a notebook instance always run with root access even if you
+     *         disable root access for users.
+     *         </p>
+     * @see RootAccess
+     */
+
+    public String getRootAccess() {
+        return this.rootAccess;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public CreateNotebookInstanceRequest withRootAccess(String rootAccess) {
+        setRootAccess(rootAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     * <code>Enabled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle
+     * configurations associated with a notebook instance always run with root access even if you disable root access
+     * for users.
+     * </p>
+     * </note>
+     * 
+     * @param rootAccess
+     *        Whether root access is enabled or disabled for users of the notebook instance. The default value is
+     *        <code>Enabled</code>.</p> <note>
+     *        <p>
+     *        Lifecycle configurations need root access to be able to set up a notebook instance. Because of this,
+     *        lifecycle configurations associated with a notebook instance always run with root access even if you
+     *        disable root access for users.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RootAccess
+     */
+
+    public CreateNotebookInstanceRequest withRootAccess(RootAccess rootAccess) {
+        this.rootAccess = rootAccess.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1165,7 +1294,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getDefaultCodeRepository() != null)
             sb.append("DefaultCodeRepository: ").append(getDefaultCodeRepository()).append(",");
         if (getAdditionalCodeRepositories() != null)
-            sb.append("AdditionalCodeRepositories: ").append(getAdditionalCodeRepositories());
+            sb.append("AdditionalCodeRepositories: ").append(getAdditionalCodeRepositories()).append(",");
+        if (getRootAccess() != null)
+            sb.append("RootAccess: ").append(getRootAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -1232,6 +1363,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getAdditionalCodeRepositories() != null && other.getAdditionalCodeRepositories().equals(this.getAdditionalCodeRepositories()) == false)
             return false;
+        if (other.getRootAccess() == null ^ this.getRootAccess() == null)
+            return false;
+        if (other.getRootAccess() != null && other.getRootAccess().equals(this.getRootAccess()) == false)
+            return false;
         return true;
     }
 
@@ -1253,6 +1388,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAcceleratorTypes() == null) ? 0 : getAcceleratorTypes().hashCode());
         hashCode = prime * hashCode + ((getDefaultCodeRepository() == null) ? 0 : getDefaultCodeRepository().hashCode());
         hashCode = prime * hashCode + ((getAdditionalCodeRepositories() == null) ? 0 : getAdditionalCodeRepositories().hashCode());
+        hashCode = prime * hashCode + ((getRootAccess() == null) ? 0 : getRootAccess().hashCode());
         return hashCode;
     }
 

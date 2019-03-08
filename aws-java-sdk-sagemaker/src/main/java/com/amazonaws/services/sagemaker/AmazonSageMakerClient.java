@@ -51,7 +51,9 @@ import com.amazonaws.services.sagemaker.model.transform.*;
  * Client for accessing SageMaker. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * Definition of the public APIs exposed by SageMaker
+ * <p>
+ * Provides APIs for creating and managing Amazon SageMaker resources.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -415,7 +417,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker uses the endpoint
      * to provision resources and deploy models. You create the endpoint configuration with the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * API.
      * </p>
      * <note>
      * <p>
@@ -433,10 +436,10 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it
      * creates the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can then process incoming
      * requests for inferences. To check the status of an endpoint, use the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
      * </p>
      * <p>
-     * For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using the
+     * For an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using the
      * K-Means Algorithm Provided by Amazon SageMaker</a>.
      * </p>
      * <p>
@@ -503,7 +506,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In the
      * configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the
      * resources that you want Amazon SageMaker to provision. Then you call the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * <note>
      * <p>
@@ -917,7 +920,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * model, host models by creating Amazon SageMaker endpoints, and validate hosted models.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
      * Works</a>.
      * </p>
      * 
@@ -995,7 +998,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>.
      * </p>
      * 
@@ -1065,8 +1068,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * the specified list to every AWS Identity and Access Management user, group, or role used to access the notebook
      * instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition
      * context key to specify the list of IP addresses that you want to have access to the notebook instance. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit Access to a
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit Access to a
      * Notebook Instance by IP Address</a>.
      * </p>
      * 
@@ -1127,7 +1129,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model
-     * artifacts as part of the model. You can also use the artifacts in a deep learning service other than Amazon
+     * artifacts as part of the model. You can also use the artifacts in a machine learning service other than Amazon
      * SageMaker, provided that you know how to use them for inferences.
      * </p>
      * <p>
@@ -1143,7 +1145,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * <code>HyperParameters</code> - Specify these algorithm-specific parameters to influence the quality of the final
      * model. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * </li>
      * <li>
@@ -1178,7 +1180,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </ul>
      * <p>
      * For more information about Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
      * </p>
      * 
      * @param createTrainingJobRequest
@@ -1278,7 +1280,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </ul>
      * <p>
      * For more information about how batch transformation works Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
      * </p>
      * 
      * @param createTransformJobRequest
@@ -1612,7 +1614,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
      * SageMaker when you called the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API. It does not
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API. It does not
      * delete model artifacts, inference code, or the IAM role that you specified when creating the model.
      * </p>
      * 
@@ -2498,7 +2500,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * For information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
      * Customize a Notebook Instance</a>.
      * </p>
      * 
@@ -3305,7 +3307,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Lists models created with the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
      * </p>
      * 
      * @param listModelsRequest
@@ -4199,11 +4201,6 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * so the results of the training is not lost.
      * </p>
      * <p>
-     * Training algorithms provided by Amazon SageMaker save the intermediate results of a model training job. This
-     * intermediate data is a valid model artifact. You can use the model artifacts that are saved when Amazon SageMaker
-     * stops a training job to create a model.
-     * </p>
-     * <p>
      * When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of the job to
      * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to <code>Stopped</code>.
      * </p>
@@ -4377,7 +4374,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating
      * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
      * </p>
      * <note>
      * <p>
@@ -4442,7 +4439,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to
      * <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the
      * status of an endpoint, use the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
      * </p>
      * 
      * @param updateEndpointWeightsAndCapacitiesRequest

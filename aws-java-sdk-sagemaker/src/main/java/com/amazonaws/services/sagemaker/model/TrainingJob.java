@@ -254,7 +254,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      */
@@ -317,8 +317,17 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableNetworkIsolation;
     /**
      * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
+     * </p>
+     */
+    private Boolean enableInterContainerTrafficEncryption;
+    /**
+     * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      */
@@ -2084,13 +2093,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      *        Jobs by Using an Amazon Virtual Private Cloud</a>.
      */
 
@@ -2101,13 +2110,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *         information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
-     *         Jobs by Using an Amazon Virtual Private Cloud</a>.
+     *         information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     *         Training Jobs by Using an Amazon Virtual Private Cloud</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -2117,13 +2126,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
+     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
      *        Jobs by Using an Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2579,13 +2588,89 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
+     */
+
+    public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        this.enableInterContainerTrafficEncryption = enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
+     * </p>
+     * 
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
+     */
+
+    public Boolean getEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *        longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *        you use a deep learning algorithm in distributed training.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        setEnableInterContainerTrafficEncryption(enableInterContainerTrafficEncryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
+     * Encryption provides greater security for distributed training, but training might take longer. How long it takes
+     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
+     * in distributed training.
+     * </p>
+     * 
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
+     *         longer. How long it takes depends on the amount of communication between compute instances, especially if
+     *         you use a deep learning algorithm in distributed training.
+     */
+
+    public Boolean isEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return An array of key-value pairs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -2596,13 +2681,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -2618,7 +2703,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
@@ -2629,7 +2714,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2647,13 +2732,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2721,6 +2806,8 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("FinalMetricDataList: ").append(getFinalMetricDataList()).append(",");
         if (getEnableNetworkIsolation() != null)
             sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
+        if (getEnableInterContainerTrafficEncryption() != null)
+            sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -2829,6 +2916,11 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
             return false;
+        if (other.getEnableInterContainerTrafficEncryption() == null ^ this.getEnableInterContainerTrafficEncryption() == null)
+            return false;
+        if (other.getEnableInterContainerTrafficEncryption() != null
+                && other.getEnableInterContainerTrafficEncryption().equals(this.getEnableInterContainerTrafficEncryption()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2864,6 +2956,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecondaryStatusTransitions() == null) ? 0 : getSecondaryStatusTransitions().hashCode());
         hashCode = prime * hashCode + ((getFinalMetricDataList() == null) ? 0 : getFinalMetricDataList().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
+        hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -1,3 +1,16 @@
+# __1.11.515__ __2019-03-08__
+## __AWS CodeBuild__
+  - ### Features
+    - CodeBuild also now supports Git Submodules.  CodeBuild now supports opting out of Encryption for S3 Build Logs.  By default these logs are encrypted.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker notebook instances now support enabling or disabling root access for notebook users. SageMaker Neo now supports rk3399 and rk3288 as compilation target devices.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Documentation updates for s3
+
 # __1.11.514__ __2019-03-07__
 ## __AWS App Mesh__
   - ### Features

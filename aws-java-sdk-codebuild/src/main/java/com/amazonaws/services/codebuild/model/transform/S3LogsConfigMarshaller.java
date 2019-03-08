@@ -31,6 +31,8 @@ public class S3LogsConfigMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("location").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTIONDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionDisabled").build();
 
     private static final S3LogsConfigMarshaller instance = new S3LogsConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class S3LogsConfigMarshaller {
         try {
             protocolMarshaller.marshall(s3LogsConfig.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(s3LogsConfig.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(s3LogsConfig.getEncryptionDisabled(), ENCRYPTIONDISABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
