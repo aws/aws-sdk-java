@@ -33,6 +33,8 @@ public class GroupMarshaller {
             .marshallLocationName("GroupName").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
 
     private static final GroupMarshaller instance = new GroupMarshaller();
 
@@ -53,6 +55,7 @@ public class GroupMarshaller {
             protocolMarshaller.marshall(group.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(group.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(group.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(group.getPrincipalId(), PRINCIPALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

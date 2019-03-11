@@ -185,7 +185,7 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      */
@@ -1529,14 +1529,14 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
@@ -1547,12 +1547,12 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @return Returns the health status of the application running in your environment. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
      *         and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
@@ -1564,14 +1564,14 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */
@@ -1584,14 +1584,14 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
@@ -1602,14 +1602,14 @@ public class EnvironmentDescription implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */

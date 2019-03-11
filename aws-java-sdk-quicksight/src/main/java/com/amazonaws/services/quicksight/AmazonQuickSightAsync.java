@@ -334,6 +334,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes a user after locating the user by its principal ID.
+     * </p>
+     * 
+     * @param deleteUserByPrincipalIdRequest
+     * @return A Java Future containing the result of the DeleteUserByPrincipalId operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteUserByPrincipalId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserByPrincipalIdResult> deleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest);
+
+    /**
+     * <p>
+     * Deletes a user after locating the user by its principal ID.
+     * </p>
+     * 
+     * @param deleteUserByPrincipalIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserByPrincipalId operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteUserByPrincipalId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserByPrincipalIdResult> deleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserByPrincipalIdRequest, DeleteUserByPrincipalIdResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
      * <p>

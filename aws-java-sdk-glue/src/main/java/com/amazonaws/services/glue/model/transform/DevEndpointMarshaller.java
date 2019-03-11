@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -70,6 +71,8 @@ public class DevEndpointMarshaller {
             .marshallLocationName("PublicKeys").build();
     private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
+    private static final MarshallingInfo<Map> ARGUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arguments").build();
 
     private static final DevEndpointMarshaller instance = new DevEndpointMarshaller();
 
@@ -108,6 +111,7 @@ public class DevEndpointMarshaller {
             protocolMarshaller.marshall(devEndpoint.getPublicKey(), PUBLICKEY_BINDING);
             protocolMarshaller.marshall(devEndpoint.getPublicKeys(), PUBLICKEYS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(devEndpoint.getArguments(), ARGUMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

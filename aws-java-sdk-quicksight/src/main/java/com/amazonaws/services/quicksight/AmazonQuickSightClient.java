@@ -590,6 +590,74 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a user after locating the user by its principal ID.
+     * </p>
+     * 
+     * @param deleteUserByPrincipalIdRequest
+     * @return Result of the DeleteUserByPrincipalId operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters don't have a valid value.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteUserByPrincipalId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteUserByPrincipalIdResult deleteUserByPrincipalId(DeleteUserByPrincipalIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserByPrincipalId(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserByPrincipalIdResult executeDeleteUserByPrincipalId(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserByPrincipalIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserByPrincipalIdRequest> request = null;
+        Response<DeleteUserByPrincipalIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserByPrincipalIdRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUserByPrincipalIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserByPrincipalId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserByPrincipalIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteUserByPrincipalIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
      * <p>

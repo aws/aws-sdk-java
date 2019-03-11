@@ -67,7 +67,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -226,7 +226,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -253,7 +253,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -286,7 +286,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -312,7 +312,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>
@@ -345,7 +345,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -372,7 +372,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -407,7 +407,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -433,7 +433,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>

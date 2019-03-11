@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A specification identifying an individual configuration option along with its current value. For a list of possible
- * option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+ * option values, go to <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
  * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
  * </p>
  * 

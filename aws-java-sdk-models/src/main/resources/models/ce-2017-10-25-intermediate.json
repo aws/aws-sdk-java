@@ -9871,7 +9871,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "TimePeriod" ],
       "shapeName" : "GetCostAndUsageRequest",
       "signerAware" : false,
       "signerType" : null,

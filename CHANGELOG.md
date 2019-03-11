@@ -1,3 +1,28 @@
+# __1.11.516__ __2019-03-11__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - The only change in this release is to make TimePeriod a required parameter in GetCostAndUsageRequest.
+
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Elastic Beanstalk added support for tagging, and tag-based access control, of all Elastic Beanstalk resources.
+
+## __AWS Glue__
+  - ### Features
+    - CreateDevEndpoint and UpdateDevEndpoint now support Arguments to configure the DevEndpoint. 
+
+## __AWS IoT__
+  - ### Features
+    - Documentation updates for iot
+
+## __Amazon QuickSight__
+  - ### Features
+    - Amazon QuickSight user and group operation results now include group principal IDs and user principal IDs. This release also adds "DeleteUserByPrincipalId", which deletes users given their principal ID. The update also improves role session name validation.
+
+## __Amazon Rekognition__
+  - ### Features
+    - Documentation updates for Amazon Rekognition
+
 # __1.11.515__ __2019-03-08__
 ## __AWS CodeBuild__
   - ### Features

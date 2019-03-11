@@ -1551,12 +1551,12 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling
-     * <a>StartContentModeration</a>. which returns a job identifier (<code>JobId</code>). When analysis finishes,
-     * Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered
-     * in the initial call to <code>StartContentModeration</code>. To get the results of the content moderation
-     * analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
-     * call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
-     * <code>StartCelebrityDetection</code>.
+     * <a>StartContentModeration</a> which returns a job identifier (<code>JobId</code>). When analysis finishes, Amazon
+     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the
+     * initial call to <code>StartContentModeration</code>. To get the results of the content moderation analysis, first
+     * check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetContentModeration</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartContentModeration</code>.
      * </p>
      * <p>
      * For more information, see Working with Stored Videos in the Amazon Rekognition Devlopers Guide.

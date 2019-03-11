@@ -113,6 +113,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date createdTimestamp;
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     */
+    private java.util.Map<String, String> arguments;
 
     /**
      * <p>
@@ -745,6 +751,67 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @return The map of arguments used to configure this DevEndpoint.
+     */
+
+    public java.util.Map<String, String> getArguments() {
+        return arguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @param arguments
+     *        The map of arguments used to configure this DevEndpoint.
+     */
+
+    public void setArguments(java.util.Map<String, String> arguments) {
+        this.arguments = arguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @param arguments
+     *        The map of arguments used to configure this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult withArguments(java.util.Map<String, String> arguments) {
+        setArguments(arguments);
+        return this;
+    }
+
+    public CreateDevEndpointResult addArgumentsEntry(String key, String value) {
+        if (null == this.arguments) {
+            this.arguments = new java.util.HashMap<String, String>();
+        }
+        if (this.arguments.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.arguments.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Arguments.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult clearArgumentsEntries() {
+        this.arguments = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -785,7 +852,9 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
         if (getSecurityConfiguration() != null)
             sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getCreatedTimestamp() != null)
-            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp());
+            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
+        if (getArguments() != null)
+            sb.append("Arguments: ").append(getArguments());
         sb.append("}");
         return sb.toString();
     }
@@ -861,6 +930,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
             return false;
+        if (other.getArguments() == null ^ this.getArguments() == null)
+            return false;
+        if (other.getArguments() != null && other.getArguments().equals(this.getArguments()) == false)
+            return false;
         return true;
     }
 
@@ -884,6 +957,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         return hashCode;
     }
 

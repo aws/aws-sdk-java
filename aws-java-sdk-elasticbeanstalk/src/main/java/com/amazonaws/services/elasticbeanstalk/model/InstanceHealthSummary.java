@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Represents summary information about the health of an instance. For more information, see <a
- * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+ * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
  * Statuses</a>.
  * </p>
  * 
