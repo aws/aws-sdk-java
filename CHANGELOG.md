@@ -1,3 +1,8 @@
+# __1.11.517__ __2019-03-12__
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - The AWS Serverless Application Repository now supports associating a ZIP source code archive with versions of an application.
+
 # __1.11.516__ __2019-03-11__
 ## __AWS Cost Explorer Service__
   - ### Features

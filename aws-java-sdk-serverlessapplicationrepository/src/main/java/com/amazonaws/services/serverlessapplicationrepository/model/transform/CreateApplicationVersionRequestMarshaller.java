@@ -31,6 +31,8 @@ public class CreateApplicationVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> SEMANTICVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("semanticVersion").build();
+    private static final MarshallingInfo<String> SOURCECODEARCHIVEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCodeArchiveUrl").build();
     private static final MarshallingInfo<String> SOURCECODEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCodeUrl").build();
     private static final MarshallingInfo<String> TEMPLATEBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class CreateApplicationVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createApplicationVersionRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(createApplicationVersionRequest.getSemanticVersion(), SEMANTICVERSION_BINDING);
+            protocolMarshaller.marshall(createApplicationVersionRequest.getSourceCodeArchiveUrl(), SOURCECODEARCHIVEURL_BINDING);
             protocolMarshaller.marshall(createApplicationVersionRequest.getSourceCodeUrl(), SOURCECODEURL_BINDING);
             protocolMarshaller.marshall(createApplicationVersionRequest.getTemplateBody(), TEMPLATEBODY_BINDING);
             protocolMarshaller.marshall(createApplicationVersionRequest.getTemplateUrl(), TEMPLATEURL_BINDING);

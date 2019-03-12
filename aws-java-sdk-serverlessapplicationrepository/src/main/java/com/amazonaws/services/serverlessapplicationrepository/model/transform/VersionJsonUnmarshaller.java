@@ -73,6 +73,10 @@ public class VersionJsonUnmarshaller implements Unmarshaller<Version, JsonUnmars
                     context.nextToken();
                     version.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sourceCodeArchiveUrl", targetDepth)) {
+                    context.nextToken();
+                    version.setSourceCodeArchiveUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceCodeUrl", targetDepth)) {
                     context.nextToken();
                     version.setSourceCodeUrl(context.getUnmarshaller(String.class).unmarshall(context));

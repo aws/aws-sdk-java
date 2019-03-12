@@ -74,6 +74,10 @@ public class CreateApplicationVersionResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     createApplicationVersionResult.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sourceCodeArchiveUrl", targetDepth)) {
+                    context.nextToken();
+                    createApplicationVersionResult.setSourceCodeArchiveUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceCodeUrl", targetDepth)) {
                     context.nextToken();
                     createApplicationVersionResult.setSourceCodeUrl(context.getUnmarshaller(String.class).unmarshall(context));

@@ -39,7 +39,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -70,19 +71,19 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * >AWS::SNS:TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      */
     private java.util.List<String> capabilities;
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -90,7 +91,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -98,7 +99,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -106,7 +107,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -120,7 +121,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -128,7 +129,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -145,7 +146,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -153,7 +154,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      */
@@ -216,7 +217,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -247,12 +249,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * >AWS::SNS:TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @return A list of values that you must specify before you can deploy certain applications. Some applications
@@ -260,7 +262,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *         Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *         capabilities by specifying this parameter.</p>
      *         <p>
-     *         The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *         The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *         CAPABILITY_AUTO_EXPAND.
      *         </p>
      *         <p>
      *         The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -291,12 +294,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *         >AWS::SNS:TopicPolicy</a>.
      *         </p>
      *         <p>
+     *         Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *         </p>
+     *         <p>
      *         If your application template contains any of the above resources, we recommend that you review all
      *         permissions associated with the application before deploying. If you don't specify this parameter for an
      *         application that requires capabilities, the call will fail.
-     *         </p>
-     *         <p>
-     *         Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      */
 
     public java.util.List<String> getCapabilities() {
@@ -311,7 +314,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -342,12 +346,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * >AWS::SNS:TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @param capabilities
@@ -356,7 +360,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -387,12 +392,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        >AWS::SNS:TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      */
 
     public void setCapabilities(java.util.Collection<String> capabilities) {
@@ -412,7 +417,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -443,12 +449,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * >AWS::SNS:TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -462,7 +468,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -493,12 +500,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        >AWS::SNS:TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,7 +527,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -551,12 +559,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * >AWS::SNS:TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @param capabilities
@@ -565,7 +573,8 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -596,12 +605,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      *        >AWS::SNS:TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,14 +622,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param changeSetName
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setChangeSetName(String changeSetName) {
@@ -630,13 +639,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public String getChangeSetName() {
@@ -646,14 +655,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param changeSetName
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,14 +674,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param clientToken
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setClientToken(String clientToken) {
@@ -682,13 +691,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public String getClientToken() {
@@ -698,14 +707,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param clientToken
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -717,14 +726,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param description
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setDescription(String description) {
@@ -734,13 +743,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public String getDescription() {
@@ -750,14 +759,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param description
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,13 +778,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public java.util.List<String> getNotificationArns() {
@@ -785,14 +794,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param notificationArns
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setNotificationArns(java.util.Collection<String> notificationArns) {
@@ -807,7 +816,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * <p>
@@ -819,7 +828,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * @param notificationArns
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,14 +845,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param notificationArns
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -925,13 +934,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public java.util.List<String> getResourceTypes() {
@@ -941,14 +950,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param resourceTypes
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
@@ -963,7 +972,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * <p>
@@ -975,7 +984,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * @param resourceTypes
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -992,14 +1001,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param resourceTypes
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1011,14 +1020,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param rollbackConfiguration
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
@@ -1028,13 +1037,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public RollbackConfiguration getRollbackConfiguration() {
@@ -1044,14 +1053,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param rollbackConfiguration
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1118,14 +1127,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param stackName
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setStackName(String stackName) {
@@ -1135,13 +1144,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public String getStackName() {
@@ -1151,14 +1160,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param stackName
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1170,13 +1179,13 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @return This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *         >CreateChangeSet</a></i> API.
+     *         >CreateChangeSet</a> </i> API.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1186,14 +1195,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param tags
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1208,7 +1217,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * <p>
@@ -1220,7 +1229,7 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
      * @param tags
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1237,14 +1246,14 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i>
      * API.
      * </p>
      * 
      * @param tags
      *        This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet"
-     *        >CreateChangeSet</a></i> API.
+     *        >CreateChangeSet</a> </i> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

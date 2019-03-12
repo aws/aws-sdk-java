@@ -40,6 +40,8 @@ public class VersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourcesSupported").build();
     private static final MarshallingInfo<String> SEMANTICVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("semanticVersion").build();
+    private static final MarshallingInfo<String> SOURCECODEARCHIVEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCodeArchiveUrl").build();
     private static final MarshallingInfo<String> SOURCECODEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCodeUrl").build();
     private static final MarshallingInfo<String> TEMPLATEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class VersionMarshaller {
             protocolMarshaller.marshall(version.getRequiredCapabilities(), REQUIREDCAPABILITIES_BINDING);
             protocolMarshaller.marshall(version.getResourcesSupported(), RESOURCESSUPPORTED_BINDING);
             protocolMarshaller.marshall(version.getSemanticVersion(), SEMANTICVERSION_BINDING);
+            protocolMarshaller.marshall(version.getSourceCodeArchiveUrl(), SOURCECODEARCHIVEURL_BINDING);
             protocolMarshaller.marshall(version.getSourceCodeUrl(), SOURCECODEURL_BINDING);
             protocolMarshaller.marshall(version.getTemplateUrl(), TEMPLATEURL_BINDING);
         } catch (Exception e) {

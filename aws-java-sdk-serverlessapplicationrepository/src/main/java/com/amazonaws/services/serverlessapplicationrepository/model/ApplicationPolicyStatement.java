@@ -38,7 +38,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
     private java.util.List<String> actions;
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      */
     private java.util.List<String> principals;
@@ -137,10 +137,10 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
-     * @return An AWS account ID, or * to make the application public.
+     * @return An array of AWS account IDs, or * to make the application public.
      */
 
     public java.util.List<String> getPrincipals() {
@@ -149,11 +149,11 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -167,7 +167,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +176,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
