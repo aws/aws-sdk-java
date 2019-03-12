@@ -17,6 +17,7 @@ package com.amazonaws;
 import com.amazonaws.annotation.NotThreadSafe;
 
 import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.routing.HttpRoutePlanner;
 
 /**
  * Used for Apache HTTP client specific custom configurations.
@@ -24,11 +25,13 @@ import org.apache.http.conn.socket.ConnectionSocketFactory;
 @NotThreadSafe
 public final class ApacheHttpClientConfig {
     private ConnectionSocketFactory sslSocketFactory;
+    private HttpRoutePlanner routePlanner;
 
     ApacheHttpClientConfig() {}
 
     ApacheHttpClientConfig(ApacheHttpClientConfig that) {
         this.sslSocketFactory = that.sslSocketFactory;
+        this.routePlanner = that.routePlanner;
     }
 
     /**
@@ -59,6 +62,36 @@ public final class ApacheHttpClientConfig {
     public ApacheHttpClientConfig withSslSocketFactory(
             ConnectionSocketFactory sslSocketFactory) {
         this.sslSocketFactory = sslSocketFactory;
+        return this;
+    }
+
+    /**
+     * Returns a custom Apache HTTP client HttpRoutePlanner; 
+     * or null if there is none.
+     */
+    public HttpRoutePlanner getRoutePlanner() {
+        return routePlanner;
+    }
+
+    /**
+     * Sets a custom Apache HTTP client specific HttpRoutePlanner.
+     * 
+     * @param routePlanner a custom Apache HTTP client specific HttpRoutePlanner;
+     *  or null if there is none.
+     */
+    public void setRoutePlanner(HttpRoutePlanner routePlanner) {
+        this.routePlanner = routePlanner;
+    }
+
+    /**
+     * Fluent API for setting a custom Apache HTTP client specific HttpRoutePlanner.
+     * 
+     * @param routePlanner a custom Apache HTTP client specific HttpRoutePlanner; 
+     * or null if there is none.
+     */
+    public ApacheHttpClientConfig withRoutePlanner(
+            HttpRoutePlanner routePlanner) {
+        this.routePlanner = routePlanner;
         return this;
     }
 }

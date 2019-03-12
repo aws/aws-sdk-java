@@ -29,6 +29,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.conn.routing.HttpRoutePlanner;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
@@ -72,7 +73,12 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
             builder.addInterceptorLast(itcp);
         }
 
-        addProxyConfig(builder, settings);
+        HttpRoutePlanner routePlanner = settings.getApacheHttpClientConfig().getRoutePlanner();
+        if(routePlanner == null) {
+            addProxyConfig(builder, settings);
+        }else {
+            builder.setRoutePlanner(routePlanner);
+        }
 
         final ConnectionManagerAwareHttpClient httpClient = new SdkHttpClient(builder.build(), cm);
 
