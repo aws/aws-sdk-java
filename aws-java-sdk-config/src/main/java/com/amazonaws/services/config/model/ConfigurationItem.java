@@ -123,7 +123,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
      * CloudTrail</a>.
      * </p>
      * <p>
@@ -826,7 +826,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
      * CloudTrail</a>.
      * </p>
      * <p>
@@ -837,7 +837,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *         <p>
      *         A populated field indicates that the current configuration was initiated by the events recorded in the
      *         CloudTrail log. For more information about CloudTrail, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      *         Is AWS CloudTrail</a>.
      *         </p>
      *         <p>
@@ -858,7 +858,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
      * CloudTrail</a>.
      * </p>
      * <p>
@@ -870,7 +870,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        A populated field indicates that the current configuration was initiated by the events recorded in the
      *        CloudTrail log. For more information about CloudTrail, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>
@@ -893,7 +893,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
      * CloudTrail</a>.
      * </p>
      * <p>
@@ -910,7 +910,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        A populated field indicates that the current configuration was initiated by the events recorded in the
      *        CloudTrail log. For more information about CloudTrail, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>
@@ -935,7 +935,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is AWS
      * CloudTrail</a>.
      * </p>
      * <p>
@@ -947,7 +947,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        A populated field indicates that the current configuration was initiated by the events recorded in the
      *        CloudTrail log. For more information about CloudTrail, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>

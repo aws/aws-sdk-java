@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about valid query syntax, see <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query
  * Syntax</a>.
  * </p>
  */

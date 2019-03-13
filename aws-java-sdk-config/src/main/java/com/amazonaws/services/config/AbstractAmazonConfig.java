@@ -83,6 +83,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteRemediationConfigurationResult deleteRemediationConfiguration(DeleteRemediationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRetentionConfigurationResult deleteRetentionConfiguration(DeleteRetentionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,6 +204,16 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DescribeRemediationConfigurationsResult describeRemediationConfigurations(DescribeRemediationConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRemediationExecutionStatusResult describeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRetentionConfigurationsResult describeRetentionConfigurations(DescribeRetentionConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -304,6 +319,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public PutRemediationConfigurationsResult putRemediationConfigurations(PutRemediationConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -315,6 +335,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartRemediationExecutionResult startRemediationExecution(StartRemediationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

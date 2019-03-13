@@ -33,22 +33,22 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String logGroupName;
     /**
      * <p>
-     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The beginning of the time range to query. The range is inclusive, so the specified start time is included in the
+     * query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The end of the time range to query. The range is inclusive, so the specified end time is included in the query.
+     * Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      */
     private Long endTime;
     /**
      * <p>
      * The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
      * </p>
      */
@@ -103,13 +103,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The beginning of the time range to query. The range is inclusive, so the specified start time is included in the
+     * query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
-     *        1970, 00:00:00 UTC.
+     *        The beginning of the time range to query. The range is inclusive, so the specified start time is included
+     *        in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      */
 
     public void setStartTime(Long startTime) {
@@ -118,12 +118,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The beginning of the time range to query. The range is inclusive, so the specified start time is included in the
+     * query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
-     * @return The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
-     *         1970, 00:00:00 UTC.
+     * @return The beginning of the time range to query. The range is inclusive, so the specified start time is included
+     *         in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      */
 
     public Long getStartTime() {
@@ -132,13 +132,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The beginning of the time range to query. The range is inclusive, so the specified start time is included in the
+     * query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
-     *        1970, 00:00:00 UTC.
+     *        The beginning of the time range to query. The range is inclusive, so the specified start time is included
+     *        in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,13 +149,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The end of the time range to query. The range is inclusive, so the specified end time is included in the query.
+     * Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The end of the time range to query. The range is inclusive, so the specified end time is included in the
+     *        query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      */
 
     public void setEndTime(Long endTime) {
@@ -164,12 +164,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The end of the time range to query. The range is inclusive, so the specified end time is included in the query.
+     * Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
-     * @return The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *         00:00:00 UTC.
+     * @return The end of the time range to query. The range is inclusive, so the specified end time is included in the
+     *         query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      */
 
     public Long getEndTime() {
@@ -178,13 +178,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.
+     * The end of the time range to query. The range is inclusive, so the specified end time is included in the query.
+     * Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The end of the time range to query. The range is inclusive, so the specified end time is included in the
+     *        query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,13 +196,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
      * </p>
      * 
      * @param queryString
      *        The query string to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
      *        Insights Query Syntax</a>.
      */
 
@@ -213,12 +213,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
      * </p>
      * 
      * @return The query string to use. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
      *         Insights Query Syntax</a>.
      */
 
@@ -229,13 +229,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
      * </p>
      * 
      * @param queryString
      *        The query string to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
      *        Insights Query Syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

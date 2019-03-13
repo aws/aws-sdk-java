@@ -1,3 +1,12 @@
+# __1.11.518__ __2019-03-13__
+## __AWS Config__
+  - ### Features
+    - Config released Remediation APIs allowing Remediation of Config Rules
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation updates for logs
+
 # __1.11.517__ __2019-03-12__
 ## __AWSServerlessApplicationRepository__
   - ### Features

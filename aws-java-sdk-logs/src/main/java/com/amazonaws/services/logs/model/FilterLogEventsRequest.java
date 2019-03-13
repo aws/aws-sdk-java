@@ -69,7 +69,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -403,7 +403,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -412,7 +412,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param filterPattern
      *        The filter pattern to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *        Pattern Syntax</a>.</p>
      *        <p>
      *        If not provided, all the events are matched.
@@ -425,7 +425,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -433,7 +433,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return The filter pattern to use. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *         Pattern Syntax</a>.</p>
      *         <p>
      *         If not provided, all the events are matched.
@@ -446,7 +446,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -455,7 +455,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param filterPattern
      *        The filter pattern to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *        Pattern Syntax</a>.</p>
      *        <p>
      *        If not provided, all the events are matched.

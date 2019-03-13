@@ -34,7 +34,7 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      */
@@ -83,13 +83,13 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
      */
 
@@ -100,12 +100,12 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *         Resource Names - AWS Key Management Service (AWS KMS)</a>.
      */
 
@@ -116,13 +116,13 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

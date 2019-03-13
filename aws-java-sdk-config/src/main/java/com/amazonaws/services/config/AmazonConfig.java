@@ -33,7 +33,7 @@ import com.amazonaws.services.config.model.*;
  * information about the relationship between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
  * instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a security group. For a
  * complete list of resources currently supported by AWS Config, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
  * >Supported AWS Resources</a>.
  * </p>
  * <p>
@@ -41,11 +41,11 @@ import com.amazonaws.services.config.model.*;
  * the AWS Config API, or the AWS SDKs for AWS Config. This reference guide contains documentation for the AWS Config
  * API and the AWS CLI commands that you can use to manage AWS Config. The AWS Config API uses the Signature Version 4
  * protocol for signing requests. For more information about how to sign a request with this protocol, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
- * For detailed information about AWS Config features and their associated actions or commands, as well as how to work
- * with AWS Management Console, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <i>AWS
- * Config Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * Process</a>. For detailed information about AWS Config features and their associated actions or commands, as well as
+ * how to work with AWS Management Console, see <a
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the
+ * <i>AWS Config Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -319,6 +319,21 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     DeletePendingAggregationRequestResult deletePendingAggregationRequest(DeletePendingAggregationRequestRequest deletePendingAggregationRequestRequest);
+
+    /**
+     * <p>
+     * Deletes the remediation configuration.
+     * </p>
+     * 
+     * @param deleteRemediationConfigurationRequest
+     * @return Result of the DeleteRemediationConfiguration operation returned by the service.
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.DeleteRemediationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRemediationConfigurationResult deleteRemediationConfiguration(DeleteRemediationConfigurationRequest deleteRemediationConfigurationRequest);
 
     /**
      * <p>
@@ -604,8 +619,8 @@ public interface AmazonConfig {
     /**
      * <p>
      * Returns status information for sources within an aggregator. The status includes information about the last time
-     * AWS Config aggregated data from source accounts or AWS Config failed to aggregate data from source accounts with
-     * the related error code or message.
+     * AWS Config verified authorization between the source account and an aggregator account. In case of a failure, the
+     * status contains the related error code or message.
      * </p>
      * 
      * @param describeConfigurationAggregatorSourcesStatusRequest
@@ -787,6 +802,37 @@ public interface AmazonConfig {
      */
     DescribePendingAggregationRequestsResult describePendingAggregationRequests(
             DescribePendingAggregationRequestsRequest describePendingAggregationRequestsRequest);
+
+    /**
+     * <p>
+     * Returns the details of one or more remediation configuration.
+     * </p>
+     * 
+     * @param describeRemediationConfigurationsRequest
+     * @return Result of the DescribeRemediationConfigurations operation returned by the service.
+     * @sample AmazonConfig.DescribeRemediationConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRemediationConfigurationsResult describeRemediationConfigurations(DescribeRemediationConfigurationsRequest describeRemediationConfigurationsRequest);
+
+    /**
+     * <p>
+     * Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when
+     * steps for the remediation execution happen, and any error messages for steps that have failed. When you specify
+     * the limit and the next token, you receive a paginated response.
+     * </p>
+     * 
+     * @param describeRemediationExecutionStatusRequest
+     * @return Result of the DescribeRemediationExecutionStatus operation returned by the service.
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.DescribeRemediationExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRemediationExecutionStatusResult describeRemediationExecutionStatus(
+            DescribeRemediationExecutionStatusRequest describeRemediationExecutionStatusRequest);
 
     /**
      * <p>
@@ -1239,7 +1285,7 @@ public interface AmazonConfig {
      * <p>
      * If you are adding an AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
      * key. To reference AWS managed Config rule identifiers, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
@@ -1253,7 +1299,7 @@ public interface AmazonConfig {
      * this request.
      * </p>
      * <p>
-     * The maximum number of rules that AWS Config supports is 50.
+     * The maximum number of rules that AWS Config supports is 150.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -1262,7 +1308,7 @@ public interface AmazonConfig {
      * </p>
      * <p>
      * For more information about developing and using AWS Config rules, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
      * Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
      * </p>
      * 
@@ -1442,6 +1488,38 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action.
+     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. AWS Config rule must
+     * already exist for you to add a remeduation configuration. The target (SSM document) must exist and have
+     * permissions to use the target.
+     * </p>
+     * 
+     * @param putRemediationConfigurationsRequest
+     * @return Result of the PutRemediationConfigurations operation returned by the service.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.PutRemediationConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutRemediationConfigurationsResult putRemediationConfigurations(PutRemediationConfigurationsRequest putRemediationConfigurationsRequest);
+
+    /**
+     * <p>
      * Creates and updates the retention configuration with details about retention period (number of days) that AWS
      * Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and
      * names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named
@@ -1561,6 +1639,41 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest);
+
+    /**
+     * <p>
+     * Runs an on-demand remediation for the specified AWS Config rules against the last known remediation
+     * configuration. It runs an execution against the current state of your resources. Remediation execution is
+     * asynchronous.
+     * </p>
+     * <p>
+     * You can specify up to 100 resource keys per request. An existing StartRemediationExecution call for the specified
+     * resource keys must complete before you can call the API again.
+     * </p>
+     * 
+     * @param startRemediationExecutionRequest
+     * @return Result of the StartRemediationExecution operation returned by the service.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.StartRemediationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartRemediationExecutionResult startRemediationExecution(StartRemediationExecutionRequest startRemediationExecutionRequest);
 
     /**
      * <p>

@@ -57,7 +57,7 @@ import com.amazonaws.services.config.model.transform.*;
  * information about the relationship between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
  * instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a security group. For a
  * complete list of resources currently supported by AWS Config, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
  * >Supported AWS Resources</a>.
  * </p>
  * <p>
@@ -65,11 +65,11 @@ import com.amazonaws.services.config.model.transform.*;
  * the AWS Config API, or the AWS SDKs for AWS Config. This reference guide contains documentation for the AWS Config
  * API and the AWS CLI commands that you can use to manage AWS Config. The AWS Config API uses the Signature Version 4
  * protocol for signing requests. For more information about how to sign a request with this protocol, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
- * For detailed information about AWS Config features and their associated actions or commands, as well as how to work
- * with AWS Management Console, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <i>AWS
- * Config Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * Process</a>. For detailed information about AWS Config features and their associated actions or commands, as well as
+ * how to work with AWS Management Console, see <a
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the
+ * <i>AWS Config Developer Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -101,11 +101,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withModeledClass(
                                     com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidParameterValueException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.config.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchRemediationConfigurationException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchRemediationConfigurationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoAvailableDeliveryChannelException").withModeledClass(
                                     com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class))
@@ -119,17 +116,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("OversizedConfigurationItemException").withModeledClass(
                                     com.amazonaws.services.config.model.OversizedConfigurationItemException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withModeledClass(
                                     com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationAggregatorException").withModeledClass(
                                     com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchBucketException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OrganizationAccessDeniedException").withModeledClass(
                                     com.amazonaws.services.config.model.OrganizationAccessDeniedException.class))
@@ -146,20 +137,50 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.config.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LastDeliveryChannelDeleteFailedException").withModeledClass(
                                     com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OrganizationAllFeaturesNotEnabledException").withModeledClass(
                                     com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.config.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
+                                    com.amazonaws.services.config.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.config.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchBucketException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSNSTopicARNException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
@@ -173,29 +194,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleException").withModeledClass(
                                     com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidLimitException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidRoleException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.config.model.ValidationException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
-                                    com.amazonaws.services.config.model.InsufficientPermissionsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
@@ -979,6 +982,62 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Deletes the remediation configuration.
+     * </p>
+     * 
+     * @param deleteRemediationConfigurationRequest
+     * @return Result of the DeleteRemediationConfiguration operation returned by the service.
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.DeleteRemediationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRemediationConfigurationResult deleteRemediationConfiguration(DeleteRemediationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRemediationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRemediationConfigurationResult executeDeleteRemediationConfiguration(DeleteRemediationConfigurationRequest deleteRemediationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRemediationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRemediationConfigurationRequest> request = null;
+        Response<DeleteRemediationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRemediationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRemediationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRemediationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRemediationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the retention configuration.
      * </p>
      * 
@@ -1579,8 +1638,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Returns status information for sources within an aggregator. The status includes information about the last time
-     * AWS Config aggregated data from source accounts or AWS Config failed to aggregate data from source accounts with
-     * the related error code or message.
+     * AWS Config verified authorization between the source account and an aggregator account. In case of a failure, the
+     * status contains the related error code or message.
      * </p>
      * 
      * @param describeConfigurationAggregatorSourcesStatusRequest
@@ -2034,6 +2093,120 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<DescribePendingAggregationRequestsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribePendingAggregationRequestsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the details of one or more remediation configuration.
+     * </p>
+     * 
+     * @param describeRemediationConfigurationsRequest
+     * @return Result of the DescribeRemediationConfigurations operation returned by the service.
+     * @sample AmazonConfig.DescribeRemediationConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRemediationConfigurationsResult describeRemediationConfigurations(DescribeRemediationConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRemediationConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRemediationConfigurationsResult executeDescribeRemediationConfigurations(
+            DescribeRemediationConfigurationsRequest describeRemediationConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRemediationConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRemediationConfigurationsRequest> request = null;
+        Response<DescribeRemediationConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRemediationConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRemediationConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRemediationConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRemediationConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when
+     * steps for the remediation execution happen, and any error messages for steps that have failed. When you specify
+     * the limit and the next token, you receive a paginated response.
+     * </p>
+     * 
+     * @param describeRemediationExecutionStatusRequest
+     * @return Result of the DescribeRemediationExecutionStatus operation returned by the service.
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.DescribeRemediationExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRemediationExecutionStatusResult describeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRemediationExecutionStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRemediationExecutionStatusResult executeDescribeRemediationExecutionStatus(
+            DescribeRemediationExecutionStatusRequest describeRemediationExecutionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRemediationExecutionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRemediationExecutionStatusRequest> request = null;
+        Response<DescribeRemediationExecutionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRemediationExecutionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRemediationExecutionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExecutionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRemediationExecutionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRemediationExecutionStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3069,7 +3242,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * If you are adding an AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
      * key. To reference AWS managed Config rule identifiers, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
@@ -3083,7 +3256,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * this request.
      * </p>
      * <p>
-     * The maximum number of rules that AWS Config supports is 50.
+     * The maximum number of rules that AWS Config supports is 150.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -3092,7 +3265,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * </p>
      * <p>
      * For more information about developing and using AWS Config rules, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
      * Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
      * </p>
      * 
@@ -3471,6 +3644,79 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action.
+     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. AWS Config rule must
+     * already exist for you to add a remeduation configuration. The target (SSM document) must exist and have
+     * permissions to use the target.
+     * </p>
+     * 
+     * @param putRemediationConfigurationsRequest
+     * @return Result of the PutRemediationConfigurations operation returned by the service.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.PutRemediationConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutRemediationConfigurationsResult putRemediationConfigurations(PutRemediationConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRemediationConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final PutRemediationConfigurationsResult executePutRemediationConfigurations(PutRemediationConfigurationsRequest putRemediationConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRemediationConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRemediationConfigurationsRequest> request = null;
+        Response<PutRemediationConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRemediationConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putRemediationConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRemediationConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutRemediationConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates and updates the retention configuration with details about retention period (number of days) that AWS
      * Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and
      * names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named
@@ -3704,6 +3950,82 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<StartConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartConfigurationRecorderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Runs an on-demand remediation for the specified AWS Config rules against the last known remediation
+     * configuration. It runs an execution against the current state of your resources. Remediation execution is
+     * asynchronous.
+     * </p>
+     * <p>
+     * You can specify up to 100 resource keys per request. An existing StartRemediationExecution call for the specified
+     * resource keys must complete before you can call the API again.
+     * </p>
+     * 
+     * @param startRemediationExecutionRequest
+     * @return Result of the StartRemediationExecution operation returned by the service.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @throws NoSuchRemediationConfigurationException
+     *         You have specified AWS config rule without a remediation configuration.
+     * @sample AmazonConfig.StartRemediationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartRemediationExecutionResult startRemediationExecution(StartRemediationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartRemediationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartRemediationExecutionResult executeStartRemediationExecution(StartRemediationExecutionRequest startRemediationExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startRemediationExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartRemediationExecutionRequest> request = null;
+        Response<StartRemediationExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartRemediationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startRemediationExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRemediationExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartRemediationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartRemediationExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
