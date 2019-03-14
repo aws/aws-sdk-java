@@ -289,6 +289,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAggregationAuthorizationResult putAggregationAuthorization(PutAggregationAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -345,6 +350,16 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

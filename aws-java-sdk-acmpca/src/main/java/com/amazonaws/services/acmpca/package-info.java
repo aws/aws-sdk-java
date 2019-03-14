@@ -44,8 +44,9 @@
  * <note>
  * <p>
  * Each ACM PCA API operation has a throttling limit which determines the number of times the operation can be called
- * per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits
- * in ACM PCA</a> in the ACM PCA user guide.
+ * per second. For more information, see <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
+ * PCA</a> in the ACM PCA user guide.
  * </p>
  * </note>
  */

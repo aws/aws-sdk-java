@@ -55,6 +55,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request) {
+
+        return createPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request) {
 
         return deleteCertificateAuthorityAsync(request, null);
@@ -63,6 +76,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     @Override
     public java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request) {
+
+        return deletePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,6 +199,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     @Override
     public java.util.concurrent.Future<ListCertificateAuthoritiesResult> listCertificateAuthoritiesAsync(ListCertificateAuthoritiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request) {
+
+        return listPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

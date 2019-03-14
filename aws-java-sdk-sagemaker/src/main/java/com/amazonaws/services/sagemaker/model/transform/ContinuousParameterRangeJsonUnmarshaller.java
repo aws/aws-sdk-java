@@ -60,6 +60,10 @@ public class ContinuousParameterRangeJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     continuousParameterRange.setMaxValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScalingType", targetDepth)) {
+                    context.nextToken();
+                    continuousParameterRange.setScalingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

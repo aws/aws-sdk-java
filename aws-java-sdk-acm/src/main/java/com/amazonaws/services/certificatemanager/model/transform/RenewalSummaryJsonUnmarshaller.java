@@ -57,6 +57,14 @@ public class RenewalSummaryJsonUnmarshaller implements Unmarshaller<RenewalSumma
                     renewalSummary.setDomainValidationOptions(new ListUnmarshaller<DomainValidation>(DomainValidationJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("RenewalStatusReason", targetDepth)) {
+                    context.nextToken();
+                    renewalSummary.setRenewalStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    renewalSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

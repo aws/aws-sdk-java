@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * List of each of the failed remediation with specific reasons.
+ * List of each of the failed remediations with specific reasons.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/FailedRemediationBatch" target="_top">AWS API
@@ -30,7 +30,7 @@ public class FailedRemediationBatch implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      */
     private String failureMessage;
@@ -43,11 +43,11 @@ public class FailedRemediationBatch implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
      * @param failureMessage
-     *        Returns a failure message. For example, the resource is compliant.
+     *        Returns a failure message. For example, the resource is already compliant.
      */
 
     public void setFailureMessage(String failureMessage) {
@@ -56,10 +56,10 @@ public class FailedRemediationBatch implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
-     * @return Returns a failure message. For example, the resource is compliant.
+     * @return Returns a failure message. For example, the resource is already compliant.
      */
 
     public String getFailureMessage() {
@@ -68,11 +68,11 @@ public class FailedRemediationBatch implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
      * @param failureMessage
-     *        Returns a failure message. For example, the resource is compliant.
+     *        Returns a failure message. For example, the resource is already compliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

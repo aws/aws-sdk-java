@@ -42,7 +42,7 @@ public class RemediationExecutionStep implements Serializable, Cloneable, Struct
     private String state;
     /**
      * <p>
-     * An error message if the step was interupted during execution.
+     * An error message if the step was interrupted during execution.
      * </p>
      */
     private String errorMessage;
@@ -160,11 +160,11 @@ public class RemediationExecutionStep implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An error message if the step was interupted during execution.
+     * An error message if the step was interrupted during execution.
      * </p>
      * 
      * @param errorMessage
-     *        An error message if the step was interupted during execution.
+     *        An error message if the step was interrupted during execution.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -173,10 +173,10 @@ public class RemediationExecutionStep implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An error message if the step was interupted during execution.
+     * An error message if the step was interrupted during execution.
      * </p>
      * 
-     * @return An error message if the step was interupted during execution.
+     * @return An error message if the step was interrupted during execution.
      */
 
     public String getErrorMessage() {
@@ -185,11 +185,11 @@ public class RemediationExecutionStep implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An error message if the step was interupted during execution.
+     * An error message if the step was interrupted during execution.
      * </p>
      * 
      * @param errorMessage
-     *        An error message if the step was interupted during execution.
+     *        An error message if the step was interrupted during execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

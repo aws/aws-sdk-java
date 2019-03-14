@@ -1,3 +1,32 @@
+# __1.11.519__ __2019-03-14__
+## __AWS Certificate Manager__
+  - ### Features
+    - AWS Certificate Manager has added a new API action, RenewCertificate. RenewCertificate causes ACM to force the renewal of any private certificate which has been exported.
+
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - AWS Certificate Manager (ACM) Private CA allows customers to manage permissions on their CAs. Customers can grant or deny AWS Certificate Manager permission to renew exported private certificates.
+
+## __AWS Config__
+  - ### Features
+    - AWS Config - add ability to tag, untag and list tags for ConfigRule, ConfigurationAggregator and AggregationAuthorization resource types. Tags can be used for various scenarios including tag based authorization.
+
+## __AWS IoT__
+  - ### Features
+    - In this release, AWS IoT introduces support for tagging OTA Update and Stream resources. For more information about tagging, see the AWS IoT Developer Guide.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - New Messages parameter for the output of GetMetricData, to support new metric search functionality.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds tagging support for Dedicated Host Reservations.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker Automatic Model Tuning now supports random search and hyperparameter scaling.
+
 # __1.11.518__ __2019-03-13__
 ## __AWS Config__
   - ### Features

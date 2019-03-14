@@ -33,7 +33,8 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
     private String configRuleName;
     /**
      * <p>
-     * A list of resource key object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceKey> resourceKeys;
@@ -80,10 +81,12 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource key object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
-     * @return A list of resource key object.
+     * @return A list of resource keys to be processed with the current request. Each element in the list consists of
+     *         the resource type and resource ID.
      */
 
     public java.util.List<ResourceKey> getResourceKeys() {
@@ -95,11 +98,13 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource key object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource key object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      */
 
     public void setResourceKeys(java.util.Collection<ResourceKey> resourceKeys) {
@@ -113,7 +118,8 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource key object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +128,8 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource key object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +145,13 @@ public class StartRemediationExecutionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource key object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource key object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

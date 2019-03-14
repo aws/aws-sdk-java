@@ -1070,8 +1070,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * supported.
      * </p>
      * <p>
-     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
-     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
+     * about specifying dimensions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
@@ -1130,8 +1130,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * supported.
      * </p>
      * <p>
-     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
-     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
+     * about specifying dimensions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>

@@ -26,7 +26,7 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Returns a list of remediation execution statuses object.
+     * Returns a list of remediation execution statuses objects.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RemediationExecutionStatus> remediationExecutionStatuses;
@@ -40,10 +40,10 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Returns a list of remediation execution statuses object.
+     * Returns a list of remediation execution statuses objects.
      * </p>
      * 
-     * @return Returns a list of remediation execution statuses object.
+     * @return Returns a list of remediation execution statuses objects.
      */
 
     public java.util.List<RemediationExecutionStatus> getRemediationExecutionStatuses() {
@@ -55,11 +55,11 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Returns a list of remediation execution statuses object.
+     * Returns a list of remediation execution statuses objects.
      * </p>
      * 
      * @param remediationExecutionStatuses
-     *        Returns a list of remediation execution statuses object.
+     *        Returns a list of remediation execution statuses objects.
      */
 
     public void setRemediationExecutionStatuses(java.util.Collection<RemediationExecutionStatus> remediationExecutionStatuses) {
@@ -73,7 +73,7 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Returns a list of remediation execution statuses object.
+     * Returns a list of remediation execution statuses objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param remediationExecutionStatuses
-     *        Returns a list of remediation execution statuses object.
+     *        Returns a list of remediation execution statuses objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeRemediationExecutionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Returns a list of remediation execution statuses object.
+     * Returns a list of remediation execution statuses objects.
      * </p>
      * 
      * @param remediationExecutionStatuses
-     *        Returns a list of remediation execution statuses object.
+     *        Returns a list of remediation execution statuses objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

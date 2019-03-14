@@ -39,7 +39,17 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
     }
 
     @Override
+    public CreatePermissionResult createPermission(CreatePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCertificateAuthorityResult deleteCertificateAuthority(DeleteCertificateAuthorityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePermissionResult deletePermission(DeletePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,6 +90,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
 
     @Override
     public ListCertificateAuthoritiesResult listCertificateAuthorities(ListCertificateAuthoritiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPermissionsResult listPermissions(ListPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

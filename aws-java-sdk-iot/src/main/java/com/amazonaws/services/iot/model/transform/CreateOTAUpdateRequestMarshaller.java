@@ -45,6 +45,8 @@ public class CreateOTAUpdateRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<Map> ADDITIONALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalParameters").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateOTAUpdateRequestMarshaller instance = new CreateOTAUpdateRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateOTAUpdateRequestMarshaller {
             protocolMarshaller.marshall(createOTAUpdateRequest.getFiles(), FILES_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getAdditionalParameters(), ADDITIONALPARAMETERS_BINDING);
+            protocolMarshaller.marshall(createOTAUpdateRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

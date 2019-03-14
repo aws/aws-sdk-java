@@ -59,8 +59,9 @@ import com.amazonaws.services.acmpca.waiters.AWSACMPCAWaiters;
  * <note>
  * <p>
  * Each ACM PCA API operation has a throttling limit which determines the number of times the operation can be called
- * per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits
- * in ACM PCA</a> in the ACM PCA user guide.
+ * per second. For more information, see <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
+ * PCA</a> in the ACM PCA user guide.
  * </p>
  * </note>
  */
@@ -106,9 +107,9 @@ public interface AWSACMPCA {
 
     /**
      * <p>
-     * Creates an audit report that lists every time that the your CA private key is used. The report is saved in the
-     * Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations
-     * use the private key. You can generate a new report every 30 minutes.
+     * Creates an audit report that lists every time that your CA private key is used. The report is saved in the Amazon
+     * S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the
+     * private key. You can generate a new report every 30 minutes.
      * </p>
      * 
      * @param createCertificateAuthorityAuditReportRequest
@@ -134,6 +135,40 @@ public interface AWSACMPCA {
 
     /**
      * <p>
+     * Assigns permissions from a private CA to a designated AWS service. Services are specified by their service
+     * principals and can be given permission to create and retrieve certificates on a private CA. Services can also be
+     * given permission to list the active permissions that the private CA has granted. For ACM to automatically renew
+     * your private CA's certificates, you must assign all possible permissions from the CA to the ACM service
+     * principal.
+     * </p>
+     * <p>
+     * At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions can be revoked
+     * with the <a>DeletePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param createPermissionRequest
+     * @return Result of the CreatePermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @throws PermissionAlreadyExistsException
+     *         The designated permission has already been given to the user.
+     * @throws LimitExceededException
+     *         An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was
+     *         exceeded.
+     * @throws InvalidStateException
+     *         The private CA is in a state during which a report or certificate cannot be generated.
+     * @throws RequestFailedException
+     *         The request has failed for an unspecified reason.
+     * @sample AWSACMPCA.CreatePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreatePermissionResult createPermission(CreatePermissionRequest createPermissionRequest);
+
+    /**
+     * <p>
      * Deletes a private certificate authority (CA). You must provide the ARN (Amazon Resource Name) of the private CA
      * that you want to delete. You can find the ARN by calling the <a>ListCertificateAuthorities</a> operation. Before
      * you can delete a CA, you must disable it. Call the <a>UpdateCertificateAuthority</a> operation and set the
@@ -145,12 +180,12 @@ public interface AWSACMPCA {
      * haven't yet imported the signed certificate (the <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA.
      * </p>
      * <p>
-     * If the CA is in one of the aforementioned states and you call <a>DeleteCertificateAuthority</a>, the CA's status
-     * changes to <code>DELETED</code>. However, the CA won't be permentantly deleted until the restoration period has
-     * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
+     * If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>, the CA's
+     * status changes to <code>DELETED</code>. However, the CA won't be permanently deleted until the restoration period
+     * has passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest
@@ -168,6 +203,28 @@ public interface AWSACMPCA {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteCertificateAuthorityResult deleteCertificateAuthority(DeleteCertificateAuthorityRequest deleteCertificateAuthorityRequest);
+
+    /**
+     * <p>
+     * Revokes permissions that a private CA assigned to a designated AWS service. Permissions can be created with the
+     * <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param deletePermissionRequest
+     * @return Result of the DeletePermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @throws InvalidStateException
+     *         The private CA is in a state during which a report or certificate cannot be generated.
+     * @throws RequestFailedException
+     *         The request has failed for an unspecified reason.
+     * @sample AWSACMPCA.DeletePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePermissionResult deletePermission(DeletePermissionRequest deletePermissionRequest);
 
     /**
      * <p>
@@ -426,6 +483,31 @@ public interface AWSACMPCA {
      *      target="_top">AWS API Documentation</a>
      */
     ListCertificateAuthoritiesResult listCertificateAuthorities(ListCertificateAuthoritiesRequest listCertificateAuthoritiesRequest);
+
+    /**
+     * <p>
+     * Lists all the permissions, if any, that have been assigned by a private CA. Permissions can be granted with the
+     * <a>CreatePermission</a> operation and revoked with the <a>DeletePermission</a> operation.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @return Result of the ListPermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @throws InvalidNextTokenException
+     *         The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your
+     *         previous call to <a>ListCertificateAuthorities</a>.
+     * @throws InvalidStateException
+     *         The private CA is in a state during which a report or certificate cannot be generated.
+     * @throws RequestFailedException
+     *         The request has failed for an unspecified reason.
+     * @sample AWSACMPCA.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPermissionsResult listPermissions(ListPermissionsRequest listPermissionsRequest);
 
     /**
      * <p>

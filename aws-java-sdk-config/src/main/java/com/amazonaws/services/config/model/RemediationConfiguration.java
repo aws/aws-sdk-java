@@ -43,7 +43,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
     private String targetType;
     /**
      * <p>
-     * Public ID is document.
+     * Target ID is the name of the public document.
      * </p>
      */
     private String targetId;
@@ -167,11 +167,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Public ID is document.
+     * Target ID is the name of the public document.
      * </p>
      * 
      * @param targetId
-     *        Public ID is document.
+     *        Target ID is the name of the public document.
      */
 
     public void setTargetId(String targetId) {
@@ -180,10 +180,10 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Public ID is document.
+     * Target ID is the name of the public document.
      * </p>
      * 
-     * @return Public ID is document.
+     * @return Target ID is the name of the public document.
      */
 
     public String getTargetId() {
@@ -192,11 +192,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Public ID is document.
+     * Target ID is the name of the public document.
      * </p>
      * 
      * @param targetId
-     *        Public ID is document.
+     *        Target ID is the name of the public document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

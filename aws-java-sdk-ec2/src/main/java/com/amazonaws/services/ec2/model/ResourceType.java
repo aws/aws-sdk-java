@@ -27,6 +27,7 @@ public enum ResourceType {
     ElasticIp("elastic-ip"),
     Fleet("fleet"),
     FpgaImage("fpga-image"),
+    HostReservation("host-reservation"),
     Image("image"),
     Instance("instance"),
     InternetGateway("internet-gateway"),

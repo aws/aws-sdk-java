@@ -25,24 +25,24 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      */
     private String failureMessage;
     /**
      * <p>
-     * For resources that have failed to start execuition the API returns a resource key object.
+     * For resources that have failed to start execution, the API returns a resource key object.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceKey> failedItems;
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
      * @param failureMessage
-     *        Returns a failure message. For example, the resource is compliant.
+     *        Returns a failure message. For example, the resource is already compliant.
      */
 
     public void setFailureMessage(String failureMessage) {
@@ -51,10 +51,10 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
-     * @return Returns a failure message. For example, the resource is compliant.
+     * @return Returns a failure message. For example, the resource is already compliant.
      */
 
     public String getFailureMessage() {
@@ -63,11 +63,11 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns a failure message. For example, the resource is compliant.
+     * Returns a failure message. For example, the resource is already compliant.
      * </p>
      * 
      * @param failureMessage
-     *        Returns a failure message. For example, the resource is compliant.
+     *        Returns a failure message. For example, the resource is already compliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * For resources that have failed to start execuition the API returns a resource key object.
+     * For resources that have failed to start execution, the API returns a resource key object.
      * </p>
      * 
-     * @return For resources that have failed to start execuition the API returns a resource key object.
+     * @return For resources that have failed to start execution, the API returns a resource key object.
      */
 
     public java.util.List<ResourceKey> getFailedItems() {
@@ -93,11 +93,11 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * For resources that have failed to start execuition the API returns a resource key object.
+     * For resources that have failed to start execution, the API returns a resource key object.
      * </p>
      * 
      * @param failedItems
-     *        For resources that have failed to start execuition the API returns a resource key object.
+     *        For resources that have failed to start execution, the API returns a resource key object.
      */
 
     public void setFailedItems(java.util.Collection<ResourceKey> failedItems) {
@@ -111,7 +111,7 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * For resources that have failed to start execuition the API returns a resource key object.
+     * For resources that have failed to start execution, the API returns a resource key object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +120,7 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param failedItems
-     *        For resources that have failed to start execuition the API returns a resource key object.
+     *        For resources that have failed to start execution, the API returns a resource key object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class StartRemediationExecutionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * For resources that have failed to start execuition the API returns a resource key object.
+     * For resources that have failed to start execution, the API returns a resource key object.
      * </p>
      * 
      * @param failedItems
-     *        For resources that have failed to start execuition the API returns a resource key object.
+     *        For resources that have failed to start execution, the API returns a resource key object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

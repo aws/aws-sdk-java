@@ -27,13 +27,14 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of config rule names.
+     * A list of AWS Config rule names.
      * </p>
      */
     private String configRuleName;
     /**
      * <p>
-     * A list of resource keys object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceKey> resourceKeys;
@@ -54,11 +55,11 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of config rule names.
+     * A list of AWS Config rule names.
      * </p>
      * 
      * @param configRuleName
-     *        A list of config rule names.
+     *        A list of AWS Config rule names.
      */
 
     public void setConfigRuleName(String configRuleName) {
@@ -67,10 +68,10 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of config rule names.
+     * A list of AWS Config rule names.
      * </p>
      * 
-     * @return A list of config rule names.
+     * @return A list of AWS Config rule names.
      */
 
     public String getConfigRuleName() {
@@ -79,11 +80,11 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of config rule names.
+     * A list of AWS Config rule names.
      * </p>
      * 
      * @param configRuleName
-     *        A list of config rule names.
+     *        A list of AWS Config rule names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +95,12 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of resource keys object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
-     * @return A list of resource keys object.
+     * @return A list of resource keys to be processed with the current request. Each element in the list consists of
+     *         the resource type and resource ID.
      */
 
     public java.util.List<ResourceKey> getResourceKeys() {
@@ -109,11 +112,13 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of resource keys object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource keys object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      */
 
     public void setResourceKeys(java.util.Collection<ResourceKey> resourceKeys) {
@@ -127,7 +132,8 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of resource keys object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +142,8 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource keys object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +159,13 @@ public class DescribeRemediationExecutionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * A list of resource keys object.
+     * A list of resource keys to be processed with the current request. Each element in the list consists of the
+     * resource type and resource ID.
      * </p>
      * 
      * @param resourceKeys
-     *        A list of resource keys object.
+     *        A list of resource keys to be processed with the current request. Each element in the list consists of the
+     *        resource type and resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

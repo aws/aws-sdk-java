@@ -71,8 +71,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -91,8 +91,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -242,11 +242,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
      * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.
-     * </p>
-     * <p>
-     * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -582,8 +577,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -599,7 +594,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
@@ -625,8 +619,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -643,7 +637,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -671,8 +664,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -694,7 +687,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -724,8 +716,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -742,7 +734,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -767,8 +758,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -784,7 +775,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
@@ -810,8 +800,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -828,7 +818,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -856,8 +845,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -879,7 +868,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -909,8 +897,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -927,7 +915,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -1964,11 +1951,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * expression.
      * </p>
      * <p>
-     * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
-     * </p>
-     * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
@@ -1978,11 +1960,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the
      *         result of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric
      *         or performs a math expression.</p>
-     *         <p>
-     *         One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *         expression by setting <code>ReturnValue</code> to true for this object in the array. For more
-     *         information, see <a>MetricDataQuery</a>.
-     *         </p>
      *         <p>
      *         If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      *         <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
@@ -2004,11 +1981,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * expression.
      * </p>
      * <p>
-     * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
-     * </p>
-     * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
@@ -2019,11 +1991,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
      *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
      *        performs a math expression.</p>
-     *        <p>
-     *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
-     *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
@@ -2047,11 +2014,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * expression.
      * </p>
      * <p>
-     * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
-     * </p>
-     * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
@@ -2067,11 +2029,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
      *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
      *        performs a math expression.</p>
-     *        <p>
-     *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
-     *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
@@ -2097,11 +2054,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * expression.
      * </p>
      * <p>
-     * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
-     * </p>
-     * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
@@ -2112,11 +2064,6 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
      *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
      *        performs a math expression.</p>
-     *        <p>
-     *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
-     *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
      *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or

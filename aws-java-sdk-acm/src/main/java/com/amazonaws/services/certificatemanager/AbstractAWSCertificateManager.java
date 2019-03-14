@@ -84,6 +84,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public RenewCertificateResult renewCertificate(RenewCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RequestCertificateResult requestCertificate(RequestCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

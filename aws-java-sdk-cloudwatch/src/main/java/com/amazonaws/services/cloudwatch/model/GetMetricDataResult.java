@@ -35,6 +35,15 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Contains a message about the operation or the results, if the operation results in such a message. Examples of
+     * messages that may be returned include <code>Maximum number of allowed metrics exceeded</code> and
+     * <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of the
+     * operation as possible is still executed.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MessageData> messages;
 
     /**
      * <p>
@@ -150,6 +159,103 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Contains a message about the operation or the results, if the operation results in such a message. Examples of
+     * messages that may be returned include <code>Maximum number of allowed metrics exceeded</code> and
+     * <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of the
+     * operation as possible is still executed.
+     * </p>
+     * 
+     * @return Contains a message about the operation or the results, if the operation results in such a message.
+     *         Examples of messages that may be returned include <code>Maximum number of allowed metrics exceeded</code>
+     *         and <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of
+     *         the operation as possible is still executed.
+     */
+
+    public java.util.List<MessageData> getMessages() {
+        if (messages == null) {
+            messages = new com.amazonaws.internal.SdkInternalList<MessageData>();
+        }
+        return messages;
+    }
+
+    /**
+     * <p>
+     * Contains a message about the operation or the results, if the operation results in such a message. Examples of
+     * messages that may be returned include <code>Maximum number of allowed metrics exceeded</code> and
+     * <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of the
+     * operation as possible is still executed.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about the operation or the results, if the operation results in such a message.
+     *        Examples of messages that may be returned include <code>Maximum number of allowed metrics exceeded</code>
+     *        and <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of
+     *        the operation as possible is still executed.
+     */
+
+    public void setMessages(java.util.Collection<MessageData> messages) {
+        if (messages == null) {
+            this.messages = null;
+            return;
+        }
+
+        this.messages = new com.amazonaws.internal.SdkInternalList<MessageData>(messages);
+    }
+
+    /**
+     * <p>
+     * Contains a message about the operation or the results, if the operation results in such a message. Examples of
+     * messages that may be returned include <code>Maximum number of allowed metrics exceeded</code> and
+     * <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of the
+     * operation as possible is still executed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMessages(java.util.Collection)} or {@link #withMessages(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about the operation or the results, if the operation results in such a message.
+     *        Examples of messages that may be returned include <code>Maximum number of allowed metrics exceeded</code>
+     *        and <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of
+     *        the operation as possible is still executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMetricDataResult withMessages(MessageData... messages) {
+        if (this.messages == null) {
+            setMessages(new com.amazonaws.internal.SdkInternalList<MessageData>(messages.length));
+        }
+        for (MessageData ele : messages) {
+            this.messages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a message about the operation or the results, if the operation results in such a message. Examples of
+     * messages that may be returned include <code>Maximum number of allowed metrics exceeded</code> and
+     * <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of the
+     * operation as possible is still executed.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about the operation or the results, if the operation results in such a message.
+     *        Examples of messages that may be returned include <code>Maximum number of allowed metrics exceeded</code>
+     *        and <code>You are not authorized to search one or more metrics</code>. If there is a message, as much of
+     *        the operation as possible is still executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMetricDataResult withMessages(java.util.Collection<MessageData> messages) {
+        setMessages(messages);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,7 +270,9 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getMetricDataResults() != null)
             sb.append("MetricDataResults: ").append(getMetricDataResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMessages() != null)
+            sb.append("Messages: ").append(getMessages());
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +295,10 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMessages() == null ^ this.getMessages() == null)
+            return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false)
+            return false;
         return true;
     }
 
@@ -197,6 +309,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getMetricDataResults() == null) ? 0 : getMetricDataResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode());
         return hashCode;
     }
 

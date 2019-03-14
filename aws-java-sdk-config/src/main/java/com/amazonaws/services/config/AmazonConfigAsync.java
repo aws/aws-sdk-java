@@ -1392,7 +1392,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the details of one or more remediation configuration.
+     * Returns the details of one or more remediation configurations.
      * </p>
      * 
      * @param describeRemediationConfigurationsRequest
@@ -1407,7 +1407,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the details of one or more remediation configuration.
+     * Returns the details of one or more remediation configurations.
      * </p>
      * 
      * @param describeRemediationConfigurationsRequest
@@ -1428,7 +1428,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when
-     * steps for the remediation execution happen, and any error messages for steps that have failed. When you specify
+     * steps for the remediation execution occur, and any error messages for steps that have failed. When you specify
      * the limit and the next token, you receive a paginated response.
      * </p>
      * 
@@ -1445,7 +1445,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when
-     * steps for the remediation execution happen, and any error messages for steps that have failed. When you specify
+     * steps for the remediation execution occur, and any error messages for steps that have failed. When you specify
      * the limit and the next token, you receive a paginated response.
      * </p>
      * 
@@ -2211,6 +2211,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * List the tags for AWS Config resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonConfigAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List the tags for AWS Config resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Authorizes the aggregator account and region to collect data from the source account and region.
      * </p>
      * 
@@ -2570,8 +2601,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action.
-     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. AWS Config rule must
-     * already exist for you to add a remeduation configuration. The target (SSM document) must exist and have
+     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS Config rule
+     * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
      * 
@@ -2588,8 +2619,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action.
-     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. AWS Config rule must
-     * already exist for you to add a remeduation configuration. The target (SSM document) must exist and have
+     * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS Config rule
+     * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
      * 
@@ -2906,5 +2937,71 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest,
             com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
+     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
+     * with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonConfigAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
+     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
+     * with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonConfigAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

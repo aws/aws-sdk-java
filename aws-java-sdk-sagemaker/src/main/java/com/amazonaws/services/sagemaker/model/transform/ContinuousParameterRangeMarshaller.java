@@ -33,6 +33,8 @@ public class ContinuousParameterRangeMarshaller {
             .marshallLocationName("MinValue").build();
     private static final MarshallingInfo<String> MAXVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxValue").build();
+    private static final MarshallingInfo<String> SCALINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingType").build();
 
     private static final ContinuousParameterRangeMarshaller instance = new ContinuousParameterRangeMarshaller();
 
@@ -53,6 +55,7 @@ public class ContinuousParameterRangeMarshaller {
             protocolMarshaller.marshall(continuousParameterRange.getName(), NAME_BINDING);
             protocolMarshaller.marshall(continuousParameterRange.getMinValue(), MINVALUE_BINDING);
             protocolMarshaller.marshall(continuousParameterRange.getMaxValue(), MAXVALUE_BINDING);
+            protocolMarshaller.marshall(continuousParameterRange.getScalingType(), SCALINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

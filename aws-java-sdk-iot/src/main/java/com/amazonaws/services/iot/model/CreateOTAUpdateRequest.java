@@ -72,6 +72,12 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, String> additionalParameters;
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -526,6 +532,76 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage updates.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -552,7 +628,9 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getAdditionalParameters() != null)
-            sb.append("AdditionalParameters: ").append(getAdditionalParameters());
+            sb.append("AdditionalParameters: ").append(getAdditionalParameters()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -600,6 +678,10 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAdditionalParameters() != null && other.getAdditionalParameters().equals(this.getAdditionalParameters()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -616,6 +698,7 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getAdditionalParameters() == null) ? 0 : getAdditionalParameters().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
