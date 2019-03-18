@@ -33,8 +33,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdateUserRequestProtocolMarshaller implements Marshaller<Request<UpdateUserRequest>, UpdateUserRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/console/accounts/{accountId}/users/{userId}").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).serviceName("AmazonChime").build();
+            .requestUri("/accounts/{accountId}/users/{userId}").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .serviceName("AmazonChime").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

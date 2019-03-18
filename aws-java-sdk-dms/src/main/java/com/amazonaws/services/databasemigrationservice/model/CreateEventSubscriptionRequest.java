@@ -57,8 +57,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
      * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private java.util.List<String> eventCategories;
@@ -256,13 +256,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
      * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return A list of event categories for a source type that you want to subscribe to. You can see a list of the
      *         categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *         topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *         topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *         Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
@@ -274,14 +274,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
      * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
      *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
@@ -298,8 +298,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
      * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -310,7 +310,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
      *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -329,14 +329,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
      * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
      *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

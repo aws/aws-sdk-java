@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ResetPersonalPINRequestProtocolMarshaller implements Marshaller<Request<ResetPersonalPINRequest>, ResetPersonalPINRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/console/accounts/{accountId}/users/{userId}?operation=reset-personal-pin").httpMethodName(HttpMethodName.POST)
+            .requestUri("/accounts/{accountId}/users/{userId}?operation=reset-personal-pin").httpMethodName(HttpMethodName.POST)
             .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonChime").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

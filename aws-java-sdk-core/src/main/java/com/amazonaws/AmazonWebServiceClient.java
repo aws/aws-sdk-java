@@ -484,10 +484,8 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * Shuts down this client object, releasing any resources that might be held
-     * open. This is an optional method, and callers are not expected to call
-     * it, but can if they want to explicitly release any open resources. Once a
-     * client has been shutdown, it should not be used to make any more
-     * requests.
+     * open. If this method is not invoked, resources may be leaked. Once a client
+     * has been shutdown, it should not be used to make any more requests.
      */
     public void shutdown() {
         if (agentMonitoringListener != null) {

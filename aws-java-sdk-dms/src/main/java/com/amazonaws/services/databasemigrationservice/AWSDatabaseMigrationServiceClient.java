@@ -60,7 +60,7 @@ import com.amazonaws.services.databasemigrationservice.model.transform.*;
  * Server to PostgreSQL.
  * </p>
  * <p>
- * For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+ * For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
  * Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
  * </p>
  */
@@ -92,6 +92,15 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateFault").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedFault").withModeledClass(
+                                    com.amazonaws.services.databasemigrationservice.model.KMSAccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateFault").withModeledClass(
+                                    com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledFault").withModeledClass(
+                                    com.amazonaws.services.databasemigrationservice.model.KMSDisabledException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UpgradeDependencyFailureFault").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException.class))
                     .addErrorMetadata(
@@ -119,11 +128,17 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                             new JsonErrorShapeMetadata().withErrorCode("SubnetAlreadyInUse").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundFault").withModeledClass(
+                                    com.amazonaws.services.databasemigrationservice.model.KMSNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsFault").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.ResourceAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.InvalidSubnetException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingFault").withModeledClass(
+                                    com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StorageQuotaExceededFault").withModeledClass(
                                     com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException.class))
@@ -396,6 +411,62 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Applies a pending maintenance action to a resource (for example, to a replication instance).
+     * </p>
+     * 
+     * @param applyPendingMaintenanceActionRequest
+     * @return Result of the ApplyPendingMaintenanceAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.ApplyPendingMaintenanceAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ApplyPendingMaintenanceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ApplyPendingMaintenanceActionResult applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplyPendingMaintenanceAction(request);
+    }
+
+    @SdkInternalApi
+    final ApplyPendingMaintenanceActionResult executeApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest applyPendingMaintenanceActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(applyPendingMaintenanceActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApplyPendingMaintenanceActionRequest> request = null;
+        Response<ApplyPendingMaintenanceActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApplyPendingMaintenanceActionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(applyPendingMaintenanceActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyPendingMaintenanceAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ApplyPendingMaintenanceActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ApplyPendingMaintenanceActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an endpoint using the provided settings.
      * </p>
      * 
@@ -412,7 +483,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -475,22 +546,32 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * </p>
      * <p>
      * For more information about AWS DMS events, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param createEventSubscriptionRequest
      * @return Result of the CreateEventSubscription operation returned by the service.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws SNSInvalidTopicException
      *         The SNS topic is invalid.
      * @throws SNSNoAuthorizationException
      *         You are not authorized for the SNS subscription.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or DMS account doesn't have an access to
+     * @throws KMSDisabledException
+     *         The specified master key (CMK) isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The state of the specified KMS resource isn't valid for this request.
+     * @throws KMSNotFoundException
+     *         The specified KMS entity or resource can't be found.
+     * @throws KMSThrottlingException
+     *         This request triggered KMS request throttling.
      * @sample AWSDatabaseMigrationService.CreateEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -546,7 +627,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param createReplicationInstanceRequest
      * @return Result of the CreateReplicationInstance operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws InsufficientResourceCapacityException
@@ -621,7 +702,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param createReplicationSubnetGroupRequest
      * @return Result of the CreateReplicationSubnetGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws ResourceNotFoundException
@@ -688,7 +769,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param createReplicationTaskRequest
      * @return Result of the CreateReplicationTask operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceAlreadyExistsException
@@ -1379,8 +1460,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * <p>
      * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
      * the event categories and source types in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration Service User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -1497,8 +1578,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * <p>
      * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
      * information on AWS DMS events, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
-     * in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param describeEventsRequest
@@ -1593,6 +1674,63 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<DescribeOrderableReplicationInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeOrderableReplicationInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For internal use only
+     * </p>
+     * 
+     * @param describePendingMaintenanceActionsRequest
+     * @return Result of the DescribePendingMaintenanceActions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribePendingMaintenanceActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePendingMaintenanceActions(request);
+    }
+
+    @SdkInternalApi
+    final DescribePendingMaintenanceActionsResult executeDescribePendingMaintenanceActions(
+            DescribePendingMaintenanceActionsRequest describePendingMaintenanceActionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePendingMaintenanceActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePendingMaintenanceActionsRequest> request = null;
+        Response<DescribePendingMaintenanceActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePendingMaintenanceActionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePendingMaintenanceActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingMaintenanceActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePendingMaintenanceActionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePendingMaintenanceActionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2194,7 +2332,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws KMSKeyNotAccessibleException
      *         AWS DMS cannot access the KMS key.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -2255,6 +2393,16 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         The SNS topic is invalid.
      * @throws SNSNoAuthorizationException
      *         You are not authorized for the SNS subscription.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or DMS account doesn't have an access to
+     * @throws KMSDisabledException
+     *         The specified master key (CMK) isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The state of the specified KMS resource isn't valid for this request.
+     * @throws KMSNotFoundException
+     *         The specified KMS entity or resource can't be found.
+     * @throws KMSThrottlingException
+     *         This request triggered KMS request throttling.
      * @sample AWSDatabaseMigrationService.ModifyEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -2314,6 +2462,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * 
      * @param modifyReplicationInstanceRequest
      * @return Result of the ModifyReplicationInstance operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceAlreadyExistsException
@@ -2381,7 +2531,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @param modifyReplicationSubnetGroupRequest
      * @return Result of the ModifyReplicationSubnetGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws ResourceQuotaExceededException
@@ -2449,7 +2599,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * </p>
      * <p>
      * For more information about AWS DMS tasks, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
      * <i>AWS Database Migration Service User Guide</i>.
      * </p>
      * 
@@ -2746,7 +2896,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * </p>
      * <p>
      * For more information about AWS DMS tasks, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
      * <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
@@ -2757,7 +2907,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint.
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.StartReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask" target="_top">AWS API
      *      Documentation</a>

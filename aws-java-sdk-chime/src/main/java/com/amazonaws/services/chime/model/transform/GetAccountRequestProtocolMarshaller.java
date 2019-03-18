@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetAccountRequestProtocolMarshaller implements Marshaller<Request<GetAccountRequest>, GetAccountRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/console/accounts/{accountId}")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/accounts/{accountId}")
             .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonChime").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

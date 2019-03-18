@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class LogoutUserRequestProtocolMarshaller implements Marshaller<Request<LogoutUserRequest>, LogoutUserRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/console/accounts/{accountId}/users/{userId}?operation=logout").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
+            .requestUri("/accounts/{accountId}/users/{userId}?operation=logout").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
             .hasPayloadMembers(false).serviceName("AmazonChime").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

@@ -47,6 +47,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String primaryEmail;
     /**
      * <p>
+     * The primary phone number associated with the user.
+     * </p>
+     */
+    private String primaryProvisionedNumber;
+    /**
+     * <p>
      * The display name of the user.
      * </p>
      */
@@ -205,6 +211,46 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     public User withPrimaryEmail(String primaryEmail) {
         setPrimaryEmail(primaryEmail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary phone number associated with the user.
+     * </p>
+     * 
+     * @param primaryProvisionedNumber
+     *        The primary phone number associated with the user.
+     */
+
+    public void setPrimaryProvisionedNumber(String primaryProvisionedNumber) {
+        this.primaryProvisionedNumber = primaryProvisionedNumber;
+    }
+
+    /**
+     * <p>
+     * The primary phone number associated with the user.
+     * </p>
+     * 
+     * @return The primary phone number associated with the user.
+     */
+
+    public String getPrimaryProvisionedNumber() {
+        return this.primaryProvisionedNumber;
+    }
+
+    /**
+     * <p>
+     * The primary phone number associated with the user.
+     * </p>
+     * 
+     * @param primaryProvisionedNumber
+     *        The primary phone number associated with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withPrimaryProvisionedNumber(String primaryProvisionedNumber) {
+        setPrimaryProvisionedNumber(primaryProvisionedNumber);
         return this;
     }
 
@@ -563,6 +609,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getPrimaryEmail() != null)
             sb.append("PrimaryEmail: ").append("***Sensitive Data Redacted***").append(",");
+        if (getPrimaryProvisionedNumber() != null)
+            sb.append("PrimaryProvisionedNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLicenseType() != null)
@@ -603,6 +651,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrimaryEmail() != null && other.getPrimaryEmail().equals(this.getPrimaryEmail()) == false)
             return false;
+        if (other.getPrimaryProvisionedNumber() == null ^ this.getPrimaryProvisionedNumber() == null)
+            return false;
+        if (other.getPrimaryProvisionedNumber() != null && other.getPrimaryProvisionedNumber().equals(this.getPrimaryProvisionedNumber()) == false)
+            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
@@ -642,6 +694,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getPrimaryEmail() == null) ? 0 : getPrimaryEmail().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryProvisionedNumber() == null) ? 0 : getPrimaryProvisionedNumber().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getUserRegistrationStatus() == null) ? 0 : getUserRegistrationStatus().hashCode());

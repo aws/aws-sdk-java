@@ -39,7 +39,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Server to PostgreSQL.
  * </p>
  * <p>
- * For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+ * For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
  * Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
  * </p>
  */
@@ -275,6 +275,40 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeAddTagsToResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyPendingMaintenanceActionResult> applyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request) {
+
+        return applyPendingMaintenanceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyPendingMaintenanceActionResult> applyPendingMaintenanceActionAsync(
+            final ApplyPendingMaintenanceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApplyPendingMaintenanceActionRequest, ApplyPendingMaintenanceActionResult> asyncHandler) {
+        final ApplyPendingMaintenanceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ApplyPendingMaintenanceActionResult>() {
+            @Override
+            public ApplyPendingMaintenanceActionResult call() throws Exception {
+                ApplyPendingMaintenanceActionResult result = null;
+
+                try {
+                    result = executeApplyPendingMaintenanceAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -937,6 +971,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDescribeOrderableReplicationInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePendingMaintenanceActionsResult> describePendingMaintenanceActionsAsync(
+            DescribePendingMaintenanceActionsRequest request) {
+
+        return describePendingMaintenanceActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePendingMaintenanceActionsResult> describePendingMaintenanceActionsAsync(
+            final DescribePendingMaintenanceActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePendingMaintenanceActionsRequest, DescribePendingMaintenanceActionsResult> asyncHandler) {
+        final DescribePendingMaintenanceActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePendingMaintenanceActionsResult>() {
+            @Override
+            public DescribePendingMaintenanceActionsResult call() throws Exception {
+                DescribePendingMaintenanceActionsResult result = null;
+
+                try {
+                    result = executeDescribePendingMaintenanceActions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
