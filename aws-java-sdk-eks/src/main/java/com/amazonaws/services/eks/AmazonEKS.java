@@ -73,8 +73,8 @@ public interface AmazonEKS {
      * <p>
      * After you create an Amazon EKS cluster, you must configure your Kubernetes tooling to communicate with the API
      * server and launch worker nodes into your cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a> and
-     * <a href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a>
+     * and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
      * Nodes</a>in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
@@ -113,7 +113,7 @@ public interface AmazonEKS {
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
      * orphaned resources in your VPC that prevent you from being able to delete the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * </note>
@@ -146,7 +146,7 @@ public interface AmazonEKS {
      * <p>
      * The API server endpoint and certificate authority data returned by this operation are required for
      * <code>kubelet</code> and <code>kubectl</code> to communicate with your Kubernetes API server. For more
-     * information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
      * kubeconfig for Amazon EKS</a>.
      * </p>
      * <note>
@@ -249,6 +249,49 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     ListUpdatesResult listUpdates(ListUpdatesRequest listUpdatesRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
+     * output includes an update ID that you can use to track the status of your cluster update with the
+     * <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Currently, the only cluster configuration changes supported are to enable or disable Amazon EKS public and
+     * private API server endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterConfigRequest
+     * @return Result of the UpdateClusterConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon EKS clusters are Region-specific.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @sample AmazonEKS.UpdateClusterConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateClusterConfigResult updateClusterConfig(UpdateClusterConfigRequest updateClusterConfigRequest);
 
     /**
      * <p>

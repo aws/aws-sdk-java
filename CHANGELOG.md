@@ -1,3 +1,12 @@
+# __1.11.521__ __2019-03-19__
+## __AWS Config__
+  - ### Features
+    - AWS Config adds a new API called SelectResourceConfig to run advanced queries based on resource configuration properties.
+
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Added support to control private/public access to the Kubernetes API-server endpoint
+
 # __1.11.520__ __2019-03-18__
 ## __AWS Database Migration Service__
   - ### Features

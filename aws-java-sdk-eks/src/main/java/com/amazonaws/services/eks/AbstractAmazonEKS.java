@@ -59,6 +59,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public UpdateClusterConfigResult updateClusterConfig(UpdateClusterConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClusterVersionResult updateClusterVersion(UpdateClusterVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

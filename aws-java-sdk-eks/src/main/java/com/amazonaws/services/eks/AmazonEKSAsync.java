@@ -63,8 +63,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * After you create an Amazon EKS cluster, you must configure your Kubernetes tooling to communicate with the API
      * server and launch worker nodes into your cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a> and
-     * <a href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a>
+     * and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
      * Nodes</a>in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
@@ -98,8 +98,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * After you create an Amazon EKS cluster, you must configure your Kubernetes tooling to communicate with the API
      * server and launch worker nodes into your cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a> and
-     * <a href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a>
+     * and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker
      * Nodes</a>in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
@@ -125,7 +125,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
      * orphaned resources in your VPC that prevent you from being able to delete the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * </note>
@@ -147,7 +147,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
      * orphaned resources in your VPC that prevent you from being able to delete the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * </note>
@@ -172,7 +172,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * The API server endpoint and certificate authority data returned by this operation are required for
      * <code>kubelet</code> and <code>kubectl</code> to communicate with your Kubernetes API server. For more
-     * information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
      * kubeconfig for Amazon EKS</a>.
      * </p>
      * <note>
@@ -197,7 +197,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * The API server endpoint and certificate authority data returned by this operation are required for
      * <code>kubelet</code> and <code>kubectl</code> to communicate with your Kubernetes API server. For more
-     * information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a
      * kubeconfig for Amazon EKS</a>.
      * </p>
      * <note>
@@ -320,6 +320,65 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<ListUpdatesResult> listUpdatesAsync(ListUpdatesRequest listUpdatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListUpdatesRequest, ListUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
+     * output includes an update ID that you can use to track the status of your cluster update with the
+     * <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Currently, the only cluster configuration changes supported are to enable or disable Amazon EKS public and
+     * private API server endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterConfigRequest
+     * @return A Java Future containing the result of the UpdateClusterConfig operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateClusterConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterConfigResult> updateClusterConfigAsync(UpdateClusterConfigRequest updateClusterConfigRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
+     * output includes an update ID that you can use to track the status of your cluster update with the
+     * <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Currently, the only cluster configuration changes supported are to enable or disable Amazon EKS public and
+     * private API server endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateClusterConfig operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateClusterConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterConfigResult> updateClusterConfigAsync(UpdateClusterConfigRequest updateClusterConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterConfigRequest, UpdateClusterConfigResult> asyncHandler);
 
     /**
      * <p>

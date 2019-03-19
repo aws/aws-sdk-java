@@ -1568,6 +1568,32 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Accepts a structured query language (SQL) <code>SELECT</code> command, performs the corresponding search, and
+     * returns resource configurations matching the properties.
+     * </p>
+     * <p>
+     * For more information about query components, see the <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
+     * </a> section in the AWS Config Developer Guide.
+     * </p>
+     * 
+     * @param selectResourceConfigRequest
+     * @return Result of the SelectResourceConfig operation returned by the service.
+     * @throws InvalidExpressionException
+     *         The syntax of the query is incorrect.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.SelectResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SelectResourceConfigResult selectResourceConfig(SelectResourceConfigRequest selectResourceConfigRequest);
+
+    /**
+     * <p>
      * Runs an on-demand evaluation for the specified AWS Config rules against the last known configuration state of the
      * resources. Use <code>StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working
      * as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your

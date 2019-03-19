@@ -334,6 +334,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public SelectResourceConfigResult selectResourceConfig(SelectResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

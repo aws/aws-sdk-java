@@ -43,6 +43,28 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<String> securityGroupIds;
+    /**
+     * <p>
+     * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
+     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     */
+    private Boolean endpointPublicAccess;
+    /**
+     * <p>
+     * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     */
+    private Boolean endpointPrivateAccess;
 
     /**
      * <p>
@@ -213,6 +235,190 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
+     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @param endpointPublicAccess
+     *        Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
+     *        endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *        from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
+     *        public access for your Kubernetes API server. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public void setEndpointPublicAccess(Boolean endpointPublicAccess) {
+        this.endpointPublicAccess = endpointPublicAccess;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
+     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @return Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
+     *         endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *         from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
+     *         public access for your Kubernetes API server. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public Boolean getEndpointPublicAccess() {
+        return this.endpointPublicAccess;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
+     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @param endpointPublicAccess
+     *        Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
+     *        endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *        from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
+     *        public access for your Kubernetes API server. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfigRequest withEndpointPublicAccess(Boolean endpointPublicAccess) {
+        setEndpointPublicAccess(endpointPublicAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
+     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @return Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
+     *         endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *         from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
+     *         public access for your Kubernetes API server. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public Boolean isEndpointPublicAccess() {
+        return this.endpointPublicAccess;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @param endpointPrivateAccess
+     *        Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
+     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
+     *        the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
+     *        private access for your Kubernetes API server. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public void setEndpointPrivateAccess(Boolean endpointPrivateAccess) {
+        this.endpointPrivateAccess = endpointPrivateAccess;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @return Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
+     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
+     *         the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
+     *         private access for your Kubernetes API server. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public Boolean getEndpointPrivateAccess() {
+        return this.endpointPrivateAccess;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @param endpointPrivateAccess
+     *        Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
+     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
+     *        the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
+     *        private access for your Kubernetes API server. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfigRequest withEndpointPrivateAccess(Boolean endpointPrivateAccess) {
+        setEndpointPrivateAccess(endpointPrivateAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
+     * Kubernetes API server. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
+     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * 
+     * @return Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
+     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
+     *         the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
+     *         private access for your Kubernetes API server. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
+     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     */
+
+    public Boolean isEndpointPrivateAccess() {
+        return this.endpointPrivateAccess;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -227,7 +433,11 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getEndpointPublicAccess() != null)
+            sb.append("EndpointPublicAccess: ").append(getEndpointPublicAccess()).append(",");
+        if (getEndpointPrivateAccess() != null)
+            sb.append("EndpointPrivateAccess: ").append(getEndpointPrivateAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -250,6 +460,14 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
+        if (other.getEndpointPublicAccess() == null ^ this.getEndpointPublicAccess() == null)
+            return false;
+        if (other.getEndpointPublicAccess() != null && other.getEndpointPublicAccess().equals(this.getEndpointPublicAccess()) == false)
+            return false;
+        if (other.getEndpointPrivateAccess() == null ^ this.getEndpointPrivateAccess() == null)
+            return false;
+        if (other.getEndpointPrivateAccess() != null && other.getEndpointPrivateAccess().equals(this.getEndpointPrivateAccess()) == false)
+            return false;
         return true;
     }
 
@@ -260,6 +478,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getEndpointPublicAccess() == null) ? 0 : getEndpointPublicAccess().hashCode());
+        hashCode = prime * hashCode + ((getEndpointPrivateAccess() == null) ? 0 : getEndpointPrivateAccess().hashCode());
         return hashCode;
     }
 

@@ -66,10 +66,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific
-     * requirements to work properly with Kubernetes. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
+     * work properly with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      */
@@ -95,7 +95,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
      * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
@@ -349,18 +349,18 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific
-     * requirements to work properly with Kubernetes. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
+     * work properly with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param resourcesVpcConfig
-     *        The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have
-     *        specific requirements to work properly with Kubernetes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *        and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     *        requirements to work properly with Kubernetes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
+     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
      */
 
@@ -370,17 +370,17 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific
-     * requirements to work properly with Kubernetes. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
+     * work properly with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
-     * @return The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have
-     *         specific requirements to work properly with Kubernetes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *         and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     * @return The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     *         requirements to work properly with Kubernetes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
+     *         and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *         Considerations</a> in the <i>Amazon EKS User Guide</i>.
      */
 
@@ -390,18 +390,18 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific
-     * requirements to work properly with Kubernetes. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
+     * work properly with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      * Considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param resourcesVpcConfig
-     *        The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have
-     *        specific requirements to work properly with Kubernetes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *        and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
+     *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
+     *        requirements to work properly with Kubernetes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
+     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
      *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -553,14 +553,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
      * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     *        <i> <i>Amazon EKS User Guide</i> </i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
+     *        the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -570,12 +570,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
      * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return The platform version of your Amazon EKS cluster. For more information, see <a
-     *         href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
      *         the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
@@ -586,14 +586,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
      * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     *        <i> <i>Amazon EKS User Guide</i> </i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
+     *        the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
