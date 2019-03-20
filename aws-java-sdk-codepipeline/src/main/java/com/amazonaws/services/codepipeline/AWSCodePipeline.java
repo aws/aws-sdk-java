@@ -33,7 +33,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
  * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
+ * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
  * Guide</a>.
  * </p>
  * <p>
@@ -102,7 +102,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
  * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
  * and actions, also refer to the <a
- * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
@@ -583,6 +583,12 @@ public interface AWSCodePipeline {
      * <p>
      * Returns information about the state of a pipeline, including the stages and actions.
      * </p>
+     * <note>
+     * <p>
+     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
+     * commit ID, for the current state.
+     * </p>
+     * </note>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a GetPipelineState action.
@@ -625,6 +631,29 @@ public interface AWSCodePipeline {
      *      target="_top">AWS API Documentation</a>
      */
     GetThirdPartyJobDetailsResult getThirdPartyJobDetails(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest);
+
+    /**
+     * <p>
+     * Lists the action executions that have occurred in a pipeline.
+     * </p>
+     * 
+     * @param listActionExecutionsRequest
+     * @return Result of the ListActionExecutions operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or cannot be found.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format. Make sure that the next token you provided is the
+     *         token returned by a previous call.
+     * @throws PipelineExecutionNotFoundException
+     *         The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not
+     *         belong to the specified pipeline.
+     * @sample AWSCodePipeline.ListActionExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListActionExecutionsResult listActionExecutions(ListActionExecutionsRequest listActionExecutionsRequest);
 
     /**
      * <p>

@@ -45,7 +45,9 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      */
     private String provider;
@@ -216,13 +218,18 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy.
+     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      */
 
     public void setProvider(String provider) {
@@ -233,12 +240,17 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @return The provider of the service being called by the action. Valid providers are determined by the action
      *         category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *         which would be specified as CodeDeploy.
+     *         which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *         >Valid Action Types and Providers in CodePipeline</a>.
      */
 
     public String getProvider() {
@@ -249,13 +261,18 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy.
+     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

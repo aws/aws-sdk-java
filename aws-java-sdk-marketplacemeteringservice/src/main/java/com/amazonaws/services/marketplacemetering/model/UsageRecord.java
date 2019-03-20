@@ -56,7 +56,8 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     private String dimension;
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      */
     private Integer quantity;
@@ -213,11 +214,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      */
 
     public void setQuantity(Integer quantity) {
@@ -226,10 +229,12 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
-     * @return The quantity of usage consumed by the customer for the given dimension and time.
+     * @return The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *         <code>0</code> if not specified.
      */
 
     public Integer getQuantity() {
@@ -238,11 +243,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,7 +35,7 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     private String identityId;
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      */
     private String token;
@@ -88,11 +88,11 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
      * @param token
-     *        An OpenID token, valid for 15 minutes.
+     *        An OpenID token, valid for 10 minutes.
      */
 
     public void setToken(String token) {
@@ -101,10 +101,10 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
-     * @return An OpenID token, valid for 15 minutes.
+     * @return An OpenID token, valid for 10 minutes.
      */
 
     public String getToken() {
@@ -113,11 +113,11 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
      * @param token
-     *        An OpenID token, valid for 15 minutes.
+     *        An OpenID token, valid for 10 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,7 +96,7 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * containers running outside of Amazon Elastic Container Service (Amazon ECR) isn't supported. Free and BYOL products
  * for ECS aren't required to call RegisterUsage, but you can do so if you want to receive usage data in your seller
  * reports. For more information on using the RegisterUsage operation, see <a
- * href="https://docs.aws.amazon.com/latest/userguide/entitlement-and-metering-for-paid-products.html">Container-Based
+ * href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-Based
  * Products</a>.
  * </p>
  * </li>

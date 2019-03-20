@@ -36,7 +36,7 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
     private String identityId;
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      */
     private java.util.List<String> logins;
@@ -95,10 +95,10 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
-     * @return A set of optional name-value pairs that map provider names to provider tokens.
+     * @return The provider names.
      */
 
     public java.util.List<String> getLogins() {
@@ -107,11 +107,11 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      */
 
     public void setLogins(java.util.Collection<String> logins) {
@@ -125,7 +125,7 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +134,7 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +150,11 @@ public class IdentityDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

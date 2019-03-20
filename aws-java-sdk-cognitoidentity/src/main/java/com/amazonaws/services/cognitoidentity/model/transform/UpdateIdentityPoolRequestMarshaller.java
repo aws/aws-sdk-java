@@ -45,6 +45,8 @@ public class UpdateIdentityPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoIdentityProviders").build();
     private static final MarshallingInfo<List> SAMLPROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamlProviderARNs").build();
+    private static final MarshallingInfo<Map> IDENTITYPOOLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolTags").build();
 
     private static final UpdateIdentityPoolRequestMarshaller instance = new UpdateIdentityPoolRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class UpdateIdentityPoolRequestMarshaller {
             protocolMarshaller.marshall(updateIdentityPoolRequest.getOpenIdConnectProviderARNs(), OPENIDCONNECTPROVIDERARNS_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getCognitoIdentityProviders(), COGNITOIDENTITYPROVIDERS_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getSamlProviderARNs(), SAMLPROVIDERARNS_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolTags(), IDENTITYPOOLTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

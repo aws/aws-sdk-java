@@ -46,14 +46,15 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String usageDimension;
     /**
      * <p>
-     * Consumption value for the hour.
+     * Consumption value for the hour. Defaults to <code>0</code> if not specified.
      * </p>
      */
     private Integer usageQuantity;
     /**
      * <p>
      * Checks whether you have the permissions required for the action, but does not make the request. If you have the
-     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.
      * </p>
      */
     private Boolean dryRun;
@@ -189,11 +190,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Consumption value for the hour.
+     * Consumption value for the hour. Defaults to <code>0</code> if not specified.
      * </p>
      * 
      * @param usageQuantity
-     *        Consumption value for the hour.
+     *        Consumption value for the hour. Defaults to <code>0</code> if not specified.
      */
 
     public void setUsageQuantity(Integer usageQuantity) {
@@ -202,10 +203,10 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Consumption value for the hour.
+     * Consumption value for the hour. Defaults to <code>0</code> if not specified.
      * </p>
      * 
-     * @return Consumption value for the hour.
+     * @return Consumption value for the hour. Defaults to <code>0</code> if not specified.
      */
 
     public Integer getUsageQuantity() {
@@ -214,11 +215,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Consumption value for the hour.
+     * Consumption value for the hour. Defaults to <code>0</code> if not specified.
      * </p>
      * 
      * @param usageQuantity
-     *        Consumption value for the hour.
+     *        Consumption value for the hour. Defaults to <code>0</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,12 +231,14 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Checks whether you have the permissions required for the action, but does not make the request. If you have the
-     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.
      * </p>
      * 
      * @param dryRun
      *        Checks whether you have the permissions required for the action, but does not make the request. If you
      *        have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     *        Defaults to <code>false</code> if not specified.
      */
 
     public void setDryRun(Boolean dryRun) {
@@ -245,11 +248,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Checks whether you have the permissions required for the action, but does not make the request. If you have the
-     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.
      * </p>
      * 
      * @return Checks whether you have the permissions required for the action, but does not make the request. If you
      *         have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     *         Defaults to <code>false</code> if not specified.
      */
 
     public Boolean getDryRun() {
@@ -259,12 +264,14 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Checks whether you have the permissions required for the action, but does not make the request. If you have the
-     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.
      * </p>
      * 
      * @param dryRun
      *        Checks whether you have the permissions required for the action, but does not make the request. If you
      *        have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     *        Defaults to <code>false</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,11 +283,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Checks whether you have the permissions required for the action, but does not make the request. If you have the
-     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     * permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.
      * </p>
      * 
      * @return Checks whether you have the permissions required for the action, but does not make the request. If you
      *         have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.
+     *         Defaults to <code>false</code> if not specified.
      */
 
     public Boolean isDryRun() {
