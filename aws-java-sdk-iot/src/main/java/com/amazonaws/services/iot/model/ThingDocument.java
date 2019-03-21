@@ -63,7 +63,7 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
     private String shadow;
     /**
      * <p>
-     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * Indicates whether the thing is connected to the AWS IoT service.
      * </p>
      */
     private ThingConnectivity connectivity;
@@ -361,11 +361,11 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * Indicates whether the thing is connected to the AWS IoT service.
      * </p>
      * 
      * @param connectivity
-     *        Indicates whether or not the thing is connected to the AWS IoT service.
+     *        Indicates whether the thing is connected to the AWS IoT service.
      */
 
     public void setConnectivity(ThingConnectivity connectivity) {
@@ -374,10 +374,10 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * Indicates whether the thing is connected to the AWS IoT service.
      * </p>
      * 
-     * @return Indicates whether or not the thing is connected to the AWS IoT service.
+     * @return Indicates whether the thing is connected to the AWS IoT service.
      */
 
     public ThingConnectivity getConnectivity() {
@@ -386,11 +386,11 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * Indicates whether the thing is connected to the AWS IoT service.
      * </p>
      * 
      * @param connectivity
-     *        Indicates whether or not the thing is connected to the AWS IoT service.
+     *        Indicates whether the thing is connected to the AWS IoT service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -62,7 +62,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
      * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
@@ -147,7 +147,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The default
-     * value is <code>EC2</code>.
+     * value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it considers the
+     * instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
@@ -439,7 +440,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
      * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -448,8 +449,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        configuration, or an EC2 instance must be specified.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options"
-     *        >Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups
+     *        with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
@@ -463,7 +464,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
      * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -471,8 +472,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         configuration, or an EC2 instance must be specified.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options"
-     *         >Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling
+     *         Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
      */
 
     public MixedInstancesPolicy getMixedInstancesPolicy() {
@@ -486,7 +488,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
      * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -495,8 +497,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        configuration, or an EC2 instance must be specified.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options"
-     *        >Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups
+     *        with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1112,7 +1114,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The default
-     * value is <code>EC2</code>.
+     * value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it considers the
+     * instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
@@ -1121,7 +1124,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param healthCheckType
      *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The
-     *        default value is <code>EC2</code>.</p>
+     *        default value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it
+     *        considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
+     *        checks.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health Checks for Auto
@@ -1135,7 +1140,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The default
-     * value is <code>EC2</code>.
+     * value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it considers the
+     * instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
@@ -1143,7 +1149,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The
-     *         default value is <code>EC2</code>.</p>
+     *         default value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it
+     *         considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
+     *         checks.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health Checks for Auto
@@ -1157,7 +1165,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The default
-     * value is <code>EC2</code>.
+     * value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it considers the
+     * instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
@@ -1166,7 +1175,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param healthCheckType
      *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. The
-     *        default value is <code>EC2</code>.</p>
+     *        default value is <code>EC2</code>. If you configure an Auto Scaling group to use ELB health checks, it
+     *        considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
+     *        checks.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health Checks for Auto

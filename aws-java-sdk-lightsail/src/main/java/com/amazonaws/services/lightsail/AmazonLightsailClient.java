@@ -52,9 +52,9 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data
- * transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through
- * the Lightsail console or by using the API or command-line interface (CLI).
+ * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
+ * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
+ * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
@@ -1281,8 +1281,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
-     * record.
+     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -2645,6 +2645,88 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteKeyPairResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to
+     * authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the
+     * instance after a host key mismatch.
+     * </p>
+     * <important>
+     * <p>
+     * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
+     * with the new host key or certificate on the instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteKnownHostKeysRequest
+     * @return Result of the DeleteKnownHostKeys operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteKnownHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteKnownHostKeysResult deleteKnownHostKeys(DeleteKnownHostKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteKnownHostKeys(request);
+    }
+
+    @SdkInternalApi
+    final DeleteKnownHostKeysResult executeDeleteKnownHostKeys(DeleteKnownHostKeysRequest deleteKnownHostKeysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteKnownHostKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteKnownHostKeysRequest> request = null;
+        Response<DeleteKnownHostKeysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteKnownHostKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteKnownHostKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKnownHostKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteKnownHostKeysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteKnownHostKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

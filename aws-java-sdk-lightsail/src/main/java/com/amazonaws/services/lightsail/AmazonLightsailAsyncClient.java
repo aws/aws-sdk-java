@@ -32,9 +32,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data
- * transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through
- * the Lightsail console or by using the API or command-line interface (CLI).
+ * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
+ * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
+ * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
@@ -1208,6 +1208,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteKeyPair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(DeleteKnownHostKeysRequest request) {
+
+        return deleteKnownHostKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(final DeleteKnownHostKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKnownHostKeysRequest, DeleteKnownHostKeysResult> asyncHandler) {
+        final DeleteKnownHostKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKnownHostKeysResult>() {
+            @Override
+            public DeleteKnownHostKeysResult call() throws Exception {
+                DeleteKnownHostKeysResult result = null;
+
+                try {
+                    result = executeDeleteKnownHostKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

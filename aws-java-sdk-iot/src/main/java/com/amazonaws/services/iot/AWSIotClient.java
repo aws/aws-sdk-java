@@ -134,6 +134,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResponseException").withModeledClass(
                                     com.amazonaws.services.iot.model.InvalidResponseException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAggregationException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InvalidAggregationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.iot.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
@@ -2111,7 +2114,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a thing record in the registry.
+     * Creates a thing record in the registry. If this call is made multiple times using the same thing name and
+     * configuration, the call will succeed. If this call is made with the same thing name but different configuration a
+     * <code>ResourceAlreadyExistsException</code> is thrown.
      * </p>
      * <note>
      * <p>
@@ -5853,6 +5858,74 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRegistrationCodeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRegistrationCodeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets statistics about things that match the specified query.
+     * </p>
+     * 
+     * @param getStatisticsRequest
+     * @return Result of the GetStatistics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidQueryException
+     *         The query is invalid.
+     * @throws InvalidAggregationException
+     *         The aggregation is invalid.
+     * @throws IndexNotReadyException
+     *         The index is not ready.
+     * @sample AWSIot.GetStatistics
+     */
+    @Override
+    public GetStatisticsResult getStatistics(GetStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetStatisticsResult executeGetStatistics(GetStatisticsRequest getStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetStatisticsRequest> request = null;
+        Response<GetStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetStatisticsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

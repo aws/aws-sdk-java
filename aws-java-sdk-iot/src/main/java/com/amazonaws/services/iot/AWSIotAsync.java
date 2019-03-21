@@ -976,7 +976,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing record in the registry.
+     * Creates a thing record in the registry. If this call is made multiple times using the same thing name and
+     * configuration, the call will succeed. If this call is made with the same thing name but different configuration a
+     * <code>ResourceAlreadyExistsException</code> is thrown.
      * </p>
      * <note>
      * <p>
@@ -995,7 +997,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing record in the registry.
+     * Creates a thing record in the registry. If this call is made multiple times using the same thing name and
+     * configuration, the call will succeed. If this call is made with the same thing name but different configuration a
+     * <code>ResourceAlreadyExistsException</code> is thrown.
      * </p>
      * <note>
      * <p>
@@ -2781,6 +2785,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(GetRegistrationCodeRequest getRegistrationCodeRequest,
             com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets statistics about things that match the specified query.
+     * </p>
+     * 
+     * @param getStatisticsRequest
+     * @return A Java Future containing the result of the GetStatistics operation returned by the service.
+     * @sample AWSIotAsync.GetStatistics
+     */
+    java.util.concurrent.Future<GetStatisticsResult> getStatisticsAsync(GetStatisticsRequest getStatisticsRequest);
+
+    /**
+     * <p>
+     * Gets statistics about things that match the specified query.
+     * </p>
+     * 
+     * @param getStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStatistics operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetStatistics
+     */
+    java.util.concurrent.Future<GetStatisticsResult> getStatisticsAsync(GetStatisticsRequest getStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStatisticsRequest, GetStatisticsResult> asyncHandler);
 
     /**
      * <p>

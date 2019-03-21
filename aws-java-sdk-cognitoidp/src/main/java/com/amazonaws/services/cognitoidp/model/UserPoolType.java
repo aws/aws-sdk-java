@@ -174,9 +174,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      */
     private java.util.Map<String, String> userPoolTags;
@@ -198,7 +197,17 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String domain;
-
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     */
     private String customDomain;
     /**
      * <p>
@@ -1506,14 +1515,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
-     * @return The cost allocation tags for the user pool. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *         categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public java.util.Map<String, String> getUserPoolTags() {
@@ -1522,15 +1529,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
@@ -1539,15 +1544,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1698,7 +1701,24 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
      * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
      */
 
     public void setCustomDomain(String customDomain) {
@@ -1706,7 +1726,23 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @return A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *         domain to host the sign-up and sign-in pages for your application. For example:
+     *         <code>auth.example.com</code>.</p>
+     *         <p>
+     *         For more information about adding a custom domain to your user pool, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *         >Using Your Own Domain for the Hosted UI</a>.
      */
 
     public String getCustomDomain() {
@@ -1714,7 +1750,24 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
      * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

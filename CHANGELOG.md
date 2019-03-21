@@ -1,3 +1,28 @@
+# __1.11.523__ __2019-03-21__
+## __AWS IoT__
+  - ### Features
+    - This release adds the GetStatistics API for the AWS IoT Fleet Indexing Service, which allows customers to query for statistics about registered devices that match a search query. This release only supports the count statistics. For more information about this API, see https://docs.aws.amazon.com/iot/latest/apireference/API_GetStatistics.html
+
+## __AWS SDK for Java__
+  - ### Features
+    - Allow enabling client-side configuration using environment variables, system properties or profile file in the deprecated default client constructor.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Added 3 new APIs, and one additional parameter to the PutRule API, to support tagging of CloudWatch Events rules.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release adds tags and tag-based access control support to Amazon Cognito User Pools.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds the DeleteKnownHostKeys API, which enables Lightsail's browser-based SSH or RDP clients to connect to the instance after a host key mismatch.
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for Amazon EC2 Auto Scaling
+
 # __1.11.522__ __2019-03-20__
 ## __AWS CodePipeline__
   - ### Features

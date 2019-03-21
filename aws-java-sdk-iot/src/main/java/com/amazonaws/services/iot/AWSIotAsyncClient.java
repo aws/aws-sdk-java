@@ -3105,6 +3105,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetStatisticsResult> getStatisticsAsync(GetStatisticsRequest request) {
+
+        return getStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStatisticsResult> getStatisticsAsync(final GetStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetStatisticsRequest, GetStatisticsResult> asyncHandler) {
+        final GetStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetStatisticsResult>() {
+            @Override
+            public GetStatisticsResult call() throws Exception {
+                GetStatisticsResult result = null;
+
+                try {
+                    result = executeGetStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(GetTopicRuleRequest request) {
 
         return getTopicRuleAsync(request, null);

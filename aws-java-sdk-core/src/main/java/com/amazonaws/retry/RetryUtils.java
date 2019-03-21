@@ -37,6 +37,7 @@ public class RetryUtils {
         THROTTLING_ERROR_CODES.add("RequestLimitExceeded");
         THROTTLING_ERROR_CODES.add("BandwidthLimitExceeded");
         THROTTLING_ERROR_CODES.add("RequestThrottled");
+        THROTTLING_ERROR_CODES.add("RequestThrottledException");
 
         CLOCK_SKEW_ERROR_CODES.add("RequestTimeTooSkewed");
         CLOCK_SKEW_ERROR_CODES.add("RequestExpired");

@@ -16,6 +16,7 @@ package com.amazonaws.internal;
 
 import com.amazonaws.util.VersionInfoUtils;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
@@ -55,7 +56,7 @@ import utils.http.SocketUtils;
 @RunWith(MockitoJUnitRunner.class)
 public class EC2CredentialsUtilsTest {
 
-    private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
+    private static final String USER_AGENT = VersionInfoUtils.getUserAgent();
 
     @ClassRule
     public static WireMockRule mockServer = new WireMockRule(0);
@@ -275,6 +276,7 @@ public class EC2CredentialsUtilsTest {
     private void generateStub(int statusCode, String message) {
         stubFor(
                 get(urlPathEqualTo(CREDENTIALS_PATH))
+                .withHeader("User-Agent", equalTo(VersionInfoUtils.getUserAgent()))
                 .willReturn(aResponse()
                                 .withStatus(statusCode)
                                 .withHeader("Content-Type", "application/json")

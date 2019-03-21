@@ -18,15 +18,13 @@ import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.EndpointPrefixAwareSigner;
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.monitoring.internal.AgentMonitoringListener;
-import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
-import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.AmazonHttpClient;
@@ -40,6 +38,10 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.monitoring.CsmConfiguration;
 import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.DefaultCsmConfigurationProviderChain;
+import com.amazonaws.monitoring.MonitoringListener;
+import com.amazonaws.monitoring.internal.AgentMonitoringListener;
+import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics;
@@ -173,25 +175,58 @@ public abstract class AmazonWebServiceClient {
     }
 
     @SdkProtectedApi
-    protected AmazonWebServiceClient(ClientConfiguration clientConfiguration,
-                                     RequestMetricCollector requestMetricCollector,
+    protected AmazonWebServiceClient(final ClientConfiguration clientConfiguration,
+                                     final RequestMetricCollector requestMetricCollector,
                                      boolean disableStrictHostNameVerification) {
-        this.clientConfiguration = clientConfiguration;
-        requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
-        monitoringListeners = new CopyOnWriteArrayList<MonitoringListener>();
-        client = new AmazonHttpClient(clientConfiguration,
-                requestMetricCollector, disableStrictHostNameVerification,
-                calculateCRC32FromCompressedData());
-        this.csmConfiguration = null;
+        this(new AwsSyncClientParams() {
+            @Override
+            public AWSCredentialsProvider getCredentialsProvider() {
+                return null;
+            }
+
+            @Override
+            public ClientConfiguration getClientConfiguration() {
+                return clientConfiguration;
+            }
+
+            @Override
+            public RequestMetricCollector getRequestMetricCollector() {
+                return requestMetricCollector;
+            }
+
+            @Override
+            public List<RequestHandler2> getRequestHandlers() {
+                return new CopyOnWriteArrayList<RequestHandler2>();
+            }
+
+            @Override
+            public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+                return DefaultCsmConfigurationProviderChain.getInstance();
+            }
+
+            @Override
+            public MonitoringListener getMonitoringListener() {
+                return null;
+            }
+        }, !disableStrictHostNameVerification);
     }
 
     protected AmazonWebServiceClient(AwsSyncClientParams clientParams) {
+        this(clientParams, null);
+    }
+
+    private AmazonWebServiceClient(AwsSyncClientParams clientParams, Boolean useStrictHostNameVerification) {
         this.clientConfiguration = clientParams.getClientConfiguration();
-        requestHandler2s = clientParams.getRequestHandlers();
-        monitoringListeners = new CopyOnWriteArrayList<MonitoringListener>();
-        client = new AmazonHttpClient(clientConfiguration, clientParams.getRequestMetricCollector(),
-                                      !useStrictHostNameVerification(),
-                                      calculateCRC32FromCompressedData());
+        this.requestHandler2s = clientParams.getRequestHandlers();
+        this.monitoringListeners = new CopyOnWriteArrayList<MonitoringListener>();
+
+        useStrictHostNameVerification = useStrictHostNameVerification != null ? useStrictHostNameVerification
+                                                                              : useStrictHostNameVerification();
+
+        this.client = new AmazonHttpClient(clientConfiguration,
+                                           clientParams.getRequestMetricCollector(),
+                                           !useStrictHostNameVerification,
+                                           calculateCRC32FromCompressedData());
         this.csmConfiguration = getCsmConfiguration(clientParams.getClientSideMonitoringConfigurationProvider());
 
         if (isCsmEnabled()) {

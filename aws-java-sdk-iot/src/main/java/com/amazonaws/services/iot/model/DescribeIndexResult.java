@@ -37,23 +37,22 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity status
-     * data.
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data, and thing
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
      * connectivity status data.
      * </p>
      * </li>
@@ -167,23 +166,22 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity status
-     * data.
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data, and thing
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
      * connectivity status data.
      * </p>
      * </li>
@@ -194,24 +192,24 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains only registry data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity
-     *        status data.
+     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *        data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data,
-     *        and thing connectivity status data.
+     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *        thing connectivity status data.
      *        </p>
      *        </li>
      */
@@ -227,23 +225,22 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity status
-     * data.
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data, and thing
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
      * connectivity status data.
      * </p>
      * </li>
@@ -253,24 +250,24 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      *         <ul>
      *         <li>
      *         <p>
-     *         REGISTRY – Your thing index will contain only registry data.
+     *         REGISTRY – Your thing index contains only registry data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     *         REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity
-     *         status data.
+     *         REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *         data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data,
-     *         and thing connectivity status data.
+     *         REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *         thing connectivity status data.
      *         </p>
      *         </li>
      */
@@ -286,23 +283,22 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity status
-     * data.
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data, and thing
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
      * connectivity status data.
      * </p>
      * </li>
@@ -313,24 +309,24 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains only registry data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and thing connectivity
-     *        status data.
+     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *        data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data, shadow data,
-     *        and thing connectivity status data.
+     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *        thing connectivity status data.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

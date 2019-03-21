@@ -5403,6 +5403,75 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists the tags that are assigned to an Amazon Cognito user pool.
+     * </p>
+     * <p>
+     * A tag is a label that you can apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * You can use this action up to 10 times per second, per account.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -6480,6 +6549,146 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Assigns a set of tags to an Amazon Cognito user pool. A tag is a label that you can use to categorize and manage
+     * user pools in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a key and value, both of which you define. A key is a general category for more specific
+     * values. For example, if you have two versions of a user pool, one for testing and another for production, you
+     * might assign an <code>Environment</code> tag key to both user pools. The value of this key might be
+     * <code>Test</code> for one user pool and <code>Production</code> for the other.
+     * </p>
+     * <p>
+     * Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the
+     * Billing and Cost Management console, where you can track the costs associated with your user pools. In an IAM
+     * policy, you can constrain permissions for user pools based on specific tags or tag values.
+     * </p>
+     * <p>
+     * You can use this action up to 5 times per second, per account. A user pool can have as many as 50 tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from an Amazon Cognito user pool. You can use this action up to 5 times per second,
+     * per account
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides the feedback for an authentication event whether it was from a valid user or not. This feedback is used
      * for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
      * </p>
@@ -7091,7 +7300,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * For more information about adding a custom domain to your user pool, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.
      * </p>
      * 

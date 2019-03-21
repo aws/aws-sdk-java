@@ -22,7 +22,7 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -35,11 +35,11 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results, or null if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -48,10 +48,10 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
-     * @return The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * @return The token used to get the next set of results, or null if there are no additional results.
      */
 
     public String getNextToken() {
@@ -60,11 +60,11 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results, or null if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

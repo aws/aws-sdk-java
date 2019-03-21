@@ -33,12 +33,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -56,8 +56,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing,
-     * thingIndexMode must not be set to OFF.
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
      * </p>
      * </li>
      * <li>
@@ -76,12 +76,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -96,12 +96,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -123,12 +123,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -142,12 +142,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *         <ul>
      *         <li>
      *         <p>
-     *         REGISTRY – Your thing index will contain only registry data.
+     *         REGISTRY – Your thing index contains registry data only.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *         REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *         </p>
      *         </li>
      *         <li>
@@ -169,12 +169,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -189,12 +189,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -218,12 +218,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -238,12 +238,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -267,8 +267,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing,
-     * thingIndexMode must not be set to OFF.
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
      * </p>
      * </li>
      * <li>
@@ -283,8 +283,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity
-     *        indexing, thingIndexMode must not be set to OFF.
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
      *        </p>
      *        </li>
      *        <li>
@@ -306,8 +306,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing,
-     * thingIndexMode must not be set to OFF.
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
      * </p>
      * </li>
      * <li>
@@ -321,8 +321,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *         <ul>
      *         <li>
      *         <p>
-     *         STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity
-     *         indexing, thingIndexMode must not be set to OFF.
+     *         STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *         thingIndexMode must not be set to OFF.
      *         </p>
      *         </li>
      *         <li>
@@ -344,8 +344,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing,
-     * thingIndexMode must not be set to OFF.
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
      * </p>
      * </li>
      * <li>
@@ -360,8 +360,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity
-     *        indexing, thingIndexMode must not be set to OFF.
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
      *        </p>
      *        </li>
      *        <li>
@@ -385,8 +385,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing,
-     * thingIndexMode must not be set to OFF.
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
      * </p>
      * </li>
      * <li>
@@ -401,8 +401,8 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity
-     *        indexing, thingIndexMode must not be set to OFF.
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
      *        </p>
      *        </li>
      *        <li>
