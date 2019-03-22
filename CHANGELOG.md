@@ -1,3 +1,12 @@
+# __1.11.524__ __2019-03-22__
+## __AWS IoT 1-Click Projects Service__
+  - ### Features
+    - This release adds tagging support for AWS IoT 1-Click Project resources. Use these APIs to add, remove, or list tags on Projects, and leverage the tags for various authorization and billing scenarios. This release also adds the ARN property to projects for DescribeProject and ListProject responses.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe - support transcriptions from audio sources in German (de-DE) and Korean (ko-KR).
+
 # __1.11.523__ __2019-03-21__
 ## __AWS IoT__
   - ### Features

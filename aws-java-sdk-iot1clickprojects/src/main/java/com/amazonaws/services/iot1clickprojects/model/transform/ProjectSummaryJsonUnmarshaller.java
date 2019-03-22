@@ -48,6 +48,10 @@ public class ProjectSummaryJsonUnmarshaller implements Unmarshaller<ProjectSumma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    projectSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("projectName", targetDepth)) {
                     context.nextToken();
                     projectSummary.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +63,11 @@ public class ProjectSummaryJsonUnmarshaller implements Unmarshaller<ProjectSumma
                 if (context.testExpression("updatedDate", targetDepth)) {
                     context.nextToken();
                     projectSummary.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    projectSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

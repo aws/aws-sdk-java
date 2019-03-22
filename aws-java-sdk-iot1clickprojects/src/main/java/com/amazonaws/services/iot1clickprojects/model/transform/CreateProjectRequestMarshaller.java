@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.iot1clickprojects.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> PLACEMENTTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementTemplate").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getPlacementTemplate(), PLACEMENTTEMPLATE_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

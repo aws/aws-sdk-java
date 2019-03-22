@@ -48,6 +48,10 @@ public class ProjectDescriptionJsonUnmarshaller implements Unmarshaller<ProjectD
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    projectDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("projectName", targetDepth)) {
                     context.nextToken();
                     projectDescription.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +71,12 @@ public class ProjectDescriptionJsonUnmarshaller implements Unmarshaller<ProjectD
                 if (context.testExpression("placementTemplate", targetDepth)) {
                     context.nextToken();
                     projectDescription.setPlacementTemplate(PlacementTemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    projectDescription
+                            .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

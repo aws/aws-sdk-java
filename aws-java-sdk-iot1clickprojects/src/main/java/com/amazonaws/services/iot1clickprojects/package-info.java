@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * The AWS IoT 1-Click Project API Reference
+ * The AWS IoT 1-Click Projects API Reference
  * </p>
  */
 package com.amazonaws.services.iot1clickprojects;

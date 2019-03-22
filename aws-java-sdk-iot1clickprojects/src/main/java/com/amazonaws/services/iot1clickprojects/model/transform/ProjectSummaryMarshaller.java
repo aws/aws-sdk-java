@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.iot1clickprojects.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,12 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ProjectSummaryMarshaller {
 
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final ProjectSummaryMarshaller instance = new ProjectSummaryMarshaller();
 
@@ -50,9 +56,11 @@ public class ProjectSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(projectSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(projectSummary.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(projectSummary.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(projectSummary.getUpdatedDate(), UPDATEDDATE_BINDING);
+            protocolMarshaller.marshall(projectSummary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
