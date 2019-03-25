@@ -31,6 +31,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocationName("baseUrl").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> FRAGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -64,6 +66,7 @@ public class DashIsoGroupSettingsMarshaller {
         try {
             protocolMarshaller.marshall(dashIsoGroupSettings.getBaseUrl(), BASEURL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getHbbtvCompliance(), HBBTVCOMPLIANCE_BINDING);

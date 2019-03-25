@@ -39,6 +39,8 @@ public class PolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityServicePolicyData").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
+    private static final MarshallingInfo<List> RESOURCETYPELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceTypeList").build();
     private static final MarshallingInfo<List> RESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceTags").build();
     private static final MarshallingInfo<Boolean> EXCLUDERESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -71,6 +73,7 @@ public class PolicyMarshaller {
             protocolMarshaller.marshall(policy.getPolicyUpdateToken(), POLICYUPDATETOKEN_BINDING);
             protocolMarshaller.marshall(policy.getSecurityServicePolicyData(), SECURITYSERVICEPOLICYDATA_BINDING);
             protocolMarshaller.marshall(policy.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(policy.getResourceTypeList(), RESOURCETYPELIST_BINDING);
             protocolMarshaller.marshall(policy.getResourceTags(), RESOURCETAGS_BINDING);
             protocolMarshaller.marshall(policy.getExcludeResourceTags(), EXCLUDERESOURCETAGS_BINDING);
             protocolMarshaller.marshall(policy.getRemediationEnabled(), REMEDIATIONENABLED_BINDING);

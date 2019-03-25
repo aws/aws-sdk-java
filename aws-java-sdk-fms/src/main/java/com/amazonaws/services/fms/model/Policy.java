@@ -56,14 +56,19 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private SecurityServicePolicyData securityServicePolicyData;
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * An array of <code>ResourceType</code>.
+     * </p>
+     */
+    private java.util.List<String> resourceTypeList;
     /**
      * <p>
      * An array of <code>ResourceTag</code> objects.
@@ -289,18 +294,16 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *        distribution. This is in the format shown in <a href=
+     *        The type of resource to protect with the policy. This is in the format shown in <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *        <code>AWS::CloudFront::Distribution</code>.
      */
 
@@ -310,17 +313,15 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
-     * @return The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *         distribution. This is in the format shown in <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * @return The type of resource to protect with the policy. This is in the format shown in <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         >AWS Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *         <code>AWS::CloudFront::Distribution</code>.
      */
 
@@ -330,24 +331,92 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *        distribution. This is in the format shown in <a href=
+     *        The type of resource to protect with the policy. This is in the format shown in <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *        <code>AWS::CloudFront::Distribution</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Policy withResourceType(String resourceType) {
         setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ResourceType</code>.
+     * </p>
+     * 
+     * @return An array of <code>ResourceType</code>.
+     */
+
+    public java.util.List<String> getResourceTypeList() {
+        return resourceTypeList;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ResourceType</code>.
+     * </p>
+     * 
+     * @param resourceTypeList
+     *        An array of <code>ResourceType</code>.
+     */
+
+    public void setResourceTypeList(java.util.Collection<String> resourceTypeList) {
+        if (resourceTypeList == null) {
+            this.resourceTypeList = null;
+            return;
+        }
+
+        this.resourceTypeList = new java.util.ArrayList<String>(resourceTypeList);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ResourceType</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceTypeList(java.util.Collection)} or {@link #withResourceTypeList(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param resourceTypeList
+     *        An array of <code>ResourceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withResourceTypeList(String... resourceTypeList) {
+        if (this.resourceTypeList == null) {
+            setResourceTypeList(new java.util.ArrayList<String>(resourceTypeList.length));
+        }
+        for (String ele : resourceTypeList) {
+            this.resourceTypeList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ResourceType</code>.
+     * </p>
+     * 
+     * @param resourceTypeList
+     *        An array of <code>ResourceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withResourceTypeList(java.util.Collection<String> resourceTypeList) {
+        setResourceTypeList(resourceTypeList);
         return this;
     }
 
@@ -751,6 +820,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
             sb.append("SecurityServicePolicyData: ").append(getSecurityServicePolicyData()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getResourceTypeList() != null)
+            sb.append("ResourceTypeList: ").append(getResourceTypeList()).append(",");
         if (getResourceTags() != null)
             sb.append("ResourceTags: ").append(getResourceTags()).append(",");
         if (getExcludeResourceTags() != null)
@@ -795,6 +866,10 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getResourceTypeList() == null ^ this.getResourceTypeList() == null)
+            return false;
+        if (other.getResourceTypeList() != null && other.getResourceTypeList().equals(this.getResourceTypeList()) == false)
+            return false;
         if (other.getResourceTags() == null ^ this.getResourceTags() == null)
             return false;
         if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
@@ -828,6 +903,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPolicyUpdateToken() == null) ? 0 : getPolicyUpdateToken().hashCode());
         hashCode = prime * hashCode + ((getSecurityServicePolicyData() == null) ? 0 : getSecurityServicePolicyData().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceTypeList() == null) ? 0 : getResourceTypeList().hashCode());
         hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         hashCode = prime * hashCode + ((getExcludeResourceTags() == null) ? 0 : getExcludeResourceTags().hashCode());
         hashCode = prime * hashCode + ((getRemediationEnabled() == null) ? 0 : getRemediationEnabled().hashCode());

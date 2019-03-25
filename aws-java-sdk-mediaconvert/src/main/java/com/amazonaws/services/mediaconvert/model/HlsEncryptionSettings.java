@@ -31,17 +31,26 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
      * the Initialization Vector will follow the segment number by default.
      */
     private String constantInitializationVector;
-
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     */
     private String encryptionMethod;
-
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     private String initializationVectorInManifest;
-
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline
+     * Apple HLS FairPlay content protection.
+     */
     private String offlineEncrypted;
-
+    /** Settings for use with a SPEKE key provider */
     private SpekeKeyProvider spekeKeyProvider;
-
+    /** Use these settings to set up encryption with a static key provider. */
     private StaticKeyProvider staticKeyProvider;
-
+    /** Indicates which type of key provider is used for encryption. */
     private String type;
 
     /**
@@ -85,7 +94,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @see HlsEncryptionType
      */
 
@@ -94,7 +108,11 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
+     * @return Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *         the web interface also disables encryption.
      * @see HlsEncryptionType
      */
 
@@ -103,7 +121,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsEncryptionType
      */
@@ -114,7 +137,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsEncryptionType
      */
@@ -125,7 +153,13 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @see HlsInitializationVectorInManifest
      */
 
@@ -134,7 +168,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
+     * @return The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *         set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not
+     *         in the manifest.
      * @see HlsInitializationVectorInManifest
      */
 
@@ -143,7 +182,13 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsInitializationVectorInManifest
      */
@@ -154,7 +199,13 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsInitializationVectorInManifest
      */
@@ -165,7 +216,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline
+     * Apple HLS FairPlay content protection.
+     * 
      * @param offlineEncrypted
+     *        Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for
+     *        offline Apple HLS FairPlay content protection.
      * @see HlsOfflineEncrypted
      */
 
@@ -174,7 +230,11 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline
+     * Apple HLS FairPlay content protection.
+     * 
+     * @return Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for
+     *         offline Apple HLS FairPlay content protection.
      * @see HlsOfflineEncrypted
      */
 
@@ -183,7 +243,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline
+     * Apple HLS FairPlay content protection.
+     * 
      * @param offlineEncrypted
+     *        Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for
+     *        offline Apple HLS FairPlay content protection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOfflineEncrypted
      */
@@ -194,7 +259,12 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline
+     * Apple HLS FairPlay content protection.
+     * 
      * @param offlineEncrypted
+     *        Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for
+     *        offline Apple HLS FairPlay content protection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOfflineEncrypted
      */
@@ -205,7 +275,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for use with a SPEKE key provider
+     * 
      * @param spekeKeyProvider
+     *        Settings for use with a SPEKE key provider
      */
 
     public void setSpekeKeyProvider(SpekeKeyProvider spekeKeyProvider) {
@@ -213,7 +286,9 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings for use with a SPEKE key provider
+     * 
+     * @return Settings for use with a SPEKE key provider
      */
 
     public SpekeKeyProvider getSpekeKeyProvider() {
@@ -221,7 +296,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for use with a SPEKE key provider
+     * 
      * @param spekeKeyProvider
+     *        Settings for use with a SPEKE key provider
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +309,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use these settings to set up encryption with a static key provider.
+     * 
      * @param staticKeyProvider
+     *        Use these settings to set up encryption with a static key provider.
      */
 
     public void setStaticKeyProvider(StaticKeyProvider staticKeyProvider) {
@@ -239,7 +320,9 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Use these settings to set up encryption with a static key provider.
+     * 
+     * @return Use these settings to set up encryption with a static key provider.
      */
 
     public StaticKeyProvider getStaticKeyProvider() {
@@ -247,7 +330,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use these settings to set up encryption with a static key provider.
+     * 
      * @param staticKeyProvider
+     *        Use these settings to set up encryption with a static key provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,7 +343,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @see HlsKeyProviderType
      */
 
@@ -266,7 +355,9 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Indicates which type of key provider is used for encryption.
+     * 
+     * @return Indicates which type of key provider is used for encryption.
      * @see HlsKeyProviderType
      */
 
@@ -275,7 +366,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsKeyProviderType
      */
@@ -286,7 +380,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsKeyProviderType
      */

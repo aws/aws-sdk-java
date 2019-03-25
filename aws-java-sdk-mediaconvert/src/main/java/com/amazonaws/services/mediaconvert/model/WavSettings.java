@@ -33,7 +33,10 @@ public class WavSettings implements Serializable, Cloneable, StructuredPojo {
      * In the console, these values are Mono, Stereo, 4-Channel, and 8-Channel, respectively.
      */
     private Integer channels;
-
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size,
+     * or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+     */
     private String format;
     /** Sample rate in Hz. */
     private Integer sampleRate;
@@ -113,7 +116,13 @@ public class WavSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size,
+     * or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+     * 
      * @param format
+     *        The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file
+     *        size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to
+     *        RF64.
      * @see WavFormat
      */
 
@@ -122,7 +131,12 @@ public class WavSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size,
+     * or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+     * 
+     * @return The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file
+     *         size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format
+     *         to RF64.
      * @see WavFormat
      */
 
@@ -131,7 +145,13 @@ public class WavSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size,
+     * or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+     * 
      * @param format
+     *        The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file
+     *        size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to
+     *        RF64.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WavFormat
      */
@@ -142,7 +162,13 @@ public class WavSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size,
+     * or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+     * 
      * @param format
+     *        The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file
+     *        size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to
+     *        RF64.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WavFormat
      */

@@ -48,6 +48,10 @@ public class DeviceDescriptionJsonUnmarshaller implements Unmarshaller<DeviceDes
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    deviceDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     deviceDescription.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
@@ -68,6 +72,11 @@ public class DeviceDescriptionJsonUnmarshaller implements Unmarshaller<DeviceDes
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     deviceDescription.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    deviceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

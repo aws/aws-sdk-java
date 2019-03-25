@@ -41,7 +41,7 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
      * (and PID field); there is no way to extract a specific language with pass-through captions.
      */
     private String languageCode;
-
+    /** Source settings (SourceSettings) contains the group of settings for captions in the input. */
     private CaptionSourceSettings sourceSettings;
 
     /**
@@ -182,7 +182,10 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Source settings (SourceSettings) contains the group of settings for captions in the input.
+     * 
      * @param sourceSettings
+     *        Source settings (SourceSettings) contains the group of settings for captions in the input.
      */
 
     public void setSourceSettings(CaptionSourceSettings sourceSettings) {
@@ -190,7 +193,9 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * Source settings (SourceSettings) contains the group of settings for captions in the input.
+     * 
+     * @return Source settings (SourceSettings) contains the group of settings for captions in the input.
      */
 
     public CaptionSourceSettings getSourceSettings() {
@@ -198,7 +203,10 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Source settings (SourceSettings) contains the group of settings for captions in the input.
+     * 
      * @param sourceSettings
+     *        Source settings (SourceSettings) contains the group of settings for captions in the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

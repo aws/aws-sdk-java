@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class FinalizeDeviceClaimRequestProtocolMarshaller implements Marshaller<Request<FinalizeDeviceClaimRequest>, FinalizeDeviceClaimRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/devices/{deviceId}/finalize-claim").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/devices/{deviceId}/finalize-claim").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
             .serviceName("AWSIoT1ClickDevices").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

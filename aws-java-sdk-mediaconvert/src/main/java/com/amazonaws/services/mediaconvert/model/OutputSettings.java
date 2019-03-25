@@ -26,10 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings for HLS output groups */
     private HlsSettings hlsSettings;
 
     /**
+     * Settings for HLS output groups
+     * 
      * @param hlsSettings
+     *        Settings for HLS output groups
      */
 
     public void setHlsSettings(HlsSettings hlsSettings) {
@@ -37,7 +41,9 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Settings for HLS output groups
+     * 
+     * @return Settings for HLS output groups
      */
 
     public HlsSettings getHlsSettings() {
@@ -45,7 +51,10 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for HLS output groups
+     * 
      * @param hlsSettings
+     *        Settings for HLS output groups
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

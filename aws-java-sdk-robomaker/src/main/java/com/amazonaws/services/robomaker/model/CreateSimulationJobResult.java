@@ -153,7 +153,7 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
     private OutputLocation outputLocation;
     /**
      * <p>
-     * The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     * The maximum simulation job duration in seconds.
      * </p>
      */
     private Long maxJobDurationInSeconds;
@@ -1218,11 +1218,11 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     * The maximum simulation job duration in seconds.
      * </p>
      * 
      * @param maxJobDurationInSeconds
-     *        The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     *        The maximum simulation job duration in seconds.
      */
 
     public void setMaxJobDurationInSeconds(Long maxJobDurationInSeconds) {
@@ -1231,10 +1231,10 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     * The maximum simulation job duration in seconds.
      * </p>
      * 
-     * @return The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     * @return The maximum simulation job duration in seconds.
      */
 
     public Long getMaxJobDurationInSeconds() {
@@ -1243,11 +1243,11 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     * The maximum simulation job duration in seconds.
      * </p>
      * 
      * @param maxJobDurationInSeconds
-     *        The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.
+     *        The maximum simulation job duration in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

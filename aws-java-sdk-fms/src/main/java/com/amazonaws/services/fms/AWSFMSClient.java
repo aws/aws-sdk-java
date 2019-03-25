@@ -54,7 +54,7 @@ import com.amazonaws.services.fms.model.transform.*;
  * <p>
  * This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
- * Manager features, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+ * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
  */
@@ -647,6 +647,65 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a
+     * potential DDoS attack.
+     * </p>
+     * 
+     * @param getProtectionStatusRequest
+     * @return Result of the GetProtectionStatus operation returned by the service.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetProtectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetProtectionStatusResult getProtectionStatus(GetProtectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProtectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetProtectionStatusResult executeGetProtectionStatus(GetProtectionStatusRequest getProtectionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProtectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProtectionStatusRequest> request = null;
+        Response<GetProtectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProtectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProtectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProtectionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProtectionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetProtectionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
      * <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified
      * policy.
@@ -780,7 +839,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws LimitExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
      *         in the <i>AWS WAF Developer Guide</i>.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
@@ -895,6 +954,19 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * <p>
      * Creates an AWS Firewall Manager policy.
      * </p>
+     * <p>
+     * Firewall Manager provides two types of policies: A Shield Advanced policy, which applies Shield Advanced
+     * protection to specified accounts and resources, or a WAF policy, which contains a rule group and defines which
+     * resources are to be protected by that rule group. A policy is specific to either WAF or Shield Advanced. If you
+     * want to enforce both WAF rules and Shield Advanced protection across accounts, you can create multiple policies.
+     * You can create one or more policies for WAF rules, and one or more policies for Shield Advanced.
+     * </p>
+     * <p>
+     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information on subscribing
+     * to Shield Advanced, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html"
+     * >CreateSubscription</a>.
+     * </p>
      * 
      * @param putPolicyRequest
      * @return Result of the PutPolicy operation returned by the service.
@@ -909,7 +981,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws LimitExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
      *         in the <i>AWS WAF Developer Guide</i>.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.

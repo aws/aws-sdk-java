@@ -121,13 +121,13 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private Integer minimumLinks;
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      */
     private String awsDevice;
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      */
     private String awsDeviceV2;
@@ -932,11 +932,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
-     *        The Direct Connect endpoint that hosts the LAG.
+     *        The AWS Direct Connect endpoint that hosts the LAG.
      */
 
     public void setAwsDevice(String awsDevice) {
@@ -945,10 +945,10 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
-     * @return The Direct Connect endpoint that hosts the LAG.
+     * @return The AWS Direct Connect endpoint that hosts the LAG.
      */
 
     public String getAwsDevice() {
@@ -957,11 +957,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
-     *        The Direct Connect endpoint that hosts the LAG.
+     *        The AWS Direct Connect endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -972,11 +972,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The Direct Connect endpoint that hosts the LAG.
+     *        The AWS Direct Connect endpoint that hosts the LAG.
      */
 
     public void setAwsDeviceV2(String awsDeviceV2) {
@@ -985,10 +985,10 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
-     * @return The Direct Connect endpoint that hosts the LAG.
+     * @return The AWS Direct Connect endpoint that hosts the LAG.
      */
 
     public String getAwsDeviceV2() {
@@ -997,11 +997,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Direct Connect endpoint that hosts the LAG.
+     * The AWS Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The Direct Connect endpoint that hosts the LAG.
+     *        The AWS Direct Connect endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

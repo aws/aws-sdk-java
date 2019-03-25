@@ -240,6 +240,50 @@
       } ],
       "documentation" : "<p>Lists the 1-Click compatible devices associated with your AWS account.</p>"
     },
+    "ListTagsForResource" : {
+      "name" : "ListTagsForResource",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "ListTagsForResourceRequest"
+      },
+      "output" : {
+        "shape" : "ListTagsForResourceResponse"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException",
+        "documentation" : "<p>404 response</p>"
+      }, {
+        "shape" : "InternalFailureException",
+        "documentation" : "<p>500 response</p>"
+      } ],
+      "documentation" : "<p>List all tags on an AWS IoT 1-Click resource.</p>"
+    },
+    "TagResource" : {
+      "name" : "TagResource",
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 204
+      },
+      "input" : {
+        "shape" : "TagResourceRequest"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException",
+        "documentation" : "<p>404 response</p>"
+      }, {
+        "shape" : "InvalidRequestException",
+        "documentation" : "<p>400 response</p>"
+      }, {
+        "shape" : "InternalFailureException",
+        "documentation" : "<p>500 response</p>"
+      } ],
+      "documentation" : "<p>Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these user-defined tags so that they appear on the Billing and Cost Management console for cost allocation tracking.</p>"
+    },
     "UnclaimDevice" : {
       "name" : "UnclaimDevice",
       "http" : {
@@ -265,6 +309,28 @@
         "documentation" : "<p>500 response</p>"
       } ],
       "documentation" : "<p>Disassociates a device from your AWS account using its device ID.</p>"
+    },
+    "UntagResource" : {
+      "name" : "UntagResource",
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 204
+      },
+      "input" : {
+        "shape" : "UntagResourceRequest"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException",
+        "documentation" : "<p>404 response</p>"
+      }, {
+        "shape" : "InvalidRequestException",
+        "documentation" : "<p>400 response</p>"
+      }, {
+        "shape" : "InternalFailureException",
+        "documentation" : "<p>500 response</p>"
+      } ],
+      "documentation" : "<p>Removes the association of tags from an AWS IoT 1-Click resource.</p>"
     },
     "UpdateDeviceState" : {
       "name" : "UpdateDeviceState",
@@ -390,6 +456,11 @@
     "DeviceDescription" : {
       "type" : "structure",
       "members" : {
+        "Arn" : {
+          "shape" : "__string",
+          "locationName" : "arn",
+          "documentation" : "<p>The ARN of the device.</p>"
+        },
         "Attributes" : {
           "shape" : "DeviceAttributes",
           "locationName" : "attributes",
@@ -414,6 +485,11 @@
           "shape" : "__string",
           "locationName" : "type",
           "documentation" : "<p>The type of the device, such as \"button\".</p>"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags",
+          "documentation" : "<p>The tags currently associated with the AWS IoT 1-Click device.</p>"
         }
       }
     },
@@ -475,6 +551,11 @@
           "location" : "uri",
           "locationName" : "deviceId",
           "documentation" : "<p>The unique identifier of the device.</p>"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags",
+          "documentation" : "<p>The tags to be assigned to the AWS IoT 1-Click device.</p>"
         }
       },
       "required" : [ "DeviceId" ]
@@ -711,6 +792,28 @@
         }
       }
     },
+    "ListTagsForResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn",
+          "documentation" : "<p>The AWS IoT 1-Click resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>"
+        }
+      },
+      "required" : [ "ResourceArn" ]
+    },
+    "ListTagsForResourceResponse" : {
+      "type" : "structure",
+      "members" : {
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags",
+          "documentation" : "<p>The tags currently associated with the AWS IoT 1-Click resource.</p>"
+        }
+      }
+    },
     "MaxResults" : {
       "type" : "integer",
       "min" : 1,
@@ -792,6 +895,23 @@
         "httpStatusCode" : 404
       }
     },
+    "TagResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn",
+          "documentation" : "<p>Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags",
+          "documentation" : "<p>The tags to be assigned to the AWS IoT 1-Click resource.</p>"
+        }
+      },
+      "required" : [ "ResourceArn", "Tags" ]
+    },
     "UnclaimDeviceRequest" : {
       "type" : "structure",
       "members" : {
@@ -813,6 +933,24 @@
           "documentation" : "<p>The device's final claim state.</p>"
         }
       }
+    },
+    "UntagResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn",
+          "documentation" : "<p>The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>"
+        },
+        "TagKeys" : {
+          "shape" : "__listOf__string",
+          "location" : "querystring",
+          "locationName" : "tagKeys",
+          "documentation" : "<p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the AWS IoT 1-Click resource.</p>"
+        }
+      },
+      "required" : [ "TagKeys", "ResourceArn" ]
     },
     "UpdateDeviceStateRequest" : {
       "type" : "structure",
@@ -865,8 +1003,23 @@
         "shape" : "DeviceMethod"
       }
     },
+    "__listOf__string" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "__string"
+      }
+    },
     "__long" : {
       "type" : "long"
+    },
+    "__mapOf__string" : {
+      "type" : "map",
+      "key" : {
+        "shape" : "__string"
+      },
+      "value" : {
+        "shape" : "__string"
+      }
     },
     "__string" : {
       "type" : "string"

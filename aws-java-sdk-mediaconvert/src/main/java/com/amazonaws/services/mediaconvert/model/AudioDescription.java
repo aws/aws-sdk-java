@@ -26,6 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /** Advanced audio normalization settings. */
     private AudioNormalizationSettings audioNormalizationSettings;
     /**
      * Specifies which audio data to use from each input. In the simplest case, specify an
@@ -43,9 +44,20 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      * Commentary, 4-255 = Reserved.
      */
     private Integer audioType;
-
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the
+     * output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise
+     * the value in Audio Type is included in the output. Note that this field and audioType are both ignored if
+     * audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+     */
     private String audioTypeControl;
-
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
+     * encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each
+     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
+     * object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings *
+     * EAC3, Eac3Settings
+     */
     private AudioCodecSettings codecSettings;
     /**
      * Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
@@ -59,7 +71,11 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      * but there is no ISO 639 language code specified by the input.
      */
     private String languageCode;
-
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
+     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
+     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     */
     private String languageCodeControl;
     /** Advanced audio remixing settings. */
     private RemixSettings remixSettings;
@@ -70,7 +86,10 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     private String streamName;
 
     /**
+     * Advanced audio normalization settings.
+     * 
      * @param audioNormalizationSettings
+     *        Advanced audio normalization settings.
      */
 
     public void setAudioNormalizationSettings(AudioNormalizationSettings audioNormalizationSettings) {
@@ -78,7 +97,9 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Advanced audio normalization settings.
+     * 
+     * @return Advanced audio normalization settings.
      */
 
     public AudioNormalizationSettings getAudioNormalizationSettings() {
@@ -86,7 +107,10 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Advanced audio normalization settings.
+     * 
      * @param audioNormalizationSettings
+     *        Advanced audio normalization settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,7 +239,16 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the
+     * output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise
+     * the value in Audio Type is included in the output. Note that this field and audioType are both ignored if
+     * audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+     * 
      * @param audioTypeControl
+     *        When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through
+     *        to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the
+     *        output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType
+     *        are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
      * @see AudioTypeControl
      */
 
@@ -224,7 +257,15 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the
+     * output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise
+     * the value in Audio Type is included in the output. Note that this field and audioType are both ignored if
+     * audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+     * 
+     * @return When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through
+     *         to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the
+     *         output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType
+     *         are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
      * @see AudioTypeControl
      */
 
@@ -233,7 +274,16 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the
+     * output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise
+     * the value in Audio Type is included in the output. Note that this field and audioType are both ignored if
+     * audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+     * 
      * @param audioTypeControl
+     *        When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through
+     *        to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the
+     *        output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType
+     *        are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioTypeControl
      */
@@ -244,7 +294,16 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the
+     * output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise
+     * the value in Audio Type is included in the output. Note that this field and audioType are both ignored if
+     * audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
+     * 
      * @param audioTypeControl
+     *        When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through
+     *        to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the
+     *        output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType
+     *        are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioTypeControl
      */
@@ -255,7 +314,18 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
+     * encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each
+     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
+     * object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings *
+     * EAC3, Eac3Settings
+     * 
      * @param codecSettings
+     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
+     *        audio encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec).
+     *        For each codec enum you choose, define the corresponding settings object. The following lists the codec
+     *        enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings
+     *        * AC3, Ac3Settings * EAC3, Eac3Settings
      */
 
     public void setCodecSettings(AudioCodecSettings codecSettings) {
@@ -263,7 +333,17 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
+     * encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each
+     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
+     * object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings *
+     * EAC3, Eac3Settings
+     * 
+     * @return Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
+     *         audio encoding. The settings in this group vary depending on the value you choose for Audio codec
+     *         (Codec). For each codec enum you choose, define the corresponding settings object. The following lists
+     *         the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF,
+     *         AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
      */
 
     public AudioCodecSettings getCodecSettings() {
@@ -271,7 +351,18 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
+     * encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each
+     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
+     * object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings *
+     * EAC3, Eac3Settings
+     * 
      * @param codecSettings
+     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
+     *        audio encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec).
+     *        For each codec enum you choose, define the corresponding settings object. The following lists the codec
+     *        enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings
+     *        * AC3, Ac3Settings * EAC3, Eac3Settings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,7 +485,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
+     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
+     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * 
      * @param languageCodeControl
+     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
+     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
+     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
      * @see AudioLanguageCodeControl
      */
 
@@ -403,7 +501,13 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
+     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
+     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * 
+     * @return Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
+     *         code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
+     *         or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
      * @see AudioLanguageCodeControl
      */
 
@@ -412,7 +516,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
+     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
+     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * 
      * @param languageCodeControl
+     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
+     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
+     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioLanguageCodeControl
      */
@@ -423,7 +534,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
+     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
+     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * 
      * @param languageCodeControl
+     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
+     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
+     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioLanguageCodeControl
      */

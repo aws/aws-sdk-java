@@ -26,22 +26,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings for ancillary captions source. */
     private AncillarySourceSettings ancillarySourceSettings;
-
+    /** DVB Sub Source Settings */
     private DvbSubSourceSettings dvbSubSourceSettings;
-
+    /** Settings for embedded captions Source */
     private EmbeddedSourceSettings embeddedSourceSettings;
-
+    /** Settings for File-based Captions in Source */
     private FileSourceSettings fileSourceSettings;
-
+    /**
+     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
+     * format.
+     */
     private String sourceType;
-
+    /** Settings specific to Teletext caption sources, including Page number. */
     private TeletextSourceSettings teletextSourceSettings;
-
+    /** Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF. */
     private TrackSourceSettings trackSourceSettings;
 
     /**
+     * Settings for ancillary captions source.
+     * 
      * @param ancillarySourceSettings
+     *        Settings for ancillary captions source.
      */
 
     public void setAncillarySourceSettings(AncillarySourceSettings ancillarySourceSettings) {
@@ -49,7 +56,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings for ancillary captions source.
+     * 
+     * @return Settings for ancillary captions source.
      */
 
     public AncillarySourceSettings getAncillarySourceSettings() {
@@ -57,7 +66,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for ancillary captions source.
+     * 
      * @param ancillarySourceSettings
+     *        Settings for ancillary captions source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,7 +79,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * DVB Sub Source Settings
+     * 
      * @param dvbSubSourceSettings
+     *        DVB Sub Source Settings
      */
 
     public void setDvbSubSourceSettings(DvbSubSourceSettings dvbSubSourceSettings) {
@@ -75,7 +90,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * DVB Sub Source Settings
+     * 
+     * @return DVB Sub Source Settings
      */
 
     public DvbSubSourceSettings getDvbSubSourceSettings() {
@@ -83,7 +100,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * DVB Sub Source Settings
+     * 
      * @param dvbSubSourceSettings
+     *        DVB Sub Source Settings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,7 +113,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for embedded captions Source
+     * 
      * @param embeddedSourceSettings
+     *        Settings for embedded captions Source
      */
 
     public void setEmbeddedSourceSettings(EmbeddedSourceSettings embeddedSourceSettings) {
@@ -101,7 +124,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings for embedded captions Source
+     * 
+     * @return Settings for embedded captions Source
      */
 
     public EmbeddedSourceSettings getEmbeddedSourceSettings() {
@@ -109,7 +134,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for embedded captions Source
+     * 
      * @param embeddedSourceSettings
+     *        Settings for embedded captions Source
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +147,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for File-based Captions in Source
+     * 
      * @param fileSourceSettings
+     *        Settings for File-based Captions in Source
      */
 
     public void setFileSourceSettings(FileSourceSettings fileSourceSettings) {
@@ -127,7 +158,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings for File-based Captions in Source
+     * 
+     * @return Settings for File-based Captions in Source
      */
 
     public FileSourceSettings getFileSourceSettings() {
@@ -135,7 +168,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings for File-based Captions in Source
+     * 
      * @param fileSourceSettings
+     *        Settings for File-based Captions in Source
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +181,12 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
+     * format.
+     * 
      * @param sourceType
+     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
+     *        caption format.
      * @see CaptionSourceType
      */
 
@@ -154,7 +195,11 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
+     * format.
+     * 
+     * @return Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
+     *         caption format.
      * @see CaptionSourceType
      */
 
@@ -163,7 +208,12 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
+     * format.
+     * 
      * @param sourceType
+     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
+     *        caption format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionSourceType
      */
@@ -174,7 +224,12 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
+     * format.
+     * 
      * @param sourceType
+     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
+     *        caption format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionSourceType
      */
@@ -185,7 +240,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings specific to Teletext caption sources, including Page number.
+     * 
      * @param teletextSourceSettings
+     *        Settings specific to Teletext caption sources, including Page number.
      */
 
     public void setTeletextSourceSettings(TeletextSourceSettings teletextSourceSettings) {
@@ -193,7 +251,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings specific to Teletext caption sources, including Page number.
+     * 
+     * @return Settings specific to Teletext caption sources, including Page number.
      */
 
     public TeletextSourceSettings getTeletextSourceSettings() {
@@ -201,7 +261,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings specific to Teletext caption sources, including Page number.
+     * 
      * @param teletextSourceSettings
+     *        Settings specific to Teletext caption sources, including Page number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,7 +274,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
+     * 
      * @param trackSourceSettings
+     *        Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
      */
 
     public void setTrackSourceSettings(TrackSourceSettings trackSourceSettings) {
@@ -219,7 +285,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
+     * 
+     * @return Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
      */
 
     public TrackSourceSettings getTrackSourceSettings() {
@@ -227,7 +295,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
+     * 
      * @param trackSourceSettings
+     *        Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

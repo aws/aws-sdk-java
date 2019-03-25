@@ -29,11 +29,14 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer maxResults;
     /** Use this string, provided with the response to a previous request, to request the next batch of jobs. */
     private String nextToken;
-
+    /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     */
     private String order;
     /** Provide a queue name to get back only jobs from that queue. */
     private String queue;
-
+    /** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR. */
     private String status;
 
     /**
@@ -105,7 +108,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -114,7 +122,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * @return
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
+     * @return When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *         DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -123,7 +135,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -134,7 +151,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -179,7 +201,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @see JobStatus
      */
 
@@ -188,7 +213,9 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * @return
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
+     * @return A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @see JobStatus
      */
 
@@ -197,7 +224,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -208,7 +238,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

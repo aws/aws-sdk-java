@@ -27,20 +27,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Job implements Serializable, Cloneable, StructuredPojo {
 
-    /** Acceleration settings for job execution. */
+    /** Accelerated transcoding is currently in private preview. Contact AWS for more information. */
     private AccelerationSettings accelerationSettings;
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
-
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     */
     private String billingTagsSource;
     /** The time, in Unix epoch format in seconds, when the job got created. */
     private java.util.Date createdAt;
+    /** A job's phase can be PROBING, TRANSCODING OR UPLOADING */
+    private String currentPhase;
     /** Error code for the job */
     private Integer errorCode;
     /** Error message of Job */
     private String errorMessage;
     /** A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources */
     private String id;
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from
+     * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
+     * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
+     * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
+     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
+     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     */
+    private Integer jobPercentComplete;
     /** The job template that the job is created from, if it is created from a job template. */
     private String jobTemplate;
     /** List of output group details */
@@ -51,22 +67,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     private String queue;
+    /** The number of times that the service automatically attempted to process your job after encountering an error. */
+    private Integer retryCount;
     /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
      * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     private String role;
-
+    /** JobSettings contains all the transcode settings for a job. */
     private JobSettings settings;
-
+    /** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR. */
     private String status;
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      */
-    private Long statusUpdateIntervalInSecs;
-
+    private String statusUpdateInterval;
+    /** Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds. */
     private Timing timing;
     /**
      * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
@@ -75,10 +93,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> userMetadata;
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
      * 
      * @param accelerationSettings
-     *        Acceleration settings for job execution.
+     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
      */
 
     public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
@@ -86,9 +104,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
      * 
-     * @return Acceleration settings for job execution.
+     * @return Accelerated transcoding is currently in private preview. Contact AWS for more information.
      */
 
     public AccelerationSettings getAccelerationSettings() {
@@ -96,10 +114,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
      * 
      * @param accelerationSettings
-     *        Acceleration settings for job execution.
+     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,7 +161,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @see BillingTagsSource
      */
 
@@ -152,7 +179,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
+     * @return Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *         MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *         associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *         field, your job outputs will appear on the billing report unsorted.
      * @see BillingTagsSource
      */
 
@@ -161,7 +196,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -172,7 +216,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -213,6 +266,57 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * 
+     * @param currentPhase
+     *        A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * @see JobPhase
+     */
+
+    public void setCurrentPhase(String currentPhase) {
+        this.currentPhase = currentPhase;
+    }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * 
+     * @return A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * @see JobPhase
+     */
+
+    public String getCurrentPhase() {
+        return this.currentPhase;
+    }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * 
+     * @param currentPhase
+     *        A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobPhase
+     */
+
+    public Job withCurrentPhase(String currentPhase) {
+        setCurrentPhase(currentPhase);
+        return this;
+    }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * 
+     * @param currentPhase
+     *        A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobPhase
+     */
+
+    public Job withCurrentPhase(JobPhase currentPhase) {
+        this.currentPhase = currentPhase.toString();
         return this;
     }
 
@@ -315,6 +419,73 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from
+     * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
+     * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
+     * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
+     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
+     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * 
+     * @param jobPercentComplete
+     *        An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
+     *        from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
+     *        Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
+     *        to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
+     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
+     *        that use input clipping, the service can't provide information about job progress. In those cases,
+     *        jobPercentComplete returns a null value.
+     */
+
+    public void setJobPercentComplete(Integer jobPercentComplete) {
+        this.jobPercentComplete = jobPercentComplete;
+    }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from
+     * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
+     * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
+     * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
+     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
+     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * 
+     * @return An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
+     *         from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
+     *         Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
+     *         to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
+     *         containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
+     *         that use input clipping, the service can't provide information about job progress. In those cases,
+     *         jobPercentComplete returns a null value.
+     */
+
+    public Integer getJobPercentComplete() {
+        return this.jobPercentComplete;
+    }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from
+     * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
+     * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
+     * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
+     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
+     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * 
+     * @param jobPercentComplete
+     *        An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
+     *        from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
+     *        Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
+     *        to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
+     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
+     *        that use input clipping, the service can't provide information about job progress. In those cases,
+     *        jobPercentComplete returns a null value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withJobPercentComplete(Integer jobPercentComplete) {
+        setJobPercentComplete(jobPercentComplete);
         return this;
     }
 
@@ -461,6 +632,43 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The number of times that the service automatically attempted to process your job after encountering an error.
+     * 
+     * @param retryCount
+     *        The number of times that the service automatically attempted to process your job after encountering an
+     *        error.
+     */
+
+    public void setRetryCount(Integer retryCount) {
+        this.retryCount = retryCount;
+    }
+
+    /**
+     * The number of times that the service automatically attempted to process your job after encountering an error.
+     * 
+     * @return The number of times that the service automatically attempted to process your job after encountering an
+     *         error.
+     */
+
+    public Integer getRetryCount() {
+        return this.retryCount;
+    }
+
+    /**
+     * The number of times that the service automatically attempted to process your job after encountering an error.
+     * 
+     * @param retryCount
+     *        The number of times that the service automatically attempted to process your job after encountering an
+     *        error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withRetryCount(Integer retryCount) {
+        setRetryCount(retryCount);
+        return this;
+    }
+
+    /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
      * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      * 
@@ -501,7 +709,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * JobSettings contains all the transcode settings for a job.
+     * 
      * @param settings
+     *        JobSettings contains all the transcode settings for a job.
      */
 
     public void setSettings(JobSettings settings) {
@@ -509,7 +720,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * JobSettings contains all the transcode settings for a job.
+     * 
+     * @return JobSettings contains all the transcode settings for a job.
      */
 
     public JobSettings getSettings() {
@@ -517,7 +730,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * JobSettings contains all the transcode settings for a job.
+     * 
      * @param settings
+     *        JobSettings contains all the transcode settings for a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,7 +743,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @see JobStatus
      */
 
@@ -536,7 +755,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
+     * @return A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @see JobStatus
      */
 
@@ -545,7 +766,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -556,7 +780,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     * 
      * @param status
+     *        A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -571,14 +798,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      * 
-     * @param statusUpdateIntervalInSecs
+     * @param statusUpdateInterval
      *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
      */
 
-    public void setStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
-        this.statusUpdateIntervalInSecs = statusUpdateIntervalInSecs;
+    public void setStatusUpdateInterval(String statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval;
     }
 
     /**
@@ -589,10 +817,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *         service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
      */
 
-    public Long getStatusUpdateIntervalInSecs() {
-        return this.statusUpdateIntervalInSecs;
+    public String getStatusUpdateInterval() {
+        return this.statusUpdateInterval;
     }
 
     /**
@@ -600,20 +829,43 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      * 
-     * @param statusUpdateIntervalInSecs
+     * @param statusUpdateInterval
      *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *        service begins processing your job to the time it completes the transcode or encounters an error.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
      */
 
-    public Job withStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
-        setStatusUpdateIntervalInSecs(statusUpdateIntervalInSecs);
+    public Job withStatusUpdateInterval(String statusUpdateInterval) {
+        setStatusUpdateInterval(statusUpdateInterval);
         return this;
     }
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public Job withStatusUpdateInterval(StatusUpdateInterval statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval.toString();
+        return this;
+    }
+
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
+     * 
      * @param timing
+     *        Information about when jobs are submitted, started, and finished is specified in Unix epoch format in
+     *        seconds.
      */
 
     public void setTiming(Timing timing) {
@@ -621,7 +873,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
+     * 
+     * @return Information about when jobs are submitted, started, and finished is specified in Unix epoch format in
+     *         seconds.
      */
 
     public Timing getTiming() {
@@ -629,7 +884,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
+     * 
      * @param timing
+     *        Information about when jobs are submitted, started, and finished is specified in Unix epoch format in
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,26 +978,32 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("BillingTagsSource: ").append(getBillingTagsSource()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getCurrentPhase() != null)
+            sb.append("CurrentPhase: ").append(getCurrentPhase()).append(",");
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getJobPercentComplete() != null)
+            sb.append("JobPercentComplete: ").append(getJobPercentComplete()).append(",");
         if (getJobTemplate() != null)
             sb.append("JobTemplate: ").append(getJobTemplate()).append(",");
         if (getOutputGroupDetails() != null)
             sb.append("OutputGroupDetails: ").append(getOutputGroupDetails()).append(",");
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
+        if (getRetryCount() != null)
+            sb.append("RetryCount: ").append(getRetryCount()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getStatusUpdateIntervalInSecs() != null)
-            sb.append("StatusUpdateIntervalInSecs: ").append(getStatusUpdateIntervalInSecs()).append(",");
+        if (getStatusUpdateInterval() != null)
+            sb.append("StatusUpdateInterval: ").append(getStatusUpdateInterval()).append(",");
         if (getTiming() != null)
             sb.append("Timing: ").append(getTiming()).append(",");
         if (getUserMetadata() != null)
@@ -773,6 +1038,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getCurrentPhase() == null ^ this.getCurrentPhase() == null)
+            return false;
+        if (other.getCurrentPhase() != null && other.getCurrentPhase().equals(this.getCurrentPhase()) == false)
+            return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
         if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
@@ -784,6 +1053,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getJobPercentComplete() == null ^ this.getJobPercentComplete() == null)
+            return false;
+        if (other.getJobPercentComplete() != null && other.getJobPercentComplete().equals(this.getJobPercentComplete()) == false)
             return false;
         if (other.getJobTemplate() == null ^ this.getJobTemplate() == null)
             return false;
@@ -797,6 +1070,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getQueue() != null && other.getQueue().equals(this.getQueue()) == false)
             return false;
+        if (other.getRetryCount() == null ^ this.getRetryCount() == null)
+            return false;
+        if (other.getRetryCount() != null && other.getRetryCount().equals(this.getRetryCount()) == false)
+            return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
@@ -809,9 +1086,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getStatusUpdateIntervalInSecs() == null ^ this.getStatusUpdateIntervalInSecs() == null)
+        if (other.getStatusUpdateInterval() == null ^ this.getStatusUpdateInterval() == null)
             return false;
-        if (other.getStatusUpdateIntervalInSecs() != null && other.getStatusUpdateIntervalInSecs().equals(this.getStatusUpdateIntervalInSecs()) == false)
+        if (other.getStatusUpdateInterval() != null && other.getStatusUpdateInterval().equals(this.getStatusUpdateInterval()) == false)
             return false;
         if (other.getTiming() == null ^ this.getTiming() == null)
             return false;
@@ -833,16 +1110,19 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getCurrentPhase() == null) ? 0 : getCurrentPhase().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getJobPercentComplete() == null) ? 0 : getJobPercentComplete().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());
         hashCode = prime * hashCode + ((getOutputGroupDetails() == null) ? 0 : getOutputGroupDetails().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
+        hashCode = prime * hashCode + ((getRetryCount() == null) ? 0 : getRetryCount().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusUpdateIntervalInSecs() == null) ? 0 : getStatusUpdateIntervalInSecs().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getTiming() == null) ? 0 : getTiming().hashCode());
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
         return hashCode;

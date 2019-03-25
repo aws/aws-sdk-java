@@ -36,6 +36,18 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The ID of the virtual private gateway.
      * </p>
      */
+    private String gatewayId;
+    /**
+     * <p>
+     * The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> addAllowedPrefixesToDirectConnectGateway;
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     */
     private String virtualGatewayId;
 
     /**
@@ -75,6 +87,123 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     public CreateDirectConnectGatewayAssociationRequest withDirectConnectGatewayId(String directConnectGatewayId) {
         setDirectConnectGatewayId(directConnectGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the virtual private gateway.
+     */
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the virtual private gateway.
+     */
+
+    public String getGatewayId() {
+        return this.gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectConnectGatewayAssociationRequest withGatewayId(String gatewayId) {
+        setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * </p>
+     * 
+     * @return The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     */
+
+    public java.util.List<RouteFilterPrefix> getAddAllowedPrefixesToDirectConnectGateway() {
+        if (addAllowedPrefixesToDirectConnectGateway == null) {
+            addAllowedPrefixesToDirectConnectGateway = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>();
+        }
+        return addAllowedPrefixesToDirectConnectGateway;
+    }
+
+    /**
+     * <p>
+     * The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * </p>
+     * 
+     * @param addAllowedPrefixesToDirectConnectGateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     */
+
+    public void setAddAllowedPrefixesToDirectConnectGateway(java.util.Collection<RouteFilterPrefix> addAllowedPrefixesToDirectConnectGateway) {
+        if (addAllowedPrefixesToDirectConnectGateway == null) {
+            this.addAllowedPrefixesToDirectConnectGateway = null;
+            return;
+        }
+
+        this.addAllowedPrefixesToDirectConnectGateway = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(addAllowedPrefixesToDirectConnectGateway);
+    }
+
+    /**
+     * <p>
+     * The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddAllowedPrefixesToDirectConnectGateway(java.util.Collection)} or
+     * {@link #withAddAllowedPrefixesToDirectConnectGateway(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param addAllowedPrefixesToDirectConnectGateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectConnectGatewayAssociationRequest withAddAllowedPrefixesToDirectConnectGateway(
+            RouteFilterPrefix... addAllowedPrefixesToDirectConnectGateway) {
+        if (this.addAllowedPrefixesToDirectConnectGateway == null) {
+            setAddAllowedPrefixesToDirectConnectGateway(new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>(
+                    addAllowedPrefixesToDirectConnectGateway.length));
+        }
+        for (RouteFilterPrefix ele : addAllowedPrefixesToDirectConnectGateway) {
+            this.addAllowedPrefixesToDirectConnectGateway.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * </p>
+     * 
+     * @param addAllowedPrefixesToDirectConnectGateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectConnectGatewayAssociationRequest withAddAllowedPrefixesToDirectConnectGateway(
+            java.util.Collection<RouteFilterPrefix> addAllowedPrefixesToDirectConnectGateway) {
+        setAddAllowedPrefixesToDirectConnectGateway(addAllowedPrefixesToDirectConnectGateway);
         return this;
     }
 
@@ -132,6 +261,10 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
         sb.append("{");
         if (getDirectConnectGatewayId() != null)
             sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
+        if (getGatewayId() != null)
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
+        if (getAddAllowedPrefixesToDirectConnectGateway() != null)
+            sb.append("AddAllowedPrefixesToDirectConnectGateway: ").append(getAddAllowedPrefixesToDirectConnectGateway()).append(",");
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: ").append(getVirtualGatewayId());
         sb.append("}");
@@ -152,6 +285,15 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
             return false;
         if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
             return false;
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
+            return false;
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
+        if (other.getAddAllowedPrefixesToDirectConnectGateway() == null ^ this.getAddAllowedPrefixesToDirectConnectGateway() == null)
+            return false;
+        if (other.getAddAllowedPrefixesToDirectConnectGateway() != null
+                && other.getAddAllowedPrefixesToDirectConnectGateway().equals(this.getAddAllowedPrefixesToDirectConnectGateway()) == false)
+            return false;
         if (other.getVirtualGatewayId() == null ^ this.getVirtualGatewayId() == null)
             return false;
         if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
@@ -165,6 +307,8 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getAddAllowedPrefixesToDirectConnectGateway() == null) ? 0 : getAddAllowedPrefixesToDirectConnectGateway().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         return hashCode;
     }

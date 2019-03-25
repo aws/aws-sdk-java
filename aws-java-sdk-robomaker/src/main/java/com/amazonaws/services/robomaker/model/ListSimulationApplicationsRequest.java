@@ -50,7 +50,7 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in paginated
      * output. When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListFleets</code> request with the returned
+     * initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      * <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
@@ -59,7 +59,11 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
     private Integer maxResults;
     /**
      * <p>
-     * Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * Optional list of filters to limit results.
+     * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -194,7 +198,7 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in paginated
      * output. When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListFleets</code> request with the returned
+     * initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      * <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
@@ -204,10 +208,10 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      *        The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in
      *        paginated output. When this parameter is used, <code>ListSimulationApplications</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
-     *        remaining results of the initial request can be seen by sending another <code>ListFleets</code> request
-     *        with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-     *        not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-     *        <code>nextToken</code> value if applicable.
+     *        remaining results of the initial request can be seen by sending another
+     *        <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -219,7 +223,7 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in paginated
      * output. When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListFleets</code> request with the returned
+     * initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      * <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
@@ -228,10 +232,11 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * @return The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in
      *         paginated output. When this parameter is used, <code>ListSimulationApplications</code> only returns
      *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
-     *         The remaining results of the initial request can be seen by sending another <code>ListFleets</code>
-     *         request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this
-     *         parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-     *         <code>nextToken</code> value if applicable.
+     *         The remaining results of the initial request can be seen by sending another
+     *         <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This
+     *         value can be between 1 and 100. If this parameter is not used, then
+     *         <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if
+     *         applicable.
      */
 
     public Integer getMaxResults() {
@@ -243,7 +248,7 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in paginated
      * output. When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     * initial request can be seen by sending another <code>ListFleets</code> request with the returned
+     * initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      * <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
@@ -253,10 +258,10 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      *        The maximum number of deployment job results returned by <code>ListSimulationApplications</code> in
      *        paginated output. When this parameter is used, <code>ListSimulationApplications</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
-     *        remaining results of the initial request can be seen by sending another <code>ListFleets</code> request
-     *        with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-     *        not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-     *        <code>nextToken</code> value if applicable.
+     *        remaining results of the initial request can be seen by sending another
+     *        <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,10 +272,17 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * Optional list of filters to limit results.
+     * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
      * </p>
      * 
-     * @return Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * @return Optional list of filters to limit results.</p>
+     *         <p>
+     *         The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *         filtered item. You can use up to three filters.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -279,11 +291,18 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * Optional list of filters to limit results.
+     * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
      * </p>
      * 
      * @param filters
-     *        Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     *        Optional list of filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -297,7 +316,11 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * Optional list of filters to limit results.
+     * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -306,7 +329,10 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param filters
-     *        Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     *        Optional list of filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +348,18 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     * Optional list of filters to limit results.
+     * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
      * </p>
      * 
      * @param filters
-     *        Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+     *        Optional list of filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

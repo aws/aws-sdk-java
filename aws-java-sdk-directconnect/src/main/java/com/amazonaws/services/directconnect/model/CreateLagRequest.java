@@ -39,8 +39,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String location;
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     * 10Gbps.
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      */
     private String connectionsBandwidth;
@@ -139,13 +139,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     * 10Gbps.
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     *        10Gbps.
+     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      */
 
     public void setConnectionsBandwidth(String connectionsBandwidth) {
@@ -154,12 +154,12 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     * 10Gbps.
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
-     * @return The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps
-     *         and 10Gbps.
+     * @return The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *         100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      */
 
     public String getConnectionsBandwidth() {
@@ -168,13 +168,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     * 10Gbps.
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 1Gbps and
-     *        10Gbps.
+     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

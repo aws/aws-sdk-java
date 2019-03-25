@@ -32,7 +32,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      */
     private String expression;
@@ -41,13 +41,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      */
 
     public void setExpression(String expression) {
@@ -58,12 +58,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @return The expression that defines when to trigger an update. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *         Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *         Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      */
 
     public String getExpression() {
@@ -74,13 +74,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

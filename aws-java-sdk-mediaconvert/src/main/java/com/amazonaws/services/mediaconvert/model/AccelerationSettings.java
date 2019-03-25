@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Acceleration settings for job execution.
+ * Accelerated transcoding is currently in private preview. Contact AWS for more information.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AccelerationSettings" target="_top">AWS
  *      API Documentation</a>

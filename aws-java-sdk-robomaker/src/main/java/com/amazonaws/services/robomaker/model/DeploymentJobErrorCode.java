@@ -21,8 +21,11 @@ import javax.annotation.Generated;
 public enum DeploymentJobErrorCode {
 
     ResourceNotFound("ResourceNotFound"),
+    EnvironmentSetupError("EnvironmentSetupError"),
+    EtagMismatch("EtagMismatch"),
     FailureThresholdBreached("FailureThresholdBreached"),
     RobotDeploymentNoResponse("RobotDeploymentNoResponse"),
+    RobotAgentConnectionTimeout("RobotAgentConnectionTimeout"),
     GreengrassDeploymentFailed("GreengrassDeploymentFailed"),
     MissingRobotArchitecture("MissingRobotArchitecture"),
     MissingRobotApplicationArchitecture("MissingRobotApplicationArchitecture"),

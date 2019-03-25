@@ -26,10 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TtmlDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
+     * output or TTML output.
+     */
     private String stylePassthrough;
 
     /**
+     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
+     * output or TTML output.
+     * 
      * @param stylePassthrough
+     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the
+     *        CFF-TT output or TTML output.
      * @see TtmlStylePassthrough
      */
 
@@ -38,7 +47,11 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
+     * output or TTML output.
+     * 
+     * @return Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the
+     *         CFF-TT output or TTML output.
      * @see TtmlStylePassthrough
      */
 
@@ -47,7 +60,12 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
+     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
+     * output or TTML output.
+     * 
      * @param stylePassthrough
+     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the
+     *        CFF-TT output or TTML output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TtmlStylePassthrough
      */
@@ -58,7 +76,12 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
+     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
+     * output or TTML output.
+     * 
      * @param stylePassthrough
+     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the
+     *        CFF-TT output or TTML output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TtmlStylePassthrough
      */

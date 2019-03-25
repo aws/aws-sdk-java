@@ -131,6 +131,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(GetProtectionStatusRequest request) {
+
+        return getProtectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(GetProtectionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetProtectionStatusRequest, GetProtectionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComplianceStatusResult> listComplianceStatusAsync(ListComplianceStatusRequest request) {
 
         return listComplianceStatusAsync(request, null);

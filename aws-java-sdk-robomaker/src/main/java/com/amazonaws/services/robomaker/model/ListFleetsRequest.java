@@ -54,6 +54,10 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
+     * </p>
      */
     private java.util.List<Filter> filters;
 
@@ -214,8 +218,15 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
+     * </p>
      * 
-     * @return Optional filters to limit results.
+     * @return Optional filters to limit results.</p>
+     *         <p>
+     *         The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *         filtered item. You can use up to three filters.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -226,9 +237,16 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -245,13 +263,20 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Optional filters to limit results.
      * </p>
      * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,9 +294,16 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter name <code>name</code> is supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

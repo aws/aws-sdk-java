@@ -27,7 +27,7 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
 
     /**
      * <p>
-     * The associations.
+     * Information about the associations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DirectConnectGatewayAssociation> directConnectGatewayAssociations;
@@ -40,10 +40,10 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
 
     /**
      * <p>
-     * The associations.
+     * Information about the associations.
      * </p>
      * 
-     * @return The associations.
+     * @return Information about the associations.
      */
 
     public java.util.List<DirectConnectGatewayAssociation> getDirectConnectGatewayAssociations() {
@@ -55,11 +55,11 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
 
     /**
      * <p>
-     * The associations.
+     * Information about the associations.
      * </p>
      * 
      * @param directConnectGatewayAssociations
-     *        The associations.
+     *        Information about the associations.
      */
 
     public void setDirectConnectGatewayAssociations(java.util.Collection<DirectConnectGatewayAssociation> directConnectGatewayAssociations) {
@@ -73,7 +73,7 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
 
     /**
      * <p>
-     * The associations.
+     * Information about the associations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
      * </p>
      * 
      * @param directConnectGatewayAssociations
-     *        The associations.
+     *        Information about the associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class DescribeDirectConnectGatewayAssociationsResult extends com.amazonaw
 
     /**
      * <p>
-     * The associations.
+     * Information about the associations.
      * </p>
      * 
      * @param directConnectGatewayAssociations
-     *        The associations.
+     *        Information about the associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

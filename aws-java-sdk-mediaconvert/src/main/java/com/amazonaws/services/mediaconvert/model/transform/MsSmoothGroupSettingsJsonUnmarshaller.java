@@ -56,6 +56,10 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
                     context.nextToken();
                     msSmoothGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destinationSettings", targetDepth)) {
+                    context.nextToken();
+                    msSmoothGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     msSmoothGroupSettings.setEncryption(MsSmoothEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

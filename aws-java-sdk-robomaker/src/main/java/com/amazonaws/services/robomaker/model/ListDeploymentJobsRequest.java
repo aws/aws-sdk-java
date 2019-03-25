@@ -29,6 +29,12 @@ public class ListDeploymentJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>InProgress</code> or the status
+     * <code>Pending</code>.
+     * </p>
      */
     private java.util.List<Filter> filters;
     /**
@@ -61,8 +67,19 @@ public class ListDeploymentJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>InProgress</code> or the status
+     * <code>Pending</code>.
+     * </p>
      * 
-     * @return Optional filters to limit results.
+     * @return Optional filters to limit results.</p>
+     *         <p>
+     *         The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *         use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *         same named item. For example, if you are looking for items with the status <code>InProgress</code> or the
+     *         status <code>Pending</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -73,9 +90,20 @@ public class ListDeploymentJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>InProgress</code> or the status
+     * <code>Pending</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>InProgress</code> or the
+     *        status <code>Pending</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -92,13 +120,24 @@ public class ListDeploymentJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * Optional filters to limit results.
      * </p>
      * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>InProgress</code> or the status
+     * <code>Pending</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>InProgress</code> or the
+     *        status <code>Pending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,9 +155,20 @@ public class ListDeploymentJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>InProgress</code> or the status
+     * <code>Pending</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>InProgress</code> or the
+     *        status <code>Pending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

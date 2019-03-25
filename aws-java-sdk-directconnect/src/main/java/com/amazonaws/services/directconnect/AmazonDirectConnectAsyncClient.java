@@ -251,6 +251,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
+
+        return acceptDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            final AcceptDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptDirectConnectGatewayAssociationProposalRequest, AcceptDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final AcceptDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public AcceptDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                AcceptDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeAcceptDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     @Deprecated
     public java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest request) {
@@ -724,6 +759,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+
+        return createDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            final CreateDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDirectConnectGatewayAssociationProposalRequest, CreateDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final CreateDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public CreateDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                CreateDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeCreateDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest request) {
 
         return createInterconnectAsync(request, null);
@@ -991,6 +1061,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+
+        return deleteDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            final DeleteDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDirectConnectGatewayAssociationProposalRequest, DeleteDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final DeleteDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public DeleteDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                DeleteDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeDeleteDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request) {
 
         return deleteInterconnectAsync(request, null);
@@ -1202,6 +1307,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeDescribeConnectionsOnInterconnect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
+
+        return describeDirectConnectGatewayAssociationProposalsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            final DescribeDirectConnectGatewayAssociationProposalsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewayAssociationProposalsRequest, DescribeDirectConnectGatewayAssociationProposalsResult> asyncHandler) {
+        final DescribeDirectConnectGatewayAssociationProposalsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDirectConnectGatewayAssociationProposalsResult>() {
+            @Override
+            public DescribeDirectConnectGatewayAssociationProposalsResult call() throws Exception {
+                DescribeDirectConnectGatewayAssociationProposalsResult result = null;
+
+                try {
+                    result = executeDescribeDirectConnectGatewayAssociationProposals(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1797,6 +1937,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            UpdateDirectConnectGatewayAssociationRequest request) {
+
+        return updateDirectConnectGatewayAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            final UpdateDirectConnectGatewayAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDirectConnectGatewayAssociationRequest, UpdateDirectConnectGatewayAssociationResult> asyncHandler) {
+        final UpdateDirectConnectGatewayAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDirectConnectGatewayAssociationResult>() {
+            @Override
+            public UpdateDirectConnectGatewayAssociationResult call() throws Exception {
+                UpdateDirectConnectGatewayAssociationResult result = null;
+
+                try {
+                    result = executeUpdateDirectConnectGatewayAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

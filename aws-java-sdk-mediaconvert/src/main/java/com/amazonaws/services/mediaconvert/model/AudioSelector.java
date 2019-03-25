@@ -31,7 +31,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
      * language code
      */
     private String customLanguageCode;
-
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+     * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+     */
     private String defaultSelection;
     /** Specifies audio data from an external file source. */
     private String externalAudioFileInput;
@@ -55,7 +58,7 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
      * combine the two files into a single output, one after the other.
      */
     private RemixSettings remixSettings;
-
+    /** Specifies the type of the audio selector. */
     private String selectorType;
     /**
      * Identify a track from the input audio to include in this selector by entering the track index number. To include
@@ -106,7 +109,13 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+     * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+     * 
      * @param defaultSelection
+     *        Enable this setting on one audio selector to set it as the default for the job. The service uses this
+     *        default for outputs where it can't find the specified input audio. If you don't set a default, those
+     *        outputs have no audio.
      * @see AudioDefaultSelection
      */
 
@@ -115,7 +124,12 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+     * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+     * 
+     * @return Enable this setting on one audio selector to set it as the default for the job. The service uses this
+     *         default for outputs where it can't find the specified input audio. If you don't set a default, those
+     *         outputs have no audio.
      * @see AudioDefaultSelection
      */
 
@@ -124,7 +138,13 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+     * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+     * 
      * @param defaultSelection
+     *        Enable this setting on one audio selector to set it as the default for the job. The service uses this
+     *        default for outputs where it can't find the specified input audio. If you don't set a default, those
+     *        outputs have no audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioDefaultSelection
      */
@@ -135,7 +155,13 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+     * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+     * 
      * @param defaultSelection
+     *        Enable this setting on one audio selector to set it as the default for the job. The service uses this
+     *        default for outputs where it can't find the specified input audio. If you don't set a default, those
+     *        outputs have no audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioDefaultSelection
      */
@@ -432,7 +458,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the type of the audio selector.
+     * 
      * @param selectorType
+     *        Specifies the type of the audio selector.
      * @see AudioSelectorType
      */
 
@@ -441,7 +470,9 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Specifies the type of the audio selector.
+     * 
+     * @return Specifies the type of the audio selector.
      * @see AudioSelectorType
      */
 
@@ -450,7 +481,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the type of the audio selector.
+     * 
      * @param selectorType
+     *        Specifies the type of the audio selector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioSelectorType
      */
@@ -461,7 +495,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the type of the audio selector.
+     * 
      * @param selectorType
+     *        Specifies the type of the audio selector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioSelectorType
      */

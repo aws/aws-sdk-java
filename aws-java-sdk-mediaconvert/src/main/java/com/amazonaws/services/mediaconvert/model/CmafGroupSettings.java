@@ -32,9 +32,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      * streams are delivered from a different URL than the manifest file.
      */
     private String baseUrl;
-
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     */
     private String clientCache;
-
+    /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
     private String codecSpecification;
     /**
      * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
@@ -42,6 +45,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      * input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
+    /** Settings associated with the destination. Will vary based on the type of destination */
+    private DestinationSettings destinationSettings;
     /** DRM settings. */
     private CmafEncryptionSettings encryption;
     /**
@@ -51,9 +56,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      * cause the creation of many output files as in other output types.
      */
     private Integer fragmentLength;
-
+    /** When set to GZIP, compresses HLS playlist. */
     private String manifestCompression;
-
+    /** Indicates whether the output manifest should use floating point values for segment duration. */
     private String manifestDurationFormat;
     /** Minimum time of initially buffered media that is needed to ensure smooth playout. */
     private Integer minBufferTime;
@@ -68,7 +73,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      * segment is 3.5 seconds.
      */
     private Double minFinalSegmentLength;
-
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     */
     private String segmentControl;
     /**
      * Use this setting to specify the length, in seconds, of each individual CMAF segment. This value applies to the
@@ -79,11 +87,11 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      * output, each with the content of one segment.
      */
     private Integer segmentLength;
-
+    /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
     private String streamInfResolution;
-
+    /** When set to ENABLED, a DASH MPD manifest will be generated for this output. */
     private String writeDashManifest;
-
+    /** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
     private String writeHlsManifest;
 
     /**
@@ -127,7 +135,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @see CmafClientCache
      */
 
@@ -136,7 +149,11 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
+     * @return When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *         later replay.
      * @see CmafClientCache
      */
 
@@ -145,7 +162,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafClientCache
      */
@@ -156,7 +178,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafClientCache
      */
@@ -167,7 +194,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @see CmafCodecSpecification
      */
 
@@ -176,7 +206,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
+     * @return Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @see CmafCodecSpecification
      */
 
@@ -185,7 +217,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafCodecSpecification
      */
@@ -196,7 +231,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafCodecSpecification
      */
@@ -252,6 +290,40 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
 
     public CmafGroupSettings withDestination(String destination) {
         setDestination(destination);
+        return this;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public void setDestinationSettings(DestinationSettings destinationSettings) {
+        this.destinationSettings = destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @return Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public DestinationSettings getDestinationSettings() {
+        return this.destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafGroupSettings withDestinationSettings(DestinationSettings destinationSettings) {
+        setDestinationSettings(destinationSettings);
         return this;
     }
 
@@ -342,7 +414,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @see CmafManifestCompression
      */
 
@@ -351,7 +426,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * When set to GZIP, compresses HLS playlist.
+     * 
+     * @return When set to GZIP, compresses HLS playlist.
      * @see CmafManifestCompression
      */
 
@@ -360,7 +437,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafManifestCompression
      */
@@ -371,7 +451,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafManifestCompression
      */
@@ -382,7 +465,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @see CmafManifestDurationFormat
      */
 
@@ -391,7 +477,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
+     * @return Indicates whether the output manifest should use floating point values for segment duration.
      * @see CmafManifestDurationFormat
      */
 
@@ -400,7 +488,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafManifestDurationFormat
      */
@@ -411,7 +502,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafManifestDurationFormat
      */
@@ -532,7 +626,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @see CmafSegmentControl
      */
 
@@ -541,7 +640,11 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
+     * @return When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *         Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @see CmafSegmentControl
      */
 
@@ -550,7 +653,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafSegmentControl
      */
@@ -561,7 +669,12 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafSegmentControl
      */
@@ -636,7 +749,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @see CmafStreamInfResolution
      */
 
@@ -645,7 +761,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
+     * @return Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @see CmafStreamInfResolution
      */
 
@@ -654,7 +772,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafStreamInfResolution
      */
@@ -665,7 +786,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafStreamInfResolution
      */
@@ -676,7 +800,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     * 
      * @param writeDashManifest
+     *        When set to ENABLED, a DASH MPD manifest will be generated for this output.
      * @see CmafWriteDASHManifest
      */
 
@@ -685,7 +812,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     * 
+     * @return When set to ENABLED, a DASH MPD manifest will be generated for this output.
      * @see CmafWriteDASHManifest
      */
 
@@ -694,7 +823,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     * 
      * @param writeDashManifest
+     *        When set to ENABLED, a DASH MPD manifest will be generated for this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafWriteDASHManifest
      */
@@ -705,7 +837,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     * 
      * @param writeDashManifest
+     *        When set to ENABLED, a DASH MPD manifest will be generated for this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafWriteDASHManifest
      */
@@ -716,7 +851,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     * 
      * @param writeHlsManifest
+     *        When set to ENABLED, an Apple HLS manifest will be generated for this output.
      * @see CmafWriteHLSManifest
      */
 
@@ -725,7 +863,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     * 
+     * @return When set to ENABLED, an Apple HLS manifest will be generated for this output.
      * @see CmafWriteHLSManifest
      */
 
@@ -734,7 +874,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     * 
      * @param writeHlsManifest
+     *        When set to ENABLED, an Apple HLS manifest will be generated for this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafWriteHLSManifest
      */
@@ -745,7 +888,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     * 
      * @param writeHlsManifest
+     *        When set to ENABLED, an Apple HLS manifest will be generated for this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafWriteHLSManifest
      */
@@ -775,6 +921,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("CodecSpecification: ").append(getCodecSpecification()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
+        if (getDestinationSettings() != null)
+            sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getFragmentLength() != null)
@@ -826,6 +974,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
+            return false;
+        if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
+            return false;
+        if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
             return false;
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
@@ -883,6 +1035,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getClientCache() == null) ? 0 : getClientCache().hashCode());
         hashCode = prime * hashCode + ((getCodecSpecification() == null) ? 0 : getCodecSpecification().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getFragmentLength() == null) ? 0 : getFragmentLength().hashCode());
         hashCode = prime * hashCode + ((getManifestCompression() == null) ? 0 : getManifestCompression().hashCode());

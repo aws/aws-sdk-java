@@ -40,7 +40,11 @@ public class DescribeDirectConnectGatewayAttachmentsRequest extends com.amazonaw
     private String virtualInterfaceId;
     /**
      * <p>
-     * The maximum number of attachments to return per page.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      * </p>
      */
     private Integer maxResults;
@@ -133,11 +137,18 @@ public class DescribeDirectConnectGatewayAttachmentsRequest extends com.amazonaw
 
     /**
      * <p>
-     * The maximum number of attachments to return per page.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of attachments to return per page.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.</p>
+     *        <p>
+     *        If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -146,10 +157,17 @@ public class DescribeDirectConnectGatewayAttachmentsRequest extends com.amazonaw
 
     /**
      * <p>
-     * The maximum number of attachments to return per page.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      * </p>
      * 
-     * @return The maximum number of attachments to return per page.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.</p>
+     *         <p>
+     *         If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      */
 
     public Integer getMaxResults() {
@@ -158,11 +176,18 @@ public class DescribeDirectConnectGatewayAttachmentsRequest extends com.amazonaw
 
     /**
      * <p>
-     * The maximum number of attachments to return per page.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of attachments to return per page.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.</p>
+     *        <p>
+     *        If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,10 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * Each job converts an input file into an output file or files. For more information, see the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     */
     private Job job;
 
     /**
+     * Each job converts an input file into an output file or files. For more information, see the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
      * @param job
+     *        Each job converts an input file into an output file or files. For more information, see the User Guide at
+     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
     public void setJob(Job job) {
@@ -34,7 +43,11 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * Each job converts an input file into an output file or files. For more information, see the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
+     * @return Each job converts an input file into an output file or files. For more information, see the User Guide at
+     *         http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
     public Job getJob() {
@@ -42,7 +55,12 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * Each job converts an input file into an output file or files. For more information, see the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
      * @param job
+     *        Each job converts an input file into an output file or files. For more information, see the User Guide at
+     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

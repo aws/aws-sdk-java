@@ -297,6 +297,67 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param acceptDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the AcceptDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AcceptDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptDirectConnectGatewayAssociationProposalResult acceptDirectConnectGatewayAssociationProposal(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptDirectConnectGatewayAssociationProposal(request);
+    }
+
+    @SdkInternalApi
+    final AcceptDirectConnectGatewayAssociationProposalResult executeAcceptDirectConnectGatewayAssociationProposal(
+            AcceptDirectConnectGatewayAssociationProposalRequest acceptDirectConnectGatewayAssociationProposalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptDirectConnectGatewayAssociationProposalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptDirectConnectGatewayAssociationProposalRequest> request = null;
+        Response<AcceptDirectConnectGatewayAssociationProposalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptDirectConnectGatewayAssociationProposalRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptDirectConnectGatewayAssociationProposalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptDirectConnectGatewayAssociationProposal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptDirectConnectGatewayAssociationProposalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AcceptDirectConnectGatewayAssociationProposalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deprecated. Use <a>AllocateHostedConnection</a> instead.
      * </p>
      * <p>
@@ -308,7 +369,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -369,15 +430,16 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a hosted connection on the specified interconnect or a link aggregation group (LAG).
+     * Creates a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects.
      * </p>
      * <p>
-     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified
-     * interconnect or LAG.
+     * Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by a hosted connection on the
+     * specified interconnect or LAG of interconnects. AWS polices the hosted connection for the specified capacity and
+     * the AWS Direct Connect Partner must also police the hosted connection for the specified capacity.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -650,7 +712,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -1225,13 +1287,78 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an interconnect between an AWS Direct Connect partner's network and a specific AWS Direct Connect
+     * Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.
+     * </p>
+     * <p>
+     * You can only associate a Direct Connect gateway and virtual private gateway when the account that owns the Direct
+     * Connect gateway and the account that owns the virtual private gateway have the same payer ID.
+     * </p>
+     * 
+     * @param createDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the CreateDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.CreateDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDirectConnectGatewayAssociationProposalResult createDirectConnectGatewayAssociationProposal(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDirectConnectGatewayAssociationProposal(request);
+    }
+
+    @SdkInternalApi
+    final CreateDirectConnectGatewayAssociationProposalResult executeCreateDirectConnectGatewayAssociationProposal(
+            CreateDirectConnectGatewayAssociationProposalRequest createDirectConnectGatewayAssociationProposalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDirectConnectGatewayAssociationProposalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDirectConnectGatewayAssociationProposalRequest> request = null;
+        Response<CreateDirectConnectGatewayAssociationProposalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDirectConnectGatewayAssociationProposalRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDirectConnectGatewayAssociationProposalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectConnectGatewayAssociationProposal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDirectConnectGatewayAssociationProposalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateDirectConnectGatewayAssociationProposalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an interconnect between an AWS Direct Connect Partner's network and a specific AWS Direct Connect
      * location.
      * </p>
      * <p>
-     * An interconnect is a connection which is capable of hosting other connections. The partner can use an
-     * interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own
-     * connections. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
+     * An interconnect is a connection that is capable of hosting other connections. The AWS Direct Connect partner can
+     * use an interconnect to provide AWS Direct Connect hosted connections to customers through their own network
+     * services. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
      * location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to
      * an AWS Direct Connect router.
      * </p>
@@ -1242,13 +1369,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * created.
      * </p>
      * <p>
-     * For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling
-     * <a>AllocateConnectionOnInterconnect</a>. The end customer can then connect to AWS resources by creating a virtual
-     * interface on their connection, using the VLAN assigned to them by the partner.
+     * For each end customer, the AWS Direct Connect Partner provisions a connection on their interconnect by calling
+     * <a>AllocateHostedConnection</a>. The end customer can then connect to AWS resources by creating a virtual
+     * interface on their connection, using the VLAN assigned to them by the AWS Direct Connect Partner.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -1325,7 +1452,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * disassociated and re-associated with the LAG. The connection ID does not change.
      * </p>
      * <p>
-     * If the AWS account used to create a LAG is a registered AWS Direct Connect partner, the LAG is automatically
+     * If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically
      * enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be
      * directly configured.
      * </p>
@@ -1749,11 +1876,73 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private
+     * gateway.
+     * </p>
+     * 
+     * @param deleteDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the DeleteDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DeleteDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDirectConnectGatewayAssociationProposalResult deleteDirectConnectGatewayAssociationProposal(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDirectConnectGatewayAssociationProposal(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDirectConnectGatewayAssociationProposalResult executeDeleteDirectConnectGatewayAssociationProposal(
+            DeleteDirectConnectGatewayAssociationProposalRequest deleteDirectConnectGatewayAssociationProposalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDirectConnectGatewayAssociationProposalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDirectConnectGatewayAssociationProposalRequest> request = null;
+        Response<DeleteDirectConnectGatewayAssociationProposalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDirectConnectGatewayAssociationProposalRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDirectConnectGatewayAssociationProposalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectConnectGatewayAssociationProposal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDirectConnectGatewayAssociationProposalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteDirectConnectGatewayAssociationProposalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified interconnect.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -2059,7 +2248,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -2108,6 +2297,68 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConnectionsOnInterconnectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeConnectionsOnInterconnectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect
+     * gateway.
+     * </p>
+     * 
+     * @param describeDirectConnectGatewayAssociationProposalsRequest
+     * @return Result of the DescribeDirectConnectGatewayAssociationProposals operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAssociationProposals
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDirectConnectGatewayAssociationProposalsResult describeDirectConnectGatewayAssociationProposals(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDirectConnectGatewayAssociationProposals(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDirectConnectGatewayAssociationProposalsResult executeDescribeDirectConnectGatewayAssociationProposals(
+            DescribeDirectConnectGatewayAssociationProposalsRequest describeDirectConnectGatewayAssociationProposalsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDirectConnectGatewayAssociationProposalsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDirectConnectGatewayAssociationProposalsRequest> request = null;
+        Response<DescribeDirectConnectGatewayAssociationProposalsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDirectConnectGatewayAssociationProposalsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDirectConnectGatewayAssociationProposalsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectConnectGatewayAssociationProposals");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDirectConnectGatewayAssociationProposalsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeDirectConnectGatewayAssociationProposalsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2313,7 +2564,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -2877,7 +3128,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established
      * as a standalone connection (the connection is not deleted; to delete the connection, use the
      * <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain
-     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect partner is automatically
+     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect Partner is automatically
      * converted to an interconnect.
      * </p>
      * <p>
@@ -3050,6 +3301,69 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified attributes of the Direct Connect gateway association.
+     * </p>
+     * <p>
+     * Add or remove prefixes from the association.
+     * </p>
+     * 
+     * @param updateDirectConnectGatewayAssociationRequest
+     * @return Result of the UpdateDirectConnectGatewayAssociation operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.UpdateDirectConnectGatewayAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDirectConnectGatewayAssociationResult updateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDirectConnectGatewayAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDirectConnectGatewayAssociationResult executeUpdateDirectConnectGatewayAssociation(
+            UpdateDirectConnectGatewayAssociationRequest updateDirectConnectGatewayAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDirectConnectGatewayAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDirectConnectGatewayAssociationRequest> request = null;
+        Response<UpdateDirectConnectGatewayAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDirectConnectGatewayAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDirectConnectGatewayAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDirectConnectGatewayAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDirectConnectGatewayAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDirectConnectGatewayAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

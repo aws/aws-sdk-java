@@ -35,6 +35,8 @@ public class CmafGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecSpecification").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> FRAGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -78,6 +80,7 @@ public class CmafGroupSettingsMarshaller {
             protocolMarshaller.marshall(cmafGroupSettings.getClientCache(), CLIENTCACHE_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getCodecSpecification(), CODECSPECIFICATION_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(cmafGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getManifestCompression(), MANIFESTCOMPRESSION_BINDING);

@@ -68,6 +68,10 @@ public class PolicyJsonUnmarshaller implements Unmarshaller<Policy, JsonUnmarsha
                     context.nextToken();
                     policy.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceTypeList", targetDepth)) {
+                    context.nextToken();
+                    policy.setResourceTypeList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("ResourceTags", targetDepth)) {
                     context.nextToken();
                     policy.setResourceTags(new ListUnmarshaller<ResourceTag>(ResourceTagJsonUnmarshaller.getInstance()).unmarshall(context));

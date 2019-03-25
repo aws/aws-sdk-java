@@ -64,6 +64,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                     context.nextToken();
                     cmafGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destinationSettings", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setEncryption(CmafEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

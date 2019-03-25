@@ -51,7 +51,7 @@ import com.amazonaws.services.robomaker.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 @ThreadSafe
@@ -283,6 +283,11 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
      * Application Version</a>.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createDeploymentJobRequest
      * @return Result of the CreateDeploymentJob operation returned by the service.
@@ -750,6 +755,11 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * <p>
      * Creates a simulation job.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createSimulationJobRequest
      * @return Result of the CreateSimulationJob operation returned by the service.
@@ -1490,6 +1500,10 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
+     * <note>
+     * <p>
+     * </p>
+     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return Result of the ListDeploymentJobs operation returned by the service.
@@ -2184,8 +2198,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * </p>
      * <p>
      * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
-     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
-     * <code>TagResource</code> </a>.
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>.
      * </p>
      * 
      * @param untagResourceRequest

@@ -23,10 +23,23 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * You can use queues to manage the resources that are available to your AWS account for running multiple
+     * transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default
+     * queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     private Queue queue;
 
     /**
+     * You can use queues to manage the resources that are available to your AWS account for running multiple
+     * transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default
+     * queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     * 
      * @param queue
+     *        You can use queues to manage the resources that are available to your AWS account for running multiple
+     *        transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the
+     *        default queue. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
      */
 
     public void setQueue(Queue queue) {
@@ -34,7 +47,14 @@ public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * You can use queues to manage the resources that are available to your AWS account for running multiple
+     * transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default
+     * queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     * 
+     * @return You can use queues to manage the resources that are available to your AWS account for running multiple
+     *         transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the
+     *         default queue. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
      */
 
     public Queue getQueue() {
@@ -42,7 +62,15 @@ public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * You can use queues to manage the resources that are available to your AWS account for running multiple
+     * transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default
+     * queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     * 
      * @param queue
+     *        You can use queues to manage the resources that are available to your AWS account for running multiple
+     *        transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the
+     *        default queue. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,11 +41,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * outputs. You can use mutiple captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
-
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     */
     private String deblockFilter;
-    /** Settings for decrypting any input files that are encrypted. */
+    /**
+     * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can
+     * decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt
+     * your content.
+     */
     private InputDecryptionSettings decryptionSettings;
-
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     private String denoiseFilter;
     /**
      * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
@@ -55,7 +65,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * IMPs that contain assets referenced by the CPL.
      */
     private String fileInput;
-
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     private String filterEnable;
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
@@ -81,7 +97,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * specify doesn't exist, the transcoding service will use this default.
      */
     private Integer programNumber;
-
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     */
     private String psiControl;
     /**
      * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
@@ -90,9 +109,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * IMP that contains your input CPL, because the service automatically detects it.
      */
     private java.util.List<String> supplementalImps;
-
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     */
     private String timecodeSource;
-
+    /** Selector for video. */
     private VideoSelector videoSelector;
 
     /**
@@ -279,7 +304,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -288,7 +318,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
+     * @return Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *         manaully controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -297,7 +331,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -308,7 +347,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -319,10 +363,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for decrypting any input files that are encrypted.
+     * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can
+     * decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt
+     * your content.
      * 
      * @param decryptionSettings
-     *        Settings for decrypting any input files that are encrypted.
+     *        Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert
+     *        can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use
+     *        to encrypt your content.
      */
 
     public void setDecryptionSettings(InputDecryptionSettings decryptionSettings) {
@@ -330,9 +378,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for decrypting any input files that are encrypted.
+     * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can
+     * decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt
+     * your content.
      * 
-     * @return Settings for decrypting any input files that are encrypted.
+     * @return Settings for decrypting any input files that you encrypt before you upload them to Amazon S3.
+     *         MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key
+     *         that you use to encrypt your content.
      */
 
     public InputDecryptionSettings getDecryptionSettings() {
@@ -340,10 +392,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for decrypting any input files that are encrypted.
+     * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can
+     * decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt
+     * your content.
      * 
      * @param decryptionSettings
-     *        Settings for decrypting any input files that are encrypted.
+     *        Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert
+     *        can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use
+     *        to encrypt your content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,7 +409,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -362,7 +423,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
+     * @return Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *         to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -371,7 +436,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -382,7 +452,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -451,7 +526,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -460,7 +547,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
+     * @return Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *         deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *         Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *         depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *         the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *         regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -469,7 +567,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -480,7 +590,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -711,7 +833,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -720,7 +847,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
+     * @return Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *         scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -729,7 +860,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -740,7 +876,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -838,7 +979,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @see InputTimecodeSource
      */
 
@@ -847,7 +1000,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
+     * @return Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *         apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *         this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     *         or by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *         HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *         timecodes.
      * @see InputTimecodeSource
      */
 
@@ -856,7 +1020,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -867,7 +1043,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -878,7 +1066,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selector for video.
+     * 
      * @param videoSelector
+     *        Selector for video.
      */
 
     public void setVideoSelector(VideoSelector videoSelector) {
@@ -886,7 +1077,9 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Selector for video.
+     * 
+     * @return Selector for video.
      */
 
     public VideoSelector getVideoSelector() {
@@ -894,7 +1087,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selector for video.
+     * 
      * @param videoSelector
+     *        Selector for video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

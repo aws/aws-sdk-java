@@ -31,13 +31,19 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
      * the Initialization Vector will follow the segment number by default.
      */
     private String constantInitializationVector;
-
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     */
     private String encryptionMethod;
-
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     private String initializationVectorInManifest;
-
+    /** Use these settings to set up encryption with a static key provider. */
     private StaticKeyProvider staticKeyProvider;
-
+    /** Indicates which type of key provider is used for encryption. */
     private String type;
 
     /**
@@ -81,7 +87,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @see CmafEncryptionType
      */
 
@@ -90,7 +101,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
+     * @return Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *         the web interface also disables encryption.
      * @see CmafEncryptionType
      */
 
@@ -99,7 +114,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -110,7 +130,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
+     * interface also disables encryption.
+     * 
      * @param encryptionMethod
+     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
+     *        the web interface also disables encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -121,7 +146,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @see CmafInitializationVectorInManifest
      */
 
@@ -130,7 +161,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
+     * @return The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *         set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not
+     *         in the manifest.
      * @see CmafInitializationVectorInManifest
      */
 
@@ -139,7 +175,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafInitializationVectorInManifest
      */
@@ -150,7 +192,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
+     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * 
      * @param initializationVectorInManifest
+     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
+     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
+     *        the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafInitializationVectorInManifest
      */
@@ -161,7 +209,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Use these settings to set up encryption with a static key provider.
+     * 
      * @param staticKeyProvider
+     *        Use these settings to set up encryption with a static key provider.
      */
 
     public void setStaticKeyProvider(StaticKeyProvider staticKeyProvider) {
@@ -169,7 +220,9 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * Use these settings to set up encryption with a static key provider.
+     * 
+     * @return Use these settings to set up encryption with a static key provider.
      */
 
     public StaticKeyProvider getStaticKeyProvider() {
@@ -177,7 +230,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Use these settings to set up encryption with a static key provider.
+     * 
      * @param staticKeyProvider
+     *        Use these settings to set up encryption with a static key provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +243,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @see CmafKeyProviderType
      */
 
@@ -196,7 +255,9 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * Indicates which type of key provider is used for encryption.
+     * 
+     * @return Indicates which type of key provider is used for encryption.
      * @see CmafKeyProviderType
      */
 
@@ -205,7 +266,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafKeyProviderType
      */
@@ -216,7 +280,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Indicates which type of key provider is used for encryption.
+     * 
      * @param type
+     *        Indicates which type of key provider is used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafKeyProviderType
      */

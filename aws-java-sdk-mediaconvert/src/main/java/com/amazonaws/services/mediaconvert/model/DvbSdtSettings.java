@@ -26,6 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DvbSdtSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from
+     * input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter
+     * "SDT  Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT
+     * information.
+     */
     private String outputSdt;
     /** The number of milliseconds between instances of this table in the output transport stream. */
     private Integer sdtInterval;
@@ -41,7 +48,18 @@ public class DvbSdtSettings implements Serializable, Cloneable, StructuredPojo {
     private String serviceProviderName;
 
     /**
+     * Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from
+     * input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter
+     * "SDT  Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT
+     * information.
+     * 
      * @param outputSdt
+     *        Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information
+     *        from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream
+     *        to output stream if SDT information is present in the input, otherwise it will fall back on the
+     *        user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means
+     *        output stream will not contain SDT information.
      * @see OutputSdt
      */
 
@@ -50,7 +68,17 @@ public class DvbSdtSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from
+     * input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter
+     * "SDT  Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT
+     * information.
+     * 
+     * @return Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information
+     *         from input stream to output stream. "Follow input SDT if present" copies SDT information from input
+     *         stream to output stream if SDT information is present in the input, otherwise it will fall back on the
+     *         user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means
+     *         output stream will not contain SDT information.
      * @see OutputSdt
      */
 
@@ -59,7 +87,18 @@ public class DvbSdtSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from
+     * input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter
+     * "SDT  Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT
+     * information.
+     * 
      * @param outputSdt
+     *        Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information
+     *        from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream
+     *        to output stream if SDT information is present in the input, otherwise it will fall back on the
+     *        user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means
+     *        output stream will not contain SDT information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputSdt
      */
@@ -70,7 +109,18 @@ public class DvbSdtSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from
+     * input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter
+     * "SDT  Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT
+     * information.
+     * 
      * @param outputSdt
+     *        Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information
+     *        from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream
+     *        to output stream if SDT information is present in the input, otherwise it will fall back on the
+     *        user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means
+     *        output stream will not contain SDT information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputSdt
      */

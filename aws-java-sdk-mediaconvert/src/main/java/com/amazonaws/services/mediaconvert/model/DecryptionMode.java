@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * This specifies how the encrypted file needs to be decrypted.
+ * Specify the encryption mode that you used to encrypt your input files.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DecryptionMode {

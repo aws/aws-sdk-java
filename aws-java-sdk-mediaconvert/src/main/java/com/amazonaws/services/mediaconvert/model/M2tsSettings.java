@@ -32,6 +32,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Selects between the DVB and ATSC buffer models for Dolby Digital audio. */
     private String audioBufferModel;
     /** The number of audio frames to insert for each PES packet. */
     private Integer audioFramesPerPes;
@@ -45,26 +46,39 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      */
     private Integer bitrate;
-
+    /**
+     * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If
+     * set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream
+     * without interruptions.
+     */
     private String bufferModel;
-
+    /** Inserts DVB Network Information Table (NIT) at the specified table repetition interval. */
     private DvbNitSettings dvbNitSettings;
-
+    /** Inserts DVB Service Description Table (NIT) at the specified table repetition interval. */
     private DvbSdtSettings dvbSdtSettings;
     /**
      * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
      * JSON array. Default is the range 460-479.
      */
     private java.util.List<Integer> dvbSubPids;
-
+    /** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval. */
     private DvbTdtSettings dvbTdtSettings;
     /** Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499. */
     private Integer dvbTeletextPid;
-
+    /**
+     * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     * between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval.
+     * When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation
+     * markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+     */
     private String ebpAudioInterval;
-
+    /**
+     * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video
+     * PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP
+     * or EBP_LEGACY).
+     */
     private String ebpPlacement;
-
+    /** Controls whether to include the ES Rate field in the PES header. */
     private String esRateInPes;
     /**
      * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
@@ -86,7 +100,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * accurate.
      */
     private Integer minEbpInterval;
-
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
+     * tag will be inserted in the output.
+     */
     private String nielsenId3;
     /**
      * Value in bits per second of extra null packets to insert into the transport stream. This can be used if a
@@ -95,7 +112,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private Double nullPacketBitrate;
     /** The number of milliseconds between instances of this table in the output transport stream. */
     private Integer patInterval;
-
+    /**
+     * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary
+     * Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+     */
     private String pcrControl;
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
@@ -117,7 +137,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * used for organizing data.
      */
     private Integer programNumber;
-
+    /**
+     * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
+     * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+     */
     private String rateMode;
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
@@ -126,11 +149,26 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private M2tsScte35Esam scte35Esam;
     /** Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
-
+    /** Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output. */
     private String scte35Source;
-
+    /**
+     * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
+     * in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes.
+     * psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to
+     * the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point
+     * information to the adaptation field using a legacy proprietary format.
+     */
     private String segmentationMarkers;
-
+    /**
+     * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With
+     * avails, it is possible that segments may be truncated, which can influence where future segmentation markers are
+     * inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we
+     * will reset the segmentation cadence. This means the subsequent segment will have a duration of of
+     * $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be
+     * truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that
+     * EBP lookahead is a slight exception to this rule.
+     */
     private String segmentationStyle;
     /** Specify the length, in seconds, of each segment. Required unless markers is set to _none_. */
     private Double segmentationTime;
@@ -145,7 +183,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer videoPid;
 
     /**
+     * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+     * 
      * @param audioBufferModel
+     *        Selects between the DVB and ATSC buffer models for Dolby Digital audio.
      * @see M2tsAudioBufferModel
      */
 
@@ -154,7 +195,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+     * 
+     * @return Selects between the DVB and ATSC buffer models for Dolby Digital audio.
      * @see M2tsAudioBufferModel
      */
 
@@ -163,7 +206,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+     * 
      * @param audioBufferModel
+     *        Selects between the DVB and ATSC buffer models for Dolby Digital audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsAudioBufferModel
      */
@@ -174,7 +220,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
+     * 
      * @param audioBufferModel
+     *        Selects between the DVB and ATSC buffer models for Dolby Digital audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsAudioBufferModel
      */
@@ -329,7 +378,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If
+     * set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream
+     * without interruptions.
+     * 
      * @param bufferModel
+     *        Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer
+     *        model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back
+     *        the stream without interruptions.
      * @see M2tsBufferModel
      */
 
@@ -338,7 +394,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If
+     * set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream
+     * without interruptions.
+     * 
+     * @return Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer
+     *         model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play
+     *         back the stream without interruptions.
      * @see M2tsBufferModel
      */
 
@@ -347,7 +409,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If
+     * set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream
+     * without interruptions.
+     * 
      * @param bufferModel
+     *        Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer
+     *        model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back
+     *        the stream without interruptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsBufferModel
      */
@@ -358,7 +427,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If
+     * set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream
+     * without interruptions.
+     * 
      * @param bufferModel
+     *        Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer
+     *        model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back
+     *        the stream without interruptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsBufferModel
      */
@@ -369,7 +445,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * 
      * @param dvbNitSettings
+     *        Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
      */
 
     public void setDvbNitSettings(DvbNitSettings dvbNitSettings) {
@@ -377,7 +456,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * 
+     * @return Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
      */
 
     public DvbNitSettings getDvbNitSettings() {
@@ -385,7 +466,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * 
      * @param dvbNitSettings
+     *        Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,7 +479,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * 
      * @param dvbSdtSettings
+     *        Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
      */
 
     public void setDvbSdtSettings(DvbSdtSettings dvbSdtSettings) {
@@ -403,7 +490,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * 
+     * @return Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
      */
 
     public DvbSdtSettings getDvbSdtSettings() {
@@ -411,7 +500,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * 
      * @param dvbSdtSettings
+     *        Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,7 +583,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * 
      * @param dvbTdtSettings
+     *        Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
      */
 
     public void setDvbTdtSettings(DvbTdtSettings dvbTdtSettings) {
@@ -499,7 +594,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * 
+     * @return Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
      */
 
     public DvbTdtSettings getDvbTdtSettings() {
@@ -507,7 +604,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * 
      * @param dvbTdtSettings
+     *        Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -551,7 +651,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     * between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval.
+     * When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation
+     * markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+     * 
      * @param ebpAudioInterval
+     *        When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     *        between these additional markers will be fixed, and will be slightly shorter than the video EBP marker
+     *        interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when
+     *        EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
      * @see M2tsEbpAudioInterval
      */
 
@@ -560,7 +669,15 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     * between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval.
+     * When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation
+     * markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+     * 
+     * @return When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The
+     *         interval between these additional markers will be fixed, and will be slightly shorter than the video EBP
+     *         marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only
+     *         applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
      * @see M2tsEbpAudioInterval
      */
 
@@ -569,7 +686,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     * between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval.
+     * When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation
+     * markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+     * 
      * @param ebpAudioInterval
+     *        When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     *        between these additional markers will be fixed, and will be slightly shorter than the video EBP marker
+     *        interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when
+     *        EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEbpAudioInterval
      */
@@ -580,7 +706,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     * between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval.
+     * When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation
+     * markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
+     * 
      * @param ebpAudioInterval
+     *        When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval
+     *        between these additional markers will be fixed, and will be slightly shorter than the video EBP marker
+     *        interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when
+     *        EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEbpAudioInterval
      */
@@ -591,7 +726,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video
+     * PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP
+     * or EBP_LEGACY).
+     * 
      * @param ebpPlacement
+     *        Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both
+     *        the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected
+     *        (segmentationMarkers is EBP or EBP_LEGACY).
      * @see M2tsEbpPlacement
      */
 
@@ -600,7 +742,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video
+     * PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP
+     * or EBP_LEGACY).
+     * 
+     * @return Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both
+     *         the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected
+     *         (segmentationMarkers is EBP or EBP_LEGACY).
      * @see M2tsEbpPlacement
      */
 
@@ -609,7 +757,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video
+     * PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP
+     * or EBP_LEGACY).
+     * 
      * @param ebpPlacement
+     *        Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both
+     *        the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected
+     *        (segmentationMarkers is EBP or EBP_LEGACY).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEbpPlacement
      */
@@ -620,7 +775,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video
+     * PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP
+     * or EBP_LEGACY).
+     * 
      * @param ebpPlacement
+     *        Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both
+     *        the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected
+     *        (segmentationMarkers is EBP or EBP_LEGACY).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEbpPlacement
      */
@@ -631,7 +793,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls whether to include the ES Rate field in the PES header.
+     * 
      * @param esRateInPes
+     *        Controls whether to include the ES Rate field in the PES header.
      * @see M2tsEsRateInPes
      */
 
@@ -640,7 +805,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Controls whether to include the ES Rate field in the PES header.
+     * 
+     * @return Controls whether to include the ES Rate field in the PES header.
      * @see M2tsEsRateInPes
      */
 
@@ -649,7 +816,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls whether to include the ES Rate field in the PES header.
+     * 
      * @param esRateInPes
+     *        Controls whether to include the ES Rate field in the PES header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEsRateInPes
      */
@@ -660,7 +830,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls whether to include the ES Rate field in the PES header.
+     * 
      * @param esRateInPes
+     *        Controls whether to include the ES Rate field in the PES header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsEsRateInPes
      */
@@ -862,7 +1035,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
+     * tag will be inserted in the output.
+     * 
      * @param nielsenId3
+     *        If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     *        equivalent ID3 tag will be inserted in the output.
      * @see M2tsNielsenId3
      */
 
@@ -871,7 +1049,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
+     * tag will be inserted in the output.
+     * 
+     * @return If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     *         equivalent ID3 tag will be inserted in the output.
      * @see M2tsNielsenId3
      */
 
@@ -880,7 +1062,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
+     * tag will be inserted in the output.
+     * 
      * @param nielsenId3
+     *        If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     *        equivalent ID3 tag will be inserted in the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsNielsenId3
      */
@@ -891,7 +1078,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
+     * tag will be inserted in the output.
+     * 
      * @param nielsenId3
+     *        If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     *        equivalent ID3 tag will be inserted in the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsNielsenId3
      */
@@ -976,7 +1168,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary
+     * Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+     * 
      * @param pcrControl
+     *        When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized
+     *        Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio
+     *        elementary stream.
      * @see M2tsPcrControl
      */
 
@@ -985,7 +1183,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary
+     * Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+     * 
+     * @return When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized
+     *         Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio
+     *         elementary stream.
      * @see M2tsPcrControl
      */
 
@@ -994,7 +1197,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary
+     * Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+     * 
      * @param pcrControl
+     *        When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized
+     *        Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio
+     *        elementary stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsPcrControl
      */
@@ -1005,7 +1214,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary
+     * Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
+     * 
      * @param pcrControl
+     *        When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized
+     *        Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio
+     *        elementary stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsPcrControl
      */
@@ -1210,7 +1425,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
+     * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+     * 
      * @param rateMode
+     *        When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR,
+     *        the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
      * @see M2tsRateMode
      */
 
@@ -1219,7 +1439,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
+     * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+     * 
+     * @return When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR,
+     *         the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
      * @see M2tsRateMode
      */
 
@@ -1228,7 +1452,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
+     * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+     * 
      * @param rateMode
+     *        When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR,
+     *        the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsRateMode
      */
@@ -1239,7 +1468,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
+     * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
+     * 
      * @param rateMode
+     *        When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR,
+     *        the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsRateMode
      */
@@ -1327,7 +1561,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * 
      * @param scte35Source
+     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
      * @see M2tsScte35Source
      */
 
@@ -1336,7 +1573,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * 
+     * @return Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
      * @see M2tsScte35Source
      */
 
@@ -1345,7 +1584,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * 
      * @param scte35Source
+     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */
@@ -1356,7 +1598,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * 
      * @param scte35Source
+     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */
@@ -1367,7 +1612,19 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
+     * in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes.
+     * psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to
+     * the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point
+     * information to the adaptation field using a legacy proprietary format.
+     * 
      * @param segmentationMarkers
+     *        Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access
+     *        Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the
+     *        private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder
+     *        Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118.
+     *        ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary
+     *        format.
      * @see M2tsSegmentationMarkers
      */
 
@@ -1376,7 +1633,18 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
+     * in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes.
+     * psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to
+     * the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point
+     * information to the adaptation field using a legacy proprietary format.
+     * 
+     * @return Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access
+     *         Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the
+     *         private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder
+     *         Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118.
+     *         ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary
+     *         format.
      * @see M2tsSegmentationMarkers
      */
 
@@ -1385,7 +1653,19 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
+     * in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes.
+     * psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to
+     * the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point
+     * information to the adaptation field using a legacy proprietary format.
+     * 
      * @param segmentationMarkers
+     *        Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access
+     *        Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the
+     *        private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder
+     *        Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118.
+     *        ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsSegmentationMarkers
      */
@@ -1396,7 +1676,19 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
+     * in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes.
+     * psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to
+     * the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point
+     * information to the adaptation field using a legacy proprietary format.
+     * 
      * @param segmentationMarkers
+     *        Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access
+     *        Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the
+     *        private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder
+     *        Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118.
+     *        ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsSegmentationMarkers
      */
@@ -1407,7 +1699,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With
+     * avails, it is possible that segments may be truncated, which can influence where future segmentation markers are
+     * inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we
+     * will reset the segmentation cadence. This means the subsequent segment will have a duration of of
+     * $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be
+     * truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that
+     * EBP lookahead is a slight exception to this rule.
+     * 
      * @param segmentationStyle
+     *        The segmentation style parameter controls how segmentation markers are inserted into the transport stream.
+     *        With avails, it is possible that segments may be truncated, which can influence where future segmentation
+     *        markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated
+     *        due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a
+     *        duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and
+     *        a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the
+     *        subsequent segment will likely be truncated as well. However, all segments after that will have a duration
+     *        of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
      * @see M2tsSegmentationStyle
      */
 
@@ -1416,7 +1725,23 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With
+     * avails, it is possible that segments may be truncated, which can influence where future segmentation markers are
+     * inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we
+     * will reset the segmentation cadence. This means the subsequent segment will have a duration of of
+     * $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be
+     * truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that
+     * EBP lookahead is a slight exception to this rule.
+     * 
+     * @return The segmentation style parameter controls how segmentation markers are inserted into the transport
+     *         stream. With avails, it is possible that segments may be truncated, which can influence where future
+     *         segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment
+     *         is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment
+     *         will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is
+     *         selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This
+     *         means the subsequent segment will likely be truncated as well. However, all segments after that will have
+     *         a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
      * @see M2tsSegmentationStyle
      */
 
@@ -1425,7 +1750,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With
+     * avails, it is possible that segments may be truncated, which can influence where future segmentation markers are
+     * inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we
+     * will reset the segmentation cadence. This means the subsequent segment will have a duration of of
+     * $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be
+     * truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that
+     * EBP lookahead is a slight exception to this rule.
+     * 
      * @param segmentationStyle
+     *        The segmentation style parameter controls how segmentation markers are inserted into the transport stream.
+     *        With avails, it is possible that segments may be truncated, which can influence where future segmentation
+     *        markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated
+     *        due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a
+     *        duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and
+     *        a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the
+     *        subsequent segment will likely be truncated as well. However, all segments after that will have a duration
+     *        of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsSegmentationStyle
      */
@@ -1436,7 +1778,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With
+     * avails, it is possible that segments may be truncated, which can influence where future segmentation markers are
+     * inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we
+     * will reset the segmentation cadence. This means the subsequent segment will have a duration of of
+     * $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be
+     * truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that
+     * EBP lookahead is a slight exception to this rule.
+     * 
      * @param segmentationStyle
+     *        The segmentation style parameter controls how segmentation markers are inserted into the transport stream.
+     *        With avails, it is possible that segments may be truncated, which can influence where future segmentation
+     *        markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated
+     *        due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a
+     *        duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and
+     *        a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the
+     *        subsequent segment will likely be truncated as well. However, all segments after that will have a duration
+     *        of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsSegmentationStyle
      */

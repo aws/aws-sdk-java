@@ -29,7 +29,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
- * Manager features, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+ * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
  */
@@ -314,6 +314,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executeGetPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(GetProtectionStatusRequest request) {
+
+        return getProtectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(final GetProtectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProtectionStatusRequest, GetProtectionStatusResult> asyncHandler) {
+        final GetProtectionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProtectionStatusResult>() {
+            @Override
+            public GetProtectionStatusResult call() throws Exception {
+                GetProtectionStatusResult result = null;
+
+                try {
+                    result = executeGetProtectionStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

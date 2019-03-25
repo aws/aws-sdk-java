@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 @ThreadSafe
