@@ -33,13 +33,13 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
     private String organizationId;
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      */
     private String memberId;
@@ -86,11 +86,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
      * @param groupId
-     *        The group for which the member is associated.
+     *        The group to which the member (user or group) is associated.
      */
 
     public void setGroupId(String groupId) {
@@ -99,10 +99,10 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
-     * @return The group for which the member is associated.
+     * @return The group to which the member (user or group) is associated.
      */
 
     public String getGroupId() {
@@ -111,11 +111,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
      * @param groupId
-     *        The group for which the member is associated.
+     *        The group to which the member (user or group) is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
      * @param memberId
-     *        The member to associate to the group.
+     *        The member (user or group) to associate to the group.
      */
 
     public void setMemberId(String memberId) {
@@ -139,10 +139,10 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
-     * @return The member to associate to the group.
+     * @return The member (user or group) to associate to the group.
      */
 
     public String getMemberId() {
@@ -151,11 +151,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
      * @param memberId
-     *        The member to associate to the group.
+     *        The member (user or group) to associate to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

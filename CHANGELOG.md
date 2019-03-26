@@ -1,3 +1,12 @@
+# __1.11.526__ __2019-03-26__
+## __AWS Glue__
+  - ### Features
+    - This new feature will now allow customers to add a customized csv classifier with classifier API. They can specify a custom delimiter, quote symbol and control other behavior they'd like crawlers to have while recognizing csv files
+
+## __Amazon WorkMail__
+  - ### Features
+    - Documentation updates for Amazon WorkMail.
+
 # __1.11.525__ __2019-03-25__
 ## __AWS Direct Connect__
   - ### Features

@@ -33,7 +33,7 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String organizationId;
     /**
      * <p>
-     * The identifier for the Amazon WorkMail entity to have the aliases removed.
+     * The identifier for the member (user or group) from which to have the aliases removed.
      * </p>
      */
     private String entityId;
@@ -87,11 +87,11 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the Amazon WorkMail entity to have the aliases removed.
+     * The identifier for the member (user or group) from which to have the aliases removed.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the Amazon WorkMail entity to have the aliases removed.
+     *        The identifier for the member (user or group) from which to have the aliases removed.
      */
 
     public void setEntityId(String entityId) {
@@ -100,10 +100,10 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the Amazon WorkMail entity to have the aliases removed.
+     * The identifier for the member (user or group) from which to have the aliases removed.
      * </p>
      * 
-     * @return The identifier for the Amazon WorkMail entity to have the aliases removed.
+     * @return The identifier for the member (user or group) from which to have the aliases removed.
      */
 
     public String getEntityId() {
@@ -112,11 +112,11 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier for the Amazon WorkMail entity to have the aliases removed.
+     * The identifier for the member (user or group) from which to have the aliases removed.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the Amazon WorkMail entity to have the aliases removed.
+     *        The identifier for the member (user or group) from which to have the aliases removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

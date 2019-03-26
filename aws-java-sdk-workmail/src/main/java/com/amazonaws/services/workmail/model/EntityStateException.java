@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted
- * user.
+ * You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to
+ * delete an active user.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

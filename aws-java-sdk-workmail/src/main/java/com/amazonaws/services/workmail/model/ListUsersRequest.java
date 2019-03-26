@@ -33,7 +33,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String organizationId;
     /**
      * <p>
-     * TBD
+     * The token to use to retrieve the next page of results. The first call does not contain any tokens.
      * </p>
      */
     private String nextToken;
@@ -86,11 +86,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * TBD
+     * The token to use to retrieve the next page of results. The first call does not contain any tokens.
      * </p>
      * 
      * @param nextToken
-     *        TBD
+     *        The token to use to retrieve the next page of results. The first call does not contain any tokens.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,10 +99,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * TBD
+     * The token to use to retrieve the next page of results. The first call does not contain any tokens.
      * </p>
      * 
-     * @return TBD
+     * @return The token to use to retrieve the next page of results. The first call does not contain any tokens.
      */
 
     public String getNextToken() {
@@ -111,11 +111,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * TBD
+     * The token to use to retrieve the next page of results. The first call does not contain any tokens.
      * </p>
      * 
      * @param nextToken
-     *        TBD
+     *        The token to use to retrieve the next page of results. The first call does not contain any tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

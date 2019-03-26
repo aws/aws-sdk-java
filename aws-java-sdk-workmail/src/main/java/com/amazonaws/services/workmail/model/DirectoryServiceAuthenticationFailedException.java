@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.
+ * The directory service doesn't recognize the credentials supplied by WorkMail.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

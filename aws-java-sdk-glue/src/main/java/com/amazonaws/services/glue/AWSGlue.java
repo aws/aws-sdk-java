@@ -165,7 +165,7 @@ public interface AWSGlue {
      * <p>
      * Returns a list of resource metadata for a given list of crawler names. After calling the
      * <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been
-     * granted permissions to based on tags.
+     * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
      * </p>
      * 
      * @param batchGetCrawlersRequest
@@ -290,8 +290,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
-     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
-     * present.
+     * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+     * field of the request is present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -1977,8 +1977,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
-     * <code>JsonClassifier</code>, depending on which field is present).
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
+     * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest

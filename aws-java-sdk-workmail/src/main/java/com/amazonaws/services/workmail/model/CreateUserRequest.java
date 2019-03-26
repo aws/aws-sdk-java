@@ -33,19 +33,20 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String organizationId;
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      */
     private String password;
@@ -92,11 +93,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
      * @param name
-     *        The name for the user to be created.
+     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *        have a maximum length of 64.
      */
 
     public void setName(String name) {
@@ -105,10 +108,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
-     * @return The name for the user to be created.
+     * @return The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *         have a maximum length of 64.
      */
 
     public String getName() {
@@ -117,11 +122,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
      * @param name
-     *        The name for the user to be created.
+     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *        have a maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +139,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
      * @param displayName
-     *        The display name for the user to be created.
+     *        The display name for the new user.
      */
 
     public void setDisplayName(String displayName) {
@@ -145,10 +152,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
-     * @return The display name for the user to be created.
+     * @return The display name for the new user.
      */
 
     public String getDisplayName() {
@@ -157,11 +164,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
      * @param displayName
-     *        The display name for the user to be created.
+     *        The display name for the new user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +179,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
      * @param password
-     *        The password for the user to be created.
+     *        The password for the new user.
      */
 
     public void setPassword(String password) {
@@ -185,10 +192,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
-     * @return The password for the user to be created.
+     * @return The password for the new user.
      */
 
     public String getPassword() {
@@ -197,11 +204,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
      * @param password
-     *        The password for the user to be created.
+     *        The password for the new user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

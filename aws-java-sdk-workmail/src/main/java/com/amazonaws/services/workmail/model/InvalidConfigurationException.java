@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at
- * least one delegate associated that can do it on its behalf.
+ * least one delegate associated that can do so on its behalf.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

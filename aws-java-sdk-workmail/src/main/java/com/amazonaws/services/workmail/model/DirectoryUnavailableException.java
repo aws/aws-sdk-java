@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The directory that you are trying to perform operations on isn't available.
+ * The directory on which you are trying to perform operations isn't available.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

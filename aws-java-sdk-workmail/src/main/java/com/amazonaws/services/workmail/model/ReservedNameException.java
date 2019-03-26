@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This entity name is not allowed in Amazon WorkMail.
+ * This user, group, or resource name is not allowed in Amazon WorkMail.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

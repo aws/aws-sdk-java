@@ -33,6 +33,8 @@ public class CreateClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XMLClassifier").build();
     private static final MarshallingInfo<StructuredPojo> JSONCLASSIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JsonClassifier").build();
+    private static final MarshallingInfo<StructuredPojo> CSVCLASSIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CsvClassifier").build();
 
     private static final CreateClassifierRequestMarshaller instance = new CreateClassifierRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class CreateClassifierRequestMarshaller {
             protocolMarshaller.marshall(createClassifierRequest.getGrokClassifier(), GROKCLASSIFIER_BINDING);
             protocolMarshaller.marshall(createClassifierRequest.getXMLClassifier(), XMLCLASSIFIER_BINDING);
             protocolMarshaller.marshall(createClassifierRequest.getJsonClassifier(), JSONCLASSIFIER_BINDING);
+            protocolMarshaller.marshall(createClassifierRequest.getCsvClassifier(), CSVCLASSIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

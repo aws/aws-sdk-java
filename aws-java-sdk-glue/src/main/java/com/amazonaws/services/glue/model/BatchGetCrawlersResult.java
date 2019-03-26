@@ -31,7 +31,7 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<Crawler> crawlers;
     /**
      * <p>
-     * A list of crawlers not found.
+     * A list of names of crawlers not found.
      * </p>
      */
     private java.util.List<String> crawlersNotFound;
@@ -108,10 +108,10 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of crawlers not found.
+     * A list of names of crawlers not found.
      * </p>
      * 
-     * @return A list of crawlers not found.
+     * @return A list of names of crawlers not found.
      */
 
     public java.util.List<String> getCrawlersNotFound() {
@@ -120,11 +120,11 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of crawlers not found.
+     * A list of names of crawlers not found.
      * </p>
      * 
      * @param crawlersNotFound
-     *        A list of crawlers not found.
+     *        A list of names of crawlers not found.
      */
 
     public void setCrawlersNotFound(java.util.Collection<String> crawlersNotFound) {
@@ -138,7 +138,7 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of crawlers not found.
+     * A list of names of crawlers not found.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param crawlersNotFound
-     *        A list of crawlers not found.
+     *        A list of names of crawlers not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class BatchGetCrawlersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of crawlers not found.
+     * A list of names of crawlers not found.
      * </p>
      * 
      * @param crawlersNotFound
-     *        A list of crawlers not found.
+     *        A list of names of crawlers not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

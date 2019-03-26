@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The representation of a group member (user or group).
+ * The representation of a user or group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Member" target="_top">AWS API

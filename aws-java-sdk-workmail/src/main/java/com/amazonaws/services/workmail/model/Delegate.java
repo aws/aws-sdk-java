@@ -30,7 +30,7 @@ public class Delegate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user or group is associated as the resource's delegate.
+     * The identifier for the user or group associated as the resource's delegate.
      * </p>
      */
     private String id;
@@ -43,11 +43,11 @@ public class Delegate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user or group is associated as the resource's delegate.
+     * The identifier for the user or group associated as the resource's delegate.
      * </p>
      * 
      * @param id
-     *        The identifier for the user or group is associated as the resource's delegate.
+     *        The identifier for the user or group associated as the resource's delegate.
      */
 
     public void setId(String id) {
@@ -56,10 +56,10 @@ public class Delegate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user or group is associated as the resource's delegate.
+     * The identifier for the user or group associated as the resource's delegate.
      * </p>
      * 
-     * @return The identifier for the user or group is associated as the resource's delegate.
+     * @return The identifier for the user or group associated as the resource's delegate.
      */
 
     public String getId() {
@@ -68,11 +68,11 @@ public class Delegate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user or group is associated as the resource's delegate.
+     * The identifier for the user or group associated as the resource's delegate.
      * </p>
      * 
      * @param id
-     *        The identifier for the user or group is associated as the resource's delegate.
+     *        The identifier for the user or group associated as the resource's delegate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
