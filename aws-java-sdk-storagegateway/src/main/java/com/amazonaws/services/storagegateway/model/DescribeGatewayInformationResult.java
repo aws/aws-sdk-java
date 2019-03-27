@@ -80,9 +80,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String lastSoftwareUpdate;
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -486,14 +486,14 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * 
-     * @return A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *         Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *         the <code>ListTagsForResource</code> API.
+     * @return A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *         key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *         <code>ListTagsForResource</code> API operation.
      */
 
     public java.util.List<Tag> getTags() {
@@ -505,15 +505,15 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -527,9 +527,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -538,9 +538,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,15 +556,15 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

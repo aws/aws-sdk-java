@@ -34,7 +34,7 @@ public class DeleteSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     private String serverId;
     /**
      * <p>
-     * A unique identifier used to reference your user’s specific SSH key.
+     * A unique identifier used to reference your user's specific SSH key.
      * </p>
      */
     private String sshPublicKeyId;
@@ -93,11 +93,11 @@ public class DeleteSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier used to reference your user’s specific SSH key.
+     * A unique identifier used to reference your user's specific SSH key.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        A unique identifier used to reference your user’s specific SSH key.
+     *        A unique identifier used to reference your user's specific SSH key.
      */
 
     public void setSshPublicKeyId(String sshPublicKeyId) {
@@ -106,10 +106,10 @@ public class DeleteSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier used to reference your user’s specific SSH key.
+     * A unique identifier used to reference your user's specific SSH key.
      * </p>
      * 
-     * @return A unique identifier used to reference your user’s specific SSH key.
+     * @return A unique identifier used to reference your user's specific SSH key.
      */
 
     public String getSshPublicKeyId() {
@@ -118,11 +118,11 @@ public class DeleteSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier used to reference your user’s specific SSH key.
+     * A unique identifier used to reference your user's specific SSH key.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        A unique identifier used to reference your user’s specific SSH key.
+     *        A unique identifier used to reference your user's specific SSH key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

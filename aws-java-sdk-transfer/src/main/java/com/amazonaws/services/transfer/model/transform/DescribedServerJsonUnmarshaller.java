@@ -52,6 +52,14 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EndpointDetails", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setEndpointDetails(EndpointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EndpointType", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IdentityProviderDetails", targetDepth)) {
                     context.nextToken();
                     describedServer.setIdentityProviderDetails(IdentityProviderDetailsJsonUnmarshaller.getInstance().unmarshall(context));

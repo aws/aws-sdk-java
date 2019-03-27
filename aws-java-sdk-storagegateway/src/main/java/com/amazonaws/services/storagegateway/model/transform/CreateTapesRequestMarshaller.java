@@ -41,6 +41,8 @@ public class CreateTapesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSEncrypted").build();
     private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KMSKey").build();
+    private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PoolId").build();
 
     private static final CreateTapesRequestMarshaller instance = new CreateTapesRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class CreateTapesRequestMarshaller {
             protocolMarshaller.marshall(createTapesRequest.getTapeBarcodePrefix(), TAPEBARCODEPREFIX_BINDING);
             protocolMarshaller.marshall(createTapesRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
             protocolMarshaller.marshall(createTapesRequest.getKMSKey(), KMSKEY_BINDING);
+            protocolMarshaller.marshall(createTapesRequest.getPoolId(), POOLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

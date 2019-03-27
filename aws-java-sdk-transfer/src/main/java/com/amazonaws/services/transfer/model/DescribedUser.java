@@ -50,10 +50,10 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private String policy;
     /**
      * <p>
-     * This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies
+     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
      * attached to this role will determine the level of access you want to provide your users when transferring files
      * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.
+     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      */
     private String role;
@@ -215,17 +215,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies
+     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
      * attached to this role will determine the level of access you want to provide your users when transferring files
      * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.
+     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
      * @param role
-     *        This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The
+     *        This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
      *        policies attached to this role will determine the level of access you want to provide your users when
      *        transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s
+     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
      *        transfer requests.
      */
 
@@ -235,16 +235,16 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies
+     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
      * attached to this role will determine the level of access you want to provide your users when transferring files
      * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.
+     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
-     * @return This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The
+     * @return This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
      *         policies attached to this role will determine the level of access you want to provide your users when
      *         transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *         trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s
+     *         trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
      *         transfer requests.
      */
 
@@ -254,17 +254,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies
+     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
      * attached to this role will determine the level of access you want to provide your users when transferring files
      * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.
+     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
      * @param role
-     *        This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The
+     *        This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
      *        policies attached to this role will determine the level of access you want to provide your users when
      *        transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s
+     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
      *        transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

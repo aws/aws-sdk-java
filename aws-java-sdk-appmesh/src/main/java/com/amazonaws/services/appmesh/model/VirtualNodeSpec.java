@@ -43,7 +43,14 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<Listener> listeners;
     /**
      * <p>
-     * The service discovery information for the virtual node.
+     * The inbound and outbound access logging information for the virtual node.
+     * </p>
+     */
+    private Logging logging;
+    /**
+     * <p>
+     * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
+     * can omit this parameter.
      * </p>
      */
     private ServiceDiscovery serviceDiscovery;
@@ -198,11 +205,53 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The service discovery information for the virtual node.
+     * The inbound and outbound access logging information for the virtual node.
+     * </p>
+     * 
+     * @param logging
+     *        The inbound and outbound access logging information for the virtual node.
+     */
+
+    public void setLogging(Logging logging) {
+        this.logging = logging;
+    }
+
+    /**
+     * <p>
+     * The inbound and outbound access logging information for the virtual node.
+     * </p>
+     * 
+     * @return The inbound and outbound access logging information for the virtual node.
+     */
+
+    public Logging getLogging() {
+        return this.logging;
+    }
+
+    /**
+     * <p>
+     * The inbound and outbound access logging information for the virtual node.
+     * </p>
+     * 
+     * @param logging
+     *        The inbound and outbound access logging information for the virtual node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualNodeSpec withLogging(Logging logging) {
+        setLogging(logging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
+     * can omit this parameter.
      * </p>
      * 
      * @param serviceDiscovery
-     *        The service discovery information for the virtual node.
+     *        The service discovery information for the virtual node. If your virtual node does not expect ingress
+     *        traffic, you can omit this parameter.
      */
 
     public void setServiceDiscovery(ServiceDiscovery serviceDiscovery) {
@@ -211,10 +260,12 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The service discovery information for the virtual node.
+     * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
+     * can omit this parameter.
      * </p>
      * 
-     * @return The service discovery information for the virtual node.
+     * @return The service discovery information for the virtual node. If your virtual node does not expect ingress
+     *         traffic, you can omit this parameter.
      */
 
     public ServiceDiscovery getServiceDiscovery() {
@@ -223,11 +274,13 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The service discovery information for the virtual node.
+     * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
+     * can omit this parameter.
      * </p>
      * 
      * @param serviceDiscovery
-     *        The service discovery information for the virtual node.
+     *        The service discovery information for the virtual node. If your virtual node does not expect ingress
+     *        traffic, you can omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,6 +305,8 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
             sb.append("Backends: ").append(getBackends()).append(",");
         if (getListeners() != null)
             sb.append("Listeners: ").append(getListeners()).append(",");
+        if (getLogging() != null)
+            sb.append("Logging: ").append(getLogging()).append(",");
         if (getServiceDiscovery() != null)
             sb.append("ServiceDiscovery: ").append(getServiceDiscovery());
         sb.append("}");
@@ -276,6 +331,10 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false)
             return false;
+        if (other.getLogging() == null ^ this.getLogging() == null)
+            return false;
+        if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false)
+            return false;
         if (other.getServiceDiscovery() == null ^ this.getServiceDiscovery() == null)
             return false;
         if (other.getServiceDiscovery() != null && other.getServiceDiscovery().equals(this.getServiceDiscovery()) == false)
@@ -290,6 +349,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getBackends() == null) ? 0 : getBackends().hashCode());
         hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
+        hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
         hashCode = prime * hashCode + ((getServiceDiscovery() == null) ? 0 : getServiceDiscovery().hashCode());
         return hashCode;
     }

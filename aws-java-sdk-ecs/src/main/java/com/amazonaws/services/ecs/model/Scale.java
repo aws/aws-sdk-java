@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A floating-point percentage of the desired number of tasks to place and keep running in the service. This is used
- * when a service uses the <code>CODE_DEPLOY</code> deployment controller type.
+ * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Scale" target="_top">AWS API Documentation</a>
@@ -30,7 +29,8 @@ public class Scale implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted
+     * values are numbers between 0 and 100.
      * </p>
      */
     private Double value;
@@ -43,11 +43,13 @@ public class Scale implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted
+     * values are numbers between 0 and 100.
      * </p>
      * 
      * @param value
      *        The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     *        Accepted values are numbers between 0 and 100.
      */
 
     public void setValue(Double value) {
@@ -56,10 +58,12 @@ public class Scale implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted
+     * values are numbers between 0 and 100.
      * </p>
      * 
      * @return The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     *         Accepted values are numbers between 0 and 100.
      */
 
     public Double getValue() {
@@ -68,11 +72,13 @@ public class Scale implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     * The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted
+     * values are numbers between 0 and 100.
      * </p>
      * 
      * @param value
      *        The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set.
+     *        Accepted values are numbers between 0 and 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

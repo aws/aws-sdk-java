@@ -286,17 +286,17 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </li>
      * <li>
      * <p>
-     * Storage Volumes
+     * Storage volumes
      * </p>
      * </li>
      * <li>
      * <p>
-     * Virtual Tapes
+     * Virtual tapes
      * </p>
      * </li>
      * <li>
      * <p>
-     * NFS and SMB File Shares
+     * NFS and SMB file shares
      * </p>
      * </li>
      * </ul>
@@ -329,17 +329,17 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </li>
      * <li>
      * <p>
-     * Storage Volumes
+     * Storage volumes
      * </p>
      * </li>
      * <li>
      * <p>
-     * Virtual Tapes
+     * Virtual tapes
      * </p>
      * </li>
      * <li>
      * <p>
-     * NFS and SMB File Shares
+     * NFS and SMB file shares
      * </p>
      * </li>
      * </ul>

@@ -25,6 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private EndpointDetails endpointDetails;
+
+    private String endpointType;
     /**
      * <p>
      * An array containing all of the information required to call a customer-supplied authentication API. This
@@ -44,7 +47,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String identityProviderType;
     /**
      * <p>
-     * A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring
+     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
      * and auditing purposes.
      * </p>
      */
@@ -55,6 +58,72 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<Tag> tags;
+
+    /**
+     * @param endpointDetails
+     */
+
+    public void setEndpointDetails(EndpointDetails endpointDetails) {
+        this.endpointDetails = endpointDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public EndpointDetails getEndpointDetails() {
+        return this.endpointDetails;
+    }
+
+    /**
+     * @param endpointDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServerRequest withEndpointDetails(EndpointDetails endpointDetails) {
+        setEndpointDetails(endpointDetails);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @see EndpointType
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * @return
+     * @see EndpointType
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public CreateServerRequest withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public CreateServerRequest withEndpointType(EndpointType endpointType) {
+        this.endpointType = endpointType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -197,12 +266,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring
+     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
      * and auditing purposes.
      * </p>
      * 
      * @param loggingRole
-     *        A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for
+     *        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
      *        monitoring and auditing purposes.
      */
 
@@ -212,11 +281,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring
+     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
      * and auditing purposes.
      * </p>
      * 
-     * @return A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for
+     * @return A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
      *         monitoring and auditing purposes.
      */
 
@@ -226,12 +295,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring
+     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
      * and auditing purposes.
      * </p>
      * 
      * @param loggingRole
-     *        A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for
+     *        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
      *        monitoring and auditing purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -323,6 +392,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEndpointDetails() != null)
+            sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getIdentityProviderDetails() != null)
             sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
         if (getIdentityProviderType() != null)
@@ -345,6 +418,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateServerRequest == false)
             return false;
         CreateServerRequest other = (CreateServerRequest) obj;
+        if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
+            return false;
+        if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
+            return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
         if (other.getIdentityProviderDetails() == null ^ this.getIdentityProviderDetails() == null)
             return false;
         if (other.getIdentityProviderDetails() != null && other.getIdentityProviderDetails().equals(this.getIdentityProviderDetails()) == false)
@@ -369,6 +450,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());

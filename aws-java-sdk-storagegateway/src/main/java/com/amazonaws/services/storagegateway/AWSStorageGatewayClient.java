@@ -543,17 +543,17 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * Storage Volumes
+     * Storage volumes
      * </p>
      * </li>
      * <li>
      * <p>
-     * Virtual Tapes
+     * Virtual tapes
      * </p>
      * </li>
      * <li>
      * <p>
-     * NFS and SMB File Shares
+     * NFS and SMB file shares
      * </p>
      * </li>
      * </ul>

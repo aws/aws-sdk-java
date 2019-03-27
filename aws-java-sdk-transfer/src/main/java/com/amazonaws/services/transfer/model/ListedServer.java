@@ -42,6 +42,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String identityProviderType;
+
+    private String endpointType;
     /**
      * <p>
      * The AWS Identity and Access Management entity that allows the server to turn on Amazon CloudWatch logging.
@@ -187,6 +189,46 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     public ListedServer withIdentityProviderType(IdentityProviderType identityProviderType) {
         this.identityProviderType = identityProviderType.toString();
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @see EndpointType
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * @return
+     * @see EndpointType
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public ListedServer withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public ListedServer withEndpointType(EndpointType endpointType) {
+        this.endpointType = endpointType.toString();
         return this;
     }
 
@@ -445,6 +487,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getLoggingRole() != null)
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getServerId() != null)
@@ -475,6 +519,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIdentityProviderType() != null && other.getIdentityProviderType().equals(this.getIdentityProviderType()) == false)
             return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
         if (other.getLoggingRole() == null ^ this.getLoggingRole() == null)
             return false;
         if (other.getLoggingRole() != null && other.getLoggingRole().equals(this.getLoggingRole()) == false)
@@ -501,6 +549,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

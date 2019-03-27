@@ -44,7 +44,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -129,7 +129,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -139,7 +139,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues
      *        from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.
      *        </p>
      */
@@ -156,7 +156,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -165,7 +165,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues
      *         from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *         list and not for other programmatic purposes.
      *         </p>
      */
@@ -182,7 +182,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -192,7 +192,7 @@ public class ListMeshesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues
      *        from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

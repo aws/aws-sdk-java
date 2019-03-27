@@ -43,10 +43,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String policy;
     /**
      * <p>
-     * The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
      * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.
+     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      */
     private String role;
@@ -170,17 +170,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
      * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.
+     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role
+     *        The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s
+     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user's
      *        transfer requests.
      */
 
@@ -190,17 +190,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
      * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.
+     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
-     * @return The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this
+     * @return The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this
      *         role will determine the level of access you want to provide your users when transferring files into and
      *         out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
      *         allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP
-     *         user’s transfer requests.
+     *         user's transfer requests.
      */
 
     public String getRole() {
@@ -209,17 +209,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
      * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.
+     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role
+     *        The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s
+     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user's
      *        transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

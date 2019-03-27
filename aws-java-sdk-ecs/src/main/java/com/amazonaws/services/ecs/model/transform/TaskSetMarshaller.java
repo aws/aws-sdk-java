@@ -32,6 +32,10 @@ public class TaskSetMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> TASKSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskSetArn").build();
+    private static final MarshallingInfo<String> SERVICEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceArn").build();
+    private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterArn").build();
     private static final MarshallingInfo<String> STARTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("startedBy").build();
     private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +62,8 @@ public class TaskSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
     private static final MarshallingInfo<List> LOADBALANCERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("loadBalancers").build();
+    private static final MarshallingInfo<List> SERVICEREGISTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRegistries").build();
     private static final MarshallingInfo<StructuredPojo> SCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scale").build();
     private static final MarshallingInfo<String> STABILITYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -83,6 +89,8 @@ public class TaskSetMarshaller {
         try {
             protocolMarshaller.marshall(taskSet.getId(), ID_BINDING);
             protocolMarshaller.marshall(taskSet.getTaskSetArn(), TASKSETARN_BINDING);
+            protocolMarshaller.marshall(taskSet.getServiceArn(), SERVICEARN_BINDING);
+            protocolMarshaller.marshall(taskSet.getClusterArn(), CLUSTERARN_BINDING);
             protocolMarshaller.marshall(taskSet.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(taskSet.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(taskSet.getStatus(), STATUS_BINDING);
@@ -96,6 +104,7 @@ public class TaskSetMarshaller {
             protocolMarshaller.marshall(taskSet.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(taskSet.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(taskSet.getLoadBalancers(), LOADBALANCERS_BINDING);
+            protocolMarshaller.marshall(taskSet.getServiceRegistries(), SERVICEREGISTRIES_BINDING);
             protocolMarshaller.marshall(taskSet.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(taskSet.getStabilityStatus(), STABILITYSTATUS_BINDING);
             protocolMarshaller.marshall(taskSet.getStabilityStatusAt(), STABILITYSTATUSAT_BINDING);

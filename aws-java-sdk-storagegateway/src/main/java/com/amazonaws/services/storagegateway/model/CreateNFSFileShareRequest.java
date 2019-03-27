@@ -97,7 +97,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> clientList;
     /**
      * <p>
-     * Maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user. Valid options are the following:
      * </p>
      * <ul>
      * <li>
@@ -141,7 +141,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean requesterPays;
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -670,7 +670,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user. Valid options are the following:
      * </p>
      * <ul>
      * <li>
@@ -691,7 +691,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param squash
-     *        Maps a user to anonymous user. Valid options are the following: </p>
+     *        A value that maps a user to anonymous user. Valid options are the following: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -716,7 +716,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user. Valid options are the following:
      * </p>
      * <ul>
      * <li>
@@ -736,7 +736,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return Maps a user to anonymous user. Valid options are the following: </p>
+     * @return A value that maps a user to anonymous user. Valid options are the following: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -761,7 +761,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user. Valid options are the following:
      * </p>
      * <ul>
      * <li>
@@ -782,7 +782,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param squash
-     *        Maps a user to anonymous user. Valid options are the following: </p>
+     *        A value that maps a user to anonymous user. Valid options are the following: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -989,7 +989,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -999,7 +999,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     * @return A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *         <note>
      *         <p>
      *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
@@ -1017,7 +1017,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -1028,7 +1028,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
@@ -1048,7 +1048,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -1064,7 +1064,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
@@ -1086,7 +1086,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -1097,7 +1097,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the

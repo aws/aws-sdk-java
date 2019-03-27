@@ -56,6 +56,14 @@ public class TaskSetJsonUnmarshaller implements Unmarshaller<TaskSet, JsonUnmars
                     context.nextToken();
                     taskSet.setTaskSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("serviceArn", targetDepth)) {
+                    context.nextToken();
+                    taskSet.setServiceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("clusterArn", targetDepth)) {
+                    context.nextToken();
+                    taskSet.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startedBy", targetDepth)) {
                     context.nextToken();
                     taskSet.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +115,10 @@ public class TaskSetJsonUnmarshaller implements Unmarshaller<TaskSet, JsonUnmars
                 if (context.testExpression("loadBalancers", targetDepth)) {
                     context.nextToken();
                     taskSet.setLoadBalancers(new ListUnmarshaller<LoadBalancer>(LoadBalancerJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("serviceRegistries", targetDepth)) {
+                    context.nextToken();
+                    taskSet.setServiceRegistries(new ListUnmarshaller<ServiceRegistry>(ServiceRegistryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("scale", targetDepth)) {
                     context.nextToken();

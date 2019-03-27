@@ -76,6 +76,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest request) {
+
+        return createTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTaskSetRequest, CreateTaskSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest request) {
 
         return deleteAccountSettingAsync(request, null);
@@ -123,6 +136,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     @Override
     public java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request) {
+
+        return deleteTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTaskSetRequest, DeleteTaskSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +250,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTaskDefinitionRequest, DescribeTaskDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest request) {
+
+        return describeTaskSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTaskSetsRequest, DescribeTaskSetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -745,6 +784,32 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     @Override
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request) {
+
+        return updateServicePrimaryTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest request) {
+
+        return updateTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskSetRequest, UpdateTaskSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

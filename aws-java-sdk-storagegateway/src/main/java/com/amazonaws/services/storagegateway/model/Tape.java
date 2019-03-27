@@ -86,6 +86,17 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     private Long tapeUsedInBytes;
 
     private String kMSKey;
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     */
+    private String poolId;
 
     /**
      * <p>
@@ -476,6 +487,76 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
+     *        the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the
+     *        pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @return The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *         S3 storage class that is associated with the pool. When you use your backup application to eject the
+     *         tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
+     *         the pool.</p>
+     *         <p>
+     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public String getPoolId() {
+        return this.poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
+     *        the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the
+     *        pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withPoolId(String poolId) {
+        setPoolId(poolId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -504,7 +585,9 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         if (getTapeUsedInBytes() != null)
             sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes()).append(",");
         if (getKMSKey() != null)
-            sb.append("KMSKey: ").append(getKMSKey());
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getPoolId() != null)
+            sb.append("PoolId: ").append(getPoolId());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +638,10 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
             return false;
+        if (other.getPoolId() == null ^ this.getPoolId() == null)
+            return false;
+        if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +659,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         return hashCode;
     }
 

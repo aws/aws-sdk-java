@@ -138,7 +138,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String mediumChangerType;
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -598,7 +598,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -608,8 +608,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * 
-     * @return A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value
-     *         pair.</p> <note>
+     * @return A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
      *         <p>
      *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
      *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
@@ -626,7 +625,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -637,8 +636,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.</p>
-     *        <note>
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
@@ -657,7 +655,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -673,8 +671,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.</p>
-     *        <note>
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
@@ -695,7 +692,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -706,8 +703,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway may be specified. Every tag is a key-value pair.</p>
-     *        <note>
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and

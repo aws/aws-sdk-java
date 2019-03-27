@@ -28,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateServerRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointDetails").build();
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
     private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderDetails").build();
     private static final MarshallingInfo<String> IDENTITYPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +57,8 @@ public class CreateServerRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createServerRequest.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getIdentityProviderDetails(), IDENTITYPROVIDERDETAILS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getLoggingRole(), LOGGINGROLE_BINDING);

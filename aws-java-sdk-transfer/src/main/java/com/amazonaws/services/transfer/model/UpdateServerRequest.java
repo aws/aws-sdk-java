@@ -25,6 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private EndpointDetails endpointDetails;
+
+    private String endpointType;
     /**
      * <p>
      * This response parameter is an array containing all of the information required to call a customer's
@@ -45,6 +48,72 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String serverId;
+
+    /**
+     * @param endpointDetails
+     */
+
+    public void setEndpointDetails(EndpointDetails endpointDetails) {
+        this.endpointDetails = endpointDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public EndpointDetails getEndpointDetails() {
+        return this.endpointDetails;
+    }
+
+    /**
+     * @param endpointDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServerRequest withEndpointDetails(EndpointDetails endpointDetails) {
+        setEndpointDetails(endpointDetails);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @see EndpointType
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * @return
+     * @see EndpointType
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public UpdateServerRequest withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public UpdateServerRequest withEndpointType(EndpointType endpointType) {
+        this.endpointType = endpointType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -190,6 +259,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEndpointDetails() != null)
+            sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getIdentityProviderDetails() != null)
             sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
         if (getLoggingRole() != null)
@@ -210,6 +283,14 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof UpdateServerRequest == false)
             return false;
         UpdateServerRequest other = (UpdateServerRequest) obj;
+        if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
+            return false;
+        if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
+            return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
         if (other.getIdentityProviderDetails() == null ^ this.getIdentityProviderDetails() == null)
             return false;
         if (other.getIdentityProviderDetails() != null && other.getIdentityProviderDetails().equals(this.getIdentityProviderDetails()) == false)
@@ -230,6 +311,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());

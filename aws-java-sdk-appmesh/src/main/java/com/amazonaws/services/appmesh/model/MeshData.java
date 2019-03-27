@@ -42,6 +42,12 @@ public class MeshData implements Serializable, Cloneable, StructuredPojo {
     private ResourceMetadata metadata;
     /**
      * <p>
+     * The associated specification for the service mesh.
+     * </p>
+     */
+    private MeshSpec spec;
+    /**
+     * <p>
      * The status of the service mesh.
      * </p>
      */
@@ -129,6 +135,46 @@ public class MeshData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The associated specification for the service mesh.
+     * </p>
+     * 
+     * @param spec
+     *        The associated specification for the service mesh.
+     */
+
+    public void setSpec(MeshSpec spec) {
+        this.spec = spec;
+    }
+
+    /**
+     * <p>
+     * The associated specification for the service mesh.
+     * </p>
+     * 
+     * @return The associated specification for the service mesh.
+     */
+
+    public MeshSpec getSpec() {
+        return this.spec;
+    }
+
+    /**
+     * <p>
+     * The associated specification for the service mesh.
+     * </p>
+     * 
+     * @param spec
+     *        The associated specification for the service mesh.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MeshData withSpec(MeshSpec spec) {
+        setSpec(spec);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the service mesh.
      * </p>
      * 
@@ -183,6 +229,8 @@ public class MeshData implements Serializable, Cloneable, StructuredPojo {
             sb.append("MeshName: ").append(getMeshName()).append(",");
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getSpec() != null)
+            sb.append("Spec: ").append(getSpec()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");
@@ -207,6 +255,10 @@ public class MeshData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getSpec() == null ^ this.getSpec() == null)
+            return false;
+        if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -221,6 +273,7 @@ public class MeshData implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }

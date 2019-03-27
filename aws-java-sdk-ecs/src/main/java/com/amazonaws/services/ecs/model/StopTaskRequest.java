@@ -33,7 +33,7 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String cluster;
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      */
     private String task;
@@ -94,11 +94,11 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
      * @param task
-     *        The task ID or full ARN entry of the task to stop.
+     *        The task ID or full Amazon Resource Name (ARN) of the task to stop.
      */
 
     public void setTask(String task) {
@@ -107,10 +107,10 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
-     * @return The task ID or full ARN entry of the task to stop.
+     * @return The task ID or full Amazon Resource Name (ARN) of the task to stop.
      */
 
     public String getTask() {
@@ -119,11 +119,11 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
      * @param task
-     *        The task ID or full ARN entry of the task to stop.
+     *        The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,6 +68,10 @@ public class TapeInfoJsonUnmarshaller implements Unmarshaller<TapeInfo, JsonUnma
                     context.nextToken();
                     tapeInfo.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PoolId", targetDepth)) {
+                    context.nextToken();
+                    tapeInfo.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an Amazon ECS service deployment. This is used when a service uses the <code>CODE_DEPLOY</code>
+ * The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code>
  * deployment controller type.
  * </p>
  * 

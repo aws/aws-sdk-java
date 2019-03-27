@@ -84,6 +84,10 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                     context.nextToken();
                     tapeArchive.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PoolId", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

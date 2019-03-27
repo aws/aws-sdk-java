@@ -75,7 +75,14 @@ public enum StorageClass {
      * S-IA without writing any application code. IntelligentTiering also manages transitions automatically to
      * Glacier for long term archive in addition to S3 storage classes.
      */
-    IntelligentTiering("INTELLIGENT_TIERING")
+    IntelligentTiering("INTELLIGENT_TIERING"),
+
+    /**
+     * S3 Glacier Deep Archive provides secure, durable object storage class for long term data archival. It’s the
+     * ideal storage class to make an archival, durable copy of data that rarely, if ever, needs to be accessed. It can
+     * be used as an offline backup for their most important data assets and to meet long-term retention needs.
+     */
+    DeepArchive("DEEP_ARCHIVE")
     ;
 
     /**
