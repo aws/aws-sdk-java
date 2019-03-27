@@ -394,6 +394,14 @@ public abstract class PaginatedList<T> implements List<T> {
         return Collections.unmodifiableList(allResults.subList(arg0, arg1));
     }
 
+    /**
+     * Returns a sub-list in the range specified, loading more results as
+     * necessary. May return a list of size less than (arg1 - arg2)
+     * if arg2 > result size
+     * <p>
+     * Not supported in ITERATION_ONLY mode.
+     * </p>
+     */
     public List<T> safeSubList(int arg0, int arg1) {
         checkUnsupportedOperationForIterationOnlyMode("safeSubList(int arg0, int arg1)");
         
