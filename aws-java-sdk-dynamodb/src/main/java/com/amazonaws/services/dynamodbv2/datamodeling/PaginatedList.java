@@ -394,6 +394,16 @@ public abstract class PaginatedList<T> implements List<T> {
         return Collections.unmodifiableList(allResults.subList(arg0, arg1));
     }
 
+    public List<T> safeSubList(int arg0, int arg1) {
+        checkUnsupportedOperationForIterationOnlyMode("safeSubList(int arg0, int arg1)");
+        
+        while ( allResults.size() < arg1 && nextResultsAvailable() ) {
+            moveNextResults(false);
+        }
+        
+        return Collections.unmodifiableList(allResults.subList(arg0, Math.min(arg1, allResults.size())));
+    }
+    
     /**
      * Returns the first index of the object given in the list. Additional
      * results are loaded incrementally as necessary.
