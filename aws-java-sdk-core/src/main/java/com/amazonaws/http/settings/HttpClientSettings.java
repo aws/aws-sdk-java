@@ -130,6 +130,10 @@ public class HttpClientSettings {
         return config.useTcpKeepAlive();
     }
 
+    public boolean useConnectionManagerShared() {
+        return config.useConnectionManagerShared();
+    }
+
     public SecureRandom getSecureRandom() {
         return config.getSecureRandom();
     }

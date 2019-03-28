@@ -111,6 +111,11 @@ public class ClientConfiguration {
     public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
 
     /**
+     * The default on whether to use connection manager shared mode.
+     */
+    public static final boolean CONNECTION_MANAGER_SHARED = false;
+
+    /**
      * The default on whether to throttle retries.
      */
     public static final boolean DEFAULT_THROTTLE_RETRIES = true;
@@ -287,6 +292,11 @@ public class ClientConfiguration {
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
 
     /**
+     * Whether or not to use connection manager shared mode.
+     */
+    private boolean connectionManagerShared = CONNECTION_MANAGER_SHARED;
+
+    /**
      * Whether or not to cache response metadata.
      * <p>
      * Response metadata is typically used for troubleshooting issues with AWS support staff when
@@ -396,6 +406,7 @@ public class ClientConfiguration {
         this.connectionMaxIdleMillis = other.getConnectionMaxIdleMillis();
         this.validateAfterInactivityMillis = other.getValidateAfterInactivityMillis();
         this.tcpKeepAlive = other.useTcpKeepAlive();
+        this.connectionManagerShared = other.useConnectionManagerShared();
         this.secureRandom = other.getSecureRandom();
         this.headers.clear();
         this.headers.putAll(other.getHeaders());
@@ -1976,6 +1987,21 @@ public class ClientConfiguration {
     public void setUseTcpKeepAlive(final boolean use) {
         this.tcpKeepAlive = use;
     }
+
+    /**
+     * Returns whether or not connection manager shared mode support is enabled.
+     */
+    public boolean useConnectionManagerShared() {
+        return connectionManagerShared;
+    }
+
+    /**
+     * Sets whether or not to enable connection manager shared mode.
+     */
+    private void setUseConnectionManagerShared(final boolean use) {
+        this.connectionManagerShared = use;
+    }
+
 
     /**
      * Sets whether or not to enable TCP KeepAlive support at the socket level.

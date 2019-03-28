@@ -53,6 +53,7 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
                 .setKeepAliveStrategy(buildKeepAliveStrategy(settings))
                 .disableRedirectHandling()
                 .disableAutomaticRetries()
+                .setConnectionManagerShared(settings.useConnectionManagerShared())
                 .setConnectionManager(ClientConnectionManagerFactory.wrap(cm));
 
         // By default http client enables Gzip compression. So we disable it
