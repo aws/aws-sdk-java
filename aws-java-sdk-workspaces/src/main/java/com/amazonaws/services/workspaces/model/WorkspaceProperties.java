@@ -31,7 +31,7 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      */
@@ -65,13 +65,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
-     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
      *        Running Mode</a>.
      * @see RunningMode
      */
@@ -83,12 +83,12 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      * 
      * @return The running mode. For more information, see <a
-     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
      *         Running Mode</a>.
      * @see RunningMode
      */
@@ -100,13 +100,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
-     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
      *        Running Mode</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
@@ -120,13 +120,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
-     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
      *        Running Mode</a>.
      * @see RunningMode
      */
@@ -138,13 +138,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
      * Mode</a>.
      * </p>
      * 
      * @param runningMode
      *        The running mode. For more information, see <a
-     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
      *        Running Mode</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode

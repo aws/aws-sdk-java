@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for Eac3Settings
+ * Eac3 Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3Settings" target="_top">AWS API
  *      Documentation</a>

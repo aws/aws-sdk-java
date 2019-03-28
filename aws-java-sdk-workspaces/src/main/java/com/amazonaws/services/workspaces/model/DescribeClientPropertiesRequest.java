@@ -27,17 +27,17 @@ public class DescribeClientPropertiesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource identifiers, in the form of directory IDs.
+     * The resource identifier, in the form of directory IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIds;
 
     /**
      * <p>
-     * The resource identifiers, in the form of directory IDs.
+     * The resource identifier, in the form of directory IDs.
      * </p>
      * 
-     * @return The resource identifiers, in the form of directory IDs.
+     * @return The resource identifier, in the form of directory IDs.
      */
 
     public java.util.List<String> getResourceIds() {
@@ -49,11 +49,11 @@ public class DescribeClientPropertiesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource identifiers, in the form of directory IDs.
+     * The resource identifier, in the form of directory IDs.
      * </p>
      * 
      * @param resourceIds
-     *        The resource identifiers, in the form of directory IDs.
+     *        The resource identifier, in the form of directory IDs.
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -67,7 +67,7 @@ public class DescribeClientPropertiesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource identifiers, in the form of directory IDs.
+     * The resource identifier, in the form of directory IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DescribeClientPropertiesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param resourceIds
-     *        The resource identifiers, in the form of directory IDs.
+     *        The resource identifier, in the form of directory IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DescribeClientPropertiesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource identifiers, in the form of directory IDs.
+     * The resource identifier, in the form of directory IDs.
      * </p>
      * 
      * @param resourceIds
-     *        The resource identifiers, in the form of directory IDs.
+     *        The resource identifier, in the form of directory IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

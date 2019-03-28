@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for DvbSubDestinationShadowColor
+ * Dvb Sub Destination Shadow Color
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbSubDestinationShadowColor {

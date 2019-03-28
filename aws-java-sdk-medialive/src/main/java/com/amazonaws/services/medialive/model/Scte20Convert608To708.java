@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for Scte20Convert608To708
+ * Scte20 Convert608 To708
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Scte20Convert608To708 {

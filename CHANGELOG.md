@@ -1,3 +1,20 @@
+# __1.11.528__ __2019-03-28__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release adds a new output locking mode synchronized to the Unix epoch.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Adds "Tags" field in UpdateProvisionedProduct API. The product should have a new RESOURCE_UPDATE Constraint with TagUpdateOnProvisionedProduct field set to ALLOWED for it to work. See API docs for CreateConstraint for more information
+
+## __Amazon Pinpoint Email Service__
+  - ### Features
+    - This release adds support for using the Amazon Pinpoint Email API to tag the following types of Amazon Pinpoint resources: configuration sets; dedicated IP pools; deliverability dashboard reports; and, email identities. A tag is a label that you optionally define and associate with these types of resources. Tags can help you categorize and manage these resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. For more information, see the Amazon Pinpoint Email API Reference.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Amazon WorkSpaces adds tagging support for WorkSpaces Images, WorkSpaces directories, WorkSpaces bundles and IP Access control groups.
+
 # __1.11.527__ __2019-03-27__
 ## __AWS App Mesh__
   - ### Features

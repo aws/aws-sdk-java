@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for BurnInAlignment
+ * Burn In Alignment
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BurnInAlignment {

@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsAudioStreamType
+ * M2ts Audio Stream Type
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsAudioStreamType {

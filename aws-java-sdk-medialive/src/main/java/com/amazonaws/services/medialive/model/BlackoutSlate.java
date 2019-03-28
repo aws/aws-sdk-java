@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for BlackoutSlate
+ * Blackout Slate
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BlackoutSlate" target="_top">AWS API
  *      Documentation</a>

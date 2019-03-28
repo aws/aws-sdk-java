@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for Scte35AposWebDeliveryAllowedBehavior
+ * Scte35 Apos Web Delivery Allowed Behavior
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Scte35AposWebDeliveryAllowedBehavior {

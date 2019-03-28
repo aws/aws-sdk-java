@@ -564,7 +564,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the properties of the specified Amazon WorkSpaces client.
+     * Modifies the properties of the specified Amazon WorkSpaces clients.
      * </p>
      * 
      * @param modifyClientPropertiesRequest
@@ -596,7 +596,7 @@ public interface AmazonWorkspaces {
      *         The properties of this WorkSpace are currently being modified. Try again in a moment.
      * @throws UnsupportedWorkspaceConfigurationException
      *         The configuration of this WorkSpace is not supported for this operation. For more information, see the <a
-     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon WorkSpaces Administration
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon WorkSpaces Administration
      *         Guide</a>.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -663,8 +663,8 @@ public interface AmazonWorkspaces {
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
-     * information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a
-     * WorkSpace</a>.
+     * information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+     * a WorkSpace</a>.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.

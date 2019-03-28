@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for M2tsSettings
+ * M2ts Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/M2tsSettings" target="_top">AWS API
  *      Documentation</a>

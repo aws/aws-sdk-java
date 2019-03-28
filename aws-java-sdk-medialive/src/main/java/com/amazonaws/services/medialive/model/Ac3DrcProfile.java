@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for Ac3DrcProfile
+ * Ac3 Drc Profile
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Ac3DrcProfile {

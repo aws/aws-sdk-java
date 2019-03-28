@@ -30,11 +30,11 @@ import com.amazonaws.services.pinpointemail.model.*;
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * Email API, version 1.0. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
- * Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU
+ * (Ireland) Regions at the following endpoints:
  * </p>
  * <ul>
  * <li>
@@ -45,6 +45,11 @@ import com.amazonaws.services.pinpointemail.model.*;
  * <li>
  * <p>
  * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
  * </p>
  * </li>
  * <li>
@@ -86,6 +91,8 @@ public interface AmazonPinpointEmail {
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -143,6 +150,8 @@ public interface AmazonPinpointEmail {
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -183,6 +192,8 @@ public interface AmazonPinpointEmail {
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDeliverabilityTestReport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
      *      target="_top">AWS API Documentation</a>
@@ -216,6 +227,8 @@ public interface AmazonPinpointEmail {
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -242,6 +255,8 @@ public interface AmazonPinpointEmail {
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -290,6 +305,8 @@ public interface AmazonPinpointEmail {
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -313,6 +330,8 @@ public interface AmazonPinpointEmail {
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -636,6 +655,28 @@ public interface AmazonPinpointEmail {
      *      target="_top">AWS API Documentation</a>
      */
     ListEmailIdentitiesResult listEmailIdentities(ListEmailIdentitiesRequest listEmailIdentitiesRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specific resource. A <i>tag</i> is a
+     * label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a
+     * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a
+     * category for more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -972,6 +1013,56 @@ public interface AmazonPinpointEmail {
      *      Documentation</a>
      */
     SendEmailResult sendEmail(SendEmailRequest sendEmailRequest);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is a label that you
+     * optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage
+     * resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as
+     * many as 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

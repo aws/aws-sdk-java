@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M3u8TimedMetadataBehavior
+ * M3u8 Timed Metadata Behavior
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M3u8TimedMetadataBehavior {

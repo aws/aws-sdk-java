@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for EmbeddedConvert608To708
+ * Embedded Convert608 To708
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EmbeddedConvert608To708 {

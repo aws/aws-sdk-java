@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for BlackoutSlateNetworkEndBlackout
+ * Blackout Slate Network End Blackout
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BlackoutSlateNetworkEndBlackout {

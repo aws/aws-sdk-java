@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.pinpointemail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateDeliverabilityTestReportRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromEmailAddress").build();
     private static final MarshallingInfo<StructuredPojo> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Content").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDeliverabilityTestReportRequestMarshaller instance = new CreateDeliverabilityTestReportRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateDeliverabilityTestReportRequestMarshaller {
             protocolMarshaller.marshall(createDeliverabilityTestReportRequest.getReportName(), REPORTNAME_BINDING);
             protocolMarshaller.marshall(createDeliverabilityTestReportRequest.getFromEmailAddress(), FROMEMAILADDRESS_BINDING);
             protocolMarshaller.marshall(createDeliverabilityTestReportRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(createDeliverabilityTestReportRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

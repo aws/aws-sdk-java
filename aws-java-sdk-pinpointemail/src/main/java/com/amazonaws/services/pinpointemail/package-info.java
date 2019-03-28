@@ -16,11 +16,11 @@
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * Email API, version 1.0. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
- * Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU
+ * (Ireland) Regions at the following endpoints:
  * </p>
  * <ul>
  * <li>
@@ -31,6 +31,11 @@
  * <li>
  * <p>
  * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
  * </p>
  * </li>
  * <li>

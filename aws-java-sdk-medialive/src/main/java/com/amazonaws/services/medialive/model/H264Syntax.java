@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264Syntax
+ * H264 Syntax
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264Syntax {

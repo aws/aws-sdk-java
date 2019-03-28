@@ -49,6 +49,12 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String imageDescription;
+    /**
+     * <p>
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -230,6 +236,79 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * </p>
+     * 
+     * @return The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportWorkspaceImageRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportWorkspaceImageRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -248,7 +327,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
         if (getImageDescription() != null)
-            sb.append("ImageDescription: ").append(getImageDescription());
+            sb.append("ImageDescription: ").append(getImageDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +360,10 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getImageDescription() != null && other.getImageDescription().equals(this.getImageDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +376,7 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getIngestionProcess() == null) ? 0 : getIngestionProcess().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
         hashCode = prime * hashCode + ((getImageDescription() == null) ? 0 : getImageDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

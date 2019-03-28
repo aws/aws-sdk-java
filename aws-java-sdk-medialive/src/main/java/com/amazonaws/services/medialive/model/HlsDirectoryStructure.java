@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for HlsDirectoryStructure
+ * Hls Directory Structure
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsDirectoryStructure {

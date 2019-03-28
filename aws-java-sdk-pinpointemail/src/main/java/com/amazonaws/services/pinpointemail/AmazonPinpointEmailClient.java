@@ -54,11 +54,11 @@ import com.amazonaws.services.pinpointemail.model.transform.*;
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * Email API, version 1.0. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
- * Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU
+ * (Ireland) Regions at the following endpoints:
  * </p>
  * <ul>
  * <li>
@@ -69,6 +69,11 @@ import com.amazonaws.services.pinpointemail.model.transform.*;
  * <li>
  * <p>
  * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
  * </p>
  * </li>
  * <li>
@@ -101,6 +106,9 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.pinpointemail.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MessageRejected").withModeledClass(
                                     com.amazonaws.services.pinpointemail.model.MessageRejectedException.class))
@@ -197,6 +205,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -335,6 +345,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -415,6 +427,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDeliverabilityTestReport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
      *      target="_top">AWS API Documentation</a>
@@ -489,6 +503,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -554,6 +570,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -683,6 +701,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -746,6 +766,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -1669,6 +1691,67 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specific resource. A <i>tag</i> is a
+     * label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a
+     * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a
+     * category for more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enable or disable the automatic warm-up feature for dedicated IP addresses.
      * </p>
      * 
@@ -2524,6 +2607,134 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<SendEmailResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendEmailResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is a label that you
+     * optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage
+     * resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as
+     * many as 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

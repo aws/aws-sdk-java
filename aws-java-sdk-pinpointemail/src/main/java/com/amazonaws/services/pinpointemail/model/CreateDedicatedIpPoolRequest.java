@@ -34,6 +34,12 @@ public class CreateDedicatedIpPoolRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String poolName;
+    /**
+     * <p>
+     * An object that defines the tags (keys and values) that you want to associate with the pool.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -76,6 +82,76 @@ public class CreateDedicatedIpPoolRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An object that defines the tags (keys and values) that you want to associate with the pool.
+     * </p>
+     * 
+     * @return An object that defines the tags (keys and values) that you want to associate with the pool.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An object that defines the tags (keys and values) that you want to associate with the pool.
+     * </p>
+     * 
+     * @param tags
+     *        An object that defines the tags (keys and values) that you want to associate with the pool.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An object that defines the tags (keys and values) that you want to associate with the pool.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An object that defines the tags (keys and values) that you want to associate with the pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDedicatedIpPoolRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that defines the tags (keys and values) that you want to associate with the pool.
+     * </p>
+     * 
+     * @param tags
+     *        An object that defines the tags (keys and values) that you want to associate with the pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDedicatedIpPoolRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +164,9 @@ public class CreateDedicatedIpPoolRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPoolName() != null)
-            sb.append("PoolName: ").append(getPoolName());
+            sb.append("PoolName: ").append(getPoolName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +185,10 @@ public class CreateDedicatedIpPoolRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPoolName() != null && other.getPoolName().equals(this.getPoolName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +198,7 @@ public class CreateDedicatedIpPoolRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPoolName() == null) ? 0 : getPoolName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

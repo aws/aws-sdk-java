@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for GlobalConfigurationInputEndAction
+ * Global Configuration Input End Action
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum GlobalConfigurationInputEndAction {

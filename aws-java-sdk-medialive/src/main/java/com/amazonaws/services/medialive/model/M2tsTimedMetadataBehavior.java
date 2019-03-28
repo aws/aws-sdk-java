@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsTimedMetadataBehavior
+ * M2ts Timed Metadata Behavior
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsTimedMetadataBehavior {

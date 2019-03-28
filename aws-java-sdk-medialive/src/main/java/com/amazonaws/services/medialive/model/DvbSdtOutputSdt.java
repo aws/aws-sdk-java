@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for DvbSdtOutputSdt
+ * Dvb Sdt Output Sdt
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbSdtOutputSdt {

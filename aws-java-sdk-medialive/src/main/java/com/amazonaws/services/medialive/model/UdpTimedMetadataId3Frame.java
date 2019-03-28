@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for UdpTimedMetadataId3Frame
+ * Udp Timed Metadata Id3 Frame
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UdpTimedMetadataId3Frame {

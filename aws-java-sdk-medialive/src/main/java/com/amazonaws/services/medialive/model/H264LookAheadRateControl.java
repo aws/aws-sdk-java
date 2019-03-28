@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264LookAheadRateControl
+ * H264 Look Ahead Rate Control
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264LookAheadRateControl {

@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for InputLossActionForMsSmoothOut
+ * Input Loss Action For Ms Smooth Out
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputLossActionForMsSmoothOut {

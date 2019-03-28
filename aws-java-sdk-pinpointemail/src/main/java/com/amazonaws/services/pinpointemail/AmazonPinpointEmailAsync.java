@@ -29,11 +29,11 @@ import com.amazonaws.services.pinpointemail.model.*;
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * Email API, version 1.0. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
- * Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU
+ * (Ireland) Regions at the following endpoints:
  * </p>
  * <ul>
  * <li>
@@ -44,6 +44,11 @@ import com.amazonaws.services.pinpointemail.model.*;
  * <li>
  * <p>
  * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
  * </p>
  * </li>
  * <li>
@@ -1039,6 +1044,43 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
 
     /**
      * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specific resource. A <i>tag</i> is a
+     * label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a
+     * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a
+     * category for more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specific resource. A <i>tag</i> is a
+     * label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a
+     * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a
+     * category for more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Enable or disable the automatic warm-up feature for dedicated IP addresses.
      * </p>
      * 
@@ -1627,6 +1669,84 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
      */
     java.util.concurrent.Future<SendEmailResult> sendEmailAsync(SendEmailRequest sendEmailRequest,
             com.amazonaws.handlers.AsyncHandler<SendEmailRequest, SendEmailResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is a label that you
+     * optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage
+     * resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as
+     * many as 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is a label that you
+     * optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage
+     * resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as
+     * many as 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

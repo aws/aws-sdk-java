@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsAribCaptionsPidControl
+ * M2ts Arib Captions Pid Control
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsAribCaptionsPidControl {

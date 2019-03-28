@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for GlobalConfiguration
+ * Global Configuration
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GlobalConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -37,6 +37,13 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     private String inputEndAction;
     /** Settings for system actions when input is lost. */
     private InputLossBehavior inputLossBehavior;
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     */
+    private String outputLockingMode;
     /**
      * Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which
      * optionally may be locked to another source via NTP) or should be locked to the clock of the source that is
@@ -197,6 +204,81 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public void setOutputLockingMode(String outputLockingMode) {
+        this.outputLockingMode = outputLockingMode;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @return Indicates how MediaLive pipelines are synchronized.
+     * 
+     *         PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *         EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public String getOutputLockingMode() {
+        return this.outputLockingMode;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public GlobalConfiguration withOutputLockingMode(String outputLockingMode) {
+        setOutputLockingMode(outputLockingMode);
+        return this;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public GlobalConfiguration withOutputLockingMode(GlobalConfigurationOutputLockingMode outputLockingMode) {
+        this.outputLockingMode = outputLockingMode.toString();
+        return this;
+    }
+
+    /**
      * Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which
      * optionally may be locked to another source via NTP) or should be locked to the clock of the source that is
      * providing the input stream.
@@ -340,6 +422,8 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
             sb.append("InputEndAction: ").append(getInputEndAction()).append(",");
         if (getInputLossBehavior() != null)
             sb.append("InputLossBehavior: ").append(getInputLossBehavior()).append(",");
+        if (getOutputLockingMode() != null)
+            sb.append("OutputLockingMode: ").append(getOutputLockingMode()).append(",");
         if (getOutputTimingSource() != null)
             sb.append("OutputTimingSource: ").append(getOutputTimingSource()).append(",");
         if (getSupportLowFramerateInputs() != null)
@@ -370,6 +454,10 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInputLossBehavior() != null && other.getInputLossBehavior().equals(this.getInputLossBehavior()) == false)
             return false;
+        if (other.getOutputLockingMode() == null ^ this.getOutputLockingMode() == null)
+            return false;
+        if (other.getOutputLockingMode() != null && other.getOutputLockingMode().equals(this.getOutputLockingMode()) == false)
+            return false;
         if (other.getOutputTimingSource() == null ^ this.getOutputTimingSource() == null)
             return false;
         if (other.getOutputTimingSource() != null && other.getOutputTimingSource().equals(this.getOutputTimingSource()) == false)
@@ -389,6 +477,7 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getInitialAudioGain() == null) ? 0 : getInitialAudioGain().hashCode());
         hashCode = prime * hashCode + ((getInputEndAction() == null) ? 0 : getInputEndAction().hashCode());
         hashCode = prime * hashCode + ((getInputLossBehavior() == null) ? 0 : getInputLossBehavior().hashCode());
+        hashCode = prime * hashCode + ((getOutputLockingMode() == null) ? 0 : getOutputLockingMode().hashCode());
         hashCode = prime * hashCode + ((getOutputTimingSource() == null) ? 0 : getOutputTimingSource().hashCode());
         hashCode = prime * hashCode + ((getSupportLowFramerateInputs() == null) ? 0 : getSupportLowFramerateInputs().hashCode());
         return hashCode;

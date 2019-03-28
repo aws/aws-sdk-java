@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.pinpointemail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class CreateEmailIdentityRequestMarshaller {
 
     private static final MarshallingInfo<String> EMAILIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailIdentity").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateEmailIdentityRequestMarshaller instance = new CreateEmailIdentityRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class CreateEmailIdentityRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createEmailIdentityRequest.getEmailIdentity(), EMAILIDENTITY_BINDING);
+            protocolMarshaller.marshall(createEmailIdentityRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

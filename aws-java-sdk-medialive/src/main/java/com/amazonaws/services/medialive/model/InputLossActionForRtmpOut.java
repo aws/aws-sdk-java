@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Input Loss Action
+ * Input Loss Action For Rtmp Out
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputLossActionForRtmpOut {

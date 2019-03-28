@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for AacCodingMode
+ * Aac Coding Mode
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AacCodingMode {

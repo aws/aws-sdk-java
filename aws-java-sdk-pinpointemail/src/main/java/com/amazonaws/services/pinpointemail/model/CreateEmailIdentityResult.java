@@ -40,7 +40,7 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      */
@@ -116,14 +116,14 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @param verifiedForSendingStatus
      *        Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *        verified email addresses or domains. For more information about verifying identities, see the <a
-     *        href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *        Pinpoint User Guide</a>.
      */
 
@@ -135,13 +135,13 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @return Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *         verified email addresses or domains. For more information about verifying identities, see the <a
-     *         href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *         Pinpoint User Guide</a>.
      */
 
@@ -153,14 +153,14 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @param verifiedForSendingStatus
      *        Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *        verified email addresses or domains. For more information about verifying identities, see the <a
-     *        href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *        Pinpoint User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -174,13 +174,13 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @return Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *         verified email addresses or domains. For more information about verifying identities, see the <a
-     *         href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *         Pinpoint User Guide</a>.
      */
 

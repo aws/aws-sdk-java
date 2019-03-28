@@ -89,6 +89,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
+     * <dt>RESOUCE_UPDATE</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     * </p>
+     * <p>
+     * The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     * <code>NOT_ALLOWED</code>.
+     * </p>
+     * </dd>
      * <dt>STACKSET</dt>
      * <dd>
      * <p>
@@ -131,6 +144,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOURCE_UPDATE</code>
      * </p>
      * </li>
      * <li>
@@ -408,6 +426,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
+     * <dt>RESOUCE_UPDATE</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     * </p>
+     * <p>
+     * The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     * <code>NOT_ALLOWED</code>.
+     * </p>
+     * </dd>
      * <dt>STACKSET</dt>
      * <dd>
      * <p>
@@ -461,6 +492,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     *        </p>
+     *        </dd>
+     *        <dt>RESOUCE_UPDATE</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     *        </p>
+     *        <p>
+     *        The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     *        <code>NOT_ALLOWED</code>.
      *        </p>
      *        </dd>
      *        <dt>STACKSET</dt>
@@ -524,6 +568,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
+     * <dt>RESOUCE_UPDATE</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     * </p>
+     * <p>
+     * The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     * <code>NOT_ALLOWED</code>.
+     * </p>
+     * </dd>
      * <dt>STACKSET</dt>
      * <dd>
      * <p>
@@ -576,6 +633,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     *         </p>
+     *         </dd>
+     *         <dt>RESOUCE_UPDATE</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     *         </p>
+     *         <p>
+     *         <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     *         </p>
+     *         <p>
+     *         The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code>
+     *         or <code>NOT_ALLOWED</code>.
      *         </p>
      *         </dd>
      *         <dt>STACKSET</dt>
@@ -639,6 +709,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
+     * <dt>RESOUCE_UPDATE</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     * </p>
+     * <p>
+     * The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     * <code>NOT_ALLOWED</code>.
+     * </p>
+     * </dd>
      * <dt>STACKSET</dt>
      * <dd>
      * <p>
@@ -694,6 +777,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      *        </p>
      *        </dd>
+     *        <dt>RESOUCE_UPDATE</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+     *        </p>
+     *        <p>
+     *        The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or
+     *        <code>NOT_ALLOWED</code>.
+     *        </p>
+     *        </dd>
      *        <dt>STACKSET</dt>
      *        <dd>
      *        <p>
@@ -745,6 +841,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>RESOURCE_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>STACKSET</code>
      * </p>
      * </li>
@@ -766,6 +867,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE_UPDATE</code>
      *        </p>
      *        </li>
      *        <li>
@@ -801,6 +907,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>RESOURCE_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>STACKSET</code>
      * </p>
      * </li>
@@ -821,6 +932,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESOURCE_UPDATE</code>
      *         </p>
      *         </li>
      *         <li>
@@ -856,6 +972,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>RESOURCE_UPDATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>STACKSET</code>
      * </p>
      * </li>
@@ -877,6 +998,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOURCE_UPDATE</code>
      *        </p>
      *        </li>
      *        <li>

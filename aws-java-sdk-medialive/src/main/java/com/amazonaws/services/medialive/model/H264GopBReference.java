@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264GopBReference
+ * H264 Gop BReference
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264GopBReference {

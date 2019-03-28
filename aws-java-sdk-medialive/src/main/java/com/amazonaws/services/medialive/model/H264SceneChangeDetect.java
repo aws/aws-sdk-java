@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264SceneChangeDetect
+ * H264 Scene Change Detect
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264SceneChangeDetect {
