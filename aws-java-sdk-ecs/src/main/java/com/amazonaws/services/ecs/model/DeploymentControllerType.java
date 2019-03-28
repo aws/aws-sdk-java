@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeploymentControllerType {
 
     ECS("ECS"),
-    CODE_DEPLOY("CODE_DEPLOY");
+    CODE_DEPLOY("CODE_DEPLOY"),
+    EXTERNAL("EXTERNAL");
 
     private String value;
 

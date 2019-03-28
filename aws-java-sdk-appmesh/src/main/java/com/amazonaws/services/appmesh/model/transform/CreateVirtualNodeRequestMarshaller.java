@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appmesh.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -36,6 +37,8 @@ public class CreateVirtualNodeRequestMarshaller {
             .marshallLocationName("meshName").build();
     private static final MarshallingInfo<StructuredPojo> SPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spec").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> VIRTUALNODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualNodeName").build();
 
@@ -58,6 +61,7 @@ public class CreateVirtualNodeRequestMarshaller {
             protocolMarshaller.marshall(createVirtualNodeRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createVirtualNodeRequest.getMeshName(), MESHNAME_BINDING);
             protocolMarshaller.marshall(createVirtualNodeRequest.getSpec(), SPEC_BINDING);
+            protocolMarshaller.marshall(createVirtualNodeRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createVirtualNodeRequest.getVirtualNodeName(), VIRTUALNODENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

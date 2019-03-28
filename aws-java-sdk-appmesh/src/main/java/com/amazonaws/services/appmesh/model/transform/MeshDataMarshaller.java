@@ -31,6 +31,8 @@ public class MeshDataMarshaller {
             .marshallLocationName("meshName").build();
     private static final MarshallingInfo<StructuredPojo> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadata").build();
+    private static final MarshallingInfo<StructuredPojo> SPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spec").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
 
@@ -52,6 +54,7 @@ public class MeshDataMarshaller {
         try {
             protocolMarshaller.marshall(meshData.getMeshName(), MESHNAME_BINDING);
             protocolMarshaller.marshall(meshData.getMetadata(), METADATA_BINDING);
+            protocolMarshaller.marshall(meshData.getSpec(), SPEC_BINDING);
             protocolMarshaller.marshall(meshData.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

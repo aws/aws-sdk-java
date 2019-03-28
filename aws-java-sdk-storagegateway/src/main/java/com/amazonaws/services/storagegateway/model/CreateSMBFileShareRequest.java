@@ -131,7 +131,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String authentication;
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -958,7 +958,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -968,7 +968,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     * @return A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *         <note>
      *         <p>
      *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
@@ -986,7 +986,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -997,7 +997,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
@@ -1017,7 +1017,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -1033,7 +1033,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
@@ -1055,7 +1055,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.
+     * A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
@@ -1066,7 +1066,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param tags
-     *        A list of up to ten (10) tags can be assigned to the NFS file share. Every tag is a key-value pair.</p>
+     *        A list of up to 10 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p>
      *        <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the

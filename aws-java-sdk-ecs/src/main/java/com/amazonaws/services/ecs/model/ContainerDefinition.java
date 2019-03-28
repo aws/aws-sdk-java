@@ -385,32 +385,63 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<Secret> secrets;
     /**
      * <p>
-     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
+     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * </p>
+     * <p>
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container
+     * dependencies. However, we recommend using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerDependency> dependsOn;
     /**
      * <p>
-     * Time duration to wait before giving up on starting the container.
+     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
+     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
+     * is specified for containerB and it does not reach the desired status within that time then containerA will give
+     * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
-     * <note>
      * <p>
-     * The <code>startTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      */
     private Integer startTimeout;
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. The stop
+     * timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.
      * </p>
-     * <note>
      * <p>
-     * The <code>stopTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      */
     private Integer stopTimeout;
     /**
@@ -429,13 +460,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String hostname;
     /**
      * <p>
-     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      * </p>
      * <ul>
      * <li>
@@ -3396,10 +3427,37 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
+     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * </p>
+     * <p>
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container
+     * dependencies. However, we recommend using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The dependencies defined for container startup. A container can contain multiple dependencies.
+     * @return The dependencies defined for container startup and shutdown. A container can contain multiple
+     *         dependencies. When a dependency is defined for container startup, for container shutdown it is
+     *         reversed.</p>
+     *         <p>
+     *         Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable
+     *         container dependencies. However, we recommend using the latest container agent version. For information
+     *         about checking your agent version and updating to the latest version, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *         Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *         using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *         <code>ecs-init</code> package. If your container instances are launched from version
+     *         <code>20190301</code> or later, then they contain the required versions of the container agent and
+     *         <code>ecs-init</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<ContainerDependency> getDependsOn() {
@@ -3411,11 +3469,38 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
+     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * </p>
+     * <p>
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container
+     * dependencies. However, we recommend using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple
+     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
+     *        reversed.</p>
+     *        <p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable
+     *        container dependencies. However, we recommend using the latest container agent version. For information
+     *        about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setDependsOn(java.util.Collection<ContainerDependency> dependsOn) {
@@ -3429,7 +3514,20 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
+     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * </p>
+     * <p>
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container
+     * dependencies. However, we recommend using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3438,7 +3536,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple
+     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
+     *        reversed.</p>
+     *        <p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable
+     *        container dependencies. However, we recommend using the latest container agent version. For information
+     *        about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3454,11 +3566,38 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The dependencies defined for container startup. A container can contain multiple dependencies.
+     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When
+     * a dependency is defined for container startup, for container shutdown it is reversed.
+     * </p>
+     * <p>
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container
+     * dependencies. However, we recommend using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param dependsOn
-     *        The dependencies defined for container startup. A container can contain multiple dependencies.
+     *        The dependencies defined for container startup and shutdown. A container can contain multiple
+     *        dependencies. When a dependency is defined for container startup, for container shutdown it is
+     *        reversed.</p>
+     *        <p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable
+     *        container dependencies. However, we recommend using the latest container agent version. For information
+     *        about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3469,21 +3608,44 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on starting the container.
+     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
+     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
+     * is specified for containerB and it does not reach the desired status within that time then containerA will give
+     * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
-     * <note>
      * <p>
-     * The <code>startTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param startTimeout
-     *        Time duration to wait before giving up on starting the container.</p> <note>
+     *        Time duration to wait before giving up on resolving dependencies for a container. For example, you specify
+     *        two containers in a task definition with containerA having a dependency on containerB reaching a
+     *        <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     *        <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
+     *        within that time then containerA will give up and not start. This results in the task transitioning to a
+     *        <code>STOPPED</code> state.</p>
      *        <p>
-     *        The <code>startTimeout</code> value for the container will take precedence over the
-     *        <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
-     *        </p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *        container start timeout value. However, we recommend using the latest container agent version. For
+     *        information about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setStartTimeout(Integer startTimeout) {
@@ -3492,20 +3654,43 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on starting the container.
+     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
+     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
+     * is specified for containerB and it does not reach the desired status within that time then containerA will give
+     * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
-     * <note>
      * <p>
-     * The <code>startTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
-     * @return Time duration to wait before giving up on starting the container.</p> <note>
+     * @return Time duration to wait before giving up on resolving dependencies for a container. For example, you
+     *         specify two containers in a task definition with containerA having a dependency on containerB reaching a
+     *         <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     *         <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
+     *         within that time then containerA will give up and not start. This results in the task transitioning to a
+     *         <code>STOPPED</code> state.</p>
      *         <p>
-     *         The <code>startTimeout</code> value for the container will take precedence over the
-     *         <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
-     *         </p>
+     *         Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *         container start timeout value. However, we recommend using the latest container agent version. For
+     *         information about checking your agent version and updating to the latest version, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *         Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *         using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *         <code>ecs-init</code> package. If your container instances are launched from version
+     *         <code>20190301</code> or later, then they contain the required versions of the container agent and
+     *         <code>ecs-init</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Integer getStartTimeout() {
@@ -3514,21 +3699,44 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on starting the container.
+     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
+     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
+     * is specified for containerB and it does not reach the desired status within that time then containerA will give
+     * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
-     * <note>
      * <p>
-     * The <code>startTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param startTimeout
-     *        Time duration to wait before giving up on starting the container.</p> <note>
+     *        Time duration to wait before giving up on resolving dependencies for a container. For example, you specify
+     *        two containers in a task definition with containerA having a dependency on containerB reaching a
+     *        <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     *        <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
+     *        within that time then containerA will give up and not start. This results in the task transitioning to a
+     *        <code>STOPPED</code> state.</p>
      *        <p>
-     *        The <code>startTimeout</code> value for the container will take precedence over the
-     *        <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration parameter, if used.
-     *        </p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *        container start timeout value. However, we recommend using the latest container agent version. For
+     *        information about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3539,22 +3747,39 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. The stop
+     * timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.
      * </p>
-     * <note>
      * <p>
-     * The <code>stopTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param stopTimeout
-     *        Time duration to wait before the container is forcefully killed if it does not exit normally on its
-     *        own.</p> <note>
+     *        Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
+     *        The stop timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
+     *        container agent configuration parameter, if used.</p>
      *        <p>
-     *        The <code>stopTimeout</code> value for the container will take precedence over the
-     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
-     *        </p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *        container stop timeout value. However, we recommend using the latest container agent version. For
+     *        information about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setStopTimeout(Integer stopTimeout) {
@@ -3563,21 +3788,38 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. The stop
+     * timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.
      * </p>
-     * <note>
      * <p>
-     * The <code>stopTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
-     * @return Time duration to wait before the container is forcefully killed if it does not exit normally on its
-     *         own.</p> <note>
+     * @return Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
+     *         The stop timeout value for the container takes precedence over the
+     *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.</p>
      *         <p>
-     *         The <code>stopTimeout</code> value for the container will take precedence over the
-     *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
-     *         </p>
+     *         Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *         container stop timeout value. However, we recommend using the latest container agent version. For
+     *         information about checking your agent version and updating to the latest version, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *         Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *         using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *         <code>ecs-init</code> package. If your container instances are launched from version
+     *         <code>20190301</code> or later, then they contain the required versions of the container agent and
+     *         <code>ecs-init</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Integer getStopTimeout() {
@@ -3586,22 +3828,39 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it does not exit normally on its own.
+     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. The stop
+     * timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.
      * </p>
-     * <note>
      * <p>
-     * The <code>stopTimeout</code> value for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
+     * Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+     * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
+     * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
+     * your container instances are launched from version <code>20190301</code> or later, then they contain the required
+     * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param stopTimeout
-     *        Time duration to wait before the container is forcefully killed if it does not exit normally on its
-     *        own.</p> <note>
+     *        Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
+     *        The stop timeout value for the container takes precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
+     *        container agent configuration parameter, if used.</p>
      *        <p>
-     *        The <code>stopTimeout</code> value for the container will take precedence over the
-     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used.
-     *        </p>
+     *        Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable a
+     *        container stop timeout value. However, we recommend using the latest container agent version. For
+     *        information about checking your agent version and updating to the latest version, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
+     *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+     *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+     *        <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code>
+     *        or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3700,13 +3959,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      * </p>
      * <ul>
      * <li>
@@ -3747,13 +4006,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param user
-     *        The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <p>
-     *        This following formats can be used. If specifying a UID or GID, it must be specified as a positive
-     *        integer.
+     *        You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      *        </p>
      *        <ul>
      *        <li>
@@ -3799,13 +4057,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      * </p>
      * <ul>
      * <li>
@@ -3845,13 +4103,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     * @return The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *         <p>
-     *         This following formats can be used. If specifying a UID or GID, it must be specified as a positive
-     *         integer.
+     *         You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      *         </p>
      *         <ul>
      *         <li>
@@ -3897,13 +4154,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--user</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * This following formats can be used. If specifying a UID or GID, it must be specified as a positive integer.
+     * You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      * </p>
      * <ul>
      * <li>
@@ -3944,13 +4201,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param user
-     *        The username to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <p>
-     *        This following formats can be used. If specifying a UID or GID, it must be specified as a positive
-     *        integer.
+     *        You can use the following formats. If specifying a UID or GID, you must specify it as a positive integer.
      *        </p>
      *        <ul>
      *        <li>

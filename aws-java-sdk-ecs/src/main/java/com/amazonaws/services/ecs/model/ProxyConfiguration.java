@@ -21,6 +21,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The configuration details for the App Mesh proxy.
  * </p>
+ * <p>
+ * Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version
+ * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
+ * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+ * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux
+ * AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -62,8 +70,8 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports
-     * will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports is
+     * forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      * </p>
      * </li>
      * <li>
@@ -80,14 +88,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be ignored
-     * and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not
+     * redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will be
-     * ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and
+     * not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * </ul>
@@ -215,8 +223,8 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports
-     * will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports is
+     * forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      * </p>
      * </li>
      * <li>
@@ -233,14 +241,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be ignored
-     * and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not
+     * redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will be
-     * ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and
+     * not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +273,7 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *         <li>
      *         <p>
      *         <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these
-     *         ports will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     *         ports is forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -282,14 +290,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be
-     *         ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *         <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored
+     *         and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will
-     *         be ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *         <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is
+     *         ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *         </p>
      *         </li>
      */
@@ -323,8 +331,8 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports
-     * will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports is
+     * forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      * </p>
      * </li>
      * <li>
@@ -341,14 +349,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be ignored
-     * and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not
+     * redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will be
-     * ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and
+     * not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * </ul>
@@ -374,7 +382,7 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these
-     *        ports will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     *        ports is forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -391,14 +399,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be
-     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored
+     *        and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will
-     *        be ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is
+     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      */
@@ -434,8 +442,8 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports
-     * will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports is
+     * forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      * </p>
      * </li>
      * <li>
@@ -452,14 +460,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be ignored
-     * and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not
+     * redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will be
-     * ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and
+     * not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * </ul>
@@ -490,7 +498,7 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these
-     *        ports will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     *        ports is forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -507,14 +515,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be
-     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored
+     *        and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will
-     *        be ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is
+     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -552,8 +560,8 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports
-     * will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     * <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these ports is
+     * forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      * </p>
      * </li>
      * <li>
@@ -570,14 +578,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be ignored
-     * and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not
+     * redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will be
-     * ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and
+     * not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      * </p>
      * </li>
      * </ul>
@@ -603,7 +611,7 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AppPorts</code> - (Required) The list of ports that the application uses. Network traffic to these
-     *        ports will be forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+     *        ports is forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -620,14 +628,14 @@ public class ProxyConfiguration implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to these specified ports will be
-     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored
+     *        and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these specified IP addresses will
-     *        be ignored and not redirected to the <code>ProxyEgressPort</code>. It can be empty list.
+     *        <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is
+     *        ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

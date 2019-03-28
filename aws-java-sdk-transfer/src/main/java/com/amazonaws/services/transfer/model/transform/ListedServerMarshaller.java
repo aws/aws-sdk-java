@@ -31,6 +31,8 @@ public class ListedServerMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> IDENTITYPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderType").build();
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
     private static final MarshallingInfo<String> LOGGINGROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingRole").build();
     private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class ListedServerMarshaller {
         try {
             protocolMarshaller.marshall(listedServer.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(listedServer.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
+            protocolMarshaller.marshall(listedServer.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(listedServer.getLoggingRole(), LOGGINGROLE_BINDING);
             protocolMarshaller.marshall(listedServer.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(listedServer.getState(), STATE_BINDING);

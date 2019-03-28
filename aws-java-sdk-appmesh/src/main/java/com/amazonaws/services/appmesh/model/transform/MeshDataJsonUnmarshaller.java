@@ -56,6 +56,10 @@ public class MeshDataJsonUnmarshaller implements Unmarshaller<MeshData, JsonUnma
                     context.nextToken();
                     meshData.setMetadata(ResourceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("spec", targetDepth)) {
+                    context.nextToken();
+                    meshData.setSpec(MeshSpecJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     meshData.setStatus(MeshStatusJsonUnmarshaller.getInstance().unmarshall(context));

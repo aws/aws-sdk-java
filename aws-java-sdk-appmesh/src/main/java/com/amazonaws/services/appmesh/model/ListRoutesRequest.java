@@ -38,7 +38,7 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer limit;
     /**
      * <p>
-     * The name of the service mesh in which to list routes.
+     * The name of the service mesh to list routes in.
      * </p>
      */
     private String meshName;
@@ -129,11 +129,11 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the service mesh in which to list routes.
+     * The name of the service mesh to list routes in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to list routes.
+     *        The name of the service mesh to list routes in.
      */
 
     public void setMeshName(String meshName) {
@@ -142,10 +142,10 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the service mesh in which to list routes.
+     * The name of the service mesh to list routes in.
      * </p>
      * 
-     * @return The name of the service mesh in which to list routes.
+     * @return The name of the service mesh to list routes in.
      */
 
     public String getMeshName() {
@@ -154,11 +154,11 @@ public class ListRoutesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the service mesh in which to list routes.
+     * The name of the service mesh to list routes in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to list routes.
+     *        The name of the service mesh to list routes in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

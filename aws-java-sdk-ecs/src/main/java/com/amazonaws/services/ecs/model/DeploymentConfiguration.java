@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and
+ * Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and
  * starting tasks.
  * </p>
  * 
@@ -41,11 +41,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * this are available). The default value for maximum percent is 200%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>maximum percent</b> value is set to the default value and is used to define the upper limit on the
-     * number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances
-     * are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the maximum
-     * percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and is used to
+     * define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
+     * while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+     * launch type, the maximum percent value is not used, although it is returned when describing your service.
      * </p>
      */
     private Integer maximumPercent;
@@ -63,11 +63,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit
-     * on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the
-     * minimum healthy percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is
+     * used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code>
+     * state while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
+     * Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your
+     * service.
      * </p>
      */
     private Integer minimumHealthyPercent;
@@ -84,11 +85,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * this are available). The default value for maximum percent is 200%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>maximum percent</b> value is set to the default value and is used to define the upper limit on the
-     * number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances
-     * are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the maximum
-     * percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and is used to
+     * define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
+     * while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+     * launch type, the maximum percent value is not used, although it is returned when describing your service.
      * </p>
      * 
      * @param maximumPercent
@@ -102,11 +103,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        older tasks (provided that the cluster resources required to do this are available). The default value for
      *        maximum percent is 200%.</p>
      *        <p>
-     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2
-     *        launch type, the <b>maximum percent</b> value is set to the default value and is used to define the upper
-     *        limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the
-     *        container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
-     *        launch type, the maximum percent value is not used, although it is returned when describing your service.
+     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *        and tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and
+     *        is used to define the upper limit on the number of the tasks in the service that remain in the
+     *        <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *        tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is
+     *        returned when describing your service.
      */
 
     public void setMaximumPercent(Integer maximumPercent) {
@@ -125,11 +127,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * this are available). The default value for maximum percent is 200%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>maximum percent</b> value is set to the default value and is used to define the upper limit on the
-     * number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances
-     * are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the maximum
-     * percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and is used to
+     * define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
+     * while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+     * launch type, the maximum percent value is not used, although it is returned when describing your service.
      * </p>
      * 
      * @return If a service is using the rolling update (<code>ECS</code>) deployment type, the <b>maximum percent</b>
@@ -142,12 +144,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         the four older tasks (provided that the cluster resources required to do this are available). The default
      *         value for maximum percent is 200%.</p>
      *         <p>
-     *         If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the
-     *         EC2 launch type, the <b>maximum percent</b> value is set to the default value and is used to define the
-     *         upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while
-     *         the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
-     *         Fargate launch type, the maximum percent value is not used, although it is returned when describing your
-     *         service.
+     *         If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *         and tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and
+     *         is used to define the upper limit on the number of the tasks in the service that remain in the
+     *         <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *         tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is
+     *         returned when describing your service.
      */
 
     public Integer getMaximumPercent() {
@@ -166,11 +168,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * this are available). The default value for maximum percent is 200%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>maximum percent</b> value is set to the default value and is used to define the upper limit on the
-     * number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances
-     * are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the maximum
-     * percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and is used to
+     * define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
+     * while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+     * launch type, the maximum percent value is not used, although it is returned when describing your service.
      * </p>
      * 
      * @param maximumPercent
@@ -184,11 +186,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        older tasks (provided that the cluster resources required to do this are available). The default value for
      *        maximum percent is 200%.</p>
      *        <p>
-     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2
-     *        launch type, the <b>maximum percent</b> value is set to the default value and is used to define the upper
-     *        limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the
-     *        container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
-     *        launch type, the maximum percent value is not used, although it is returned when describing your service.
+     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *        and tasks that use the EC2 launch type, the <b>maximum percent</b> value is set to the default value and
+     *        is used to define the upper limit on the number of the tasks in the service that remain in the
+     *        <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *        tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is
+     *        returned when describing your service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +214,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit
-     * on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the
-     * minimum healthy percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is
+     * used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code>
+     * state while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
+     * Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your
+     * service.
      * </p>
      * 
      * @param minimumHealthyPercent
@@ -231,12 +235,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        considered healthy if they are in the <code>RUNNING</code> state and they are reported as healthy by the
      *        load balancer. The default value for minimum healthy percent is 100%.</p>
      *        <p>
-     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2
-     *        launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define
-     *        the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
-     *        while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
-     *        Fargate launch type, the minimum healthy percent value is not used, although it is returned when
-     *        describing your service.
+     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *        and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
+     *        value and is used to define the lower limit on the number of the tasks in the service that remain in the
+     *        <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *        tasks in the service use the Fargate launch type, the minimum healthy percent value is not used, although
+     *        it is returned when describing your service.
      */
 
     public void setMinimumHealthyPercent(Integer minimumHealthyPercent) {
@@ -257,11 +261,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit
-     * on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the
-     * minimum healthy percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is
+     * used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code>
+     * state while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
+     * Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your
+     * service.
      * </p>
      * 
      * @return If a service is using the rolling update (<code>ECS</code>) deployment type, the <b>minimum healthy
@@ -276,12 +281,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         balancer are considered healthy if they are in the <code>RUNNING</code> state and they are reported as
      *         healthy by the load balancer. The default value for minimum healthy percent is 100%.</p>
      *         <p>
-     *         If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the
-     *         EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to
-     *         define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code>
-     *         state while the container instances are in the <code>DRAINING</code> state. If the tasks in the service
-     *         use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when
-     *         describing your service.
+     *         If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *         and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
+     *         value and is used to define the lower limit on the number of the tasks in the service that remain in the
+     *         <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *         tasks in the service use the Fargate launch type, the minimum healthy percent value is not used, although
+     *         it is returned when describing your service.
      */
 
     public Integer getMinimumHealthyPercent() {
@@ -302,11 +307,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
-     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2 launch
-     * type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit
-     * on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the
-     * minimum healthy percent value is not used, although it is returned when describing your service.
+     * If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and
+     * tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is
+     * used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code>
+     * state while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
+     * Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your
+     * service.
      * </p>
      * 
      * @param minimumHealthyPercent
@@ -322,12 +328,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        considered healthy if they are in the <code>RUNNING</code> state and they are reported as healthy by the
      *        load balancer. The default value for minimum healthy percent is 100%.</p>
      *        <p>
-     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) deployment type and tasks that use the EC2
-     *        launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define
-     *        the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state
-     *        while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the
-     *        Fargate launch type, the minimum healthy percent value is not used, although it is returned when
-     *        describing your service.
+     *        If a service is using the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
+     *        and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
+     *        value and is used to define the lower limit on the number of the tasks in the service that remain in the
+     *        <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the
+     *        tasks in the service use the Fargate launch type, the minimum healthy percent value is not used, although
+     *        it is returned when describing your service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,9 +35,9 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The current account setting for the resource name. If <code>enabled</code>, then the resource will receive the
-     * new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the resource
-     * will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     * The current account setting for the resource name. If <code>enabled</code>, the resource receives the new Amazon
+     * Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource receives the old
+     * Amazon Resource Name (ARN) and resource identifier (ID) format.
      * </p>
      */
     private String value;
@@ -110,15 +110,15 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current account setting for the resource name. If <code>enabled</code>, then the resource will receive the
-     * new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the resource
-     * will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     * The current account setting for the resource name. If <code>enabled</code>, the resource receives the new Amazon
+     * Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource receives the old
+     * Amazon Resource Name (ARN) and resource identifier (ID) format.
      * </p>
      * 
      * @param value
-     *        The current account setting for the resource name. If <code>enabled</code>, then the resource will receive
-     *        the new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the
-     *        resource will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     *        The current account setting for the resource name. If <code>enabled</code>, the resource receives the new
+     *        Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource
+     *        receives the old Amazon Resource Name (ARN) and resource identifier (ID) format.
      */
 
     public void setValue(String value) {
@@ -127,14 +127,14 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current account setting for the resource name. If <code>enabled</code>, then the resource will receive the
-     * new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the resource
-     * will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     * The current account setting for the resource name. If <code>enabled</code>, the resource receives the new Amazon
+     * Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource receives the old
+     * Amazon Resource Name (ARN) and resource identifier (ID) format.
      * </p>
      * 
-     * @return The current account setting for the resource name. If <code>enabled</code>, then the resource will
-     *         receive the new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>,
-     *         then the resource will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     * @return The current account setting for the resource name. If <code>enabled</code>, the resource receives the new
+     *         Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource
+     *         receives the old Amazon Resource Name (ARN) and resource identifier (ID) format.
      */
 
     public String getValue() {
@@ -143,15 +143,15 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current account setting for the resource name. If <code>enabled</code>, then the resource will receive the
-     * new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the resource
-     * will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     * The current account setting for the resource name. If <code>enabled</code>, the resource receives the new Amazon
+     * Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource receives the old
+     * Amazon Resource Name (ARN) and resource identifier (ID) format.
      * </p>
      * 
      * @param value
-     *        The current account setting for the resource name. If <code>enabled</code>, then the resource will receive
-     *        the new Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, then the
-     *        resource will receive the old Amazon Resource Name (ARN) and resource identifier (ID) format.
+     *        The current account setting for the resource name. If <code>enabled</code>, the resource receives the new
+     *        Amazon Resource Name (ARN) and resource identifier (ID) format. If <code>disabled</code>, the resource
+     *        receives the old Amazon Resource Name (ARN) and resource identifier (ID) format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

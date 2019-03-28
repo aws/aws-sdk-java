@@ -34,7 +34,7 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientToken;
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual node.
+     * The name of the service mesh to create the virtual node in.
      * </p>
      */
     private String meshName;
@@ -44,6 +44,14 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private VirtualNodeSpec spec;
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private java.util.List<TagRef> tags;
     /**
      * <p>
      * The name to use for the virtual node.
@@ -99,11 +107,11 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual node.
+     * The name of the service mesh to create the virtual node in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to create the virtual node.
+     *        The name of the service mesh to create the virtual node in.
      */
 
     public void setMeshName(String meshName) {
@@ -112,10 +120,10 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual node.
+     * The name of the service mesh to create the virtual node in.
      * </p>
      * 
-     * @return The name of the service mesh in which to create the virtual node.
+     * @return The name of the service mesh to create the virtual node in.
      */
 
     public String getMeshName() {
@@ -124,11 +132,11 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the service mesh in which to create the virtual node.
+     * The name of the service mesh to create the virtual node in.
      * </p>
      * 
      * @param meshName
-     *        The name of the service mesh in which to create the virtual node.
+     *        The name of the service mesh to create the virtual node in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,6 +182,92 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateVirtualNodeRequest withSpec(VirtualNodeSpec spec) {
         setSpec(spec);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return Optional metadata that you can apply to the virtual node to assist with categorization and organization.
+     *         Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *         character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<TagRef> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual node to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<TagRef> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<TagRef>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual node to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVirtualNodeRequest withTags(TagRef... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<TagRef>(tags.length));
+        }
+        for (TagRef ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual node to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVirtualNodeRequest withTags(java.util.Collection<TagRef> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -235,6 +329,8 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("MeshName: ").append(getMeshName()).append(",");
         if (getSpec() != null)
             sb.append("Spec: ").append(getSpec()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVirtualNodeName() != null)
             sb.append("VirtualNodeName: ").append(getVirtualNodeName());
         sb.append("}");
@@ -263,6 +359,10 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVirtualNodeName() == null ^ this.getVirtualNodeName() == null)
             return false;
         if (other.getVirtualNodeName() != null && other.getVirtualNodeName().equals(this.getVirtualNodeName()) == false)
@@ -278,6 +378,7 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualNodeName() == null) ? 0 : getVirtualNodeName().hashCode());
         return hashCode;
     }

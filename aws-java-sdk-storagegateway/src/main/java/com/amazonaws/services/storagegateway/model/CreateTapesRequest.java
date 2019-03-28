@@ -90,6 +90,17 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String kMSKey;
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class you chose when you created the tape. When you use your backup application to eject the tape, the
+     * tape is archived directly into the storage class (Glacier or Deep Archive).
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     */
+    private String poolId;
 
     /**
      * <p>
@@ -488,6 +499,73 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class you chose when you created the tape. When you use your backup application to eject the tape, the
+     * tape is archived directly into the storage class (Glacier or Deep Archive).
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *        the S3 storage class you chose when you created the tape. When you use your backup application to eject
+     *        the tape, the tape is archived directly into the storage class (Glacier or Deep Archive).</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class you chose when you created the tape. When you use your backup application to eject the tape, the
+     * tape is archived directly into the storage class (Glacier or Deep Archive).
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *         the S3 storage class you chose when you created the tape. When you use your backup application to eject
+     *         the tape, the tape is archived directly into the storage class (Glacier or Deep Archive).</p>
+     *         <p>
+     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public String getPoolId() {
+        return this.poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class you chose when you created the tape. When you use your backup application to eject the tape, the
+     * tape is archived directly into the storage class (Glacier or Deep Archive).
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *        the S3 storage class you chose when you created the tape. When you use your backup application to eject
+     *        the tape, the tape is archived directly into the storage class (Glacier or Deep Archive).</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTapesRequest withPoolId(String poolId) {
+        setPoolId(poolId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +590,9 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getKMSEncrypted() != null)
             sb.append("KMSEncrypted: ").append(getKMSEncrypted()).append(",");
         if (getKMSKey() != null)
-            sb.append("KMSKey: ").append(getKMSKey());
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getPoolId() != null)
+            sb.append("PoolId: ").append(getPoolId());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +635,10 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
             return false;
+        if (other.getPoolId() == null ^ this.getPoolId() == null)
+            return false;
+        if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
         return true;
     }
 
@@ -570,6 +654,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTapeBarcodePrefix() == null) ? 0 : getTapeBarcodePrefix().hashCode());
         hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         return hashCode;
     }
 

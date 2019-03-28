@@ -36,6 +36,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String arn;
+
+    private EndpointDetails endpointDetails;
+
+    private String endpointType;
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
@@ -129,6 +133,72 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     public DescribedServer withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param endpointDetails
+     */
+
+    public void setEndpointDetails(EndpointDetails endpointDetails) {
+        this.endpointDetails = endpointDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public EndpointDetails getEndpointDetails() {
+        return this.endpointDetails;
+    }
+
+    /**
+     * @param endpointDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withEndpointDetails(EndpointDetails endpointDetails) {
+        setEndpointDetails(endpointDetails);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @see EndpointType
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * @return
+     * @see EndpointType
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public DescribedServer withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
+     * @param endpointType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EndpointType
+     */
+
+    public DescribedServer withEndpointType(EndpointType endpointType) {
+        this.endpointType = endpointType.toString();
         return this;
     }
 
@@ -593,6 +663,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getEndpointDetails() != null)
+            sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getIdentityProviderDetails() != null)
             sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
         if (getIdentityProviderType() != null)
@@ -624,6 +698,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
+            return false;
+        if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
+            return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
         if (other.getIdentityProviderDetails() == null ^ this.getIdentityProviderDetails() == null)
             return false;
@@ -662,6 +744,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());

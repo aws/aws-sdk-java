@@ -54,6 +54,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public CreateTaskSetResult createTaskSet(CreateTaskSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAccountSettingResult deleteAccountSetting(DeleteAccountSettingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -70,6 +75,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public DeleteServiceResult deleteService(DeleteServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTaskSetResult deleteTaskSet(DeleteTaskSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +115,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTaskSetsResult describeTaskSets(DescribeTaskSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -275,6 +290,16 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public UpdateServiceResult updateService(UpdateServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateServicePrimaryTaskSetResult updateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTaskSetResult updateTaskSet(UpdateTaskSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

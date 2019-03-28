@@ -46,6 +46,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
      * revision is used.
      * </p>
+     * <p>
+     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * </p>
      */
     private String taskDefinition;
     /**
@@ -127,8 +130,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String launchType;
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * The platform version that your tasks in the service are running on. A platform version is specified only for
+     * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -216,21 +219,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
-     * the <code>CODE_DEPLOY</code> deployment controller.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if the
+     * service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
+     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
      * Scaling policies.
      * </p>
      * <note>
      * <p>
-     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
-     * <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     * controller types don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -372,11 +375,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
      * revision is used.
      * </p>
+     * <p>
+     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *        definition to run in your service. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        <code>ACTIVE</code> revision is used.</p>
+     *        <p>
+     *        A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -389,10 +397,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
      * revision is used.
      * </p>
+     * <p>
+     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *         definition to run in your service. If a <code>revision</code> is not specified, the latest
-     *         <code>ACTIVE</code> revision is used.
+     *         <code>ACTIVE</code> revision is used.</p>
+     *         <p>
+     *         A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
      */
 
     public String getTaskDefinition() {
@@ -405,11 +418,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
      * revision is used.
      * </p>
+     * <p>
+     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *        definition to run in your service. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        <code>ACTIVE</code> revision is used.</p>
+     *        <p>
+     *        A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1091,16 +1109,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * The platform version that your tasks in the service are running on. A platform version is specified only for
+     * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        The platform version that your tasks in the service are running on. A platform version is specified only
+     *        for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1112,16 +1130,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * The platform version that your tasks in the service are running on. A platform version is specified only for
+     * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your tasks in the service are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
-     *         version is used by default. For more information, see <a
+     * @return The platform version that your tasks in the service are running on. A platform version is specified only
+     *         for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
+     *         is used by default. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1132,16 +1150,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * The platform version that your tasks in the service are running on. A platform version is specified only for
+     * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        The platform version that your tasks in the service are running on. A platform version is specified only
+     *        for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1673,21 +1691,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
-     * the <code>CODE_DEPLOY</code> deployment controller.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if the
+     * service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
+     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
      * Scaling policies.
      * </p>
      * <note>
      * <p>
-     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
-     * <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     * controller types don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1704,20 +1722,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
      *        use task placement strategies and constraints to customize task placement decisions. This scheduler
-     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
+     *        strategy is required if the service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+     *        deployment controller types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
-     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
+     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
      *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
-     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
-     *        the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     *        controller types don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @see SchedulingStrategy
@@ -1740,21 +1759,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
-     * the <code>CODE_DEPLOY</code> deployment controller.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if the
+     * service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
+     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
      * Scaling policies.
      * </p>
      * <note>
      * <p>
-     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
-     * <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     * controller types don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1770,20 +1789,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *         across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
      *         use task placement strategies and constraints to customize task placement decisions. This scheduler
-     *         strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
+     *         strategy is required if the service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+     *         deployment controller types.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *         instance that meets all of the task placement constraints that you specify in your cluster. When you are
-     *         using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *         instance that meets all of the task placement constraints that you specify in your cluster. When you're
+     *         using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
      *         use Service Auto Scaling policies.
      *         </p>
      *         <note>
      *         <p>
-     *         Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
-     *         the <code>DAEMON</code> scheduling strategy.
+     *         Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     *         controller types don't support the <code>DAEMON</code> scheduling strategy.
      *         </p>
      *         </note></li>
      * @see SchedulingStrategy
@@ -1806,21 +1826,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
-     * the <code>CODE_DEPLOY</code> deployment controller.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if the
+     * service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
+     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
      * Scaling policies.
      * </p>
      * <note>
      * <p>
-     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
-     * <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     * controller types don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1837,20 +1857,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
      *        use task placement strategies and constraints to customize task placement decisions. This scheduler
-     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
+     *        strategy is required if the service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+     *        deployment controller types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
-     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
+     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
      *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
-     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
-     *        the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     *        controller types don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1875,21 +1896,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
-     * the <code>CODE_DEPLOY</code> deployment controller.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if the
+     * service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
+     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
      * Scaling policies.
      * </p>
      * <note>
      * <p>
-     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
-     * <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     * controller types don't support the <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
@@ -1906,20 +1927,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
      *        use task placement strategies and constraints to customize task placement decisions. This scheduler
-     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
+     *        strategy is required if the service is using the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+     *        deployment controller types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
-     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
+     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
      *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
-     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
-     *        the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
+     *        controller types don't support the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.

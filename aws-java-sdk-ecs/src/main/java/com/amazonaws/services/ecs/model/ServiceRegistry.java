@@ -30,9 +30,9 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming. For more information, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS Cloud
+     * Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      */
     private String registryArn;
@@ -68,15 +68,15 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming. For more information, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS Cloud
+     * Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      * 
      * @param registryArn
-     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon
-     *        Route 53 Auto Naming. For more information, see <a
-     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS
+     *        Cloud Map. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      */
 
     public void setRegistryArn(String registryArn) {
@@ -85,14 +85,14 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming. For more information, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS Cloud
+     * Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
-     *         Amazon Route 53 Auto Naming. For more information, see <a
-     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     * @return The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS
+     *         Cloud Map. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      */
 
     public String getRegistryArn() {
@@ -101,15 +101,15 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming. For more information, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS Cloud
+     * Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      * 
      * @param registryArn
-     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon
-     *        Route 53 Auto Naming. For more information, see <a
-     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
+     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is AWS
+     *        Cloud Map. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
