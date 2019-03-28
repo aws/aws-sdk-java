@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy.PascalCaseStrategy;
+import com.fasterxml.jackson.databind.node.NullNode;
 
 /**
  * Unmarshaller for JSON error responses from AWS services.
@@ -49,6 +50,9 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
 
     @Override
     public AmazonServiceException unmarshall(JsonNode jsonContent) throws Exception {
+        if (jsonContent == null || NullNode.instance.equals(jsonContent)) {
+            return null;
+        }
         return MAPPER.treeToValue(jsonContent, exceptionClass);
     }
 

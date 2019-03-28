@@ -22,6 +22,7 @@ import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -102,10 +103,12 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     }
 
     private AmazonServiceException unmarshallException(String errorCode, JsonContent jsonContent) {
+        JsonNode jsonNode = jsonContent.getJsonNode();
+
         for (JsonErrorUnmarshaller unmarshaller : unmarshallers) {
             if (unmarshaller.matchErrorCode(errorCode)) {
                 try {
-                    return unmarshaller.unmarshall(jsonContent.getJsonNode());
+                    return unmarshaller.unmarshall(jsonNode);
                 } catch (Exception e) {
                     LOG.info("Unable to unmarshall exception content", e);
                     return null;
@@ -122,6 +125,9 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     private String getRequestIdFromHeaders(Map<String, String> headers) {
         for (Entry<String, String> headerEntry : headers.entrySet()) {
             if (headerEntry.getKey().equalsIgnoreCase(X_AMZN_REQUEST_ID_HEADER)) {
+                return headerEntry.getValue();
+            }
+            if (headerEntry.getKey().equalsIgnoreCase(X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER)) {
                 return headerEntry.getValue();
             }
         }

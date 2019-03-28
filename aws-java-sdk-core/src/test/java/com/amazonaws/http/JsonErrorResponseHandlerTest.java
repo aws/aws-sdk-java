@@ -200,6 +200,19 @@ public class JsonErrorResponseHandlerTest {
         assertEquals("1234", ase.getRequestId());
     }
 
+    @Test
+    public void handle_UnmarshallerReturnsException_WithAlternativeRequestId() throws Exception {
+        httpResponse.setStatusCode(500);
+        httpResponse.addHeader(HttpResponseHandler.X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER, "new1234");
+        expectUnmarshallerMatches();
+        when(unmarshaller.unmarshall((JsonNode) anyObject()))
+            .thenReturn(new CustomException("error"));
+
+        AmazonServiceException ase = responseHandler.handle(httpResponse);
+        assertThat(ase.getHttpHeaders(),
+            hasEntry(HttpResponseHandler.X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER, "new1234"));
+    }
+
     /**
      * All headers (Including ones that populate other fields like request id) should be dumped into
      * the header map.
