@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.greengrass.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class StartBulkDeploymentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<String> INPUTFILEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputFileUri").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final StartBulkDeploymentRequestMarshaller instance = new StartBulkDeploymentRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class StartBulkDeploymentRequestMarshaller {
             protocolMarshaller.marshall(startBulkDeploymentRequest.getAmznClientToken(), AMZNCLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startBulkDeploymentRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(startBulkDeploymentRequest.getInputFileUri(), INPUTFILEURI_BINDING);
+            protocolMarshaller.marshall(startBulkDeploymentRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -45,6 +45,10 @@ public class TopicsDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<Integer> NUMBEROFTOPICS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfTopics").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final TopicsDetectionJobPropertiesMarshaller instance = new TopicsDetectionJobPropertiesMarshaller();
 
@@ -71,6 +75,8 @@ public class TopicsDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(topicsDetectionJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(topicsDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(topicsDetectionJobProperties.getNumberOfTopics(), NUMBEROFTOPICS_BINDING);
+            protocolMarshaller.marshall(topicsDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(topicsDetectionJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

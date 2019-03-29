@@ -49,6 +49,8 @@ public class EntitiesDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final EntitiesDetectionJobPropertiesMarshaller instance = new EntitiesDetectionJobPropertiesMarshaller();
 
@@ -77,6 +79,7 @@ public class EntitiesDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(entitiesDetectionJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

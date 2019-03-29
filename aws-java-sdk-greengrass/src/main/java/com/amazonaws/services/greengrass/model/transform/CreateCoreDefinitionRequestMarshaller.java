@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.greengrass.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class CreateCoreDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialVersion").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateCoreDefinitionRequestMarshaller instance = new CreateCoreDefinitionRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateCoreDefinitionRequestMarshaller {
             protocolMarshaller.marshall(createCoreDefinitionRequest.getAmznClientToken(), AMZNCLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createCoreDefinitionRequest.getInitialVersion(), INITIALVERSION_BINDING);
             protocolMarshaller.marshall(createCoreDefinitionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createCoreDefinitionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

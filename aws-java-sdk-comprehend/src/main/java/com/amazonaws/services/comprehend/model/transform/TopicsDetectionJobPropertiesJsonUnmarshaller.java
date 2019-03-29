@@ -84,6 +84,14 @@ public class TopicsDetectionJobPropertiesJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     topicsDetectionJobProperties.setNumberOfTopics(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    topicsDetectionJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    topicsDetectionJobProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

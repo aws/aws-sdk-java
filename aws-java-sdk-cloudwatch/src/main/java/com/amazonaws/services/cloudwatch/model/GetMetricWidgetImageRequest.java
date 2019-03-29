@@ -50,7 +50,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * example:
      * </p>
      * <p>
-     * <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     * <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      * </p>
      * <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -191,7 +191,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * example:
      * </p>
      * <p>
-     * <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     * <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      * </p>
      * <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -234,7 +234,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *        field. For example:
      *        </p>
      *        <p>
-     *        <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     *        <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      *        </p>
      *        <p>
      *        <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -283,7 +283,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * example:
      * </p>
      * <p>
-     * <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     * <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      * </p>
      * <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -325,7 +325,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *         field. For example:
      *         </p>
      *         <p>
-     *         <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     *         <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      *         </p>
      *         <p>
      *         <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -375,7 +375,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      * example:
      * </p>
      * <p>
-     * <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     * <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      * </p>
      * <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code>
@@ -418,7 +418,7 @@ public class GetMetricWidgetImageRequest extends com.amazonaws.AmazonWebServiceR
      *        field. For example:
      *        </p>
      *        <p>
-     *        <code> &lt;GetMetricWidgetImageResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code>
+     *        <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code>
      *        </p>
      *        <p>
      *        <code> &lt;GetMetricWidgetImageResult&gt;</code>

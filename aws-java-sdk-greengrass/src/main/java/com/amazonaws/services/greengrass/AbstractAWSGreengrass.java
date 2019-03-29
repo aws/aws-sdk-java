@@ -398,6 +398,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -409,6 +414,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

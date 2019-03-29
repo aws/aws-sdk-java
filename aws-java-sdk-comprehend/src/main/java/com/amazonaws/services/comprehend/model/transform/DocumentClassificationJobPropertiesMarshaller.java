@@ -47,6 +47,8 @@ public class DocumentClassificationJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final DocumentClassificationJobPropertiesMarshaller instance = new DocumentClassificationJobPropertiesMarshaller();
 
@@ -74,6 +76,7 @@ public class DocumentClassificationJobPropertiesMarshaller {
             protocolMarshaller.marshall(documentClassificationJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(documentClassificationJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(documentClassificationJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(documentClassificationJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

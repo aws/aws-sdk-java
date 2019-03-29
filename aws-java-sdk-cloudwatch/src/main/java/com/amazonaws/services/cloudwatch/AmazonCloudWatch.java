@@ -501,6 +501,25 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws ResourceNotFoundException
+     *         The named resource does not exist.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
      * the entire contents are replaced with what you specify here.
      * </p>
@@ -574,8 +593,7 @@ public interface AmazonCloudWatch {
      * </li>
      * <li>
      * <p>
-     * <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code> for alarms with recover
-     * actions
+     * No specific permissions are needed for alarms with recover actions
      * </p>
      * </li>
      * </ul>
@@ -635,8 +653,8 @@ public interface AmazonCloudWatch {
      * supported.
      * </p>
      * <p>
-     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
-     * about specifying dimensions, see <a
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
+     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
@@ -700,6 +718,62 @@ public interface AmazonCloudWatch {
      *      Documentation</a>
      */
     SetAlarmStateResult setAlarmState(SetAlarmStateRequest setAlarmStateRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Tags can help you organize and
+     * categorize your resources. You can also use them to scope user permissions, by granting a user permission to
+     * access or change only resources with certain tag values. In CloudWatch, alarms can be tagged.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag
+     * key that is already associated with the resource, the new tag value that you specify replaces the previous value
+     * for that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws ResourceNotFoundException
+     *         The named resource does not exist.
+     * @throws ConcurrentModificationException
+     *         More than one process tried to modify a resource at the same time.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws ResourceNotFoundException
+     *         The named resource does not exist.
+     * @throws ConcurrentModificationException
+     *         More than one process tried to modify a resource at the same time.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

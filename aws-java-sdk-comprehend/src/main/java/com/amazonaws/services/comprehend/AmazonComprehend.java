@@ -46,7 +46,7 @@ public interface AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text for a batch of documents. For a list of languages that Amazon
-     * Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+     * Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
      * Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -197,6 +197,8 @@ public interface AmazonComprehend {
      *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
      *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
      *         Comprehend accepts only English or Spanish text.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.CreateDocumentClassifier
@@ -226,6 +228,8 @@ public interface AmazonComprehend {
      *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
      *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
      *         Comprehend accepts only English or Spanish text.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.CreateEntityRecognizer
@@ -481,7 +485,7 @@ public interface AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect,
-     * see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
+     * see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
      * Languages</a>.
      * </p>
      * 
@@ -791,6 +795,8 @@ public interface AmazonComprehend {
      * @throws ResourceUnavailableException
      *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
      *         state and try your request again.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartDocumentClassificationJob
@@ -811,6 +817,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartDominantLanguageDetectionJob
@@ -841,6 +849,8 @@ public interface AmazonComprehend {
      * @throws ResourceUnavailableException
      *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
      *         state and try your request again.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartEntitiesDetectionJob
@@ -861,6 +871,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartKeyPhrasesDetectionJob
@@ -881,6 +893,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartSentimentDetectionJob
@@ -901,6 +915,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartTopicsDetectionJob

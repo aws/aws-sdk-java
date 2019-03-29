@@ -37,7 +37,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text for a batch of documents. For a list of languages that Amazon
-     * Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+     * Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
      * Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -53,7 +53,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text for a batch of documents. For a list of languages that Amazon
-     * Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+     * Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
      * Comprehend Supported Languages</a>.
      * </p>
      * 
@@ -654,7 +654,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect,
-     * see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
+     * see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
      * Languages</a>.
      * </p>
      * 
@@ -669,7 +669,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect,
-     * see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
+     * see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported
      * Languages</a>.
      * </p>
      * 

@@ -42,6 +42,8 @@ public class StartKeyPhrasesDetectionJobRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final StartKeyPhrasesDetectionJobRequestMarshaller instance = new StartKeyPhrasesDetectionJobRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class StartKeyPhrasesDetectionJobRequestMarshaller {
             protocolMarshaller.marshall(startKeyPhrasesDetectionJobRequest.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(startKeyPhrasesDetectionJobRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(startKeyPhrasesDetectionJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(startKeyPhrasesDetectionJobRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

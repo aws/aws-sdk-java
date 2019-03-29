@@ -40,6 +40,8 @@ public class CreateEntityRecognizerRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final CreateEntityRecognizerRequestMarshaller instance = new CreateEntityRecognizerRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class CreateEntityRecognizerRequestMarshaller {
             protocolMarshaller.marshall(createEntityRecognizerRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(createEntityRecognizerRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -95,6 +95,27 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
      * </p>
      */
     private String dataAccessRoleArn;
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String volumeKmsKeyId;
 
     /**
      * <p>
@@ -583,6 +604,133 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param volumeKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
+     *        either of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setVolumeKmsKeyId(String volumeKmsKeyId) {
+        this.volumeKmsKeyId = volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
+     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
+     *         can be either of the following formats:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Resource Name (ARN) of a KMS Key:
+     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getVolumeKmsKeyId() {
+        return this.volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param volumeKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
+     *        either of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitiesDetectionJobProperties withVolumeKmsKeyId(String volumeKmsKeyId) {
+        setVolumeKmsKeyId(volumeKmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -615,7 +763,9 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getDataAccessRoleArn() != null)
-            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn());
+            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
+        if (getVolumeKmsKeyId() != null)
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -674,6 +824,10 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
             return false;
         if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
             return false;
+        if (other.getVolumeKmsKeyId() == null ^ this.getVolumeKmsKeyId() == null)
+            return false;
+        if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -693,6 +847,7 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         return hashCode;
     }
 

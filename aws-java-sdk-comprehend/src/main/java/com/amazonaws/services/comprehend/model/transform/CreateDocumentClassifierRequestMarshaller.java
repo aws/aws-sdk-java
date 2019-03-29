@@ -40,6 +40,8 @@ public class CreateDocumentClassifierRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final CreateDocumentClassifierRequestMarshaller instance = new CreateDocumentClassifierRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class CreateDocumentClassifierRequestMarshaller {
             protocolMarshaller.marshall(createDocumentClassifierRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(createDocumentClassifierRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,8 +31,13 @@ import javax.annotation.Generated;
  * on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code>
  * structures in the array. The 20 structures can include as many as 10 structures that contain a
  * <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the
- * <code>Expression</code> parameter to perform a math expression. Any expression used in a <code>PutMetricAlarm</code>
- * operation must return a single time series. For more information, see <a
+ * <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must
+ * have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm
+ * watches.
+ * </p>
+ * <p>
+ * Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more
+ * information, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
  * >Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
  * </p>

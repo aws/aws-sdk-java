@@ -49,6 +49,8 @@ public class EntityRecognizerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecognizerMetadata").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final EntityRecognizerPropertiesMarshaller instance = new EntityRecognizerPropertiesMarshaller();
 
@@ -77,6 +79,7 @@ public class EntityRecognizerPropertiesMarshaller {
             protocolMarshaller.marshall(entityRecognizerProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(entityRecognizerProperties.getRecognizerMetadata(), RECOGNIZERMETADATA_BINDING);
             protocolMarshaller.marshall(entityRecognizerProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(entityRecognizerProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

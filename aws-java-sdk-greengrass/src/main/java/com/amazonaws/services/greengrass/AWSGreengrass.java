@@ -1037,6 +1037,19 @@ public interface AWSGreengrass {
     ListSubscriptionDefinitionsResult listSubscriptionDefinitions(ListSubscriptionDefinitionsRequest listSubscriptionDefinitionsRequest);
 
     /**
+     * Retrieves the tags for a resource.
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
      * Resets a group's deployments.
      * 
      * @param resetDeploymentsRequest
@@ -1080,6 +1093,32 @@ public interface AWSGreengrass {
      *      API Documentation</a>
      */
     StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest stopBulkDeploymentRequest);
+
+    /**
+     * Add tags to a resource.
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Remove tags with specified keys from a resource.
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Updates the connectivity information for the core. Any devices that belong to the group which has this core will

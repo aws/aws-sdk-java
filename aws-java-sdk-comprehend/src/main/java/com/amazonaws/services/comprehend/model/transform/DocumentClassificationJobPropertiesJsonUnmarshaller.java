@@ -88,6 +88,10 @@ public class DocumentClassificationJobPropertiesJsonUnmarshaller implements Unma
                     context.nextToken();
                     documentClassificationJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    documentClassificationJobProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

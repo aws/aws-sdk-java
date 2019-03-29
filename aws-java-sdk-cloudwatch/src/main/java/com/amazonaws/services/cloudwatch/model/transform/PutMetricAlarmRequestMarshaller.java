@@ -244,6 +244,23 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             }
         }
 
+        if (!putMetricAlarmRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) putMetricAlarmRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) putMetricAlarmRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 

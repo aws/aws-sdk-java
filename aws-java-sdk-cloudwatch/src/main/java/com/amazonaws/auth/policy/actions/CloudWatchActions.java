@@ -51,6 +51,8 @@ public enum CloudWatchActions implements Action {
     ListDashboards("cloudwatch:ListDashboards"),
     /** Action for the ListMetrics operation. */
     ListMetrics("cloudwatch:ListMetrics"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("cloudwatch:ListTagsForResource"),
     /** Action for the PutDashboard operation. */
     PutDashboard("cloudwatch:PutDashboard"),
     /** Action for the PutMetricAlarm operation. */
@@ -59,6 +61,10 @@ public enum CloudWatchActions implements Action {
     PutMetricData("cloudwatch:PutMetricData"),
     /** Action for the SetAlarmState operation. */
     SetAlarmState("cloudwatch:SetAlarmState"),
+    /** Action for the TagResource operation. */
+    TagResource("cloudwatch:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("cloudwatch:UntagResource"),
 
     ;
 
