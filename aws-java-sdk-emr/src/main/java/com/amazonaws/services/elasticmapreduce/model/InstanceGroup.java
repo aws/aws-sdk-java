@@ -102,6 +102,25 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
     /**
      * <p>
+     * The version number of the requested configuration specification for this instance group.
+     * </p>
+     */
+    private Long configurationsVersion;
+    /**
+     * <p>
+     * A list of configurations that were successfully applied for an instance group last time.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Configuration> lastSuccessfullyAppliedConfigurations;
+    /**
+     * <p>
+     * The version number of a configuration specification that was successfully applied for an instance group last
+     * time.
+     * </p>
+     */
+    private Long lastSuccessfullyAppliedConfigurationsVersion;
+    /**
+     * <p>
      * The EBS block devices that are mapped to this instance group.
      * </p>
      */
@@ -704,6 +723,166 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The version number of the requested configuration specification for this instance group.
+     * </p>
+     * 
+     * @param configurationsVersion
+     *        The version number of the requested configuration specification for this instance group.
+     */
+
+    public void setConfigurationsVersion(Long configurationsVersion) {
+        this.configurationsVersion = configurationsVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the requested configuration specification for this instance group.
+     * </p>
+     * 
+     * @return The version number of the requested configuration specification for this instance group.
+     */
+
+    public Long getConfigurationsVersion() {
+        return this.configurationsVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the requested configuration specification for this instance group.
+     * </p>
+     * 
+     * @param configurationsVersion
+     *        The version number of the requested configuration specification for this instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroup withConfigurationsVersion(Long configurationsVersion) {
+        setConfigurationsVersion(configurationsVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of configurations that were successfully applied for an instance group last time.
+     * </p>
+     * 
+     * @return A list of configurations that were successfully applied for an instance group last time.
+     */
+
+    public java.util.List<Configuration> getLastSuccessfullyAppliedConfigurations() {
+        if (lastSuccessfullyAppliedConfigurations == null) {
+            lastSuccessfullyAppliedConfigurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
+        }
+        return lastSuccessfullyAppliedConfigurations;
+    }
+
+    /**
+     * <p>
+     * A list of configurations that were successfully applied for an instance group last time.
+     * </p>
+     * 
+     * @param lastSuccessfullyAppliedConfigurations
+     *        A list of configurations that were successfully applied for an instance group last time.
+     */
+
+    public void setLastSuccessfullyAppliedConfigurations(java.util.Collection<Configuration> lastSuccessfullyAppliedConfigurations) {
+        if (lastSuccessfullyAppliedConfigurations == null) {
+            this.lastSuccessfullyAppliedConfigurations = null;
+            return;
+        }
+
+        this.lastSuccessfullyAppliedConfigurations = new com.amazonaws.internal.SdkInternalList<Configuration>(lastSuccessfullyAppliedConfigurations);
+    }
+
+    /**
+     * <p>
+     * A list of configurations that were successfully applied for an instance group last time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLastSuccessfullyAppliedConfigurations(java.util.Collection)} or
+     * {@link #withLastSuccessfullyAppliedConfigurations(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param lastSuccessfullyAppliedConfigurations
+     *        A list of configurations that were successfully applied for an instance group last time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroup withLastSuccessfullyAppliedConfigurations(Configuration... lastSuccessfullyAppliedConfigurations) {
+        if (this.lastSuccessfullyAppliedConfigurations == null) {
+            setLastSuccessfullyAppliedConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(lastSuccessfullyAppliedConfigurations.length));
+        }
+        for (Configuration ele : lastSuccessfullyAppliedConfigurations) {
+            this.lastSuccessfullyAppliedConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of configurations that were successfully applied for an instance group last time.
+     * </p>
+     * 
+     * @param lastSuccessfullyAppliedConfigurations
+     *        A list of configurations that were successfully applied for an instance group last time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroup withLastSuccessfullyAppliedConfigurations(java.util.Collection<Configuration> lastSuccessfullyAppliedConfigurations) {
+        setLastSuccessfullyAppliedConfigurations(lastSuccessfullyAppliedConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of a configuration specification that was successfully applied for an instance group last
+     * time.
+     * </p>
+     * 
+     * @param lastSuccessfullyAppliedConfigurationsVersion
+     *        The version number of a configuration specification that was successfully applied for an instance group
+     *        last time.
+     */
+
+    public void setLastSuccessfullyAppliedConfigurationsVersion(Long lastSuccessfullyAppliedConfigurationsVersion) {
+        this.lastSuccessfullyAppliedConfigurationsVersion = lastSuccessfullyAppliedConfigurationsVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of a configuration specification that was successfully applied for an instance group last
+     * time.
+     * </p>
+     * 
+     * @return The version number of a configuration specification that was successfully applied for an instance group
+     *         last time.
+     */
+
+    public Long getLastSuccessfullyAppliedConfigurationsVersion() {
+        return this.lastSuccessfullyAppliedConfigurationsVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of a configuration specification that was successfully applied for an instance group last
+     * time.
+     * </p>
+     * 
+     * @param lastSuccessfullyAppliedConfigurationsVersion
+     *        The version number of a configuration specification that was successfully applied for an instance group
+     *        last time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroup withLastSuccessfullyAppliedConfigurationsVersion(Long lastSuccessfullyAppliedConfigurationsVersion) {
+        setLastSuccessfullyAppliedConfigurationsVersion(lastSuccessfullyAppliedConfigurationsVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The EBS block devices that are mapped to this instance group.
      * </p>
      * 
@@ -959,6 +1138,12 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getConfigurations() != null)
             sb.append("Configurations: ").append(getConfigurations()).append(",");
+        if (getConfigurationsVersion() != null)
+            sb.append("ConfigurationsVersion: ").append(getConfigurationsVersion()).append(",");
+        if (getLastSuccessfullyAppliedConfigurations() != null)
+            sb.append("LastSuccessfullyAppliedConfigurations: ").append(getLastSuccessfullyAppliedConfigurations()).append(",");
+        if (getLastSuccessfullyAppliedConfigurationsVersion() != null)
+            sb.append("LastSuccessfullyAppliedConfigurationsVersion: ").append(getLastSuccessfullyAppliedConfigurationsVersion()).append(",");
         if (getEbsBlockDevices() != null)
             sb.append("EbsBlockDevices: ").append(getEbsBlockDevices()).append(",");
         if (getEbsOptimized() != null)
@@ -1021,6 +1206,20 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
+        if (other.getConfigurationsVersion() == null ^ this.getConfigurationsVersion() == null)
+            return false;
+        if (other.getConfigurationsVersion() != null && other.getConfigurationsVersion().equals(this.getConfigurationsVersion()) == false)
+            return false;
+        if (other.getLastSuccessfullyAppliedConfigurations() == null ^ this.getLastSuccessfullyAppliedConfigurations() == null)
+            return false;
+        if (other.getLastSuccessfullyAppliedConfigurations() != null
+                && other.getLastSuccessfullyAppliedConfigurations().equals(this.getLastSuccessfullyAppliedConfigurations()) == false)
+            return false;
+        if (other.getLastSuccessfullyAppliedConfigurationsVersion() == null ^ this.getLastSuccessfullyAppliedConfigurationsVersion() == null)
+            return false;
+        if (other.getLastSuccessfullyAppliedConfigurationsVersion() != null
+                && other.getLastSuccessfullyAppliedConfigurationsVersion().equals(this.getLastSuccessfullyAppliedConfigurationsVersion()) == false)
+            return false;
         if (other.getEbsBlockDevices() == null ^ this.getEbsBlockDevices() == null)
             return false;
         if (other.getEbsBlockDevices() != null && other.getEbsBlockDevices().equals(this.getEbsBlockDevices()) == false)
@@ -1055,6 +1254,10 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningInstanceCount() == null) ? 0 : getRunningInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationsVersion() == null) ? 0 : getConfigurationsVersion().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfullyAppliedConfigurations() == null) ? 0 : getLastSuccessfullyAppliedConfigurations().hashCode());
+        hashCode = prime * hashCode
+                + ((getLastSuccessfullyAppliedConfigurationsVersion() == null) ? 0 : getLastSuccessfullyAppliedConfigurationsVersion().hashCode());
         hashCode = prime * hashCode + ((getEbsBlockDevices() == null) ? 0 : getEbsBlockDevices().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         hashCode = prime * hashCode + ((getShrinkPolicy() == null) ? 0 : getShrinkPolicy().hashCode());

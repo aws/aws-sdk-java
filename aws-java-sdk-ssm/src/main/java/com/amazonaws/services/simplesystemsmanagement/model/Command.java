@@ -53,14 +53,14 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String comment;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started running, it will not run. Calculated based on the
+     * ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      */
     private java.util.Date expiresAfter;
     /**
      * <p>
-     * The parameter values to be inserted in the document when executing the command.
+     * The parameter values to be inserted in the document when running the command.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
@@ -111,7 +111,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Success: The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully ran on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -145,7 +145,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * invocations. The system has canceled the command before running it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -174,10 +174,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String outputS3KeyPrefix;
     /**
      * <p>
-     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
-     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
+     * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
+     * about how to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -187,7 +187,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -399,13 +399,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started running, it will not run. Calculated based on the
+     * ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command has not already started executing, it will not run. Calculated
-     *        based on the ExpiresAfter user input provided as part of the SendCommand API.
+     *        If this time is reached and the command has not already started running, it will not run. Calculated based
+     *        on the ExpiresAfter user input provided as part of the SendCommand API.
      */
 
     public void setExpiresAfter(java.util.Date expiresAfter) {
@@ -414,11 +414,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started running, it will not run. Calculated based on the
+     * ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it will not run. Calculated
+     * @return If this time is reached and the command has not already started running, it will not run. Calculated
      *         based on the ExpiresAfter user input provided as part of the SendCommand API.
      */
 
@@ -428,13 +428,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started running, it will not run. Calculated based on the
+     * ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command has not already started executing, it will not run. Calculated
-     *        based on the ExpiresAfter user input provided as part of the SendCommand API.
+     *        If this time is reached and the command has not already started running, it will not run. Calculated based
+     *        on the ExpiresAfter user input provided as part of the SendCommand API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,10 +445,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the document when executing the command.
+     * The parameter values to be inserted in the document when running the command.
      * </p>
      * 
-     * @return The parameter values to be inserted in the document when executing the command.
+     * @return The parameter values to be inserted in the document when running the command.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -457,11 +457,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the document when executing the command.
+     * The parameter values to be inserted in the document when running the command.
      * </p>
      * 
      * @param parameters
-     *        The parameter values to be inserted in the document when executing the command.
+     *        The parameter values to be inserted in the document when running the command.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -470,11 +470,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the document when executing the command.
+     * The parameter values to be inserted in the document when running the command.
      * </p>
      * 
      * @param parameters
-     *        The parameter values to be inserted in the document when executing the command.
+     *        The parameter values to be inserted in the document when running the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,7 +793,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Success: The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully ran on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -827,7 +827,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * invocations. The system has canceled the command before running it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -853,7 +853,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command successfully executed on all invocations. This is a terminal state.
+     *        Success: The command successfully ran on all invocations. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -888,7 +888,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *        invocations. The system has canceled the command before running it on any instance. This is a terminal
      *        state.
      *        </p>
      *        </li>
@@ -920,7 +920,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Success: The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully ran on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -954,7 +954,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * invocations. The system has canceled the command before running it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -979,7 +979,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Success: The command successfully executed on all invocations. This is a terminal state.
+     *         Success: The command successfully ran on all invocations. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
@@ -1014,7 +1014,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     *         invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *         invocations. The system has canceled the command before running it on any instance. This is a terminal
      *         state.
      *         </p>
      *         </li>
@@ -1046,7 +1046,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Success: The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully ran on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1080,7 +1080,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * invocations. The system has canceled the command before running it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -1106,7 +1106,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command successfully executed on all invocations. This is a terminal state.
+     *        Success: The command successfully ran on all invocations. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -1141,7 +1141,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
-     *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *        invocations. The system has canceled the command before running it on any instance. This is a terminal
      *        state.
      *        </p>
      *        </li>
@@ -1293,19 +1293,19 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
-     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
+     * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
+     * about how to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
-     *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
+     *        The maximum number of instances that are allowed to run the command at the same time. You can specify a
+     *        number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
-     *        Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1314,17 +1314,17 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
-     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
+     * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
+     * about how to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The maximum number of instances that are allowed to execute the command at the same time. You can specify
-     *         a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50.
-     *         For more information about how to use MaxConcurrency, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
+     * @return The maximum number of instances that are allowed to run the command at the same time. You can specify a
+     *         number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
+     *         more information about how to use MaxConcurrency, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands
      *         Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
@@ -1334,19 +1334,19 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
-     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
+     * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
+     * about how to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
-     *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
+     *        The maximum number of instances that are allowed to run the command at the same time. You can specify a
+     *        number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
-     *        Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1360,7 +1360,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1368,8 +1368,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 0. For more information about how to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
-     *        Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -1381,14 +1381,14 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *         is 0. For more information about how to use MaxErrors, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands
      *         Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
@@ -1401,7 +1401,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands Using
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1409,8 +1409,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 0. For more information about how to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing Commands
-     *        Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

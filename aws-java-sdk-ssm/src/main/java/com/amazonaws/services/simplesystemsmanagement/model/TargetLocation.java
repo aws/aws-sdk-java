@@ -49,13 +49,13 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
-     * currently executing Automation.
+     * currently running Automation.
      * </p>
      */
     private String targetLocationMaxErrors;
     /**
      * <p>
-     * The Automation execution role used by the currently executing Automation.
+     * The Automation execution role used by the currently running Automation.
      * </p>
      */
     private String executionRoleName;
@@ -249,12 +249,12 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
-     * currently executing Automation.
+     * currently running Automation.
      * </p>
      * 
      * @param targetLocationMaxErrors
      *        The maxium number of errors allowed before the system stops queueing additional Automation executions for
-     *        the currently executing Automation.
+     *        the currently running Automation.
      */
 
     public void setTargetLocationMaxErrors(String targetLocationMaxErrors) {
@@ -264,11 +264,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
-     * currently executing Automation.
+     * currently running Automation.
      * </p>
      * 
      * @return The maxium number of errors allowed before the system stops queueing additional Automation executions for
-     *         the currently executing Automation.
+     *         the currently running Automation.
      */
 
     public String getTargetLocationMaxErrors() {
@@ -278,12 +278,12 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
-     * currently executing Automation.
+     * currently running Automation.
      * </p>
      * 
      * @param targetLocationMaxErrors
      *        The maxium number of errors allowed before the system stops queueing additional Automation executions for
-     *        the currently executing Automation.
+     *        the currently running Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,11 +294,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Automation execution role used by the currently executing Automation.
+     * The Automation execution role used by the currently running Automation.
      * </p>
      * 
      * @param executionRoleName
-     *        The Automation execution role used by the currently executing Automation.
+     *        The Automation execution role used by the currently running Automation.
      */
 
     public void setExecutionRoleName(String executionRoleName) {
@@ -307,10 +307,10 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Automation execution role used by the currently executing Automation.
+     * The Automation execution role used by the currently running Automation.
      * </p>
      * 
-     * @return The Automation execution role used by the currently executing Automation.
+     * @return The Automation execution role used by the currently running Automation.
      */
 
     public String getExecutionRoleName() {
@@ -319,11 +319,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Automation execution role used by the currently executing Automation.
+     * The Automation execution role used by the currently running Automation.
      * </p>
      * 
      * @param executionRoleName
-     *        The Automation execution role used by the currently executing Automation.
+     *        The Automation execution role used by the currently running Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

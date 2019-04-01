@@ -27,17 +27,17 @@ public class StartAssociationsOnceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The association IDs that you want to execute immediately and only one time.
+     * The association IDs that you want to run immediately and only one time.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> associationIds;
 
     /**
      * <p>
-     * The association IDs that you want to execute immediately and only one time.
+     * The association IDs that you want to run immediately and only one time.
      * </p>
      * 
-     * @return The association IDs that you want to execute immediately and only one time.
+     * @return The association IDs that you want to run immediately and only one time.
      */
 
     public java.util.List<String> getAssociationIds() {
@@ -49,11 +49,11 @@ public class StartAssociationsOnceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The association IDs that you want to execute immediately and only one time.
+     * The association IDs that you want to run immediately and only one time.
      * </p>
      * 
      * @param associationIds
-     *        The association IDs that you want to execute immediately and only one time.
+     *        The association IDs that you want to run immediately and only one time.
      */
 
     public void setAssociationIds(java.util.Collection<String> associationIds) {
@@ -67,7 +67,7 @@ public class StartAssociationsOnceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The association IDs that you want to execute immediately and only one time.
+     * The association IDs that you want to run immediately and only one time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class StartAssociationsOnceRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param associationIds
-     *        The association IDs that you want to execute immediately and only one time.
+     *        The association IDs that you want to run immediately and only one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class StartAssociationsOnceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The association IDs that you want to execute immediately and only one time.
+     * The association IDs that you want to run immediately and only one time.
      * </p>
      * 
      * @param associationIds
-     *        The association IDs that you want to execute immediately and only one time.
+     *        The association IDs that you want to run immediately and only one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,7 +64,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -99,7 +99,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private LoggingInfo loggingInfo;
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The role that should be assumed when running the task.
      * </p>
      */
     private String serviceRoleArn;
@@ -425,7 +425,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -436,7 +436,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return The parameters that should be passed to the task when it is executed.</p> <note>
+     * @return The parameters that should be passed to the task when it is run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
@@ -451,7 +451,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -463,7 +463,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -478,7 +478,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -490,7 +490,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -659,11 +659,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The role that should be assumed when running the task.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task
+     *        The role that should be assumed when running the task.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -672,10 +672,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The role that should be assumed when running the task.
      * </p>
      * 
-     * @return The role that should be assumed when executing the task
+     * @return The role that should be assumed when running the task.
      */
 
     public String getServiceRoleArn() {
@@ -684,11 +684,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The role that should be assumed when running the task.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task
+     *        The role that should be assumed when running the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

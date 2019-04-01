@@ -62,7 +62,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     private String taskType;
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      */
     private String parameters;
@@ -345,11 +345,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
      * @param parameters
-     *        The parameters that were provided for the invocation when it was executed.
+     *        The parameters that were provided for the invocation when it was run.
      */
 
     public void setParameters(String parameters) {
@@ -358,10 +358,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
-     * @return The parameters that were provided for the invocation when it was executed.
+     * @return The parameters that were provided for the invocation when it was run.
      */
 
     public String getParameters() {
@@ -370,11 +370,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
      * @param parameters
-     *        The parameters that were provided for the invocation when it was executed.
+     *        The parameters that were provided for the invocation when it was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

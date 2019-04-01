@@ -154,7 +154,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -1011,7 +1011,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -1021,7 +1021,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
      *        all targets run the association at the same time.</p>
      *        <p>
-     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
      *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *        new instance will process its association within the limit specified for MaxConcurrency.
      */
@@ -1037,7 +1037,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -1046,7 +1046,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *         for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which
      *         means all targets run the association at the same time.</p>
      *         <p>
-     *         If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *         If a new instance starts and attempts to run an association while Systems Manager is running
      *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *         new instance will process its association within the limit specified for MaxConcurrency.
      */
@@ -1062,7 +1062,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -1072,7 +1072,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
      *        all targets run the association at the same time.</p>
      *        <p>
-     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
      *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *        new instance will process its association within the limit specified for MaxConcurrency.
      * @return Returns a reference to this object so that method calls can be chained together.

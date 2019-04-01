@@ -129,7 +129,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     private String associationStatus;
     /**
      * <p>
-     * The date the association was last executed.
+     * The date the association was last run.
      * </p>
      */
     private java.util.Date lastAssociationExecutionDate;
@@ -921,11 +921,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the association was last executed.
+     * The date the association was last run.
      * </p>
      * 
      * @param lastAssociationExecutionDate
-     *        The date the association was last executed.
+     *        The date the association was last run.
      */
 
     public void setLastAssociationExecutionDate(java.util.Date lastAssociationExecutionDate) {
@@ -934,10 +934,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the association was last executed.
+     * The date the association was last run.
      * </p>
      * 
-     * @return The date the association was last executed.
+     * @return The date the association was last run.
      */
 
     public java.util.Date getLastAssociationExecutionDate() {
@@ -946,11 +946,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the association was last executed.
+     * The date the association was last run.
      * </p>
      * 
      * @param lastAssociationExecutionDate
-     *        The date the association was last executed.
+     *        The date the association was last run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

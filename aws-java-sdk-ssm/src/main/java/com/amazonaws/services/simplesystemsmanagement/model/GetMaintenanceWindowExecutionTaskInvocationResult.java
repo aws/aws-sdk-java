@@ -57,7 +57,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String taskType;
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      */
     private String parameters;
@@ -75,13 +75,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String statusDetails;
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      */
     private java.util.Date endTime;
@@ -328,11 +328,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
      * @param parameters
-     *        The parameters used at the time that the task executed.
+     *        The parameters used at the time that the task ran.
      */
 
     public void setParameters(String parameters) {
@@ -341,10 +341,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
-     * @return The parameters used at the time that the task executed.
+     * @return The parameters used at the time that the task ran.
      */
 
     public String getParameters() {
@@ -353,11 +353,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
      * @param parameters
-     *        The parameters used at the time that the task executed.
+     *        The parameters used at the time that the task ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +467,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
      * @param startTime
-     *        The time that the task started executing on the target.
+     *        The time that the task started running on the target.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -480,10 +480,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
-     * @return The time that the task started executing on the target.
+     * @return The time that the task started running on the target.
      */
 
     public java.util.Date getStartTime() {
@@ -492,11 +492,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
      * @param startTime
-     *        The time that the task started executing on the target.
+     *        The time that the task started running on the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +507,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
      * @param endTime
-     *        The time that the task finished executing on the target.
+     *        The time that the task finished running on the target.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -520,10 +520,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
-     * @return The time that the task finished executing on the target.
+     * @return The time that the task finished running on the target.
      */
 
     public java.util.Date getEndTime() {
@@ -532,11 +532,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
      * @param endTime
-     *        The time that the task finished executing on the target.
+     *        The time that the task finished running on the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

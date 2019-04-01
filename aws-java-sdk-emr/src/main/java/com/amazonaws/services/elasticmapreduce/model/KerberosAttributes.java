@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
- * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+ * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
  * Authentication</a> in the <i>EMR Management Guide</i>.
  * </p>
  * 

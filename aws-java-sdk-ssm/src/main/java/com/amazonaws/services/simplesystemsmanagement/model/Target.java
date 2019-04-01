@@ -42,7 +42,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -117,15 +117,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *         value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
-     *         For more information about how to send commands that target instances using Key,Value parameters, see <a
+     *         value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
+     *         more information about how to send commands that target instances using Key,Value parameters, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *         Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -140,7 +140,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -148,8 +148,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param values
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
-     *        For more information about how to send commands that target instances using Key,Value parameters, see <a
+     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
+     *        more information about how to send commands that target instances using Key,Value parameters, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -166,7 +166,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -179,8 +179,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param values
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
-     *        For more information about how to send commands that target instances using Key,Value parameters, see <a
+     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
+     *        more information about how to send commands that target instances using Key,Value parameters, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -199,7 +199,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -207,8 +207,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param values
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
-     *        For more information about how to send commands that target instances using Key,Value parameters, see <a
+     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
+     *        more information about how to send commands that target instances using Key,Value parameters, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

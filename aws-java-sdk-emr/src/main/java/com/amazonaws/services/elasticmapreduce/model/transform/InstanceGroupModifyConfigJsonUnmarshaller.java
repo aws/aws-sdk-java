@@ -65,6 +65,11 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     instanceGroupModifyConfig.setShrinkPolicy(ShrinkPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Configurations", targetDepth)) {
+                    context.nextToken();
+                    instanceGroupModifyConfig.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

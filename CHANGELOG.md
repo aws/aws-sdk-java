@@ -1,3 +1,12 @@
+# __1.11.530__ __2019-04-01__
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR adds the ability to modify instance group configurations on a running cluster through the new "configurations" field in the ModifyInstanceGroups API.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - March 2019 documentation updates for Systems Manager.
+
 # __1.11.529__ __2019-03-29__
 ## __AWS Greengrass__
   - ### Features

@@ -81,9 +81,9 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private Integer cutoff;
     /**
      * <p>
-     * Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
-     * instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you
-     * register a task with the Maintenance Window
+     * Enables a Maintenance Window task to run on managed instances, even if you have not registered those instances as
+     * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window
      * </p>
      * <p>
      * If you don't enable this option, then you must specify previously-registered targets when you register a task
@@ -492,9 +492,9 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
-     * instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you
-     * register a task with the Maintenance Window
+     * Enables a Maintenance Window task to run on managed instances, even if you have not registered those instances as
+     * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window
      * </p>
      * <p>
      * If you don't enable this option, then you must specify previously-registered targets when you register a task
@@ -502,7 +502,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
+     *        Enables a Maintenance Window task to run on managed instances, even if you have not registered those
      *        instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *        you register a task with the Maintenance Window </p>
      *        <p>
@@ -516,16 +516,16 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
-     * instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you
-     * register a task with the Maintenance Window
+     * Enables a Maintenance Window task to run on managed instances, even if you have not registered those instances as
+     * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window
      * </p>
      * <p>
      * If you don't enable this option, then you must specify previously-registered targets when you register a task
      * with the Maintenance Window.
      * </p>
      * 
-     * @return Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
+     * @return Enables a Maintenance Window task to run on managed instances, even if you have not registered those
      *         instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *         you register a task with the Maintenance Window </p>
      *         <p>
@@ -539,9 +539,9 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
-     * instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you
-     * register a task with the Maintenance Window
+     * Enables a Maintenance Window task to run on managed instances, even if you have not registered those instances as
+     * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window
      * </p>
      * <p>
      * If you don't enable this option, then you must specify previously-registered targets when you register a task
@@ -549,7 +549,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
+     *        Enables a Maintenance Window task to run on managed instances, even if you have not registered those
      *        instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *        you register a task with the Maintenance Window </p>
      *        <p>
@@ -565,16 +565,16 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
-     * instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you
-     * register a task with the Maintenance Window
+     * Enables a Maintenance Window task to run on managed instances, even if you have not registered those instances as
+     * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window
      * </p>
      * <p>
      * If you don't enable this option, then you must specify previously-registered targets when you register a task
      * with the Maintenance Window.
      * </p>
      * 
-     * @return Enables a Maintenance Window task to execute on managed instances, even if you have not registered those
+     * @return Enables a Maintenance Window task to run on managed instances, even if you have not registered those
      *         instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *         you register a task with the Maintenance Window </p>
      *         <p>

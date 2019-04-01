@@ -51,7 +51,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      */
     private String taskArn;
@@ -82,7 +82,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String taskType;
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -360,11 +360,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      */
 
     public void setTaskArn(String taskArn) {
@@ -373,10 +373,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
-     * @return The ARN of the task to execute
+     * @return The ARN of the task to run.
      */
 
     public String getTaskArn() {
@@ -385,11 +385,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -591,7 +591,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -602,7 +602,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * </note>
      * 
-     * @return The parameters that should be passed to the task when it is executed.</p> <note>
+     * @return The parameters that should be passed to the task when it is run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
@@ -617,7 +617,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -629,7 +629,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -644,7 +644,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -656,7 +656,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For

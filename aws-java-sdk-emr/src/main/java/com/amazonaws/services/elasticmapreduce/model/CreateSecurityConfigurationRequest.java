@@ -34,7 +34,7 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The security configuration details in JSON format. For JSON parameters and examples, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
      * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      */
@@ -83,14 +83,14 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The security configuration details in JSON format. For JSON parameters and examples, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
      * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param securityConfiguration
      *        The security configuration details in JSON format. For JSON parameters and examples, see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-     *        Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     *        Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
     public void setSecurityConfiguration(String securityConfiguration) {
@@ -100,12 +100,12 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The security configuration details in JSON format. For JSON parameters and examples, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
      * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @return The security configuration details in JSON format. For JSON parameters and examples, see <a
-     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
      *         Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
@@ -116,14 +116,14 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The security configuration details in JSON format. For JSON parameters and examples, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
      * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param securityConfiguration
      *        The security configuration details in JSON format. For JSON parameters and examples, see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-     *        Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     *        Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

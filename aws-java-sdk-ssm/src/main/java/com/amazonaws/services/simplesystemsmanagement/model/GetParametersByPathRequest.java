@@ -40,8 +40,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <important>
      * <p>
      * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
-     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
-     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has
+     * explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+     * API action recursively for <code>/a</code> and view <code>/a/b</code>.
      * </p>
      * </important>
      */
@@ -136,8 +137,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <important>
      * <p>
      * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
-     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
-     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has
+     * explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+     * API action recursively for <code>/a</code> and view <code>/a/b</code>.
      * </p>
      * </important>
      * 
@@ -145,9 +147,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      *        Retrieve all parameters within a hierarchy.</p> <important>
      *        <p>
      *        If a user has access to a path, then the user can access all levels of that path. For example, if a user
-     *        has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
-     *        denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
-     *        and view /a/b.
+     *        has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a
+     *        user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the
+     *        GetParametersByPath API action recursively for <code>/a</code> and view <code>/a/b</code>.
      *        </p>
      */
 
@@ -162,17 +164,18 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <important>
      * <p>
      * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
-     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
-     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has
+     * explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+     * API action recursively for <code>/a</code> and view <code>/a/b</code>.
      * </p>
      * </important>
      * 
      * @return Retrieve all parameters within a hierarchy.</p> <important>
      *         <p>
      *         If a user has access to a path, then the user can access all levels of that path. For example, if a user
-     *         has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
-     *         denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
-     *         and view /a/b.
+     *         has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a
+     *         user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the
+     *         GetParametersByPath API action recursively for <code>/a</code> and view <code>/a/b</code>.
      *         </p>
      */
 
@@ -187,8 +190,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <important>
      * <p>
      * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
-     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
-     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has
+     * explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+     * API action recursively for <code>/a</code> and view <code>/a/b</code>.
      * </p>
      * </important>
      * 
@@ -196,9 +200,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      *        Retrieve all parameters within a hierarchy.</p> <important>
      *        <p>
      *        If a user has access to a path, then the user can access all levels of that path. For example, if a user
-     *        has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
-     *        denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
-     *        and view /a/b.
+     *        has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a
+     *        user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the
+     *        GetParametersByPath API action recursively for <code>/a</code> and view <code>/a/b</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -215,17 +219,18 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <important>
      * <p>
      * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
-     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
-     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has
+     * explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+     * API action recursively for <code>/a</code> and view <code>/a/b</code>.
      * </p>
      * </important>
      * 
      * @return Retrieve all parameters within a hierarchy.</p> <important>
      *         <p>
      *         If a user has access to a path, then the user can access all levels of that path. For example, if a user
-     *         has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
-     *         denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
-     *         and view /a/b.
+     *         has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a
+     *         user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the
+     *         GetParametersByPath API action recursively for <code>/a</code> and view <code>/a/b</code>.
      *         </p>
      */
 

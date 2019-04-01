@@ -31,8 +31,7 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps executed in all specified AWS Regions and accounts for the current Automation
-     * execution.
+     * The total number of steps run in all specified AWS Regions and accounts for the current Automation execution.
      * </p>
      */
     private Integer totalSteps;
@@ -45,8 +44,8 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
     private Integer successSteps;
     /**
      * <p>
-     * The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
-     * Automation execution.
+     * The total number of steps that failed to run in all specified AWS Regions and accounts for the current Automation
+     * execution.
      * </p>
      */
     private Integer failedSteps;
@@ -67,12 +66,11 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps executed in all specified AWS Regions and accounts for the current Automation
-     * execution.
+     * The total number of steps run in all specified AWS Regions and accounts for the current Automation execution.
      * </p>
      * 
      * @param totalSteps
-     *        The total number of steps executed in all specified AWS Regions and accounts for the current Automation
+     *        The total number of steps run in all specified AWS Regions and accounts for the current Automation
      *        execution.
      */
 
@@ -82,11 +80,10 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps executed in all specified AWS Regions and accounts for the current Automation
-     * execution.
+     * The total number of steps run in all specified AWS Regions and accounts for the current Automation execution.
      * </p>
      * 
-     * @return The total number of steps executed in all specified AWS Regions and accounts for the current Automation
+     * @return The total number of steps run in all specified AWS Regions and accounts for the current Automation
      *         execution.
      */
 
@@ -96,12 +93,11 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps executed in all specified AWS Regions and accounts for the current Automation
-     * execution.
+     * The total number of steps run in all specified AWS Regions and accounts for the current Automation execution.
      * </p>
      * 
      * @param totalSteps
-     *        The total number of steps executed in all specified AWS Regions and accounts for the current Automation
+     *        The total number of steps run in all specified AWS Regions and accounts for the current Automation
      *        execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -159,12 +155,12 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
-     * Automation execution.
+     * The total number of steps that failed to run in all specified AWS Regions and accounts for the current Automation
+     * execution.
      * </p>
      * 
      * @param failedSteps
-     *        The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
+     *        The total number of steps that failed to run in all specified AWS Regions and accounts for the current
      *        Automation execution.
      */
 
@@ -174,12 +170,12 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
-     * Automation execution.
+     * The total number of steps that failed to run in all specified AWS Regions and accounts for the current Automation
+     * execution.
      * </p>
      * 
-     * @return The total number of steps that failed to execute in all specified AWS Regions and accounts for the
-     *         current Automation execution.
+     * @return The total number of steps that failed to run in all specified AWS Regions and accounts for the current
+     *         Automation execution.
      */
 
     public Integer getFailedSteps() {
@@ -188,12 +184,12 @@ public class ProgressCounters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
-     * Automation execution.
+     * The total number of steps that failed to run in all specified AWS Regions and accounts for the current Automation
+     * execution.
      * </p>
      * 
      * @param failedSteps
-     *        The total number of steps that failed to execute in all specified AWS Regions and accounts for the current
+     *        The total number of steps that failed to run in all specified AWS Regions and accounts for the current
      *        Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

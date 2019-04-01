@@ -28,7 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification,
  * properties, and optional nested configurations. A classification refers to an application-specific configuration
  * file. Properties are the settings you want to change in that file. For more information, see <a
- * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.
+ * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration" target="_top">AWS API
