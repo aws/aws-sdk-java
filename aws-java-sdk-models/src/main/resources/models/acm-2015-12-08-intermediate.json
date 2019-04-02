@@ -361,7 +361,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidArgsException",
-        "documentation" : null,
+        "documentation" : "<p>One or more of of request parameters specified is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -475,7 +475,7 @@
       "asyncReturnType" : "RenewCertificateResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM PCA certificates with ACM, you must first <a href=\"acm-pca/latest/userguide/PcaPermissions.html\">grant the ACM service principal permission to do so</a>. For more information, see <a href=\"acm/latest/userguide/manuel-renewal.html\">Testing Managed Renewal</a> in the ACM User Guide.</p>",
+      "documentation" : "<p>Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your ACM PCA certificates with ACM, you must first <a href=\"https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html\">grant the ACM service principal permission to do so</a>. For more information, see <a href=\"https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html\">Testing Managed Renewal</a> in the ACM User Guide.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -11426,7 +11426,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>One or more of of request parameters specified is not valid.</p>",
       "enums" : null,
       "errorCode" : "InvalidArgsException",
       "hasHeaderMember" : false,

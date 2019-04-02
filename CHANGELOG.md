@@ -1,3 +1,16 @@
+# __1.11.531__ __2019-04-02__
+## __AWS Certificate Manager__
+  - ### Features
+    - Documentation updates for acm
+
+## __AWS SecurityHub__
+  - ### Features
+    - This update includes 3 additional error codes: AccessDeniedException, InvalidAccessException, and ResourceConflictException. This update also removes the error code ResourceNotFoundException from the GetFindings, GetInvitationsCount, ListInvitations, and ListMembers operations. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Add paginators.
+
 # __1.11.530__ __2019-04-01__
 ## __Amazon Elastic MapReduce__
   - ### Features

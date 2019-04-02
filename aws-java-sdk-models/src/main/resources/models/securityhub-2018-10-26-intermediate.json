@@ -55,7 +55,7 @@
     "defaultEndpoint" : "securityhub.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "securityhub.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>AWS Security Hub provides you with a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices. Security Hub collects security data from across AWS accounts, services, and supported third-party partners and helps you analyze your security trends and identify the highest priority security issues. For more information, see <a href=\"\">AWS Security Hub User Guide</a>. </p>",
+    "documentation" : "<p>AWS Security Hub provides you with a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices. Security Hub collects security data from across AWS accounts, services, and supported third-party partners and helps you analyze your security trends and identify the highest priority security issues. For more information, see <a href=\"https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html\">AWS Security Hub User Guide</a>. </p> <important> <p>Currently, AWS Security Hub is in Preview release.</p> </important>",
     "endpointPrefix" : "securityhub",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -111,6 +111,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -151,6 +155,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -195,6 +203,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -243,6 +255,10 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -287,6 +303,14 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource specified in the request conflicts with an existing resource.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -331,6 +355,14 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource specified in the request conflicts with an existing resource.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -372,9 +404,9 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
-        "exceptionName" : "LimitExceededException",
-        "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
-        "httpStatusCode" : 429
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
@@ -420,9 +452,17 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
+        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -471,6 +511,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -512,6 +556,10 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
@@ -547,7 +595,7 @@
       "asyncReturnType" : "DisableImportFindingsForProductResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Stops you from being able to import findings generated by integrated third-party providers into Security Hub.</p>",
+      "documentation" : "<p>Cancels the subscription that allows a findings-generating solution (product) to import its findings into Security Hub.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -563,6 +611,14 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -603,6 +659,14 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
+        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -643,6 +707,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -692,6 +760,10 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
@@ -727,7 +799,7 @@
       "asyncReturnType" : "EnableImportFindingsForProductResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Enables you to import findings generated by integrated third-party providers into Security Hub.</p>",
+      "documentation" : "<p>Sets up the subscription that enables a findings-generating solution (product) to import its findings into Security Hub.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -739,6 +811,18 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource specified in the request conflicts with an existing resource.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -779,6 +863,18 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "ResourceConflictException",
+        "documentation" : "<p>The resource specified in the request conflicts with an existing resource.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You do not have permission to to perform the action specified in the request.</p>",
+        "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -819,6 +915,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -864,13 +964,13 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
-        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -912,9 +1012,17 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
+        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -956,9 +1064,17 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
+        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1000,13 +1116,13 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
-        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1047,6 +1163,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -1096,6 +1216,10 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
@@ -1144,6 +1268,10 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
@@ -1179,7 +1307,7 @@
       "asyncReturnType" : "ListEnabledProductsForImportResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists all Security Hub-integrated third-party findings providers.</p>",
+      "documentation" : "<p>Lists all findings-generating solutions (products) whose findings you've subscribed to receive in Security Hub.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -1191,6 +1319,10 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1232,13 +1364,13 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
-        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1280,13 +1412,13 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
-        "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1332,6 +1464,10 @@
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
         "httpStatusCode" : 429
       }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The request was rejected because the specified resource cannot be found.</p>",
         "httpStatusCode" : 404
@@ -1375,6 +1511,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InvalidAccessException",
+        "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+        "httpStatusCode" : 401
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>",
@@ -1754,6 +1894,177 @@
         "documentation" : null,
         "simpleType" : "AcceptInvitationResult",
         "variableSetterType" : "AcceptInvitationResult"
+      },
+      "wrapper" : false
+    },
+    "AccessDeniedException" : {
+      "c2jName" : "AccessDeniedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>You do not have permission to to perform the action specified in the request.</p>",
+      "enums" : null,
+      "errorCode" : "AccessDeniedException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Code",
+        "c2jShape" : "NonEmptyString",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCode",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Code",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Code",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Code",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param code */",
+        "setterMethodName" : "setCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Code" : {
+          "c2jName" : "Code",
+          "c2jShape" : "NonEmptyString",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCode",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Code",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Code",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Code",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param code */",
+          "setterMethodName" : "setCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AccessDeniedException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AccessDeniedException",
+        "variableName" : "accessDeniedException",
+        "variableType" : "AccessDeniedException",
+        "documentation" : null,
+        "simpleType" : "AccessDeniedException",
+        "variableSetterType" : "AccessDeniedException"
       },
       "wrapper" : false
     },
@@ -5379,11 +5690,11 @@
         "c2jName" : "Title",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>A finding's title.</p>",
+        "documentation" : "<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTitle",
-        "getterDocumentation" : "/**<p>A finding's title.</p>\n@return A finding's title.*/",
+        "getterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@return A finding's title.</p> <note> <p>In this release, Title is a required property.</p>*/",
         "getterMethodName" : "getTitle",
         "getterModel" : {
           "returnType" : "String",
@@ -5416,7 +5727,7 @@
         "marshallingType" : "STRING",
         "name" : "Title",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.*/",
+        "setterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>*/",
         "setterMethodName" : "setTitle",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5430,13 +5741,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "title",
           "variableType" : "String",
-          "documentation" : "<p>A finding's title.</p>",
+          "documentation" : "<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5445,11 +5756,11 @@
         "c2jName" : "Description",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>A finding's description.</p>",
+        "documentation" : "<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDescription",
-        "getterDocumentation" : "/**<p>A finding's description.</p>\n@return A finding's description.*/",
+        "getterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@return A finding's description.</p> <note> <p>In this release, Description is a required property.</p>*/",
         "getterMethodName" : "getDescription",
         "getterModel" : {
           "returnType" : "String",
@@ -5482,7 +5793,7 @@
         "marshallingType" : "STRING",
         "name" : "Description",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.*/",
+        "setterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5496,13 +5807,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
-          "documentation" : "<p>A finding's description.</p>",
+          "documentation" : "<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7324,11 +7635,11 @@
           "c2jName" : "Description",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>A finding's description.</p>",
+          "documentation" : "<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDescription",
-          "getterDocumentation" : "/**<p>A finding's description.</p>\n@return A finding's description.*/",
+          "getterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@return A finding's description.</p> <note> <p>In this release, Description is a required property.</p>*/",
           "getterMethodName" : "getDescription",
           "getterModel" : {
             "returnType" : "String",
@@ -7361,7 +7672,7 @@
           "marshallingType" : "STRING",
           "name" : "Description",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.*/",
+          "setterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
             "timestampFormat" : null,
@@ -7375,13 +7686,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A finding's description.</p>\n@param description A finding's description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>\n@param description A finding's description.</p> <note> <p>In this release, Description is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
-            "documentation" : "<p>A finding's description.</p>",
+            "documentation" : "<p>A finding's description.</p> <note> <p>In this release, Description is a required property.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9002,11 +9313,11 @@
           "c2jName" : "Title",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>A finding's title.</p>",
+          "documentation" : "<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTitle",
-          "getterDocumentation" : "/**<p>A finding's title.</p>\n@return A finding's title.*/",
+          "getterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@return A finding's title.</p> <note> <p>In this release, Title is a required property.</p>*/",
           "getterMethodName" : "getTitle",
           "getterModel" : {
             "returnType" : "String",
@@ -9039,7 +9350,7 @@
           "marshallingType" : "STRING",
           "name" : "Title",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.*/",
+          "setterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>*/",
           "setterMethodName" : "setTitle",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9053,13 +9364,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A finding's title.</p>\n@param title A finding's title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>\n@param title A finding's title.</p> <note> <p>In this release, Title is a required property.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "title",
             "variableType" : "String",
-            "documentation" : "<p>A finding's title.</p>",
+            "documentation" : "<p>A finding's title.</p> <note> <p>In this release, Title is a required property.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -34814,11 +35125,11 @@
         "c2jName" : "StandardsSubscriptionRequests",
         "c2jShape" : "StandardsSubscriptionRequests",
         "deprecated" : false,
-        "documentation" : "<p>The list of standards that you want to enable.</p>",
+        "documentation" : "<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStandardsSubscriptionRequests",
-        "getterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@return The list of standards that you want to enable.*/",
+        "getterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "getterMethodName" : "getStandardsSubscriptionRequests",
         "getterModel" : {
           "returnType" : "java.util.List<StandardsSubscriptionRequest>",
@@ -34932,7 +35243,7 @@
         "marshallingType" : "LIST",
         "name" : "StandardsSubscriptionRequests",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.*/",
+        "setterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "setterMethodName" : "setStandardsSubscriptionRequests",
         "setterModel" : {
           "timestampFormat" : null,
@@ -34946,13 +35257,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStandardsSubscriptionRequests(java.util.Collection)} or {@link #withStandardsSubscriptionRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStandardsSubscriptionRequests(java.util.Collection)} or {@link #withStandardsSubscriptionRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<StandardsSubscriptionRequest>",
           "variableName" : "standardsSubscriptionRequests",
           "variableType" : "java.util.List<StandardsSubscriptionRequest>",
-          "documentation" : "<p>The list of standards that you want to enable.</p>",
+          "documentation" : "<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "simpleType" : "List<StandardsSubscriptionRequest>",
           "variableSetterType" : "java.util.Collection<StandardsSubscriptionRequest>"
         },
@@ -34963,11 +35274,11 @@
           "c2jName" : "StandardsSubscriptionRequests",
           "c2jShape" : "StandardsSubscriptionRequests",
           "deprecated" : false,
-          "documentation" : "<p>The list of standards that you want to enable.</p>",
+          "documentation" : "<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStandardsSubscriptionRequests",
-          "getterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@return The list of standards that you want to enable.*/",
+          "getterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "getterMethodName" : "getStandardsSubscriptionRequests",
           "getterModel" : {
             "returnType" : "java.util.List<StandardsSubscriptionRequest>",
@@ -35081,7 +35392,7 @@
           "marshallingType" : "LIST",
           "name" : "StandardsSubscriptionRequests",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.*/",
+          "setterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "setterMethodName" : "setStandardsSubscriptionRequests",
           "setterModel" : {
             "timestampFormat" : null,
@@ -35095,13 +35406,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStandardsSubscriptionRequests(java.util.Collection)} or {@link #withStandardsSubscriptionRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStandardsSubscriptionRequests(java.util.Collection)} or {@link #withStandardsSubscriptionRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param standardsSubscriptionRequests The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<StandardsSubscriptionRequest>",
             "variableName" : "standardsSubscriptionRequests",
             "variableType" : "java.util.List<StandardsSubscriptionRequest>",
-            "documentation" : "<p>The list of standards that you want to enable.</p>",
+            "documentation" : "<p>The list of standards that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
             "simpleType" : "List<StandardsSubscriptionRequest>",
             "variableSetterType" : "java.util.Collection<StandardsSubscriptionRequest>"
           },
@@ -50079,6 +50390,177 @@
       },
       "wrapper" : false
     },
+    "InvalidAccessException" : {
+      "c2jName" : "InvalidAccessException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>AWS Security Hub is not enabled for the account used to make this request.</p>",
+      "enums" : null,
+      "errorCode" : "InvalidAccessException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Code",
+        "c2jShape" : "NonEmptyString",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCode",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Code",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Code",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Code",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param code */",
+        "setterMethodName" : "setCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Code" : {
+          "c2jName" : "Code",
+          "c2jShape" : "NonEmptyString",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCode",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Code",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Code",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Code",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param code */",
+          "setterMethodName" : "setCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InvalidAccessException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "InvalidAccessException",
+        "variableName" : "invalidAccessException",
+        "variableType" : "InvalidAccessException",
+        "documentation" : null,
+        "simpleType" : "InvalidAccessException",
+        "variableSetterType" : "InvalidAccessException"
+      },
+      "wrapper" : false
+    },
     "InvalidInputException" : {
       "c2jName" : "InvalidInputException",
       "customization" : {
@@ -61980,6 +62462,177 @@
       },
       "wrapper" : false
     },
+    "ResourceConflictException" : {
+      "c2jName" : "ResourceConflictException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The resource specified in the request conflicts with an existing resource.</p>",
+      "enums" : null,
+      "errorCode" : "ResourceConflictException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Code",
+        "c2jShape" : "NonEmptyString",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCode",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Code",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Code",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Code",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param code */",
+        "setterMethodName" : "setCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "code",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Code" : {
+          "c2jName" : "Code",
+          "c2jShape" : "NonEmptyString",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCode",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Code",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Code",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Code",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param code */",
+          "setterMethodName" : "setCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "code",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ResourceConflictException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ResourceConflictException",
+        "variableName" : "resourceConflictException",
+        "variableType" : "ResourceConflictException",
+        "documentation" : null,
+        "simpleType" : "ResourceConflictException",
+        "variableSetterType" : "ResourceConflictException"
+      },
+      "wrapper" : false
+    },
     "ResourceDetails" : {
       "c2jName" : "ResourceDetails",
       "customization" : {
@@ -64125,11 +64778,11 @@
         "c2jName" : "StandardsArn",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>The ARN of a standard.</p>",
+        "documentation" : "<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStandardsArn",
-        "getterDocumentation" : "/**<p>The ARN of a standard.</p>\n@return The ARN of a standard.*/",
+        "getterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "getterMethodName" : "getStandardsArn",
         "getterModel" : {
           "returnType" : "String",
@@ -64162,7 +64815,7 @@
         "marshallingType" : "STRING",
         "name" : "StandardsArn",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.*/",
+        "setterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "setterMethodName" : "setStandardsArn",
         "setterModel" : {
           "timestampFormat" : null,
@@ -64176,13 +64829,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "standardsArn",
           "variableType" : "String",
-          "documentation" : "<p>The ARN of a standard.</p>",
+          "documentation" : "<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -64406,11 +65059,11 @@
           "c2jName" : "StandardsArn",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>The ARN of a standard.</p>",
+          "documentation" : "<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStandardsArn",
-          "getterDocumentation" : "/**<p>The ARN of a standard.</p>\n@return The ARN of a standard.*/",
+          "getterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "getterMethodName" : "getStandardsArn",
           "getterModel" : {
             "returnType" : "String",
@@ -64443,7 +65096,7 @@
           "marshallingType" : "STRING",
           "name" : "StandardsArn",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.*/",
+          "setterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "setterMethodName" : "setStandardsArn",
           "setterModel" : {
             "timestampFormat" : null,
@@ -64457,13 +65110,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The ARN of a standard.</p>\n@param standardsArn The ARN of a standard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "standardsArn",
             "variableType" : "String",
-            "documentation" : "<p>The ARN of a standard.</p>",
+            "documentation" : "<p>The ARN of a standard.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -64794,11 +65447,11 @@
         "c2jName" : "StandardsArn",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>The ARN of the standard that you want to enable.</p>",
+        "documentation" : "<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStandardsArn",
-        "getterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@return The ARN of the standard that you want to enable.*/",
+        "getterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "getterMethodName" : "getStandardsArn",
         "getterModel" : {
           "returnType" : "String",
@@ -64831,7 +65484,7 @@
         "marshallingType" : "STRING",
         "name" : "StandardsArn",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.*/",
+        "setterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
         "setterMethodName" : "setStandardsArn",
         "setterModel" : {
           "timestampFormat" : null,
@@ -64845,13 +65498,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "standardsArn",
           "variableType" : "String",
-          "documentation" : "<p>The ARN of the standard that you want to enable.</p>",
+          "documentation" : "<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -65009,11 +65662,11 @@
           "c2jName" : "StandardsArn",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>The ARN of the standard that you want to enable.</p>",
+          "documentation" : "<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStandardsArn",
-          "getterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@return The ARN of the standard that you want to enable.*/",
+          "getterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@return The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "getterMethodName" : "getStandardsArn",
           "getterModel" : {
             "returnType" : "String",
@@ -65046,7 +65699,7 @@
           "marshallingType" : "STRING",
           "name" : "StandardsArn",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.*/",
+          "setterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>*/",
           "setterMethodName" : "setStandardsArn",
           "setterModel" : {
             "timestampFormat" : null,
@@ -65060,13 +65713,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p>\n@param standardsArn The ARN of the standard that you want to enable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>\n@param standardsArn The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "standardsArn",
             "variableType" : "String",
-            "documentation" : "<p>The ARN of the standard that you want to enable.</p>",
+            "documentation" : "<p>The ARN of the standard that you want to enable.</p> <important> <p>In this release, Security Hub only supports the CIS AWS Foundations standard. </p> <p>Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p> </important>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

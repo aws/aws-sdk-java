@@ -573,9 +573,10 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * <p>
      * Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this
      * operation. In order to renew your ACM PCA certificates with ACM, you must first <a
-     * href="acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For
-     * more information, see <a href="acm/latest/userguide/manuel-renewal.html">Testing Managed Renewal</a> in the ACM
-     * User Guide.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
+     * permission to do so</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the
+     * ACM User Guide.
      * </p>
      * 
      * @param renewCertificateRequest
@@ -590,9 +591,10 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * <p>
      * Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this
      * operation. In order to renew your ACM PCA certificates with ACM, you must first <a
-     * href="acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For
-     * more information, see <a href="acm/latest/userguide/manuel-renewal.html">Testing Managed Renewal</a> in the ACM
-     * User Guide.
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
+     * permission to do so</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the
+     * ACM User Guide.
      * </p>
      * 
      * @param renewCertificateRequest

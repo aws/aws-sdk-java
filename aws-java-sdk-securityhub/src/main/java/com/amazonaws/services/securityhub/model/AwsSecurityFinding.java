@@ -131,12 +131,22 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's title.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Title is a required property.
+     * </p>
+     * </note>
      */
     private String title;
     /**
      * <p>
      * A finding's description.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Description is a required property.
+     * </p>
+     * </note>
      */
     private String description;
     /**
@@ -876,9 +886,17 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's title.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Title is a required property.
+     * </p>
+     * </note>
      * 
      * @param title
-     *        A finding's title.
+     *        A finding's title.</p> <note>
+     *        <p>
+     *        In this release, Title is a required property.
+     *        </p>
      */
 
     public void setTitle(String title) {
@@ -889,8 +907,16 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's title.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Title is a required property.
+     * </p>
+     * </note>
      * 
-     * @return A finding's title.
+     * @return A finding's title.</p> <note>
+     *         <p>
+     *         In this release, Title is a required property.
+     *         </p>
      */
 
     public String getTitle() {
@@ -901,9 +927,17 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's title.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Title is a required property.
+     * </p>
+     * </note>
      * 
      * @param title
-     *        A finding's title.
+     *        A finding's title.</p> <note>
+     *        <p>
+     *        In this release, Title is a required property.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,9 +950,17 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's description.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Description is a required property.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        A finding's description.
+     *        A finding's description.</p> <note>
+     *        <p>
+     *        In this release, Description is a required property.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -929,8 +971,16 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's description.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Description is a required property.
+     * </p>
+     * </note>
      * 
-     * @return A finding's description.
+     * @return A finding's description.</p> <note>
+     *         <p>
+     *         In this release, Description is a required property.
+     *         </p>
      */
 
     public String getDescription() {
@@ -941,9 +991,17 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * A finding's description.
      * </p>
+     * <note>
+     * <p>
+     * In this release, Description is a required property.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        A finding's description.
+     *        A finding's description.</p> <note>
+     *        <p>
+     *        In this release, Description is a required property.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

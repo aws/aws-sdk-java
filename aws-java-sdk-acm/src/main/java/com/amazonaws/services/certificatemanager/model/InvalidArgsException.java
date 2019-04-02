@@ -15,7 +15,9 @@ package com.amazonaws.services.certificatemanager.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * One or more of of request parameters specified is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidArgsException extends com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
