@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.comprehend.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateEntityRecognizerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecognizerName").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> INPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +64,7 @@ public class CreateEntityRecognizerRequestMarshaller {
         try {
             protocolMarshaller.marshall(createEntityRecognizerRequest.getRecognizerName(), RECOGNIZERNAME_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(createEntityRecognizerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getLanguageCode(), LANGUAGECODE_BINDING);

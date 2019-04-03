@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NodeOverridesMarshaller {
 
+    private static final MarshallingInfo<Integer> NUMNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numNodes").build();
     private static final MarshallingInfo<List> NODEPROPERTYOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodePropertyOverrides").build();
 
@@ -47,6 +49,7 @@ public class NodeOverridesMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(nodeOverrides.getNumNodes(), NUMNODES_BINDING);
             protocolMarshaller.marshall(nodeOverrides.getNodePropertyOverrides(), NODEPROPERTYOVERRIDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

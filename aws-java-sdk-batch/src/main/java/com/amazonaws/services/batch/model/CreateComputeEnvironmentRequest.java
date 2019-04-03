@@ -35,7 +35,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      */
@@ -123,13 +123,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of the compute environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
@@ -141,12 +141,12 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The type of the compute environment. For more information, see <a
-     *         href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *         Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
@@ -158,13 +158,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of the compute environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType
@@ -178,13 +178,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of the compute environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
@@ -196,13 +196,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
      *        The type of the compute environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType

@@ -1,3 +1,12 @@
+# __1.11.532__ __2019-04-03__
+## __AWS Batch__
+  - ### Features
+    - Support for GPU resource requirement in RegisterJobDefinition and SubmitJob
+
+## __Amazon Comprehend__
+  - ### Features
+    - With this release AWS Comprehend  adds tagging support for document-classifiers and entity-recognizers.
+
 # __1.11.531__ __2019-04-02__
 ## __AWS Certificate Manager__
   - ### Features

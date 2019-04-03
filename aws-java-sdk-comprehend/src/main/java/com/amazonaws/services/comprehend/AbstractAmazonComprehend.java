@@ -173,6 +173,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTopicsDetectionJobsResult listTopicsDetectionJobs(ListTopicsDetectionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -234,6 +239,16 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public StopTrainingEntityRecognizerResult stopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

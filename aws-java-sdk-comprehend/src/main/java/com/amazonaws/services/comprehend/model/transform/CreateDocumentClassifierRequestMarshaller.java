@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.comprehend.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateDocumentClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentClassifierName").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> INPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +64,7 @@ public class CreateDocumentClassifierRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDocumentClassifierRequest.getDocumentClassifierName(), DOCUMENTCLASSIFIERNAME_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(createDocumentClassifierRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getLanguageCode(), LANGUAGECODE_BINDING);

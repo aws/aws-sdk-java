@@ -108,7 +108,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
@@ -790,7 +790,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -800,7 +800,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *        grouping of instances within a single Availability Zone with high network flow potential. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -814,7 +814,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -823,7 +823,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *         grouping of instances within a single Availability Zone with high network flow potential. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -837,7 +837,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -847,7 +847,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *        grouping of instances within a single Availability Zone with high network flow potential. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

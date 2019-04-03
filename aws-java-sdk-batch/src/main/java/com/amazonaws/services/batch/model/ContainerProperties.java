@@ -203,6 +203,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     */
+    private java.util.List<ResourceRequirement> resourceRequirements;
 
     /**
      * <p>
@@ -1560,6 +1567,84 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @return The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *         <code>GPU</code>.
+     */
+
+    public java.util.List<ResourceRequirement> getResourceRequirements() {
+        return resourceRequirements;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     */
+
+    public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        if (resourceRequirements == null) {
+            this.resourceRequirements = null;
+            return;
+        }
+
+        this.resourceRequirements = new java.util.ArrayList<ResourceRequirement>(resourceRequirements);
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRequirements(java.util.Collection)} or {@link #withResourceRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withResourceRequirements(ResourceRequirement... resourceRequirements) {
+        if (this.resourceRequirements == null) {
+            setResourceRequirements(new java.util.ArrayList<ResourceRequirement>(resourceRequirements.length));
+        }
+        for (ResourceRequirement ele : resourceRequirements) {
+            this.resourceRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        setResourceRequirements(resourceRequirements);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1596,7 +1681,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         if (getUser() != null)
             sb.append("User: ").append(getUser()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getResourceRequirements() != null)
+            sb.append("ResourceRequirements: ").append(getResourceRequirements());
         sb.append("}");
         return sb.toString();
     }
@@ -1663,6 +1750,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getResourceRequirements() == null ^ this.getResourceRequirements() == null)
+            return false;
+        if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
+            return false;
         return true;
     }
 
@@ -1684,6 +1775,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getUlimits() == null) ? 0 : getUlimits().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
         return hashCode;
     }
 

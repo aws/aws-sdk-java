@@ -66,6 +66,8 @@ public class ContainerDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<List> NETWORKINTERFACES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaces").build();
+    private static final MarshallingInfo<List> RESOURCEREQUIREMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRequirements").build();
 
     private static final ContainerDetailMarshaller instance = new ContainerDetailMarshaller();
 
@@ -102,6 +104,7 @@ public class ContainerDetailMarshaller {
             protocolMarshaller.marshall(containerDetail.getLogStreamName(), LOGSTREAMNAME_BINDING);
             protocolMarshaller.marshall(containerDetail.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(containerDetail.getNetworkInterfaces(), NETWORKINTERFACES_BINDING);
+            protocolMarshaller.marshall(containerDetail.getResourceRequirements(), RESOURCEREQUIREMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

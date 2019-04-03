@@ -103,7 +103,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -642,7 +642,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -652,7 +652,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -666,7 +666,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -675,7 +675,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *         timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *         configuration as the parent job. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *         the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -689,7 +689,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -699,7 +699,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

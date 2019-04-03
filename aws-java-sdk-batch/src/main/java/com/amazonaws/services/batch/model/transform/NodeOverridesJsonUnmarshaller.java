@@ -48,6 +48,10 @@ public class NodeOverridesJsonUnmarshaller implements Unmarshaller<NodeOverrides
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("numNodes", targetDepth)) {
+                    context.nextToken();
+                    nodeOverrides.setNumNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("nodePropertyOverrides", targetDepth)) {
                     context.nextToken();
                     nodeOverrides.setNodePropertyOverrides(new ListUnmarshaller<NodePropertyOverride>(NodePropertyOverrideJsonUnmarshaller.getInstance())

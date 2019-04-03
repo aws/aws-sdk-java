@@ -86,7 +86,7 @@ public class TopicsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * access to your job data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -502,12 +502,12 @@ public class TopicsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * access to your job data.
      * </p>
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        read access to your job data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -517,11 +517,11 @@ public class TopicsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * access to your job data.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     *         Comprehend read access to your job data.
      */
 
     public String getDataAccessRoleArn() {
@@ -531,12 +531,12 @@ public class TopicsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * access to your job data.
      * </p>
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        read access to your job data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

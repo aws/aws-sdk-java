@@ -54,6 +54,8 @@ public class ContainerPropertiesMarshaller {
             .marshallLocationName("user").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
+    private static final MarshallingInfo<List> RESOURCEREQUIREMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRequirements").build();
 
     private static final ContainerPropertiesMarshaller instance = new ContainerPropertiesMarshaller();
 
@@ -84,6 +86,7 @@ public class ContainerPropertiesMarshaller {
             protocolMarshaller.marshall(containerProperties.getUlimits(), ULIMITS_BINDING);
             protocolMarshaller.marshall(containerProperties.getUser(), USER_BINDING);
             protocolMarshaller.marshall(containerProperties.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(containerProperties.getResourceRequirements(), RESOURCEREQUIREMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -188,6 +188,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws ResourceInUseException
      *         The specified name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource).
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
@@ -219,6 +221,8 @@ public interface AmazonComprehend {
      *         The request is invalid.
      * @throws ResourceInUseException
      *         The specified name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource).
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
@@ -759,6 +763,26 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Lists all tags associated with a given Amazon Comprehend resource. Up to the maximum number of tags allowed per
+     * resource will be displayed.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Gets a list of the topic detection jobs that you have submitted.
      * </p>
      * 
@@ -1102,6 +1126,54 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StopTrainingEntityRecognizerResult stopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest stopTrainingEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
+     * added to a resource to indicate its use by a particular department.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource).
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Comprehend resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws TooManyTagKeysException
+     *         The request contains more tag keys than can be associated with a resource (50 tag keys per resource).
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -36,7 +36,8 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
     private Integer numNodes;
     /**
      * <p>
-     * Specifies the node index for the main node of a multi-node parallel job.
+     * Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than
+     * the number of nodes.
      * </p>
      */
     private Integer mainNode;
@@ -89,11 +90,13 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the node index for the main node of a multi-node parallel job.
+     * Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than
+     * the number of nodes.
      * </p>
      * 
      * @param mainNode
-     *        Specifies the node index for the main node of a multi-node parallel job.
+     *        Specifies the node index for the main node of a multi-node parallel job. This node index value must be
+     *        fewer than the number of nodes.
      */
 
     public void setMainNode(Integer mainNode) {
@@ -102,10 +105,12 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the node index for the main node of a multi-node parallel job.
+     * Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than
+     * the number of nodes.
      * </p>
      * 
-     * @return Specifies the node index for the main node of a multi-node parallel job.
+     * @return Specifies the node index for the main node of a multi-node parallel job. This node index value must be
+     *         fewer than the number of nodes.
      */
 
     public Integer getMainNode() {
@@ -114,11 +119,13 @@ public class NodeProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the node index for the main node of a multi-node parallel job.
+     * Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than
+     * the number of nodes.
      * </p>
      * 
      * @param mainNode
-     *        Specifies the node index for the main node of a multi-node parallel job.
+     *        Specifies the node index for the main node of a multi-node parallel job. This node index value must be
+     *        fewer than the number of nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
