@@ -28,7 +28,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -217,7 +217,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -237,7 +237,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param path
      *        The path for the server certificate. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows
@@ -261,7 +261,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -280,7 +280,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </note>
      * 
      * @return The path for the server certificate. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows
@@ -304,7 +304,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -324,7 +324,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param path
      *        The path for the server certificate. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows

@@ -61,7 +61,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      */
@@ -79,7 +79,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      */
@@ -122,7 +122,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
@@ -135,7 +136,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      */
     public EnableMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
@@ -298,7 +300,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -313,7 +315,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      */
 
@@ -334,7 +337,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -348,7 +351,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *         then wait too long to submit the request, the MFA device successfully associates with the user but the
      *         MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a
      *         short period of time. If this happens, you can <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
      *         device</a>.
      *         </p>
      */
@@ -370,7 +373,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -385,7 +388,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -408,7 +412,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -423,7 +427,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      */
 
@@ -444,7 +449,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -458,7 +463,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *         then wait too long to submit the request, the MFA device successfully associates with the user but the
      *         MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a
      *         short period of time. If this happens, you can <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
      *         device</a>.
      *         </p>
      */
@@ -480,7 +485,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
      * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
      * </p>
      * </important>
      * 
@@ -495,7 +500,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
      *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
      *        period of time. If this happens, you can <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

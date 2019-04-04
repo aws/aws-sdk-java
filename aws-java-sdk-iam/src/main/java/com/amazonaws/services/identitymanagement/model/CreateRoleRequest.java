@@ -28,7 +28,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -103,7 +103,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -118,8 +118,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -133,7 +133,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -148,7 +148,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -167,7 +167,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -181,7 +181,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -200,7 +200,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -215,7 +215,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -543,7 +543,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -559,8 +559,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      */
 
     public void setMaxSessionDuration(Integer maxSessionDuration) {
@@ -580,7 +580,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -595,7 +595,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
-     *         information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+     *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
      *         Roles</a> in the <i>IAM User Guide</i>.
      */
 
@@ -616,7 +616,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -632,8 +632,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -686,8 +686,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -698,7 +698,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *         associated value. For more information about tagging, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *         <i>IAM User Guide</i>.</p> <note>
      *         <p>
      *         If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -717,8 +717,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -730,7 +730,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -751,8 +751,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -769,7 +769,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -792,8 +792,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -805,7 +805,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire

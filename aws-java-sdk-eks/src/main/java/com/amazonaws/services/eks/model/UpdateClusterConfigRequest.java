@@ -35,6 +35,21 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     private VpcConfigRequest resourcesVpcConfig;
     /**
      * <p>
+     * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
+     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
+     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
+     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * </note>
+     */
+    private Logging logging;
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
@@ -108,6 +123,97 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
+     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
+     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
+     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * </note>
+     * 
+     * @param logging
+     *        Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
+     *        default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control
+     *        Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+     *        <p>
+     *        CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs.
+     *        For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     *        Pricing</a>.
+     *        </p>
+     */
+
+    public void setLogging(Logging logging) {
+        this.logging = logging;
+    }
+
+    /**
+     * <p>
+     * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
+     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
+     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
+     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * </note>
+     * 
+     * @return Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
+     *         default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster
+     *         Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+     *         <p>
+     *         CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs.
+     *         For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     *         Pricing</a>.
+     *         </p>
+     */
+
+    public Logging getLogging() {
+        return this.logging;
+    }
+
+    /**
+     * <p>
+     * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
+     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
+     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
+     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * </note>
+     * 
+     * @param logging
+     *        Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
+     *        default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control
+     *        Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
+     *        <p>
+     *        CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs.
+     *        For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     *        Pricing</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClusterConfigRequest withLogging(Logging logging) {
+        setLogging(logging);
+        return this;
+    }
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
@@ -162,6 +268,8 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("Name: ").append(getName()).append(",");
         if (getResourcesVpcConfig() != null)
             sb.append("ResourcesVpcConfig: ").append(getResourcesVpcConfig()).append(",");
+        if (getLogging() != null)
+            sb.append("Logging: ").append(getLogging()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -186,6 +294,10 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getResourcesVpcConfig() != null && other.getResourcesVpcConfig().equals(this.getResourcesVpcConfig()) == false)
             return false;
+        if (other.getLogging() == null ^ this.getLogging() == null)
+            return false;
+        if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -200,6 +312,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getResourcesVpcConfig() == null) ? 0 : getResourcesVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

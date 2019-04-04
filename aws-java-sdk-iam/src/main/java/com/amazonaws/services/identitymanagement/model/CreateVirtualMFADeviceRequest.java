@@ -28,7 +28,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The path for the virtual MFA device. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -57,7 +57,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The path for the virtual MFA device. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -72,7 +72,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param path
      *        The path for the virtual MFA device. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -91,7 +91,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The path for the virtual MFA device. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -105,7 +105,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return The path for the virtual MFA device. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -124,7 +124,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The path for the virtual MFA device. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -139,7 +139,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param path
      *        The path for the virtual MFA device. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).

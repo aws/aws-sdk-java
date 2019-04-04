@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum UpdateType {
 
     VersionUpdate("VersionUpdate"),
-    EndpointAccessUpdate("EndpointAccessUpdate");
+    EndpointAccessUpdate("EndpointAccessUpdate"),
+    LoggingUpdate("LoggingUpdate");
 
     private String value;
 

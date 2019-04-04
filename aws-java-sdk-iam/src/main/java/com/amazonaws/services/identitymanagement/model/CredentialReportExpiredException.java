@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * The request was rejected because the most recent credential report has expired. To generate a new credential report,
  * use <a>GenerateCredentialReport</a>. For more information about credential report expiration, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the
  * <i>IAM User Guide</i>.
  * </p>
  */

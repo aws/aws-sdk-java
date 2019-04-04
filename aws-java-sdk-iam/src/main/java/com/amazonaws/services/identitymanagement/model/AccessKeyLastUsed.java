@@ -102,7 +102,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      */
@@ -422,7 +422,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
@@ -448,8 +448,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
-     *        Services General Reference.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
+     *        Web Services General Reference.
      */
 
     public void setRegion(String region) {
@@ -480,7 +480,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
@@ -505,7 +505,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
      *         Web Services General Reference.
      */
 
@@ -537,7 +537,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
@@ -563,8 +563,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
-     *        Services General Reference.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
+     *        Web Services General Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

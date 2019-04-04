@@ -38,7 +38,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
     /**
      * <p>
      * The policy type. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -52,7 +52,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -63,7 +63,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -112,13 +112,13 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
     /**
      * <p>
      * The policy type. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @see PolicyType
      */
@@ -130,12 +130,12 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
     /**
      * <p>
      * The policy type. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The policy type. For more information about these policy types, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *         Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @see PolicyType
      */
@@ -147,13 +147,13 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
     /**
      * <p>
      * The policy type. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
@@ -167,13 +167,13 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
     /**
      * <p>
      * The policy type. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param policyType
      *        The policy type. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
@@ -217,7 +217,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -226,7 +226,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *        attached.</p>
      *        <p>
      *        This field is null for managed policies. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @see PolicyOwnerEntityType
      */
@@ -242,7 +242,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -250,7 +250,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *         is attached.</p>
      *         <p>
      *         This field is null for managed policies. For more information about these policy types, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *         Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @see PolicyOwnerEntityType
      */
@@ -266,7 +266,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -275,7 +275,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *        attached.</p>
      *        <p>
      *        This field is null for managed policies. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyOwnerEntityType
@@ -293,7 +293,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -302,7 +302,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *        attached.</p>
      *        <p>
      *        This field is null for managed policies. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyOwnerEntityType
@@ -319,7 +319,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -327,7 +327,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *        The name of the entity (user or role) to which the inline policy is attached.</p>
      *        <p>
      *        This field is null for managed policies. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -341,14 +341,14 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The name of the entity (user or role) to which the inline policy is attached.</p>
      *         <p>
      *         This field is null for managed policies. For more information about these policy types, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *         Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -362,7 +362,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null for managed policies. For more information about these policy types, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -370,7 +370,7 @@ public class PolicyGrantingServiceAccess implements Serializable, Cloneable {
      *        The name of the entity (user or role) to which the inline policy is attached.</p>
      *        <p>
      *        This field is null for managed policies. For more information about these policy types, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      *        Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Amazon EKS cluster VPC configuration request.
+ * An object representing the VPC configuration to use for an Amazon EKS cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigRequest" target="_top">AWS API

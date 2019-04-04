@@ -23,7 +23,8 @@ public enum UpdateParamType {
     Version("Version"),
     PlatformVersion("PlatformVersion"),
     EndpointPrivateAccess("EndpointPrivateAccess"),
-    EndpointPublicAccess("EndpointPublicAccess");
+    EndpointPublicAccess("EndpointPublicAccess"),
+    ClusterLogging("ClusterLogging");
 
     private String value;
 
