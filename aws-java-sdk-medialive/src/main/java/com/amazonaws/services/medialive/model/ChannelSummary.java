@@ -29,6 +29,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     /** The unique arn of the channel. */
     private String arn;
     /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     */
+    private String channelClass;
+    /**
      * A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types
      * (HLS, for example), there is one destination per packager.
      */
@@ -85,6 +90,65 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     public ChannelSummary withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @see ChannelClass
+     */
+
+    public void setChannelClass(String channelClass) {
+        this.channelClass = channelClass;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @return The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *         with one pipeline.
+     * @see ChannelClass
+     */
+
+    public String getChannelClass() {
+        return this.channelClass;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelClass
+     */
+
+    public ChannelSummary withChannelClass(String channelClass) {
+        setChannelClass(channelClass);
+        return this;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelClass
+     */
+
+    public ChannelSummary withChannelClass(ChannelClass channelClass) {
+        this.channelClass = channelClass.toString();
         return this;
     }
 
@@ -605,6 +669,8 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getChannelClass() != null)
+            sb.append("ChannelClass: ").append(getChannelClass()).append(",");
         if (getDestinations() != null)
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getEgressEndpoints() != null)
@@ -644,6 +710,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getChannelClass() == null ^ this.getChannelClass() == null)
+            return false;
+        if (other.getChannelClass() != null && other.getChannelClass().equals(this.getChannelClass()) == false)
             return false;
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
@@ -698,6 +768,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getChannelClass() == null) ? 0 : getChannelClass().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEgressEndpoints() == null) ? 0 : getEgressEndpoints().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());

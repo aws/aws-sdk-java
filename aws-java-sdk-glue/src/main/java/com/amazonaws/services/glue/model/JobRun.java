@@ -148,6 +148,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * <p>
+     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * </p>
+     * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
      * job, or an Apache Spark ETL job:
      * </p>
@@ -173,6 +176,41 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NotificationProperty notificationProperty;
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String workerType;
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+     * </p>
+     * <p>
+     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * </p>
+     */
+    private Integer numberOfWorkers;
     /**
      * <p>
      * The name of the SecurityConfiguration structure to be used with this job run.
@@ -999,6 +1037,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * <p>
+     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * </p>
+     * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
      * job, or an Apache Spark ETL job:
      * </p>
@@ -1021,6 +1062,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
      *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        <p>
+     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
      *        shell job, or an Apache Spark ETL job:
@@ -1051,6 +1095,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * <p>
+     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * </p>
+     * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
      * job, or an Apache Spark ETL job:
      * </p>
@@ -1073,6 +1120,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *         relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
      *         For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing
      *         page</a>.</p>
+     *         <p>
+     *         Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *         </p>
      *         <p>
      *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
      *         shell job, or an Apache Spark ETL job:
@@ -1103,6 +1153,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * <p>
+     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * </p>
+     * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
      * job, or an Apache Spark ETL job:
      * </p>
@@ -1125,6 +1178,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
      *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        <p>
+     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
      *        shell job, or an Apache Spark ETL job:
@@ -1187,6 +1243,280 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     public JobRun withNotificationProperty(NotificationProperty notificationProperty) {
         setNotificationProperty(notificationProperty);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
+     *        G.2X.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
+     *        and 2 executors per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     *        executor per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
+     *        1 executor per worker.
+     *        </p>
+     *        </li>
+     * @see WorkerType
+     */
+
+    public void setWorkerType(String workerType) {
+        this.workerType = workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
+     *         G.2X.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
+     *         and 2 executors per worker.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and
+     *         1 executor per worker.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
+     *         1 executor per worker.
+     *         </p>
+     *         </li>
+     * @see WorkerType
+     */
+
+    public String getWorkerType() {
+        return this.workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
+     *        G.2X.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
+     *        and 2 executors per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     *        executor per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
+     *        1 executor per worker.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public JobRun withWorkerType(String workerType) {
+        setWorkerType(workerType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
+     * executor per worker.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
+     *        G.2X.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
+     *        and 2 executors per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
+     *        executor per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
+     *        1 executor per worker.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public JobRun withWorkerType(WorkerType workerType) {
+        this.workerType = workerType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+     * </p>
+     * <p>
+     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+     *        <p>
+     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     */
+
+    public void setNumberOfWorkers(Integer numberOfWorkers) {
+        this.numberOfWorkers = numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+     * </p>
+     * <p>
+     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * </p>
+     * 
+     * @return The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+     *         <p>
+     *         The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     */
+
+    public Integer getNumberOfWorkers() {
+        return this.numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+     * </p>
+     * <p>
+     * The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+     *        <p>
+     *        The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withNumberOfWorkers(Integer numberOfWorkers) {
+        setNumberOfWorkers(numberOfWorkers);
         return this;
     }
 
@@ -1340,6 +1670,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getNotificationProperty() != null)
             sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
+        if (getWorkerType() != null)
+            sb.append("WorkerType: ").append(getWorkerType()).append(",");
+        if (getNumberOfWorkers() != null)
+            sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
         if (getSecurityConfiguration() != null)
             sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getLogGroupName() != null)
@@ -1426,6 +1760,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
+        if (other.getWorkerType() == null ^ this.getWorkerType() == null)
+            return false;
+        if (other.getWorkerType() != null && other.getWorkerType().equals(this.getWorkerType()) == false)
+            return false;
+        if (other.getNumberOfWorkers() == null ^ this.getNumberOfWorkers() == null)
+            return false;
+        if (other.getNumberOfWorkers() != null && other.getNumberOfWorkers().equals(this.getNumberOfWorkers()) == false)
+            return false;
         if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
             return false;
         if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
@@ -1459,6 +1801,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         return hashCode;

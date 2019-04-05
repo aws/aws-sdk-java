@@ -25,17 +25,31 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags currently associated with the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The tags currently associated with the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
-     * @return The tags currently associated with the AWS IoT 1-Click resource.
+     * @return A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *         "key2": "value2"} }. For more information, see <a
+     *         href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *         Strategies</a>.</p>
+     *         <p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +58,20 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags currently associated with the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
      * @param tags
-     *        The tags currently associated with the AWS IoT 1-Click resource.
+     *        A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *        "key2": "value2"} }. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +80,20 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags currently associated with the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
      * @param tags
-     *        The tags currently associated with the AWS IoT 1-Click resource.
+     *        A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *        "key2": "value2"} }. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

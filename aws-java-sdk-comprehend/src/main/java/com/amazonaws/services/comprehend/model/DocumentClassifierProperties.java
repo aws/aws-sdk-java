@@ -89,6 +89,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     private DocumentClassifierInputDataConfig inputDataConfig;
     /**
      * <p>
+     * Provides output results configuration parameters for custom classifier jobs.
+     * </p>
+     */
+    private DocumentClassifierOutputDataConfig outputDataConfig;
+    /**
+     * <p>
      * Information about the document classifier, including the number of documents used for training the classifier,
      * the number of documents used for test the classifier, and an accuracy rating.
      * </p>
@@ -557,6 +563,46 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * Provides output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Provides output results configuration parameters for custom classifier jobs.
+     */
+
+    public void setOutputDataConfig(DocumentClassifierOutputDataConfig outputDataConfig) {
+        this.outputDataConfig = outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Provides output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @return Provides output results configuration parameters for custom classifier jobs.
+     */
+
+    public DocumentClassifierOutputDataConfig getOutputDataConfig() {
+        return this.outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Provides output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Provides output results configuration parameters for custom classifier jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierProperties withOutputDataConfig(DocumentClassifierOutputDataConfig outputDataConfig) {
+        setOutputDataConfig(outputDataConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the document classifier, including the number of documents used for training the classifier,
      * the number of documents used for test the classifier, and an accuracy rating.
      * </p>
@@ -804,6 +850,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
             sb.append("TrainingEndTime: ").append(getTrainingEndTime()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
+        if (getOutputDataConfig() != null)
+            sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getClassifierMetadata() != null)
             sb.append("ClassifierMetadata: ").append(getClassifierMetadata()).append(",");
         if (getDataAccessRoleArn() != null)
@@ -860,6 +908,10 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
             return false;
+        if (other.getOutputDataConfig() == null ^ this.getOutputDataConfig() == null)
+            return false;
+        if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
+            return false;
         if (other.getClassifierMetadata() == null ^ this.getClassifierMetadata() == null)
             return false;
         if (other.getClassifierMetadata() != null && other.getClassifierMetadata().equals(this.getClassifierMetadata()) == false)
@@ -889,6 +941,7 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getTrainingStartTime() == null) ? 0 : getTrainingStartTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingEndTime() == null) ? 0 : getTrainingEndTime().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getClassifierMetadata() == null) ? 0 : getClassifierMetadata().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());

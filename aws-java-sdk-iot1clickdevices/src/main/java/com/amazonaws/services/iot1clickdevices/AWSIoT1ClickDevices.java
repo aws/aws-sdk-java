@@ -27,7 +27,8 @@ import com.amazonaws.services.iot1clickdevices.model.*;
  * </p>
  * <p>
  * <p>
- * Stub description
+ * Describes all of the AWS IoT 1-Click device-related API operations for the service. Also provides sample requests,
+ * responses, and errors for the supported web services protocols.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -223,7 +224,7 @@ public interface AWSIoT1ClickDevices {
 
     /**
      * <p>
-     * List all tags on an AWS IoT 1-Click resource.
+     * Lists the tags associated with the specified resource ARN.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -240,8 +241,9 @@ public interface AWSIoT1ClickDevices {
 
     /**
      * <p>
-     * Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these user-defined tags so that
-     * they appear on the Billing and Cost Management console for cost allocation tracking.
+     * Adds or updates the tags associated with the resource ARN. See <a
+     * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT
+     * 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -279,7 +281,7 @@ public interface AWSIoT1ClickDevices {
 
     /**
      * <p>
-     * Removes the association of tags from an AWS IoT 1-Click resource.
+     * Using tag keys, deletes the tags (key/value pairs) associated with the specified resource ARN.
      * </p>
      * 
      * @param untagResourceRequest

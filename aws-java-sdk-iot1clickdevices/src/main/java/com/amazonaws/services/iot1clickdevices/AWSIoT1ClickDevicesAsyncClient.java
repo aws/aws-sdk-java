@@ -26,7 +26,8 @@ import java.util.concurrent.ExecutorService;
  * receive notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Stub description
+ * Describes all of the AWS IoT 1-Click device-related API operations for the service. Also provides sample requests,
+ * responses, and errors for the supported web services protocols.
  * </p>
  */
 @ThreadSafe

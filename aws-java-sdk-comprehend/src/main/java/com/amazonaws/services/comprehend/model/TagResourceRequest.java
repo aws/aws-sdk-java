@@ -33,7 +33,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * Tags being associated with a specific Amazon Comprehend resource.
+     * Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     * existing and pending) associated with a specific resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -83,10 +84,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags being associated with a specific Amazon Comprehend resource.
+     * Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     * existing and pending) associated with a specific resource.
      * </p>
      * 
-     * @return Tags being associated with a specific Amazon Comprehend resource.
+     * @return Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     *         existing and pending) associated with a specific resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -95,11 +98,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags being associated with a specific Amazon Comprehend resource.
+     * Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     * existing and pending) associated with a specific resource.
      * </p>
      * 
      * @param tags
-     *        Tags being associated with a specific Amazon Comprehend resource.
+     *        Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -113,7 +118,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags being associated with a specific Amazon Comprehend resource.
+     * Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     * existing and pending) associated with a specific resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +128,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Tags being associated with a specific Amazon Comprehend resource.
+     *        Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +145,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags being associated with a specific Amazon Comprehend resource.
+     * Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     * existing and pending) associated with a specific resource.
      * </p>
      * 
      * @param tags
-     *        Tags being associated with a specific Amazon Comprehend resource.
+     *        Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

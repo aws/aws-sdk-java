@@ -84,6 +84,10 @@ public class DocumentClassifierPropertiesJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     documentClassifierProperties.setInputDataConfig(DocumentClassifierInputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierProperties.setOutputDataConfig(DocumentClassifierOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ClassifierMetadata", targetDepth)) {
                     context.nextToken();
                     documentClassifierProperties.setClassifierMetadata(ClassifierMetadataJsonUnmarshaller.getInstance().unmarshall(context));

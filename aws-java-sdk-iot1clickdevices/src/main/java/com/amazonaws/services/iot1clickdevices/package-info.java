@@ -13,7 +13,8 @@
 
 /**
  * <p>
- * Stub description
+ * Describes all of the AWS IoT 1-Click device-related API operations for the service. Also provides sample requests,
+ * responses, and errors for the supported web services protocols.
  * </p>
  */
 package com.amazonaws.services.iot1clickdevices;

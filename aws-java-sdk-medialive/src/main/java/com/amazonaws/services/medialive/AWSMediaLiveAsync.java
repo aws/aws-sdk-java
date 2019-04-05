@@ -846,4 +846,33 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
     java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInputSecurityGroupRequest, UpdateInputSecurityGroupResult> asyncHandler);
 
+    /**
+     * Update reservation.
+     * 
+     * @param updateReservationRequest
+     *        Request to update a reservation
+     * @return A Java Future containing the result of the UpdateReservation operation returned by the service.
+     * @sample AWSMediaLiveAsync.UpdateReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReservationResult> updateReservationAsync(UpdateReservationRequest updateReservationRequest);
+
+    /**
+     * Update reservation.
+     * 
+     * @param updateReservationRequest
+     *        Request to update a reservation
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateReservation operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateReservationResult> updateReservationAsync(UpdateReservationRequest updateReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateReservationRequest, UpdateReservationResult> asyncHandler);
+
 }

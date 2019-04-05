@@ -42,8 +42,8 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -187,13 +187,13 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      * 
      * @return Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *         metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *         ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *         metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *         added to a resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -203,14 +203,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -225,8 +225,8 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -236,8 +236,8 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param tags
      *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,14 +254,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,8 +41,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -52,6 +52,12 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private DocumentClassifierInputDataConfig inputDataConfig;
+    /**
+     * <p>
+     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * </p>
+     */
+    private DocumentClassifierOutputDataConfig outputDataConfig;
     /**
      * <p>
      * A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.
@@ -176,13 +182,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @return Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as
-     *         a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *         ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *         a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *         added to a resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -192,14 +198,14 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -214,8 +220,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -225,8 +231,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param tags
      *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,14 +249,14 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,6 +302,46 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     public CreateDocumentClassifierRequest withInputDataConfig(DocumentClassifierInputDataConfig inputDataConfig) {
         setInputDataConfig(inputDataConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Enables the addition of output results configuration parameters for custom classifier jobs.
+     */
+
+    public void setOutputDataConfig(DocumentClassifierOutputDataConfig outputDataConfig) {
+        this.outputDataConfig = outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @return Enables the addition of output results configuration parameters for custom classifier jobs.
+     */
+
+    public DocumentClassifierOutputDataConfig getOutputDataConfig() {
+        return this.outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Enables the addition of output results configuration parameters for custom classifier jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDocumentClassifierRequest withOutputDataConfig(DocumentClassifierOutputDataConfig outputDataConfig) {
+        setOutputDataConfig(outputDataConfig);
         return this;
     }
 
@@ -556,6 +602,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
             sb.append("Tags: ").append(getTags()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
+        if (getOutputDataConfig() != null)
+            sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getLanguageCode() != null)
@@ -592,6 +640,10 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
             return false;
+        if (other.getOutputDataConfig() == null ^ this.getOutputDataConfig() == null)
+            return false;
+        if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -616,6 +668,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());

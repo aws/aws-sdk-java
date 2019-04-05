@@ -32,8 +32,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -81,13 +81,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @return Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as
-     *         a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *         ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *         a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *         added to a resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -97,14 +97,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as
-     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -119,8 +119,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,8 +130,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param tags
      *        Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as
-     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,14 +148,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’
-     * might be added to a resource to indicate its use by a particular department.
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
      *        Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as
-     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair
-     *        ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
+     *        a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,6 +45,8 @@ public class DocumentClassifierPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> INPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<StructuredPojo> CLASSIFIERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClassifierMetadata").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,6 +79,7 @@ public class DocumentClassifierPropertiesMarshaller {
             protocolMarshaller.marshall(documentClassifierProperties.getTrainingStartTime(), TRAININGSTARTTIME_BINDING);
             protocolMarshaller.marshall(documentClassifierProperties.getTrainingEndTime(), TRAININGENDTIME_BINDING);
             protocolMarshaller.marshall(documentClassifierProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
+            protocolMarshaller.marshall(documentClassifierProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(documentClassifierProperties.getClassifierMetadata(), CLASSIFIERMETADATA_BINDING);
             protocolMarshaller.marshall(documentClassifierProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(documentClassifierProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);

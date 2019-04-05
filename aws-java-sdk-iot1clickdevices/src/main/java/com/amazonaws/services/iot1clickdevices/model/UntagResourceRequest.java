@@ -27,25 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     * The ARN of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the
-     * AWS IoT 1-Click resource.
+     * A collections of tag keys. For example, {"key1","key2"}
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     * The ARN of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     *        The ARN of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     * The ARN of the resource.
      * </p>
      * 
-     * @return The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     * @return The ARN of the resource.
      */
 
     public String getResourceArn() {
@@ -66,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     * The ARN of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon Resource Name (ARN).
+     *        The ARN of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the
-     * AWS IoT 1-Click resource.
+     * A collections of tag keys. For example, {"key1","key2"}
      * </p>
      * 
-     * @return A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed
-     *         from the AWS IoT 1-Click resource.
+     * @return A collections of tag keys. For example, {"key1","key2"}
      */
 
     public java.util.List<String> getTagKeys() {
@@ -95,13 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the
-     * AWS IoT 1-Click resource.
+     * A collections of tag keys. For example, {"key1","key2"}
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from
-     *        the AWS IoT 1-Click resource.
+     *        A collections of tag keys. For example, {"key1","key2"}
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -115,8 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the
-     * AWS IoT 1-Click resource.
+     * A collections of tag keys. For example, {"key1","key2"}
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,8 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from
-     *        the AWS IoT 1-Click resource.
+     *        A collections of tag keys. For example, {"key1","key2"}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,13 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the
-     * AWS IoT 1-Click resource.
+     * A collections of tag keys. For example, {"key1","key2"}
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from
-     *        the AWS IoT 1-Click resource.
+     *        A collections of tag keys. For example, {"key1","key2"}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

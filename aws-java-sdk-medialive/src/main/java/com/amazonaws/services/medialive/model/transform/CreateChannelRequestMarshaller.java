@@ -31,6 +31,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateChannelRequestMarshaller {
 
+    private static final MarshallingInfo<String> CHANNELCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelClass").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("destinations").build();
     private static final MarshallingInfo<StructuredPojo> ENCODERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -68,6 +70,7 @@ public class CreateChannelRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createChannelRequest.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getEncoderSettings(), ENCODERSETTINGS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getInputAttachments(), INPUTATTACHMENTS_BINDING);

@@ -189,7 +189,8 @@ public interface AmazonComprehend {
      * @throws ResourceInUseException
      *         The specified name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
-     *         The request contains more tags than can be associated with a resource (50 tags per resource).
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
@@ -222,7 +223,8 @@ public interface AmazonComprehend {
      * @throws ResourceInUseException
      *         The specified name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
-     *         The request contains more tags than can be associated with a resource (50 tags per resource).
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
@@ -763,8 +765,7 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Lists all tags associated with a given Amazon Comprehend resource. Up to the maximum number of tags allowed per
-     * resource will be displayed.
+     * Lists all tags associated with a given Amazon Comprehend resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1130,8 +1131,8 @@ public interface AmazonComprehend {
     /**
      * <p>
      * Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be
-     * added to a resource to indicate its use by a particular department.
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1143,7 +1144,8 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws TooManyTagsException
-     *         The request contains more tags than can be associated with a resource (50 tags per resource).
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.TagResource

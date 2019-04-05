@@ -753,6 +753,34 @@ public interface AWSMediaLive {
     UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest);
 
     /**
+     * Update reservation.
+     * 
+     * @param updateReservationRequest
+     *        Request to update a reservation
+     * @return Result of the UpdateReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to update reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation not found
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded
+     * @throws ConflictException
+     *         The reservation could not be updated
+     * @sample AWSMediaLive.UpdateReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateReservationResult updateReservation(UpdateReservationRequest updateReservationRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

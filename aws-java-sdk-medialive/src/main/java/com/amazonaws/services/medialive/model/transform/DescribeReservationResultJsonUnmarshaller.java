@@ -112,6 +112,11 @@ public class DescribeReservationResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeReservationResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    describeReservationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("usagePrice", targetDepth)) {
                     context.nextToken();
                     describeReservationResult.setUsagePrice(context.getUnmarshaller(Double.class).unmarshall(context));

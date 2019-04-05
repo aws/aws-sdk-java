@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -59,6 +61,8 @@ public class ReservationMarshaller {
             .marshallLocationName("start").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Double> USAGEPRICE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("usagePrice").build();
 
@@ -94,6 +98,7 @@ public class ReservationMarshaller {
             protocolMarshaller.marshall(reservation.getResourceSpecification(), RESOURCESPECIFICATION_BINDING);
             protocolMarshaller.marshall(reservation.getStart(), START_BINDING);
             protocolMarshaller.marshall(reservation.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(reservation.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(reservation.getUsagePrice(), USAGEPRICE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

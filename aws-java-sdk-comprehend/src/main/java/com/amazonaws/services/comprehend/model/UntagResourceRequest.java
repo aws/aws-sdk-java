@@ -33,9 +33,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceArn;
     /**
      * <p>
-     * The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     * “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,” and
-     * “administration.”
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be
+     * unique and cannot be duplicated for a particular resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -85,14 +85,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     * “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,” and
-     * “administration.”
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be
+     * unique and cannot be duplicated for a particular resource.
      * </p>
      * 
-     * @return The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     *         “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,”
-     *         and “administration.”
+     * @return The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a
+     *         tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.
+     *         Keys must be unique and cannot be duplicated for a particular resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -101,15 +101,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     * “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,” and
-     * “administration.”
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be
+     * unique and cannot be duplicated for a particular resource.
      * </p>
      * 
      * @param tagKeys
-     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     *        “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,”
-     *        and “administration.”
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a
+     *        tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys
+     *        must be unique and cannot be duplicated for a particular resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -123,9 +123,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     * “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,” and
-     * “administration.”
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be
+     * unique and cannot be duplicated for a particular resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,9 +134,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     *        “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,”
-     *        and “administration.”
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a
+     *        tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys
+     *        must be unique and cannot be duplicated for a particular resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,15 +152,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     * “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,” and
-     * “administration.”
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be
+     * unique and cannot be duplicated for a particular resource.
      * </p>
      * 
      * @param tagKeys
-     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For instance,
-     *        “Department” might be used as the key portion of the pair, with multiple values such as “sales,” “legal,”
-     *        and “administration.”
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a
+     *        tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys
+     *        must be unique and cannot be duplicated for a particular resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

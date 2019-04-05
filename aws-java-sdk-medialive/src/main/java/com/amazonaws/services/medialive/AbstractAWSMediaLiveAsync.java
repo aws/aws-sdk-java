@@ -391,4 +391,17 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateReservationResult> updateReservationAsync(UpdateReservationRequest request) {
+
+        return updateReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReservationResult> updateReservationAsync(UpdateReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateReservationRequest, UpdateReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -27,27 +27,29 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource Name
-     * (ARN).
+     * The ARN of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tags to be assigned to the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource Name
-     * (ARN).
+     * The ARN of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource
-     *        Name (ARN).
+     *        The ARN of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +58,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource Name
-     * (ARN).
+     * The ARN of the resource.
      * </p>
      * 
-     * @return Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource
-     *         Name (ARN).
+     * @return The ARN of the resource.
      */
 
     public String getResourceArn() {
@@ -70,13 +70,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource Name
-     * (ARN).
+     * The ARN of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        Identifies the AWS IoT 1-Click resource to which tags should be added. This value is an Amazon Resource
-     *        Name (ARN).
+     *        The ARN of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +85,19 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to be assigned to the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
-     * @return The tags to be assigned to the AWS IoT 1-Click resource.
+     * @return A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *         "key2": "value2"} }. For more information, see <a
+     *         href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *         Strategies</a>.</p>
+     *         <p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -99,11 +106,20 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to be assigned to the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the AWS IoT 1-Click resource.
+     *        A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *        "key2": "value2"} }. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -112,11 +128,20 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to be assigned to the AWS IoT 1-Click resource.
+     * A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2":
+     * "value2"} }. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * 
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the AWS IoT 1-Click resource.
+     *        A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1",
+     *        "key2": "value2"} }. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,24 @@
+# __1.11.534__ __2019-04-05__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Rectify incorrect modelling of DisassociateCertificate method
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Today AWS Elemental MediaLive (https://aws.amazon.com/medialive/) adds the option to create "Single Pipeline" channels, which offers a lower-cost option compared to Standard channels. MediaLive Single Pipeline channels have a single encoding pipeline rather than the redundant dual Availability Zone (AZ) pipelines that MediaLive provides with a "Standard" channel.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue now supports workerType choices in the CreateJob, UpdateJob, and StartJobRun APIs, to be used for memory-intensive jobs.
+
+## __AWS IoT 1-Click Devices Service__
+  - ### Features
+    - Documentation updates for 1-Click: improved descriptions of resource tagging APIs.
+
+## __Amazon Comprehend__
+  - ### Features
+    - With this release AWS Comprehend provides confusion matrix for custom document classifier.
+
 # __1.11.533__ __2019-04-04__
 ## __AWS Identity and Access Management__
   - ### Features
